@@ -1,0 +1,14 @@
+Engine Responsibilities (Given This DSL)
+
+For any valid DSL spec, the Simulated Replicator must:
+
+- Parse all blocks into internal objects  
+- Build a feasible design space under CONSTRAINTS + POLICY  
+- Generate candidate recipes via RecipeEngine  
+- Simulate composition, nutrition, and sensory estimates  
+- Enforce hard constraints, optimize soft preferences  
+- Output:
+  - final recipe graph  
+  - ingredient list  
+  - process steps  
+  - justification (which constraints/prefs drove which choices)  

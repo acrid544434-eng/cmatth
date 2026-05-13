@@ -1,0 +1,35 @@
+# Simulated Replicator DSL  
+### Declarative Constraint & Recipe Specification
+
+A compact, declarative language for specifying **what** the replicator should produce,  
+**under which constraints**, and **with what preferences** — not *how* to do it step‑by‑step.
+
+---
+
+## 1. Top-Level Structure
+
+A full spec is composed of the following blocks:
+
+- `REQUEST` — what the user wants  
+- `CONSTRAINTS` — hard limits (must be satisfied)  
+- `PREFERENCES` — soft goals (optimize toward)  
+- `ENVIRONMENT` — context in which the output will be used  
+- `POLICY` — legal, ethical, and safety rules  
+
+Blocks are order‑independent but typically appear in this sequence.
+
+---
+
+## 2. REQUEST Block
+
+Describes the target outcome in human terms plus optional tags.
+
+```dsl
+REQUEST:
+  label: "spicy_vegan_ramen"
+  type: FOOD
+  description: "Spicy vegan ramen with rich broth and chewy noodles"
+  tags:
+    - vegan
+    - spicy
+    - comfort_food

@@ -1,0 +1,34 @@
+# Universe Architecture Simulator  
+### Multi-Scale Layered Simulation Engine — Full Architecture Blueprint  
+
+A comprehensive technical blueprint for a simulation engine that models the universe  
+from subatomic particles to interstellar civilizations.
+
+## Overview
+
+The **Universe Architecture Simulator** is a conceptual, multi-scale simulation framework designed to:
+
+- Represent physical systems from quantum scales to galactic structures  
+- Model interactions across layers (particles → atoms → materials → organisms → societies → civilizations)  
+- Explore emergent behavior, feedback loops, and large-scale structure formation  
+
+This repository contains the **full architecture blueprint** for such an engine:  
+its layers, data flows, control logic, and simulation paradigms.
+
+## Scope
+
+- Subatomic and quantum-scale modeling (conceptual layer)  
+- Atomic, molecular, and material behavior  
+- Planetary, ecological, and biospheric dynamics  
+- Cognitive, social, and civilizational architectures  
+- Galactic and cosmological structure evolution  
+
+## Status
+
+This project is currently an **architectural specification**, not a finished implementation.  
+It is intended as a high-level design document for future simulators, engines, or research platforms.
+
+## Author
+
+**C. Matthew Blackwell**  
+Independent Designer

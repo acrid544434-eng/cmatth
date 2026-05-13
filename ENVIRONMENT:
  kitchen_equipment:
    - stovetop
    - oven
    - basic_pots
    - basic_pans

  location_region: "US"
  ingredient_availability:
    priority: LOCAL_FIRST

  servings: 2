@@ -1,0 +1,12 @@
+ENVIRONMENT:
+  kitchen_equipment:
+    - stovetop
+    - oven
+    - basic_pots
+    - basic_pans
+
+  location_region: "US"
+  ingredient_availability:
+    priority: LOCAL_FIRST
+
+  servings: 2

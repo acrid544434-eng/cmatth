@@ -1,0 +1,18 @@
+CONSTRAINTS (HARD):
+  kcal_total <= 650
+  protein_g >= 20
+  saturated_fat_g <= 8
+  sodium_mg <= 1800
+
+  allergens:
+    exclude:
+      - peanuts
+      - shellfish
+
+  diet:
+    must_include:
+      - vegan
+
+  cost_per_serving_usd <= 6.00
+
+  prep_time_minutes <= 35

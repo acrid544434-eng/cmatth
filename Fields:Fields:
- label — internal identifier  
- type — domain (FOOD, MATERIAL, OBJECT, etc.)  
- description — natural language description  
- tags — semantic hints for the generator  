@@ -1,0 +1,5 @@
+Fields:
+- label — internal identifier  
+- type — domain (FOOD, MATERIAL, OBJECT, etc.)  
+- description — natural language description  
+- tags — semantic hints for the generator  

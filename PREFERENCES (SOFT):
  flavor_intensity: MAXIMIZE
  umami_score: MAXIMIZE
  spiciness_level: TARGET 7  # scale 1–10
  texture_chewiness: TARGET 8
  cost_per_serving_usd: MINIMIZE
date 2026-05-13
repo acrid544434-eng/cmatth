@@ -1,0 +1,6 @@
+PREFERENCES (SOFT):
+  flavor_intensity: MAXIMIZE
+  umami_score: MAXIMIZE
+  spiciness_level: TARGET 7  # scale 1–10
+  texture_chewiness: TARGET 8
+  cost_per_serving_usd: MINIMIZE

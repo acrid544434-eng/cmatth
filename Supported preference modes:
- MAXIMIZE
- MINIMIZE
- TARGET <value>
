@@ -1,0 +1,4 @@
+Supported preference modes:
+- MAXIMIZE
+- MINIMIZE
+- TARGET <value>

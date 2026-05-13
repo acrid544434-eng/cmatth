@@ -1,0 +1,29 @@
+CONSTRAINTS Block (Hard)
+
+Non‑negotiable requirements. If violated, the candidate is rejected.
+
+`dsl
+CONSTRAINTS (HARD):
+  kcal_total <= 650
+  protein_g >= 20
+  saturatedfatg <= 8
+  sodium_mg <= 1800
+
+  allergens:
+    exclude:
+      - peanuts
+      - shellfish
+
+  diet:
+    must_include:
+      - vegan
+
+  costperserving_usd <= 6.00
+
+  preptimeminutes <= 35
+`
+
+Supported constraint types (examples):
+- numeric inequalities: <=, >=, ==  
+- set membership: include, exclude  
+- boolean flags: TRUE, FALSE  

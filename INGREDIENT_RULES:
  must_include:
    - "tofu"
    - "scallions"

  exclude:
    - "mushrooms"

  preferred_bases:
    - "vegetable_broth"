@@ -1,0 +1,10 @@
+INGREDIENT_RULES:
+  must_include:
+    - "tofu"
+    - "scallions"
+
+  exclude:
+    - "mushrooms"
+
+  preferred_bases:
+    - "vegetable_broth"

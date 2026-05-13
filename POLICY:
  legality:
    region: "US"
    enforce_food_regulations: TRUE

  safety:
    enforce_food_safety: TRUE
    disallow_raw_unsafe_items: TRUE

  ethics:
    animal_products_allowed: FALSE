@@ -1,0 +1,11 @@
+POLICY:
+  legality:
+    region: "US"
+    enforce_food_regulations: TRUE
+
+  safety:
+    enforce_food_safety: TRUE
+    disallow_raw_unsafe_items: TRUE
+
+  ethics:
+    animal_products_allowed: FALSE

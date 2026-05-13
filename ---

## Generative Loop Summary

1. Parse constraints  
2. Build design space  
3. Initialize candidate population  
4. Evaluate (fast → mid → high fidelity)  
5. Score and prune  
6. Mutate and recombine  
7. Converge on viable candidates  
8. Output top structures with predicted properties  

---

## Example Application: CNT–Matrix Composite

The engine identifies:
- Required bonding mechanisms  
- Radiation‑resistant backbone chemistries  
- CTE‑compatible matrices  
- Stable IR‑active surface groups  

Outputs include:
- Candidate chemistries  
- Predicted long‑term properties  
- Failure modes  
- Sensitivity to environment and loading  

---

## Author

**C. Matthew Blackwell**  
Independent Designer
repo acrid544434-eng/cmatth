@@ -1,0 +1,35 @@
+---
+
+## Generative Loop Summary
+
+1. Parse constraints  
+2. Build design space  
+3. Initialize candidate population  
+4. Evaluate (fast → mid → high fidelity)  
+5. Score and prune  
+6. Mutate and recombine  
+7. Converge on viable candidates  
+8. Output top structures with predicted properties  
+
+---
+
+## Example Application: CNT–Matrix Composite
+
+The engine identifies:
+- Required bonding mechanisms  
+- Radiation‑resistant backbone chemistries  
+- CTE‑compatible matrices  
+- Stable IR‑active surface groups  
+
+Outputs include:
+- Candidate chemistries  
+- Predicted long‑term properties  
+- Failure modes  
+- Sensitivity to environment and loading  
+
+---
+
+## Author
+
+**C. Matthew Blackwell**  
+Independent Designer

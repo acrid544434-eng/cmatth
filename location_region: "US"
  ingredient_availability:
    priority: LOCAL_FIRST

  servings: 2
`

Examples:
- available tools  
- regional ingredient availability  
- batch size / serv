@@ -1,0 +1,11 @@
+location_region: "US"
+  ingredient_availability:
+    priority: LOCAL_FIRST
+
+  servings: 2
+`
+
+Examples:
+- available tools  
+- regional ingredient availability  
+- batch size / serv

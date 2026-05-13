@@ -1,0 +1,63 @@
+REQUEST:
+  label: "blackwell_signature_spicy_vegan_ramen"
+  type: FOOD
+  description: "Deep, rich, spicy vegan ramen with chewy noodles and layered umami."
+  tags:
+    - vegan
+    - spicy
+    - ramen
+    - broth_forward
+
+CONSTRAINTS (HARD):
+  kcal_total <= 700
+  protein_g >= 22
+  saturated_fat_g <= 9
+  sodium_mg <= 1900
+
+  diet:
+    must_include:
+      - vegan
+
+  allergens:
+    exclude:
+      - peanuts
+
+  cost_per_serving_usd <= 7.50
+  prep_time_minutes <= 40
+
+PREFERENCES (SOFT):
+  flavor_intensity: MAXIMIZE
+  umami_score: MAXIMIZE
+  spiciness_level: TARGET 8
+  texture_chewiness: TARGET 8
+  broth_richness: MAXIMIZE
+  cost_per_serving_usd: MINIMIZE
+
+ENVIRONMENT:
+  kitchen_equipment:
+    - stovetop
+    - basic_pots
+    - basic_pans
+  location_region: "US"
+  ingredient_availability:
+    priority: LOCAL_FIRST
+  servings: 2
+
+POLICY:
+  legality:
+    region: "US"
+    enforce_food_regulations: TRUE
+  safety:
+    enforce_food_safety: TRUE
+    disallow_raw_unsafe_items: TRUE
+  ethics:
+    animal_products_allowed: FALSE
+
+INGREDIENT_RULES:
+  must_include:
+    - "tofu"
+    - "scallions"
+  preferred_bases:
+    - "vegetable_broth"
+  exclude:
+    - "mushrooms"

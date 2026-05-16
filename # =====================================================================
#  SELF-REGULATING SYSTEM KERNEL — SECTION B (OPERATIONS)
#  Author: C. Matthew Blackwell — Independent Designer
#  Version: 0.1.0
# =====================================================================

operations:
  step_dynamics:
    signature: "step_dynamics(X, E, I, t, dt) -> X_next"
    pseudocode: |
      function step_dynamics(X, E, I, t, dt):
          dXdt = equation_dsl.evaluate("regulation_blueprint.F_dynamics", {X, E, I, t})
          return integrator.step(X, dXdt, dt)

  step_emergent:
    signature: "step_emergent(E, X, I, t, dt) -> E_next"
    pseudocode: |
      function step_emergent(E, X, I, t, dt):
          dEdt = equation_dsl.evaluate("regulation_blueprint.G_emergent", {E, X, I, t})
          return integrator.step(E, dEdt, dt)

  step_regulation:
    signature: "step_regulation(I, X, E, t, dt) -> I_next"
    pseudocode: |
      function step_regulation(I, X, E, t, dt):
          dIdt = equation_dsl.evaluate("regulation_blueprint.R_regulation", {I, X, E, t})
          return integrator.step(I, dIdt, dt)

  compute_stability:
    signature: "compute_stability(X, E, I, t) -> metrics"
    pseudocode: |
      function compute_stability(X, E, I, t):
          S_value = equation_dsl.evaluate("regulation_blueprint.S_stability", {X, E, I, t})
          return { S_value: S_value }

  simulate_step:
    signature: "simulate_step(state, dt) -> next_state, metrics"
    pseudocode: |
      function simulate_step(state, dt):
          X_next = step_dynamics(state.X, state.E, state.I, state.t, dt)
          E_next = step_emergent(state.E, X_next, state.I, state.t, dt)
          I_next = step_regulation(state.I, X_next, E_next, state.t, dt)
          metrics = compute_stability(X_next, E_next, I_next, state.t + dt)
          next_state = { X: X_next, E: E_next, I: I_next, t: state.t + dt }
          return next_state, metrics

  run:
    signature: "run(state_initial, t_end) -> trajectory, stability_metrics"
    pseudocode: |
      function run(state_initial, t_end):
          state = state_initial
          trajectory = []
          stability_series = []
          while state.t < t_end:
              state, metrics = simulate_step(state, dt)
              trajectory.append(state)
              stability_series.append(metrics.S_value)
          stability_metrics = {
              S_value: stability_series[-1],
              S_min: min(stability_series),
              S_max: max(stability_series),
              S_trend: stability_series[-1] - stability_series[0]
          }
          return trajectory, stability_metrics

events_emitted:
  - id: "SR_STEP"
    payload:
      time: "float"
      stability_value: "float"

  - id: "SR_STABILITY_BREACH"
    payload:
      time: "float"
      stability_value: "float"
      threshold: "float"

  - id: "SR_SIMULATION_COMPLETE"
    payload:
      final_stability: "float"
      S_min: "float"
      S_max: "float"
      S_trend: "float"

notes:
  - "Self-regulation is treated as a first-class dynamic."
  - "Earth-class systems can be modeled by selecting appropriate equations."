@@ -1,0 +1,87 @@
+# =====================================================================
+#  SELF-REGULATING SYSTEM KERNEL — SECTION B (OPERATIONS)
+#  Author: C. Matthew Blackwell — Independent Designer
+#  Version: 0.1.0
+# =====================================================================
+
+operations:
+  step_dynamics:
+    signature: "step_dynamics(X, E, I, t, dt) -> X_next"
+    pseudocode: |
+      function step_dynamics(X, E, I, t, dt):
+          dXdt = equation_dsl.evaluate("regulation_blueprint.F_dynamics", {X, E, I, t})
+          return integrator.step(X, dXdt, dt)
+
+  step_emergent:
+    signature: "step_emergent(E, X, I, t, dt) -> E_next"
+    pseudocode: |
+      function step_emergent(E, X, I, t, dt):
+          dEdt = equation_dsl.evaluate("regulation_blueprint.G_emergent", {E, X, I, t})
+          return integrator.step(E, dEdt, dt)
+
+  step_regulation:
+    signature: "step_regulation(I, X, E, t, dt) -> I_next"
+    pseudocode: |
+      function step_regulation(I, X, E, t, dt):
+          dIdt = equation_dsl.evaluate("regulation_blueprint.R_regulation", {I, X, E, t})
+          return integrator.step(I, dIdt, dt)
+
+  compute_stability:
+    signature: "compute_stability(X, E, I, t) -> metrics"
+    pseudocode: |
+      function compute_stability(X, E, I, t):
+          S_value = equation_dsl.evaluate("regulation_blueprint.S_stability", {X, E, I, t})
+          return { S_value: S_value }
+
+  simulate_step:
+    signature: "simulate_step(state, dt) -> next_state, metrics"
+    pseudocode: |
+      function simulate_step(state, dt):
+          X_next = step_dynamics(state.X, state.E, state.I, state.t, dt)
+          E_next = step_emergent(state.E, X_next, state.I, state.t, dt)
+          I_next = step_regulation(state.I, X_next, E_next, state.t, dt)
+          metrics = compute_stability(X_next, E_next, I_next, state.t + dt)
+          next_state = { X: X_next, E: E_next, I: I_next, t: state.t + dt }
+          return next_state, metrics
+
+  run:
+    signature: "run(state_initial, t_end) -> trajectory, stability_metrics"
+    pseudocode: |
+      function run(state_initial, t_end):
+          state = state_initial
+          trajectory = []
+          stability_series = []
+          while state.t < t_end:
+              state, metrics = simulate_step(state, dt)
+              trajectory.append(state)
+              stability_series.append(metrics.S_value)
+          stability_metrics = {
+              S_value: stability_series[-1],
+              S_min: min(stability_series),
+              S_max: max(stability_series),
+              S_trend: stability_series[-1] - stability_series[0]
+          }
+          return trajectory, stability_metrics
+
+events_emitted:
+  - id: "SR_STEP"
+    payload:
+      time: "float"
+      stability_value: "float"
+
+  - id: "SR_STABILITY_BREACH"
+    payload:
+      time: "float"
+      stability_value: "float"
+      threshold: "float"
+
+  - id: "SR_SIMULATION_COMPLETE"
+    payload:
+      final_stability: "float"
+      S_min: "float"
+      S_max: "float"
+      S_trend: "float"
+
+notes:
+  - "Self-regulation is treated as a first-class dynamic."
+  - "Earth-class systems can be modeled by selecting appropriate equations."

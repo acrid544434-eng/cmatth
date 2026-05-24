@@ -1,0 +1,132 @@
+
+
+1. MicroMutations — small parameter shifts
+
+These are tiny, continuous changes to scalar values.They keep universes stable while exploring nearby law‑space.
+
+def micro_mutation(genome, rate=0.1, scale=0.05):
+    for key, value in genome.parameters.items():
+        if random.random() < rate:
+            delta = random.uniform(-scale, scale)
+            genome.parameters[key] = value + delta
+
+What they affect:
+
+warp_A, warp_B, warp_C
+
+chaos_strength
+
+nonlocal_scale
+
+curvature_damping
+
+mixer_temperature
+
+These mutations are safe and frequent.
+
+2. MacroMutations — discrete jumps in behavior
+
+These change the shape of the physics, not just the values.
+
+def macro_mutation(genome, rate=0.05):
+    # Exponent jumps
+    if random.random() < rate:
+        genome.parameters["warp_p"] += random.choice([-0.2, 0.2])
+
+    if random.random() < rate:
+        genome.parameters["warp_q"] += random.choice([-0.2, 0.2])
+
+    # Operator weight shifts
+    for op, w in genome.operators["operator_weights"].items():
+        if random.random() < rate:
+            genome.operators["operator_weights"][op] = w * random.uniform(0.8, 1.2)
+
+What they affect:
+
+warp exponents
+
+nonlocal decay exponents
+
+operator weight ratios
+
+mixer bias exponents
+
+These mutations create new physics behaviors.
+
+3. StructuralMutations — topology of the law system
+
+These are the rare, dramatic changes.They alter the structure of the universe’s laws.
+
+def structural_mutation(genome, rate=0.01):
+    # Toggle operators on/off
+    for op in ["enable_warp", "enable_nonlocal", "enable_chaotic"]:
+        if random.random() < rate:
+            genome.operators[op] = not genome.operators[op]
+
+    # Add/remove mixer biases
+    if random.random() < rate:
+        genome.mixer_bias["warp_bias"] *= random.uniform(0.5, 1.5)
+
+    # Regime threshold jumps
+    if random.random() < rate:
+        genome.regime_rules["warp_activation_threshold"] *= random.uniform(0.7, 1.3)
+
+What they affect:
+
+whether warp physics exists
+
+whether chaos is allowed
+
+whether nonlocality is active
+
+regime switching thresholds
+
+mixer bias topology
+
+These mutations create entirely new universes.
+
+4. Combined Mutation Operator
+
+This is the mutation engine your Evolution Layer will call each generation.
+
+def mutate_genome(genome):
+    # Copy genome to avoid destructive mutation
+    new_genome = genome.copy()
+
+    micro_mutation(new_genome)
+    macro_mutation(new_genome)
+    structural_mutation(new_genome)
+
+    new_genome.metadata["generation"] += 1
+    return new_genome
+
+This gives you:
+
+small exploration
+
+medium leaps
+
+rare structural rewrites
+
+Exactly what a law‑evolving system needs.
+
+5. Mutation Rate Control (Adaptive)
+
+You can evolve the mutation rate itself.
+
+def adapt_mutation_rate(genome, fitness):
+    if fitness < 0.3:
+        genome.metadata["mutation_rate"] *= 1.1
+    else:
+        genome.metadata["mutation_rate"] *= 0.95
+
+Low‑fitness universes mutate more.High‑fitness universes stabilize.
+
+This is self‑tuning evolution.
+
+
+
+
+
+
+

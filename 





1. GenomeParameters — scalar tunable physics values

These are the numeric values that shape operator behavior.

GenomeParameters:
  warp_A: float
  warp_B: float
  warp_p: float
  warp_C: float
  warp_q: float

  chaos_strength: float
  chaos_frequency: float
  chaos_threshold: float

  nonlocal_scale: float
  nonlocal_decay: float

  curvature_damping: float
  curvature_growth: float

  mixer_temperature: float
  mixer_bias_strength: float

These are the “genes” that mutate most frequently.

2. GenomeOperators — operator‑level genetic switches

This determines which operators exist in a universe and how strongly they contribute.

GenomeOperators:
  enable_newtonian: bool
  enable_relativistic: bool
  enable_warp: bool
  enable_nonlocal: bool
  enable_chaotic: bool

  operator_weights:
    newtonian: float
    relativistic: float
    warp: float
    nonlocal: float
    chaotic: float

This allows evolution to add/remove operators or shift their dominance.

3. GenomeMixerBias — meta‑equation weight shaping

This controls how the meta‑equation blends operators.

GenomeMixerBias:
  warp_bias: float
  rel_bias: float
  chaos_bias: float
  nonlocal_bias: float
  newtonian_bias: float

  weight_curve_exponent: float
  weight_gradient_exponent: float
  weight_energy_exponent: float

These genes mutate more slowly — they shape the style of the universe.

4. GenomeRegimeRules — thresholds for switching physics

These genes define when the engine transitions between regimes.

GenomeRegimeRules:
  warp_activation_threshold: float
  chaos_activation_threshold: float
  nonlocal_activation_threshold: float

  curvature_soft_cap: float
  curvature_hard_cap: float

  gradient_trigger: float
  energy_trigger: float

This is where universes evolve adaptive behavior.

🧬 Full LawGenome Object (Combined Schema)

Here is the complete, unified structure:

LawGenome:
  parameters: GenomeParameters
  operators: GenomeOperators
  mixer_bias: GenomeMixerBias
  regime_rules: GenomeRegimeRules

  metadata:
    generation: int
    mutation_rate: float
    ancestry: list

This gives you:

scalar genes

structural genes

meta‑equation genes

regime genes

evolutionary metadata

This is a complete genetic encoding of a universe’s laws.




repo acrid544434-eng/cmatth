@@ -1,0 +1,117 @@
+
+
+
+
+
+
+1. GenomeParameters — scalar tunable physics values
+
+These are the numeric values that shape operator behavior.
+
+GenomeParameters:
+  warp_A: float
+  warp_B: float
+  warp_p: float
+  warp_C: float
+  warp_q: float
+
+  chaos_strength: float
+  chaos_frequency: float
+  chaos_threshold: float
+
+  nonlocal_scale: float
+  nonlocal_decay: float
+
+  curvature_damping: float
+  curvature_growth: float
+
+  mixer_temperature: float
+  mixer_bias_strength: float
+
+These are the “genes” that mutate most frequently.
+
+2. GenomeOperators — operator‑level genetic switches
+
+This determines which operators exist in a universe and how strongly they contribute.
+
+GenomeOperators:
+  enable_newtonian: bool
+  enable_relativistic: bool
+  enable_warp: bool
+  enable_nonlocal: bool
+  enable_chaotic: bool
+
+  operator_weights:
+    newtonian: float
+    relativistic: float
+    warp: float
+    nonlocal: float
+    chaotic: float
+
+This allows evolution to add/remove operators or shift their dominance.
+
+3. GenomeMixerBias — meta‑equation weight shaping
+
+This controls how the meta‑equation blends operators.
+
+GenomeMixerBias:
+  warp_bias: float
+  rel_bias: float
+  chaos_bias: float
+  nonlocal_bias: float
+  newtonian_bias: float
+
+  weight_curve_exponent: float
+  weight_gradient_exponent: float
+  weight_energy_exponent: float
+
+These genes mutate more slowly — they shape the style of the universe.
+
+4. GenomeRegimeRules — thresholds for switching physics
+
+These genes define when the engine transitions between regimes.
+
+GenomeRegimeRules:
+  warp_activation_threshold: float
+  chaos_activation_threshold: float
+  nonlocal_activation_threshold: float
+
+  curvature_soft_cap: float
+  curvature_hard_cap: float
+
+  gradient_trigger: float
+  energy_trigger: float
+
+This is where universes evolve adaptive behavior.
+
+🧬 Full LawGenome Object (Combined Schema)
+
+Here is the complete, unified structure:
+
+LawGenome:
+  parameters: GenomeParameters
+  operators: GenomeOperators
+  mixer_bias: GenomeMixerBias
+  regime_rules: GenomeRegimeRules
+
+  metadata:
+    generation: int
+    mutation_rate: float
+    ancestry: list
+
+This gives you:
+
+scalar genes
+
+structural genes
+
+meta‑equation genes
+
+regime genes
+
+evolutionary metadata
+
+This is a complete genetic encoding of a universe’s laws.
+
+
+

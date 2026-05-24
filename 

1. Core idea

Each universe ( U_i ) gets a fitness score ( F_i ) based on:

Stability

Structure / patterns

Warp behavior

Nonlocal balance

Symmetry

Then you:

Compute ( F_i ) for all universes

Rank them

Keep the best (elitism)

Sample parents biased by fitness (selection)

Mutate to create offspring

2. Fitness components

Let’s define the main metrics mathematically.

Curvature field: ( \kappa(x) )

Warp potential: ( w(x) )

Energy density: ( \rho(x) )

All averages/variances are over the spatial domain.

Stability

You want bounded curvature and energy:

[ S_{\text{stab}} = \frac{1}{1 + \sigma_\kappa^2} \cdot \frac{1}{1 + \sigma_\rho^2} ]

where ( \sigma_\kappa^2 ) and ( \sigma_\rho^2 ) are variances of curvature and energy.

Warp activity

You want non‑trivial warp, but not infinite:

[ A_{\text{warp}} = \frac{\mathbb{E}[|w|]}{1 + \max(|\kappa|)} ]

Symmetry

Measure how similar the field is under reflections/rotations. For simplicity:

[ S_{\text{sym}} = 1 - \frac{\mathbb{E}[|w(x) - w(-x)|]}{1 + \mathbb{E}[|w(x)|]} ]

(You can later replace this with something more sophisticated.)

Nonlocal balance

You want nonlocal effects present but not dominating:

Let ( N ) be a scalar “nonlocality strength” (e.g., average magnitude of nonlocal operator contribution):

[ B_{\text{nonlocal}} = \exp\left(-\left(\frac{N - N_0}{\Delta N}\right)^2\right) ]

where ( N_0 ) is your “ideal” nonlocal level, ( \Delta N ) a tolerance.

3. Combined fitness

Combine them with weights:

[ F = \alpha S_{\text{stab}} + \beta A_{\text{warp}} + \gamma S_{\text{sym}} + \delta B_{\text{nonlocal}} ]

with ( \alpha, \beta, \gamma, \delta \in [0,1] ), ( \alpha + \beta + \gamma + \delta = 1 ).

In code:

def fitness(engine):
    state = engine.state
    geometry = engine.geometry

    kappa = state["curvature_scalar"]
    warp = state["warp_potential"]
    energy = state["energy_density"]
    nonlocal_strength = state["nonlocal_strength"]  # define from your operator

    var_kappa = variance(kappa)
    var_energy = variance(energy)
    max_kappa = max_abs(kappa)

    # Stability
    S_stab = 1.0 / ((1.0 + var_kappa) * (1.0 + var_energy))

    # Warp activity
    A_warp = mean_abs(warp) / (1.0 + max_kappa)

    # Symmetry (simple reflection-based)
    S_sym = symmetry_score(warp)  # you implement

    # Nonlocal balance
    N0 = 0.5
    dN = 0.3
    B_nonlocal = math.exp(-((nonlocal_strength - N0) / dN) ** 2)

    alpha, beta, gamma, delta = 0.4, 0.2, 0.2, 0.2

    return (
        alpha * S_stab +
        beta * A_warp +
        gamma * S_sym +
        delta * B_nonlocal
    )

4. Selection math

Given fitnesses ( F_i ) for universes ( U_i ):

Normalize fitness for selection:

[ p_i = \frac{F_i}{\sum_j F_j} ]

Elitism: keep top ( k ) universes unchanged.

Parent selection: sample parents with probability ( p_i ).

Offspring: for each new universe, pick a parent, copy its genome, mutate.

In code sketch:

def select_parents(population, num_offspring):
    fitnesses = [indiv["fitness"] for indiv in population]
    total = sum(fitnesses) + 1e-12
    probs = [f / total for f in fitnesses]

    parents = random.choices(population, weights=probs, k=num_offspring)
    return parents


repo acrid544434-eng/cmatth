@@ -1,0 +1,142 @@
+
+
+1. Core idea
+
+Each universe ( U_i ) gets a fitness score ( F_i ) based on:
+
+Stability
+
+Structure / patterns
+
+Warp behavior
+
+Nonlocal balance
+
+Symmetry
+
+Then you:
+
+Compute ( F_i ) for all universes
+
+Rank them
+
+Keep the best (elitism)
+
+Sample parents biased by fitness (selection)
+
+Mutate to create offspring
+
+2. Fitness components
+
+Let’s define the main metrics mathematically.
+
+Curvature field: ( \kappa(x) )
+
+Warp potential: ( w(x) )
+
+Energy density: ( \rho(x) )
+
+All averages/variances are over the spatial domain.
+
+Stability
+
+You want bounded curvature and energy:
+
+[ S_{\text{stab}} = \frac{1}{1 + \sigma_\kappa^2} \cdot \frac{1}{1 + \sigma_\rho^2} ]
+
+where ( \sigma_\kappa^2 ) and ( \sigma_\rho^2 ) are variances of curvature and energy.
+
+Warp activity
+
+You want non‑trivial warp, but not infinite:
+
+[ A_{\text{warp}} = \frac{\mathbb{E}[|w|]}{1 + \max(|\kappa|)} ]
+
+Symmetry
+
+Measure how similar the field is under reflections/rotations. For simplicity:
+
+[ S_{\text{sym}} = 1 - \frac{\mathbb{E}[|w(x) - w(-x)|]}{1 + \mathbb{E}[|w(x)|]} ]
+
+(You can later replace this with something more sophisticated.)
+
+Nonlocal balance
+
+You want nonlocal effects present but not dominating:
+
+Let ( N ) be a scalar “nonlocality strength” (e.g., average magnitude of nonlocal operator contribution):
+
+[ B_{\text{nonlocal}} = \exp\left(-\left(\frac{N - N_0}{\Delta N}\right)^2\right) ]
+
+where ( N_0 ) is your “ideal” nonlocal level, ( \Delta N ) a tolerance.
+
+3. Combined fitness
+
+Combine them with weights:
+
+[ F = \alpha S_{\text{stab}} + \beta A_{\text{warp}} + \gamma S_{\text{sym}} + \delta B_{\text{nonlocal}} ]
+
+with ( \alpha, \beta, \gamma, \delta \in [0,1] ), ( \alpha + \beta + \gamma + \delta = 1 ).
+
+In code:
+
+def fitness(engine):
+    state = engine.state
+    geometry = engine.geometry
+
+    kappa = state["curvature_scalar"]
+    warp = state["warp_potential"]
+    energy = state["energy_density"]
+    nonlocal_strength = state["nonlocal_strength"]  # define from your operator
+
+    var_kappa = variance(kappa)
+    var_energy = variance(energy)
+    max_kappa = max_abs(kappa)
+
+    # Stability
+    S_stab = 1.0 / ((1.0 + var_kappa) * (1.0 + var_energy))
+
+    # Warp activity
+    A_warp = mean_abs(warp) / (1.0 + max_kappa)
+
+    # Symmetry (simple reflection-based)
+    S_sym = symmetry_score(warp)  # you implement
+
+    # Nonlocal balance
+    N0 = 0.5
+    dN = 0.3
+    B_nonlocal = math.exp(-((nonlocal_strength - N0) / dN) ** 2)
+
+    alpha, beta, gamma, delta = 0.4, 0.2, 0.2, 0.2
+
+    return (
+        alpha * S_stab +
+        beta * A_warp +
+        gamma * S_sym +
+        delta * B_nonlocal
+    )
+
+4. Selection math
+
+Given fitnesses ( F_i ) for universes ( U_i ):
+
+Normalize fitness for selection:
+
+[ p_i = \frac{F_i}{\sum_j F_j} ]
+
+Elitism: keep top ( k ) universes unchanged.
+
+Parent selection: sample parents with probability ( p_i ).
+
+Offspring: for each new universe, pick a parent, copy its genome, mutate.
+
+In code sketch:
+
+def select_parents(population, num_offspring):
+    fitnesses = [indiv["fitness"] for indiv in population]
+    total = sum(fitnesses) + 1e-12
+    probs = [f / total for f in fitnesses]
+
+    parents = random.choices(population, weights=probs, k=num_offspring)
+    return parents
+

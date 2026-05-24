@@ -1,0 +1,11 @@
+pm = PopulationManager(
+    base_blueprint=my_blueprint,
+    population_size=32,
+    fitness_fn=fitness,
+    elite_fraction=0.25,
+)
+
+for _ in range(100):  # 100 generations
+    pm.run_generation(steps_per_individual=200)
+    best = pm.population[0]
+    print("Gen", pm.generation, "best fitness:", best["fitness"])

@@ -1,0 +1,8 @@
+def _clone_individual(self, indiv):
+        genome_copy = copy.deepcopy(indiv["genome"])
+        engine = build_engine_from_genome(self.base_blueprint, genome_copy)
+        return {
+            "genome": genome_copy,
+            "engine": engine,
+            "fitness": indiv["fitness"],
+        }

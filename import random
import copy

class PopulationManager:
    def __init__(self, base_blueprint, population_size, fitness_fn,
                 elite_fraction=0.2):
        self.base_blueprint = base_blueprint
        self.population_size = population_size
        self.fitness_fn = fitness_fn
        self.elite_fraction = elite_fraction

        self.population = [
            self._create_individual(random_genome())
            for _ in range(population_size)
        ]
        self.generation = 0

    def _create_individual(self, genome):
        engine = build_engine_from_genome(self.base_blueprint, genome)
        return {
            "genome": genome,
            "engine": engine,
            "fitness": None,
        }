@@ -1,0 +1,24 @@
+import random
+import copy
+
+class PopulationManager:
+    def __init__(self, base_blueprint, population_size, fitness_fn,
+                 elite_fraction=0.2):
+        self.base_blueprint = base_blueprint
+        self.population_size = population_size
+        self.fitness_fn = fitness_fn
+        self.elite_fraction = elite_fraction
+
+        self.population = [
+            self._create_individual(random_genome())
+            for _ in range(population_size)
+        ]
+        self.generation = 0
+
+    def _create_individual(self, genome):
+        engine = build_engine_from_genome(self.base_blueprint, genome)
+        return {
+            "genome": genome,
+            "engine": engine,
+            "fitness": None,
+        }

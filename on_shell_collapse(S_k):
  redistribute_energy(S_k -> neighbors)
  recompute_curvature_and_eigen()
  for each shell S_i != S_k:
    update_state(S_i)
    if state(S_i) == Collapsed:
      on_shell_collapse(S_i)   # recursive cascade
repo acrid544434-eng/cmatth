@@ -1,0 +1,7 @@
+on_shell_collapse(S_k):
+  redistribute_energy(S_k -> neighbors)
+  recompute_curvature_and_eigen()
+  for each shell S_i != S_k:
+    update_state(S_i)
+    if state(S_i) == Collapsed:
+      on_shell_collapse(S_i)   # recursive cascade

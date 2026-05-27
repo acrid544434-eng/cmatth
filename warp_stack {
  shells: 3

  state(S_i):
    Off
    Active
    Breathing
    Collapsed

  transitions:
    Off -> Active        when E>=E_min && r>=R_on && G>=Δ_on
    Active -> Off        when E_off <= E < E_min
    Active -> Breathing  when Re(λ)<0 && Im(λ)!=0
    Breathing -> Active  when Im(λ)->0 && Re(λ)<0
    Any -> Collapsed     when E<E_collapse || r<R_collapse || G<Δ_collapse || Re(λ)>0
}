@@ -1,0 +1,16 @@
+warp_stack {
+  shells: 3
+
+  state(S_i):
+    Off
+    Active
+    Breathing
+    Collapsed
+
+  transitions:
+    Off -> Active        when E>=E_min && r>=R_on && G>=Δ_on
+    Active -> Off        when E_off <= E < E_min
+    Active -> Breathing  when Re(λ)<0 && Im(λ)!=0
+    Breathing -> Active  when Im(λ)->0 && Re(λ)<0
+    Any -> Collapsed     when E<E_collapse || r<R_collapse || G<Δ_collapse || Re(λ)>0
+}

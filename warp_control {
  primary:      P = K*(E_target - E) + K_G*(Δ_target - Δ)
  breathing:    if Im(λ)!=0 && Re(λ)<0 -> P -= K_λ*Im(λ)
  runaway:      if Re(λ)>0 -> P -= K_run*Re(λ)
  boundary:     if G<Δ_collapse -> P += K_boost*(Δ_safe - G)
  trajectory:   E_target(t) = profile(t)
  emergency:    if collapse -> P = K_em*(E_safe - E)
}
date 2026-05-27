@@ -1,0 +1,8 @@
+warp_control {
+  primary:      P = K*(E_target - E) + K_G*(Δ_target - Δ)
+  breathing:    if Im(λ)!=0 && Re(λ)<0 -> P -= K_λ*Im(λ)
+  runaway:      if Re(λ)>0 -> P -= K_run*Re(λ)
+  boundary:     if G<Δ_collapse -> P += K_boost*(Δ_safe - G)
+  trajectory:   E_target(t) = profile(t)
+  emergency:    if collapse -> P = K_em*(E_safe - E)
+}

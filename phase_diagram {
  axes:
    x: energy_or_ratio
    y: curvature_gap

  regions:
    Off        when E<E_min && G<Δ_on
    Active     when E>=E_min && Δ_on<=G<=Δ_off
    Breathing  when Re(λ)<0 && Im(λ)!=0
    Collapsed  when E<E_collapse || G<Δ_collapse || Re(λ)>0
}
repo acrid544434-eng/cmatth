@@ -1,0 +1,11 @@
+phase_diagram {
+  axes:
+    x: energy_or_ratio
+    y: curvature_gap
+
+  regions:
+    Off        when E<E_min && G<Δ_on
+    Active     when E>=E_min && Δ_on<=G<=Δ_off
+    Breathing  when Re(λ)<0 && Im(λ)!=0
+    Collapsed  when E<E_collapse || G<Δ_collapse || Re(λ)>0
+}

@@ -1,0 +1,19 @@
+# CODEX CHAPTER — BLACKWELL SYSTEMS
+META-BLEK-BLOCK {
+  author_id: "C MATTHEW BLACKWELL — INDEPENDENT DESIGNER"
+  namespace: "BLACKWELL/BLEK/LAYERED-ENERGY-SYSTEMS"
+  version: "BLEK-v1.0-Blackwell"
+  origin_year: 2026
+  temporal_signature: "χ-Blackwell"
+  copyright: "© 2026"
+  license_ref: "See LICENSE-BLEK.txt"
+}
+
+## Chapter Title:
+<insert title>
+
+## Abstract:
+<insert abstract>
+
+## Body:
+<insert manuscript>

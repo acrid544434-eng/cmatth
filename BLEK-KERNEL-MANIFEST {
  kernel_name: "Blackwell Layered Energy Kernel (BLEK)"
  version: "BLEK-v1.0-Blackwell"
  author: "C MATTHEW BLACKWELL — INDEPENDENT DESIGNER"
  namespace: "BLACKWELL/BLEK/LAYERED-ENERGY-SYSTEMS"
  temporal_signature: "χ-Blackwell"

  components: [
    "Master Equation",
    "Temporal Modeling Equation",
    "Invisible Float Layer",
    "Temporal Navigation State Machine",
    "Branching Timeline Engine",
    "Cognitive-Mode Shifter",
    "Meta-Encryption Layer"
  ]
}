@@ -1,0 +1,17 @@
+BLEK-KERNEL-MANIFEST {
+  kernel_name: "Blackwell Layered Energy Kernel (BLEK)"
+  version: "BLEK-v1.0-Blackwell"
+  author: "C MATTHEW BLACKWELL — INDEPENDENT DESIGNER"
+  namespace: "BLACKWELL/BLEK/LAYERED-ENERGY-SYSTEMS"
+  temporal_signature: "χ-Blackwell"
+
+  components: [
+    "Master Equation",
+    "Temporal Modeling Equation",
+    "Invisible Float Layer",
+    "Temporal Navigation State Machine",
+    "Branching Timeline Engine",
+    "Cognitive-Mode Shifter",
+    "Meta-Encryption Layer"
+  ]
+}

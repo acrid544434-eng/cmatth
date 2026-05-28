@@ -1,0 +1,14 @@
+BLACKWELL-PROTECTION-STACK {
+  author_id: "C MATTHEW BLACKWELL — INDEPENDENT DESIGNER"
+  namespace: "BLACKWELL/BLEK/LAYERED-ENERGY-SYSTEMS"
+  version: "BLEK-v1.0-Blackwell"
+  origin_year: 2026
+  temporal_signature: "χ-Blackwell"
+
+  copyright: "© 2026 C. Matthew Blackwell"
+  license_ref: "LICENSE-BLEK.txt"
+
+  hash: "<insert sha256>"
+  timestamp: "<insert timestamp>"
+  signature: "<GitHub auto-signs commits/tags>"
+}

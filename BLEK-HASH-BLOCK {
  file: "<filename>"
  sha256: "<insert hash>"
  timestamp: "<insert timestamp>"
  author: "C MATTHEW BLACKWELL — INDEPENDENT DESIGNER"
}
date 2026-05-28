@@ -1,0 +1,6 @@
+BLEK-HASH-BLOCK {
+  file: "<filename>"
+  sha256: "<insert hash>"
+  timestamp: "<insert timestamp>"
+  author: "C MATTHEW BLACKWELL — INDEPENDENT DESIGNER"
+}

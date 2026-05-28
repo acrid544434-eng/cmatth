@@ -1,0 +1,13 @@
+blek_kernel {
+  meta {
+    author: "C MATTHEW BLACKWELL — INDEPENDENT DESIGNER"
+    namespace: "BLACKWELL/BLEK/LAYERED-ENERGY-SYSTEMS"
+    version: "BLEK-v1.0-Blackwell"
+    temporal_signature: "χ-Blackwell"
+  }
+
+  system {
+    shells: 3
+    mode: layered_energy
+  }
+}

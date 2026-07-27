@@ -1,0 +1,131 @@
+% SOVEREIGN SIMULATION ENGINES — FULL MONOGRAPH SKELETON
+% DESIGNED BY: C. Matthew Blackwell — Independent Designer
+
+\documentclass[11pt]{book}
+
+\usepackage{amsmath, amssymb, bm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{physics}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Sovereign Simulation Engines:\\
+A Unified Multi-Domain Architecture}
+\author{C.~Matthew Blackwell\\Independent Designer, Lafayette, Louisiana, USA}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{Preface}
+% Your narrative: origin, motivation, sovereign architecture philosophy.
+
+\tableofcontents
+
+\mainmatter
+
+% ============================================================
+% PART I — FOUNDATIONS
+% ============================================================
+\part{Foundational Framework}
+
+\chapter{Informational Cosmology and Sovereign Architecture}
+\section{Motivation and Historical Context}
+\section{Sovereign Invariants and Engine Classes}
+\section{Multi-Scale State-Space Philosophy}
+
+\chapter{Mathematical Preliminaries}
+\section{State Vectors and Manifolds}
+\section{Invariant Logic and Stability Theory}
+\section{Tensor Fields, Meshes, and PDE Solvers}
+
+\chapter{Lyapunov Stability and Global Convergence}
+\section{Lyapunov Functionals}
+\section{Convergence Criteria}
+\section{Cross-Domain Stability}
+
+% ============================================================
+% PART II — PHYSICAL ENGINES
+% ============================================================
+\part{Physical Sovereign Engines}
+
+\chapter{BRE: Blood Regeneration Engine}
+\section{State-Space Definition}
+\section{Governing Equations}
+\section{Invariant Stack for Hemodynamics}
+\section{Stress Testing and Results}
+
+\chapter{APEX-SSE: Astro-Physical Sovereign Simulation Engine}
+\section{Metric and Tensor Formulation}
+\section{Gaia/JWST Data Integration}
+\section{Cosmological Invariants}
+\section{Adversarial Cosmological Stress Tests}
+
+\chapter{TASSE-21K: Tetra-Astro Sovereign Simulation Engine}
+\section{Master State Vector \(\Psi(x,t)\)}
+\section{Unified Invariant Stack \(\mathcal{R}_{\text{unified}}\)}
+\section{Layer M: Molecular Dynamics}
+\section{Layer S: Tensor Solver}
+\section{Layer C: Sovereign Control}
+\section{50{,}000-Cycle Stress Testing Report}
+
+% ============================================================
+% PART III — NEURO-SOVEREIGN ENGINES
+% ============================================================
+\part{Neuro-Sovereign Architectures}
+
+\chapter{Project Mnemosyne: Neuro-Sovereign Engine}
+\section{Molecular \& Proteostatic Mesh}
+\section{Cellular \& Metabolic Substrate}
+\section{Network \& Organoid Orchestration}
+\section{Eradication Invariants for Alzheimer’s and Dementia}
+
+\chapter{Neuro-Sovereign Stability and Eradication Proofs}
+\section{Proteostatic Equilibrium}
+\section{Synaptic Integrity Invariant}
+\section{Metabolic Stability and Causality}
+\section{Cross-Domain Neuro-Sovereign Coupling}
+
+% ============================================================
+% PART IV — VALIDATION & CODEX
+% ============================================================
+\part{Validation, Stress Testing, and Codex}
+
+\chapter{Global Stress Testing Methodology}
+\section{Adversarial Vector Design}
+\section{Telemetry and Invariant Monitoring}
+\section{Lyapunov Functional Evolution}
+\section{Summary of Results Across Engines}
+
+\chapter{Academic Validation Packet}
+\section{Objectives and Review Questions}
+\section{Core Mathematical Structures}
+\section{Data Provenance and Reproducibility}
+\section{Requested Deliverables from Departments}
+
+\chapter{Sovereign Codex: Volume I}
+\section{Canonical Definitions}
+\section{Engine Registry}
+\section{Invariant Taxonomy}
+\section{Future Extensions and Open Problems}
+
+% ============================================================
+% BACK MATTER
+% ============================================================
+\backmatter
+
+\chapter*{Appendices}
+\section*{Appendix A: Full LaTeX White Sheets}
+\section*{Appendix B: Stress Test Logs}
+\section*{Appendix C: Data Sources}
+
+\chapter*{Acknowledgments}
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{\textbf{Codex Verification Capsule}}
+\author{C.~Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Capsule ID}
+CODEx-XXX-000 \\
+Architect: C.~Matthew Blackwell \\
+Verification Tier: IV
+
+\section{Cryptographic Integrity}
+State invariants, LDPC constraints, BER metrics.
+
+\section{Relativistic Navigation}
+Lorentz invariance, EKF stability, gravitational stress tests.
+
+\section{Cosmological Stability}
+Wheeler--DeWitt constraint, multi-grid solvers.
+
+\section{Morphological Co-Evolution}
+Topological stability, metabolic equilibria.
+
+\section{Verdict}
+Architecture verified.
+
+\end{document}

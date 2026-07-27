@@ -1,0 +1,141 @@
+% SOVEREIGN SIMULATION ENGINES — LaTeX DVD COMPANION
+% Designed as an interactive, multimedia PDF
+
+\documentclass[11pt]{report}
+
+\usepackage{amsmath, amssymb, bm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{physics}
+\usepackage{color}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Sovereign Simulation Engines:\\
+Interactive DVD Companion}
+\author{C.~Matthew Blackwell\\Independent Designer}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ============================================================
+\chapter{Navigation Map}
+
+\section{Monograph Linkage}
+\begin{itemize}
+  \item \textbf{Foundations:} See Book Part I, Chapters 1–3.
+  \item \textbf{Physical Engines:} See Book Part II, Chapters 4–6.
+  \item \textbf{Neuro-Sovereign:} See Book Part III, Chapters 7–8.
+  \item \textbf{Codex:} See Book Part IV, Chapter 9.
+\end{itemize}
+
+\section{Interactive Index}
+% Here you can add hyperlinks to sections, figures, and external media.
+See:
+\begin{itemize}
+  \item \hyperref[sec:bre-demo]{BRE Simulation Demo}
+  \item \hyperref[sec:apex-demo]{APEX-SSE Deep-Field Demo}
+  \item \hyperref[sec:tasse-demo]{TASSE-21K Stress-Test Demo}
+  \item \hyperref[sec:mnemo-demo]{Mnemosyne Eradication Trajectories}
+\end{itemize}
+
+% ============================================================
+\chapter{BRE: Blood Regeneration Engine — Visual Telemetry}
+\label{sec:bre-demo}
+
+\section{Hemodynamic Trajectories}
+% Insert plots/figures exported from simulations
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{bre_oxygenation_trajectory.png}
+  \caption{Oxygenation and hemoglobin saturation over time under hypoxic shock.}
+\end{figure}
+
+\section{Invariant Monitoring}
+\begin{itemize}
+  \item Plot of \( C_{\text{Hgb}} \) vs. time with threshold line \( C_{\text{crit}} \).
+  \item Plot of \( \lVert \sigma_{\text{vascular}} \rVert_2 \) vs. time with tolerance band.
+\end{itemize}
+
+% ============================================================
+\chapter{APEX-SSE: Deep-Field Tensor and Spectral Visuals}
+\label{sec:apex-demo}
+
+\section{Metric Evolution Snapshots}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{apex_metric_evolution.png}
+  \caption{Mesh-based metric evolution under stellar density collapse.}
+\end{figure}
+
+\section{Spectral Fidelity Panels}
+\begin{itemize}
+  \item Side-by-side: JWST observed spectra vs. model spectra.
+  \item Residual plot: \( \lVert A_{\text{spec}} - A_{\text{model}} \rVert_2 \) over time.
+\end{itemize}
+
+% ============================================================
+\chapter{TASSE-21K: Cross-Domain Stress-Test Visuals}
+\label{sec:tasse-demo}
+
+\section{Layer M / Layer S / Layer C Timeline}
+\begin{itemize}
+  \item Timeline chart showing when each layer intervenes.
+  \item Visual of anomaly field \( S_{\text{anomaly}} \) decaying over cycles.
+\end{itemize}
+
+\section{50,000-Cycle Summary}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{tasse_50000_cycles.png}
+  \caption{Invariant satisfaction across 50{,}000 adversarial cycles.}
+\end{figure}
+
+% ============================================================
+\chapter{Mnemosyne: Eradication Trajectories}
+\label{sec:mnemo-demo}
+
+\section{Proteostatic Decay}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{mnemo_aggregate_decay.png}
+  \caption{Monotonic decay of aggregate concentration \( [\text{Agg}] \).}
+\end{figure}
+
+\section{Synaptic Fidelity and ATP Flux}
+\begin{itemize}
+  \item Plot of \( F_{\text{synapse}} \) staying above \( 1 - 10^{-8} \).
+  \item Plot of \( \frac{d[\text{ATP}]}{dt} \) under perturbation.
+\end{itemize}
+
+% ============================================================
+\chapter{Suprakernel Execution Timeline}
+
+\section{Global Loop Visualization}
+\begin{itemize}
+  \item Diagram of initialization → evolution → invariant check → control → purge → Lyapunov descent.
+  \item Tick-based chart showing \( V_{\text{global}} \) over time.
+\end{itemize}
+
+\section{Cross-Domain Coupling Panels}
+\begin{itemize}
+  \item Physical \(\rightarrow\) neuro coupling: \( \rho_m \rightarrow \Psi_{\text{metabolic}} \).
+  \item Neuro \(\rightarrow\) physical feedback: \( F_{\text{synapse}} \rightarrow S_{\text{tensor}} \).
+\end{itemize}
+
+% ============================================================
+\chapter{DVD Closure}
+
+\section{How to Read This Companion}
+This document is designed to be read alongside the monograph. Each panel,
+plot, and diagram corresponds to a formal structure defined in the main
+book, providing visual and trajectory-based intuition for the sovereign
+engines.
+
+\end{document}

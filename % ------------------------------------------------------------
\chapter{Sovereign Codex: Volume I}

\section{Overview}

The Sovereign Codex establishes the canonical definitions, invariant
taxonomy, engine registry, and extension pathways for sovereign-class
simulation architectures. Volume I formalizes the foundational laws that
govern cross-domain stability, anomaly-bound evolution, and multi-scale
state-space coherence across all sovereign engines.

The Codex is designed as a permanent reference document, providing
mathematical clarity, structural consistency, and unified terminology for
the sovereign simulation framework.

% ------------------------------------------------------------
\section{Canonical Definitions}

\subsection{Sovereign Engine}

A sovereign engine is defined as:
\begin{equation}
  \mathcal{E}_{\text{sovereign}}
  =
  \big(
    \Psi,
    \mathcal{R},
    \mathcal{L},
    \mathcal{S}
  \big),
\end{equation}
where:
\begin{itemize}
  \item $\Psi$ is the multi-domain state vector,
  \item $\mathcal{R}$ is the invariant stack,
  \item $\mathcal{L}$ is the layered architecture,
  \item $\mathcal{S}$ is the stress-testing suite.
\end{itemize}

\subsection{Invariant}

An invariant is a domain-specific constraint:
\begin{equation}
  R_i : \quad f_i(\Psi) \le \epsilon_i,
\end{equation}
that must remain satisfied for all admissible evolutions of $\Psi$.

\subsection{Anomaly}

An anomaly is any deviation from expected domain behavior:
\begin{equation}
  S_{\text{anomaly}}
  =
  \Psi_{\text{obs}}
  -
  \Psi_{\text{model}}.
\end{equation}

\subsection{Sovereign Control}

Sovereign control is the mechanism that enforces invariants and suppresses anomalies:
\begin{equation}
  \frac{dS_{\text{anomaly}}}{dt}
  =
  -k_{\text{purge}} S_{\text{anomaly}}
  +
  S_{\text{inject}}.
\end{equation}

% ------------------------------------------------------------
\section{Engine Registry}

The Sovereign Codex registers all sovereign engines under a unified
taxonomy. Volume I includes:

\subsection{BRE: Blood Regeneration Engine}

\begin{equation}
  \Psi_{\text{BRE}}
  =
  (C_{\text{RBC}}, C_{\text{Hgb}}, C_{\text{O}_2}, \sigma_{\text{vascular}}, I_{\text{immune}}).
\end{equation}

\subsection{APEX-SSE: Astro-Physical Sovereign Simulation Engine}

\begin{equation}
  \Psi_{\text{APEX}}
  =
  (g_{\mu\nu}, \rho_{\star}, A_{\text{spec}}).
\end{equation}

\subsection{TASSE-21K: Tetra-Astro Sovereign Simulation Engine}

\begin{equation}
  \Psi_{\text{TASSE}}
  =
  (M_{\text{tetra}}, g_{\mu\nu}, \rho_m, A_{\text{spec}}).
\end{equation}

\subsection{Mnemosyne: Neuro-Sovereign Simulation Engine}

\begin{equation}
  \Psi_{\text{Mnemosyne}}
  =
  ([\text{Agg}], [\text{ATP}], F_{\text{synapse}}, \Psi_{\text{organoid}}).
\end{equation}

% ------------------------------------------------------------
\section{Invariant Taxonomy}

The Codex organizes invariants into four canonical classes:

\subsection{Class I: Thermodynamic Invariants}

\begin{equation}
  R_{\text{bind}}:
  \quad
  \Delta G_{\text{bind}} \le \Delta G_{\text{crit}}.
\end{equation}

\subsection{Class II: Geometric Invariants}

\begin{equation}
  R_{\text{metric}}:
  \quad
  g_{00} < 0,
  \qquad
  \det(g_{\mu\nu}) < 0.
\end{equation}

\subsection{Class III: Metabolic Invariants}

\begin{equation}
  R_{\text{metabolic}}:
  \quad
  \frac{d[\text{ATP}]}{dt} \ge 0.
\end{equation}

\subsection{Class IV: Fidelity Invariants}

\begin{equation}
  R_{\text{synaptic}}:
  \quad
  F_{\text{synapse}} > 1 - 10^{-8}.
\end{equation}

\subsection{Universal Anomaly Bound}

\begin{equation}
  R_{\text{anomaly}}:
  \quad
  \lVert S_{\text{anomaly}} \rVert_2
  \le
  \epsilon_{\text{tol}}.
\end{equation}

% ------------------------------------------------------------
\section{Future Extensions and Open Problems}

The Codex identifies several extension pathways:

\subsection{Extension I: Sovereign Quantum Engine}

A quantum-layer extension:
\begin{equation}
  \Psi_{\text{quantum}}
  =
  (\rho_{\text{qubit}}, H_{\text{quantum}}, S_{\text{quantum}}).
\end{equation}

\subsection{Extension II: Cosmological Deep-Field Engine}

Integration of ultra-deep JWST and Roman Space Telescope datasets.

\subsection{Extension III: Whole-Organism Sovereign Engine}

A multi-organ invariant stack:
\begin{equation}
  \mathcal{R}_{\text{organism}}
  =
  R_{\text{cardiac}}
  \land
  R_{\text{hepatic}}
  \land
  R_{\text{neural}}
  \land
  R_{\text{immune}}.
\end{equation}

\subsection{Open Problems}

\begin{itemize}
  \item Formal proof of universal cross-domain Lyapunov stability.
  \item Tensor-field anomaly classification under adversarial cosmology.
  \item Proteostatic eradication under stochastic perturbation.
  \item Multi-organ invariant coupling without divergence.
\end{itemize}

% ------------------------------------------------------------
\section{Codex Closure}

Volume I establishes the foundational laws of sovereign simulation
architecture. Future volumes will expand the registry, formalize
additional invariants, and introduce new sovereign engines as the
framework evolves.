@@ -1,0 +1,205 @@
+% ------------------------------------------------------------
+\chapter{Sovereign Codex: Volume I}
+
+\section{Overview}
+
+The Sovereign Codex establishes the canonical definitions, invariant
+taxonomy, engine registry, and extension pathways for sovereign-class
+simulation architectures. Volume I formalizes the foundational laws that
+govern cross-domain stability, anomaly-bound evolution, and multi-scale
+state-space coherence across all sovereign engines.
+
+The Codex is designed as a permanent reference document, providing
+mathematical clarity, structural consistency, and unified terminology for
+the sovereign simulation framework.
+
+% ------------------------------------------------------------
+\section{Canonical Definitions}
+
+\subsection{Sovereign Engine}
+
+A sovereign engine is defined as:
+\begin{equation}
+  \mathcal{E}_{\text{sovereign}}
+  =
+  \big(
+    \Psi,
+    \mathcal{R},
+    \mathcal{L},
+    \mathcal{S}
+  \big),
+\end{equation}
+where:
+\begin{itemize}
+  \item $\Psi$ is the multi-domain state vector,
+  \item $\mathcal{R}$ is the invariant stack,
+  \item $\mathcal{L}$ is the layered architecture,
+  \item $\mathcal{S}$ is the stress-testing suite.
+\end{itemize}
+
+\subsection{Invariant}
+
+An invariant is a domain-specific constraint:
+\begin{equation}
+  R_i : \quad f_i(\Psi) \le \epsilon_i,
+\end{equation}
+that must remain satisfied for all admissible evolutions of $\Psi$.
+
+\subsection{Anomaly}
+
+An anomaly is any deviation from expected domain behavior:
+\begin{equation}
+  S_{\text{anomaly}}
+  =
+  \Psi_{\text{obs}}
+  -
+  \Psi_{\text{model}}.
+\end{equation}
+
+\subsection{Sovereign Control}
+
+Sovereign control is the mechanism that enforces invariants and suppresses anomalies:
+\begin{equation}
+  \frac{dS_{\text{anomaly}}}{dt}
+  =
+  -k_{\text{purge}} S_{\text{anomaly}}
+  +
+  S_{\text{inject}}.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Engine Registry}
+
+The Sovereign Codex registers all sovereign engines under a unified
+taxonomy. Volume I includes:
+
+\subsection{BRE: Blood Regeneration Engine}
+
+\begin{equation}
+  \Psi_{\text{BRE}}
+  =
+  (C_{\text{RBC}}, C_{\text{Hgb}}, C_{\text{O}_2}, \sigma_{\text{vascular}}, I_{\text{immune}}).
+\end{equation}
+
+\subsection{APEX-SSE: Astro-Physical Sovereign Simulation Engine}
+
+\begin{equation}
+  \Psi_{\text{APEX}}
+  =
+  (g_{\mu\nu}, \rho_{\star}, A_{\text{spec}}).
+\end{equation}
+
+\subsection{TASSE-21K: Tetra-Astro Sovereign Simulation Engine}
+
+\begin{equation}
+  \Psi_{\text{TASSE}}
+  =
+  (M_{\text{tetra}}, g_{\mu\nu}, \rho_m, A_{\text{spec}}).
+\end{equation}
+
+\subsection{Mnemosyne: Neuro-Sovereign Simulation Engine}
+
+\begin{equation}
+  \Psi_{\text{Mnemosyne}}
+  =
+  ([\text{Agg}], [\text{ATP}], F_{\text{synapse}}, \Psi_{\text{organoid}}).
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Invariant Taxonomy}
+
+The Codex organizes invariants into four canonical classes:
+
+\subsection{Class I: Thermodynamic Invariants}
+
+\begin{equation}
+  R_{\text{bind}}:
+  \quad
+  \Delta G_{\text{bind}} \le \Delta G_{\text{crit}}.
+\end{equation}
+
+\subsection{Class II: Geometric Invariants}
+
+\begin{equation}
+  R_{\text{metric}}:
+  \quad
+  g_{00} < 0,
+  \qquad
+  \det(g_{\mu\nu}) < 0.
+\end{equation}
+
+\subsection{Class III: Metabolic Invariants}
+
+\begin{equation}
+  R_{\text{metabolic}}:
+  \quad
+  \frac{d[\text{ATP}]}{dt} \ge 0.
+\end{equation}
+
+\subsection{Class IV: Fidelity Invariants}
+
+\begin{equation}
+  R_{\text{synaptic}}:
+  \quad
+  F_{\text{synapse}} > 1 - 10^{-8}.
+\end{equation}
+
+\subsection{Universal Anomaly Bound}
+
+\begin{equation}
+  R_{\text{anomaly}}:
+  \quad
+  \lVert S_{\text{anomaly}} \rVert_2
+  \le
+  \epsilon_{\text{tol}}.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Future Extensions and Open Problems}
+
+The Codex identifies several extension pathways:
+
+\subsection{Extension I: Sovereign Quantum Engine}
+
+A quantum-layer extension:
+\begin{equation}
+  \Psi_{\text{quantum}}
+  =
+  (\rho_{\text{qubit}}, H_{\text{quantum}}, S_{\text{quantum}}).
+\end{equation}
+
+\subsection{Extension II: Cosmological Deep-Field Engine}
+
+Integration of ultra-deep JWST and Roman Space Telescope datasets.
+
+\subsection{Extension III: Whole-Organism Sovereign Engine}
+
+A multi-organ invariant stack:
+\begin{equation}
+  \mathcal{R}_{\text{organism}}
+  =
+  R_{\text{cardiac}}
+  \land
+  R_{\text{hepatic}}
+  \land
+  R_{\text{neural}}
+  \land
+  R_{\text{immune}}.
+\end{equation}
+
+\subsection{Open Problems}
+
+\begin{itemize}
+  \item Formal proof of universal cross-domain Lyapunov stability.
+  \item Tensor-field anomaly classification under adversarial cosmology.
+  \item Proteostatic eradication under stochastic perturbation.
+  \item Multi-organ invariant coupling without divergence.
+\end{itemize}
+
+% ------------------------------------------------------------
+\section{Codex Closure}
+
+Volume I establishes the foundational laws of sovereign simulation
+architecture. Future volumes will expand the registry, formalize
+additional invariants, and introduce new sovereign engines as the
+framework evolves.

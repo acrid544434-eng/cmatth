@@ -1,0 +1,7 @@
+ℛ_global
+   -------------------------------------------------
+   | R_bind | R_metric | R_cons | R_metabolic | R_synaptic |
+   -------------------------------------------------
+                     |
+                     v
+             Invariant Manifold

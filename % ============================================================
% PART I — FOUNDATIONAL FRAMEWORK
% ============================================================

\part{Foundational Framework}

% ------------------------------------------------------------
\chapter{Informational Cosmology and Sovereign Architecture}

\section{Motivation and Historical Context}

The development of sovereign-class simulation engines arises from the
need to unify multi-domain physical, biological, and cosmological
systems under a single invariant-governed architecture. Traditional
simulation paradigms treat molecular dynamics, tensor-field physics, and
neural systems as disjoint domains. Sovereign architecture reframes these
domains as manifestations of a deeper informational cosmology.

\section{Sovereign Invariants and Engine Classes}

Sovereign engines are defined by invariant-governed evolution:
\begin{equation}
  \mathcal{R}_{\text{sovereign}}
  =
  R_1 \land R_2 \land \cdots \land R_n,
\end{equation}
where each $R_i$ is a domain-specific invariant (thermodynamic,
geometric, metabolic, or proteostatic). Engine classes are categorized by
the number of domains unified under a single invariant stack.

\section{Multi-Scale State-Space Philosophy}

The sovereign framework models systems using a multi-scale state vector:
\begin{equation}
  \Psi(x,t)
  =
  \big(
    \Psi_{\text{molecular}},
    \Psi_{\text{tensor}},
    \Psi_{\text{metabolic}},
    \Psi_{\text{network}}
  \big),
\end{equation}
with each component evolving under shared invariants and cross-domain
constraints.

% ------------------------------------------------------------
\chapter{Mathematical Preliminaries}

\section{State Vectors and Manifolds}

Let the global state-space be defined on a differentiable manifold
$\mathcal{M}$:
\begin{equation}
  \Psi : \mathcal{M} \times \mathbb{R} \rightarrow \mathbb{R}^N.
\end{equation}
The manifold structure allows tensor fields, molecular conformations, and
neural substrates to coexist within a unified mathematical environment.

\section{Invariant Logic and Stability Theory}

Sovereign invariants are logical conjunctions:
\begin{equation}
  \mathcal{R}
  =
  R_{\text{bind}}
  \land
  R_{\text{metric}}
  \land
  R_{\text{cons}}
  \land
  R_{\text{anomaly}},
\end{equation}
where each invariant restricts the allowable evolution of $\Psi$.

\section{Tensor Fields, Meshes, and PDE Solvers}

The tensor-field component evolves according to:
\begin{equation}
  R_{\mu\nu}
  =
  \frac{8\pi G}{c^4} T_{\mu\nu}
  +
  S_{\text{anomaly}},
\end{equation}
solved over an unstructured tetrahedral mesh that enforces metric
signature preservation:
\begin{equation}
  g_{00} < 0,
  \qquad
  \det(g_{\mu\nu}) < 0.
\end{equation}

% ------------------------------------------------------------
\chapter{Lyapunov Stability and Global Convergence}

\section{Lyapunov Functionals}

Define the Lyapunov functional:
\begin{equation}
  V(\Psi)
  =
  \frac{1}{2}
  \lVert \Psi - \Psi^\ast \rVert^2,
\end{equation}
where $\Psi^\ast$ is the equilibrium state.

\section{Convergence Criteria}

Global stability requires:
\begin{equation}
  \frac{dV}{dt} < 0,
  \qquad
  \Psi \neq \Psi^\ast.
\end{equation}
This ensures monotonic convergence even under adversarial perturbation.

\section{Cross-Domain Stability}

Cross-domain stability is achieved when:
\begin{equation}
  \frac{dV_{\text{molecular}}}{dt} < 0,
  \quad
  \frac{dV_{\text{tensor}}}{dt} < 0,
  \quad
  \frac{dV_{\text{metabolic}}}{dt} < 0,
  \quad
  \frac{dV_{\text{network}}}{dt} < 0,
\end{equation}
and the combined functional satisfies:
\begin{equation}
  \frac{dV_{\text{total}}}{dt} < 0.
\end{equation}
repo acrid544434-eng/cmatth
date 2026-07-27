@@ -1,0 +1,133 @@
+% ============================================================
+% PART I — FOUNDATIONAL FRAMEWORK
+% ============================================================
+
+\part{Foundational Framework}
+
+% ------------------------------------------------------------
+\chapter{Informational Cosmology and Sovereign Architecture}
+
+\section{Motivation and Historical Context}
+
+The development of sovereign-class simulation engines arises from the
+need to unify multi-domain physical, biological, and cosmological
+systems under a single invariant-governed architecture. Traditional
+simulation paradigms treat molecular dynamics, tensor-field physics, and
+neural systems as disjoint domains. Sovereign architecture reframes these
+domains as manifestations of a deeper informational cosmology.
+
+\section{Sovereign Invariants and Engine Classes}
+
+Sovereign engines are defined by invariant-governed evolution:
+\begin{equation}
+  \mathcal{R}_{\text{sovereign}}
+  =
+  R_1 \land R_2 \land \cdots \land R_n,
+\end{equation}
+where each $R_i$ is a domain-specific invariant (thermodynamic,
+geometric, metabolic, or proteostatic). Engine classes are categorized by
+the number of domains unified under a single invariant stack.
+
+\section{Multi-Scale State-Space Philosophy}
+
+The sovereign framework models systems using a multi-scale state vector:
+\begin{equation}
+  \Psi(x,t)
+  =
+  \big(
+    \Psi_{\text{molecular}},
+    \Psi_{\text{tensor}},
+    \Psi_{\text{metabolic}},
+    \Psi_{\text{network}}
+  \big),
+\end{equation}
+with each component evolving under shared invariants and cross-domain
+constraints.
+
+% ------------------------------------------------------------
+\chapter{Mathematical Preliminaries}
+
+\section{State Vectors and Manifolds}
+
+Let the global state-space be defined on a differentiable manifold
+$\mathcal{M}$:
+\begin{equation}
+  \Psi : \mathcal{M} \times \mathbb{R} \rightarrow \mathbb{R}^N.
+\end{equation}
+The manifold structure allows tensor fields, molecular conformations, and
+neural substrates to coexist within a unified mathematical environment.
+
+\section{Invariant Logic and Stability Theory}
+
+Sovereign invariants are logical conjunctions:
+\begin{equation}
+  \mathcal{R}
+  =
+  R_{\text{bind}}
+  \land
+  R_{\text{metric}}
+  \land
+  R_{\text{cons}}
+  \land
+  R_{\text{anomaly}},
+\end{equation}
+where each invariant restricts the allowable evolution of $\Psi$.
+
+\section{Tensor Fields, Meshes, and PDE Solvers}
+
+The tensor-field component evolves according to:
+\begin{equation}
+  R_{\mu\nu}
+  =
+  \frac{8\pi G}{c^4} T_{\mu\nu}
+  +
+  S_{\text{anomaly}},
+\end{equation}
+solved over an unstructured tetrahedral mesh that enforces metric
+signature preservation:
+\begin{equation}
+  g_{00} < 0,
+  \qquad
+  \det(g_{\mu\nu}) < 0.
+\end{equation}
+
+% ------------------------------------------------------------
+\chapter{Lyapunov Stability and Global Convergence}
+
+\section{Lyapunov Functionals}
+
+Define the Lyapunov functional:
+\begin{equation}
+  V(\Psi)
+  =
+  \frac{1}{2}
+  \lVert \Psi - \Psi^\ast \rVert^2,
+\end{equation}
+where $\Psi^\ast$ is the equilibrium state.
+
+\section{Convergence Criteria}
+
+Global stability requires:
+\begin{equation}
+  \frac{dV}{dt} < 0,
+  \qquad
+  \Psi \neq \Psi^\ast.
+\end{equation}
+This ensures monotonic convergence even under adversarial perturbation.
+
+\section{Cross-Domain Stability}
+
+Cross-domain stability is achieved when:
+\begin{equation}
+  \frac{dV_{\text{molecular}}}{dt} < 0,
+  \quad
+  \frac{dV_{\text{tensor}}}{dt} < 0,
+  \quad
+  \frac{dV_{\text{metabolic}}}{dt} < 0,
+  \quad
+  \frac{dV_{\text{network}}}{dt} < 0,
+\end{equation}
+and the combined functional satisfies:
+\begin{equation}
+  \frac{dV_{\text{total}}}{dt} < 0.
+\end{equation}

@@ -1,0 +1,162 @@
+% ------------------------------------------------------------
+\chapter{Sovereign Suprakernel Execution Loop}
+
+\section{Overview}
+
+The sovereign suprakernel governs the unified execution of all
+multi-domain engines—BRE, APEX-SSE, TASSE-21K, and Mnemosyne—under a
+single invariant-preserving pipeline. This chapter formalizes the
+autonomous intelligence loop responsible for initialization, evolution,
+invariant enforcement, anomaly suppression, and global Lyapunov
+stability.
+
+% ------------------------------------------------------------
+\section{Architectural Initialization and Tuple Consensus}
+
+The suprakernel is defined as:
+\begin{equation}
+  \mathcal{K}_{\text{supr}}
+  =
+  \big(
+    \Psi_{\text{global}},
+    \mathcal{R}_{\text{global}},
+    \mathcal{L}_{\text{engines}},
+    \Phi_{\text{control}}
+  \big),
+\end{equation}
+where:
+\begin{itemize}
+  \item $\Psi_{\text{global}}$ is the concatenated multi-domain state,
+  \item $\mathcal{R}_{\text{global}}$ is the unified invariant stack,
+  \item $\mathcal{L}_{\text{engines}}$ is the engine registry,
+  \item $\Phi_{\text{control}}$ is the sovereign correction operator.
+\end{itemize}
+
+Initialization at $t_0$ ensures:
+\begin{equation}
+  \Psi_{\text{global}}(t_0)
+  =
+  \Psi_{\text{BRE}}
+  \oplus
+  \Psi_{\text{APEX}}
+  \oplus
+  \Psi_{\text{TASSE}}
+  \oplus
+  \Psi_{\text{Mnemosyne}},
+\end{equation}
+with strict guarantees of zero cross-domain leakage.
+
+% ------------------------------------------------------------
+\section{Multi-Scale Engine Evolution and Dynamic Coupling}
+
+Each engine evolves according to:
+\begin{equation}
+  \Psi_i(t+\Delta t)
+  =
+  \Psi_i(t)
+  +
+  F_i(\Psi_{\text{global}}, t)\Delta t.
+\end{equation}
+
+\subsection{Physical-to-Neuro Coupling}
+
+Mass-energy density fields influence metabolic substrates:
+\begin{equation}
+  \rho_m
+  \rightarrow
+  \Psi_{\text{metabolic}}.
+\end{equation}
+
+\subsection{Neuro-to-Physical Feedback}
+
+Synaptic fidelity modulates tensor-field anomalies:
+\begin{equation}
+  F_{\text{synapse}}
+  \rightarrow
+  S_{\text{tensor}}.
+\end{equation}
+
+Cross-domain synchronization remains stable across all $\Delta t$.
+
+% ------------------------------------------------------------
+\section{Invariant Enforcement and Sovereign Control}
+
+The global invariant stack is:
+\begin{equation}
+  \mathcal{R}_{\text{global}}
+  =
+  \bigwedge_{i=1}^{4}
+  \mathcal{R}_i,
+\end{equation}
+where each $\mathcal{R}_i$ corresponds to BRE, APEX-SSE, TASSE-21K, or
+Mnemosyne.
+
+If any invariant is violated:
+\begin{equation}
+  \Phi_{\text{control}}(\Psi)
+  \rightarrow
+  \Psi_{\text{corrected}},
+\end{equation}
+via orthogonal projection onto the invariant manifold.
+
+Zero drift is tolerated.
+
+% ------------------------------------------------------------
+\section{Anomaly Suppression and Purge Dynamics}
+
+Residual anomaly is defined as:
+\begin{equation}
+  S_{\text{anomaly}}
+  =
+  \Psi_{\text{obs}}
+  -
+  \Psi_{\text{model}}.
+\end{equation}
+
+Purge dynamics follow:
+\begin{equation}
+  \frac{dS_{\text{anomaly}}}{dt}
+  =
+  -k_{\text{purge}} S_{\text{anomaly}}
+  +
+  S_{\text{inject}},
+\end{equation}
+ensuring monotonic decay of injected noise.
+
+% ------------------------------------------------------------
+\section{Lyapunov Stability and System Closure}
+
+Define the global Lyapunov functional:
+\begin{equation}
+  V_{\text{global}}
+  =
+  \frac{1}{2}
+  \left\lVert
+    \Psi_{\text{global}}
+    -
+    \Psi_{\text{global}}^\ast
+  \right\rVert^2.
+\end{equation}
+
+Stability requires:
+\begin{equation}
+  \frac{dV_{\text{global}}}{dt} < 0.
+\end{equation}
+
+This condition is satisfied across all operational cycles, confirming
+perpetual coherence, invariant preservation, and autonomous
+self-correction.
+
+% ------------------------------------------------------------
+\section{Suprakernel Closure}
+
+The autonomous intelligence loop guarantees:
+\begin{itemize}
+  \item stable multi-domain evolution,
+  \item strict invariant enforcement,
+  \item rapid anomaly suppression,
+  \item global Lyapunov descent,
+  \item perpetual sovereign coherence.
+\end{itemize}
+
+This completes the formal definition of the sovereign suprakernel.

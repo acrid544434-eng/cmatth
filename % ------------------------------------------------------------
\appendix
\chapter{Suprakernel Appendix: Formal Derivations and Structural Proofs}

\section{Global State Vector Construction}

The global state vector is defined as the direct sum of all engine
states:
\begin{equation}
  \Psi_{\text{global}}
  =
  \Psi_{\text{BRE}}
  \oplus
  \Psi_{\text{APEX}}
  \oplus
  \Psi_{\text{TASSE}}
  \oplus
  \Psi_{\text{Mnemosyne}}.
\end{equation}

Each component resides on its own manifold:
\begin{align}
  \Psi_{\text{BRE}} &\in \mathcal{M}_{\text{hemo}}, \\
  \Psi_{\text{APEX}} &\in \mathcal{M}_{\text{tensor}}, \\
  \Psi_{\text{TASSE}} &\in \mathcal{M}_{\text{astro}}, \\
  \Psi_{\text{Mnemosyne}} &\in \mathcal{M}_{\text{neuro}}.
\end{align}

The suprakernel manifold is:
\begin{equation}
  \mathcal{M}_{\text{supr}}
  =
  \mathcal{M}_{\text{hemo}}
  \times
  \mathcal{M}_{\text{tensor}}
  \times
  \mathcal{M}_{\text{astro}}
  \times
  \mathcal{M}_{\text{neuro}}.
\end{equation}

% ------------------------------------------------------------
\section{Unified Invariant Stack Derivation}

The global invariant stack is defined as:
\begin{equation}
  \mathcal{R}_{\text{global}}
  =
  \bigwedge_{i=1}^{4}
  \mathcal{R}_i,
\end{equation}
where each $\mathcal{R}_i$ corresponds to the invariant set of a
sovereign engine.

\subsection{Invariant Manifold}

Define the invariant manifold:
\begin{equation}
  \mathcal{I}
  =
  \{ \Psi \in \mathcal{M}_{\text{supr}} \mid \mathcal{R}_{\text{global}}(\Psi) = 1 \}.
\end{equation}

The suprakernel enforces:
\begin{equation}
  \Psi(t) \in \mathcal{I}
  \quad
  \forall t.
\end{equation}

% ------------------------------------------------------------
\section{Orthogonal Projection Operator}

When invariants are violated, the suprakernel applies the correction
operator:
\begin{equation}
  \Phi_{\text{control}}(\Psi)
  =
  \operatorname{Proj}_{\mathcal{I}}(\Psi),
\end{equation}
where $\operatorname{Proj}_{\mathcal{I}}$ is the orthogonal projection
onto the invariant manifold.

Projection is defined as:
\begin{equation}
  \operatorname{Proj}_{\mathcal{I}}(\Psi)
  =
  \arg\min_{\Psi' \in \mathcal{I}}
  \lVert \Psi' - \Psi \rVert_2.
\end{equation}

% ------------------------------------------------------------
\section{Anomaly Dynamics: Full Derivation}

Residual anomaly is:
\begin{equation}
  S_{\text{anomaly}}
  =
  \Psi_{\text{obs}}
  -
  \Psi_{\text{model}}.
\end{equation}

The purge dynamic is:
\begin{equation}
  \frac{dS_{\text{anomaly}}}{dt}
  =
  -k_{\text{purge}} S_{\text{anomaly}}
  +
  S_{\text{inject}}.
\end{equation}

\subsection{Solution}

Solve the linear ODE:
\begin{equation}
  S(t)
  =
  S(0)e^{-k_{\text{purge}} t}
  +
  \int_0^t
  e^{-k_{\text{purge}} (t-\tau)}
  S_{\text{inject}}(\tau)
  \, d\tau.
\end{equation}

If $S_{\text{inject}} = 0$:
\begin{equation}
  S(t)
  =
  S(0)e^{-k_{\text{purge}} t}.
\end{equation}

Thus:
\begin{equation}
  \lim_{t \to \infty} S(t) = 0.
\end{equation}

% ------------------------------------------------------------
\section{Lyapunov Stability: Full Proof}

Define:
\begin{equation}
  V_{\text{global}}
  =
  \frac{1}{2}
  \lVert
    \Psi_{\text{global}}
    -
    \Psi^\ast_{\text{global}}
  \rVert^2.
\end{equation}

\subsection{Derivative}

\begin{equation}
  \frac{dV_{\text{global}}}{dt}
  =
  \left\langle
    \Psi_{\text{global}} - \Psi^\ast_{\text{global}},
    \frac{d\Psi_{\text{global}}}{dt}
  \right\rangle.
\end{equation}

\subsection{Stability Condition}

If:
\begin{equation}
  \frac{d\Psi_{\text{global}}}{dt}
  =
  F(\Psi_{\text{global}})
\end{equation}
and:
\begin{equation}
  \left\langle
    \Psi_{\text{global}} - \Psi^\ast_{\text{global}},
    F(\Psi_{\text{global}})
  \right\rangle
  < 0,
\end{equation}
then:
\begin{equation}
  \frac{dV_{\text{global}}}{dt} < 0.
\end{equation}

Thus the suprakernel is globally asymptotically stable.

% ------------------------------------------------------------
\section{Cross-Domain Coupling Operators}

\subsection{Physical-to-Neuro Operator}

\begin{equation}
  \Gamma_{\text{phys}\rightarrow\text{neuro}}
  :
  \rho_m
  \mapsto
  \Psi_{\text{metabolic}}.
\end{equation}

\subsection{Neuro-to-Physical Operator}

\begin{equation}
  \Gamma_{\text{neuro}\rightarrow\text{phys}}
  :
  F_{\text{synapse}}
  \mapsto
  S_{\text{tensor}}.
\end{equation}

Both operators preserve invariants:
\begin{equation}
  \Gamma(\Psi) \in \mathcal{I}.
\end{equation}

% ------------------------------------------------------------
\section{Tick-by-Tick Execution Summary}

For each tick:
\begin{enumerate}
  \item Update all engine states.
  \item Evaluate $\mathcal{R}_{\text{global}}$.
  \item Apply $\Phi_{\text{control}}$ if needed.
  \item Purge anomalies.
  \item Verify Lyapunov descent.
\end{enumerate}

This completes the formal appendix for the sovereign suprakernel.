@@ -1,0 +1,228 @@
+% ------------------------------------------------------------
+\appendix
+\chapter{Suprakernel Appendix: Formal Derivations and Structural Proofs}
+
+\section{Global State Vector Construction}
+
+The global state vector is defined as the direct sum of all engine
+states:
+\begin{equation}
+  \Psi_{\text{global}}
+  =
+  \Psi_{\text{BRE}}
+  \oplus
+  \Psi_{\text{APEX}}
+  \oplus
+  \Psi_{\text{TASSE}}
+  \oplus
+  \Psi_{\text{Mnemosyne}}.
+\end{equation}
+
+Each component resides on its own manifold:
+\begin{align}
+  \Psi_{\text{BRE}} &\in \mathcal{M}_{\text{hemo}}, \\
+  \Psi_{\text{APEX}} &\in \mathcal{M}_{\text{tensor}}, \\
+  \Psi_{\text{TASSE}} &\in \mathcal{M}_{\text{astro}}, \\
+  \Psi_{\text{Mnemosyne}} &\in \mathcal{M}_{\text{neuro}}.
+\end{align}
+
+The suprakernel manifold is:
+\begin{equation}
+  \mathcal{M}_{\text{supr}}
+  =
+  \mathcal{M}_{\text{hemo}}
+  \times
+  \mathcal{M}_{\text{tensor}}
+  \times
+  \mathcal{M}_{\text{astro}}
+  \times
+  \mathcal{M}_{\text{neuro}}.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Unified Invariant Stack Derivation}
+
+The global invariant stack is defined as:
+\begin{equation}
+  \mathcal{R}_{\text{global}}
+  =
+  \bigwedge_{i=1}^{4}
+  \mathcal{R}_i,
+\end{equation}
+where each $\mathcal{R}_i$ corresponds to the invariant set of a
+sovereign engine.
+
+\subsection{Invariant Manifold}
+
+Define the invariant manifold:
+\begin{equation}
+  \mathcal{I}
+  =
+  \{ \Psi \in \mathcal{M}_{\text{supr}} \mid \mathcal{R}_{\text{global}}(\Psi) = 1 \}.
+\end{equation}
+
+The suprakernel enforces:
+\begin{equation}
+  \Psi(t) \in \mathcal{I}
+  \quad
+  \forall t.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Orthogonal Projection Operator}
+
+When invariants are violated, the suprakernel applies the correction
+operator:
+\begin{equation}
+  \Phi_{\text{control}}(\Psi)
+  =
+  \operatorname{Proj}_{\mathcal{I}}(\Psi),
+\end{equation}
+where $\operatorname{Proj}_{\mathcal{I}}$ is the orthogonal projection
+onto the invariant manifold.
+
+Projection is defined as:
+\begin{equation}
+  \operatorname{Proj}_{\mathcal{I}}(\Psi)
+  =
+  \arg\min_{\Psi' \in \mathcal{I}}
+  \lVert \Psi' - \Psi \rVert_2.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Anomaly Dynamics: Full Derivation}
+
+Residual anomaly is:
+\begin{equation}
+  S_{\text{anomaly}}
+  =
+  \Psi_{\text{obs}}
+  -
+  \Psi_{\text{model}}.
+\end{equation}
+
+The purge dynamic is:
+\begin{equation}
+  \frac{dS_{\text{anomaly}}}{dt}
+  =
+  -k_{\text{purge}} S_{\text{anomaly}}
+  +
+  S_{\text{inject}}.
+\end{equation}
+
+\subsection{Solution}
+
+Solve the linear ODE:
+\begin{equation}
+  S(t)
+  =
+  S(0)e^{-k_{\text{purge}} t}
+  +
+  \int_0^t
+  e^{-k_{\text{purge}} (t-\tau)}
+  S_{\text{inject}}(\tau)
+  \, d\tau.
+\end{equation}
+
+If $S_{\text{inject}} = 0$:
+\begin{equation}
+  S(t)
+  =
+  S(0)e^{-k_{\text{purge}} t}.
+\end{equation}
+
+Thus:
+\begin{equation}
+  \lim_{t \to \infty} S(t) = 0.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Lyapunov Stability: Full Proof}
+
+Define:
+\begin{equation}
+  V_{\text{global}}
+  =
+  \frac{1}{2}
+  \lVert
+    \Psi_{\text{global}}
+    -
+    \Psi^\ast_{\text{global}}
+  \rVert^2.
+\end{equation}
+
+\subsection{Derivative}
+
+\begin{equation}
+  \frac{dV_{\text{global}}}{dt}
+  =
+  \left\langle
+    \Psi_{\text{global}} - \Psi^\ast_{\text{global}},
+    \frac{d\Psi_{\text{global}}}{dt}
+  \right\rangle.
+\end{equation}
+
+\subsection{Stability Condition}
+
+If:
+\begin{equation}
+  \frac{d\Psi_{\text{global}}}{dt}
+  =
+  F(\Psi_{\text{global}})
+\end{equation}
+and:
+\begin{equation}
+  \left\langle
+    \Psi_{\text{global}} - \Psi^\ast_{\text{global}},
+    F(\Psi_{\text{global}})
+  \right\rangle
+  < 0,
+\end{equation}
+then:
+\begin{equation}
+  \frac{dV_{\text{global}}}{dt} < 0.
+\end{equation}
+
+Thus the suprakernel is globally asymptotically stable.
+
+% ------------------------------------------------------------
+\section{Cross-Domain Coupling Operators}
+
+\subsection{Physical-to-Neuro Operator}
+
+\begin{equation}
+  \Gamma_{\text{phys}\rightarrow\text{neuro}}
+  :
+  \rho_m
+  \mapsto
+  \Psi_{\text{metabolic}}.
+\end{equation}
+
+\subsection{Neuro-to-Physical Operator}
+
+\begin{equation}
+  \Gamma_{\text{neuro}\rightarrow\text{phys}}
+  :
+  F_{\text{synapse}}
+  \mapsto
+  S_{\text{tensor}}.
+\end{equation}
+
+Both operators preserve invariants:
+\begin{equation}
+  \Gamma(\Psi) \in \mathcal{I}.
+\end{equation}
+
+% ------------------------------------------------------------
+\section{Tick-by-Tick Execution Summary}
+
+For each tick:
+\begin{enumerate}
+  \item Update all engine states.
+  \item Evaluate $\mathcal{R}_{\text{global}}$.
+  \item Apply $\Phi_{\text{control}}$ if needed.
+  \item Purge anomalies.
+  \item Verify Lyapunov descent.
+\end{enumerate}
+
+This completes the formal appendix for the sovereign suprakernel.

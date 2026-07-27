@@ -1,0 +1,17 @@
+Physical Domain (TASSE/APEX)
+        --------------------------------
+        |  ρ_m   g_μν   T_μν   A_spec   |
+        --------------------------------
+                     |
+                     | Physical → Neuro
+                     v
+        +--------------------------------+
+        |   Metabolic Substrate          |
+        |   Ψ_metabolic (ATP, flux)      |
+        +--------------------------------+
+                     ^
+                     | Neuro → Physical
+                     |
+        --------------------------------
+        |  F_synapse   Organoid signals |
+        --------------------------------

@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{\textbf{Manuscript Title}}
+\author{C.~Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Your abstract goes here.
+\end{abstract}
+
+\section{Introduction}
+Background, problem definition, novelty.
+
+\section{Related Work}
+Brief literature context.
+
+\section{Methods}
+Equations, algorithms, architectures.
+
+\section{Results}
+Experimental validation, proofs, simulations.
+
+\section{Conclusion}
+Key findings and contributions.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

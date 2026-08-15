@@ -1,0 +1,18 @@
+\chapter{Results}
+\label{ch:results}
+
+\section{Experimental Setup}
+\label{sec:results_setup}
+Describe datasets, simulation parameters, or experimental conditions.
+
+\section{Quantitative Results}
+\label{sec:results_quantitative}
+Present tables, plots, and numerical findings.
+
+\section{Qualitative Observations}
+\label{sec:results_qualitative}
+Discuss patterns, behaviors, or emergent phenomena.
+
+\section{Comparative Evaluation}
+\label{sec:results_comparison}
+Compare your results with benchmarks or prior work.

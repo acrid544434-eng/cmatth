@@ -1,0 +1,20 @@
+\section*{Appendix C: Zero-Knowledge Circuit Specification}
+
+\subsection*{Constraint System}
+\[
+\mathcal{R}_{\mathrm{PSE}} =
+\{\mathcal{C}_{\mathrm{CFNO}} \land
+  \mathcal{C}_{\mathrm{WENOZ}} \land
+  \mathcal{C}_{\mathrm{HLLD}} \land
+  \mathcal{C}_{\mathrm{Inv}}\}.
+\]
+
+\subsection*{Proof Generation}
+\[
+\pi_n = \mathrm{Prove}(U^n, U^{n+1}, \chi_{\mathrm{shock}}).
+\]
+
+\subsection*{Merkle Commitment}
+\[
+\mathcal{H}_n = \mathrm{BLAKE3}(U^n \parallel U^{n+1} \parallel \pi_n).
+\]

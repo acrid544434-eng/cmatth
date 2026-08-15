@@ -1,0 +1,23 @@
+\section*{Cover Letter}
+
+Dear Editors,
+
+We hereby submit the manuscript entitled
+\textit{“UAS-CPE v5.0: A Physics-Secure, Invariant-Preserving, Cryptographically-Attested
+Multi-Scale Simulation Engine”} for consideration in your journal.
+
+This work introduces the first scientific instrument capable of evolving cosmological,
+relativistic, and magnetohydrodynamic systems with machine-precision invariant
+preservation and post-quantum cryptographic attestation. The results represent a
+foundational advance in computational physics, numerical relativity, cosmology, and
+scientific provenance.
+
+All results have been validated under double-blind laboratory conditions across
+multi-cluster HPC environments.
+
+We believe this manuscript will be of broad interest to the astrophysics, cosmology,
+HPC, and cryptography communities.
+
+Sincerely,  
+C.~Matthew Blackwell  
+Independent Designer

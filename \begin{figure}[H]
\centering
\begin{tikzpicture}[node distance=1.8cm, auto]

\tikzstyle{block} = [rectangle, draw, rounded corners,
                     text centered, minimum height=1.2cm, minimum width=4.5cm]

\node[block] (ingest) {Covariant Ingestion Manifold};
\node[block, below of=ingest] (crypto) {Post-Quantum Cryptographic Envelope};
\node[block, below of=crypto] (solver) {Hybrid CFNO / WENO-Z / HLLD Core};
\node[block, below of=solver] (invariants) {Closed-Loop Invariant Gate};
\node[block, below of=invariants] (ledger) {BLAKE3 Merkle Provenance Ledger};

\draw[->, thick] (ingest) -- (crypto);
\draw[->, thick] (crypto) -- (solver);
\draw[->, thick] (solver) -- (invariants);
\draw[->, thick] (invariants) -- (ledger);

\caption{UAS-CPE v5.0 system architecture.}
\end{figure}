@@ -1,0 +1,20 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.8cm, auto]
+
+\tikzstyle{block} = [rectangle, draw, rounded corners,
+                     text centered, minimum height=1.2cm, minimum width=4.5cm]
+
+\node[block] (ingest) {Covariant Ingestion Manifold};
+\node[block, below of=ingest] (crypto) {Post-Quantum Cryptographic Envelope};
+\node[block, below of=crypto] (solver) {Hybrid CFNO / WENO-Z / HLLD Core};
+\node[block, below of=solver] (invariants) {Closed-Loop Invariant Gate};
+\node[block, below of=invariants] (ledger) {BLAKE3 Merkle Provenance Ledger};
+
+\draw[->, thick] (ingest) -- (crypto);
+\draw[->, thick] (crypto) -- (solver);
+\draw[->, thick] (solver) -- (invariants);
+\draw[->, thick] (invariants) -- (ledger);
+
+\caption{UAS-CPE v5.0 system architecture.}
+\end{figure}

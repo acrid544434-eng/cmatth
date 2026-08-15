@@ -1,0 +1,30 @@
+% Page Margins (Standard bindings for book/thesis)
+\usepackage[
+    a4paper,                    % or letterpaper
+    inner=35mm,                 % Binding offset margin
+    outer=25mm,
+    top=30mm,
+    bottom=30mm,
+    headheight=15pt
+]{geometry}
+
+% Running Headers and Footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\leftmark}}    % Chapter name on Left Even pages
+\fancyhead[RO]{\nouppercase{\rightmark}}   % Section name on Right Odd pages
+\fancyfoot[C]{\thepage}                    % Page number in footer center
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Plain page style for chapter openings
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% Heading Numbering Depth (up to \subsubsection)
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}                   % Table of contents shows down to subsections

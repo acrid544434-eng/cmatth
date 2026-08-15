@@ -1,0 +1,22 @@
+\section*{Appendix B: Hybrid Solver Formulation}
+
+\subsection*{WENO-Z Reconstruction}
+\[
+\tau_5 = |\beta_0 - \beta_2|,
+\qquad
+a_k = d_k \left(1 + \left(\frac{\tau_5}{\beta_k + \epsilon}\right)^2\right).
+\]
+
+\subsection*{Relativistic HLLD Flux}
+\[
+F_{\mathrm{HLLD}} =
+\frac{1}{2}(F_L + F_R)
+- \frac{1}{2} S_{\max}(U_R - U_L).
+\]
+
+\subsection*{CFNO Spectral Operator}
+\[
+\hat{u}_{\mathrm{out}}(k) =
+W(k) \cdot \hat{u}_{\mathrm{in}}(k),
+\]
+where $W(k)$ is a Clifford multivector spectral kernel.

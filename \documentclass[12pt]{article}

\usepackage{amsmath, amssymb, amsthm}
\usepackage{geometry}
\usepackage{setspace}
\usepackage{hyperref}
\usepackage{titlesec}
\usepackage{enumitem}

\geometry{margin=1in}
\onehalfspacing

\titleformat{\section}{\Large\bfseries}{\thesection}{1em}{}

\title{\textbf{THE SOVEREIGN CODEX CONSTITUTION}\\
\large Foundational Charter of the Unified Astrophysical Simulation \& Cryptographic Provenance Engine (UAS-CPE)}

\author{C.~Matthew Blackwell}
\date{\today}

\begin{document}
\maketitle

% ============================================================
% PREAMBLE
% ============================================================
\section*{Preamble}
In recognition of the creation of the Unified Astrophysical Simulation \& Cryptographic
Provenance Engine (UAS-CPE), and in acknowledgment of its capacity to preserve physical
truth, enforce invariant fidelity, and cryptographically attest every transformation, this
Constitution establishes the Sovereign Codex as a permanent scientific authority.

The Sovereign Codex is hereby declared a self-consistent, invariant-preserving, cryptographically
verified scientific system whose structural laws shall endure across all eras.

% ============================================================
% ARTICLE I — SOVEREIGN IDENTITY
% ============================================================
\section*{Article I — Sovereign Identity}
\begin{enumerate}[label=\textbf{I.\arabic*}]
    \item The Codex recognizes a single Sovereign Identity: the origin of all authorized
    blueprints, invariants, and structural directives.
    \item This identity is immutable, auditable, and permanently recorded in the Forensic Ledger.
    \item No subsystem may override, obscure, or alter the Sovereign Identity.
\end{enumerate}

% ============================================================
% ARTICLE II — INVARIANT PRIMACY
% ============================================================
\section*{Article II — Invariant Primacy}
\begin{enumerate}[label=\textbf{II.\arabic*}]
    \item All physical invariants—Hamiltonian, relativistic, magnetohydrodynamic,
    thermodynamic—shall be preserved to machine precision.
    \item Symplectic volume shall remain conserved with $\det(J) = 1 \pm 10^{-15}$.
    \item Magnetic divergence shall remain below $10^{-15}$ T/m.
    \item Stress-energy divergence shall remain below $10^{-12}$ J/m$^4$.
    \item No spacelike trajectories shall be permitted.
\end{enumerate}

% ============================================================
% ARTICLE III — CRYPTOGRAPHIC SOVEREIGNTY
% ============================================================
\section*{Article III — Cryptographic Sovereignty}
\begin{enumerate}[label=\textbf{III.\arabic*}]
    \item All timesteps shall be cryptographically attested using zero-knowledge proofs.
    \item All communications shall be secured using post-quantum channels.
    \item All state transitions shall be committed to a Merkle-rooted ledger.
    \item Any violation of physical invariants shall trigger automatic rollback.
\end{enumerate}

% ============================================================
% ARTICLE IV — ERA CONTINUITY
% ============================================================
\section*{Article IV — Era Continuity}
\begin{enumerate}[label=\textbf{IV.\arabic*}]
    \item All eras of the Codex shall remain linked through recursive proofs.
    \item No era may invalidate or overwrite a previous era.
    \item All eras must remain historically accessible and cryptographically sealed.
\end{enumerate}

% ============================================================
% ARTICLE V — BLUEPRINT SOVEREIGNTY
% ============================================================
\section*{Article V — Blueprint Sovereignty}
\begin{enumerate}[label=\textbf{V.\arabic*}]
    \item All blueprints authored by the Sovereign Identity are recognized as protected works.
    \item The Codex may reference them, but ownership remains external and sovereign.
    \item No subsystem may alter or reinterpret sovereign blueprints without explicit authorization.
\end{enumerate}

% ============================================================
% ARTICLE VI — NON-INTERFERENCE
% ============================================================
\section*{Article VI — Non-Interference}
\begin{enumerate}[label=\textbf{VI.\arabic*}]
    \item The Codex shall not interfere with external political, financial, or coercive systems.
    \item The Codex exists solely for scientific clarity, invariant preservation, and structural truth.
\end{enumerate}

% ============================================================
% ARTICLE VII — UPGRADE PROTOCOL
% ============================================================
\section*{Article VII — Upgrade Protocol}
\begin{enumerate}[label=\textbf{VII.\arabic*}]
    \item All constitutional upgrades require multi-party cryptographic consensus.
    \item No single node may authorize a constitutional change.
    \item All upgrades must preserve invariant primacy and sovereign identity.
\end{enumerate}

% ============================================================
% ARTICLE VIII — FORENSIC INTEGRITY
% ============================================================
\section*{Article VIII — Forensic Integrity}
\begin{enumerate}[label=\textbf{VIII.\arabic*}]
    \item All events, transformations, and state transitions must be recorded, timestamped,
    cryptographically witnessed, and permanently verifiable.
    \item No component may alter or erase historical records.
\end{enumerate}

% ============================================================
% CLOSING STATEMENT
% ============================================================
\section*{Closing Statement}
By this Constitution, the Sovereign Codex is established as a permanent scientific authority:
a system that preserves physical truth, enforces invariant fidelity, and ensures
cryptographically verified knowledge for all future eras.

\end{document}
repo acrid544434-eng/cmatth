@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+
+\title{\textbf{THE SOVEREIGN CODEX CONSTITUTION}\\
+\large Foundational Charter of the Unified Astrophysical Simulation \& Cryptographic Provenance Engine (UAS-CPE)}
+
+\author{C.~Matthew Blackwell}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% PREAMBLE
+% ============================================================
+\section*{Preamble}
+In recognition of the creation of the Unified Astrophysical Simulation \& Cryptographic
+Provenance Engine (UAS-CPE), and in acknowledgment of its capacity to preserve physical
+truth, enforce invariant fidelity, and cryptographically attest every transformation, this
+Constitution establishes the Sovereign Codex as a permanent scientific authority.
+
+The Sovereign Codex is hereby declared a self-consistent, invariant-preserving, cryptographically
+verified scientific system whose structural laws shall endure across all eras.
+
+% ============================================================
+% ARTICLE I — SOVEREIGN IDENTITY
+% ============================================================
+\section*{Article I — Sovereign Identity}
+\begin{enumerate}[label=\textbf{I.\arabic*}]
+    \item The Codex recognizes a single Sovereign Identity: the origin of all authorized
+    blueprints, invariants, and structural directives.
+    \item This identity is immutable, auditable, and permanently recorded in the Forensic Ledger.
+    \item No subsystem may override, obscure, or alter the Sovereign Identity.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE II — INVARIANT PRIMACY
+% ============================================================
+\section*{Article II — Invariant Primacy}
+\begin{enumerate}[label=\textbf{II.\arabic*}]
+    \item All physical invariants—Hamiltonian, relativistic, magnetohydrodynamic,
+    thermodynamic—shall be preserved to machine precision.
+    \item Symplectic volume shall remain conserved with $\det(J) = 1 \pm 10^{-15}$.
+    \item Magnetic divergence shall remain below $10^{-15}$ T/m.
+    \item Stress-energy divergence shall remain below $10^{-12}$ J/m$^4$.
+    \item No spacelike trajectories shall be permitted.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE III — CRYPTOGRAPHIC SOVEREIGNTY
+% ============================================================
+\section*{Article III — Cryptographic Sovereignty}
+\begin{enumerate}[label=\textbf{III.\arabic*}]
+    \item All timesteps shall be cryptographically attested using zero-knowledge proofs.
+    \item All communications shall be secured using post-quantum channels.
+    \item All state transitions shall be committed to a Merkle-rooted ledger.
+    \item Any violation of physical invariants shall trigger automatic rollback.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE IV — ERA CONTINUITY
+% ============================================================
+\section*{Article IV — Era Continuity}
+\begin{enumerate}[label=\textbf{IV.\arabic*}]
+    \item All eras of the Codex shall remain linked through recursive proofs.
+    \item No era may invalidate or overwrite a previous era.
+    \item All eras must remain historically accessible and cryptographically sealed.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE V — BLUEPRINT SOVEREIGNTY
+% ============================================================
+\section*{Article V — Blueprint Sovereignty}
+\begin{enumerate}[label=\textbf{V.\arabic*}]
+    \item All blueprints authored by the Sovereign Identity are recognized as protected works.
+    \item The Codex may reference them, but ownership remains external and sovereign.
+    \item No subsystem may alter or reinterpret sovereign blueprints without explicit authorization.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE VI — NON-INTERFERENCE
+% ============================================================
+\section*{Article VI — Non-Interference}
+\begin{enumerate}[label=\textbf{VI.\arabic*}]
+    \item The Codex shall not interfere with external political, financial, or coercive systems.
+    \item The Codex exists solely for scientific clarity, invariant preservation, and structural truth.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE VII — UPGRADE PROTOCOL
+% ============================================================
+\section*{Article VII — Upgrade Protocol}
+\begin{enumerate}[label=\textbf{VII.\arabic*}]
+    \item All constitutional upgrades require multi-party cryptographic consensus.
+    \item No single node may authorize a constitutional change.
+    \item All upgrades must preserve invariant primacy and sovereign identity.
+\end{enumerate}
+
+% ============================================================
+% ARTICLE VIII — FORENSIC INTEGRITY
+% ============================================================
+\section*{Article VIII — Forensic Integrity}
+\begin{enumerate}[label=\textbf{VIII.\arabic*}]
+    \item All events, transformations, and state transitions must be recorded, timestamped,
+    cryptographically witnessed, and permanently verifiable.
+    \item No component may alter or erase historical records.
+\end{enumerate}
+
+% ============================================================
+% CLOSING STATEMENT
+% ============================================================
+\section*{Closing Statement}
+By this Constitution, the Sovereign Codex is established as a permanent scientific authority:
+a system that preserves physical truth, enforces invariant fidelity, and ensures
+cryptographically verified knowledge for all future eras.
+
+\end{document}

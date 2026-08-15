@@ -1,0 +1,27 @@
+@article{komissarov1999,
+  author = {Komissarov, S.},
+  title = {A Godunov-type scheme for relativistic magnetohydrodynamics},
+  journal = {MNRAS},
+  year = {1999}
+}
+
+@article{planck2018,
+  author = {Planck Collaboration},
+  title = {Planck 2018 results},
+  journal = {A\&A},
+  year = {2018}
+}
+
+@article{sheth1999,
+  author = {Sheth, R. and Tormen, G.},
+  title = {Halo mass function},
+  journal = {MNRAS},
+  year = {1999}
+}
+
+@article{pretorius2005,
+  author = {Pretorius, F.},
+  title = {Evolution of binary black hole spacetimes},
+  journal = {PRL},
+  year = {2005}
+}

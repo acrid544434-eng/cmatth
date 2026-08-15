@@ -1,0 +1,14 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\draw[->] (0,0) -- (10,0) node[right] {Time (ms)};
+\draw[->] (0,-4) -- (0,1) node[above] {Invariant Residual};
+
+\draw[thick] (1.84,-1.0) node[circle,fill,inner sep=2pt] {} 
+    node[right] {Fault Injection};
+
+\draw[thick] (1.84,-1.0) -- (2.2,-0.5) node[right] {AMR Split Trigger};
+\draw[thick] (2.2,-0.5) -- (3.0,-3.0) node[right] {Residual Stabilization};
+
+\caption{Closed-loop invariant gate response to synthetic perturbation.}
+\end{figure}

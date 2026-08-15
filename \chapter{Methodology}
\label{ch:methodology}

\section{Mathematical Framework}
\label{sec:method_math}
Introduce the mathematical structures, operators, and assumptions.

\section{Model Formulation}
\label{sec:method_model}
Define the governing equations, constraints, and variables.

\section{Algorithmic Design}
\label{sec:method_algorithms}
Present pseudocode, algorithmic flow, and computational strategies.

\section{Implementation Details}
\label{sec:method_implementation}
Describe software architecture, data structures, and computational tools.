@@ -1,0 +1,18 @@
+\chapter{Methodology}
+\label{ch:methodology}
+
+\section{Mathematical Framework}
+\label{sec:method_math}
+Introduce the mathematical structures, operators, and assumptions.
+
+\section{Model Formulation}
+\label{sec:method_model}
+Define the governing equations, constraints, and variables.
+
+\section{Algorithmic Design}
+\label{sec:method_algorithms}
+Present pseudocode, algorithmic flow, and computational strategies.
+
+\section{Implementation Details}
+\label{sec:method_implementation}
+Describe software architecture, data structures, and computational tools.

@@ -1,0 +1,15 @@
+\begin{tikzpicture}[node distance=1.8cm, auto, thick]
+
+\tikzstyle{unit}=[rectangle, draw, rounded corners, fill=gray!10, text width=6cm, align=center, minimum height=1.2cm]
+\tikzstyle{arrow}=[->, thick]
+
+\node[unit] (unit1) {UNIT 01: Optical Ingest \\ 800 Gb/s OSFP-XD \\ Versal VP1802 FPGA};
+\node[unit, below=of unit1] (unit2) {UNIT 02: Cryogenic PQC Bridge \\ 15 mK Fridge \\ ML-KEM / CKKS / ZK};
+\node[unit, below=of unit2] (unit3) {UNIT 03: Tensor Compute Tray \\ 8× Blackwell GPUs \\ NVLink Fabric};
+\node[unit, below=of unit3] (unit4) {UNIT 04: Invariant Audit \& Ledger \\ HICC ASIC \\ BLAKE3 Merkle Engine};
+
+\draw[arrow] (unit1) -- (unit2);
+\draw[arrow] (unit2) -- (unit3);
+\draw[arrow] (unit3) -- (unit4);
+
+\end{tikzpicture}

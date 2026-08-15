@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper,twoside,openright]{report} 
+% Alternative: \documentclass[12pt,a4paper,twoside,openright]{book}
+
+% --- Load Configuration ---
+\input{config/packages}
+\input{config/layout}
+\input{config/macros}
+
+% --- Selective Compilation for Rapid Development ---
+% Uncomment during drafting to compile ONLY the active chapter:
+% \includeonly{
+%     chapters/ch03_methodology
+% }
+
+\begin{document}
+
+% ==========================================
+% FRONTMATTER (Roman numerals: i, ii, iii)
+% ==========================================
+\pagenumbering{roman}
+
+\input{frontmatter/titlepage}
+\cleardoublepage
+
+\onehalfspacing % Standard academic thesis spacing
+
+\input{frontmatter/abstract}
+\cleardoublepage
+
+\input{frontmatter/acknowledgments}
+\cleardoublepage
+
+% --- Lists and Registers ---
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+% ==========================================
+% MAINMATTER (Arabic numerals: 1, 2, 3...)
+% ==========================================
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{chapters/ch01_introduction}
+\include{chapters/ch02_lit_review}
+\include{chapters/ch03_methodology}
+\include{chapters/ch04_results}
+\include{chapters/ch05_discussion}
+\include{chapters/ch06_conclusion}
+
+% ==========================================
+% APPENDICES
+% ==========================================
+\appendix
+\include{appendices/appA_derivations}
+\include{appendices/appB_data_tables}
+
+% ==========================================
+% BACKMATTER (Bibliography & Indices)
+% ==========================================
+\cleardoublepage
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}

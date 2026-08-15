@@ -1,0 +1,144 @@
+\chapter{Methodology}
+\label{ch:methodology}
+
+\section{Overview}
+\label{sec:method_overview}
+This chapter presents the mathematical, algorithmic, and computational methodology
+underlying the thesis. The approach integrates formal model construction, numerical
+discretization, algorithmic design, and implementation details into a unified
+framework.
+
+\section{Mathematical Framework}
+\label{sec:method_math}
+
+\subsection{State Space and Variables}
+Let $\vect{x}(t) \in \R^n$ denote the system state at time $t$, and let
+$\vect{u}(t) \in \R^m$ denote the control or input vector. The evolution of the
+system is governed by the differential equation:
+\begin{equation}
+    \label{eq:method_state_evolution}
+    \dot{\vect{x}}(t) = f\bigl(\vect{x}(t), \vect{u}(t), t\bigr),
+\end{equation}
+where $f : \R^n \times \R^m \times \R \to \R^n$ is a smooth vector field.
+
+\subsection{Objective Functional}
+The optimization objective is expressed as:
+\begin{equation}
+    \label{eq:method_objective}
+    J(\vect{x}, \vect{u}) = \int_{0}^{T}
+    \left[
+        \vect{x}(t)^\top \mat{Q} \vect{x}(t)
+        +
+        \vect{u}(t)^\top \mat{R} \vect{u}(t)
+    \right]
+    \dd t,
+\end{equation}
+where $\mat{Q}$ and $\mat{R}$ are positive semi-definite weighting matrices.
+
+\subsection{Constraints}
+The system is subject to the following constraints:
+\begin{align}
+    \vect{x}(0) &= \vect{x}_0, \label{eq:method_initial_condition} \\
+    \vect{x}(T) &\in \mathcal{X}_T, \label{eq:method_terminal_constraint} \\
+    \vect{u}(t) &\in \mathcal{U}, \label{eq:method_control_constraint}
+\end{align}
+where $\mathcal{X}_T$ and $\mathcal{U}$ denote admissible sets.
+
+\section{Model Formulation}
+\label{sec:method_model}
+
+\subsection{Discretization}
+The continuous-time system is discretized using a uniform time grid:
+\[
+    t_k = k \Delta t, \qquad k = 0, 1, \dots, N,
+\]
+with $\Delta t = T/N$. The discrete state update is:
+\begin{equation}
+    \label{eq:method_discrete_update}
+    \vect{x}_{k+1} = \vect{x}_k + \Delta t \, f(\vect{x}_k, \vect{u}_k, t_k).
+\end{equation}
+
+\subsection{Cost Function (Discrete Form)}
+The discrete objective is:
+\begin{equation}
+    \label{eq:method_discrete_cost}
+    J = \sum_{k=0}^{N-1}
+    \left(
+        \vect{x}_k^\top \mat{Q} \vect{x}_k
+        +
+        \vect{u}_k^\top \mat{R} \vect{u}_k
+    \right)
+    \Delta t.
+\end{equation}
+
+\subsection{Optimization Problem}
+The full optimization problem is:
+\begin{align}
+    \min_{\{\vect{x}_k, \vect{u}_k\}} \quad & J \label{eq:method_opt_problem} \\
+    \text{subject to} \quad &
+    \vect{x}_{k+1} = \vect{x}_k + \Delta t \, f(\vect{x}_k, \vect{u}_k, t_k), \\
+    & \vect{x}_0 = \vect{x}_0, \\
+    & \vect{x}_N \in \mathcal{X}_T, \\
+    & \vect{u}_k \in \mathcal{U}.
+\end{align}
+
+\section{Algorithmic Design}
+\label{sec:method_algorithms}
+
+\subsection{Iterative Optimization Algorithm}
+The optimization is performed using an iterative scheme. The pseudocode is shown in
+Algorithm~\ref{alg:method_opt}.
+
+\begin{algorithm}[htbp]
+\caption{Iterative Optimization Algorithm}
+\label{alg:method_opt}
+\begin{algorithmic}[1]
+\State Initialize $\vect{x}_0$, $\vect{u}_0$, and parameters.
+\For{$k = 0$ to $N-1$}
+    \State Compute gradient $\nabla J$.
+    \State Update control: $\vect{u}_k \gets \vect{u}_k - \alpha \nabla J$.
+    \State Update state using \cref{eq:method_discrete_update}.
+\EndFor
+\State \Return optimized $\{\vect{x}_k, \vect{u}_k\}$.
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Convergence Criteria}
+The algorithm terminates when:
+\begin{equation}
+    \label{eq:method_convergence}
+    \|\nabla J\| < \epsilon,
+\end{equation}
+where $\epsilon$ is a user-defined tolerance.
+
+\section{Implementation Details}
+\label{sec:method_implementation}
+
+\subsection{Software Architecture}
+The implementation follows a modular architecture:
+\begin{itemize}
+    \item \textbf{Model Module}: Defines $f(\vect{x}, \vect{u}, t)$.
+    \item \textbf{Optimization Module}: Implements the iterative algorithm.
+    \item \textbf{Utilities Module}: Handles data I/O, plotting, and logging.
+\end{itemize}
+
+\subsection{Data Structures}
+State and control trajectories are stored in:
+\begin{itemize}
+    \item \texttt{numpy.ndarray} (Python)
+    \item \texttt{Eigen::VectorXd} (C++)
+    \item \texttt{torch.Tensor} (PyTorch)
+\end{itemize}
+
+\subsection{Computational Tools}
+The implementation uses:
+\begin{itemize}
+    \item Python for prototyping,
+    \item C++ for performance-critical components,
+    \item GPU acceleration for large-scale simulations.
+\end{itemize}
+
+\section{Summary}
+\label{sec:method_summary}
+This chapter presented the mathematical foundations, model formulation, algorithmic
+design, and implementation details of the methodology used throughout the thesis.

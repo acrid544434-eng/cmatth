@@ -1,0 +1,7 @@
+% In preamble:
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+
+\newcommand{\PSElogo}{%
+  \ensuremath{\Psi_{\mathrm{PSE}}}\xspace
+}

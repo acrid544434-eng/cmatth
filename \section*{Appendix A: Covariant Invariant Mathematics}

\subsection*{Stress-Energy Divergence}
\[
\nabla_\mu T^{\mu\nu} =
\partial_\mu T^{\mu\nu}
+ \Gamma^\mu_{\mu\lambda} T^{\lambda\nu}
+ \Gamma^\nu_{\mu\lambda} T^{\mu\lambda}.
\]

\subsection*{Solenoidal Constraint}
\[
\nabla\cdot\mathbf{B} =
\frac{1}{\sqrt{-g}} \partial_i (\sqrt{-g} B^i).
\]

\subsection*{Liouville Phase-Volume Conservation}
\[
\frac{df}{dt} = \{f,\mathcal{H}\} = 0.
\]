@@ -1,0 +1,20 @@
+\section*{Appendix A: Covariant Invariant Mathematics}
+
+\subsection*{Stress-Energy Divergence}
+\[
+\nabla_\mu T^{\mu\nu} =
+\partial_\mu T^{\mu\nu}
++ \Gamma^\mu_{\mu\lambda} T^{\lambda\nu}
++ \Gamma^\nu_{\mu\lambda} T^{\mu\lambda}.
+\]
+
+\subsection*{Solenoidal Constraint}
+\[
+\nabla\cdot\mathbf{B} =
+\frac{1}{\sqrt{-g}} \partial_i (\sqrt{-g} B^i).
+\]
+
+\subsection*{Liouville Phase-Volume Conservation}
+\[
+\frac{df}{dt} = \{f,\mathcal{H}\} = 0.
+\]

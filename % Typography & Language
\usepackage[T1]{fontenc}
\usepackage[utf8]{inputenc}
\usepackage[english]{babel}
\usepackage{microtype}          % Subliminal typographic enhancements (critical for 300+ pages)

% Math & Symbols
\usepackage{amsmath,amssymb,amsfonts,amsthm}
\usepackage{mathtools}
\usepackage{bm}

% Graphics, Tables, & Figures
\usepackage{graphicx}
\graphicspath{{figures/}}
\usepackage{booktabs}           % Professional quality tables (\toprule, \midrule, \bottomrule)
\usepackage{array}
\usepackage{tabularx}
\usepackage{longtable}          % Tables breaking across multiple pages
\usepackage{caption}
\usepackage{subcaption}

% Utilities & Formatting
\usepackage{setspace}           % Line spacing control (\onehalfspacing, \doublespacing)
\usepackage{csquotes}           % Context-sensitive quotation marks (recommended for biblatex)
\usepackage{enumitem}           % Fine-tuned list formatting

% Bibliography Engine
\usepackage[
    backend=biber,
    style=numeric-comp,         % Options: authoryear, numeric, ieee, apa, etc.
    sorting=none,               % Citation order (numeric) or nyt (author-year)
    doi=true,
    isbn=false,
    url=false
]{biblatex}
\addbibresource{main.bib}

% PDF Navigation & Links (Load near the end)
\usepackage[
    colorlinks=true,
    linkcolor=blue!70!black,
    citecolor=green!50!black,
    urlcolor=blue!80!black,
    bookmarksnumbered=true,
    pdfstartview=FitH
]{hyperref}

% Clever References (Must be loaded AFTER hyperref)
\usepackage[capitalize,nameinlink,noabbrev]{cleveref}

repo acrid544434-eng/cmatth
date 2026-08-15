@@ -1,0 +1,49 @@
+% Typography & Language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{microtype}          % Subliminal typographic enhancements (critical for 300+ pages)
+
+% Math & Symbols
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% Graphics, Tables, & Figures
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}           % Professional quality tables (\toprule, \midrule, \bottomrule)
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}          % Tables breaking across multiple pages
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Utilities & Formatting
+\usepackage{setspace}           % Line spacing control (\onehalfspacing, \doublespacing)
+\usepackage{csquotes}           % Context-sensitive quotation marks (recommended for biblatex)
+\usepackage{enumitem}           % Fine-tuned list formatting
+
+% Bibliography Engine
+\usepackage[
+    backend=biber,
+    style=numeric-comp,         % Options: authoryear, numeric, ieee, apa, etc.
+    sorting=none,               % Citation order (numeric) or nyt (author-year)
+    doi=true,
+    isbn=false,
+    url=false
+]{biblatex}
+\addbibresource{main.bib}
+
+% PDF Navigation & Links (Load near the end)
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=green!50!black,
+    urlcolor=blue!80!black,
+    bookmarksnumbered=true,
+    pdfstartview=FitH
+]{hyperref}
+
+% Clever References (Must be loaded AFTER hyperref)
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref}

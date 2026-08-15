@@ -1,0 +1,70 @@
+\section{Physics-Secure Engine Overview}
+\label{sec:pse_overview}
+
+The Unified Astrophysical Simulation \& Cryptographic Provenance Engine (UAS-CPE)
+implements the Physics-Secure Engine class
+\[
+    \mathbf{\Psi}_{\mathrm{PSE}}
+    =
+    \langle
+        \mathcal{M},\,
+        \mathcal{S}_{\mathrm{AMR}},\,
+        \mathcal{D}_{\mathrm{GRMHD}},\,
+        \mathcal{V}_{\mathrm{Inv}},\,
+        \Pi_{\mathrm{PQ}},\,
+        \mathcal{L}_{\mathrm{Merkle}}
+    \rangle,
+\]
+where $\mathcal{M}$ is the curved cotangent manifold $T^*M$ equipped with the invariant
+symplectic 2-form
+\[
+    \omega = dp_\mu \wedge dx^\mu.
+\]
+
+\subsection{High-Order GRMHD Numerical Methods}
+The engine evolves relativistic magnetohydrodynamics using:
+\begin{itemize}
+    \item 5th-order WENO-Z reconstruction with global smoothness indicator
+    \[
+        \tau_5 = |\beta_0 - \beta_2|,
+    \]
+    \item multi-state relativistic HLLD Riemann solver enforcing magnetic orthogonality
+    \[
+        u_\mu b^\mu = 0,
+    \]
+    \item staggered Yee-lattice constrained transport preserving the curved solenoidal
+    constraint to double-precision floor,
+    \[
+        \|\nabla \cdot \mathbf{B}\|_\infty < 10^{-15}.
+    \]
+\end{itemize}
+
+\subsection{Macro-Cosmology and Fundamental Constants}
+The cosmological baseline is fixed by the $\Lambda$CDM parameter set
+\[
+    \{\Omega_b h^2,\; \Omega_c h^2,\; \Omega_\Lambda,\; \tau,\; n_s,\; \sigma_8,\; H_0\},
+\]
+and the immutable micro-physical constants
+\[
+    \{\alpha,\; G,\; \hbar,\; c,\; \mu\}
+\]
+are locked into FP64 constant registers.
+
+\subsection{Invariant Monitoring and Autonomous Subcycling}
+The Physics-Secure Engine enforces real-time invariant auditing:
+\begin{align*}
+    \|\nabla_\mu T^{\mu\nu}\|_\infty &< 10^{-6}, \\
+    \|J^\top \Omega J - \Omega\| &< 10^{-6}, \\
+    dt &\rightarrow 3.90 \times 10^{-6}\,\text{s}.
+\end{align*}
+
+\subsection{Post-Quantum Cryptographic Provenance}
+All state transitions are attested using:
+\begin{itemize}
+    \item module-lattice key encapsulation (ML-KEM-1024),
+    \item digital signatures (ML-DSA-87),
+    \item CKKS homomorphic SIMD evaluation,
+    \item recursive Halo2/Plonky3 STARK-to-SNARK proofs over $2^{20}$ constraints.
+\end{itemize}
+
+Epoch states are committed into an immutable BLAKE3 Merkle-DAG ledger root.

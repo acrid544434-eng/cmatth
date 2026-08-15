@@ -1,0 +1,32 @@
+my-thesis/
+│
+├── main.tex                 # Root document (compiles the entire thesis)
+├── main.bib                 # Bibliography file (BibLaTeX/Biber format)
+│
+├── config/                  # Document setup, styling, and custom macros
+│   ├── packages.tex         # All \usepackage directives
+│   ├── layout.tex           # Page geometry, margins, headers/footers
+│   └── macros.tex           # Custom commands, operators, and shortcuts
+│
+├── frontmatter/             # Preliminary pages (roman numerals)
+│   ├── titlepage.tex        # Custom title page
+│   ├── abstract.tex         # Abstract (and foreign language versions if required)
+│   ├── acknowledgments.tex  # Acknowledgments
+│   └── dedication.tex       # Dedication (optional)
+│
+├── chapters/                # Core thesis content (one .tex file per chapter)
+│   ├── ch01_introduction.tex
+│   ├── ch02_lit_review.tex
+│   ├── ch03_methodology.tex
+│   ├── ch04_results.tex
+│   ├── ch05_discussion.tex
+│   └── ch06_conclusion.tex
+│
+├── appendices/              # Supplementary materials
+│   ├── appA_derivations.tex
+│   └── appB_data_tables.tex
+│
+└── figures/                 # All graphical assets (PDF, PNG, SVG-export)
+    ├── ch01/
+    ├── ch02/
+    └── ...

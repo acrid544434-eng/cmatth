@@ -1,0 +1,58 @@
+\documentclass[10pt,conference]{IEEEtran} % or \documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{bm}
+
+\begin{document}
+
+\title{Unified Astrophysical Simulation \& Cryptographic Provenance Engine (UAS-CPE)\\
+Camera-Ready Scientific Paper}
+
+\author{
+  \IEEEauthorblockN{C. Matthew Blackwell}
+  \IEEEauthorblockA{Independent Systems Architect\\
+  Email: \texttt{<your-email>}}
+}
+
+\maketitle
+
+\begin{abstract}
+We present the Unified Astrophysical Simulation \& Cryptographic Provenance Engine (UAS-CPE),
+a multi-physics, invariant-preserving, cryptographically attested simulation core for
+relativistic astrophysical systems. The engine maintains strict conservation of Hamiltonian,
+magnetohydrodynamic, thermodynamic, and relativistic invariants, with all timesteps
+cryptographically proven via zero-knowledge proofs and post-quantum secure channels.
+\end{abstract}
+
+\section{Introduction}
+% Your intro text here.
+
+\section{System Architecture}
+% UAS-CPE overview.
+
+\section{Physics Engines}
+\subsection{Hamiltonian Symplectic Core}
+% Equations, invariants.
+
+\subsection{Relativistic Field Solver}
+% GR, geodesics.
+
+\subsection{MHD Solver}
+% Divergence-free, shocks.
+
+\section{Cryptographic Provenance}
+% FHE, ML-KEM, zk-SNARKs.
+
+\section{Results}
+% Tables, figures, benchmarks.
+
+\section{Conclusion}
+% Summary + future work.
+
+\bibliographystyle{IEEEtran}
+\bibliography{uas_cpe_refs}
+
+\end{document}

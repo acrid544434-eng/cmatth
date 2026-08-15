@@ -1,0 +1,33 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+\section{Background and Context}
+\label{sec:intro_background}
+
+In recent years, the intersection of mathematical modeling and empirical computing has expanded significantly~\cite{knuth1984tex}. As illustrated in \cref{fig:system_overview}, the data processing lifecycle is iterative.
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ch01/system_diagram.pdf}
+    \rule{0.8\textwidth}{0.3\textwidth} % Placeholder for diagram
+    \caption{Conceptual overview of the system architecture.}
+    \label{fig:system_overview}
+\end{figure}
+
+\section{Problem Statement}
+\label{sec:intro_problem}
+
+Let $\vect{x} \in \R^n$ denote the state vector. The objective function is governed by:
+\begin{equation}
+    \label{eq:governing_state}
+    J(\vect{x}) = \int_{0}^{T} \left( \vect{x}(t)^\top \mat{Q} \vect{x}(t) + \vect{u}(t)^\top \mat{R} \vect{u}(t) \right) \dd t.
+\end{equation}
+As formulated in \cref{eq:governing_state}, the minimization depends on weighting matrices $\mat{Q}$ and $\mat{R}$.
+
+\section{Thesis Contributions}
+\label{sec:intro_contributions}
+The core contributions of this work are presented as follows:
+\begin{enumerate}[label=\textbf{C\arabic*.}]
+    \item A generalized framework for optimizing multi-parameter manifolds.
+    \item Empirical validation of high-dimensional scaling laws.
+\end{enumerate}

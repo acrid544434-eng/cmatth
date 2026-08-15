@@ -1,0 +1,18 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=2cm]
+
+\tikzstyle{block} = [rectangle, draw, rounded corners,
+                     text centered, minimum height=1cm, minimum width=3.5cm]
+
+\node[block] (kem) {ML-KEM-1024};
+\node[block, right of=kem, xshift=3cm] (ckks) {CKKS SIMD};
+\node[block, right of=ckks, xshift=3cm] (plonky) {Plonky3/Halo2};
+\node[block, below of=plonky] (merkle) {BLAKE3 Merkle Root};
+
+\draw[->, thick] (kem) -- (ckks);
+\draw[->, thick] (ckks) -- (plonky);
+\draw[->, thick] (plonky) -- (merkle);
+
+\caption{Post-quantum cryptographic attestation pipeline.}
+\end{figure}

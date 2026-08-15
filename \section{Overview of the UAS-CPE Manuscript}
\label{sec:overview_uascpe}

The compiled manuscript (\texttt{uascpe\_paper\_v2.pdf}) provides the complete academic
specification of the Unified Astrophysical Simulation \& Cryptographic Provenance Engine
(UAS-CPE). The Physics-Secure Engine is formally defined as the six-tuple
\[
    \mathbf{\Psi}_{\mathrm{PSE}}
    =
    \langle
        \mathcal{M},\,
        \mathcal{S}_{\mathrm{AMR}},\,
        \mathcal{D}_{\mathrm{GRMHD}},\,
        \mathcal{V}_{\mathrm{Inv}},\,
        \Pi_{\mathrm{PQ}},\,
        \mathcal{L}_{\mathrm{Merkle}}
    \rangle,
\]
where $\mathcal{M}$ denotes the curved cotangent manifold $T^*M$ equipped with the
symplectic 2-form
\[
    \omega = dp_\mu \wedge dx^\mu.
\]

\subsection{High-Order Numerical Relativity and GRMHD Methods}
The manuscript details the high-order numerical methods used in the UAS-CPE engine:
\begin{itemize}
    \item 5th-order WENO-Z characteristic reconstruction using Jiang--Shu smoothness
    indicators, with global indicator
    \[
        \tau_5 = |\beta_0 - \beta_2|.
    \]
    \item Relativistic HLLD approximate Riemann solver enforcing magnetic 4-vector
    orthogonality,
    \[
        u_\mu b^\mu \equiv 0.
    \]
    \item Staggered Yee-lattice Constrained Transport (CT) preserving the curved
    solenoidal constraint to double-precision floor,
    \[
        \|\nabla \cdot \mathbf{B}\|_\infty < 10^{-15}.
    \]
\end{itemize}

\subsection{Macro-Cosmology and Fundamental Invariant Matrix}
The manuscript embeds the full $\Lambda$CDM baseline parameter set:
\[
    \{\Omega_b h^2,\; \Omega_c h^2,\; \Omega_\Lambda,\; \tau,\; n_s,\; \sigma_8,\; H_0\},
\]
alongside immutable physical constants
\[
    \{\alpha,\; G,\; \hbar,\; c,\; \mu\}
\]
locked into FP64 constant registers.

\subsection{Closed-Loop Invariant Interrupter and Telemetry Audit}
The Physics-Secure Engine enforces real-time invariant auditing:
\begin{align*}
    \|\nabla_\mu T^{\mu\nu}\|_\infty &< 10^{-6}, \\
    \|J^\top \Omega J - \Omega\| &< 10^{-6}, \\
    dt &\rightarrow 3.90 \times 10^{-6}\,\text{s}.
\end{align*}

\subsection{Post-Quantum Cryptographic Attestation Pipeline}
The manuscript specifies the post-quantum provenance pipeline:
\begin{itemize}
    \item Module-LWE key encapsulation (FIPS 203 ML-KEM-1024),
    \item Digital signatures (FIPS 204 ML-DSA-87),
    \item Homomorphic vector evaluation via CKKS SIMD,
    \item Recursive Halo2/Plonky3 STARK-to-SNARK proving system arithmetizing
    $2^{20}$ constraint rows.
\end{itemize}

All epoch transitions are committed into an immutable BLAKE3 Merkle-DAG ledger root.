@@ -1,0 +1,74 @@
+\section{Overview of the UAS-CPE Manuscript}
+\label{sec:overview_uascpe}
+
+The compiled manuscript (\texttt{uascpe\_paper\_v2.pdf}) provides the complete academic
+specification of the Unified Astrophysical Simulation \& Cryptographic Provenance Engine
+(UAS-CPE). The Physics-Secure Engine is formally defined as the six-tuple
+\[
+    \mathbf{\Psi}_{\mathrm{PSE}}
+    =
+    \langle
+        \mathcal{M},\,
+        \mathcal{S}_{\mathrm{AMR}},\,
+        \mathcal{D}_{\mathrm{GRMHD}},\,
+        \mathcal{V}_{\mathrm{Inv}},\,
+        \Pi_{\mathrm{PQ}},\,
+        \mathcal{L}_{\mathrm{Merkle}}
+    \rangle,
+\]
+where $\mathcal{M}$ denotes the curved cotangent manifold $T^*M$ equipped with the
+symplectic 2-form
+\[
+    \omega = dp_\mu \wedge dx^\mu.
+\]
+
+\subsection{High-Order Numerical Relativity and GRMHD Methods}
+The manuscript details the high-order numerical methods used in the UAS-CPE engine:
+\begin{itemize}
+    \item 5th-order WENO-Z characteristic reconstruction using Jiang--Shu smoothness
+    indicators, with global indicator
+    \[
+        \tau_5 = |\beta_0 - \beta_2|.
+    \]
+    \item Relativistic HLLD approximate Riemann solver enforcing magnetic 4-vector
+    orthogonality,
+    \[
+        u_\mu b^\mu \equiv 0.
+    \]
+    \item Staggered Yee-lattice Constrained Transport (CT) preserving the curved
+    solenoidal constraint to double-precision floor,
+    \[
+        \|\nabla \cdot \mathbf{B}\|_\infty < 10^{-15}.
+    \]
+\end{itemize}
+
+\subsection{Macro-Cosmology and Fundamental Invariant Matrix}
+The manuscript embeds the full $\Lambda$CDM baseline parameter set:
+\[
+    \{\Omega_b h^2,\; \Omega_c h^2,\; \Omega_\Lambda,\; \tau,\; n_s,\; \sigma_8,\; H_0\},
+\]
+alongside immutable physical constants
+\[
+    \{\alpha,\; G,\; \hbar,\; c,\; \mu\}
+\]
+locked into FP64 constant registers.
+
+\subsection{Closed-Loop Invariant Interrupter and Telemetry Audit}
+The Physics-Secure Engine enforces real-time invariant auditing:
+\begin{align*}
+    \|\nabla_\mu T^{\mu\nu}\|_\infty &< 10^{-6}, \\
+    \|J^\top \Omega J - \Omega\| &< 10^{-6}, \\
+    dt &\rightarrow 3.90 \times 10^{-6}\,\text{s}.
+\end{align*}
+
+\subsection{Post-Quantum Cryptographic Attestation Pipeline}
+The manuscript specifies the post-quantum provenance pipeline:
+\begin{itemize}
+    \item Module-LWE key encapsulation (FIPS 203 ML-KEM-1024),
+    \item Digital signatures (FIPS 204 ML-DSA-87),
+    \item Homomorphic vector evaluation via CKKS SIMD,
+    \item Recursive Halo2/Plonky3 STARK-to-SNARK proving system arithmetizing
+    $2^{20}$ constraint rows.
+\end{itemize}
+
+All epoch transitions are committed into an immutable BLAKE3 Merkle-DAG ledger root.

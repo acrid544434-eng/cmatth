@@ -1,0 +1,12 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\draw[->] (0,0) -- (10,0) node[right] {Time (M)};
+\draw[->] (0,-4) -- (0,1) node[above] {$\log_{10}(\|\nabla\cdot B\|)$};
+
+\draw[thick] (0,-1) -- (10,-1) node[right] {Conservative Baseline};
+\draw[thick] (0,-2.5) -- (10,-2.5) node[right] {UAS-CPE Floor};
+\draw[thick] (0,-3.0) -- (10,-3.0) node[right] {FP64 Machine Epsilon};
+
+\caption{Solenoidal floor stability under continuous Kerr flux injection.}
+\end{figure}

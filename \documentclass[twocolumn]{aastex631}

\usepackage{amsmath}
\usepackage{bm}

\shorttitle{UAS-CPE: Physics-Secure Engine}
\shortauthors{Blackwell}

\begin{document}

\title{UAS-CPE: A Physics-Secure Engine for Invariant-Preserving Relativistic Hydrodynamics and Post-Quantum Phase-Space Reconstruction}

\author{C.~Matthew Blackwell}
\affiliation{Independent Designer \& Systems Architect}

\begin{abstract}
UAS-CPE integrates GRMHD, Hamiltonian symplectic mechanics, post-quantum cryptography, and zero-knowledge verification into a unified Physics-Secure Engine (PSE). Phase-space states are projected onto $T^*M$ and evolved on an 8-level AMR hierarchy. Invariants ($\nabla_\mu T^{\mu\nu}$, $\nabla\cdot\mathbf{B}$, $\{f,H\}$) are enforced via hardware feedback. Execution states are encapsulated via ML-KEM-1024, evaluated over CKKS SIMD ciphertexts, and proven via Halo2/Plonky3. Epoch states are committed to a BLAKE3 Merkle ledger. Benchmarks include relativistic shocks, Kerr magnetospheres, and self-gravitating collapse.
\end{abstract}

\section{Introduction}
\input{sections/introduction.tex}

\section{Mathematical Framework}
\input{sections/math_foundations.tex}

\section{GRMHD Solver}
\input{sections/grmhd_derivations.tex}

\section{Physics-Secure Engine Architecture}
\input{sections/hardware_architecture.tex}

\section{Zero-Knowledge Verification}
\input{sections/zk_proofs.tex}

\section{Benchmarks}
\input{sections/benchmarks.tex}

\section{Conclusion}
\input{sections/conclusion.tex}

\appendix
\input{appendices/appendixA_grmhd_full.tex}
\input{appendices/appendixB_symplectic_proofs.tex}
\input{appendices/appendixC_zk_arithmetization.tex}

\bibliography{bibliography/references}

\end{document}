@@ -1,0 +1,48 @@
+\documentclass[twocolumn]{aastex631}
+
+\usepackage{amsmath}
+\usepackage{bm}
+
+\shorttitle{UAS-CPE: Physics-Secure Engine}
+\shortauthors{Blackwell}
+
+\begin{document}
+
+\title{UAS-CPE: A Physics-Secure Engine for Invariant-Preserving Relativistic Hydrodynamics and Post-Quantum Phase-Space Reconstruction}
+
+\author{C.~Matthew Blackwell}
+\affiliation{Independent Designer \& Systems Architect}
+
+\begin{abstract}
+UAS-CPE integrates GRMHD, Hamiltonian symplectic mechanics, post-quantum cryptography, and zero-knowledge verification into a unified Physics-Secure Engine (PSE). Phase-space states are projected onto $T^*M$ and evolved on an 8-level AMR hierarchy. Invariants ($\nabla_\mu T^{\mu\nu}$, $\nabla\cdot\mathbf{B}$, $\{f,H\}$) are enforced via hardware feedback. Execution states are encapsulated via ML-KEM-1024, evaluated over CKKS SIMD ciphertexts, and proven via Halo2/Plonky3. Epoch states are committed to a BLAKE3 Merkle ledger. Benchmarks include relativistic shocks, Kerr magnetospheres, and self-gravitating collapse.
+\end{abstract}
+
+\section{Introduction}
+\input{sections/introduction.tex}
+
+\section{Mathematical Framework}
+\input{sections/math_foundations.tex}
+
+\section{GRMHD Solver}
+\input{sections/grmhd_derivations.tex}
+
+\section{Physics-Secure Engine Architecture}
+\input{sections/hardware_architecture.tex}
+
+\section{Zero-Knowledge Verification}
+\input{sections/zk_proofs.tex}
+
+\section{Benchmarks}
+\input{sections/benchmarks.tex}
+
+\section{Conclusion}
+\input{sections/conclusion.tex}
+
+\appendix
+\input{appendices/appendixA_grmhd_full.tex}
+\input{appendices/appendixB_symplectic_proofs.tex}
+\input{appendices/appendixC_zk_arithmetization.tex}
+
+\bibliography{bibliography/references}
+
+\end{document}

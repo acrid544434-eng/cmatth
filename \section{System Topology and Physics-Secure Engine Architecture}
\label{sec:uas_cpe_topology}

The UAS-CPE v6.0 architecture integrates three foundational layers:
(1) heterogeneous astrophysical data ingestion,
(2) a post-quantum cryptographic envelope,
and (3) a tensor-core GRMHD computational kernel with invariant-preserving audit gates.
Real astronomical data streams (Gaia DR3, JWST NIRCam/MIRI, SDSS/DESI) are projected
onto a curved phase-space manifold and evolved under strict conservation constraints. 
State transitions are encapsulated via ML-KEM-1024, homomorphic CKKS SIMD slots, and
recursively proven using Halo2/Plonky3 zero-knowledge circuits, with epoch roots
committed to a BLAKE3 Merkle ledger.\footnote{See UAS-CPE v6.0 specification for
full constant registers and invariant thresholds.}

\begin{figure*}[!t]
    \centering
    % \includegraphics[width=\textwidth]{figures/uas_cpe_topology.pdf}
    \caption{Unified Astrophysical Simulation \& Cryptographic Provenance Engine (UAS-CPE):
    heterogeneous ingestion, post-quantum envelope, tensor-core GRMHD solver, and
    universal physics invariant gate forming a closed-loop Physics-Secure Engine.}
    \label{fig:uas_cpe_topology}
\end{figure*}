@@ -1,0 +1,22 @@
+\section{System Topology and Physics-Secure Engine Architecture}
+\label{sec:uas_cpe_topology}
+
+The UAS-CPE v6.0 architecture integrates three foundational layers:
+(1) heterogeneous astrophysical data ingestion,
+(2) a post-quantum cryptographic envelope,
+and (3) a tensor-core GRMHD computational kernel with invariant-preserving audit gates.
+Real astronomical data streams (Gaia DR3, JWST NIRCam/MIRI, SDSS/DESI) are projected
+onto a curved phase-space manifold and evolved under strict conservation constraints. 
+State transitions are encapsulated via ML-KEM-1024, homomorphic CKKS SIMD slots, and
+recursively proven using Halo2/Plonky3 zero-knowledge circuits, with epoch roots
+committed to a BLAKE3 Merkle ledger.\footnote{See UAS-CPE v6.0 specification for
+full constant registers and invariant thresholds.}
+
+\begin{figure*}[!t]
+    \centering
+    % \includegraphics[width=\textwidth]{figures/uas_cpe_topology.pdf}
+    \caption{Unified Astrophysical Simulation \& Cryptographic Provenance Engine (UAS-CPE):
+    heterogeneous ingestion, post-quantum envelope, tensor-core GRMHD solver, and
+    universal physics invariant gate forming a closed-loop Physics-Secure Engine.}
+    \label{fig:uas_cpe_topology}
+\end{figure*}

@@ -1,0 +1,15 @@
+% ============================================================
+%  PSE LOGO — FORMAL SYMBOLIC IDENTITY
+%  Author: C. Matthew Blackwell
+% ============================================================
+
+% Required packages (preamble)
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+
+% Bold uppercase Psi with romanized PSE subscript
+\newcommand{\PSElogo}{\ensuremath{\boldsymbol{\Psi}_{\mathrm{PSE}}}\xspace}
+
+% Usage:
+%   The \PSElogo architecture defines the Physics‑Secure Engine class.
+%   State transitions are validated inside the \PSElogo invariant manifold.

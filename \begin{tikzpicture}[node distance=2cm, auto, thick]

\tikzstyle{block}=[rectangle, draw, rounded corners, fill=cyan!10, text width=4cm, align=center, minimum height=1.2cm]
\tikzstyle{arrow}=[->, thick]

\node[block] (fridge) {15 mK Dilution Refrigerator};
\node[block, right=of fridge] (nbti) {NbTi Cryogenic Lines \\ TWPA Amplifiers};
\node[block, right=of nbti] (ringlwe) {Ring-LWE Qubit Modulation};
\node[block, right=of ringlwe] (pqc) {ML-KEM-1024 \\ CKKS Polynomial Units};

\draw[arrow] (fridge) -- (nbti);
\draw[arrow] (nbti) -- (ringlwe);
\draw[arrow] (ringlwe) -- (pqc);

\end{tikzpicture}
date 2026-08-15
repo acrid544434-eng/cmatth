@@ -1,0 +1,15 @@
+\begin{tikzpicture}[node distance=2cm, auto, thick]
+
+\tikzstyle{block}=[rectangle, draw, rounded corners, fill=cyan!10, text width=4cm, align=center, minimum height=1.2cm]
+\tikzstyle{arrow}=[->, thick]
+
+\node[block] (fridge) {15 mK Dilution Refrigerator};
+\node[block, right=of fridge] (nbti) {NbTi Cryogenic Lines \\ TWPA Amplifiers};
+\node[block, right=of nbti] (ringlwe) {Ring-LWE Qubit Modulation};
+\node[block, right=of ringlwe] (pqc) {ML-KEM-1024 \\ CKKS Polynomial Units};
+
+\draw[arrow] (fridge) -- (nbti);
+\draw[arrow] (nbti) -- (ringlwe);
+\draw[arrow] (ringlwe) -- (pqc);
+
+\end{tikzpicture}

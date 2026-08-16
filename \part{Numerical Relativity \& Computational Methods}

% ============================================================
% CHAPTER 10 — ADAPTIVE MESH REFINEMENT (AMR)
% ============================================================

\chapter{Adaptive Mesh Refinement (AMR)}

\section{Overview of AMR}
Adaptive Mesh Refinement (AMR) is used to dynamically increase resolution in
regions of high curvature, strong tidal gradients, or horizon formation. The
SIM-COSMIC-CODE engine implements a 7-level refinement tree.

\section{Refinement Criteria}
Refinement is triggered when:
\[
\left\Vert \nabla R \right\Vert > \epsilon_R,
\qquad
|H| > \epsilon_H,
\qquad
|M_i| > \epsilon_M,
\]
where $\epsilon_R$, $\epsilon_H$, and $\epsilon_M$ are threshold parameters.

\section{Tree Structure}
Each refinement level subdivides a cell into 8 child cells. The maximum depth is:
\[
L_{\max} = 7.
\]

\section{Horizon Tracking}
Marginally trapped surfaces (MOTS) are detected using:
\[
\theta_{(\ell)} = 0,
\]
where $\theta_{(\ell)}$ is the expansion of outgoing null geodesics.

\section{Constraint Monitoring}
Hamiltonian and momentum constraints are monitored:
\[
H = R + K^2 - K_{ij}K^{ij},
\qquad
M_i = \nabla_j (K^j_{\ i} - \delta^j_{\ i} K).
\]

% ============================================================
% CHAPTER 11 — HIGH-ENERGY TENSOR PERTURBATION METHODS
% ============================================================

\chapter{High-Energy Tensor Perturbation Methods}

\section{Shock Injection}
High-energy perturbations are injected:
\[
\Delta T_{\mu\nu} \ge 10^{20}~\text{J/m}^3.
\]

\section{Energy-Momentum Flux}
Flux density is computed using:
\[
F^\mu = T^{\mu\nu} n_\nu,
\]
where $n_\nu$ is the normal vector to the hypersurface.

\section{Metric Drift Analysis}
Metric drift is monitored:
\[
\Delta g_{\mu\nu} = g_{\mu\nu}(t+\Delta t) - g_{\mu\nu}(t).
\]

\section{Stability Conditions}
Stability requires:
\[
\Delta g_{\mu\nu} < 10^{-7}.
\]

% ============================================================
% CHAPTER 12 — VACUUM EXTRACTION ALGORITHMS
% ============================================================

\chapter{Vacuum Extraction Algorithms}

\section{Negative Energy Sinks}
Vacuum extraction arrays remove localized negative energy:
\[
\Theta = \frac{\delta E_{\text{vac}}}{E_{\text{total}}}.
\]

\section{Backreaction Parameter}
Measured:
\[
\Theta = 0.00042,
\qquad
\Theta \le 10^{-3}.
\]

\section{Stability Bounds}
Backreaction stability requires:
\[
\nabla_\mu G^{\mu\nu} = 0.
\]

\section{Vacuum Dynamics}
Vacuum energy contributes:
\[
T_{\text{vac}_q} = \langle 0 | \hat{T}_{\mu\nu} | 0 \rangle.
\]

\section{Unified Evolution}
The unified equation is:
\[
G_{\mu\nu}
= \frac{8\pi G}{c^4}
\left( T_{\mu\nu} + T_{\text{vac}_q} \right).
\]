@@ -1,0 +1,115 @@
+\part{Numerical Relativity \& Computational Methods}
+
+% ============================================================
+% CHAPTER 10 — ADAPTIVE MESH REFINEMENT (AMR)
+% ============================================================
+
+\chapter{Adaptive Mesh Refinement (AMR)}
+
+\section{Overview of AMR}
+Adaptive Mesh Refinement (AMR) is used to dynamically increase resolution in
+regions of high curvature, strong tidal gradients, or horizon formation. The
+SIM-COSMIC-CODE engine implements a 7-level refinement tree.
+
+\section{Refinement Criteria}
+Refinement is triggered when:
+\[
+\left\Vert \nabla R \right\Vert > \epsilon_R,
+\qquad
+|H| > \epsilon_H,
+\qquad
+|M_i| > \epsilon_M,
+\]
+where $\epsilon_R$, $\epsilon_H$, and $\epsilon_M$ are threshold parameters.
+
+\section{Tree Structure}
+Each refinement level subdivides a cell into 8 child cells. The maximum depth is:
+\[
+L_{\max} = 7.
+\]
+
+\section{Horizon Tracking}
+Marginally trapped surfaces (MOTS) are detected using:
+\[
+\theta_{(\ell)} = 0,
+\]
+where $\theta_{(\ell)}$ is the expansion of outgoing null geodesics.
+
+\section{Constraint Monitoring}
+Hamiltonian and momentum constraints are monitored:
+\[
+H = R + K^2 - K_{ij}K^{ij},
+\qquad
+M_i = \nabla_j (K^j_{\ i} - \delta^j_{\ i} K).
+\]
+
+% ============================================================
+% CHAPTER 11 — HIGH-ENERGY TENSOR PERTURBATION METHODS
+% ============================================================
+
+\chapter{High-Energy Tensor Perturbation Methods}
+
+\section{Shock Injection}
+High-energy perturbations are injected:
+\[
+\Delta T_{\mu\nu} \ge 10^{20}~\text{J/m}^3.
+\]
+
+\section{Energy-Momentum Flux}
+Flux density is computed using:
+\[
+F^\mu = T^{\mu\nu} n_\nu,
+\]
+where $n_\nu$ is the normal vector to the hypersurface.
+
+\section{Metric Drift Analysis}
+Metric drift is monitored:
+\[
+\Delta g_{\mu\nu} = g_{\mu\nu}(t+\Delta t) - g_{\mu\nu}(t).
+\]
+
+\section{Stability Conditions}
+Stability requires:
+\[
+\Delta g_{\mu\nu} < 10^{-7}.
+\]
+
+% ============================================================
+% CHAPTER 12 — VACUUM EXTRACTION ALGORITHMS
+% ============================================================
+
+\chapter{Vacuum Extraction Algorithms}
+
+\section{Negative Energy Sinks}
+Vacuum extraction arrays remove localized negative energy:
+\[
+\Theta = \frac{\delta E_{\text{vac}}}{E_{\text{total}}}.
+\]
+
+\section{Backreaction Parameter}
+Measured:
+\[
+\Theta = 0.00042,
+\qquad
+\Theta \le 10^{-3}.
+\]
+
+\section{Stability Bounds}
+Backreaction stability requires:
+\[
+\nabla_\mu G^{\mu\nu} = 0.
+\]
+
+\section{Vacuum Dynamics}
+Vacuum energy contributes:
+\[
+T_{\text{vac}_q} = \langle 0 | \hat{T}_{\mu\nu} | 0 \rangle.
+\]
+
+\section{Unified Evolution}
+The unified equation is:
+\[
+G_{\mu\nu}
+= \frac{8\pi G}{c^4}
+\left( T_{\mu\nu} + T_{\text{vac}_q} \right).
+\]

@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{%
+Patent Specification:\\
+AXI Stream Ingestion and SPI Sensor Capture System\\
+for High-Throughput Scientific and Cosmological Telemetry
+}
+\author{Inventor: C.~Matthew Blackwell}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\section*{Cross-Reference to Related Applications}
+This application relates to high-throughput telemetry ingestion systems,
+including AXI4-Stream fabrics, SPI sensor capture subsystems, and unified
+scientific simulation engines.
+
+\section*{Field of the Invention}
+The invention pertains to hardware telemetry ingestion systems, specifically
+AXI4-Stream data pipelines and SPI sensor capture architectures used in
+scientific, cosmological, and unified-field simulation environments.
+
+\section*{Background of the Invention}
+Existing scientific hardware platforms rely on fragmented ingestion pipelines
+with limited throughput, high latency, and insufficient synchronization across
+heterogeneous sensors. Conventional SPI capture systems lack deterministic
+framing, metadata tagging, and high-speed bridging into AXI4-Stream fabrics.
+No prior art discloses a unified ingestion architecture combining:
+\begin{itemize}
+    \item multi-channel SPI capture,
+    \item AXI4-Stream packetization,
+    \item deterministic metadata tagging,
+    \item CRC-based integrity verification,
+    \item low-jitter clock synchronization,
+    \item high-throughput DMA buffering.
+\end{itemize}
+
+\section*{Summary of the Invention}
+The invention provides a unified hardware architecture comprising:
+\begin{itemize}
+    \item a multi-channel SPI sensor capture subsystem,
+    \item a packet formatter generating AXI4-Stream frames,
+    \item a metadata injection engine,
+    \item CRC integrity verification,
+    \item an AXI4-Stream switch fabric,
+    \item a DMA engine for DDR buffering,
+    \item deterministic timing and low-jitter clock domains.
+\end{itemize}
+
+\section*{Brief Description of the Drawings}
+\begin{itemize}
+    \item \textbf{Figure 1:} System-level schematic of SPI-to-AXI ingestion.
+    \item \textbf{Figure 2:} FPGA RTL block diagram.
+    \item \textbf{Figure 3:} AXI4-Stream timing diagram.
+    \item \textbf{Figure 4:} SPI capture timing diagram.
+\end{itemize}
+
+\section*{Detailed Description of the Invention}
+
+\subsection*{SPI Sensor Capture Subsystem}
+The SPI subsystem supports:
+\begin{itemize}
+    \item SPI Modes 0--3,
+    \item clock rates up to 50\,MHz,
+    \item 8-, 16-, and 32-bit word widths,
+    \item up to 8 independent sensor channels.
+\end{itemize}
+
+SPI frames are assembled with:
+\begin{itemize}
+    \item start-of-frame (SOF),
+    \item end-of-frame (EOF),
+    \item CRC-16/CRC-32,
+    \item timestamp metadata,
+    \item sensor ID tagging.
+\end{itemize}
+
+\subsection*{AXI4-Stream Packet Formatter}
+SPI frames are converted into AXI4-Stream packets using:
+\begin{itemize}
+    \item \texttt{TDATA} for payload,
+    \item \texttt{TUSER} for metadata,
+    \item \texttt{TLAST} for frame boundaries,
+    \item \texttt{TKEEP} for byte masking.
+\end{itemize}
+
+\subsection*{AXI4-Stream Fabric}
+The AXI fabric includes:
+\begin{itemize}
+    \item AXI stream switch,
+    \item AXI DMA engine,
+    \item DDR4/DDR5 memory controller,
+    \item deterministic latency constraints.
+\end{itemize}
+
+\subsection*{Clocking and Timing}
+Clock domains include:
+\begin{itemize}
+    \item 100\,MHz reference oscillator ($<0.5$\,ps jitter),
+    \item 250\,MHz AXI fabric clock,
+    \item 50\,MHz SPI clock,
+    \item CDC FIFOs for domain crossing.
+\end{itemize}
+
+\subsection*{Integrity Verification}
+CRC engines validate all SPI frames before AXI packetization. Metadata includes:
+\begin{itemize}
+    \item sensor ID,
+    \item timestamp,
+    \item CRC status,
+    \item channel index.
+\end{itemize}
+
+\section*{Claims}
+
+\begin{enumerate}
+
+\item A telemetry ingestion system comprising:
+    \begin{enumerate}
+        \item a multi-channel SPI sensor capture subsystem configured to receive
+        sensor data at up to 50\,MHz;
+        \item a packet formatter configured to assemble SPI frames into AXI4-Stream
+        packets with SOF, EOF, CRC, and metadata;
+        \item an AXI4-Stream fabric configured to transport said packets using
+        \texttt{TVALID}, \texttt{TREADY}, \texttt{TDATA}, \texttt{TUSER}, and
+        \texttt{TLAST};
+        \item a DMA engine configured to buffer AXI packets into DDR memory;
+        \item a clock distribution network providing low-jitter timing domains.
+    \end{enumerate}
+
+\item The system of Claim~1 wherein the SPI subsystem supports 8 independent
+channels.
+
+\item The system of Claim~1 wherein the packet formatter injects metadata
+including sensor ID, timestamp, CRC status, and channel index.
+
+\item The system of Claim~1 wherein CRC-16 or CRC-32 is applied to each SPI frame.
+
+\item The system of Claim~1 wherein AXI packetization uses 128- or 256-bit
+\texttt{TDATA} widths.
+
+\item The system of Claim~1 wherein end-to-end latency from SPI capture to AXI
+ingress is less than $5\,\mu\text{s}$.
+
+\item The system of Claim~1 wherein jitter on the AXI fabric clock is less than
+$5$\,ps.
+
+\item A method for telemetry ingestion comprising:
+    \begin{enumerate}
+        \item capturing SPI sensor frames,
+        \item assembling said frames with SOF, EOF, and CRC,
+        \item converting said frames into AXI4-Stream packets,
+        \item injecting metadata into \texttt{TUSER},
+        \item transmitting packets through an AXI fabric,
+        \item buffering packets via DMA into DDR memory.
+    \end{enumerate}
+
+\item A non-transitory computer-readable medium storing instructions that cause
+a processor to perform the method of Claim~8.
+
+\item A unified telemetry architecture comprising any combination of the
+elements described in Claims~1--9.
+
+\end{enumerate}
+
+\section*{Abstract}
+A hardware telemetry ingestion system comprising a multi-channel SPI sensor
+capture subsystem, an AXI4-Stream packet formatter, a metadata injection engine,
+a CRC integrity module, an AXI4-Stream fabric, and a DMA buffering subsystem.
+The invention provides deterministic, high-throughput, low-latency ingestion
+suitable for scientific and cosmological simulation engines.
+
+\end{document}

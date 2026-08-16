@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{%
+  MLB--MACSE v3.0:\\
+  Major League Baseball--Astrophysical Cryptographic Simulation Engine\\
+  Formal Physics, Crypto Interfaces, and State-Vector Specification
+}
+\author{C.~Matthew Blackwell\\Independent Systems Architect and Designer}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Major League Baseball--Astrophysical Cryptographic Simulation Engine (MLB--MACSE)
+is a high-performance simulation framework that couples real-world MLB Statcast data
+with astrophysical entropy sources and post-quantum cryptography. This paper
+formalizes the physics modules, crypto/entropy interfaces, and the global
+state-vector \(S_{\text{MACSE}}(t)\), and outlines the v3.0 architectural roadmap
+including quantum-classical optimization, biomechanical coupling, and decentralized
+provenance.
+\end{abstract}
+
+\section{Introduction}
+\subsection{Motivation}
+% Baseball analytics, physics-based simulation, secure proprietary models.
+
+\subsection{Related Work}
+% Statcast, PITCHf/x, existing trajectory models, sports analytics, PQ crypto.
+
+\subsection{Contributions}
+% Bullet list of what MLB-MACSE introduces.
+
+\section{System Overview}
+\subsection{High-Level Architecture}
+% Diagram description: Statcast ingest, astrophysical entropy, Ring-LWE core, simulation engine.
+
+\subsection{Data Sources}
+% Statcast, historical datasets, Planck CMB, LIGO/Virgo, etc.
+
+\section{Formal Physics Module Specification}
+\subsection{Ball Flight Dynamics (Aero-Ballistics)}
+We model the batted-ball trajectory under gravity, drag, and Magnus lift:
+\begin{equation}
+m \frac{d\mathbf{v}}{dt}
+= m \mathbf{g}
+- \frac{1}{2} \rho_{\text{air}} C_d A \|\mathbf{v}\| \mathbf{v}
++ \frac{1}{2} \rho_{\text{air}} C_l A \|\mathbf{v}\|^2 \hat{\mathbf{L}}(\boldsymbol{\omega}, \mathbf{v}),
+\end{equation}
+where \(m\) is the ball mass, \(\mathbf{v}\) velocity, \(\rho_{\text{air}}\) air density,
+\(C_d\) drag coefficient, \(C_l\) lift coefficient, \(A\) cross-sectional area,
+and \(\boldsymbol{\omega}\) the spin vector.
+
+\subsection{Bat--Ball Collision Mechanics}
+We model impact via an impulse-momentum formulation with a dynamic coefficient of restitution:
+\begin{equation}
+\mathbf{J}
+= m_{\text{eff}} (1 + e_{\text{COR}}) (\mathbf{v}_{\text{bat}} - \mathbf{v}_{\text{ball}}),
+\end{equation}
+where \(m_{\text{eff}}\) is the effective mass, \(e_{\text{COR}}\) depends on bat
+material and impact location, and \(\mathbf{v}_{\text{bat}}, \mathbf{v}_{\text{ball}}\)
+are pre-impact velocities.
+
+\subsection{Player Kinematics}
+% Articulated rigid-body, joint torque limits, equations of motion.
+
+\section{Crypto / Entropy Interface Specification}
+\subsection{Astrophysical Entropy Ingestion}
+We ingest Planck CMB anisotropy and LIGO gravitational wave strain to form a TRNG seed pool.
+Entropy is conditioned via SHAKE-256:
+\begin{equation}
+\mathbf{s}_{\text{seed}} = \text{SHAKE256}(\mathbf{E}_{\text{raw}}),
+\end{equation}
+where \(\mathbf{E}_{\text{raw}}\) is the concatenated astrophysical bitstream.
+
+\subsection{Ring-LWE Key Derivation}
+We use Ring-LWE for post-quantum security:
+\begin{equation}
+\mathbf{b} = \mathbf{A}\mathbf{s} + \mathbf{e} \pmod q,
+\end{equation}
+where \(\mathbf{A}\) is a matrix derived from entropy seeds, \(\mathbf{s}\) encodes
+encrypted Statcast coefficients, \(\mathbf{e}\) is a discrete Gaussian error vector,
+and \(q\) the modulus.
+
+\subsection{zk-SNARK Verification}
+% Frame-level proofs that trajectories obey physics without revealing proprietary models.
+
+\section{Formal State-Vector Definition}
+We define the global simulation state as:
+\begin{equation}
+S_{\text{MACSE}}(t)
+= \big(
+\mathbf{X}_{\text{kin}}(t),
+\mathbf{T}_{\text{thermo}}(t),
+\mathbf{E}_{\text{astro}}(t),
+\Psi_{\text{LWE}}(t)
+\big),
+\end{equation}
+where:
+\begin{itemize}
+  \item \(\mathbf{X}_{\text{kin}}(t)\): positions, velocities, spins, accelerations.
+  \item \(\mathbf{T}_{\text{thermo}}(t)\): \(\rho_{\text{air}}, T, P, \mathbf{w}\).
+  \item \(\mathbf{E}_{\text{astro}}(t)\): entropy buffers from CMB and GW streams.
+  \item \(\Psi_{\text{LWE}}(t)\): lattice commitments and zk-proof state.
+\end{itemize}
+
+\section{Update Dynamics}
+% Define S(t + \Delta t) = F(S(t), controls, entropy) for each subvector.
+
+\section{MLB--MACSE v3.0 Roadmap}
+\subsection{Phase I: Quantum-Classical Hybrid Optimization}
+% Tensor sharding, live Statcast ingestion.
+
+\subsection{Phase II: Biomechanical-Astrophysical Coupling}
+% Musculoskeletal torque + entropy variance, fatigue modeling.
+
+\subsection{Phase III: Decentralized Provenance Ledger}
+% Immutable, cryptographically proven simulation outputs.
+
+\section{Discussion}
+% Limitations, validation, deployment scenarios, baseball analytics impact.
+
+\section{Conclusion}
+% Summarize what MLB-MACSE is and is not; future work.
+
+\bibliographystyle{plain}
+\bibliography{mlbmacse}
+
+\end{document}

@@ -1,0 +1,118 @@
+\section*{Patent Claims for UCAOCSE-v1.0}
+\subsection*{Inventor: C.~Matthew Blackwell}
+
+\begin{enumerate}
+
+% ---------------------------------------------------------
+% Independent System Claim
+% ---------------------------------------------------------
+\item \textbf{A cosmological simulation system}, comprising:
+    \begin{enumerate}
+        \item an astrophysical ingestion module configured to receive multi-messenger datasets including Cosmic Microwave Background anisotropy data, deep-field optical spectra, and gravitational wave strain signals;
+        \item an entropy extraction engine configured to process said datasets using a cryptographic sponge function to generate true-random entropy seeds;
+        \item a post-quantum cryptographic core comprising a Ring-Learning With Errors (Ring-LWE) lattice module configured to bind simulation state variables to cryptographically verifiable commitments;
+        \item an ontology continuity engine configured to map semantic, taxonomic, and structural relationships across cosmological epochs using category-theoretic functor mappings; and
+        \item a unified field tensor simulation kernel configured to evolve a spacetime metric tensor, matter-sector stress-energy tensors, dark-sector stress-energy tensors, and cryptographic back-reaction tensors according to unified field equations.
+    \end{enumerate}
+
+% ---------------------------------------------------------
+% Independent Method Claim
+% ---------------------------------------------------------
+\item \textbf{A method for unified cosmological simulation}, comprising:
+    \begin{enumerate}
+        \item ingesting astrophysical datasets from CMB, JWST, and gravitational wave observatories;
+        \item extracting entropy from said datasets using a SHAKE-256 sponge function;
+        \item generating cryptographic lattice commitments using Ring-LWE key derivation;
+        \item applying ontology continuity mappings across inflationary, radiation-dominated, matter-dominated, and dark-energy-dominated epochs;
+        \item evolving unified field tensors according to relativistic curvature equations and dark-sector equations of state; and
+        \item verifying conservation laws using cryptographic zero-knowledge proofs.
+    \end{enumerate}
+
+% ---------------------------------------------------------
+% Computer-Readable Medium Claim
+% ---------------------------------------------------------
+\item \textbf{A non-transitory computer-readable medium} storing instructions that,
+when executed by one or more processors, cause the processors to perform the
+method of Claim~2.
+
+% ---------------------------------------------------------
+% Dependent Claims — Astrophysical Ingestion
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein the astrophysical ingestion module processes
+CMB anisotropy maps at a rate of at least 20\,Gbps.
+
+\item The system of Claim~1, wherein gravitational wave strain data is sampled at
+a frequency of at least 32.768\,kHz.
+
+\item The system of Claim~1, wherein the ingestion module performs multi-messenger
+synchronization across heterogeneous astrophysical data sources.
+
+% ---------------------------------------------------------
+% Dependent Claims — Entropy Extraction & Cryptographic Binding
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein the entropy extraction engine produces
+true-random seed blocks validated by NIST SP 800-22 statistical tests.
+
+\item The system of Claim~1, wherein the Ring-LWE lattice module maintains
+decoding error vectors within a secure bound $\sigma < \beta$ under simulated
+quantum decryption attacks.
+
+\item The system of Claim~1, wherein cryptographic back-reaction tensors are
+incorporated directly into unified field equations.
+
+% ---------------------------------------------------------
+% Dependent Claims — Ontology Continuity
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein the ontology continuity engine maintains
+taxonomic persistence across at least 50{,}000 spatial nodes.
+
+\item The system of Claim~1, wherein functor mappings enforce structural
+continuity across cosmic epochs without taxonomic fracture.
+
+\item The system of Claim~1, wherein ontology continuity is validated through
+multi-epoch semantic organism mapping.
+
+% ---------------------------------------------------------
+% Dependent Claims — Unified Field Tensor Simulation
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein the unified field tensor simulation kernel
+evolves the spacetime metric tensor using adaptive mesh refinement at levels of
+at least $L = 9$.
+
+\item The system of Claim~1, wherein covariant conservation of stress-energy
+tensors is maintained within numerical tolerances of at least
+$1.0 \times 10^{-13}$.
+
+\item The system of Claim~1, wherein dark-energy equation-of-state parameters
+remain bounded within $w = -1.02 \pm 0.001$.
+
+% ---------------------------------------------------------
+% Dependent Claims — Cosmological Inventory
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein the simulation maintains a total density
+parameter of $\Omega_{\text{total}} = 1.00004 \pm 0.00001$.
+
+\item The system of Claim~1, wherein baryonic, dark matter, dark energy, and
+radiative components are tracked using distinct kernel models including
+magnetohydrodynamics, collisionless N-body solvers, quintessence fields, and
+relativistic Boltzmann equations.
+
+% ---------------------------------------------------------
+% Dependent Claims — Zero-Knowledge Verification
+% ---------------------------------------------------------
+\item The system of Claim~1, wherein zero-knowledge succinct non-interactive
+arguments of knowledge (zk-SNARKs) verify compliance with conservation laws for
+each simulation epoch.
+
+\item The system of Claim~1, wherein cryptographic verification is performed
+continuously during unified field tensor evolution.
+
+% ---------------------------------------------------------
+% Broad Protection Claim
+% ---------------------------------------------------------
+\item \textbf{A unified cosmological architecture}, comprising any combination of
+astrophysical ingestion, entropy extraction, ontology continuity mapping,
+unified field tensor evolution, and post-quantum cryptographic verification as
+described in Claims~1--19.
+
+\end{enumerate}

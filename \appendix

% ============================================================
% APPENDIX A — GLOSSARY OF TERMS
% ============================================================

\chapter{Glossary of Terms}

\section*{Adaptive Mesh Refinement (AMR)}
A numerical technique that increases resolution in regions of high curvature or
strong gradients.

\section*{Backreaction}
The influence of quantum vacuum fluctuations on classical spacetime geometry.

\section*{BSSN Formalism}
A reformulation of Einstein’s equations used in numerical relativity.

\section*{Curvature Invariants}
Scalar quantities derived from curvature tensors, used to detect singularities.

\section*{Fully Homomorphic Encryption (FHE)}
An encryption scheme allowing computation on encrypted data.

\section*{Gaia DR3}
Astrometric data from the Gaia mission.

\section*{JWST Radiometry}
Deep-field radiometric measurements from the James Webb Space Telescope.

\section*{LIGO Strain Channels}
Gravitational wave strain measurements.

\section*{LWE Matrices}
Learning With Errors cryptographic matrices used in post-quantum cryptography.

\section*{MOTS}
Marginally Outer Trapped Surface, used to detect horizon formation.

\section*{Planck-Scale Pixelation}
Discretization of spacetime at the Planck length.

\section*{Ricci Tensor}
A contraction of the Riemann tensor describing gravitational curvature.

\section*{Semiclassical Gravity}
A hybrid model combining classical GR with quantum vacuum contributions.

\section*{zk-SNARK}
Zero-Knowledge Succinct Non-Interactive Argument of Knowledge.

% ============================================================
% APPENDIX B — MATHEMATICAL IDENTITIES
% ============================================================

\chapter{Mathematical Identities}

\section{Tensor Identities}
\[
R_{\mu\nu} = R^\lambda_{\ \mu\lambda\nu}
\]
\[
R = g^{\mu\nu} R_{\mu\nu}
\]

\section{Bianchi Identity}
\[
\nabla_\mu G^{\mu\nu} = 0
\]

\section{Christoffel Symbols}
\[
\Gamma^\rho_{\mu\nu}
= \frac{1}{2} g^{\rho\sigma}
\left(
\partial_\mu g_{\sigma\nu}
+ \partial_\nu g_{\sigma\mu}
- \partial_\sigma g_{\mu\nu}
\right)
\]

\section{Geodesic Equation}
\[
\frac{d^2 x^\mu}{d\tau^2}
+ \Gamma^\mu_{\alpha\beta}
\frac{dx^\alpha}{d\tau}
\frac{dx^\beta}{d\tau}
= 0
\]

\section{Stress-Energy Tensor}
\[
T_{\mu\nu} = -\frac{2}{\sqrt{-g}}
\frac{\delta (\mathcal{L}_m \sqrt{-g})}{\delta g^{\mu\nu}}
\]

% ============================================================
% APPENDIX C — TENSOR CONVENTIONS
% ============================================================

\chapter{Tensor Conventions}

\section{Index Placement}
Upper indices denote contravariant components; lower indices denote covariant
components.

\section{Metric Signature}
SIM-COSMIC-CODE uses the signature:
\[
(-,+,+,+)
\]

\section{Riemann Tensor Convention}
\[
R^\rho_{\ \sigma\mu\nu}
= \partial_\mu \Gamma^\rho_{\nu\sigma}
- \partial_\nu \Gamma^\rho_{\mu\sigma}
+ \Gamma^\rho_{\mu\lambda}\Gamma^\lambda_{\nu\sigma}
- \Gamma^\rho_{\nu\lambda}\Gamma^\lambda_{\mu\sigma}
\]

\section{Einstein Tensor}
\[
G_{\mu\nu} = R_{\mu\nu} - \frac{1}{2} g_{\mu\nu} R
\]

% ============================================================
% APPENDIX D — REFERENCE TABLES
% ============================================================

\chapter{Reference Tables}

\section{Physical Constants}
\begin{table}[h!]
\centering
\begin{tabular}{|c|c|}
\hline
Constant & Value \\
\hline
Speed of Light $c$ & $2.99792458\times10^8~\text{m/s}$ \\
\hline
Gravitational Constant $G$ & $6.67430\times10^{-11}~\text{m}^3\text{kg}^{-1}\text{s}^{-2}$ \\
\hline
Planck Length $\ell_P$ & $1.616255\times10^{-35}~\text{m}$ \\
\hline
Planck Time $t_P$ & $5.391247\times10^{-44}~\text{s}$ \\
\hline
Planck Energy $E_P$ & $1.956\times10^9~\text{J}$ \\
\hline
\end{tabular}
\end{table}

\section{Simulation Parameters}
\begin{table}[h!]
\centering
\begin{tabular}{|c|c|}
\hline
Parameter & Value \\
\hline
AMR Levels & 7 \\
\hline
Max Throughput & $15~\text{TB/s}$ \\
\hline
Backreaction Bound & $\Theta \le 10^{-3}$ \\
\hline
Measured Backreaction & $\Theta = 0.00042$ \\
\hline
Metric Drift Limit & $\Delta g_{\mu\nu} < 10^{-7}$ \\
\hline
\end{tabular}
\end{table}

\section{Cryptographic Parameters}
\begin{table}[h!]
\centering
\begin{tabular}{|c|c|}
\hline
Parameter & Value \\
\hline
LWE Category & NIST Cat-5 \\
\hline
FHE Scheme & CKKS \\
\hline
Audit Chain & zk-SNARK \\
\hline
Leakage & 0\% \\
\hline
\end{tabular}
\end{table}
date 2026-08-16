@@ -1,0 +1,189 @@
+\appendix
+
+% ============================================================
+% APPENDIX A — GLOSSARY OF TERMS
+% ============================================================
+
+\chapter{Glossary of Terms}
+
+\section*{Adaptive Mesh Refinement (AMR)}
+A numerical technique that increases resolution in regions of high curvature or
+strong gradients.
+
+\section*{Backreaction}
+The influence of quantum vacuum fluctuations on classical spacetime geometry.
+
+\section*{BSSN Formalism}
+A reformulation of Einstein’s equations used in numerical relativity.
+
+\section*{Curvature Invariants}
+Scalar quantities derived from curvature tensors, used to detect singularities.
+
+\section*{Fully Homomorphic Encryption (FHE)}
+An encryption scheme allowing computation on encrypted data.
+
+\section*{Gaia DR3}
+Astrometric data from the Gaia mission.
+
+\section*{JWST Radiometry}
+Deep-field radiometric measurements from the James Webb Space Telescope.
+
+\section*{LIGO Strain Channels}
+Gravitational wave strain measurements.
+
+\section*{LWE Matrices}
+Learning With Errors cryptographic matrices used in post-quantum cryptography.
+
+\section*{MOTS}
+Marginally Outer Trapped Surface, used to detect horizon formation.
+
+\section*{Planck-Scale Pixelation}
+Discretization of spacetime at the Planck length.
+
+\section*{Ricci Tensor}
+A contraction of the Riemann tensor describing gravitational curvature.
+
+\section*{Semiclassical Gravity}
+A hybrid model combining classical GR with quantum vacuum contributions.
+
+\section*{zk-SNARK}
+Zero-Knowledge Succinct Non-Interactive Argument of Knowledge.
+
+% ============================================================
+% APPENDIX B — MATHEMATICAL IDENTITIES
+% ============================================================
+
+\chapter{Mathematical Identities}
+
+\section{Tensor Identities}
+\[
+R_{\mu\nu} = R^\lambda_{\ \mu\lambda\nu}
+\]
+\[
+R = g^{\mu\nu} R_{\mu\nu}
+\]
+
+\section{Bianchi Identity}
+\[
+\nabla_\mu G^{\mu\nu} = 0
+\]
+
+\section{Christoffel Symbols}
+\[
+\Gamma^\rho_{\mu\nu}
+= \frac{1}{2} g^{\rho\sigma}
+\left(
+\partial_\mu g_{\sigma\nu}
++ \partial_\nu g_{\sigma\mu}
+- \partial_\sigma g_{\mu\nu}
+\right)
+\]
+
+\section{Geodesic Equation}
+\[
+\frac{d^2 x^\mu}{d\tau^2}
++ \Gamma^\mu_{\alpha\beta}
+\frac{dx^\alpha}{d\tau}
+\frac{dx^\beta}{d\tau}
+= 0
+\]
+
+\section{Stress-Energy Tensor}
+\[
+T_{\mu\nu} = -\frac{2}{\sqrt{-g}}
+\frac{\delta (\mathcal{L}_m \sqrt{-g})}{\delta g^{\mu\nu}}
+\]
+
+% ============================================================
+% APPENDIX C — TENSOR CONVENTIONS
+% ============================================================
+
+\chapter{Tensor Conventions}
+
+\section{Index Placement}
+Upper indices denote contravariant components; lower indices denote covariant
+components.
+
+\section{Metric Signature}
+SIM-COSMIC-CODE uses the signature:
+\[
+(-,+,+,+)
+\]
+
+\section{Riemann Tensor Convention}
+\[
+R^\rho_{\ \sigma\mu\nu}
+= \partial_\mu \Gamma^\rho_{\nu\sigma}
+- \partial_\nu \Gamma^\rho_{\mu\sigma}
++ \Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}
+- \Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}
+\]
+
+\section{Einstein Tensor}
+\[
+G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R
+\]
+
+% ============================================================
+% APPENDIX D — REFERENCE TABLES
+% ============================================================
+
+\chapter{Reference Tables}
+
+\section{Physical Constants}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Constant & Value \\
+\hline
+Speed of Light $c$ & $2.99792458\times10^8~\text{m/s}$ \\
+\hline
+Gravitational Constant $G$ & $6.67430\times10^{-11}~\text{m}^3\text{kg}^{-1}\text{s}^{-2}$ \\
+\hline
+Planck Length $\ell_P$ & $1.616255\times10^{-35}~\text{m}$ \\
+\hline
+Planck Time $t_P$ & $5.391247\times10^{-44}~\text{s}$ \\
+\hline
+Planck Energy $E_P$ & $1.956\times10^9~\text{J}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Simulation Parameters}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Parameter & Value \\
+\hline
+AMR Levels & 7 \\
+\hline
+Max Throughput & $15~\text{TB/s}$ \\
+\hline
+Backreaction Bound & $\Theta \le 10^{-3}$ \\
+\hline
+Measured Backreaction & $\Theta = 0.00042$ \\
+\hline
+Metric Drift Limit & $\Delta g_{\mu\nu} < 10^{-7}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Cryptographic Parameters}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Parameter & Value \\
+\hline
+LWE Category & NIST Cat-5 \\
+\hline
+FHE Scheme & CKKS \\
+\hline
+Audit Chain & zk-SNARK \\
+\hline
+Leakage & 0\% \\
+\hline
+\end{tabular}
+\end{table}

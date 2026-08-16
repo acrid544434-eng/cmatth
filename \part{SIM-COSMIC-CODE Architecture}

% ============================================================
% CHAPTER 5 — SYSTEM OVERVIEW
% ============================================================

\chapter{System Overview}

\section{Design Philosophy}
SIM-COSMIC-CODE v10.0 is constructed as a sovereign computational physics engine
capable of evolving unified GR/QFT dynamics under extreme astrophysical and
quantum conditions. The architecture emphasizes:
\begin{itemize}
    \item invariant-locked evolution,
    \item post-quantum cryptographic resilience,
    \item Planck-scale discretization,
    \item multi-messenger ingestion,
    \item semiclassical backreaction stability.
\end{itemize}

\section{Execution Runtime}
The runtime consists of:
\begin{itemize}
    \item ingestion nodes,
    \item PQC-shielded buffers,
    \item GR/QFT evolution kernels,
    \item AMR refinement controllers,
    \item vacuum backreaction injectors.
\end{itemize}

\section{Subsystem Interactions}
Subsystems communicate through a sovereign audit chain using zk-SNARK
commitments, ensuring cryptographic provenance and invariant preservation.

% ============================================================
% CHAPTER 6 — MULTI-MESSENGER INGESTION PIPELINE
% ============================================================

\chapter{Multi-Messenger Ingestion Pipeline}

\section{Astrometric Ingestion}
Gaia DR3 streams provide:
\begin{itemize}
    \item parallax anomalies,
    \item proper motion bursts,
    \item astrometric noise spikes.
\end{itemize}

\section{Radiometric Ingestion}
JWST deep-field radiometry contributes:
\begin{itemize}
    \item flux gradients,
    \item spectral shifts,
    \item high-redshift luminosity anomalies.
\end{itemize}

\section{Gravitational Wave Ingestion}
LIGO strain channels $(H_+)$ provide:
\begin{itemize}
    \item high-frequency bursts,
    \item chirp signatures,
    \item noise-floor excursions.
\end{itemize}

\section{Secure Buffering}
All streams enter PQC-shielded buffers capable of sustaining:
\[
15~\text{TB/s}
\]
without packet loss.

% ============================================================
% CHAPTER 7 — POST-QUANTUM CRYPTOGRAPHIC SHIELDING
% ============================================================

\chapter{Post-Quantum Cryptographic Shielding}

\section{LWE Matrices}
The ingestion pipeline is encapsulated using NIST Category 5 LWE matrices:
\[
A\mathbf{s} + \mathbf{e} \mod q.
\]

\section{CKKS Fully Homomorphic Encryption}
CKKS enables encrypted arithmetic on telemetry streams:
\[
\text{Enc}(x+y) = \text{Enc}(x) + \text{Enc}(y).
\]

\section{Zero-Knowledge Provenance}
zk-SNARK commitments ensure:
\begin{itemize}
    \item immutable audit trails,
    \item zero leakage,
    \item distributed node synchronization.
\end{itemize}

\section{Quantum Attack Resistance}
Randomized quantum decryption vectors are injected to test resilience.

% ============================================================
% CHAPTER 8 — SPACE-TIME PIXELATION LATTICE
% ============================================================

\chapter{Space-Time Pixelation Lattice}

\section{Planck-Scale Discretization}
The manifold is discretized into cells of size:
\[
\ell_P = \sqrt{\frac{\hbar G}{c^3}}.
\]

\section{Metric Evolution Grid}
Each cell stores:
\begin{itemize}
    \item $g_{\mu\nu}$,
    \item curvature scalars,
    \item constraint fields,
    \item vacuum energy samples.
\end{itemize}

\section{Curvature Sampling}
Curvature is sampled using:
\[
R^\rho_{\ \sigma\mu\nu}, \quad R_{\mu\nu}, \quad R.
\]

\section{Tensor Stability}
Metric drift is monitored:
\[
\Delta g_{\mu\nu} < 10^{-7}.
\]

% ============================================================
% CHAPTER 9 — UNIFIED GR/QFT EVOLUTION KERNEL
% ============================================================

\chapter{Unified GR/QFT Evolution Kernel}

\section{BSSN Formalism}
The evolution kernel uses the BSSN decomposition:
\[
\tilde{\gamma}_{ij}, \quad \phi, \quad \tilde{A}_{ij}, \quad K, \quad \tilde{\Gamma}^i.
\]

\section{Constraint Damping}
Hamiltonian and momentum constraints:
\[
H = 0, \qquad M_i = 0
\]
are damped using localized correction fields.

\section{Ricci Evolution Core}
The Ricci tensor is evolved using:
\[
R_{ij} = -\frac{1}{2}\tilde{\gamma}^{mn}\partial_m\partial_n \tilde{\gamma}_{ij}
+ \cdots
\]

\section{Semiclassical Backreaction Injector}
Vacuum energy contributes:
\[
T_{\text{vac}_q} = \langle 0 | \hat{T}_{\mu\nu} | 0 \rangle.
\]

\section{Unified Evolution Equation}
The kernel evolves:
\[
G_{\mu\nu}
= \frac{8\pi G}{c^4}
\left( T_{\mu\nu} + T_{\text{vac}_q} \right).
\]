@@ -1,0 +1,172 @@
+\part{SIM-COSMIC-CODE Architecture}
+
+% ============================================================
+% CHAPTER 5 — SYSTEM OVERVIEW
+% ============================================================
+
+\chapter{System Overview}
+
+\section{Design Philosophy}
+SIM-COSMIC-CODE v10.0 is constructed as a sovereign computational physics engine
+capable of evolving unified GR/QFT dynamics under extreme astrophysical and
+quantum conditions. The architecture emphasizes:
+\begin{itemize}
+    \item invariant-locked evolution,
+    \item post-quantum cryptographic resilience,
+    \item Planck-scale discretization,
+    \item multi-messenger ingestion,
+    \item semiclassical backreaction stability.
+\end{itemize}
+
+\section{Execution Runtime}
+The runtime consists of:
+\begin{itemize}
+    \item ingestion nodes,
+    \item PQC-shielded buffers,
+    \item GR/QFT evolution kernels,
+    \item AMR refinement controllers,
+    \item vacuum backreaction injectors.
+\end{itemize}
+
+\section{Subsystem Interactions}
+Subsystems communicate through a sovereign audit chain using zk-SNARK
+commitments, ensuring cryptographic provenance and invariant preservation.
+
+% ============================================================
+% CHAPTER 6 — MULTI-MESSENGER INGESTION PIPELINE
+% ============================================================
+
+\chapter{Multi-Messenger Ingestion Pipeline}
+
+\section{Astrometric Ingestion}
+Gaia DR3 streams provide:
+\begin{itemize}
+    \item parallax anomalies,
+    \item proper motion bursts,
+    \item astrometric noise spikes.
+\end{itemize}
+
+\section{Radiometric Ingestion}
+JWST deep-field radiometry contributes:
+\begin{itemize}
+    \item flux gradients,
+    \item spectral shifts,
+    \item high-redshift luminosity anomalies.
+\end{itemize}
+
+\section{Gravitational Wave Ingestion}
+LIGO strain channels $(H_+)$ provide:
+\begin{itemize}
+    \item high-frequency bursts,
+    \item chirp signatures,
+    \item noise-floor excursions.
+\end{itemize}
+
+\section{Secure Buffering}
+All streams enter PQC-shielded buffers capable of sustaining:
+\[
+15~\text{TB/s}
+\]
+without packet loss.
+
+% ============================================================
+% CHAPTER 7 — POST-QUANTUM CRYPTOGRAPHIC SHIELDING
+% ============================================================
+
+\chapter{Post-Quantum Cryptographic Shielding}
+
+\section{LWE Matrices}
+The ingestion pipeline is encapsulated using NIST Category 5 LWE matrices:
+\[
+A\mathbf{s} + \mathbf{e} \mod q.
+\]
+
+\section{CKKS Fully Homomorphic Encryption}
+CKKS enables encrypted arithmetic on telemetry streams:
+\[
+\text{Enc}(x+y) = \text{Enc}(x) + \text{Enc}(y).
+\]
+
+\section{Zero-Knowledge Provenance}
+zk-SNARK commitments ensure:
+\begin{itemize}
+    \item immutable audit trails,
+    \item zero leakage,
+    \item distributed node synchronization.
+\end{itemize}
+
+\section{Quantum Attack Resistance}
+Randomized quantum decryption vectors are injected to test resilience.
+
+% ============================================================
+% CHAPTER 8 — SPACE-TIME PIXELATION LATTICE
+% ============================================================
+
+\chapter{Space-Time Pixelation Lattice}
+
+\section{Planck-Scale Discretization}
+The manifold is discretized into cells of size:
+\[
+\ell_P = \sqrt{\frac{\hbar G}{c^3}}.
+\]
+
+\section{Metric Evolution Grid}
+Each cell stores:
+\begin{itemize}
+    \item $g_{\mu\nu}$,
+    \item curvature scalars,
+    \item constraint fields,
+    \item vacuum energy samples.
+\end{itemize}
+
+\section{Curvature Sampling}
+Curvature is sampled using:
+\[
+R^\rho_{\ \sigma\mu\nu}, \quad R_{\mu\nu}, \quad R.
+\]
+
+\section{Tensor Stability}
+Metric drift is monitored:
+\[
+\Delta g_{\mu\nu} < 10^{-7}.
+\]
+
+% ============================================================
+% CHAPTER 9 — UNIFIED GR/QFT EVOLUTION KERNEL
+% ============================================================
+
+\chapter{Unified GR/QFT Evolution Kernel}
+
+\section{BSSN Formalism}
+The evolution kernel uses the BSSN decomposition:
+\[
+\tilde{\gamma}_{ij}, \quad \phi, \quad \tilde{A}_{ij}, \quad K, \quad \tilde{\Gamma}^i.
+\]
+
+\section{Constraint Damping}
+Hamiltonian and momentum constraints:
+\[
+H = 0, \qquad M_i = 0
+\]
+are damped using localized correction fields.
+
+\section{Ricci Evolution Core}
+The Ricci tensor is evolved using:
+\[
+R_{ij} = -\frac{1}{2}\tilde{\gamma}^{mn}\partial_m\partial_n \tilde{\gamma}_{ij}
++ \cdots
+\]
+
+\section{Semiclassical Backreaction Injector}
+Vacuum energy contributes:
+\[
+T_{\text{vac}_q} = \langle 0 | \hat{T}_{\mu\nu} | 0 \rangle.
+\]
+
+\section{Unified Evolution Equation}
+The kernel evolves:
+\[
+G_{\mu\nu}
+= \frac{8\pi G}{c^4}
+\left( T_{\mu\nu} + T_{\text{vac}_q} \right).
+\]

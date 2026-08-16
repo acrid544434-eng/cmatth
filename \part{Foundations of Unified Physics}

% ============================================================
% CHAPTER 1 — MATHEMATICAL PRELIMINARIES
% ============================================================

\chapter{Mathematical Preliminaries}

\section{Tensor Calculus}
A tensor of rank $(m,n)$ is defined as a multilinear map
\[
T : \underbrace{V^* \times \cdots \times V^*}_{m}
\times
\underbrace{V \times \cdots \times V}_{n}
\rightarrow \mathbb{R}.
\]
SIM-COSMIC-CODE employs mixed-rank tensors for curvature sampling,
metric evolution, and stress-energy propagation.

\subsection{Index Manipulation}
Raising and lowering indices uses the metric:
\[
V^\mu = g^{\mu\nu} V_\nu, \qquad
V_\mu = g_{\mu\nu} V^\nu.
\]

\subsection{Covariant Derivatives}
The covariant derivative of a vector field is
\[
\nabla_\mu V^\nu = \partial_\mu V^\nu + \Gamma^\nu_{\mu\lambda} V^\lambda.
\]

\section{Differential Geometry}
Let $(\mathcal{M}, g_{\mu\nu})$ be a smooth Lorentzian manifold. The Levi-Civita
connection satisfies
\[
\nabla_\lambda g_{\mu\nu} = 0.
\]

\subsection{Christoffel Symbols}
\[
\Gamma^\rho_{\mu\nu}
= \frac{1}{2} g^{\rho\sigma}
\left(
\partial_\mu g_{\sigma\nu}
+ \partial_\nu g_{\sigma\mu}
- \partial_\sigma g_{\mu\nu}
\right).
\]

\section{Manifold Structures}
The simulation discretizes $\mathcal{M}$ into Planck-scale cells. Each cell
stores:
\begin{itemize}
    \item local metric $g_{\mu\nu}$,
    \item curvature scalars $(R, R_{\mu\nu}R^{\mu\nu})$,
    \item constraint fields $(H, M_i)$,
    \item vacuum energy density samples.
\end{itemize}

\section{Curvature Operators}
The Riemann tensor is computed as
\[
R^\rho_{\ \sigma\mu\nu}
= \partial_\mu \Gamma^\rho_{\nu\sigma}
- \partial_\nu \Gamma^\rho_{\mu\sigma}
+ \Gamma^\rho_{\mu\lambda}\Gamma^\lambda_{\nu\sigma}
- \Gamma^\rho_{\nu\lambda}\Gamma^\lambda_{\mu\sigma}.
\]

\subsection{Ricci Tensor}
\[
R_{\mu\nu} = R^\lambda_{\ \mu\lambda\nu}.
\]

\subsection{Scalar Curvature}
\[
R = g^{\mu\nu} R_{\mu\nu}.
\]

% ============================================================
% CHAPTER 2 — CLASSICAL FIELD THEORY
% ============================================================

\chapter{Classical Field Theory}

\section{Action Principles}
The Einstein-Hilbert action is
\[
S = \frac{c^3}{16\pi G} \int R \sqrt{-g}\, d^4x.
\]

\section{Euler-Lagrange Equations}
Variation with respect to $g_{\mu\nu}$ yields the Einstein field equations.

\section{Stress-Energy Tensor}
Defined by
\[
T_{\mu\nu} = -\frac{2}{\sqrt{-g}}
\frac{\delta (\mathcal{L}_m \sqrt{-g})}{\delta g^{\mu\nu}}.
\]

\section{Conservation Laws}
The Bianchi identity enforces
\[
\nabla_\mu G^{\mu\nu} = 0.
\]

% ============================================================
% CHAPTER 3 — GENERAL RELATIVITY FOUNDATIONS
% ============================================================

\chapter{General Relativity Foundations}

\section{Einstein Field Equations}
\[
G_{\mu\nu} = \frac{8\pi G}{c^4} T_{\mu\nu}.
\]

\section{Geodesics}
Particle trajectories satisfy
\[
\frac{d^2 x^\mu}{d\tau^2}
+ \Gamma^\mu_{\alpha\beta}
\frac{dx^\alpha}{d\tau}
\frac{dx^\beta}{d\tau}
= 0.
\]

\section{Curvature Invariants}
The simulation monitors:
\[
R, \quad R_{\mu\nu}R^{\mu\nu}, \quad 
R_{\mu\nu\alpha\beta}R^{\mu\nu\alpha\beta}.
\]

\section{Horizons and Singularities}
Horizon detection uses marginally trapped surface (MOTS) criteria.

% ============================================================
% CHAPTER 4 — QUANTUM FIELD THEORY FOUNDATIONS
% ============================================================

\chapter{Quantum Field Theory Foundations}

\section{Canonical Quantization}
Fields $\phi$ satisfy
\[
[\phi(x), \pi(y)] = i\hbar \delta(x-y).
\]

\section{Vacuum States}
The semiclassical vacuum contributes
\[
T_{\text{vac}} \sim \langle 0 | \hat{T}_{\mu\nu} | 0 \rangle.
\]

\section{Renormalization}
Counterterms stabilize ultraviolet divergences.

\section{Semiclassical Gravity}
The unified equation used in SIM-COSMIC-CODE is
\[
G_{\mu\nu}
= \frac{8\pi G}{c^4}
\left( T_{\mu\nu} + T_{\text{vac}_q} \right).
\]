@@ -1,0 +1,167 @@
+\part{Foundations of Unified Physics}
+
+% ============================================================
+% CHAPTER 1 — MATHEMATICAL PRELIMINARIES
+% ============================================================
+
+\chapter{Mathematical Preliminaries}
+
+\section{Tensor Calculus}
+A tensor of rank $(m,n)$ is defined as a multilinear map
+\[
+T : \underbrace{V^* \times \cdots \times V^*}_{m}
+\times
+\underbrace{V \times \cdots \times V}_{n}
+\rightarrow \mathbb{R}.
+\]
+SIM-COSMIC-CODE employs mixed-rank tensors for curvature sampling,
+metric evolution, and stress-energy propagation.
+
+\subsection{Index Manipulation}
+Raising and lowering indices uses the metric:
+\[
+V^\mu = g^{\mu\nu} V_\nu, \qquad
+V_\mu = g_{\mu\nu} V^\nu.
+\]
+
+\subsection{Covariant Derivatives}
+The covariant derivative of a vector field is
+\[
+\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda.
+\]
+
+\section{Differential Geometry}
+Let $(\mathcal{M}, g_{\mu\nu})$ be a smooth Lorentzian manifold. The Levi-Civita
+connection satisfies
+\[
+\nabla_\lambda g_{\mu\nu} = 0.
+\]
+
+\subsection{Christoffel Symbols}
+\[
+\Gamma^\rho_{\mu\nu}
+= \frac{1}{2} g^{\rho\sigma}
+\left(
+\partial_\mu g_{\sigma\nu}
++ \partial_\nu g_{\sigma\mu}
+- \partial_\sigma g_{\mu\nu}
+\right).
+\]
+
+\section{Manifold Structures}
+The simulation discretizes $\mathcal{M}$ into Planck-scale cells. Each cell
+stores:
+\begin{itemize}
+    \item local metric $g_{\mu\nu}$,
+    \item curvature scalars $(R, R_{\mu\nu}R^{\mu\nu})$,
+    \item constraint fields $(H, M_i)$,
+    \item vacuum energy density samples.
+\end{itemize}
+
+\section{Curvature Operators}
+The Riemann tensor is computed as
+\[
+R^\rho_{\ \sigma\mu\nu}
+= \partial_\mu \Gamma^\rho_{\nu\sigma}
+- \partial_\nu \Gamma^\rho_{\mu\sigma}
++ \Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}
+- \Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}.
+\]
+
+\subsection{Ricci Tensor}
+\[
+R_{\mu\nu} = R^\lambda_{\ \mu\lambda\nu}.
+\]
+
+\subsection{Scalar Curvature}
+\[
+R = g^{\mu\nu} R_{\mu\nu}.
+\]
+
+% ============================================================
+% CHAPTER 2 — CLASSICAL FIELD THEORY
+% ============================================================
+
+\chapter{Classical Field Theory}
+
+\section{Action Principles}
+The Einstein-Hilbert action is
+\[
+S = \frac{c^3}{16\pi G} \int R \sqrt{-g}\, d^4x.
+\]
+
+\section{Euler-Lagrange Equations}
+Variation with respect to $g_{\mu\nu}$ yields the Einstein field equations.
+
+\section{Stress-Energy Tensor}
+Defined by
+\[
+T_{\mu\nu} = -\frac{2}{\sqrt{-g}}
+\frac{\delta (\mathcal{L}_m \sqrt{-g})}{\delta g^{\mu\nu}}.
+\]
+
+\section{Conservation Laws}
+The Bianchi identity enforces
+\[
+\nabla_\mu G^{\mu\nu} = 0.
+\]
+
+% ============================================================
+% CHAPTER 3 — GENERAL RELATIVITY FOUNDATIONS
+% ============================================================
+
+\chapter{General Relativity Foundations}
+
+\section{Einstein Field Equations}
+\[
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}.
+\]
+
+\section{Geodesics}
+Particle trajectories satisfy
+\[
+\frac{d^2 x^\mu}{d\tau^2}
++ \Gamma^\mu_{\alpha\beta}
+\frac{dx^\alpha}{d\tau}
+\frac{dx^\beta}{d\tau}
+= 0.
+\]
+
+\section{Curvature Invariants}
+The simulation monitors:
+\[
+R, \quad R_{\mu\nu}R^{\mu\nu}, \quad 
+R_{\mu\nu\alpha\beta}R^{\mu\nu\alpha\beta}.
+\]
+
+\section{Horizons and Singularities}
+Horizon detection uses marginally trapped surface (MOTS) criteria.
+
+% ============================================================
+% CHAPTER 4 — QUANTUM FIELD THEORY FOUNDATIONS
+% ============================================================
+
+\chapter{Quantum Field Theory Foundations}
+
+\section{Canonical Quantization}
+Fields $\phi$ satisfy
+\[
+[\phi(x), \pi(y)] = i\hbar \delta(x-y).
+\]
+
+\section{Vacuum States}
+The semiclassical vacuum contributes
+\[
+T_{\text{vac}} \sim \langle 0 | \hat{T}_{\mu\nu} | 0 \rangle.
+\]
+
+\section{Renormalization}
+Counterterms stabilize ultraviolet divergences.
+
+\section{Semiclassical Gravity}
+The unified equation used in SIM-COSMIC-CODE is
+\[
+G_{\mu\nu}
+= \frac{8\pi G}{c^4}
+\left( T_{\mu\nu} + T_{\text{vac}_q} \right).
+\]

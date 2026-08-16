@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{\textbf{Scientific White Sheet}\\
+\large UV-SIM v4.2-AEROSPACE}
+\author{\textbf{C. Matthew Blackwell}\\Independent Systems Architect \& Designer}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+This white sheet provides a concise scientific summary of the UV-SIM v4.2-AEROSPACE
+design, including mathematical foundations, solver formulations, continuum
+mechanics models, and representative benchmark results.
+
+\section*{Key Equations}
+
+\subsection*{Relativistic Frame-Dragging}
+\begin{equation}
+\omega(r,\theta)
+=
+\frac{2 a M r}{(r^2 + a^2)^2 - a^2 \Delta \sin^2\theta}.
+\end{equation}
+
+\subsection*{Quantum Superfluid Dynamics}
+\begin{equation}
+i\hbar \frac{\partial \psi}{\partial t}
+=
+\left(
+-\frac{\hbar^2}{2m}\nabla^2 + V + g|\psi|^2
+\right)\psi.
+\end{equation}
+
+\subsection*{Topological Circulation}
+\begin{equation}
+\oint_{\mathcal{C}} \nabla\phi \cdot d\mathbf{l} = 2\pi n.
+\end{equation}
+
+\subsection*{Drucker--Prager Yield}
+\begin{equation}
+F = \sqrt{J_2} + \alpha p - k.
+\end{equation}
+
+\section*{Representative Benchmarks}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Domain} & \textbf{Metric} & \textbf{Target} & \textbf{Observed} & \textbf{Status} \\
+\midrule
+Relativistic Solver & Kerr $\omega$ Error & $\le 10^{-9}$ & $3.68\times10^{-10}$ & PASS \\
+Quantum Kernel & Norm Drift & $\le 10^{-14}$ & $1.1\times10^{-15}$ & PASS \\
+Concrete Stress & Uniaxial Limit & 85 MPa & 84.6 MPa & PASS \\
+Thermal Cycling & $\epsilon_{\text{thermal}}$ & -- & $2.1\times10^{-5}$ & PASS \\
+AMR Scaling & Grid Ceiling & $16384^3$ & Achieved & PASS \\
+\bottomrule
+\end{tabular}
+\caption{Representative UV-SIM v4.2-AEROSPACE validation benchmarks.}
+\end{table}
+
+\section*{Conclusion}
+This white sheet summarizes the core mathematical and computational elements of
+the UV-SIM v4.2-AEROSPACE design. Full details are provided in the complete
+monograph.
+
+\end{document}

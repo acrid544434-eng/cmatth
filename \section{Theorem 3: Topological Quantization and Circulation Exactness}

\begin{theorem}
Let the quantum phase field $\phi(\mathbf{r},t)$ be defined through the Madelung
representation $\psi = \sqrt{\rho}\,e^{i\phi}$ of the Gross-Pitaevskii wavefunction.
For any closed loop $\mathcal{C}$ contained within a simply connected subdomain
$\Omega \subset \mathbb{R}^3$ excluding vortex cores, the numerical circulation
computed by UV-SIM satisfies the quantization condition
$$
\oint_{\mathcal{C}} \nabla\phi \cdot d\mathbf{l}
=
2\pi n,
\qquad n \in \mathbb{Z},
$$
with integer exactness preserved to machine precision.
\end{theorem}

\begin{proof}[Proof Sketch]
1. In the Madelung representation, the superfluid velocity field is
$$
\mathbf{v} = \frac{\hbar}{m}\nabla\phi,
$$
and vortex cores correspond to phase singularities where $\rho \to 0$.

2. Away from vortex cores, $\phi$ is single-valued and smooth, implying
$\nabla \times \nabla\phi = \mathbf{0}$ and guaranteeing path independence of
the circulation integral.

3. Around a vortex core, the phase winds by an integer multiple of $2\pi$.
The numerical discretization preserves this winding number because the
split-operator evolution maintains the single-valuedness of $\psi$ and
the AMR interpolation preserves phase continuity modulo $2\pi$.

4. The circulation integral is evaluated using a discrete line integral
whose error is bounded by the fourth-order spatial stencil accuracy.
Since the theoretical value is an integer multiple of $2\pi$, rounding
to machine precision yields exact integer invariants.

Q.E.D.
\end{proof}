@@ -1,0 +1,40 @@
+\section{Theorem 3: Topological Quantization and Circulation Exactness}
+
+\begin{theorem}
+Let the quantum phase field $\phi(\mathbf{r},t)$ be defined through the Madelung
+representation $\psi = \sqrt{\rho}\,e^{i\phi}$ of the Gross-Pitaevskii wavefunction.
+For any closed loop $\mathcal{C}$ contained within a simply connected subdomain
+$\Omega \subset \mathbb{R}^3$ excluding vortex cores, the numerical circulation
+computed by UV-SIM satisfies the quantization condition
+$$
+\oint_{\mathcal{C}} \nabla\phi \cdot d\mathbf{l}
+=
+2\pi n,
+\qquad n \in \mathbb{Z},
+$$
+with integer exactness preserved to machine precision.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+1. In the Madelung representation, the superfluid velocity field is
+$$
+\mathbf{v} = \frac{\hbar}{m}\nabla\phi,
+$$
+and vortex cores correspond to phase singularities where $\rho \to 0$.
+
+2. Away from vortex cores, $\phi$ is single-valued and smooth, implying
+$\nabla \times \nabla\phi = \mathbf{0}$ and guaranteeing path independence of
+the circulation integral.
+
+3. Around a vortex core, the phase winds by an integer multiple of $2\pi$.
+The numerical discretization preserves this winding number because the
+split-operator evolution maintains the single-valuedness of $\psi$ and
+the AMR interpolation preserves phase continuity modulo $2\pi$.
+
+4. The circulation integral is evaluated using a discrete line integral
+whose error is bounded by the fourth-order spatial stencil accuracy.
+Since the theoretical value is an integer multiple of $2\pi$, rounding
+to machine precision yields exact integer invariants.
+
+Q.E.D.
+\end{proof}

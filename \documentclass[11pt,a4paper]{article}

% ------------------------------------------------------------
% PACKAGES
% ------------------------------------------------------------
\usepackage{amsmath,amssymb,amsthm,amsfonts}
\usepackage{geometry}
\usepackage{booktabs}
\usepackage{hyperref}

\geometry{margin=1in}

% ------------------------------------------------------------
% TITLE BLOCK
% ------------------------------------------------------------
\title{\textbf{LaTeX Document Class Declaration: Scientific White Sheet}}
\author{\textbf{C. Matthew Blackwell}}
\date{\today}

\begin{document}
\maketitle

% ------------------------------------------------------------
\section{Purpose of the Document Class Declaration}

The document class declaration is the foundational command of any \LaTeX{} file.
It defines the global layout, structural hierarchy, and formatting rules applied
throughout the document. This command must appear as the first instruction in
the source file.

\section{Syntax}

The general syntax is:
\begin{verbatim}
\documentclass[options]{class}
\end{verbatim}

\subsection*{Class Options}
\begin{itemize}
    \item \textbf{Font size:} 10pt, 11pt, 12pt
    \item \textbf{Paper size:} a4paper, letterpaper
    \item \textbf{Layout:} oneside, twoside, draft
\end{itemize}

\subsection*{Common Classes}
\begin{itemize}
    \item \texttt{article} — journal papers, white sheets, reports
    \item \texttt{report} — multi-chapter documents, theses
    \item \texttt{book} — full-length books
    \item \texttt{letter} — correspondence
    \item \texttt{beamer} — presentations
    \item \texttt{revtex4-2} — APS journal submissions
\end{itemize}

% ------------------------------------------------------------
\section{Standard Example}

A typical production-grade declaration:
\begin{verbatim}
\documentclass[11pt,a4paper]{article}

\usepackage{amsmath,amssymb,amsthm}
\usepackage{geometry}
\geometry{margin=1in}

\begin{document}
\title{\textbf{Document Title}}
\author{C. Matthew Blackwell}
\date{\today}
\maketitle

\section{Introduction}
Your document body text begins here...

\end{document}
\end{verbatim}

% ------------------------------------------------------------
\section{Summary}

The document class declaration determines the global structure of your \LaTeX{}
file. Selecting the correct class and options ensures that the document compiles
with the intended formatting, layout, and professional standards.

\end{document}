@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% PACKAGES
+% ------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+
+% ------------------------------------------------------------
+% TITLE BLOCK
+% ------------------------------------------------------------
+\title{\textbf{LaTeX Document Class Declaration: Scientific White Sheet}}
+\author{\textbf{C. Matthew Blackwell}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------
+\section{Purpose of the Document Class Declaration}
+
+The document class declaration is the foundational command of any \LaTeX{} file.
+It defines the global layout, structural hierarchy, and formatting rules applied
+throughout the document. This command must appear as the first instruction in
+the source file.
+
+\section{Syntax}
+
+The general syntax is:
+\begin{verbatim}
+\documentclass[options]{class}
+\end{verbatim}
+
+\subsection*{Class Options}
+\begin{itemize}
+    \item \textbf{Font size:} 10pt, 11pt, 12pt
+    \item \textbf{Paper size:} a4paper, letterpaper
+    \item \textbf{Layout:} oneside, twoside, draft
+\end{itemize}
+
+\subsection*{Common Classes}
+\begin{itemize}
+    \item \texttt{article} — journal papers, white sheets, reports
+    \item \texttt{report} — multi-chapter documents, theses
+    \item \texttt{book} — full-length books
+    \item \texttt{letter} — correspondence
+    \item \texttt{beamer} — presentations
+    \item \texttt{revtex4-2} — APS journal submissions
+\end{itemize}
+
+% ------------------------------------------------------------
+\section{Standard Example}
+
+A typical production-grade declaration:
+\begin{verbatim}
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+\title{\textbf{Document Title}}
+\author{C. Matthew Blackwell}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+Your document body text begins here...
+
+\end{document}
+\end{verbatim}
+
+% ------------------------------------------------------------
+\section{Summary}
+
+The document class declaration determines the global structure of your \LaTeX{}
+file. Selecting the correct class and options ensures that the document compiles
+with the intended formatting, layout, and professional standards.
+
+\end{document}

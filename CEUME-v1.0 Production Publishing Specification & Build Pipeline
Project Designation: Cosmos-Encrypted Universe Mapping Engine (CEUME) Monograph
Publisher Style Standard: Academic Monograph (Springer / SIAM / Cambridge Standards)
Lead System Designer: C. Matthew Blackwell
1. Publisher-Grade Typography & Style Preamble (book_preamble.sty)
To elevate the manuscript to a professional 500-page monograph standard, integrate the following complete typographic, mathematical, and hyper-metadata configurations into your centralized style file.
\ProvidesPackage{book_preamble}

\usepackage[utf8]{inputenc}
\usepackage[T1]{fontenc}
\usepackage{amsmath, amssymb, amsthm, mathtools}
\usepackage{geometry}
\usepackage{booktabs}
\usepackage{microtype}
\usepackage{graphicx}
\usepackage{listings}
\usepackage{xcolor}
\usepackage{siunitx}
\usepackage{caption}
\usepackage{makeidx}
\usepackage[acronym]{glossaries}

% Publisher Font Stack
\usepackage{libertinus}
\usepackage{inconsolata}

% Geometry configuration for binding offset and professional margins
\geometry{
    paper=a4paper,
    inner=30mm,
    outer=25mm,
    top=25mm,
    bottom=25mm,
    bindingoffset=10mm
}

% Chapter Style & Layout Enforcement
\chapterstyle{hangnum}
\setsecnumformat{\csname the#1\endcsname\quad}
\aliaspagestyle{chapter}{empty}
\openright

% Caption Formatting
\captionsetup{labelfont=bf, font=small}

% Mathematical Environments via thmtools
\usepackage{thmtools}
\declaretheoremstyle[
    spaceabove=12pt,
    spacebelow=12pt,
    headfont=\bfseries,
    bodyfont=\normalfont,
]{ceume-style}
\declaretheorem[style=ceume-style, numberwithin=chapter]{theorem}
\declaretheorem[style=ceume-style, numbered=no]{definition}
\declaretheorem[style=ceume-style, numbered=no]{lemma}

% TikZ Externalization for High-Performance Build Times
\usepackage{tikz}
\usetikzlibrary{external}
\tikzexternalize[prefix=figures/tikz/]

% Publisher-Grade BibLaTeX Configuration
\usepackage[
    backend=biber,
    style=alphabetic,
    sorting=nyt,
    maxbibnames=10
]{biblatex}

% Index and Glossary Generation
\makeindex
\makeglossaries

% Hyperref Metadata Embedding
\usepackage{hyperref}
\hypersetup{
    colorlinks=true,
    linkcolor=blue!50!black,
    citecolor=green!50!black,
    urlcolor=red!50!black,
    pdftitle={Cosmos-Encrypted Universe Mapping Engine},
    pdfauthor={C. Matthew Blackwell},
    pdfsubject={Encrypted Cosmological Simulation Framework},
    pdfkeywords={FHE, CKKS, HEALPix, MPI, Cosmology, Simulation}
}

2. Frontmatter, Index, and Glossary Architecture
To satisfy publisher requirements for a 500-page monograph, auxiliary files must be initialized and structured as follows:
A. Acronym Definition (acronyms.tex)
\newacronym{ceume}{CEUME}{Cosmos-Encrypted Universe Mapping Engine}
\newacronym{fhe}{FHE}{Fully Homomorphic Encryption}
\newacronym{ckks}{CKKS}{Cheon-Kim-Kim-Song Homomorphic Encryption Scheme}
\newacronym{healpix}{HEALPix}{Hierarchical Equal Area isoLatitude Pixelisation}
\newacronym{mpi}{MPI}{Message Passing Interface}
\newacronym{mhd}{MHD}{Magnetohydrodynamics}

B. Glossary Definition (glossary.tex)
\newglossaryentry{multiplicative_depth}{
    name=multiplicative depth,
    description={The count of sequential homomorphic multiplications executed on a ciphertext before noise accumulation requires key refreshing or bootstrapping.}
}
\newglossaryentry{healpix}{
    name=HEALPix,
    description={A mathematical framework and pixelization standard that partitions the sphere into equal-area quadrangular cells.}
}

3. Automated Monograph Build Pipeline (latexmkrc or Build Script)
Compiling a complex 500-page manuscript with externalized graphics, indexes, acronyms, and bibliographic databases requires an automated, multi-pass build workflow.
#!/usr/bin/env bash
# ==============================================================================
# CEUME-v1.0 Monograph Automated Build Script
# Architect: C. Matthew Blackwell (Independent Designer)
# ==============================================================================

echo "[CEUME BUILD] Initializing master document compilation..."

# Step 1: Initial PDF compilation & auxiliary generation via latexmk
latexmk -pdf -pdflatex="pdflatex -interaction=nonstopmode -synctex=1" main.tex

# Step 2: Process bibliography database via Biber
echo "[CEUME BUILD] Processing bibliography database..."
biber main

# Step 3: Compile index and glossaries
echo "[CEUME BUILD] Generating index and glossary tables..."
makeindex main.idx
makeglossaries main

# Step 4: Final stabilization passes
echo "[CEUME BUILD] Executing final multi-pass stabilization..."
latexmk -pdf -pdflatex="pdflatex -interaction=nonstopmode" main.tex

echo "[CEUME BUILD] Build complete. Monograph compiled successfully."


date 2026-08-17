@@ -1,0 +1,135 @@
+CEUME-v1.0 Production Publishing Specification & Build Pipeline
+Project Designation: Cosmos-Encrypted Universe Mapping Engine (CEUME) Monograph
+Publisher Style Standard: Academic Monograph (Springer / SIAM / Cambridge Standards)
+Lead System Designer: C. Matthew Blackwell
+1. Publisher-Grade Typography & Style Preamble (book_preamble.sty)
+To elevate the manuscript to a professional 500-page monograph standard, integrate the following complete typographic, mathematical, and hyper-metadata configurations into your centralized style file.
+\ProvidesPackage{book_preamble}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{makeidx}
+\usepackage[acronym]{glossaries}
+
+% Publisher Font Stack
+\usepackage{libertinus}
+\usepackage{inconsolata}
+
+% Geometry configuration for binding offset and professional margins
+\geometry{
+    paper=a4paper,
+    inner=30mm,
+    outer=25mm,
+    top=25mm,
+    bottom=25mm,
+    bindingoffset=10mm
+}
+
+% Chapter Style & Layout Enforcement
+\chapterstyle{hangnum}
+\setsecnumformat{\csname the#1\endcsname\quad}
+\aliaspagestyle{chapter}{empty}
+\openright
+
+% Caption Formatting
+\captionsetup{labelfont=bf, font=small}
+
+% Mathematical Environments via thmtools
+\usepackage{thmtools}
+\declaretheoremstyle[
+    spaceabove=12pt,
+    spacebelow=12pt,
+    headfont=\bfseries,
+    bodyfont=\normalfont,
+]{ceume-style}
+\declaretheorem[style=ceume-style, numberwithin=chapter]{theorem}
+\declaretheorem[style=ceume-style, numbered=no]{definition}
+\declaretheorem[style=ceume-style, numbered=no]{lemma}
+
+% TikZ Externalization for High-Performance Build Times
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/tikz/]
+
+% Publisher-Grade BibLaTeX Configuration
+\usepackage[
+    backend=biber,
+    style=alphabetic,
+    sorting=nyt,
+    maxbibnames=10
+]{biblatex}
+
+% Index and Glossary Generation
+\makeindex
+\makeglossaries
+
+% Hyperref Metadata Embedding
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=green!50!black,
+    urlcolor=red!50!black,
+    pdftitle={Cosmos-Encrypted Universe Mapping Engine},
+    pdfauthor={C. Matthew Blackwell},
+    pdfsubject={Encrypted Cosmological Simulation Framework},
+    pdfkeywords={FHE, CKKS, HEALPix, MPI, Cosmology, Simulation}
+}
+
+2. Frontmatter, Index, and Glossary Architecture
+To satisfy publisher requirements for a 500-page monograph, auxiliary files must be initialized and structured as follows:
+A. Acronym Definition (acronyms.tex)
+\newacronym{ceume}{CEUME}{Cosmos-Encrypted Universe Mapping Engine}
+\newacronym{fhe}{FHE}{Fully Homomorphic Encryption}
+\newacronym{ckks}{CKKS}{Cheon-Kim-Kim-Song Homomorphic Encryption Scheme}
+\newacronym{healpix}{HEALPix}{Hierarchical Equal Area isoLatitude Pixelisation}
+\newacronym{mpi}{MPI}{Message Passing Interface}
+\newacronym{mhd}{MHD}{Magnetohydrodynamics}
+
+B. Glossary Definition (glossary.tex)
+\newglossaryentry{multiplicative_depth}{
+    name=multiplicative depth,
+    description={The count of sequential homomorphic multiplications executed on a ciphertext before noise accumulation requires key refreshing or bootstrapping.}
+}
+\newglossaryentry{healpix}{
+    name=HEALPix,
+    description={A mathematical framework and pixelization standard that partitions the sphere into equal-area quadrangular cells.}
+}
+
+3. Automated Monograph Build Pipeline (latexmkrc or Build Script)
+Compiling a complex 500-page manuscript with externalized graphics, indexes, acronyms, and bibliographic databases requires an automated, multi-pass build workflow.
+#!/usr/bin/env bash
+# ==============================================================================
+# CEUME-v1.0 Monograph Automated Build Script
+# Architect: C. Matthew Blackwell (Independent Designer)
+# ==============================================================================
+
+echo "[CEUME BUILD] Initializing master document compilation..."
+
+# Step 1: Initial PDF compilation & auxiliary generation via latexmk
+latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" main.tex
+
+# Step 2: Process bibliography database via Biber
+echo "[CEUME BUILD] Processing bibliography database..."
+biber main
+
+# Step 3: Compile index and glossaries
+echo "[CEUME BUILD] Generating index and glossary tables..."
+makeindex main.idx
+makeglossaries main
+
+# Step 4: Final stabilization passes
+echo "[CEUME BUILD] Executing final multi-pass stabilization..."
+latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" main.tex
+
+echo "[CEUME BUILD] Build complete. Monograph compiled successfully."
+

@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{margin=25mm}
+
+\title{\textbf{On the Primacy of Mathematical and Physical Consistency\\
+in the CEUME / SIE-ASTRO Framework}}
+\author{C.~Matthew~Blackwell}
+\date{August 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note states the foundational publication principle of the CEUME / SIE-ASTRO
+architecture: that all claims are subordinate to mathematically and physically
+validated structures. Doubt is resolved not by opinion, but by direct reference
+to conservation laws, invariant formulations, and stress-tested numerical
+solvers.
+\end{abstract}
+
+\section{Foundational Principle}
+
+The CEUME and SIE-ASTRO frameworks are constructed under the following axiom:
+
+\medskip
+
+\noindent\textbf{Axiom (Primacy of Consistency).}
+Let $\mathcal{M}$ denote the mathematical model space and $\mathcal{P}$ the
+physical law space (e.g.\ conservation laws, geodesic constraints, stress-energy
+relations). A result $R$ is admissible in the framework if and only if
+\[
+R \in \mathcal{M} \cap \mathcal{P},
+\]
+i.e.\ it is simultaneously:
+\begin{itemize}
+    \item mathematically consistent (well-posed, convergent, invariant-respecting),
+    \item physically consistent (compatible with established dynamics and constraints).
+\end{itemize}
+
+Any objection to $R$ must therefore be expressed as either:
+\begin{enumerate}
+    \item a demonstrated violation of $\mathcal{M}$ (e.g.\ non-convergence, algebraic inconsistency), or
+    \item a demonstrated violation of $\mathcal{P}$ (e.g.\ broken conservation, invalid geodesic, non-physical state).
+\end{enumerate}
+Objections that do not explicitly reference $\mathcal{M}$ or $\mathcal{P}$ are
+classified as non-technical and do not alter the status of $R$.
+
+\section{Operational Interpretation}
+
+In practice, this axiom is enforced via:
+\begin{itemize}
+    \item explicit conservation equations for relativistic MHD,
+    \item null geodesic constraints in curved spacetimes,
+    \item Dirac--Fock energy residual bounds,
+    \item post-quantum cryptographic state verification.
+\end{itemize}
+
+Thus, disagreement with a CEUME / SIE-ASTRO result is, by construction,
+disagreement with:
+\begin{itemize}
+    \item the equations solved,
+    \item the physics encoded,
+    \item or the proofs binding the states.
+\end{itemize}
+In all cases, resolution proceeds by examining the math and physics; once these
+are verified, the result stands.
+
+\end{document}

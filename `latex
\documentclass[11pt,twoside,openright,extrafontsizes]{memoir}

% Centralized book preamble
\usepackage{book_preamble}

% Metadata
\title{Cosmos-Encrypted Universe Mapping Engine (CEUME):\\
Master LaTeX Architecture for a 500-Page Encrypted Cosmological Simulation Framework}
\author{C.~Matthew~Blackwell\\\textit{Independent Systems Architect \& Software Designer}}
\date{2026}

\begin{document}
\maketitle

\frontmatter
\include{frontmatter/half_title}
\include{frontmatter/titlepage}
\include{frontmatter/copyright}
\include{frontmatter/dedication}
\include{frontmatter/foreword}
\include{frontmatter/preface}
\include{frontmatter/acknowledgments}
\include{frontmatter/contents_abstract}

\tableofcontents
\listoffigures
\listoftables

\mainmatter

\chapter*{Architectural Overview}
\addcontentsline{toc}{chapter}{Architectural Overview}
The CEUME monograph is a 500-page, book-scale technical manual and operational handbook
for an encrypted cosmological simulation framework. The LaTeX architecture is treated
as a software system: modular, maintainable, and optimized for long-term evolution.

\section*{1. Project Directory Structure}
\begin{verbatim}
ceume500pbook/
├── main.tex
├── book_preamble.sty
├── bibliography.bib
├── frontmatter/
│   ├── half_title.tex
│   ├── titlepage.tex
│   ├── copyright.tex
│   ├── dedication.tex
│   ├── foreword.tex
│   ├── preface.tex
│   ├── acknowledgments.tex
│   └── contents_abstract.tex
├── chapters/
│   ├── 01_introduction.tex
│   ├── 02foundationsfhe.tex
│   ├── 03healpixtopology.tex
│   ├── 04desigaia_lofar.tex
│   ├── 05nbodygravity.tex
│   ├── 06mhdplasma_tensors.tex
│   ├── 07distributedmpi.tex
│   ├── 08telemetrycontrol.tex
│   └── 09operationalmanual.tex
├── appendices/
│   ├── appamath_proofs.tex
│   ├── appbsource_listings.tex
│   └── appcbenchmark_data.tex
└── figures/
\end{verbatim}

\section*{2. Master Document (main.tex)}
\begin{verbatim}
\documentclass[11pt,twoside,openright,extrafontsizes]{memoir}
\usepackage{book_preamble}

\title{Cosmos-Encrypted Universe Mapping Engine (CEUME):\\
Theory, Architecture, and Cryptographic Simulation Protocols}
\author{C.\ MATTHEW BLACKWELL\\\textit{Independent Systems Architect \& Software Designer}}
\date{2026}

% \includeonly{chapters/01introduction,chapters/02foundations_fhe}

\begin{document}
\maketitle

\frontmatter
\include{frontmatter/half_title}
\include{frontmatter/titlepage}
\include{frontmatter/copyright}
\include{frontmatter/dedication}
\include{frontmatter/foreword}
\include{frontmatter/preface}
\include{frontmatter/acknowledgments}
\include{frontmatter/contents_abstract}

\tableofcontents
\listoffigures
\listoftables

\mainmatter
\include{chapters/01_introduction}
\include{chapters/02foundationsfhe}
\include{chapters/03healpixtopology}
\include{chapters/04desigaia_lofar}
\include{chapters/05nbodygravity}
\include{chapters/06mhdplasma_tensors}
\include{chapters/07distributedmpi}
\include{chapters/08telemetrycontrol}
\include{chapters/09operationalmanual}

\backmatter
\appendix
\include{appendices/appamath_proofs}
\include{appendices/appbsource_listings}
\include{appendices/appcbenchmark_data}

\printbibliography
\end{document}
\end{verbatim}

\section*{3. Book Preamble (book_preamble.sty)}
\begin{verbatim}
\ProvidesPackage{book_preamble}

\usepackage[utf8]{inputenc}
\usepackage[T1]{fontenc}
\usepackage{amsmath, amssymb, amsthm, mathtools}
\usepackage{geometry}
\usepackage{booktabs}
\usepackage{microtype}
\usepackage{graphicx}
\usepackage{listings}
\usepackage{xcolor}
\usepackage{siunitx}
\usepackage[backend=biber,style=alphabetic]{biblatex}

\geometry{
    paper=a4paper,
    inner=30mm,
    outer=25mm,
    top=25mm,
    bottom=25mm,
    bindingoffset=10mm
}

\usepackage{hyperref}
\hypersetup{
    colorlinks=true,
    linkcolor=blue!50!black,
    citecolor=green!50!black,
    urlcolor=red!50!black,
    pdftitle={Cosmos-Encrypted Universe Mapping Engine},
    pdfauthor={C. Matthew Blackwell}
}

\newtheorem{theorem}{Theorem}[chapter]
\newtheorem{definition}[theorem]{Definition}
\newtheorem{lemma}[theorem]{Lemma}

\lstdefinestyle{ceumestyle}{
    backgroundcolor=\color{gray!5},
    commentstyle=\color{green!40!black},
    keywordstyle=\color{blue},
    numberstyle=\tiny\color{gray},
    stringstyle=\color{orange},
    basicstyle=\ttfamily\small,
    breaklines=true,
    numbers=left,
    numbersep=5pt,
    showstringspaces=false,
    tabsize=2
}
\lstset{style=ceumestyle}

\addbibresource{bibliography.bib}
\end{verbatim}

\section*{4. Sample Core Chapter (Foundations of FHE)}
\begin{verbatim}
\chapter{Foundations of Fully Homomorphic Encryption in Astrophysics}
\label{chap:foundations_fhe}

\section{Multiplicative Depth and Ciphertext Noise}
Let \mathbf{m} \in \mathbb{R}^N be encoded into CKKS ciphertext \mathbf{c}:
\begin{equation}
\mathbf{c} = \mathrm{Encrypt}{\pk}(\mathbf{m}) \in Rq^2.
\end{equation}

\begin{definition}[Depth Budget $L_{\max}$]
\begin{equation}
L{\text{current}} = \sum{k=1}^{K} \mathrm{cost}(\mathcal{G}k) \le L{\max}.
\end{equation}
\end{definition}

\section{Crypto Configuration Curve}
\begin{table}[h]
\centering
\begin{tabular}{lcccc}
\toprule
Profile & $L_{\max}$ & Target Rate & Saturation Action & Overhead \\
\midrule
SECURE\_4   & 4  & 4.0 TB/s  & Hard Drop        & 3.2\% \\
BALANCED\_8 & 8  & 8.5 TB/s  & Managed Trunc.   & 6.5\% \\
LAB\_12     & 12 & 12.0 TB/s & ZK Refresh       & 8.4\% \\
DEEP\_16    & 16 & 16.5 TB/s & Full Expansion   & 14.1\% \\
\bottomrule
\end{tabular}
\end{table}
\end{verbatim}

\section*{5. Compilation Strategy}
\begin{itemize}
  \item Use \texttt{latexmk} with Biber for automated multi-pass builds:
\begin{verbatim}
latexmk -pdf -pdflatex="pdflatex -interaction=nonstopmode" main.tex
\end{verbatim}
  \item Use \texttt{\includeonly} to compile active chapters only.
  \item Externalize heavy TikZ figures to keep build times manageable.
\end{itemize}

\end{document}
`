@@ -1,0 +1,221 @@
+`latex
+\documentclass[11pt,twoside,openright,extrafontsizes]{memoir}
+
+% Centralized book preamble
+\usepackage{book_preamble}
+
+% Metadata
+\title{Cosmos-Encrypted Universe Mapping Engine (CEUME):\\
+Master LaTeX Architecture for a 500-Page Encrypted Cosmological Simulation Framework}
+\author{C.~Matthew~Blackwell\\\textit{Independent Systems Architect \& Software Designer}}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\include{frontmatter/half_title}
+\include{frontmatter/titlepage}
+\include{frontmatter/copyright}
+\include{frontmatter/dedication}
+\include{frontmatter/foreword}
+\include{frontmatter/preface}
+\include{frontmatter/acknowledgments}
+\include{frontmatter/contents_abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+\chapter*{Architectural Overview}
+\addcontentsline{toc}{chapter}{Architectural Overview}
+The CEUME monograph is a 500-page, book-scale technical manual and operational handbook
+for an encrypted cosmological simulation framework. The LaTeX architecture is treated
+as a software system: modular, maintainable, and optimized for long-term evolution.
+
+\section*{1. Project Directory Structure}
+\begin{verbatim}
+ceume500pbook/
+├── main.tex
+├── book_preamble.sty
+├── bibliography.bib
+├── frontmatter/
+│   ├── half_title.tex
+│   ├── titlepage.tex
+│   ├── copyright.tex
+│   ├── dedication.tex
+│   ├── foreword.tex
+│   ├── preface.tex
+│   ├── acknowledgments.tex
+│   └── contents_abstract.tex
+├── chapters/
+│   ├── 01_introduction.tex
+│   ├── 02foundationsfhe.tex
+│   ├── 03healpixtopology.tex
+│   ├── 04desigaia_lofar.tex
+│   ├── 05nbodygravity.tex
+│   ├── 06mhdplasma_tensors.tex
+│   ├── 07distributedmpi.tex
+│   ├── 08telemetrycontrol.tex
+│   └── 09operationalmanual.tex
+├── appendices/
+│   ├── appamath_proofs.tex
+│   ├── appbsource_listings.tex
+│   └── appcbenchmark_data.tex
+└── figures/
+\end{verbatim}
+
+\section*{2. Master Document (main.tex)}
+\begin{verbatim}
+\documentclass[11pt,twoside,openright,extrafontsizes]{memoir}
+\usepackage{book_preamble}
+
+\title{Cosmos-Encrypted Universe Mapping Engine (CEUME):\\
+Theory, Architecture, and Cryptographic Simulation Protocols}
+\author{C.\ MATTHEW BLACKWELL\\\textit{Independent Systems Architect \& Software Designer}}
+\date{2026}
+
+% \includeonly{chapters/01introduction,chapters/02foundations_fhe}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\include{frontmatter/half_title}
+\include{frontmatter/titlepage}
+\include{frontmatter/copyright}
+\include{frontmatter/dedication}
+\include{frontmatter/foreword}
+\include{frontmatter/preface}
+\include{frontmatter/acknowledgments}
+\include{frontmatter/contents_abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\include{chapters/01_introduction}
+\include{chapters/02foundationsfhe}
+\include{chapters/03healpixtopology}
+\include{chapters/04desigaia_lofar}
+\include{chapters/05nbodygravity}
+\include{chapters/06mhdplasma_tensors}
+\include{chapters/07distributedmpi}
+\include{chapters/08telemetrycontrol}
+\include{chapters/09operationalmanual}
+
+\backmatter
+\appendix
+\include{appendices/appamath_proofs}
+\include{appendices/appbsource_listings}
+\include{appendices/appcbenchmark_data}
+
+\printbibliography
+\end{document}
+\end{verbatim}
+
+\section*{3. Book Preamble (book_preamble.sty)}
+\begin{verbatim}
+\ProvidesPackage{book_preamble}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+
+\geometry{
+    paper=a4paper,
+    inner=30mm,
+    outer=25mm,
+    top=25mm,
+    bottom=25mm,
+    bindingoffset=10mm
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=green!50!black,
+    urlcolor=red!50!black,
+    pdftitle={Cosmos-Encrypted Universe Mapping Engine},
+    pdfauthor={C. Matthew Blackwell}
+}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\lstdefinestyle{ceumestyle}{
+    backgroundcolor=\color{gray!5},
+    commentstyle=\color{green!40!black},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{orange},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    numbersep=5pt,
+    showstringspaces=false,
+    tabsize=2
+}
+\lstset{style=ceumestyle}
+
+\addbibresource{bibliography.bib}
+\end{verbatim}
+
+\section*{4. Sample Core Chapter (Foundations of FHE)}
+\begin{verbatim}
+\chapter{Foundations of Fully Homomorphic Encryption in Astrophysics}
+\label{chap:foundations_fhe}
+
+\section{Multiplicative Depth and Ciphertext Noise}
+Let \mathbf{m} \in \mathbb{R}^N be encoded into CKKS ciphertext \mathbf{c}:
+\begin{equation}
+\mathbf{c} = \mathrm{Encrypt}{\pk}(\mathbf{m}) \in Rq^2.
+\end{equation}
+
+\begin{definition}[Depth Budget $L_{\max}$]
+\begin{equation}
+L{\text{current}} = \sum{k=1}^{K} \mathrm{cost}(\mathcal{G}k) \le L{\max}.
+\end{equation}
+\end{definition}
+
+\section{Crypto Configuration Curve}
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Profile & $L_{\max}$ & Target Rate & Saturation Action & Overhead \\
+\midrule
+SECURE\_4   & 4  & 4.0 TB/s  & Hard Drop        & 3.2\% \\
+BALANCED\_8 & 8  & 8.5 TB/s  & Managed Trunc.   & 6.5\% \\
+LAB\_12     & 12 & 12.0 TB/s & ZK Refresh       & 8.4\% \\
+DEEP\_16    & 16 & 16.5 TB/s & Full Expansion   & 14.1\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{verbatim}
+
+\section*{5. Compilation Strategy}
+\begin{itemize}
+  \item Use \texttt{latexmk} with Biber for automated multi-pass builds:
+\begin{verbatim}
+latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" main.tex
+\end{verbatim}
+  \item Use \texttt{\includeonly} to compile active chapters only.
+  \item Externalize heavy TikZ figures to keep build times manageable.
+\end{itemize}
+
+\end{document}
+`

@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\title{\textbf{Scientific White Sheet}\\
+\large Building and Managing a 300-Page Academic Thesis in \LaTeX}
+\author{C.~Matthew~Blackwell\\Independent Systems Architect \& Designer}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\section*{1. Project Directory Architecture}
+A large-scale thesis requires strict modularity. The recommended directory layout is:
+
+\begin{verbatim}
+my_thesis/
+├── main.tex
+├── preamble.sty
+├── bibliography.bib
+├── chapters/
+│   ├── 01_introduction.tex
+│   ├── 02_literature.tex
+│   ├── 03_methodology.tex
+│   └── ...
+├── frontmatter/
+│   ├── titlepage.tex
+│   ├── abstract.tex
+│   ├── acknowledgments.tex
+│   └── dedication.tex
+└── figures/
+\end{verbatim}
+
+This structure isolates content, improves editor responsiveness, and ensures clean compilation.
+
+\section*{2. Document Class Selection}
+For manuscripts exceeding 200 pages, use:
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{memoir} — highly recommended; integrates book-level formatting tools.
+    \item \textbf{report} — standard multi-chapter class.
+\end{itemize}
+
+\section*{3. Master File Template}
+\begin{verbatim}
+\documentclass[11pt,twoside,openright]{memoir}
+\usepackage{preamble}
+
+\begin{document}
+
+\frontmatter
+\include{frontmatter/titlepage}
+\include{frontmatter/abstract}
+\include{frontmatter/acknowledgments}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\include{chapters/01_introduction}
+\include{chapters/02_literature}
+\include{chapters/03_methodology}
+% Additional chapters...
+
+\backmatter
+\include{chapters/appendix}
+\printbibliography
+
+\end{document}
+\end{verbatim}
+
+\section*{4. Modular Compilation: \texttt{\textbackslash include} vs. \texttt{\textbackslash input}}
+\begin{itemize}[leftmargin=1.2cm]
+    \item \texttt{\include\{...\}} — chapter-level inclusion; supports \texttt{\includeonly} for selective compilation.
+    \item \texttt{\input\{...\}} — inline inclusion; ideal for subsections, tables, or TikZ figures.
+\end{itemize}
+
+\section*{5. Performance Optimization}
+\begin{itemize}[leftmargin=1.2cm]
+    \item \textbf{latexmk} — automates multi-pass compilation.
+    \item \textbf{tikzexternalize} — caches TikZ figures to reduce compile time.
+    \item \textbf{draft mode} — disables image rendering for rapid iteration.
+\end{itemize}
+
+\section*{Summary}
+A 300-page thesis must be treated as a software project: modular, maintainable, and optimized. The architecture above ensures stable compilation, clean structure, and professional output suitable for scientific publication.
+
+\end{document}

@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\title{SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED\\
+\large Repository Overview \& Compilation Instructions}
+\author{C.~Matthew Blackwell\\Independent Designer}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{1. Project Overview}
+
+\texttt{SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED} is a unified multi-physics
+cosmological engine integrating:
+
+\begin{itemize}
+    \item General Relativity
+    \item Quantum Information Theory
+    \item Post-Quantum Cryptography
+    \item Multi-Messenger Astrophysics (Gaia, JWST, LIGO)
+    \item High-Performance C++/CUDA numerical solvers
+\end{itemize}
+
+The system is validated through a ten-layer sovereignty protocol, progressing
+from foundational mathematics to eternal predictive operation. The complete
+treatise is provided as a LaTeX monograph.
+
+\section*{2. Repository Structure}
+
+\begin{verbatim}
+sim_qstate_astro/
+│
+├── src/                         # C++/CUDA physics engine
+├── include/                     # Header files
+├── configs/                     # Configuration decks, seeds, grids
+├── tests/                       # Automated regression suites
+│   └── layer2/                  # Numerical reproducibility tests
+│
+├── telemetry/                   # Gaia/JWST/LIGO ingestion schemas
+├── crypto/                      # CKKS, ML-KEM, zk-SNARK modules
+│
+├── docs/
+│   ├── treatise/                # Full LaTeX monograph
+│   │   ├── sim_qstate_astro_treatise.tex
+│   │   ├── chapters/
+│   │   │   ├── layer1.tex
+│   │   │   ├── layer2.tex
+│   │   │   ├── layer3.tex
+│   │   │   ├── layer4.tex
+│   │   │   ├── layer5.tex
+│   │   │   ├── layer6.tex
+│   │   │   ├── layer7.tex
+│   │   │   ├── layer8.tex
+│   │   │   ├── layer9.tex
+│   │   │   └── layer10.tex
+│   └── bibliography/
+│       └── sim_qstate_astro_treatise.bib
+│
+└── README.tex                   # This file
+\end{verbatim}
+
+\section*{3. Ten-Layer Validation Protocol}
+
+\begin{enumerate}
+    \item Foundational Mathematical Validation
+    \item Numerical Reproducibility \& Solver Stability
+    \item External Stress-Testing Protocol
+    \item Empirical Anchoring (Gaia/JWST/LIGO)
+    \item Global Scientific Certification
+    \item Real-Time Global Deployment
+    \item Autonomous Cosmological Operation
+    \item Universal Predictive Autonomy
+    \item Cosmological Sovereignty
+    \item Eternal Predictive Operation
+\end{enumerate}
+
+Each layer is documented as a standalone chapter in the treatise.
+
+\section*{4. Building the LaTeX Treatise}
+
+Compile the full book manuscript using:
+
+\begin{verbatim}
+pdflatex sim_qstate_astro_treatise.tex
+bibtex sim_qstate_astro_treatise
+pdflatex sim_qstate_astro_treatise.tex
+pdflatex sim_qstate_astro_treatise.tex
+\end{verbatim}
+
+This four-pass sequence ensures stable cross-references, bibliography
+integration, and consistent figure/equation numbering.
+
+\section*{5. Scientific Requirements}
+
+The engine assumes:
+
+\begin{itemize}
+    \item IEEE-754 FP64 precision
+    \item Deterministic PRNG seed control
+    \item Cross-platform reproducibility
+    \item Homomorphic encryption for all telemetry
+    \item Multi-messenger ingestion (Gaia/JWST/LIGO)
+    \item High-order spatial/temporal solvers
+\end{itemize}
+
+\section*{6. Citation}
+
+If referencing this work:
+
+\begin{quote}
+C.~Matthew Blackwell. \textit{SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED:
+A Unified Multi-Physics Cosmological Engine}. Independent Designer (2026).
+\end{quote}
+
+\section*{7. Contact}
+
+\textbf{C. Matthew Blackwell} \\
+Independent Designer \\
+Lafayette, Louisiana, USA
+
+\end{document}

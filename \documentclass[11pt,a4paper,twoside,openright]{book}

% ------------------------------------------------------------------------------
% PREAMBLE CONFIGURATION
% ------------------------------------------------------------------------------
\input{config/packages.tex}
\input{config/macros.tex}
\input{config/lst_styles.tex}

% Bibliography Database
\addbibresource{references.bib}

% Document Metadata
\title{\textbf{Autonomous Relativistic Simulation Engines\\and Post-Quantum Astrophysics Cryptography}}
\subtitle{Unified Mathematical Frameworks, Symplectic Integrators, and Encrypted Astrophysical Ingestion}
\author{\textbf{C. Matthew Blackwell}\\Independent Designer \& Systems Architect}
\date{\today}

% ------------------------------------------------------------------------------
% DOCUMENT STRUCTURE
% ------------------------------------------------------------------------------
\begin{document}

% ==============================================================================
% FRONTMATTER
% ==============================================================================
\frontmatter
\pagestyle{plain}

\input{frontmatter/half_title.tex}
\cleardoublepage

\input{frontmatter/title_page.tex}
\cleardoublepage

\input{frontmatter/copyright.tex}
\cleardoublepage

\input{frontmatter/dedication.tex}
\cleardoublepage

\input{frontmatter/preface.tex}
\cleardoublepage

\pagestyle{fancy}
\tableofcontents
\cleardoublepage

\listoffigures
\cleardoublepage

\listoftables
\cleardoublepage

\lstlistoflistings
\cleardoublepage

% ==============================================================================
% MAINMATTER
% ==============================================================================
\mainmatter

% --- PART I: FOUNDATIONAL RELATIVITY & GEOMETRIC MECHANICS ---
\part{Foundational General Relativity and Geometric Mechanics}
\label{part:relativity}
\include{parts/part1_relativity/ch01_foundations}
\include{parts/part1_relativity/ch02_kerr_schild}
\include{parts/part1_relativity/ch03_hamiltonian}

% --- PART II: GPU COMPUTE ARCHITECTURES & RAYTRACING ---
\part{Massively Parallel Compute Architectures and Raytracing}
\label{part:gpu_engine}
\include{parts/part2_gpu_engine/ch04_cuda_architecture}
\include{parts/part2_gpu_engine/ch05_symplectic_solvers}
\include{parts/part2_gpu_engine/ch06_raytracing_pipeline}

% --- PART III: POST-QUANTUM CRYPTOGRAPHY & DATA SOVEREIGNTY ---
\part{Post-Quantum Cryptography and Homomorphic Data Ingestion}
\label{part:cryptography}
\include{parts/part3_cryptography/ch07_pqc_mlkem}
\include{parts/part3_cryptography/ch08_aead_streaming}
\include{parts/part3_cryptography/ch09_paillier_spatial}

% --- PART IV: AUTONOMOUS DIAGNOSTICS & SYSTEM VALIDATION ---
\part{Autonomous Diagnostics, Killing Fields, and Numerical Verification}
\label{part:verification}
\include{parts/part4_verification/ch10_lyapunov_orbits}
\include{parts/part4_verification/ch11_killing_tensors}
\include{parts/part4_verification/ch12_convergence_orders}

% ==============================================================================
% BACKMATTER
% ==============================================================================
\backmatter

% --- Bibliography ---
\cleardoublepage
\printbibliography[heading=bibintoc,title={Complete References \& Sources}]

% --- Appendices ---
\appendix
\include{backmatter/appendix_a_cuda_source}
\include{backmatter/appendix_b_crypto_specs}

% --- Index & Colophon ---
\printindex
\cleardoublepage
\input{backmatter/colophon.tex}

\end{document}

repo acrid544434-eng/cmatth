@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper,twoside,openright]{book}
+
+% ------------------------------------------------------------------------------
+% PREAMBLE CONFIGURATION
+% ------------------------------------------------------------------------------
+\input{config/packages.tex}
+\input{config/macros.tex}
+\input{config/lst_styles.tex}
+
+% Bibliography Database
+\addbibresource{references.bib}
+
+% Document Metadata
+\title{\textbf{Autonomous Relativistic Simulation Engines\\and Post-Quantum Astrophysics Cryptography}}
+\subtitle{Unified Mathematical Frameworks, Symplectic Integrators, and Encrypted Astrophysical Ingestion}
+\author{\textbf{C. Matthew Blackwell}\\Independent Designer \& Systems Architect}
+\date{\today}
+
+% ------------------------------------------------------------------------------
+% DOCUMENT STRUCTURE
+% ------------------------------------------------------------------------------
+\begin{document}
+
+% ==============================================================================
+% FRONTMATTER
+% ==============================================================================
+\frontmatter
+\pagestyle{plain}
+
+\input{frontmatter/half_title.tex}
+\cleardoublepage
+
+\input{frontmatter/title_page.tex}
+\cleardoublepage
+
+\input{frontmatter/copyright.tex}
+\cleardoublepage
+
+\input{frontmatter/dedication.tex}
+\cleardoublepage
+
+\input{frontmatter/preface.tex}
+\cleardoublepage
+
+\pagestyle{fancy}
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+\lstlistoflistings
+\cleardoublepage
+
+% ==============================================================================
+% MAINMATTER
+% ==============================================================================
+\mainmatter
+
+% --- PART I: FOUNDATIONAL RELATIVITY & GEOMETRIC MECHANICS ---
+\part{Foundational General Relativity and Geometric Mechanics}
+\label{part:relativity}
+\include{parts/part1_relativity/ch01_foundations}
+\include{parts/part1_relativity/ch02_kerr_schild}
+\include{parts/part1_relativity/ch03_hamiltonian}
+
+% --- PART II: GPU COMPUTE ARCHITECTURES & RAYTRACING ---
+\part{Massively Parallel Compute Architectures and Raytracing}
+\label{part:gpu_engine}
+\include{parts/part2_gpu_engine/ch04_cuda_architecture}
+\include{parts/part2_gpu_engine/ch05_symplectic_solvers}
+\include{parts/part2_gpu_engine/ch06_raytracing_pipeline}
+
+% --- PART III: POST-QUANTUM CRYPTOGRAPHY & DATA SOVEREIGNTY ---
+\part{Post-Quantum Cryptography and Homomorphic Data Ingestion}
+\label{part:cryptography}
+\include{parts/part3_cryptography/ch07_pqc_mlkem}
+\include{parts/part3_cryptography/ch08_aead_streaming}
+\include{parts/part3_cryptography/ch09_paillier_spatial}
+
+% --- PART IV: AUTONOMOUS DIAGNOSTICS & SYSTEM VALIDATION ---
+\part{Autonomous Diagnostics, Killing Fields, and Numerical Verification}
+\label{part:verification}
+\include{parts/part4_verification/ch10_lyapunov_orbits}
+\include{parts/part4_verification/ch11_killing_tensors}
+\include{parts/part4_verification/ch12_convergence_orders}
+
+% ==============================================================================
+% BACKMATTER
+% ==============================================================================
+\backmatter
+
+% --- Bibliography ---
+\cleardoublepage
+\printbibliography[heading=bibintoc,title={Complete References \& Sources}]
+
+% --- Appendices ---
+\appendix
+\include{backmatter/appendix_a_cuda_source}
+\include{backmatter/appendix_b_crypto_specs}
+
+% --- Index & Colophon ---
+\printindex
+\cleardoublepage
+\input{backmatter/colophon.tex}
+
+\end{document}

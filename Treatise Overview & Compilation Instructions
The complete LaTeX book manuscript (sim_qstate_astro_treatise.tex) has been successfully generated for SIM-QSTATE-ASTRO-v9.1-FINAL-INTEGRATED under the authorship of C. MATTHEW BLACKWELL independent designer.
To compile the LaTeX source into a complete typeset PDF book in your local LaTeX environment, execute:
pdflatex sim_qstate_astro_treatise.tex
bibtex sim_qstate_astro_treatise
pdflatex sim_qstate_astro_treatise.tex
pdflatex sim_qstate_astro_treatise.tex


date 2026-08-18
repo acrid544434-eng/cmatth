@@ -1,0 +1,8 @@
+Treatise Overview & Compilation Instructions
+The complete LaTeX book manuscript (sim_qstate_astro_treatise.tex) has been successfully generated for SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED under the authorship of C. MATTHEW BLACKWELL independent designer.
+To compile the LaTeX source into a complete typeset PDF book in your local LaTeX environment, execute:
+pdflatex sim_qstate_astro_treatise.tex
+bibtex sim_qstate_astro_treatise
+pdflatex sim_qstate_astro_treatise.tex
+pdflatex sim_qstate_astro_treatise.tex
+

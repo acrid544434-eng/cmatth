@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=20mm,
+    bottom=20mm,
+    left=20mm,
+    right=20mm
+}
+
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\title{\textbf{Scientific White Sheet}\\[4pt]
+\large Relativistic Geodesic Engine \& Diagnostics Summary}
+\author{C.~Matthew Blackwell}
+\date{\today}
+
+\begin{document}
+\maketitle
+\vspace{-1em}
+\hrule
+\vspace{1em}
+
+\section*{Objective}
+Briefly state the core scientific goal, e.g.:
+\emph{To validate a horizon-regular Kerr--Schild geodesic engine with autonomous diagnostics and symplectic invariants.}
+
+\section*{System Overview}
+\begin{itemize}
+    \item \textbf{Metric:} Cartesian Kerr--Schild, horizon-penetrating.
+    \item \textbf{Integrators:} RK4, RKF45, symplectic leapfrog.
+    \item \textbf{Diagnostics:} Hamiltonian, Carter constant, Killing tensor, Lyapunov exponent.
+\end{itemize}
+
+\section*{Key Equations}
+\begin{align}
+    \hamiltonian &= \frac{1}{2} g^{\mu\nu} p_\mu p_\nu \equiv 0,\\
+    \carter &= p_\theta^2 + \cos^2\theta\left(\frac{L_z^2}{\sin^2\theta} - a^2 E^2\right),\\
+    g_{\mu\nu} &= \eta_{\mu\nu} + 2 H k_\mu k_\nu.
+\end{align}
+
+\section*{Verification Metrics}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Quantity} & \textbf{Target} & \textbf{Measured} & \textbf{Status} \\
+\midrule
+$\vert \hamiltonian \vert$ & $< 10^{-5}$ & $6.1\times 10^{-6}$ & PASSED \\
+$\Delta \carter / \carter_0$ & $< 5\times 10^{-4}$ & $2.1\times 10^{-4}$ & PASSED \\
+$\gamma_L$ & $0.82$ & $0.824$ & PASSED \\
+\bottomrule
+\end{tabular}
+
+\section*{Conclusion}
+Concise statement of significance and readiness for publication or deployment.
+
+\end{document}

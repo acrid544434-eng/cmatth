@@ -1,0 +1,29 @@
+% ============================================================
+% SECTION 2 — Covariant Divergence Matching
+% ============================================================
+
+\section{Covariant Divergence and Informational Force}
+
+\begin{theorem}[Covariant Divergence Matching]
+If $(\mathcal{M}, g_{\mu\nu})$ satisfies the extended field equations, then:
+\begin{equation}
+    \frac{8\pi G}{c^4}\nabla^\mu
+    \langle \hat{T}_{\mu\nu} \rangle
+    + \partial_\nu \Centropy = 0.
+\end{equation}
+Equivalently:
+\begin{equation}
+    \nabla^\mu \langle \hat{T}_{\mu\nu} \rangle
+    = \mathcal{F}_\nu^{\text{info}},
+\end{equation}
+where:
+\begin{equation}
+    \mathcal{F}_\nu^{\text{info}}
+    = -\frac{c^4}{8\pi G}\partial_\nu \Centropy.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Taking $\nabla^\mu$ of both sides of the extended field equation and applying
+the contracted Bianchi identity $\nabla^\mu G_{\mu\nu}=0$ yields the result.
+\end{proof}

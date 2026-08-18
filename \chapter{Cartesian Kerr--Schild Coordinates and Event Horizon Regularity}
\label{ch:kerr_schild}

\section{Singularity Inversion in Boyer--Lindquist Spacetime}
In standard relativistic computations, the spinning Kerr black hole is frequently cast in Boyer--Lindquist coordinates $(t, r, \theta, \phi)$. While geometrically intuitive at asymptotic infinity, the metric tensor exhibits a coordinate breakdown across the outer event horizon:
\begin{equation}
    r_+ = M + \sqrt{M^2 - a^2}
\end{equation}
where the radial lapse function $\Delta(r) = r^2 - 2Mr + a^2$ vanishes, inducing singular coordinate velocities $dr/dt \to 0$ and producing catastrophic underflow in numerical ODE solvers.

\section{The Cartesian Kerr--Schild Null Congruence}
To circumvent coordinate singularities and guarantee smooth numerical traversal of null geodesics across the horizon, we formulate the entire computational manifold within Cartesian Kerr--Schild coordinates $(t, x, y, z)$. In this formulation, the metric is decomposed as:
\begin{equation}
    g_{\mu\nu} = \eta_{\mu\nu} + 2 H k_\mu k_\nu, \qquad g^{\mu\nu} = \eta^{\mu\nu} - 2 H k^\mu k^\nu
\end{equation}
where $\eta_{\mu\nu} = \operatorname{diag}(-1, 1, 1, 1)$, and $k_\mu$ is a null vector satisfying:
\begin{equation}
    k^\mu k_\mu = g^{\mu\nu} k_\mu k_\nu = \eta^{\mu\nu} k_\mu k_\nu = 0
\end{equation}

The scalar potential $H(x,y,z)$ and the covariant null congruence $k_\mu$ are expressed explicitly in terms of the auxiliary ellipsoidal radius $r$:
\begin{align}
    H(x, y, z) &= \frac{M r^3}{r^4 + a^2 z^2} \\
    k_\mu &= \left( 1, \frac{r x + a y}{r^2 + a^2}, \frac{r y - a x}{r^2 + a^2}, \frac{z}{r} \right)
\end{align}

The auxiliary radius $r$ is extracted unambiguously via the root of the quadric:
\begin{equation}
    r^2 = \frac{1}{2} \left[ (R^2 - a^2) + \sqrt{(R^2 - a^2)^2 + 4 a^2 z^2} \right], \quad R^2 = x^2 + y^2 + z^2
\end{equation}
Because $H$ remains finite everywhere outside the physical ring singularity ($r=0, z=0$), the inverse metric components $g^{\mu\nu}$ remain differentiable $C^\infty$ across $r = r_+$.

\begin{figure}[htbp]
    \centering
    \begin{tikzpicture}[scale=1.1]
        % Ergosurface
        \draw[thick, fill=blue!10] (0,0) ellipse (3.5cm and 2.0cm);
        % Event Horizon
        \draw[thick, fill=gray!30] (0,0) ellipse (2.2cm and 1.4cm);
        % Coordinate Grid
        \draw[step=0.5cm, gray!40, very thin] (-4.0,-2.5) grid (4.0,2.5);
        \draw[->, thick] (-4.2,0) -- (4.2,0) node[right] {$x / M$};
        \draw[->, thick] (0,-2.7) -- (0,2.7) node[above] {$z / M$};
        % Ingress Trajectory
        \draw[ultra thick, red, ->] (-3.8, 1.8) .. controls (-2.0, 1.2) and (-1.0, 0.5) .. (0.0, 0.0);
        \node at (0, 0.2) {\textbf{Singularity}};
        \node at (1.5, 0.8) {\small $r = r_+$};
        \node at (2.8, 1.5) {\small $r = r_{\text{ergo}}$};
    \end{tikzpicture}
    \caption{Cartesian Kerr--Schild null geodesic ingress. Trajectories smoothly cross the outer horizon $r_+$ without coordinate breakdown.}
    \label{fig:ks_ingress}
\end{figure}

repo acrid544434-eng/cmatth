@@ -1,0 +1,52 @@
+\chapter{Cartesian Kerr--Schild Coordinates and Event Horizon Regularity}
+\label{ch:kerr_schild}
+
+\section{Singularity Inversion in Boyer--Lindquist Spacetime}
+In standard relativistic computations, the spinning Kerr black hole is frequently cast in Boyer--Lindquist coordinates $(t, r, \theta, \phi)$. While geometrically intuitive at asymptotic infinity, the metric tensor exhibits a coordinate breakdown across the outer event horizon:
+\begin{equation}
+    r_+ = M + \sqrt{M^2 - a^2}
+\end{equation}
+where the radial lapse function $\Delta(r) = r^2 - 2Mr + a^2$ vanishes, inducing singular coordinate velocities $dr/dt \to 0$ and producing catastrophic underflow in numerical ODE solvers.
+
+\section{The Cartesian Kerr--Schild Null Congruence}
+To circumvent coordinate singularities and guarantee smooth numerical traversal of null geodesics across the horizon, we formulate the entire computational manifold within Cartesian Kerr--Schild coordinates $(t, x, y, z)$. In this formulation, the metric is decomposed as:
+\begin{equation}
+    g_{\mu\nu} = \eta_{\mu\nu} + 2 H k_\mu k_\nu, \qquad g^{\mu\nu} = \eta^{\mu\nu} - 2 H k^\mu k^\nu
+\end{equation}
+where $\eta_{\mu\nu} = \operatorname{diag}(-1, 1, 1, 1)$, and $k_\mu$ is a null vector satisfying:
+\begin{equation}
+    k^\mu k_\mu = g^{\mu\nu} k_\mu k_\nu = \eta^{\mu\nu} k_\mu k_\nu = 0
+\end{equation}
+
+The scalar potential $H(x,y,z)$ and the covariant null congruence $k_\mu$ are expressed explicitly in terms of the auxiliary ellipsoidal radius $r$:
+\begin{align}
+    H(x, y, z) &= \frac{M r^3}{r^4 + a^2 z^2} \\
+    k_\mu &= \left( 1, \frac{r x + a y}{r^2 + a^2}, \frac{r y - a x}{r^2 + a^2}, \frac{z}{r} \right)
+\end{align}
+
+The auxiliary radius $r$ is extracted unambiguously via the root of the quadric:
+\begin{equation}
+    r^2 = \frac{1}{2} \left[ (R^2 - a^2) + \sqrt{(R^2 - a^2)^2 + 4 a^2 z^2} \right], \quad R^2 = x^2 + y^2 + z^2
+\end{equation}
+Because $H$ remains finite everywhere outside the physical ring singularity ($r=0, z=0$), the inverse metric components $g^{\mu\nu}$ remain differentiable $C^\infty$ across $r = r_+$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=1.1]
+        % Ergosurface
+        \draw[thick, fill=blue!10] (0,0) ellipse (3.5cm and 2.0cm);
+        % Event Horizon
+        \draw[thick, fill=gray!30] (0,0) ellipse (2.2cm and 1.4cm);
+        % Coordinate Grid
+        \draw[step=0.5cm, gray!40, very thin] (-4.0,-2.5) grid (4.0,2.5);
+        \draw[->, thick] (-4.2,0) -- (4.2,0) node[right] {$x / M$};
+        \draw[->, thick] (0,-2.7) -- (0,2.7) node[above] {$z / M$};
+        % Ingress Trajectory
+        \draw[ultra thick, red, ->] (-3.8, 1.8) .. controls (-2.0, 1.2) and (-1.0, 0.5) .. (0.0, 0.0);
+        \node at (0, 0.2) {\textbf{Singularity}};
+        \node at (1.5, 0.8) {\small $r = r_+$};
+        \node at (2.8, 1.5) {\small $r = r_{\text{ergo}}$};
+    \end{tikzpicture}
+    \caption{Cartesian Kerr--Schild null geodesic ingress. Trajectories smoothly cross the outer horizon $r_+$ without coordinate breakdown.}
+    \label{fig:ks_ingress}
+\end{figure}

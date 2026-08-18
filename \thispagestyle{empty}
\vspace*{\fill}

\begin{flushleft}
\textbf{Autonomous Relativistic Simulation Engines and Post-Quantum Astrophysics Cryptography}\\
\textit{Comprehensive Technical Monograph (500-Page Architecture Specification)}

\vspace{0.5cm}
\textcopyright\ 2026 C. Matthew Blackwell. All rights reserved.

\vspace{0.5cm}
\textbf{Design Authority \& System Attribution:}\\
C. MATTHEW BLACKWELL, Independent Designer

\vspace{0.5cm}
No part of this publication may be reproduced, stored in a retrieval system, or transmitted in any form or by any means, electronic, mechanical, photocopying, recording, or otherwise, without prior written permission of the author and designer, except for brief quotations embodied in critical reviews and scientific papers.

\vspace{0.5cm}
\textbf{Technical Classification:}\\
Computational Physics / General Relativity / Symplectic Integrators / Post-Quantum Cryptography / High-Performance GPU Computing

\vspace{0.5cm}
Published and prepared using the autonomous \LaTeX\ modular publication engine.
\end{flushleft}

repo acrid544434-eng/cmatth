@@ -1,0 +1,24 @@
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{flushleft}
+\textbf{Autonomous Relativistic Simulation Engines and Post-Quantum Astrophysics Cryptography}\\
+\textit{Comprehensive Technical Monograph (500-Page Architecture Specification)}
+
+\vspace{0.5cm}
+\textcopyright\ 2026 C. Matthew Blackwell. All rights reserved.
+
+\vspace{0.5cm}
+\textbf{Design Authority \& System Attribution:}\\
+C. MATTHEW BLACKWELL, Independent Designer
+
+\vspace{0.5cm}
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without prior written permission of the author and designer, except for brief quotations embodied in critical reviews and scientific papers.
+
+\vspace{0.5cm}
+\textbf{Technical Classification:}\\
+Computational Physics / General Relativity / Symplectic Integrators / Post-Quantum Cryptography / High-Performance GPU Computing
+
+\vspace{0.5cm}
+Published and prepared using the autonomous \LaTeX\ modular publication engine.
+\end{flushleft}

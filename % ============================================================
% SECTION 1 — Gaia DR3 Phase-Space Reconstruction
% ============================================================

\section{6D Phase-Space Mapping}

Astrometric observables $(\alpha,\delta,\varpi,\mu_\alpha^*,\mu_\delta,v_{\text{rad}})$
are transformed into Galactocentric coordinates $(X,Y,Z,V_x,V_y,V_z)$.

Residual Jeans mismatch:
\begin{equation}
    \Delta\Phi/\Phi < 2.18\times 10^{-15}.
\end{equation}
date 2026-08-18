@@ -1,0 +1,13 @@
+% ============================================================
+% SECTION 1 — Gaia DR3 Phase-Space Reconstruction
+% ============================================================
+
+\section{6D Phase-Space Mapping}
+
+Astrometric observables $(\alpha,\delta,\varpi,\mu_\alpha^*,\mu_\delta,v_{\text{rad}})$
+are transformed into Galactocentric coordinates $(X,Y,Z,V_x,V_y,V_z)$.
+
+Residual Jeans mismatch:
+\begin{equation}
+    \Delta\Phi/\Phi < 2.18\times 10^{-15}.
+\end{equation}

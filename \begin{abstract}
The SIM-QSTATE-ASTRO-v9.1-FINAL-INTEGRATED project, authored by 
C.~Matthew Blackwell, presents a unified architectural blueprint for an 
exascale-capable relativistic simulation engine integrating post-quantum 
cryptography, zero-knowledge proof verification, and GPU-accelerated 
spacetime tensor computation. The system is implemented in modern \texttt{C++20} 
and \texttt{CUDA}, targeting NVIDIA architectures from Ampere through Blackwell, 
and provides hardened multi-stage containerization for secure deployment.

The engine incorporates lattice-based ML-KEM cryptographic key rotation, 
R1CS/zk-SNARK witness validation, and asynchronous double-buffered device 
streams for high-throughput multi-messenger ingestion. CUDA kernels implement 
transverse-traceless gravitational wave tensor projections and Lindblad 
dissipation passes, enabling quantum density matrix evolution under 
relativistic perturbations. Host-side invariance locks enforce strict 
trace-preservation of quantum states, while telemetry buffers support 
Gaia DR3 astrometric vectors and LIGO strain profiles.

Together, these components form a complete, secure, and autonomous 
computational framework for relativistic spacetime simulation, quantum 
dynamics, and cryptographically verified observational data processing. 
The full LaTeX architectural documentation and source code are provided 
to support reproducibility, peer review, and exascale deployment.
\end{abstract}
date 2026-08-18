@@ -1,0 +1,24 @@
+\begin{abstract}
+The SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED project, authored by 
+C.~Matthew Blackwell, presents a unified architectural blueprint for an 
+exascale-capable relativistic simulation engine integrating post-quantum 
+cryptography, zero-knowledge proof verification, and GPU-accelerated 
+spacetime tensor computation. The system is implemented in modern \texttt{C++20} 
+and \texttt{CUDA}, targeting NVIDIA architectures from Ampere through Blackwell, 
+and provides hardened multi-stage containerization for secure deployment.
+
+The engine incorporates lattice-based ML-KEM cryptographic key rotation, 
+R1CS/zk-SNARK witness validation, and asynchronous double-buffered device 
+streams for high-throughput multi-messenger ingestion. CUDA kernels implement 
+transverse-traceless gravitational wave tensor projections and Lindblad 
+dissipation passes, enabling quantum density matrix evolution under 
+relativistic perturbations. Host-side invariance locks enforce strict 
+trace-preservation of quantum states, while telemetry buffers support 
+Gaia DR3 astrometric vectors and LIGO strain profiles.
+
+Together, these components form a complete, secure, and autonomous 
+computational framework for relativistic spacetime simulation, quantum 
+dynamics, and cryptographically verified observational data processing. 
+The full LaTeX architectural documentation and source code are provided 
+to support reproducibility, peer review, and exascale deployment.
+\end{abstract}

@@ -1,0 +1,18 @@
+% ============================================================
+% SECTION 3 — Singularity Regularization
+% ============================================================
+
+\section{Curvature Bounds Under Informational Compression}
+
+\begin{corollary}[Kretschmann Scalar Regularization]
+Let $\mathcal{K} = R^{\alpha\beta\gamma\delta}R_{\alpha\beta\gamma\delta}$.
+Near $r \to r_{\text{min}}$:
+\begin{equation}
+    \mathcal{K}
+    \le \frac{1}{\ell_P^4}
+    \exp(-\alpha_0 \Sshannon)
+    < \infty.
+\end{equation}
+Thus informational backreaction ensures curvature boundedness and geodesic
+completeness.
+\end{corollary}

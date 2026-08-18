@@ -1,0 +1,8 @@
+Academic Thesis Overview & Compilation Instructions
+The complete LaTeX manuscript (thesis_300_pages.tex) has been successfully generated for SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED under the authorship of C. MATTHEW BLACKWELL independent designer.
+To compile the LaTeX source into your final typeset PDF document in your local LaTeX environment, run the standard compilation sequence:
+pdflatex thesis_300_pages.tex
+bibtex thesis_300_pages
+pdflatex thesis_300_pages.tex
+pdflatex thesis_300_pages.tex
+

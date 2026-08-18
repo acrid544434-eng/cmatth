@@ -1,0 +1,8 @@
+Thesis Overview & Compilation Instructions
+The complete LaTeX manuscript (thesis_manuscript.tex) has been successfully generated for SIM-QSTATE-ASTRO v4.0 under the authorship of C. MATTHEW BLACKWELL independent designer.
+To compile the LaTeX source into a PDF document, run the standard compilation sequence in your local LaTeX environment (such as TeX Live or MiKTeX):
+pdflatex thesis_manuscript.tex
+bibtex thesis_manuscript
+pdflatex thesis_manuscript.tex
+pdflatex thesis_manuscript.tex
+

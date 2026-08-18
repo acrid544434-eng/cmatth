@@ -1,0 +1,35 @@
+book_crypt_relativity/
+├── main.tex                       # Master root document
+├── references.bib                 # BibLaTeX bibliography
+├── config/
+│   ├── packages.tex               # Package declarations
+│   ├── macros.tex                 # Mathematical, tensor & crypto macros
+│   └── lst_styles.tex             # Code listing styles (CUDA, C++, Python)
+├── frontmatter/
+│   ├── half_title.tex             # Half title page
+│   ├── title_page.tex             # Full title page
+│   ├── copyright.tex              # Copyright & design attribution
+│   ├── dedication.tex             # Dedication
+│   ├── preface.tex                # Preface & systemic rationale
+│   └── toc.tex                    # Table of contents configuration
+├── parts/
+│   ├── part1_relativity/          # PART I: General Relativity & Geodesics
+│   │   ├── ch01_foundations.tex
+│   │   ├── ch02_kerr_schild.tex
+│   │   └── ch03_hamiltonian.tex
+│   ├── part2_gpu_engine/          # PART II: GPU Parallel Computing Kernels
+│   │   ├── ch04_cuda_architecture.tex
+│   │   ├── ch05_symplectic_solvers.tex
+│   │   └── ch06_raytracing_pipeline.tex
+│   ├── part3_cryptography/        # PART III: Post-Quantum & Homomorphic Security
+│   │   ├── ch07_pqc_mlkem.tex
+│   │   ├── ch08_aead_streaming.tex
+│   │   └── ch09_paillier_spatial.tex
+│   └── part4_verification/       # PART IV: Autonomous Validation & Diagnostics
+│       ├── ch10_lyapunov_orbits.tex
+│       ├── ch11_killing_tensors.tex
+│       └── ch12_convergence_orders.tex
+└── backmatter/
+    ├── appendix_a_cuda_source.tex # Full production code listings
+    ├── appendix_b_crypto_specs.tex# Protocol specifications
+    └── colophon.tex               # Colophon & publication notes

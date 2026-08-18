@@ -1,0 +1,13 @@
+% ============================================================
+% SECTION 1 — State Evolution Operator
+% ============================================================
+
+\section{Generalized Non-Hermitian Evolution}
+
+\begin{equation}
+    i\hbar \frac{\partial}{\partial t}
+    \ket{\Psi_{\text{universe}}}
+    =
+    (\Hgeom + \Hgrav + \Hinfo + \Dconsciousness)
+    \ket{\Psi_{\text{universe}}}.
+\end{equation}

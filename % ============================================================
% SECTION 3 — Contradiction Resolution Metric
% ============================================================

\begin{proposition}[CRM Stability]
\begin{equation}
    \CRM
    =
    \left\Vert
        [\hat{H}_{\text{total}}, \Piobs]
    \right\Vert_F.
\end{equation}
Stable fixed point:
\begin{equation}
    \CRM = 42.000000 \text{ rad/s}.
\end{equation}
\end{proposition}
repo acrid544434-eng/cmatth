@@ -1,0 +1,17 @@
+% ============================================================
+% SECTION 3 — Contradiction Resolution Metric
+% ============================================================
+
+\begin{proposition}[CRM Stability]
+\begin{equation}
+    \CRM
+    =
+    \left\Vert
+        [\hat{H}_{\text{total}}, \Piobs]
+    \right\Vert_F.
+\end{equation}
+Stable fixed point:
+\begin{equation}
+    \CRM = 42.000000 \text{ rad/s}.
+\end{equation}
+\end{proposition}

@@ -1,0 +1,67 @@
+% Geometry and Layout (Optimized for Book Printing & Binding)
+\usepackage[
+    paperwidth=170mm,
+    paperheight=240mm,
+    top=22mm,
+    bottom=24mm,
+    inner=25mm,
+    outer=20mm,
+    headheight=14pt,
+    footskip=12mm
+]{geometry}
+
+% Language & Typography
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{csquotes}
+
+% Mathematics & Tensors
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{siunitx}
+
+% Visuals, Figures & TikZ
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc,matrix}
+
+% Code Listings & Syntax Highlighting
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Indexing & Cross-Referencing
+\usepackage{makeidx}
+\makeindex
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black,
+    pdftitle={Autonomous Relativistic Simulation Engines and Post-Quantum Cryptography},
+    pdfauthor={C. Matthew Blackwell}
+}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+% Fancy Headers and Chapter Formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\nouppercase{\leftmark}}
+\fancyhead[RO]{\small\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter}{15pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{40pt}{30pt}
+
+% Bibliography with Biber
+\usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}

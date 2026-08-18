@@ -1,0 +1,83 @@
+% ============================================================
+% PART I — Covariant Informational Geometrodynamics
+% ============================================================
+\part{Covariant Informational Geometrodynamics}
+
+\chapter{Extended Einstein–Shannon Field Equations}
+\input{sections/section1_field_equations.tex}
+
+\chapter{Covariant Divergence Matching}
+\input{sections/section1_divergence_proof.tex}
+
+\chapter{Singularity Regularization}
+\input{sections/section1_singularity_bounds.tex}
+
+\chapter{Geodesic Evolution}
+\input{sections/section1_geodesics.tex}
+
+
+
+% ============================================================
+% PART II — Non-Hermitian Quantum Dynamics & Observer Coupling
+% ============================================================
+\part{Non-Hermitian Quantum Dynamics \& Observer Coupling}
+
+\chapter{Generalized State Evolution Operator}
+\input{sections/section2_state_evolution.tex}
+
+\chapter{Consciousness Debugger Operator}
+\input{sections/section2_debugger_operator.tex}
+
+\chapter{Contradiction Resolution Metric}
+\input{sections/section2_crm.tex}
+
+
+
+% ============================================================
+% PART III — Multi-Messenger Telemetry \& Relativistic Ingestion
+% ============================================================
+\part{Multi-Messenger Telemetry \& Relativistic Ingestion Kernels}
+
+\chapter{Gaia DR3 Phase-Space Reconstruction}
+\input{sections/section3_gaia_ingestion.tex}
+
+\chapter{JWST High-Redshift Cosmological Coupling}
+\input{sections/section3_jwst_boundary.tex}
+
+\chapter{LIGO/Virgo/KAGRA Metric Perturbation Injection}
+\input{sections/section3_ligo_metric.tex}
+
+
+
+% ============================================================
+% PART IV — Homomorphic Execution \& Cryptographic Verification
+% ============================================================
+\part{Homomorphic Execution \& Cryptographic Verification}
+
+\chapter{R1CS Constraint Systems}
+\input{sections/section4_r1cs_formalism.tex}
+
+\chapter{Circom Constraint Templates}
+\input{sections/section4_circom_templates.tex}
+
+\chapter{Groth16 zk-SNARK Verification}
+\input{sections/section4_groth16_verification.tex}
+
+
+
+% ============================================================
+% PART V — Numerical Engines \& Transport Kernels
+% ============================================================
+\part{Numerical Engines \& Transport Kernels}
+
+\chapter{Christoffel Symbol Perturbation}
+\input{sections/section5_christoffel.tex}
+
+\chapter{Geodesic ODE Reduction}
+\input{sections/section5_geodesic_reduction.tex}
+
+\chapter{RKF89 Adaptive Integration Suite}
+\input{sections/section5_rkf89.tex}
+
+\chapter{C++ Geodesic Integrator Kernel}
+\input{sections/section5_cpp_kernel.tex}

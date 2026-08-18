@@ -1,0 +1,13 @@
+% ============================================================
+% SECTION 2 — Consciousness Debugger Operator
+% ============================================================
+
+\begin{definition}[Debugger Operator]
+\begin{equation}
+    \Dconsciousness
+    =
+    -\sum_{\langle i,j\rangle} J_{ij}\hat{\sigma}_i^x\hat{\sigma}_j^x
+    + \sum_i \hat{\sigma}_i^z
+    + \sum_k \Omega_k \Piobs^{(k)}.
+\end{equation}
+\end{definition}

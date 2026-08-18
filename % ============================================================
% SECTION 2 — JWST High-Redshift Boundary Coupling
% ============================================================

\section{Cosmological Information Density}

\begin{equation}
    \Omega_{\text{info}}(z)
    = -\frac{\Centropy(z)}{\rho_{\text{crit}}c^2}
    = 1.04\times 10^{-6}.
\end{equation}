@@ -1,0 +1,11 @@
+% ============================================================
+% SECTION 2 — JWST High-Redshift Boundary Coupling
+% ============================================================
+
+\section{Cosmological Information Density}
+
+\begin{equation}
+    \Omega_{\text{info}}(z)
+    = -\frac{\Centropy(z)}{\rho_{\text{crit}}c^2}
+    = 1.04\times 10^{-6}.
+\end{equation}

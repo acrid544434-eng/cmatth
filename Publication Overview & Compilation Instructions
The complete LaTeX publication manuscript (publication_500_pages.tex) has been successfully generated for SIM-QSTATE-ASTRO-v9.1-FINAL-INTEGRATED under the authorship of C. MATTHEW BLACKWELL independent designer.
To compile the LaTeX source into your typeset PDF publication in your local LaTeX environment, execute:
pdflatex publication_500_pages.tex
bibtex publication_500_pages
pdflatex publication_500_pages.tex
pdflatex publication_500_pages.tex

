@@ -1,0 +1,8 @@
+Publication Overview & Compilation Instructions
+The complete LaTeX publication manuscript (publication_500_pages.tex) has been successfully generated for SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED under the authorship of C. MATTHEW BLACKWELL independent designer.
+To compile the LaTeX source into your typeset PDF publication in your local LaTeX environment, execute:
+pdflatex publication_500_pages.tex
+bibtex publication_500_pages
+pdflatex publication_500_pages.tex
+pdflatex publication_500_pages.tex
+

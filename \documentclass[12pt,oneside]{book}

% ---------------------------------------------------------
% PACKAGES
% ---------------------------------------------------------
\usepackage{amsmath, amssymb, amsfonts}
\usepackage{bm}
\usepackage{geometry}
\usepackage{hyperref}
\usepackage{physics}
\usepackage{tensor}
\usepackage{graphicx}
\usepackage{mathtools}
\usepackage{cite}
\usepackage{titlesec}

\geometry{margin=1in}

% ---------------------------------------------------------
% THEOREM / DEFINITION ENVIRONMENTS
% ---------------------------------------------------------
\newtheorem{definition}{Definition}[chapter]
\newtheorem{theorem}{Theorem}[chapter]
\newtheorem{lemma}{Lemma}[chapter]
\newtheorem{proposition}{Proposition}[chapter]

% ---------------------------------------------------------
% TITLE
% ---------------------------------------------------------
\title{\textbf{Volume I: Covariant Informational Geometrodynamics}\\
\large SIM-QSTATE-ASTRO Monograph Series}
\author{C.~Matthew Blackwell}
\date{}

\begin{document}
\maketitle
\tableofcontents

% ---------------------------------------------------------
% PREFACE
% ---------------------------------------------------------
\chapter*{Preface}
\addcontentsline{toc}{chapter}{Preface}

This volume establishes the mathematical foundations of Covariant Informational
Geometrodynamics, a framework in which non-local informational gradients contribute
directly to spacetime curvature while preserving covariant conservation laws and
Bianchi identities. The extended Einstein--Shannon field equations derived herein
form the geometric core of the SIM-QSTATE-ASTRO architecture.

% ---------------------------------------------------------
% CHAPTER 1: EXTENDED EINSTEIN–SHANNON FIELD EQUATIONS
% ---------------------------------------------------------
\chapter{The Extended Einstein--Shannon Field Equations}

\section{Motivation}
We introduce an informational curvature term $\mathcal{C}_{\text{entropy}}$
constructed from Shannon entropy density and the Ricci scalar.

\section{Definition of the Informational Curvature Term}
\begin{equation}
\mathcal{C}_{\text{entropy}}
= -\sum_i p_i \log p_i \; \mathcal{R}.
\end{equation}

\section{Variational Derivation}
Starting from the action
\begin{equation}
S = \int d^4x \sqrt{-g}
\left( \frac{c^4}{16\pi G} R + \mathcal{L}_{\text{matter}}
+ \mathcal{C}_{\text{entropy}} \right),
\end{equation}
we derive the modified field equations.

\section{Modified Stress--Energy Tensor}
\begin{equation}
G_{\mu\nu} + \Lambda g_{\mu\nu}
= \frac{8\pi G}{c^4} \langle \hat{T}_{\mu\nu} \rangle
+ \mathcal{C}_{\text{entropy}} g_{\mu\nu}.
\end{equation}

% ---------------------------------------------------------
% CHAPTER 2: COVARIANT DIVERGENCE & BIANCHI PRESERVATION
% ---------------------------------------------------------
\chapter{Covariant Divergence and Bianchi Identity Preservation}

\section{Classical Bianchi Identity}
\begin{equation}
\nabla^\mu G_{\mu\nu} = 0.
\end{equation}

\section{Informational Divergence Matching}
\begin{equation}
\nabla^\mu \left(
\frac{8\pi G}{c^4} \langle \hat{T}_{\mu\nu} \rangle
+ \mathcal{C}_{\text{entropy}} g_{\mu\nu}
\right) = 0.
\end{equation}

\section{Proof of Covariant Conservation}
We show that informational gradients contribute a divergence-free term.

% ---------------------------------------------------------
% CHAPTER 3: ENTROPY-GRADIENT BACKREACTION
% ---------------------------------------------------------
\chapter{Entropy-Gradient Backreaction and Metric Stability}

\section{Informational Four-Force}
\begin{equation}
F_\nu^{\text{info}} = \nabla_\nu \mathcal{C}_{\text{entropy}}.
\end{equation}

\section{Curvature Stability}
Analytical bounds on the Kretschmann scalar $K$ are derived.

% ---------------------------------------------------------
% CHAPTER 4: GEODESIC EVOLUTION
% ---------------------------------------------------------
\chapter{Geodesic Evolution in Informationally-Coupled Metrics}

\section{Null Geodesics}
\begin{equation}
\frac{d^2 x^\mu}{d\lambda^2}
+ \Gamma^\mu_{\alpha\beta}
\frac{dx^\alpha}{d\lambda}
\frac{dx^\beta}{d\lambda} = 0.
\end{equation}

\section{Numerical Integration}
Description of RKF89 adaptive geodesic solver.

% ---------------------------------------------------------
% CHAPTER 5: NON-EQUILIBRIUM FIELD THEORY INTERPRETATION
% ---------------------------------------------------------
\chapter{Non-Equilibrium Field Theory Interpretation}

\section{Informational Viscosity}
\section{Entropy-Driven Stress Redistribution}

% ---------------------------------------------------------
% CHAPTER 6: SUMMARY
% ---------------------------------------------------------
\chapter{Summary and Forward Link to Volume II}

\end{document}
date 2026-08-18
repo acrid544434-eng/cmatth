@@ -1,0 +1,145 @@
+\documentclass[12pt,oneside]{book}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{cite}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------
+% THEOREM / DEFINITION ENVIRONMENTS
+% ---------------------------------------------------------
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\title{\textbf{Volume I: Covariant Informational Geometrodynamics}\\
+\large SIM-QSTATE-ASTRO Monograph Series}
+\author{C.~Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ---------------------------------------------------------
+% PREFACE
+% ---------------------------------------------------------
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+This volume establishes the mathematical foundations of Covariant Informational
+Geometrodynamics, a framework in which non-local informational gradients contribute
+directly to spacetime curvature while preserving covariant conservation laws and
+Bianchi identities. The extended Einstein--Shannon field equations derived herein
+form the geometric core of the SIM-QSTATE-ASTRO architecture.
+
+% ---------------------------------------------------------
+% CHAPTER 1: EXTENDED EINSTEIN–SHANNON FIELD EQUATIONS
+% ---------------------------------------------------------
+\chapter{The Extended Einstein--Shannon Field Equations}
+
+\section{Motivation}
+We introduce an informational curvature term $\mathcal{C}_{\text{entropy}}$
+constructed from Shannon entropy density and the Ricci scalar.
+
+\section{Definition of the Informational Curvature Term}
+\begin{equation}
+\mathcal{C}_{\text{entropy}}
+= -\sum_i p_i \log p_i \; \mathcal{R}.
+\end{equation}
+
+\section{Variational Derivation}
+Starting from the action
+\begin{equation}
+S = \int d^4x \sqrt{-g}
+\left( \frac{c^4}{16\pi G} R + \mathcal{L}_{\text{matter}}
++ \mathcal{C}_{\text{entropy}} \right),
+\end{equation}
+we derive the modified field equations.
+
+\section{Modified Stress--Energy Tensor}
+\begin{equation}
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4} \langle \hat{T}_{\mu\nu} \rangle
++ \mathcal{C}_{\text{entropy}} g_{\mu\nu}.
+\end{equation}
+
+% ---------------------------------------------------------
+% CHAPTER 2: COVARIANT DIVERGENCE & BIANCHI PRESERVATION
+% ---------------------------------------------------------
+\chapter{Covariant Divergence and Bianchi Identity Preservation}
+
+\section{Classical Bianchi Identity}
+\begin{equation}
+\nabla^\mu G_{\mu\nu} = 0.
+\end{equation}
+
+\section{Informational Divergence Matching}
+\begin{equation}
+\nabla^\mu \left(
+\frac{8\pi G}{c^4} \langle \hat{T}_{\mu\nu} \rangle
++ \mathcal{C}_{\text{entropy}} g_{\mu\nu}
+\right) = 0.
+\end{equation}
+
+\section{Proof of Covariant Conservation}
+We show that informational gradients contribute a divergence-free term.
+
+% ---------------------------------------------------------
+% CHAPTER 3: ENTROPY-GRADIENT BACKREACTION
+% ---------------------------------------------------------
+\chapter{Entropy-Gradient Backreaction and Metric Stability}
+
+\section{Informational Four-Force}
+\begin{equation}
+F_\nu^{\text{info}} = \nabla_\nu \mathcal{C}_{\text{entropy}}.
+\end{equation}
+
+\section{Curvature Stability}
+Analytical bounds on the Kretschmann scalar $K$ are derived.
+
+% ---------------------------------------------------------
+% CHAPTER 4: GEODESIC EVOLUTION
+% ---------------------------------------------------------
+\chapter{Geodesic Evolution in Informationally-Coupled Metrics}
+
+\section{Null Geodesics}
+\begin{equation}
+\frac{d^2 x^\mu}{d\lambda^2}
++ \Gamma^\mu_{\alpha\beta}
+\frac{dx^\alpha}{d\lambda}
+\frac{dx^\beta}{d\lambda} = 0.
+\end{equation}
+
+\section{Numerical Integration}
+Description of RKF89 adaptive geodesic solver.
+
+% ---------------------------------------------------------
+% CHAPTER 5: NON-EQUILIBRIUM FIELD THEORY INTERPRETATION
+% ---------------------------------------------------------
+\chapter{Non-Equilibrium Field Theory Interpretation}
+
+\section{Informational Viscosity}
+\section{Entropy-Driven Stress Redistribution}
+
+% ---------------------------------------------------------
+% CHAPTER 6: SUMMARY
+% ---------------------------------------------------------
+\chapter{Summary and Forward Link to Volume II}
+
+\end{document}

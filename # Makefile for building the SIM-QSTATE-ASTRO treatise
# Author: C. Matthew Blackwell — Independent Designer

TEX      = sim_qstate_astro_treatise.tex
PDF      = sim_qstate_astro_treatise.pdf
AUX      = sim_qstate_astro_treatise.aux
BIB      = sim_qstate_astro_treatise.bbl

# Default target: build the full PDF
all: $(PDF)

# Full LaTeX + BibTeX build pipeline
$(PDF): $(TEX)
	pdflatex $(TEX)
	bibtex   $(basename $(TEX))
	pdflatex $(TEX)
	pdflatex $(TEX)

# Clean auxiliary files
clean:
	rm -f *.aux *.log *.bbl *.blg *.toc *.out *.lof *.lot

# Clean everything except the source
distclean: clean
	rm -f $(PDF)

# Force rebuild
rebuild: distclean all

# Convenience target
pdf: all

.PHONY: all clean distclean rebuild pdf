@@ -1,0 +1,33 @@
+# Makefile for building the SIM-QSTATE-ASTRO treatise
+# Author: C. Matthew Blackwell — Independent Designer
+
+TEX      = sim_qstate_astro_treatise.tex
+PDF      = sim_qstate_astro_treatise.pdf
+AUX      = sim_qstate_astro_treatise.aux
+BIB      = sim_qstate_astro_treatise.bbl
+
+# Default target: build the full PDF
+all: $(PDF)
+
+# Full LaTeX + BibTeX build pipeline
+$(PDF): $(TEX)
+	pdflatex $(TEX)
+	bibtex   $(basename $(TEX))
+	pdflatex $(TEX)
+	pdflatex $(TEX)
+
+# Clean auxiliary files
+clean:
+	rm -f *.aux *.log *.bbl *.blg *.toc *.out *.lof *.lot
+
+# Clean everything except the source
+distclean: clean
+	rm -f $(PDF)
+
+# Force rebuild
+rebuild: distclean all
+
+# Convenience target
+pdf: all
+
+.PHONY: all clean distclean rebuild pdf

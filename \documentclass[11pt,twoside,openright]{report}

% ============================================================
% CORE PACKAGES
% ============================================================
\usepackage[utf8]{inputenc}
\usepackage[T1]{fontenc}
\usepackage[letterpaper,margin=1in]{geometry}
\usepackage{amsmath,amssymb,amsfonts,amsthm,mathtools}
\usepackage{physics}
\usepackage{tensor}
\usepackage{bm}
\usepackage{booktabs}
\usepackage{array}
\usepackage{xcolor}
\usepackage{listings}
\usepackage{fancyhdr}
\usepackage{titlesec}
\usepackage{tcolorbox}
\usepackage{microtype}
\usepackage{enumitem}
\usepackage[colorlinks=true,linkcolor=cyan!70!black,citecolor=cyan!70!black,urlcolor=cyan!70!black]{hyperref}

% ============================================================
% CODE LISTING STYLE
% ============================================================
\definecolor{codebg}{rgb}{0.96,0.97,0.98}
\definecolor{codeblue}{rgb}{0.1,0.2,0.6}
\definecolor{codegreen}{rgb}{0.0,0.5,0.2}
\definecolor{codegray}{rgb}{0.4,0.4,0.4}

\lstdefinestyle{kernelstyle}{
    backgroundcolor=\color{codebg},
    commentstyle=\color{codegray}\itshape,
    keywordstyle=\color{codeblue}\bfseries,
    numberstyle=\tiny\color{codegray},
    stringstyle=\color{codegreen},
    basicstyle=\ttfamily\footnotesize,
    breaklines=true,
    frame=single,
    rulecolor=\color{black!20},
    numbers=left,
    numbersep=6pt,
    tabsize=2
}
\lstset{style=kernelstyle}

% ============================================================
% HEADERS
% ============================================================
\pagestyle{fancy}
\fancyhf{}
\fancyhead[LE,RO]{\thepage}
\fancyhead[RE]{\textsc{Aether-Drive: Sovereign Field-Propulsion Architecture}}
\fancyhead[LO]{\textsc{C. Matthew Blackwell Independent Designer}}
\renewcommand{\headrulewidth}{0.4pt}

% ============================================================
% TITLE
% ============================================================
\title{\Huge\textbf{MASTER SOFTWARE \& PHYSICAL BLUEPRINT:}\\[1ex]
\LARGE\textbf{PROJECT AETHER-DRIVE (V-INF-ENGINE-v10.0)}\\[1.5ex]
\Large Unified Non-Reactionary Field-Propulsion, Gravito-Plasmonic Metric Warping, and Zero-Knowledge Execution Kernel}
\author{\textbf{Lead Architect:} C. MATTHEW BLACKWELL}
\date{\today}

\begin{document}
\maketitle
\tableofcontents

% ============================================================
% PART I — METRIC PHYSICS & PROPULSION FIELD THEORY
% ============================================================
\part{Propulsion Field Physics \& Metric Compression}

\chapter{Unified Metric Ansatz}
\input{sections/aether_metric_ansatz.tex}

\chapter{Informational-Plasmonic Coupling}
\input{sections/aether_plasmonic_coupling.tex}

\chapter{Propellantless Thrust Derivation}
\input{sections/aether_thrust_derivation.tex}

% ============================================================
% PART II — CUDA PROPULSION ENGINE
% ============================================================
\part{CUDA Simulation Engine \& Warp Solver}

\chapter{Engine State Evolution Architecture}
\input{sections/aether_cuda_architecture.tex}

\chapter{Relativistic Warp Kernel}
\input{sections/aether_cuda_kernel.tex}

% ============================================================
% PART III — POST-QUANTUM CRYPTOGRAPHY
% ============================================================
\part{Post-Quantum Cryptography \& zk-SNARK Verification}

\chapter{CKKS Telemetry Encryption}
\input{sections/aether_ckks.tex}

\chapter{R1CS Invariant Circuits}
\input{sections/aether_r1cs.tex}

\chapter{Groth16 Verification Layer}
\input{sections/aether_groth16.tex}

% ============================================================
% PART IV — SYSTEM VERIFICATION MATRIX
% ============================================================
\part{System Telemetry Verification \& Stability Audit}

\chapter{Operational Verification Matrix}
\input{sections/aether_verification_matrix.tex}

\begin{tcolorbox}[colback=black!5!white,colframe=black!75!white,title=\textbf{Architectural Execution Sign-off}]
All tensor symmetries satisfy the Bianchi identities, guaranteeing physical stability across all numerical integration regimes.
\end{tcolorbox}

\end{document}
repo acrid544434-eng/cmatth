@@ -1,0 +1,122 @@
+\documentclass[11pt,twoside,openright]{report}
+
+% ============================================================
+% CORE PACKAGES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=cyan!70!black,citecolor=cyan!70!black,urlcolor=cyan!70!black]{hyperref}
+
+% ============================================================
+% CODE LISTING STYLE
+% ============================================================
+\definecolor{codebg}{rgb}{0.96,0.97,0.98}
+\definecolor{codeblue}{rgb}{0.1,0.2,0.6}
+\definecolor{codegreen}{rgb}{0.0,0.5,0.2}
+\definecolor{codegray}{rgb}{0.4,0.4,0.4}
+
+\lstdefinestyle{kernelstyle}{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{codegray}\itshape,
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black!20},
+    numbers=left,
+    numbersep=6pt,
+    tabsize=2
+}
+\lstset{style=kernelstyle}
+
+% ============================================================
+% HEADERS
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textsc{Aether-Drive: Sovereign Field-Propulsion Architecture}}
+\fancyhead[LO]{\textsc{C. Matthew Blackwell Independent Designer}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================================================
+% TITLE
+% ============================================================
+\title{\Huge\textbf{MASTER SOFTWARE \& PHYSICAL BLUEPRINT:}\\[1ex]
+\LARGE\textbf{PROJECT AETHER-DRIVE (V-INF-ENGINE-v10.0)}\\[1.5ex]
+\Large Unified Non-Reactionary Field-Propulsion, Gravito-Plasmonic Metric Warping, and Zero-Knowledge Execution Kernel}
+\author{\textbf{Lead Architect:} C. MATTHEW BLACKWELL}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ============================================================
+% PART I — METRIC PHYSICS & PROPULSION FIELD THEORY
+% ============================================================
+\part{Propulsion Field Physics \& Metric Compression}
+
+\chapter{Unified Metric Ansatz}
+\input{sections/aether_metric_ansatz.tex}
+
+\chapter{Informational-Plasmonic Coupling}
+\input{sections/aether_plasmonic_coupling.tex}
+
+\chapter{Propellantless Thrust Derivation}
+\input{sections/aether_thrust_derivation.tex}
+
+% ============================================================
+% PART II — CUDA PROPULSION ENGINE
+% ============================================================
+\part{CUDA Simulation Engine \& Warp Solver}
+
+\chapter{Engine State Evolution Architecture}
+\input{sections/aether_cuda_architecture.tex}
+
+\chapter{Relativistic Warp Kernel}
+\input{sections/aether_cuda_kernel.tex}
+
+% ============================================================
+% PART III — POST-QUANTUM CRYPTOGRAPHY
+% ============================================================
+\part{Post-Quantum Cryptography \& zk-SNARK Verification}
+
+\chapter{CKKS Telemetry Encryption}
+\input{sections/aether_ckks.tex}
+
+\chapter{R1CS Invariant Circuits}
+\input{sections/aether_r1cs.tex}
+
+\chapter{Groth16 Verification Layer}
+\input{sections/aether_groth16.tex}
+
+% ============================================================
+% PART IV — SYSTEM VERIFICATION MATRIX
+% ============================================================
+\part{System Telemetry Verification \& Stability Audit}
+
+\chapter{Operational Verification Matrix}
+\input{sections/aether_verification_matrix.tex}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=black!75!white,title=\textbf{Architectural Execution Sign-off}]
+All tensor symmetries satisfy the Bianchi identities, guaranteeing physical stability across all numerical integration regimes.
+\end{tcolorbox}
+
+\end{document}

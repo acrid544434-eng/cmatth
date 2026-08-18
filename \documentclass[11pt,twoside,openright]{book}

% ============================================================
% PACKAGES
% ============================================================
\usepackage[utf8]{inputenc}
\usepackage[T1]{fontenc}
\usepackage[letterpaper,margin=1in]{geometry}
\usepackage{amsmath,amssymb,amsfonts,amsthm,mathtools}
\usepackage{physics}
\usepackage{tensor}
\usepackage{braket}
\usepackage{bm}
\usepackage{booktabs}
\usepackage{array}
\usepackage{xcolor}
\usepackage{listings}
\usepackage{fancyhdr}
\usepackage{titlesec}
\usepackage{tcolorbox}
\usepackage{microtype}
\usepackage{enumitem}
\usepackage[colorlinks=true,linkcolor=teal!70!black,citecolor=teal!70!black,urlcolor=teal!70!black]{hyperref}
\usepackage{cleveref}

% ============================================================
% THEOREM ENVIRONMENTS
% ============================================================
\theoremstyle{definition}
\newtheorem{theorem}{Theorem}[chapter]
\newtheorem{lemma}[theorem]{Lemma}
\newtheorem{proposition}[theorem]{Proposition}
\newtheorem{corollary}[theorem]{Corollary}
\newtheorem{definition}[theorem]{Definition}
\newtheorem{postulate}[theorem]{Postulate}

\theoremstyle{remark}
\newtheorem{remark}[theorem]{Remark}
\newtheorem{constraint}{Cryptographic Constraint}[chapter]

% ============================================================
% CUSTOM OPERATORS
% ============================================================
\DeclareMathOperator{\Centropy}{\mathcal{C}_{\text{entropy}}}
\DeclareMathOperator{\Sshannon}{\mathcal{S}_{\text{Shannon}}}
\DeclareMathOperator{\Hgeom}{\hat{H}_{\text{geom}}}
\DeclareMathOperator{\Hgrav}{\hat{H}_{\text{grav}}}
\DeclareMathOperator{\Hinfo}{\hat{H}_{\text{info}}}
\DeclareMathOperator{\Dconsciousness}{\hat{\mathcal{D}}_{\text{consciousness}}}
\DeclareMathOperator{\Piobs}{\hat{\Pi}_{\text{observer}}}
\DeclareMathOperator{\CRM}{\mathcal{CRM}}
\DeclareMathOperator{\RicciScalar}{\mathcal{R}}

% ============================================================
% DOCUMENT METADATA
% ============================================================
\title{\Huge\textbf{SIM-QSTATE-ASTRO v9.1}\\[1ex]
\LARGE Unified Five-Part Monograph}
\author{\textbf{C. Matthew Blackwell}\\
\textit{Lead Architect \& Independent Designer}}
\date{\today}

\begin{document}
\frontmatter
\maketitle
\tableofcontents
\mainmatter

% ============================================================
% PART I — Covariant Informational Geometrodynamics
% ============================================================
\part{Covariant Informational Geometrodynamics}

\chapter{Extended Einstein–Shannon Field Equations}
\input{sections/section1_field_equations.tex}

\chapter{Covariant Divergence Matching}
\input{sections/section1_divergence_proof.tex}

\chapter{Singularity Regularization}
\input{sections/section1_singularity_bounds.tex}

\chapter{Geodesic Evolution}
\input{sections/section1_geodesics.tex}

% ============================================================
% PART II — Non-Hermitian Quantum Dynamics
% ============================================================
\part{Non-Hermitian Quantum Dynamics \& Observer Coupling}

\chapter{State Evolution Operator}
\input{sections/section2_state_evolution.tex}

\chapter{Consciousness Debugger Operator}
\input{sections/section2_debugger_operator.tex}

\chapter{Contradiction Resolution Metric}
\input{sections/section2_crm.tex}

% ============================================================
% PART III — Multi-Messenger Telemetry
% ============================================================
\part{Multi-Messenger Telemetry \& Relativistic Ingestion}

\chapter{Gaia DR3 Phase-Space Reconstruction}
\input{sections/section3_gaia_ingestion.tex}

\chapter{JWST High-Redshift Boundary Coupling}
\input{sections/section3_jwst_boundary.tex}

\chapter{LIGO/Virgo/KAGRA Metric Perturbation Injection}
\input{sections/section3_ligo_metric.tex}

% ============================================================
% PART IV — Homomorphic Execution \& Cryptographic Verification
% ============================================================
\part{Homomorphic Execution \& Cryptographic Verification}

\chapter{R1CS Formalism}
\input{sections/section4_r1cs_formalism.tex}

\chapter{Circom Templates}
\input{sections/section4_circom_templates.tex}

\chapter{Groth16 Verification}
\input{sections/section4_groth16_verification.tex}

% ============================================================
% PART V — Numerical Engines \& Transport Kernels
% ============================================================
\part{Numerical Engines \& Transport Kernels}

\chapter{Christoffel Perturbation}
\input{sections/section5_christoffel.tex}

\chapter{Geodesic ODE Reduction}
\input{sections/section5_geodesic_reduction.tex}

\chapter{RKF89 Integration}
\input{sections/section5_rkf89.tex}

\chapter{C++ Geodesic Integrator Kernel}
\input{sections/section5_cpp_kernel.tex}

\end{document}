@@ -1,0 +1,145 @@
+\documentclass[11pt,twoside,openright]{book}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{physics}
+\usepackage{tensor}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=teal!70!black,citecolor=teal!70!black,urlcolor=teal!70!black]{hyperref}
+\usepackage{cleveref}
+
+% ============================================================
+% THEOREM ENVIRONMENTS
+% ============================================================
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{postulate}[theorem]{Postulate}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{constraint}{Cryptographic Constraint}[chapter]
+
+% ============================================================
+% CUSTOM OPERATORS
+% ============================================================
+\DeclareMathOperator{\Centropy}{\mathcal{C}_{\text{entropy}}}
+\DeclareMathOperator{\Sshannon}{\mathcal{S}_{\text{Shannon}}}
+\DeclareMathOperator{\Hgeom}{\hat{H}_{\text{geom}}}
+\DeclareMathOperator{\Hgrav}{\hat{H}_{\text{grav}}}
+\DeclareMathOperator{\Hinfo}{\hat{H}_{\text{info}}}
+\DeclareMathOperator{\Dconsciousness}{\hat{\mathcal{D}}_{\text{consciousness}}}
+\DeclareMathOperator{\Piobs}{\hat{\Pi}_{\text{observer}}}
+\DeclareMathOperator{\CRM}{\mathcal{CRM}}
+\DeclareMathOperator{\RicciScalar}{\mathcal{R}}
+
+% ============================================================
+% DOCUMENT METADATA
+% ============================================================
+\title{\Huge\textbf{SIM-QSTATE-ASTRO v9.1}\\[1ex]
+\LARGE Unified Five-Part Monograph}
+\author{\textbf{C. Matthew Blackwell}\\
+\textit{Lead Architect \& Independent Designer}}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+
+% ============================================================
+% PART I — Covariant Informational Geometrodynamics
+% ============================================================
+\part{Covariant Informational Geometrodynamics}
+
+\chapter{Extended Einstein–Shannon Field Equations}
+\input{sections/section1_field_equations.tex}
+
+\chapter{Covariant Divergence Matching}
+\input{sections/section1_divergence_proof.tex}
+
+\chapter{Singularity Regularization}
+\input{sections/section1_singularity_bounds.tex}
+
+\chapter{Geodesic Evolution}
+\input{sections/section1_geodesics.tex}
+
+% ============================================================
+% PART II — Non-Hermitian Quantum Dynamics
+% ============================================================
+\part{Non-Hermitian Quantum Dynamics \& Observer Coupling}
+
+\chapter{State Evolution Operator}
+\input{sections/section2_state_evolution.tex}
+
+\chapter{Consciousness Debugger Operator}
+\input{sections/section2_debugger_operator.tex}
+
+\chapter{Contradiction Resolution Metric}
+\input{sections/section2_crm.tex}
+
+% ============================================================
+% PART III — Multi-Messenger Telemetry
+% ============================================================
+\part{Multi-Messenger Telemetry \& Relativistic Ingestion}
+
+\chapter{Gaia DR3 Phase-Space Reconstruction}
+\input{sections/section3_gaia_ingestion.tex}
+
+\chapter{JWST High-Redshift Boundary Coupling}
+\input{sections/section3_jwst_boundary.tex}
+
+\chapter{LIGO/Virgo/KAGRA Metric Perturbation Injection}
+\input{sections/section3_ligo_metric.tex}
+
+% ============================================================
+% PART IV — Homomorphic Execution \& Cryptographic Verification
+% ============================================================
+\part{Homomorphic Execution \& Cryptographic Verification}
+
+\chapter{R1CS Formalism}
+\input{sections/section4_r1cs_formalism.tex}
+
+\chapter{Circom Templates}
+\input{sections/section4_circom_templates.tex}
+
+\chapter{Groth16 Verification}
+\input{sections/section4_groth16_verification.tex}
+
+% ============================================================
+% PART V — Numerical Engines \& Transport Kernels
+% ============================================================
+\part{Numerical Engines \& Transport Kernels}
+
+\chapter{Christoffel Perturbation}
+\input{sections/section5_christoffel.tex}
+
+\chapter{Geodesic ODE Reduction}
+\input{sections/section5_geodesic_reduction.tex}
+
+\chapter{RKF89 Integration}
+\input{sections/section5_rkf89.tex}
+
+\chapter{C++ Geodesic Integrator Kernel}
+\input{sections/section5_cpp_kernel.tex}
+
+\end{document}

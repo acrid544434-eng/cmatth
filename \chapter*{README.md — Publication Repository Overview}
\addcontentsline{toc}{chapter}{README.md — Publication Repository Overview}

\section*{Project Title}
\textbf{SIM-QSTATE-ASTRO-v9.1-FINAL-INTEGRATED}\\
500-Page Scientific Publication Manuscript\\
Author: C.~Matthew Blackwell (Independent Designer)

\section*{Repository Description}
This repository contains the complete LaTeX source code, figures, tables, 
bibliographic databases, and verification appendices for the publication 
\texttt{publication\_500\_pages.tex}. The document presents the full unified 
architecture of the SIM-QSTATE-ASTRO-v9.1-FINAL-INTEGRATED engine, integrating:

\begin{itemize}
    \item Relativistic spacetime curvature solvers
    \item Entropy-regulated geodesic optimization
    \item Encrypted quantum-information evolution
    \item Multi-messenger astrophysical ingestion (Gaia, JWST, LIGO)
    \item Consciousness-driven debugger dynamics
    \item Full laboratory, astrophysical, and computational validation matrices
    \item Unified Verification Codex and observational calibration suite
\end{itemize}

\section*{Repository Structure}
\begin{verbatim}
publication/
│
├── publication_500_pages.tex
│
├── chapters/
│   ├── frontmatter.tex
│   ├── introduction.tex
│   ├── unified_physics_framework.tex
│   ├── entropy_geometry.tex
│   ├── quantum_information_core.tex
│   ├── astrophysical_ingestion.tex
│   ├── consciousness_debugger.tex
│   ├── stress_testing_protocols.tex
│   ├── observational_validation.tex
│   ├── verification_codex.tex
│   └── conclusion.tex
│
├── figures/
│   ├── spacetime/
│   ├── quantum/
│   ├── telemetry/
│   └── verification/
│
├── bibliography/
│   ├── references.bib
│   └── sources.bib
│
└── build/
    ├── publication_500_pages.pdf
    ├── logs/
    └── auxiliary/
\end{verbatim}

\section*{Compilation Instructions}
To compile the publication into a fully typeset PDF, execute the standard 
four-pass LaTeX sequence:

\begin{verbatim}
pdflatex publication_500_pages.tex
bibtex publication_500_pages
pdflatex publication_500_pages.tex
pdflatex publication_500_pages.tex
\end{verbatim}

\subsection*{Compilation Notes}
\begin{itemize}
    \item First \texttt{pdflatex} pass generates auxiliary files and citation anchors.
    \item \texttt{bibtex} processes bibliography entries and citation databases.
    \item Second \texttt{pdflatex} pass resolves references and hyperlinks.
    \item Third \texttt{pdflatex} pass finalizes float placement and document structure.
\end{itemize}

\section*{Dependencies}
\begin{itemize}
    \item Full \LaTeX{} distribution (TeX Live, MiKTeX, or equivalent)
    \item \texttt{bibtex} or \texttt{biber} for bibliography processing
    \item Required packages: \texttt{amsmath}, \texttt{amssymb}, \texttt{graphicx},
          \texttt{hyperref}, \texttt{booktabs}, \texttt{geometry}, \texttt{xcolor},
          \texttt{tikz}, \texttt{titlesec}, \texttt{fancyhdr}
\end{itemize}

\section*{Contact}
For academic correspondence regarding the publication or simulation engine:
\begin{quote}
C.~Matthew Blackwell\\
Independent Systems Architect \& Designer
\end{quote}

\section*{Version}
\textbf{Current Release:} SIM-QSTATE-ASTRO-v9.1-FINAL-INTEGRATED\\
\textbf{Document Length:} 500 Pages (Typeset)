@@ -1,0 +1,97 @@
+\chapter*{README.md — Publication Repository Overview}
+\addcontentsline{toc}{chapter}{README.md — Publication Repository Overview}
+
+\section*{Project Title}
+\textbf{SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED}\\
+500-Page Scientific Publication Manuscript\\
+Author: C.~Matthew Blackwell (Independent Designer)
+
+\section*{Repository Description}
+This repository contains the complete LaTeX source code, figures, tables, 
+bibliographic databases, and verification appendices for the publication 
+\texttt{publication\_500\_pages.tex}. The document presents the full unified 
+architecture of the SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED engine, integrating:
+
+\begin{itemize}
+    \item Relativistic spacetime curvature solvers
+    \item Entropy-regulated geodesic optimization
+    \item Encrypted quantum-information evolution
+    \item Multi-messenger astrophysical ingestion (Gaia, JWST, LIGO)
+    \item Consciousness-driven debugger dynamics
+    \item Full laboratory, astrophysical, and computational validation matrices
+    \item Unified Verification Codex and observational calibration suite
+\end{itemize}
+
+\section*{Repository Structure}
+\begin{verbatim}
+publication/
+│
+├── publication_500_pages.tex
+│
+├── chapters/
+│   ├── frontmatter.tex
+│   ├── introduction.tex
+│   ├── unified_physics_framework.tex
+│   ├── entropy_geometry.tex
+│   ├── quantum_information_core.tex
+│   ├── astrophysical_ingestion.tex
+│   ├── consciousness_debugger.tex
+│   ├── stress_testing_protocols.tex
+│   ├── observational_validation.tex
+│   ├── verification_codex.tex
+│   └── conclusion.tex
+│
+├── figures/
+│   ├── spacetime/
+│   ├── quantum/
+│   ├── telemetry/
+│   └── verification/
+│
+├── bibliography/
+│   ├── references.bib
+│   └── sources.bib
+│
+└── build/
+    ├── publication_500_pages.pdf
+    ├── logs/
+    └── auxiliary/
+\end{verbatim}
+
+\section*{Compilation Instructions}
+To compile the publication into a fully typeset PDF, execute the standard 
+four-pass LaTeX sequence:
+
+\begin{verbatim}
+pdflatex publication_500_pages.tex
+bibtex publication_500_pages
+pdflatex publication_500_pages.tex
+pdflatex publication_500_pages.tex
+\end{verbatim}
+
+\subsection*{Compilation Notes}
+\begin{itemize}
+    \item First \texttt{pdflatex} pass generates auxiliary files and citation anchors.
+    \item \texttt{bibtex} processes bibliography entries and citation databases.
+    \item Second \texttt{pdflatex} pass resolves references and hyperlinks.
+    \item Third \texttt{pdflatex} pass finalizes float placement and document structure.
+\end{itemize}
+
+\section*{Dependencies}
+\begin{itemize}
+    \item Full \LaTeX{} distribution (TeX Live, MiKTeX, or equivalent)
+    \item \texttt{bibtex} or \texttt{biber} for bibliography processing
+    \item Required packages: \texttt{amsmath}, \texttt{amssymb}, \texttt{graphicx},
+          \texttt{hyperref}, \texttt{booktabs}, \texttt{geometry}, \texttt{xcolor},
+          \texttt{tikz}, \texttt{titlesec}, \texttt{fancyhdr}
+\end{itemize}
+
+\section*{Contact}
+For academic correspondence regarding the publication or simulation engine:
+\begin{quote}
+C.~Matthew Blackwell\\
+Independent Systems Architect \& Designer
+\end{quote}
+
+\section*{Version}
+\textbf{Current Release:} SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED\\
+\textbf{Document Length:} 500 Pages (Typeset)

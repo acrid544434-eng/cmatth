@@ -1,0 +1,92 @@
+\documentclass[11pt]{book}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{tocloft}
+
+\title{SIM-QSTATE-ASTRO-v9.1-FINAL-INTEGRATED\\
+\large A Ten-Layer Cosmological Sovereignty Validation Monograph}
+\author{C.~Matthew Blackwell\\Independent Designer}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+%------------------------------------------------
+\chapter{Introduction \& System Overview}
+% Place your global introduction, motivation, and high-level architecture here.
+
+%------------------------------------------------
+\chapter{Layer 1: Foundational Mathematical Validation}
+% Option 1: Include from external file
+% \include{layer1_math_validation}
+%
+% Option 2: Paste Layer 1 LaTeX document content here,
+% removing its own \documentclass, \begin{document}, \end{document}.
+
+%------------------------------------------------
+\chapter{Layer 2: Numerical Reproducibility \& Solver Stability}
+% \include{layer2_numerical_validation}
+
+%------------------------------------------------
+\chapter{Layer 3: External Stress-Test Validation Protocol}
+% \include{layer3_stress_tests}
+
+%------------------------------------------------
+\chapter{Layer 4: Empirical Anchoring Protocol}
+% \include{layer4_empirical_anchoring}
+
+%------------------------------------------------
+\chapter{Layer 5: Global Scientific Certification \& Publication Readiness}
+% \include{layer5_certification_publication}
+
+%------------------------------------------------
+\chapter{Layer 6: Global Deployment \& Real-Time Scientific Integration}
+% \include{layer6_global_deployment}
+
+%------------------------------------------------
+\chapter{Layer 7: Autonomous Cosmological Operation}
+% \include{layer7_autonomous_operation}
+
+%------------------------------------------------
+\chapter{Layer 8: Cosmological Autonomy Certification \& Universal Predictive Operation}
+% \include{layer8_autonomy_predictive}
+
+%------------------------------------------------
+\chapter{Layer 9: Universal Predictive Certification \& Cosmological Sovereignty}
+% \include{layer9_universal_sovereignty}
+
+%------------------------------------------------
+\chapter{Layer 10: Cosmological Sovereignty Certification \& Eternal Predictive Operation}
+% \include{layer10_eternal_operation}
+
+%------------------------------------------------
+\chapter{Appendices}
+\section*{A. Configuration Decks}
+% Detailed configs, seeds, grids, compiler flags.
+
+\section*{B. Regression Test Suites}
+% CI test descriptions and references.
+
+\section*{C. Telemetry Integration Specifications}
+% Gaia/JWST/LIGO ingestion formats and schemas.
+
+\section*{D. Cryptographic Schemes}
+% CKKS, ML-KEM, zk-SNARK details.
+
+\backmatter
+
+\chapter{Bibliography}
+% Use BibTeX or manual \bibitem entries here.
+
+\end{document}

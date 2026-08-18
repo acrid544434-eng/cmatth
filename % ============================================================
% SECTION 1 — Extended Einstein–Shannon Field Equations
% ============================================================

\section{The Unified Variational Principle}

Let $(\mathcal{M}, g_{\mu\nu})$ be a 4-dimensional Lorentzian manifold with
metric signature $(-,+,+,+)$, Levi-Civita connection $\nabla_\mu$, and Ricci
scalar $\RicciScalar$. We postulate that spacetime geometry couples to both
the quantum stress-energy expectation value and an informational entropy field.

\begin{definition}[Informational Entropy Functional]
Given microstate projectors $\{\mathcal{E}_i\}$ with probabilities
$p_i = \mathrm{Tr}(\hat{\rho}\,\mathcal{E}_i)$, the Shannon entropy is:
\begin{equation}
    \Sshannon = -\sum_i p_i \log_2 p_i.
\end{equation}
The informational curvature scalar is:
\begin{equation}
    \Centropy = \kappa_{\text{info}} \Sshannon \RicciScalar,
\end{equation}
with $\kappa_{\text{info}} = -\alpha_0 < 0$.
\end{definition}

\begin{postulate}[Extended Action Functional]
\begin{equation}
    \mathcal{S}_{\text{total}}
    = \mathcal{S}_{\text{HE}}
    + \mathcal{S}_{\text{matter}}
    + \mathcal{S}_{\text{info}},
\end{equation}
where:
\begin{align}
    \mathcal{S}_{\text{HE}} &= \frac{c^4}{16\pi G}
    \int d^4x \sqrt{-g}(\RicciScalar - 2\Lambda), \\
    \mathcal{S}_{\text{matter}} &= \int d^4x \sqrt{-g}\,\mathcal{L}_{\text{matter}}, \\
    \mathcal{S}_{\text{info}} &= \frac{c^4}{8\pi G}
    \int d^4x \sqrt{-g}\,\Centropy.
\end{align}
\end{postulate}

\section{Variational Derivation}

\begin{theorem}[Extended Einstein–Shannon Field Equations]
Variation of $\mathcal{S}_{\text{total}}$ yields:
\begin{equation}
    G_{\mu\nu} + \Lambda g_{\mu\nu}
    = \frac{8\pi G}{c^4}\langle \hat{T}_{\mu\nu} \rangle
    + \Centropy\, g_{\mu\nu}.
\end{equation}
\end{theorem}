@@ -1,0 +1,51 @@
+% ============================================================
+% SECTION 1 — Extended Einstein–Shannon Field Equations
+% ============================================================
+
+\section{The Unified Variational Principle}
+
+Let $(\mathcal{M}, g_{\mu\nu})$ be a 4-dimensional Lorentzian manifold with
+metric signature $(-,+,+,+)$, Levi-Civita connection $\nabla_\mu$, and Ricci
+scalar $\RicciScalar$. We postulate that spacetime geometry couples to both
+the quantum stress-energy expectation value and an informational entropy field.
+
+\begin{definition}[Informational Entropy Functional]
+Given microstate projectors $\{\mathcal{E}_i\}$ with probabilities
+$p_i = \mathrm{Tr}(\hat{\rho}\,\mathcal{E}_i)$, the Shannon entropy is:
+\begin{equation}
+    \Sshannon = -\sum_i p_i \log_2 p_i.
+\end{equation}
+The informational curvature scalar is:
+\begin{equation}
+    \Centropy = \kappa_{\text{info}} \Sshannon \RicciScalar,
+\end{equation}
+with $\kappa_{\text{info}} = -\alpha_0 < 0$.
+\end{definition}
+
+\begin{postulate}[Extended Action Functional]
+\begin{equation}
+    \mathcal{S}_{\text{total}}
+    = \mathcal{S}_{\text{HE}}
+    + \mathcal{S}_{\text{matter}}
+    + \mathcal{S}_{\text{info}},
+\end{equation}
+where:
+\begin{align}
+    \mathcal{S}_{\text{HE}} &= \frac{c^4}{16\pi G}
+    \int d^4x \sqrt{-g}(\RicciScalar - 2\Lambda), \\
+    \mathcal{S}_{\text{matter}} &= \int d^4x \sqrt{-g}\,\mathcal{L}_{\text{matter}}, \\
+    \mathcal{S}_{\text{info}} &= \frac{c^4}{8\pi G}
+    \int d^4x \sqrt{-g}\,\Centropy.
+\end{align}
+\end{postulate}
+
+\section{Variational Derivation}
+
+\begin{theorem}[Extended Einstein–Shannon Field Equations]
+Variation of $\mathcal{S}_{\text{total}}$ yields:
+\begin{equation}
+    G_{\mu\nu} + \Lambda g_{\mu\nu}
+    = \frac{8\pi G}{c^4}\langle \hat{T}_{\mu\nu} \rangle
+    + \Centropy\, g_{\mu\nu}.
+\end{equation}
+\end{theorem}

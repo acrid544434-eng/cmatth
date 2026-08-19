@@ -1,0 +1,11 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{l l}
+Mass A & $1.10 M_\odot$ \\
+Mass B & $0.91 M_\odot$ \\
+Periastron & $11.20$ AU \\
+Apastron & $35.60$ AU \\
+Time Step & $0.01$ (Q32.32) \\
+\end{tabular}
+\caption{Engine configuration parameters.}
+\end{table}

@@ -1,0 +1,203 @@
+\documentclass[12pt,oneside]{report}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{bm}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tocloft}
+
+% ---------------------------------------------------------
+% HYPERREF SETUP
+% ---------------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black,
+    pdftitle={CEUME v6.5 Doctoral Thesis},
+    pdfauthor={C. Matthew Blackwell}
+}
+
+% ---------------------------------------------------------
+% THEOREM ENVIRONMENTS
+% ---------------------------------------------------------
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}[theorem]{Corollary]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+
+% ---------------------------------------------------------
+% TITLE PAGE
+% ---------------------------------------------------------
+\title{\Huge\bfseries CEUME v6.5\\[4mm]
+\Large Continuous-Evaluation Universal Modeling Engine\\[2mm]
+\large Autonomous Cosmology, Non-Riemannian Spacetime, and Post-Quantum Encryption}
+
+\author{\Large\textbf{C. Matthew Blackwell}\\[2mm]
+\textit{Independent Systems Architect \& Designer}}
+
+\date{August 2026}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{roman}
+
+% ---------------------------------------------------------
+% FRONT MATTER
+% ---------------------------------------------------------
+\chapter*{Abstract}
+% Insert your abstract here.
+
+\chapter*{Dedication}
+To encrypted cosmology, torsion manifolds, and the invisible structure of the universe.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+\pagenumbering{arabic}
+
+% ---------------------------------------------------------
+% CHAPTER 1 — FOUNDATIONS
+% ---------------------------------------------------------
+\chapter{Foundational Paradigm and CEUME Architecture}
+
+\section{Motivation}
+% Insert text
+
+\section{System Overview}
+% Insert text
+
+\section{Scientific Objectives}
+% Insert text
+
+% ---------------------------------------------------------
+% CHAPTER 2 — MULTI-MESSENGER INGESTION
+% ---------------------------------------------------------
+\chapter{Multi-Messenger Astrophysical Ingestion}
+
+\section{Gaia DR3 Phase Space}
+\section{LIGO Gravitational Strains}
+\section{JWST Spectral Cubes}
+\section{Encrypted Telemetry Transport}
+
+% ---------------------------------------------------------
+% CHAPTER 3 — INSTRUMENTATION SUITE
+% ---------------------------------------------------------
+\chapter{The Blackwell Instrumentation Suite}
+
+\section{CMB-X1: Torsion Resonance}
+\section{CMB-X2: Axion Polarimetry}
+\section{CMB-X3: Graviton Entanglement Bridge}
+
+% ---------------------------------------------------------
+% CHAPTER 4 — NON-RIEMANNIAN SPACETIME
+% ---------------------------------------------------------
+\chapter{Non-Riemannian Cartan Geometry and the Blackwell Action}
+
+\section{Affine Connection}
+\section{Contorsion Tensor}
+\section{Extended Gravitational Action}
+
+% ---------------------------------------------------------
+% CHAPTER 5 — GRMHD & WENO
+% ---------------------------------------------------------
+\chapter{Relativistic GRMHD and WENO-5 Numerical Framework}
+
+\section{Shock Capturing}
+\section{Flux Reconstruction}
+\section{Stability Analysis}
+
+% ---------------------------------------------------------
+% CHAPTER 6 — POST-QUANTUM CRYPTOGRAPHY
+% ---------------------------------------------------------
+\chapter{Post-Quantum Cryptography: ML-KEM-1024}
+
+\section{Module Learning with Errors}
+\section{Key Encapsulation}
+\section{Security Guarantees}
+
+% ---------------------------------------------------------
+% CHAPTER 7 — HOMOMORPHIC COMPUTATION
+% ---------------------------------------------------------
+\chapter{Homomorphic Tensor Computation in CKKS-RNS}
+
+\section{Cyclotomic Rings}
+\section{Residue Number Systems}
+\section{Encrypted Tensor Evaluation}
+
+% ---------------------------------------------------------
+% CHAPTER 8 — AUTONOMOUS INTELLIGENCE
+% ---------------------------------------------------------
+\chapter{Autonomous Closed-Loop Cosmological Intelligence}
+
+\section{OODA-Q Loop}
+\section{Bellman Optimization}
+\section{Non-Holonomic Control}
+
+% ---------------------------------------------------------
+% CHAPTER 9 — PHYSICAL VERIFICATION
+% ---------------------------------------------------------
+\chapter{Concrete Physical Testing and Numerical Verification}
+
+\section{Shock Tubes}
+\section{N-Body Virial Stability}
+\section{Invariant Conservation}
+
+% ---------------------------------------------------------
+% CHAPTER 10 — THREAT MODELING
+% ---------------------------------------------------------
+\chapter{Cryptographic Threat Modeling and Countermeasures}
+
+\section{Quantum Attacks}
+\section{Side-Channel Leakage}
+\section{Fault Injection}
+
+% ---------------------------------------------------------
+% CHAPTER 11 — HARDWARE ACCELERATION
+% ---------------------------------------------------------
+\chapter{Heterogeneous Hardware Acceleration}
+
+\section{CUDA Kernels}
+\section{SYCL Pipelines}
+\section{Fused NTT + Hydrodynamics}
+
+% ---------------------------------------------------------
+% APPENDICES
+% ---------------------------------------------------------
+\appendix
+
+\chapter{Contorsion Tensor Decompositions}
+\chapter{Formal Proofs and Stability Theorems}
+\chapter{Complete Engine Source Listings}
+\chapter{Cryptographic Parameters}
+\chapter{Experimental Data Tables}
+
+% ---------------------------------------------------------
+% BIBLIOGRAPHY
+% ---------------------------------------------------------
+\begin{thebibliography}{99}
+% Insert references here.
+\end{thebibliography}
+
+\end{document}

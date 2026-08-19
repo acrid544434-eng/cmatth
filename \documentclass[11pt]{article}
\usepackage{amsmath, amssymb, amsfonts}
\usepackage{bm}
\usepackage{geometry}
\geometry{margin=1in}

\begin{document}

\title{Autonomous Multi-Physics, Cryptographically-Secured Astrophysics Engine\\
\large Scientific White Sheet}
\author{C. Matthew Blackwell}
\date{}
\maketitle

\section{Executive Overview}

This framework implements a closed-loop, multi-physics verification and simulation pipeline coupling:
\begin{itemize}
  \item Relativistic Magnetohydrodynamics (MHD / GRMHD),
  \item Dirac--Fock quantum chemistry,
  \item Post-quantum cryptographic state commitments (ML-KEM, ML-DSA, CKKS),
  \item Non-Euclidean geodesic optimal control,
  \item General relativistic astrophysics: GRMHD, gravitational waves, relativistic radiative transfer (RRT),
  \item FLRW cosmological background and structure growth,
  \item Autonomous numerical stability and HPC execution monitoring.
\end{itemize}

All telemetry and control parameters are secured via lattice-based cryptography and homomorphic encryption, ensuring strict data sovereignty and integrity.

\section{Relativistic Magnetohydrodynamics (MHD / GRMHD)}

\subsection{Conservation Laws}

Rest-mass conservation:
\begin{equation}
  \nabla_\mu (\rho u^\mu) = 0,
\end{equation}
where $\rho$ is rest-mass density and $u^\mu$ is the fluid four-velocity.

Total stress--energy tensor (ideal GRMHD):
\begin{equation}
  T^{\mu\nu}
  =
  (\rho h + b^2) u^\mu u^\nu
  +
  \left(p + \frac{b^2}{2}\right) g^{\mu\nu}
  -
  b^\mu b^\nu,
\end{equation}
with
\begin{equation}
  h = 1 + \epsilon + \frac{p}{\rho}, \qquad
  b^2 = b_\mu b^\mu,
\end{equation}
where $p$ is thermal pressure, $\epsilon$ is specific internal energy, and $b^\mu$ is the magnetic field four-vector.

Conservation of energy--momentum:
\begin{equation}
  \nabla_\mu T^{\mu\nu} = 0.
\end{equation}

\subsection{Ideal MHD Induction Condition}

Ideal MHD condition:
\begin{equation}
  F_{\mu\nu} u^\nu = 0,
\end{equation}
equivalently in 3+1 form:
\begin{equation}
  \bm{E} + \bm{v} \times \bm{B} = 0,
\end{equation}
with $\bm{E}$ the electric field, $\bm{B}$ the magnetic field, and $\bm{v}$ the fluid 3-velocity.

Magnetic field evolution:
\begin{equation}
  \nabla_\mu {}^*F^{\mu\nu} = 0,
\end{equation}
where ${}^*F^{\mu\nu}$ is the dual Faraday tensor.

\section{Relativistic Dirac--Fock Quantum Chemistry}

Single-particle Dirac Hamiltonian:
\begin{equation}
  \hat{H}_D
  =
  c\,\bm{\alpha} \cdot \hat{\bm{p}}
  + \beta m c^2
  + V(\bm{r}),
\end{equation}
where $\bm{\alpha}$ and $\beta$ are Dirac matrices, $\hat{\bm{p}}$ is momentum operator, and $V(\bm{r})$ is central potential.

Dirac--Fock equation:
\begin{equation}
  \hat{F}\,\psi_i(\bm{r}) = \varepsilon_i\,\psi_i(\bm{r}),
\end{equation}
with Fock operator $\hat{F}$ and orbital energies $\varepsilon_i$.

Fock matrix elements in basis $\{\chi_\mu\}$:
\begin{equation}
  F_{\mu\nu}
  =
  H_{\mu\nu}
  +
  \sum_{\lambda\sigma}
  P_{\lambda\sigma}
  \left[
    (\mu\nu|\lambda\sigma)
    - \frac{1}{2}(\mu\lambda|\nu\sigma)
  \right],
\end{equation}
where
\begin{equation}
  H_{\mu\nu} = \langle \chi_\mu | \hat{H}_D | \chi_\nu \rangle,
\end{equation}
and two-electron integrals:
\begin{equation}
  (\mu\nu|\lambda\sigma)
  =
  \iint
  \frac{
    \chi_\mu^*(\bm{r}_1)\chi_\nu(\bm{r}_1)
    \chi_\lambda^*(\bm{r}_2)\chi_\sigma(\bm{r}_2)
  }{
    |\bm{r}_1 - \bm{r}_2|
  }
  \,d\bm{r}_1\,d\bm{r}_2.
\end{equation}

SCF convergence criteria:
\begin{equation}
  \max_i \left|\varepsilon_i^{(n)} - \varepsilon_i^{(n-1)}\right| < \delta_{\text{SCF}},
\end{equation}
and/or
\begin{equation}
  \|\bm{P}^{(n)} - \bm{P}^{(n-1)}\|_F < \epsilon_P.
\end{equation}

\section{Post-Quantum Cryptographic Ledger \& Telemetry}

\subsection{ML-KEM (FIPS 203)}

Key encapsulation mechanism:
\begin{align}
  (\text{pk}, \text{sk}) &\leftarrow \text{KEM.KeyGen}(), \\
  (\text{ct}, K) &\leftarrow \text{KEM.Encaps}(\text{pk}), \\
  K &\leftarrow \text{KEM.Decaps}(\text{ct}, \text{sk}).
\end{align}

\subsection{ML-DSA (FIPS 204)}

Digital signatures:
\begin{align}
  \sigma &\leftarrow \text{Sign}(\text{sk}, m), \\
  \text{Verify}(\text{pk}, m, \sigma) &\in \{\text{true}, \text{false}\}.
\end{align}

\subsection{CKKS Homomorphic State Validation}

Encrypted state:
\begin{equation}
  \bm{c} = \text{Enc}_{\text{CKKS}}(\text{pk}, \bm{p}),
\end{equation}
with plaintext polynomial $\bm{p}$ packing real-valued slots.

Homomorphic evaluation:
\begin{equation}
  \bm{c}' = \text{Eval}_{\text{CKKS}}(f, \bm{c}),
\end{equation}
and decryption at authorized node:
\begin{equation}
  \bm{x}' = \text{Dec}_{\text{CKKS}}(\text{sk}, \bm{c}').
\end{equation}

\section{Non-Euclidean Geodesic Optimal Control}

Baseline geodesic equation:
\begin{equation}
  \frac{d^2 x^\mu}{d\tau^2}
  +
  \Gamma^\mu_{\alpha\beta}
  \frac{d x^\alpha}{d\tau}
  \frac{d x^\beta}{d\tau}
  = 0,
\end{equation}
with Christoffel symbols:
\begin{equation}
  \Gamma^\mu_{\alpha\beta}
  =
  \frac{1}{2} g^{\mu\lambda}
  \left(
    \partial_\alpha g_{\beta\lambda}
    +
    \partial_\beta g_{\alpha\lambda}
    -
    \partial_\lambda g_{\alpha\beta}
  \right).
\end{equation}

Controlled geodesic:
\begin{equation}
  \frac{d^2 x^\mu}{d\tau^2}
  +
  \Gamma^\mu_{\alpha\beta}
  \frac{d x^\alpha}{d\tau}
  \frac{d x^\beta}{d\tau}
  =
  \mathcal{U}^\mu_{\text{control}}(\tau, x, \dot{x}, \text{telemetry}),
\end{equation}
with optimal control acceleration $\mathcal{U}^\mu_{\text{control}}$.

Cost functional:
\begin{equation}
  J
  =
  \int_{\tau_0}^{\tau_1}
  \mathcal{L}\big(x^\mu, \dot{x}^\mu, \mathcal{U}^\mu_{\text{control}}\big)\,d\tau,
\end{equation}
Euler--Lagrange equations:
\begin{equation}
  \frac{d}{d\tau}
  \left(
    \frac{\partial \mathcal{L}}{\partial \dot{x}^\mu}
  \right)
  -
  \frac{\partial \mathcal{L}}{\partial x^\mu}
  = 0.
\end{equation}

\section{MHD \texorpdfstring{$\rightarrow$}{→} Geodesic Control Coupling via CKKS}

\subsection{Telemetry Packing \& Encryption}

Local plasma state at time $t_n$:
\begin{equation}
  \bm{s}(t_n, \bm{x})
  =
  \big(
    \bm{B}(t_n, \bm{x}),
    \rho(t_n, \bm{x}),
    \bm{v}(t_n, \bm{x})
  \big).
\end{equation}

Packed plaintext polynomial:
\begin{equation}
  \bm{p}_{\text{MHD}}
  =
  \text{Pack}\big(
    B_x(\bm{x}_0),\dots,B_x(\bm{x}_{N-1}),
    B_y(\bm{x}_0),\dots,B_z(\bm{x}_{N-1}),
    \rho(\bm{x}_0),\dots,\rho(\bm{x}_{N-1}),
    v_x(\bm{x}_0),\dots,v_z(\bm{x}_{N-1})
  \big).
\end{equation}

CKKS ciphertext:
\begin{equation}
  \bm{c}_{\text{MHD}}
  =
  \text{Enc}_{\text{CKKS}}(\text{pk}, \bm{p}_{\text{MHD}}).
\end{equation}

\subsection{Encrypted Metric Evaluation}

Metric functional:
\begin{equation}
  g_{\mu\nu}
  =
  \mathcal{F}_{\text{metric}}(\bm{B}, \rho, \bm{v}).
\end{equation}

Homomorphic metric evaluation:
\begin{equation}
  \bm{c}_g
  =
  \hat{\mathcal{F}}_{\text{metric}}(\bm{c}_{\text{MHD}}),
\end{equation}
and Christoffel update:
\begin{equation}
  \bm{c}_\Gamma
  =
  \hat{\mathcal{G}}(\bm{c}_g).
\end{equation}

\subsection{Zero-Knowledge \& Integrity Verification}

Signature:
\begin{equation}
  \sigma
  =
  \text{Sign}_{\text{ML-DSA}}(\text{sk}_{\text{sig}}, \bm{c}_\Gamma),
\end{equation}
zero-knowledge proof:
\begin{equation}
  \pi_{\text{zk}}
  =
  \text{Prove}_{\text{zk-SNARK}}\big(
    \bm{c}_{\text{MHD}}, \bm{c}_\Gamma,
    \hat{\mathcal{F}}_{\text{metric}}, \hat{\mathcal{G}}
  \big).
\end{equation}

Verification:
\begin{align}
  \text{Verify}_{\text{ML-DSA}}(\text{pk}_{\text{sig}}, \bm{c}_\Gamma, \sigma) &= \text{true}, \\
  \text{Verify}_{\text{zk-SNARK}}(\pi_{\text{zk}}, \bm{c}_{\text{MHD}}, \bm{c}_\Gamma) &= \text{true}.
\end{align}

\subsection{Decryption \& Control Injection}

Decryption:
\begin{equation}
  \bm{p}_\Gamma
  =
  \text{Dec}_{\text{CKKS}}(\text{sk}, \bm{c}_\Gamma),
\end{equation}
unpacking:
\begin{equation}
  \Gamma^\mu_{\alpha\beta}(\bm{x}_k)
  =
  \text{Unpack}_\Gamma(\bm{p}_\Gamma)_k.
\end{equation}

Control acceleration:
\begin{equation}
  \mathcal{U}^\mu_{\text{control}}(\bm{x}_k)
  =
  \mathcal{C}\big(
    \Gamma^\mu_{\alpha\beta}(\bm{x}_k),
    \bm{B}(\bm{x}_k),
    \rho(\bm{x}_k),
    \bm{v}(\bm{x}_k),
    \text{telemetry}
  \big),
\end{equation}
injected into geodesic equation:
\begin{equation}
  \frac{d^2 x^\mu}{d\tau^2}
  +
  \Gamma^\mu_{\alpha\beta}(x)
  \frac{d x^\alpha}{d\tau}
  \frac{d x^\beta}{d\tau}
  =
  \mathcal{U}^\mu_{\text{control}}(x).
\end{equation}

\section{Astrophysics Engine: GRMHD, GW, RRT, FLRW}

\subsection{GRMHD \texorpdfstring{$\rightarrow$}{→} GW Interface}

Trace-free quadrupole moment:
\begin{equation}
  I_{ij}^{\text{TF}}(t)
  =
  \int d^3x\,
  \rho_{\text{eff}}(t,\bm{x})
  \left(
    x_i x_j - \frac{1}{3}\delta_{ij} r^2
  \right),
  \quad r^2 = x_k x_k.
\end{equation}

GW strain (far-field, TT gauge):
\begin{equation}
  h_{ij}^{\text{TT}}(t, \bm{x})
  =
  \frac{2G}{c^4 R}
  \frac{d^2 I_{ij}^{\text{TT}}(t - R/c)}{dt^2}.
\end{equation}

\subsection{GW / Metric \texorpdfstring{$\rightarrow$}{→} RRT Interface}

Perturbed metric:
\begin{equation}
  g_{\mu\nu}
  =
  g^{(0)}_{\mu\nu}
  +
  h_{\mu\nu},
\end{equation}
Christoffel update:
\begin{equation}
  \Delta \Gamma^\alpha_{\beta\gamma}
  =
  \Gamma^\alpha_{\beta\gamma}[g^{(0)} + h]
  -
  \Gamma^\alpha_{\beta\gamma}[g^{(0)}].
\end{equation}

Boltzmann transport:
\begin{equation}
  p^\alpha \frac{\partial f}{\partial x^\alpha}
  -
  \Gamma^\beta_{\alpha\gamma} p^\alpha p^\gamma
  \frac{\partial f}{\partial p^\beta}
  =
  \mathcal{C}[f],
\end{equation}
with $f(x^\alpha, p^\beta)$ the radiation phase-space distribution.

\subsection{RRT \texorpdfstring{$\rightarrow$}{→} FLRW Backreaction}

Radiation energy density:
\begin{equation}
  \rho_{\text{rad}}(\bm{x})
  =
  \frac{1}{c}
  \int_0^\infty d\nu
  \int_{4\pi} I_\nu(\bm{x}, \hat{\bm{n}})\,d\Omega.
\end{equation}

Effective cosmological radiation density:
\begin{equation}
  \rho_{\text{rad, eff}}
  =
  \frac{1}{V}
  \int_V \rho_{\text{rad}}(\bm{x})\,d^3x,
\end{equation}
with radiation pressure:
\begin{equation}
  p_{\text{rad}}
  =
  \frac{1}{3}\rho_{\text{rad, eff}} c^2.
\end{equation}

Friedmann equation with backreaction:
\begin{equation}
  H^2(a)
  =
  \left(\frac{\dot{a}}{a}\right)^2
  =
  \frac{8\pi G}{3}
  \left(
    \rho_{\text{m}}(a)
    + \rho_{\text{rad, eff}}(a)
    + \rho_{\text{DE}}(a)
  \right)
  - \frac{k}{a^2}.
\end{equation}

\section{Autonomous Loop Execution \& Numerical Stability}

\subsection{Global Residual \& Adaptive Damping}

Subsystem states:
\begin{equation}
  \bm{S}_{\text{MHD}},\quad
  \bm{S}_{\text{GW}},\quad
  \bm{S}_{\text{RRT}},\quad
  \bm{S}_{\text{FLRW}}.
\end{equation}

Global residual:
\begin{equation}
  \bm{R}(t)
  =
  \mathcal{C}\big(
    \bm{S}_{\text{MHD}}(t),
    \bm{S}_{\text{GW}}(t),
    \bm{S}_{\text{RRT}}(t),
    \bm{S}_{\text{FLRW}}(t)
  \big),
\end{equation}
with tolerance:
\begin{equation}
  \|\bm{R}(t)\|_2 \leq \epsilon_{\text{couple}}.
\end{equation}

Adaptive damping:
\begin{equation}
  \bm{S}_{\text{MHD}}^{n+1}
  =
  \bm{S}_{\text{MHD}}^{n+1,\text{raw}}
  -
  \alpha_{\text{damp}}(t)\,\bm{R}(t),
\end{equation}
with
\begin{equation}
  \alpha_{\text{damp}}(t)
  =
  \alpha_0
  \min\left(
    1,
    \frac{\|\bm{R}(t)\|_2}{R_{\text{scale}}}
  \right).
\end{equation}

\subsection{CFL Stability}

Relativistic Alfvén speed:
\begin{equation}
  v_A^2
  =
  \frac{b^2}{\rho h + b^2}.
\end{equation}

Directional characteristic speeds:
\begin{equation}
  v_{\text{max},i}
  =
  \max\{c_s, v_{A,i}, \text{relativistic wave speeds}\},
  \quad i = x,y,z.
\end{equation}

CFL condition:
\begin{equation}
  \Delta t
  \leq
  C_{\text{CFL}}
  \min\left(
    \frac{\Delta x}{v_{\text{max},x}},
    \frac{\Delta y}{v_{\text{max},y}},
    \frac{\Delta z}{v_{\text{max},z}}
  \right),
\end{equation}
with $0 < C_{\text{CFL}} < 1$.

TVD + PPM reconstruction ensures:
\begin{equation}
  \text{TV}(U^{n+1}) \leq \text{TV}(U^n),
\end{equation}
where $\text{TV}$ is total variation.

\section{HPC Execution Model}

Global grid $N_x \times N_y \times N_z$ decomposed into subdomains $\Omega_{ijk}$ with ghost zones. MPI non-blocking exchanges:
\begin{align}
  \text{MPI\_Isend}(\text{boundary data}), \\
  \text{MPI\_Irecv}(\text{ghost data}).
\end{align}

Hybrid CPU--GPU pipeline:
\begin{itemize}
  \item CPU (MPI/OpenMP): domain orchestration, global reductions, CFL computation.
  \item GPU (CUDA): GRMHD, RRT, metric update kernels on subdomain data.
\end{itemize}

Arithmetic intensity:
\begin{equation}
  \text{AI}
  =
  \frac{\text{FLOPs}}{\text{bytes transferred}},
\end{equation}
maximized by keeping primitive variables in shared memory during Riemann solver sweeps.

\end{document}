@@ -1,0 +1,546 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\title{Autonomous Multi-Physics, Cryptographically-Secured Astrophysics Engine\\
+\large Scientific White Sheet}
+\author{C. Matthew Blackwell}
+\date{}
+\maketitle
+
+\section{Executive Overview}
+
+This framework implements a closed-loop, multi-physics verification and simulation pipeline coupling:
+\begin{itemize}
+  \item Relativistic Magnetohydrodynamics (MHD / GRMHD),
+  \item Dirac--Fock quantum chemistry,
+  \item Post-quantum cryptographic state commitments (ML-KEM, ML-DSA, CKKS),
+  \item Non-Euclidean geodesic optimal control,
+  \item General relativistic astrophysics: GRMHD, gravitational waves, relativistic radiative transfer (RRT),
+  \item FLRW cosmological background and structure growth,
+  \item Autonomous numerical stability and HPC execution monitoring.
+\end{itemize}
+
+All telemetry and control parameters are secured via lattice-based cryptography and homomorphic encryption, ensuring strict data sovereignty and integrity.
+
+\section{Relativistic Magnetohydrodynamics (MHD / GRMHD)}
+
+\subsection{Conservation Laws}
+
+Rest-mass conservation:
+\begin{equation}
+  \nabla_\mu (\rho u^\mu) = 0,
+\end{equation}
+where $\rho$ is rest-mass density and $u^\mu$ is the fluid four-velocity.
+
+Total stress--energy tensor (ideal GRMHD):
+\begin{equation}
+  T^{\mu\nu}
+  =
+  (\rho h + b^2) u^\mu u^\nu
+  +
+  \left(p + \frac{b^2}{2}\right) g^{\mu\nu}
+  -
+  b^\mu b^\nu,
+\end{equation}
+with
+\begin{equation}
+  h = 1 + \epsilon + \frac{p}{\rho}, \qquad
+  b^2 = b_\mu b^\mu,
+\end{equation}
+where $p$ is thermal pressure, $\epsilon$ is specific internal energy, and $b^\mu$ is the magnetic field four-vector.
+
+Conservation of energy--momentum:
+\begin{equation}
+  \nabla_\mu T^{\mu\nu} = 0.
+\end{equation}
+
+\subsection{Ideal MHD Induction Condition}
+
+Ideal MHD condition:
+\begin{equation}
+  F_{\mu\nu} u^\nu = 0,
+\end{equation}
+equivalently in 3+1 form:
+\begin{equation}
+  \bm{E} + \bm{v} \times \bm{B} = 0,
+\end{equation}
+with $\bm{E}$ the electric field, $\bm{B}$ the magnetic field, and $\bm{v}$ the fluid 3-velocity.
+
+Magnetic field evolution:
+\begin{equation}
+  \nabla_\mu {}^*F^{\mu\nu} = 0,
+\end{equation}
+where ${}^*F^{\mu\nu}$ is the dual Faraday tensor.
+
+\section{Relativistic Dirac--Fock Quantum Chemistry}
+
+Single-particle Dirac Hamiltonian:
+\begin{equation}
+  \hat{H}_D
+  =
+  c\,\bm{\alpha} \cdot \hat{\bm{p}}
+  + \beta m c^2
+  + V(\bm{r}),
+\end{equation}
+where $\bm{\alpha}$ and $\beta$ are Dirac matrices, $\hat{\bm{p}}$ is momentum operator, and $V(\bm{r})$ is central potential.
+
+Dirac--Fock equation:
+\begin{equation}
+  \hat{F}\,\psi_i(\bm{r}) = \varepsilon_i\,\psi_i(\bm{r}),
+\end{equation}
+with Fock operator $\hat{F}$ and orbital energies $\varepsilon_i$.
+
+Fock matrix elements in basis $\{\chi_\mu\}$:
+\begin{equation}
+  F_{\mu\nu}
+  =
+  H_{\mu\nu}
+  +
+  \sum_{\lambda\sigma}
+  P_{\lambda\sigma}
+  \left[
+    (\mu\nu|\lambda\sigma)
+    - \frac{1}{2}(\mu\lambda|\nu\sigma)
+  \right],
+\end{equation}
+where
+\begin{equation}
+  H_{\mu\nu} = \langle \chi_\mu | \hat{H}_D | \chi_\nu \rangle,
+\end{equation}
+and two-electron integrals:
+\begin{equation}
+  (\mu\nu|\lambda\sigma)
+  =
+  \iint
+  \frac{
+    \chi_\mu^*(\bm{r}_1)\chi_\nu(\bm{r}_1)
+    \chi_\lambda^*(\bm{r}_2)\chi_\sigma(\bm{r}_2)
+  }{
+    |\bm{r}_1 - \bm{r}_2|
+  }
+  \,d\bm{r}_1\,d\bm{r}_2.
+\end{equation}
+
+SCF convergence criteria:
+\begin{equation}
+  \max_i \left|\varepsilon_i^{(n)} - \varepsilon_i^{(n-1)}\right| < \delta_{\text{SCF}},
+\end{equation}
+and/or
+\begin{equation}
+  \|\bm{P}^{(n)} - \bm{P}^{(n-1)}\|_F < \epsilon_P.
+\end{equation}
+
+\section{Post-Quantum Cryptographic Ledger \& Telemetry}
+
+\subsection{ML-KEM (FIPS 203)}
+
+Key encapsulation mechanism:
+\begin{align}
+  (\text{pk}, \text{sk}) &\leftarrow \text{KEM.KeyGen}(), \\
+  (\text{ct}, K) &\leftarrow \text{KEM.Encaps}(\text{pk}), \\
+  K &\leftarrow \text{KEM.Decaps}(\text{ct}, \text{sk}).
+\end{align}
+
+\subsection{ML-DSA (FIPS 204)}
+
+Digital signatures:
+\begin{align}
+  \sigma &\leftarrow \text{Sign}(\text{sk}, m), \\
+  \text{Verify}(\text{pk}, m, \sigma) &\in \{\text{true}, \text{false}\}.
+\end{align}
+
+\subsection{CKKS Homomorphic State Validation}
+
+Encrypted state:
+\begin{equation}
+  \bm{c} = \text{Enc}_{\text{CKKS}}(\text{pk}, \bm{p}),
+\end{equation}
+with plaintext polynomial $\bm{p}$ packing real-valued slots.
+
+Homomorphic evaluation:
+\begin{equation}
+  \bm{c}' = \text{Eval}_{\text{CKKS}}(f, \bm{c}),
+\end{equation}
+and decryption at authorized node:
+\begin{equation}
+  \bm{x}' = \text{Dec}_{\text{CKKS}}(\text{sk}, \bm{c}').
+\end{equation}
+
+\section{Non-Euclidean Geodesic Optimal Control}
+
+Baseline geodesic equation:
+\begin{equation}
+  \frac{d^2 x^\mu}{d\tau^2}
+  +
+  \Gamma^\mu_{\alpha\beta}
+  \frac{d x^\alpha}{d\tau}
+  \frac{d x^\beta}{d\tau}
+  = 0,
+\end{equation}
+with Christoffel symbols:
+\begin{equation}
+  \Gamma^\mu_{\alpha\beta}
+  =
+  \frac{1}{2} g^{\mu\lambda}
+  \left(
+    \partial_\alpha g_{\beta\lambda}
+    +
+    \partial_\beta g_{\alpha\lambda}
+    -
+    \partial_\lambda g_{\alpha\beta}
+  \right).
+\end{equation}
+
+Controlled geodesic:
+\begin{equation}
+  \frac{d^2 x^\mu}{d\tau^2}
+  +
+  \Gamma^\mu_{\alpha\beta}
+  \frac{d x^\alpha}{d\tau}
+  \frac{d x^\beta}{d\tau}
+  =
+  \mathcal{U}^\mu_{\text{control}}(\tau, x, \dot{x}, \text{telemetry}),
+\end{equation}
+with optimal control acceleration $\mathcal{U}^\mu_{\text{control}}$.
+
+Cost functional:
+\begin{equation}
+  J
+  =
+  \int_{\tau_0}^{\tau_1}
+  \mathcal{L}\big(x^\mu, \dot{x}^\mu, \mathcal{U}^\mu_{\text{control}}\big)\,d\tau,
+\end{equation}
+Euler--Lagrange equations:
+\begin{equation}
+  \frac{d}{d\tau}
+  \left(
+    \frac{\partial \mathcal{L}}{\partial \dot{x}^\mu}
+  \right)
+  -
+  \frac{\partial \mathcal{L}}{\partial x^\mu}
+  = 0.
+\end{equation}
+
+\section{MHD \texorpdfstring{$\rightarrow$}{→} Geodesic Control Coupling via CKKS}
+
+\subsection{Telemetry Packing \& Encryption}
+
+Local plasma state at time $t_n$:
+\begin{equation}
+  \bm{s}(t_n, \bm{x})
+  =
+  \big(
+    \bm{B}(t_n, \bm{x}),
+    \rho(t_n, \bm{x}),
+    \bm{v}(t_n, \bm{x})
+  \big).
+\end{equation}
+
+Packed plaintext polynomial:
+\begin{equation}
+  \bm{p}_{\text{MHD}}
+  =
+  \text{Pack}\big(
+    B_x(\bm{x}_0),\dots,B_x(\bm{x}_{N-1}),
+    B_y(\bm{x}_0),\dots,B_z(\bm{x}_{N-1}),
+    \rho(\bm{x}_0),\dots,\rho(\bm{x}_{N-1}),
+    v_x(\bm{x}_0),\dots,v_z(\bm{x}_{N-1})
+  \big).
+\end{equation}
+
+CKKS ciphertext:
+\begin{equation}
+  \bm{c}_{\text{MHD}}
+  =
+  \text{Enc}_{\text{CKKS}}(\text{pk}, \bm{p}_{\text{MHD}}).
+\end{equation}
+
+\subsection{Encrypted Metric Evaluation}
+
+Metric functional:
+\begin{equation}
+  g_{\mu\nu}
+  =
+  \mathcal{F}_{\text{metric}}(\bm{B}, \rho, \bm{v}).
+\end{equation}
+
+Homomorphic metric evaluation:
+\begin{equation}
+  \bm{c}_g
+  =
+  \hat{\mathcal{F}}_{\text{metric}}(\bm{c}_{\text{MHD}}),
+\end{equation}
+and Christoffel update:
+\begin{equation}
+  \bm{c}_\Gamma
+  =
+  \hat{\mathcal{G}}(\bm{c}_g).
+\end{equation}
+
+\subsection{Zero-Knowledge \& Integrity Verification}
+
+Signature:
+\begin{equation}
+  \sigma
+  =
+  \text{Sign}_{\text{ML-DSA}}(\text{sk}_{\text{sig}}, \bm{c}_\Gamma),
+\end{equation}
+zero-knowledge proof:
+\begin{equation}
+  \pi_{\text{zk}}
+  =
+  \text{Prove}_{\text{zk-SNARK}}\big(
+    \bm{c}_{\text{MHD}}, \bm{c}_\Gamma,
+    \hat{\mathcal{F}}_{\text{metric}}, \hat{\mathcal{G}}
+  \big).
+\end{equation}
+
+Verification:
+\begin{align}
+  \text{Verify}_{\text{ML-DSA}}(\text{pk}_{\text{sig}}, \bm{c}_\Gamma, \sigma) &= \text{true}, \\
+  \text{Verify}_{\text{zk-SNARK}}(\pi_{\text{zk}}, \bm{c}_{\text{MHD}}, \bm{c}_\Gamma) &= \text{true}.
+\end{align}
+
+\subsection{Decryption \& Control Injection}
+
+Decryption:
+\begin{equation}
+  \bm{p}_\Gamma
+  =
+  \text{Dec}_{\text{CKKS}}(\text{sk}, \bm{c}_\Gamma),
+\end{equation}
+unpacking:
+\begin{equation}
+  \Gamma^\mu_{\alpha\beta}(\bm{x}_k)
+  =
+  \text{Unpack}_\Gamma(\bm{p}_\Gamma)_k.
+\end{equation}
+
+Control acceleration:
+\begin{equation}
+  \mathcal{U}^\mu_{\text{control}}(\bm{x}_k)
+  =
+  \mathcal{C}\big(
+    \Gamma^\mu_{\alpha\beta}(\bm{x}_k),
+    \bm{B}(\bm{x}_k),
+    \rho(\bm{x}_k),
+    \bm{v}(\bm{x}_k),
+    \text{telemetry}
+  \big),
+\end{equation}
+injected into geodesic equation:
+\begin{equation}
+  \frac{d^2 x^\mu}{d\tau^2}
+  +
+  \Gamma^\mu_{\alpha\beta}(x)
+  \frac{d x^\alpha}{d\tau}
+  \frac{d x^\beta}{d\tau}
+  =
+  \mathcal{U}^\mu_{\text{control}}(x).
+\end{equation}
+
+\section{Astrophysics Engine: GRMHD, GW, RRT, FLRW}
+
+\subsection{GRMHD \texorpdfstring{$\rightarrow$}{→} GW Interface}
+
+Trace-free quadrupole moment:
+\begin{equation}
+  I_{ij}^{\text{TF}}(t)
+  =
+  \int d^3x\,
+  \rho_{\text{eff}}(t,\bm{x})
+  \left(
+    x_i x_j - \frac{1}{3}\delta_{ij} r^2
+  \right),
+  \quad r^2 = x_k x_k.
+\end{equation}
+
+GW strain (far-field, TT gauge):
+\begin{equation}
+  h_{ij}^{\text{TT}}(t, \bm{x})
+  =
+  \frac{2G}{c^4 R}
+  \frac{d^2 I_{ij}^{\text{TT}}(t - R/c)}{dt^2}.
+\end{equation}
+
+\subsection{GW / Metric \texorpdfstring{$\rightarrow$}{→} RRT Interface}
+
+Perturbed metric:
+\begin{equation}
+  g_{\mu\nu}
+  =
+  g^{(0)}_{\mu\nu}
+  +
+  h_{\mu\nu},
+\end{equation}
+Christoffel update:
+\begin{equation}
+  \Delta \Gamma^\alpha_{\beta\gamma}
+  =
+  \Gamma^\alpha_{\beta\gamma}[g^{(0)} + h]
+  -
+  \Gamma^\alpha_{\beta\gamma}[g^{(0)}].
+\end{equation}
+
+Boltzmann transport:
+\begin{equation}
+  p^\alpha \frac{\partial f}{\partial x^\alpha}
+  -
+  \Gamma^\beta_{\alpha\gamma} p^\alpha p^\gamma
+  \frac{\partial f}{\partial p^\beta}
+  =
+  \mathcal{C}[f],
+\end{equation}
+with $f(x^\alpha, p^\beta)$ the radiation phase-space distribution.
+
+\subsection{RRT \texorpdfstring{$\rightarrow$}{→} FLRW Backreaction}
+
+Radiation energy density:
+\begin{equation}
+  \rho_{\text{rad}}(\bm{x})
+  =
+  \frac{1}{c}
+  \int_0^\infty d\nu
+  \int_{4\pi} I_\nu(\bm{x}, \hat{\bm{n}})\,d\Omega.
+\end{equation}
+
+Effective cosmological radiation density:
+\begin{equation}
+  \rho_{\text{rad, eff}}
+  =
+  \frac{1}{V}
+  \int_V \rho_{\text{rad}}(\bm{x})\,d^3x,
+\end{equation}
+with radiation pressure:
+\begin{equation}
+  p_{\text{rad}}
+  =
+  \frac{1}{3}\rho_{\text{rad, eff}} c^2.
+\end{equation}
+
+Friedmann equation with backreaction:
+\begin{equation}
+  H^2(a)
+  =
+  \left(\frac{\dot{a}}{a}\right)^2
+  =
+  \frac{8\pi G}{3}
+  \left(
+    \rho_{\text{m}}(a)
+    + \rho_{\text{rad, eff}}(a)
+    + \rho_{\text{DE}}(a)
+  \right)
+  - \frac{k}{a^2}.
+\end{equation}
+
+\section{Autonomous Loop Execution \& Numerical Stability}
+
+\subsection{Global Residual \& Adaptive Damping}
+
+Subsystem states:
+\begin{equation}
+  \bm{S}_{\text{MHD}},\quad
+  \bm{S}_{\text{GW}},\quad
+  \bm{S}_{\text{RRT}},\quad
+  \bm{S}_{\text{FLRW}}.
+\end{equation}
+
+Global residual:
+\begin{equation}
+  \bm{R}(t)
+  =
+  \mathcal{C}\big(
+    \bm{S}_{\text{MHD}}(t),
+    \bm{S}_{\text{GW}}(t),
+    \bm{S}_{\text{RRT}}(t),
+    \bm{S}_{\text{FLRW}}(t)
+  \big),
+\end{equation}
+with tolerance:
+\begin{equation}
+  \|\bm{R}(t)\|_2 \leq \epsilon_{\text{couple}}.
+\end{equation}
+
+Adaptive damping:
+\begin{equation}
+  \bm{S}_{\text{MHD}}^{n+1}
+  =
+  \bm{S}_{\text{MHD}}^{n+1,\text{raw}}
+  -
+  \alpha_{\text{damp}}(t)\,\bm{R}(t),
+\end{equation}
+with
+\begin{equation}
+  \alpha_{\text{damp}}(t)
+  =
+  \alpha_0
+  \min\left(
+    1,
+    \frac{\|\bm{R}(t)\|_2}{R_{\text{scale}}}
+  \right).
+\end{equation}
+
+\subsection{CFL Stability}
+
+Relativistic Alfvén speed:
+\begin{equation}
+  v_A^2
+  =
+  \frac{b^2}{\rho h + b^2}.
+\end{equation}
+
+Directional characteristic speeds:
+\begin{equation}
+  v_{\text{max},i}
+  =
+  \max\{c_s, v_{A,i}, \text{relativistic wave speeds}\},
+  \quad i = x,y,z.
+\end{equation}
+
+CFL condition:
+\begin{equation}
+  \Delta t
+  \leq
+  C_{\text{CFL}}
+  \min\left(
+    \frac{\Delta x}{v_{\text{max},x}},
+    \frac{\Delta y}{v_{\text{max},y}},
+    \frac{\Delta z}{v_{\text{max},z}}
+  \right),
+\end{equation}
+with $0 < C_{\text{CFL}} < 1$.
+
+TVD + PPM reconstruction ensures:
+\begin{equation}
+  \text{TV}(U^{n+1}) \leq \text{TV}(U^n),
+\end{equation}
+where $\text{TV}$ is total variation.
+
+\section{HPC Execution Model}
+
+Global grid $N_x \times N_y \times N_z$ decomposed into subdomains $\Omega_{ijk}$ with ghost zones. MPI non-blocking exchanges:
+\begin{align}
+  \text{MPI\_Isend}(\text{boundary data}), \\
+  \text{MPI\_Irecv}(\text{ghost data}).
+\end{align}
+
+Hybrid CPU--GPU pipeline:
+\begin{itemize}
+  \item CPU (MPI/OpenMP): domain orchestration, global reductions, CFL computation.
+  \item GPU (CUDA): GRMHD, RRT, metric update kernels on subdomain data.
+\end{itemize}
+
+Arithmetic intensity:
+\begin{equation}
+  \text{AI}
+  =
+  \frac{\text{FLOPs}}{\text{bytes transferred}},
+\end{equation}
+maximized by keeping primitive variables in shared memory during Riemann solver sweeps.
+
+\end{document}

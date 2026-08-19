@@ -1,0 +1,126 @@
+\chapter{Multi-Messenger Astrophysical Ingestion}
+
+The CEUME v6.5 ingestion layer integrates heterogeneous astrophysical
+telemetry into a unified encrypted state representation. Each messenger
+channel contributes distinct physical observables, sampling different
+regions of the cosmic phase space. CEUME processes these streams through
+post-quantum secure transport, zero-copy buffers, and encrypted tensor
+encoders, ensuring that all observational data enters the modeling engine
+without exposure to untrusted infrastructure.
+
+\section{Gaia DR3 Six-Dimensional Phase Space}
+
+Gaia DR3 provides stellar astrometry in a six-dimensional phase-space
+vector:
+\begin{equation}
+    \mathbf{x}_{\mathrm{Gaia}} = 
+    ( \alpha, \delta, \varpi, \mu_\alpha, \mu_\delta, v_r ),
+\end{equation}
+where $(\alpha, \delta)$ denote sky coordinates, $\varpi$ is parallax,
+$(\mu_\alpha, \mu_\delta)$ are proper motions, and $v_r$ is radial velocity.
+CEUME transforms these into Cartesian coordinates via:
+\begin{align}
+    d &= \frac{1}{\varpi}, \\
+    \mathbf{r} &= d \, \mathbf{n}(\alpha, \delta), \\
+    \mathbf{v} &= \mathbf{T}(\alpha, \delta, \mu_\alpha, \mu_\delta, v_r),
+\end{align}
+where $\mathbf{T}$ is the astrometric velocity transformation matrix.
+
+All Gaia vectors are encrypted using ML-KEM-1024 encapsulation:
+\begin{equation}
+    \mathbf{c}_{\mathrm{Gaia}} = 
+    \mathrm{Enc}_{\mathrm{ML-KEM}}(\mathbf{x}_{\mathrm{Gaia}}),
+\end{equation}
+and stored in CEUME’s cyclotomic ring buffer for homomorphic evaluation.
+
+\section{LIGO Gravitational Wave Strain Ingestion}
+
+LIGO provides calibrated strain time series $h(t)$ sampled at 16 kHz.
+CEUME ingests strain segments through a lock-free, zero-copy buffer:
+\begin{equation}
+    h_{\mathrm{seg}} = \{ h(t_i) \mid t_i \in [t_0, t_0 + \Delta T] \}.
+\end{equation}
+
+The strain is decomposed into frequency-domain components via encrypted FFT:
+\begin{equation}
+    \mathbf{c}_{\mathrm{FFT}} = 
+    \mathrm{CKKS.FFT}(h_{\mathrm{seg}}),
+\end{equation}
+allowing CEUME to detect:
+\begin{itemize}[itemsep=0pt]
+    \item binary black hole mergers,
+    \item neutron star inspirals,
+    \item stochastic gravitational backgrounds,
+    \item torsion-induced micro-strain signatures.
+\end{itemize}
+
+The torsion-sensitive observable is:
+\begin{equation}
+    \Delta h_{\mathrm{torsion}} = 
+    h(t) - h_{\mathrm{GR}}(t),
+\end{equation}
+where $h_{\mathrm{GR}}$ is the GR-predicted strain waveform.
+
+\section{JWST Spectral Cube Ingestion}
+
+JWST NIRSpec and MIRI provide hyperspectral cubes:
+\begin{equation}
+    \mathcal{C}(x, y, \lambda),
+\end{equation}
+with spatial resolution $(x,y)$ and spectral resolution $\lambda$.
+
+CEUME compresses each cube into encrypted tensor slices:
+\begin{equation}
+    \mathbf{c}_{\lambda_k} = 
+    \mathrm{CKKS.Encode}\left( \mathcal{C}(x, y, \lambda_k) \right),
+\end{equation}
+enabling:
+\begin{itemize}[itemsep=0pt]
+    \item galaxy metallicity reconstruction,
+    \item dark-energy-sensitive redshift mapping,
+    \item axion-induced spectral distortions,
+    \item encrypted cosmological parameter inference.
+\end{itemize}
+
+\section{Blackwell Instrumentation Suite Integration}
+
+The CMB-X1, CMB-X2, and CMB-X3 instruments provide non-classical telemetry:
+\begin{align}
+    \mathbf{y}_{\mathrm{X1}} &= \Delta \Phi_{\mathrm{torsion}}, \\
+    \mathbf{y}_{\mathrm{X2}} &= \Delta \theta_{\mathrm{pol}}, \\
+    \mathbf{y}_{\mathrm{X3}} &= \partial_t \rho_{AB}.
+\end{align}
+
+Each stream is encapsulated using ML-KEM-1024 and committed to CEUME’s
+encrypted state tensor:
+\begin{equation}
+    S_t = S_t \boxplus \mathrm{CKKS.Encode}(\mathbf{y}_{\mathrm{Xi}}).
+\end{equation}
+
+\section{Unified Encrypted Telemetry Transport}
+
+All messenger channels are transported through CEUME’s sovereign pipeline:
+\begin{enumerate}[itemsep=0pt]
+    \item ML-KEM-1024 encapsulation,
+    \item zero-copy ingestion,
+    \item CKKS-RNS encoding,
+    \item encrypted tensor normalization,
+    \item homomorphic state commit.
+\end{enumerate}
+
+The unified encrypted telemetry vector is:
+\begin{equation}
+    \mathbf{y}_t =
+    \left[
+        \mathbf{c}_{\mathrm{Gaia}},
+        \mathbf{c}_{\mathrm{LIGO}},
+        \mathbf{c}_{\mathrm{JWST}},
+        \mathbf{c}_{\mathrm{X1}},
+        \mathbf{c}_{\mathrm{X2}},
+        \mathbf{c}_{\mathrm{X3}}
+    \right].
+\end{equation}
+
+This vector drives CEUME’s autonomous cosmological evolution, ensuring that
+all observational data is processed securely, consistently, and without
+exposure to external systems.

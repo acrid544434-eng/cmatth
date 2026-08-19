@@ -1,0 +1,56 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath, amssymb, geometry, graphicx, xcolor}
+\geometry{margin=1in}
+
+\title{APEX Hybrid Simulation Engine:\\
+Deterministic Fixed-Point Physics and Stellar Dynamics}
+\author{C.~Matthew~Blackwell}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ============================================================
+\chapter{Overview of the Deterministic Physics Engine}
+% ============================================================
+\input{chapters/overview.tex}
+
+% ============================================================
+\chapter{Fixed-Point Numerical Architecture}
+% ============================================================
+\input{chapters/fixed_point_lattice.tex}
+
+% ============================================================
+\chapter{Symplectic Orbital Mechanics}
+% ============================================================
+\input{chapters/symplectic_update.tex}
+
+% ============================================================
+\chapter{Hamiltonian Stability and Energy Invariants}
+% ============================================================
+\input{chapters/hamiltonian_analysis.tex}
+
+% ============================================================
+\chapter{Telemetry Schema and Data Provenance}
+% ============================================================
+\input{chapters/telemetry_schema.tex}
+
+% ============================================================
+\chapter{Simulation Results}
+% ============================================================
+\input{results/fig_orbit.tex}
+\input{results/tab_hamiltonian.tex}
+\input{results/tab_params.tex}
+
+% ============================================================
+\chapter{Reproducibility and Build Pipeline}
+% ============================================================
+\input{chapters/reproducibility.tex}
+
+% ============================================================
+\chapter{Conclusion}
+% ============================================================
+\input{chapters/conclusion.tex}
+
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{500-Page Disk}
+\author{C. Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Disk Unit}
+% This is your single unit.
+% Add as much content here as you want—chapters, sections, logs, equations, etc.
+% When the content is long enough, the PDF will be ~500 pages.
+
+\section{Section 1}
+% Your text, equations, logs, etc.
+
+\section{Section 2}
+% More content...
+
+\section{Section 3}
+% More content...
+
+% You can keep adding sections, subsections, environments, etc.
+% LaTeX will happily handle 500+ pages in this single unit.
+
+\end{document}

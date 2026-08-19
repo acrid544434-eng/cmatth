@@ -1,0 +1,78 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=18mm, top=20mm, bottom=20mm]{geometry}
+
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{abstract}
+
+% Color definitions
+\definecolor{primary}{RGB}{16, 44, 87}
+\definecolor{accent}{RGB}{53, 101, 169}
+\definecolor{darkslate}{RGB}{33, 37, 41}
+
+% Section styling
+\titleformat{\section}{\color{primary}\normalfont\large\bfseries}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\color{accent}\normalfont\normalsize\bfseries}{\thesubsection.}{0.4em}{}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    citecolor=accent,
+    urlcolor=accent
+}
+
+\renewcommand{\abstractnamefont}{\normalfont\small\bfseries\color{primary}}
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+\title{\vspace{-10mm}\color{primary}\Huge\bfseries SYSTEM NAME vX.Y: Technical White Sheet\\[2mm]
+\Large\bfseries Subtitle: Physics, Cryptography, and Architecture}
+
+\author{
+    \textbf{C. Matthew Blackwell}\\[1mm]
+    \textit{Independent Systems Architect \& Designer}\\[0.5mm]
+    \small System Designation: \texttt{SYSTEM-ID} \quad $|$ \quad Security Profile: NIST FIPS 203/204
+}
+
+\date{\small August 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This scientific white sheet summarizes the mathematical, physical, and
+cryptographic architecture of \textbf{SYSTEM NAME vX.Y}. It outlines the
+core system loop, spacetime model, cryptographic primitives, and numerical
+verification benchmarks that establish the engine as a sovereign,
+post-quantum–secure computational physics platform.
+\end{abstract}
+
+\section{System Architecture}
+% Core loop, state evolution, ingestion overview.
+
+\section{Physical Model}
+% Geometry, field equations, actions, Lagrangians.
+
+\section{Instrumentation and Telemetry}
+% Sensors, data streams, observables.
+
+\section{Cryptographic Specification}
+% PQC, homomorphic schemes, ledgers, parameters.
+
+\section{Numerical Verification}
+% Convergence tables, invariants, performance metrics.
+
+\section{Conclusion}
+% High-level summary and deployment notes.
+
+\end{document}

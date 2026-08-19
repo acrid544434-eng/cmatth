@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, geometry}
+\geometry{margin=1in}
+
+\title{Cyber-Physical Hydrocryptic Dynamics (CHD)\\
+A Unified Hydro-Cryptographic Simulation and Control Architecture}
+\author{C.~Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Cyber-Physical Hydrocryptic Dynamics (CHD) is a trans-domain scientific discipline
+that unifies real-time hydrodynamics, autonomous bifurcation intelligence,
+structural impact physics, and post-quantum cryptographic verification into a
+single operational framework. This white sheet summarizes the global deployment
+model, governing mathematical principles, and hydraulic displacement capacity of
+the CEUME-class architecture.
+\end{abstract}
+
+\section{Discipline Definition}
+Cyber-Physical Hydrocryptic Dynamics (CHD) studies hydraulic systems whose
+physical state evolution is inseparably coupled to:
+\begin{itemize}
+  \item real-time fluid solvers (2D SWE, 3D Navier--Stokes),
+  \item autonomous control and bifurcation logic,
+  \item post-quantum cryptographic key encapsulation,
+  \item distributed Merkle-ledger state commitments.
+\end{itemize}
+
+\section{Governing Fluid Mechanics}
+\subsection{Shallow-Water Equations}
+Depth-averaged free-surface flow is modeled by:
+\begin{align}
+  \frac{\partial h}{\partial t}
+  + \frac{\partial (hu)}{\partial x}
+  + \frac{\partial (hv)}{\partial y}
+  &= q_r, \\
+  \frac{\partial (hu)}{\partial t}
+  + \frac{\partial}{\partial x}\left(hu^2 + \frac{1}{2} g h^2\right)
+  + \frac{\partial (huv)}{\partial y}
+  &= -g h S_{fx} + q_{mx}, \\
+  \frac{\partial (hv)}{\partial t}
+  + \frac{\partial (huv)}{\partial x}
+  + \frac{\partial}{\partial y}\left(hv^2 + \frac{1}{2} g h^2\right)
+  &= -g h S_{fy} + q_{my},
+\end{align}
+where $h$ is water depth, $(u,v)$ are depth-averaged velocities, $g$ is
+gravitational acceleration, and $q_r$ represents rainfall/runoff sources.
+
+\subsection{Froude Instability Criterion}
+Local flow regime is classified via the Froude number:
+\begin{equation}
+  Fr = \frac{\lVert \mathbf{u} \rVert}{\sqrt{g h}},
+\end{equation}
+with $Fr \ge 1$ indicating supercritical flow and potential hydraulic jumps
+triggering bifurcation control.
+
+\section{Autonomous Bifurcation Control}
+When instability is detected, execution splits into:
+\begin{itemize}
+  \item Baseline predictive routing (primary agent),
+  \item Exploratory MPC sub-agent optimizing valve and pump states.
+\end{itemize}
+A local cost functional for inundation minimization is:
+\begin{equation}
+  J = \int_{\Omega} w(x,y)\, h(x,y,t)\, \mathrm{d}x\,\mathrm{d}y,
+\end{equation}
+subject to actuator and regulatory constraints, solved within a sub-frame
+time budget to reconverge before the next global cycle.
+
+\section{Cryptographic and Ledger Layer}
+Post-quantum key encapsulation (e.g.\ CRYSTALS-Kyber) secures inter-node
+channels, while AES-GCM-256 provides symmetric in-transit confidentiality.
+Each simulation frame and control action is committed as a Merkle-tree leaf,
+yielding an immutable audit trail:
+\begin{equation}
+  \text{Root} = H\big(H(s_1 \Vert s_2), H(s_3 \Vert s_4), \dots \big),
+\end{equation}
+where $H$ is a cryptographic hash and $s_i$ are state vectors or stress tensors.
+
+\section{Hydraulic Displacement Capacity}
+\subsection{Positive Displacement}
+Deterministic volumetric throughput of pumps is:
+\begin{equation}
+  Q_{\text{pos}} = V_{\text{disp}} \cdot n_{\text{rpm}},
+\end{equation}
+with $V_{\text{disp}}$ the swept volume per revolution and $n_{\text{rpm}}$
+the rotational speed.
+
+\subsection{Hydrostatic Force Multiplication}
+Pascal's law yields:
+\begin{equation}
+  \frac{F_2}{F_1} = \frac{A_2}{A_1},
+\end{equation}
+enabling hydraulic gates and barriers to amplify force without volumetric loss.
+
+\subsection{Buoyant Displacement}
+Archimedes' principle governs buoyant control elements:
+\begin{equation}
+  F_b = \rho_{\text{fluid}} g V_{\text{sub}},
+\end{equation}
+where $F_b$ is buoyant force, $\rho_{\text{fluid}}$ fluid density, and
+$V_{\text{sub}}$ submerged volume.
+
+\section{Global Deployment Topology}
+The CEUME-class CHD infrastructure is deployed as:
+\begin{enumerate}
+  \item Tier~1: Edge telemetry nodes (sensors, actuators, DMA ingestion),
+  \item Tier~2: Regional GPU enclave clusters (solvers, MPC, bifurcation),
+  \item Tier~3: Global consensus ledger (Merkle-based audit and compliance).
+\end{enumerate}
+
+\end{document}

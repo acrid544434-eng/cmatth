@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{
+    margin=1in
+}
+
+\title{\textbf{Scientific White Sheet}}
+\author{C.~Matthew Blackwell}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+This white sheet provides a concise scientific summary of the system, method, or experiment under review. It is designed for rapid technical communication while maintaining academic rigor.
+
+\section*{Objective}
+State the core purpose of the system or study in 2--3 sentences.  
+Describe the scientific or engineering motivation.
+
+\section*{Methodology}
+Summarize the essential approach:
+\begin{itemize}
+    \item Physical or computational model
+    \item Mathematical formulation
+    \item Experimental or simulation workflow
+\end{itemize}
+
+\section*{Key Equations}
+Present only the essential mathematical expressions:
+\[
+    y = f(x; \theta)
+\]
+\[
+    \Sigma = e\,e^{i\varpi}
+\]
+
+\section*{Results}
+Provide the primary quantitative findings:
+\begin{itemize}
+    \item Numerical metrics
+    \item Stability or performance indicators
+    \item Any threshold or boundary conditions
+\end{itemize}
+
+\section*{Conclusion}
+Summarize the scientific takeaway in one short paragraph.  
+State the next actionable step or open question.
+
+\section*{References}
+Use any standard bibliography format:
+\begin{itemize}
+    \item Author, Title, Journal, Year.
+    \item Author, Title, Conference, Year.
+\end{itemize}
+
+\end{document}

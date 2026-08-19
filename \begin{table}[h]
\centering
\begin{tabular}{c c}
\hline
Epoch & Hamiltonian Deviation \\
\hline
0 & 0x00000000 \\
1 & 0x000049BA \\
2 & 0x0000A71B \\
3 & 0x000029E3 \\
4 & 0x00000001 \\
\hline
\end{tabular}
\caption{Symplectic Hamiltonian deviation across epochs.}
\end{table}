@@ -1,0 +1,15 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+\hline
+Epoch & Hamiltonian Deviation \\
+\hline
+0 & 0x00000000 \\
+1 & 0x000049BA \\
+2 & 0x0000A71B \\
+3 & 0x000029E3 \\
+4 & 0x00000001 \\
+\hline
+\end{tabular}
+\caption{Symplectic Hamiltonian deviation across epochs.}
+\end{table}

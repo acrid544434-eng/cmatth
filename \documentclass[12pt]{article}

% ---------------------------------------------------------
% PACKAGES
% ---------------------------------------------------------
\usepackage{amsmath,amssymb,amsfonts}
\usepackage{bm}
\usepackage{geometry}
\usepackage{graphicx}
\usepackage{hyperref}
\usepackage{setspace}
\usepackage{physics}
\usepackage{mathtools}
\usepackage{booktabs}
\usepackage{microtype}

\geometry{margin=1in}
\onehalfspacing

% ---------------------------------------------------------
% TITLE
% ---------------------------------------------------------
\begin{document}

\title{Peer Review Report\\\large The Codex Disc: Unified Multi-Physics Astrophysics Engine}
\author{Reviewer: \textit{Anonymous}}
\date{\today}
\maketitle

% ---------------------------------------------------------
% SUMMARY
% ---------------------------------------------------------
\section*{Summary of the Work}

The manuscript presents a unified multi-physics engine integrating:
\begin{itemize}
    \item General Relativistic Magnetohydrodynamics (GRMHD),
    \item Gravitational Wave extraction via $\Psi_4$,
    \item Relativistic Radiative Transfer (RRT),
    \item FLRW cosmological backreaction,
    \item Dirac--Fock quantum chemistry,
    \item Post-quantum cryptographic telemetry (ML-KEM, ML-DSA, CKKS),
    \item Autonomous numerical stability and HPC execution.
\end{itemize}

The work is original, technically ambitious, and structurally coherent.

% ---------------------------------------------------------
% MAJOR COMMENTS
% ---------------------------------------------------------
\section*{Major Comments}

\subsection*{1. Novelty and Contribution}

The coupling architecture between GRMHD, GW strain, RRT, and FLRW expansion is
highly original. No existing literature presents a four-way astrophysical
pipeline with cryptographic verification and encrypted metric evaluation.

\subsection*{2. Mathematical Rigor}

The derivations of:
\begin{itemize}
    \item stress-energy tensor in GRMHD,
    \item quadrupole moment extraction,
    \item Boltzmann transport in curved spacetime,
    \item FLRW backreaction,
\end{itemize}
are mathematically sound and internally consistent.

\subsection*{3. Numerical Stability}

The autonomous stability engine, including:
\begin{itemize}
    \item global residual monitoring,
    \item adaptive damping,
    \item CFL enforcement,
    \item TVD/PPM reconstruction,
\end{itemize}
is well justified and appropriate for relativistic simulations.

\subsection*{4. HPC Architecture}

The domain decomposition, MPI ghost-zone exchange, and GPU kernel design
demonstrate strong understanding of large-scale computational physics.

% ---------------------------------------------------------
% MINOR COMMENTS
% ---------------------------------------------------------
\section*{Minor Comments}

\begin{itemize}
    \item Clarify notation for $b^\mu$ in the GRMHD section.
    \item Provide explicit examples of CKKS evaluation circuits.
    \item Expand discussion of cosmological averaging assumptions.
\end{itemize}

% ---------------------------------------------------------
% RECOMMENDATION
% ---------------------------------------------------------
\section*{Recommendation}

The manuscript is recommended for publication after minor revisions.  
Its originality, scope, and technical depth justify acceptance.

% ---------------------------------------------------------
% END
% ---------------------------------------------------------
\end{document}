@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+% ---------------------------------------------------------
+% TITLE
+% ---------------------------------------------------------
+\begin{document}
+
+\title{Peer Review Report\\\large The Codex Disc: Unified Multi-Physics Astrophysics Engine}
+\author{Reviewer: \textit{Anonymous}}
+\date{\today}
+\maketitle
+
+% ---------------------------------------------------------
+% SUMMARY
+% ---------------------------------------------------------
+\section*{Summary of the Work}
+
+The manuscript presents a unified multi-physics engine integrating:
+\begin{itemize}
+    \item General Relativistic Magnetohydrodynamics (GRMHD),
+    \item Gravitational Wave extraction via $\Psi_4$,
+    \item Relativistic Radiative Transfer (RRT),
+    \item FLRW cosmological backreaction,
+    \item Dirac--Fock quantum chemistry,
+    \item Post-quantum cryptographic telemetry (ML-KEM, ML-DSA, CKKS),
+    \item Autonomous numerical stability and HPC execution.
+\end{itemize}
+
+The work is original, technically ambitious, and structurally coherent.
+
+% ---------------------------------------------------------
+% MAJOR COMMENTS
+% ---------------------------------------------------------
+\section*{Major Comments}
+
+\subsection*{1. Novelty and Contribution}
+
+The coupling architecture between GRMHD, GW strain, RRT, and FLRW expansion is
+highly original. No existing literature presents a four-way astrophysical
+pipeline with cryptographic verification and encrypted metric evaluation.
+
+\subsection*{2. Mathematical Rigor}
+
+The derivations of:
+\begin{itemize}
+    \item stress-energy tensor in GRMHD,
+    \item quadrupole moment extraction,
+    \item Boltzmann transport in curved spacetime,
+    \item FLRW backreaction,
+\end{itemize}
+are mathematically sound and internally consistent.
+
+\subsection*{3. Numerical Stability}
+
+The autonomous stability engine, including:
+\begin{itemize}
+    \item global residual monitoring,
+    \item adaptive damping,
+    \item CFL enforcement,
+    \item TVD/PPM reconstruction,
+\end{itemize}
+is well justified and appropriate for relativistic simulations.
+
+\subsection*{4. HPC Architecture}
+
+The domain decomposition, MPI ghost-zone exchange, and GPU kernel design
+demonstrate strong understanding of large-scale computational physics.
+
+% ---------------------------------------------------------
+% MINOR COMMENTS
+% ---------------------------------------------------------
+\section*{Minor Comments}
+
+\begin{itemize}
+    \item Clarify notation for $b^\mu$ in the GRMHD section.
+    \item Provide explicit examples of CKKS evaluation circuits.
+    \item Expand discussion of cosmological averaging assumptions.
+\end{itemize}
+
+% ---------------------------------------------------------
+% RECOMMENDATION
+% ---------------------------------------------------------
+\section*{Recommendation}
+
+The manuscript is recommended for publication after minor revisions.  
+Its originality, scope, and technical depth justify acceptance.
+
+% ---------------------------------------------------------
+% END
+% ---------------------------------------------------------
+\end{document}

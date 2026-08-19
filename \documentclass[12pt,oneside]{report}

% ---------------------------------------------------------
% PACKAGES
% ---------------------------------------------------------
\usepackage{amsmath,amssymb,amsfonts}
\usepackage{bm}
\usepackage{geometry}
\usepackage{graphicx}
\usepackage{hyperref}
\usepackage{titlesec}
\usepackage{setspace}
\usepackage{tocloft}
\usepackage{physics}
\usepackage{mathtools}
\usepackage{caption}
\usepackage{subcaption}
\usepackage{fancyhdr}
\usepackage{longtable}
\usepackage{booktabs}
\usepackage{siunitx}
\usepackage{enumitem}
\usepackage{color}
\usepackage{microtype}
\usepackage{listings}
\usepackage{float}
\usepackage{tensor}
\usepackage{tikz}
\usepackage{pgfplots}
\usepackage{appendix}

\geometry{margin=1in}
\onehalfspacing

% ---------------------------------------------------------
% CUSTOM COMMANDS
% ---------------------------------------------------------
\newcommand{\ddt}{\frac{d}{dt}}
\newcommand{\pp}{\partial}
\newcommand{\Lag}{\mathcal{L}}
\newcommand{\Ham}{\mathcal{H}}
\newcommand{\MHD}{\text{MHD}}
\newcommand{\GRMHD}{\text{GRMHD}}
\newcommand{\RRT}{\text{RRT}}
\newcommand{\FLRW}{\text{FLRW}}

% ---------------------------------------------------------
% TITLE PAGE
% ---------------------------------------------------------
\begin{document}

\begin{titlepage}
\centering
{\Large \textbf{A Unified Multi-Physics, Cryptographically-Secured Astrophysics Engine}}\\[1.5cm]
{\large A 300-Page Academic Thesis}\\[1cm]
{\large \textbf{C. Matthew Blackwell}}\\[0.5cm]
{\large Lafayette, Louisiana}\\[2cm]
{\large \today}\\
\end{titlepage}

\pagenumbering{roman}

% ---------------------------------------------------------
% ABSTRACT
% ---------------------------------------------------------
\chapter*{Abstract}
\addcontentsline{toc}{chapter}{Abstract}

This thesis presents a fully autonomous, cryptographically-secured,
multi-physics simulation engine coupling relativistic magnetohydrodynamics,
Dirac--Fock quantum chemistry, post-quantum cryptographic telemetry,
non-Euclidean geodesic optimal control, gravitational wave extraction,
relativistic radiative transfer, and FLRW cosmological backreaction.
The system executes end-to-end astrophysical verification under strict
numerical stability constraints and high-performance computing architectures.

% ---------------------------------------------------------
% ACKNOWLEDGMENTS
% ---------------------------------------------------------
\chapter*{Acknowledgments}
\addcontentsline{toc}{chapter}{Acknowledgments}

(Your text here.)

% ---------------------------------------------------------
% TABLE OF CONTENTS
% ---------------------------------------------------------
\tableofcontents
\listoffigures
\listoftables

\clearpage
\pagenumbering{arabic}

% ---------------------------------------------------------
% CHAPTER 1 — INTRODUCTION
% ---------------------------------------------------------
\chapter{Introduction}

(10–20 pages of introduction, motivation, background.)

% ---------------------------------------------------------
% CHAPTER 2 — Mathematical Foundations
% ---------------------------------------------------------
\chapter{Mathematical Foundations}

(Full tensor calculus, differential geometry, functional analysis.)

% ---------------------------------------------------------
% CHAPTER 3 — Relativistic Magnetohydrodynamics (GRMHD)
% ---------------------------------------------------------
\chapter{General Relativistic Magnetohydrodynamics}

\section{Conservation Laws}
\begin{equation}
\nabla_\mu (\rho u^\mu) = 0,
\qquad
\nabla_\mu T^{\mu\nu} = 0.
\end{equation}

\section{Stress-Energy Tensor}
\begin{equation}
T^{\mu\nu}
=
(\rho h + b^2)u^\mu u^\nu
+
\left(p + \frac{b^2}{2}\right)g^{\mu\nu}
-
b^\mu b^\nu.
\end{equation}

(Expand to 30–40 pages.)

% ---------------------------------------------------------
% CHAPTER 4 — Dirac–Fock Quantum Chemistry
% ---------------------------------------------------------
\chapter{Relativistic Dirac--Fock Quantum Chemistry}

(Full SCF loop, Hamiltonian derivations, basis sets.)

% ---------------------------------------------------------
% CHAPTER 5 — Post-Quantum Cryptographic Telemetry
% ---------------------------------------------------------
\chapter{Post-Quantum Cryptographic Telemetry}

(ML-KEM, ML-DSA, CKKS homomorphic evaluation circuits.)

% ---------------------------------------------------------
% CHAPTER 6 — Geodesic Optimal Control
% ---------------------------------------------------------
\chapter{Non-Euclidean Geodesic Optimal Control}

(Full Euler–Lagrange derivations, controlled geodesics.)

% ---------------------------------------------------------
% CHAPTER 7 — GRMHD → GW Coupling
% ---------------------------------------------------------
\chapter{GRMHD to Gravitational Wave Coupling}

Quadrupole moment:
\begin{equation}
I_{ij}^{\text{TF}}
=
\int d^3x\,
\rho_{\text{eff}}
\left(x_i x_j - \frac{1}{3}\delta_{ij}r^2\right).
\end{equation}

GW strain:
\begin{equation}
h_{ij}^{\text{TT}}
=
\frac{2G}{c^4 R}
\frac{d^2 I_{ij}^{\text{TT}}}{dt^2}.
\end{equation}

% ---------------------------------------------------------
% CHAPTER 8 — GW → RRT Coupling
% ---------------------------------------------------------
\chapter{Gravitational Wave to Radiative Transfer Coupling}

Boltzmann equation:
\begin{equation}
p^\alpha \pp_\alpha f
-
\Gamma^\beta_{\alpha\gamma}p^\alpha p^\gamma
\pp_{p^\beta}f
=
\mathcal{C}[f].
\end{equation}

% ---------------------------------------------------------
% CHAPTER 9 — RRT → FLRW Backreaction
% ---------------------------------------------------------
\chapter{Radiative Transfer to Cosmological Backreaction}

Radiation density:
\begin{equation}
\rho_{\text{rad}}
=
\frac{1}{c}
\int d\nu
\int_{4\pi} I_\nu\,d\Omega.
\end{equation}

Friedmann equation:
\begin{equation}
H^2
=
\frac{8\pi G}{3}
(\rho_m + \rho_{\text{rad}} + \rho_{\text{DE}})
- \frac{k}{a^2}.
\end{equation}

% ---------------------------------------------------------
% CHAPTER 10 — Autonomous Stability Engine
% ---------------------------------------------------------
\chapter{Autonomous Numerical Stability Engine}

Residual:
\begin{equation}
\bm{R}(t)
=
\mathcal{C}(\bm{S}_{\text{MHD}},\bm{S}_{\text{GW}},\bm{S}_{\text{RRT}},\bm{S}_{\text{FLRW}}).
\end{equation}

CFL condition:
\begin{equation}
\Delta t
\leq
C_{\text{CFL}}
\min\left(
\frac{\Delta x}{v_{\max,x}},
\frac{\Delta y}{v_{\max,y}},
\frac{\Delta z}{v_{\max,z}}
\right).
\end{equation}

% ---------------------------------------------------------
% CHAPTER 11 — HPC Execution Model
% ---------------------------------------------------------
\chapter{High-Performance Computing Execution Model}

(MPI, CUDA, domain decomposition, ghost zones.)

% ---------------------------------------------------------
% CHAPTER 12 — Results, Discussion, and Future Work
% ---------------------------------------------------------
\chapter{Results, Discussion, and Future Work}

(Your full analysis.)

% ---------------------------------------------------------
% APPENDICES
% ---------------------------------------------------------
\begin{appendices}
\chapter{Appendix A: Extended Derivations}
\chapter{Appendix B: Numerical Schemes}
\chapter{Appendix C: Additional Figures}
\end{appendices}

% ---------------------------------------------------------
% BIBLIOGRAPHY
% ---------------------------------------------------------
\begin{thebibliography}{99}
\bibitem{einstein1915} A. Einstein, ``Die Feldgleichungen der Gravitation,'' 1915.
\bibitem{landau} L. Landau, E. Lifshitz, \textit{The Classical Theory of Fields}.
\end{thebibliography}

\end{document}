@@ -1,0 +1,270 @@
+\documentclass[12pt,oneside]{report}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{tensor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{appendix}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+% ---------------------------------------------------------
+% CUSTOM COMMANDS
+% ---------------------------------------------------------
+\newcommand{\ddt}{\frac{d}{dt}}
+\newcommand{\pp}{\partial}
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\MHD}{\text{MHD}}
+\newcommand{\GRMHD}{\text{GRMHD}}
+\newcommand{\RRT}{\text{RRT}}
+\newcommand{\FLRW}{\text{FLRW}}
+
+% ---------------------------------------------------------
+% TITLE PAGE
+% ---------------------------------------------------------
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large \textbf{A Unified Multi-Physics, Cryptographically-Secured Astrophysics Engine}}\\[1.5cm]
+{\large A 300-Page Academic Thesis}\\[1cm]
+{\large \textbf{C. Matthew Blackwell}}\\[0.5cm]
+{\large Lafayette, Louisiana}\\[2cm]
+{\large \today}\\
+\end{titlepage}
+
+\pagenumbering{roman}
+
+% ---------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+This thesis presents a fully autonomous, cryptographically-secured,
+multi-physics simulation engine coupling relativistic magnetohydrodynamics,
+Dirac--Fock quantum chemistry, post-quantum cryptographic telemetry,
+non-Euclidean geodesic optimal control, gravitational wave extraction,
+relativistic radiative transfer, and FLRW cosmological backreaction.
+The system executes end-to-end astrophysical verification under strict
+numerical stability constraints and high-performance computing architectures.
+
+% ---------------------------------------------------------
+% ACKNOWLEDGMENTS
+% ---------------------------------------------------------
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+(Your text here.)
+
+% ---------------------------------------------------------
+% TABLE OF CONTENTS
+% ---------------------------------------------------------
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+% ---------------------------------------------------------
+% CHAPTER 1 — INTRODUCTION
+% ---------------------------------------------------------
+\chapter{Introduction}
+
+(10–20 pages of introduction, motivation, background.)
+
+% ---------------------------------------------------------
+% CHAPTER 2 — Mathematical Foundations
+% ---------------------------------------------------------
+\chapter{Mathematical Foundations}
+
+(Full tensor calculus, differential geometry, functional analysis.)
+
+% ---------------------------------------------------------
+% CHAPTER 3 — Relativistic Magnetohydrodynamics (GRMHD)
+% ---------------------------------------------------------
+\chapter{General Relativistic Magnetohydrodynamics}
+
+\section{Conservation Laws}
+\begin{equation}
+\nabla_\mu (\rho u^\mu) = 0,
+\qquad
+\nabla_\mu T^{\mu\nu} = 0.
+\end{equation}
+
+\section{Stress-Energy Tensor}
+\begin{equation}
+T^{\mu\nu}
+=
+(\rho h + b^2)u^\mu u^\nu
++
+\left(p + \frac{b^2}{2}\right)g^{\mu\nu}
+-
+b^\mu b^\nu.
+\end{equation}
+
+(Expand to 30–40 pages.)
+
+% ---------------------------------------------------------
+% CHAPTER 4 — Dirac–Fock Quantum Chemistry
+% ---------------------------------------------------------
+\chapter{Relativistic Dirac--Fock Quantum Chemistry}
+
+(Full SCF loop, Hamiltonian derivations, basis sets.)
+
+% ---------------------------------------------------------
+% CHAPTER 5 — Post-Quantum Cryptographic Telemetry
+% ---------------------------------------------------------
+\chapter{Post-Quantum Cryptographic Telemetry}
+
+(ML-KEM, ML-DSA, CKKS homomorphic evaluation circuits.)
+
+% ---------------------------------------------------------
+% CHAPTER 6 — Geodesic Optimal Control
+% ---------------------------------------------------------
+\chapter{Non-Euclidean Geodesic Optimal Control}
+
+(Full Euler–Lagrange derivations, controlled geodesics.)
+
+% ---------------------------------------------------------
+% CHAPTER 7 — GRMHD → GW Coupling
+% ---------------------------------------------------------
+\chapter{GRMHD to Gravitational Wave Coupling}
+
+Quadrupole moment:
+\begin{equation}
+I_{ij}^{\text{TF}}
+=
+\int d^3x\,
+\rho_{\text{eff}}
+\left(x_i x_j - \frac{1}{3}\delta_{ij}r^2\right).
+\end{equation}
+
+GW strain:
+\begin{equation}
+h_{ij}^{\text{TT}}
+=
+\frac{2G}{c^4 R}
+\frac{d^2 I_{ij}^{\text{TT}}}{dt^2}.
+\end{equation}
+
+% ---------------------------------------------------------
+% CHAPTER 8 — GW → RRT Coupling
+% ---------------------------------------------------------
+\chapter{Gravitational Wave to Radiative Transfer Coupling}
+
+Boltzmann equation:
+\begin{equation}
+p^\alpha \pp_\alpha f
+-
+\Gamma^\beta_{\alpha\gamma}p^\alpha p^\gamma
+\pp_{p^\beta}f
+=
+\mathcal{C}[f].
+\end{equation}
+
+% ---------------------------------------------------------
+% CHAPTER 9 — RRT → FLRW Backreaction
+% ---------------------------------------------------------
+\chapter{Radiative Transfer to Cosmological Backreaction}
+
+Radiation density:
+\begin{equation}
+\rho_{\text{rad}}
+=
+\frac{1}{c}
+\int d\nu
+\int_{4\pi} I_\nu\,d\Omega.
+\end{equation}
+
+Friedmann equation:
+\begin{equation}
+H^2
+=
+\frac{8\pi G}{3}
+(\rho_m + \rho_{\text{rad}} + \rho_{\text{DE}})
+- \frac{k}{a^2}.
+\end{equation}
+
+% ---------------------------------------------------------
+% CHAPTER 10 — Autonomous Stability Engine
+% ---------------------------------------------------------
+\chapter{Autonomous Numerical Stability Engine}
+
+Residual:
+\begin{equation}
+\bm{R}(t)
+=
+\mathcal{C}(\bm{S}_{\text{MHD}},\bm{S}_{\text{GW}},\bm{S}_{\text{RRT}},\bm{S}_{\text{FLRW}}).
+\end{equation}
+
+CFL condition:
+\begin{equation}
+\Delta t
+\leq
+C_{\text{CFL}}
+\min\left(
+\frac{\Delta x}{v_{\max,x}},
+\frac{\Delta y}{v_{\max,y}},
+\frac{\Delta z}{v_{\max,z}}
+\right).
+\end{equation}
+
+% ---------------------------------------------------------
+% CHAPTER 11 — HPC Execution Model
+% ---------------------------------------------------------
+\chapter{High-Performance Computing Execution Model}
+
+(MPI, CUDA, domain decomposition, ghost zones.)
+
+% ---------------------------------------------------------
+% CHAPTER 12 — Results, Discussion, and Future Work
+% ---------------------------------------------------------
+\chapter{Results, Discussion, and Future Work}
+
+(Your full analysis.)
+
+% ---------------------------------------------------------
+% APPENDICES
+% ---------------------------------------------------------
+\begin{appendices}
+\chapter{Appendix A: Extended Derivations}
+\chapter{Appendix B: Numerical Schemes}
+\chapter{Appendix C: Additional Figures}
+\end{appendices}
+
+% ---------------------------------------------------------
+% BIBLIOGRAPHY
+% ---------------------------------------------------------
+\begin{thebibliography}{99}
+\bibitem{einstein1915} A. Einstein, ``Die Feldgleichungen der Gravitation,'' 1915.
+\bibitem{landau} L. Landau, E. Lifshitz, \textit{The Classical Theory of Fields}.
+\end{thebibliography}
+
+\end{document}

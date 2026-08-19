@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{cite}
+
+\geometry{margin=1in}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\title{
+    \textbf{Scientific White Sheet Title} \\
+    \large Concise Technical Specification
+}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+Provide a brief, high-density summary of the system, experiment, or model.
+State the objective, method, and key result in 3--5 sentences.
+
+\section{System Overview}
+Describe the architecture or experimental setup in one page:
+\begin{itemize}
+    \item Physical layer / instrumentation
+    \item Data acquisition and preprocessing
+    \item Core analysis or simulation engine
+    \item Output, visualization, or control loop
+\end{itemize}
+
+\section{Mathematical Model}
+Present the core equations:
+\[
+    y = f(x; \theta)
+\]
+Explain variables, parameters, and assumptions in concise prose.
+
+\section{Implementation Details}
+Summarize:
+\begin{itemize}
+    \item Hardware (CPU/GPU, sensors, network)
+    \item Software stack (languages, libraries, APIs)
+    \item Key optimization or numerical methods
+\end{itemize}
+
+\section{Results \& Validation}
+Include:
+\begin{itemize}
+    \item Main quantitative metrics
+    \item Plots or tables (refer to figures)
+    \item Validation against benchmarks or theory
+\end{itemize}
+
+\section{Conclusion}
+State the main takeaway, limitations, and next steps in a short paragraph.
+
+\section{References}
+\bibliographystyle{plain}
+\bibliography{refs} % Create refs.bib with your citations
+
+\end{document}

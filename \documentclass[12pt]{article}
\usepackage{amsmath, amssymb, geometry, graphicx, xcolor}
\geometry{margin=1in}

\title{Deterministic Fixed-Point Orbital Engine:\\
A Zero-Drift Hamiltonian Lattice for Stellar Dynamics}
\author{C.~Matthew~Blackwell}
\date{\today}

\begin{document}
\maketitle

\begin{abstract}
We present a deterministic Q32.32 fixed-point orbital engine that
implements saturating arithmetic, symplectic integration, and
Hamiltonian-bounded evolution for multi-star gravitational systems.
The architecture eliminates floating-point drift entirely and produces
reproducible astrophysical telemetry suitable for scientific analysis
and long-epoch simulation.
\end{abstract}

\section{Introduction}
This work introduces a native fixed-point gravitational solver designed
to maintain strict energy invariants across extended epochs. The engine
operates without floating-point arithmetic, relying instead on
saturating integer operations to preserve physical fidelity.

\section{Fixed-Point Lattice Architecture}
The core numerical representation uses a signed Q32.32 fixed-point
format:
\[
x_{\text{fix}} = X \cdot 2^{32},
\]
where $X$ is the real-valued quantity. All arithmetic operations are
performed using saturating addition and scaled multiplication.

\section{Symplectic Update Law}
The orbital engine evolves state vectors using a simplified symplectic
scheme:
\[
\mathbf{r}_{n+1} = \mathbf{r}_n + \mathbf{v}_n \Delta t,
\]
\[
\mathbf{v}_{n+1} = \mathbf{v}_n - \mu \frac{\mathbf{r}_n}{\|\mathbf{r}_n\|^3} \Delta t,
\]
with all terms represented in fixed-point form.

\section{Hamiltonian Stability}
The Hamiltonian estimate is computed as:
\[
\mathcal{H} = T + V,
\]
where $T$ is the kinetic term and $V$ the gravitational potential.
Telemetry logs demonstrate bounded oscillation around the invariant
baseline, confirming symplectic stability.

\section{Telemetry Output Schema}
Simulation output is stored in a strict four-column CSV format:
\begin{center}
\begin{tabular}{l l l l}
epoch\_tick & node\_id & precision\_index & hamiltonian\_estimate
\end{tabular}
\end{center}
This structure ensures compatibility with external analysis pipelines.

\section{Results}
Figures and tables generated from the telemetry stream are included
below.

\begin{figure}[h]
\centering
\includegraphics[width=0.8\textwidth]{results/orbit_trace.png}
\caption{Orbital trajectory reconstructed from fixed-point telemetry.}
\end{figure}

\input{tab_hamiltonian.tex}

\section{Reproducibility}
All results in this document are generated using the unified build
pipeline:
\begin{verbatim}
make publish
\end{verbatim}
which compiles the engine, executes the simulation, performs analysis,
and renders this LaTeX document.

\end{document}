@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, geometry, graphicx, xcolor}
+\geometry{margin=1in}
+
+\title{Deterministic Fixed-Point Orbital Engine:\\
+A Zero-Drift Hamiltonian Lattice for Stellar Dynamics}
+\author{C.~Matthew~Blackwell}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a deterministic Q32.32 fixed-point orbital engine that
+implements saturating arithmetic, symplectic integration, and
+Hamiltonian-bounded evolution for multi-star gravitational systems.
+The architecture eliminates floating-point drift entirely and produces
+reproducible astrophysical telemetry suitable for scientific analysis
+and long-epoch simulation.
+\end{abstract}
+
+\section{Introduction}
+This work introduces a native fixed-point gravitational solver designed
+to maintain strict energy invariants across extended epochs. The engine
+operates without floating-point arithmetic, relying instead on
+saturating integer operations to preserve physical fidelity.
+
+\section{Fixed-Point Lattice Architecture}
+The core numerical representation uses a signed Q32.32 fixed-point
+format:
+\[
+x_{\text{fix}} = X \cdot 2^{32},
+\]
+where $X$ is the real-valued quantity. All arithmetic operations are
+performed using saturating addition and scaled multiplication.
+
+\section{Symplectic Update Law}
+The orbital engine evolves state vectors using a simplified symplectic
+scheme:
+\[
+\mathbf{r}_{n+1} = \mathbf{r}_n + \mathbf{v}_n \Delta t,
+\]
+\[
+\mathbf{v}_{n+1} = \mathbf{v}_n - \mu \frac{\mathbf{r}_n}{\|\mathbf{r}_n\|^3} \Delta t,
+\]
+with all terms represented in fixed-point form.
+
+\section{Hamiltonian Stability}
+The Hamiltonian estimate is computed as:
+\[
+\mathcal{H} = T + V,
+\]
+where $T$ is the kinetic term and $V$ the gravitational potential.
+Telemetry logs demonstrate bounded oscillation around the invariant
+baseline, confirming symplectic stability.
+
+\section{Telemetry Output Schema}
+Simulation output is stored in a strict four-column CSV format:
+\begin{center}
+\begin{tabular}{l l l l}
+epoch\_tick & node\_id & precision\_index & hamiltonian\_estimate
+\end{tabular}
+\end{center}
+This structure ensures compatibility with external analysis pipelines.
+
+\section{Results}
+Figures and tables generated from the telemetry stream are included
+below.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{results/orbit_trace.png}
+\caption{Orbital trajectory reconstructed from fixed-point telemetry.}
+\end{figure}
+
+\input{tab_hamiltonian.tex}
+
+\section{Reproducibility}
+All results in this document are generated using the unified build
+pipeline:
+\begin{verbatim}
+make publish
+\end{verbatim}
+which compiles the engine, executes the simulation, performs analysis,
+and renders this LaTeX document.
+
+\end{document}

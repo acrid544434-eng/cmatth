@@ -1,0 +1,81 @@
+\documentclass[12pt,oneside]{book}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{tensor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{appendix}
+\usepackage{microtype}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+% ---------------------------------------------------------
+% TITLE PAGE
+% ---------------------------------------------------------
+\begin{document}
+
+\frontmatter
+\title{The Codex Disc\\\large Unified Multi-Physics Astrophysics Engine}
+\author{C. Matthew Blackwell}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+% ---------------------------------------------------------
+% ONE DISC — ALL CHAPTERS BELOW
+% ---------------------------------------------------------
+
+\chapter{Introduction}
+\chapter{Mathematical Foundations}
+\chapter{Tensor Calculus and Differential Geometry}
+\chapter{Relativistic Field Theory}
+\chapter{GRMHD Core Engine}
+\chapter{Dirac--Fock Quantum Chemistry}
+\chapter{Post-Quantum Cryptographic Telemetry}
+\chapter{Geodesic Optimal Control}
+\chapter{GRMHD to Gravitational Wave Coupling}
+\chapter{Gravitational Wave Extraction}
+\chapter{Relativistic Radiative Transfer}
+\chapter{FLRW Cosmological Backreaction}
+\chapter{Four-Way Coupling Engine}
+\chapter{Encrypted Metric Evaluation}
+\chapter{Zero-Knowledge Verification Layer}
+\chapter{Autonomous Stability Engine}
+\chapter{CFL and Shock Capturing}
+\chapter{HPC Execution Model}
+\chapter{Simulation Results}
+\chapter{Astrophysical Interpretation}
+\chapter{Cosmological Implications}
+\chapter{Future Directions}
+
+\appendix
+\chapter{Extended Derivations}
+\chapter{Numerical Schemes}
+\chapter{Additional Figures}
+
+\backmatter
+\begin{thebibliography}{99}
+\bibitem{einstein1915} A. Einstein, ``Die Feldgleichungen der Gravitation,'' 1915.
+\end{thebibliography}
+
+\end{document}

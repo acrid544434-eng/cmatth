@@ -1,0 +1,29 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  region/.style={draw, thick, rounded corners, minimum width=5cm, minimum height=3cm, align=center},
+  sub/.style={draw, rounded corners, minimum width=3cm, minimum height=1cm, align=center},
+  label/.style={font=\small},
+  >=stealth
+]
+
+% Top-level die outline
+\node[region] (die) {CHD Secure SoC};
+
+% Subregions inside the die
+\node[sub, above left=0.8cm and -1.5cm of die.center] (puf) {PUF Island\\Entropy Cell Matrix};
+\node[sub, above right=0.8cm and -1.5cm of die.center] (pqce) {PQCE Block\\Kyber/Dilithium};
+\node[sub, below left=0.8cm and -1.5cm of die.center] (enclave) {Secure Enclave\\Memory Zones};
+\node[sub, below right=0.8cm and -1.5cm of die.center] (alu) {Side-Channel Hardened ALU};
+
+% Interconnect arrows
+\draw[->, thick] (puf) -- (enclave);
+\draw[->, thick] (pqce) -- (alu);
+\draw[->, thick] (enclave) -- (alu);
+
+% Tamper mesh overlay
+\node[label, above=0.2cm of die.north] {Active Tamper Mesh Layer};
+
+\end{tikzpicture}
+\caption{Top-level CHD SoC floorplan showing major silicon regions.}
+\end{figure}

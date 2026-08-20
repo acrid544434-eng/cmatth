@@ -1,0 +1,40 @@
+\[
+ds^2 = -f(r,t)\,dt^2 + f^{-1}(r,t)\,dr^2 + r^2 d\Omega^2
+\]
+
+\[
+f(r,t) = 1 - \frac{2GM(r,t)}{r} + \epsilon\,\mathcal{Q}(r,t)
+\]
+
+\[
+\theta_+ = \nabla_\mu k^\mu
+\]
+
+\[
+\frac{d\theta_+}{d\lambda}
+= -\frac{1}{2}\theta_+^2 
+- \sigma_{\mu\nu}\sigma^{\mu\nu}
++ \omega_{\mu\nu}\omega^{\mu\nu}
+- R_{\mu\nu}k^\mu k^\nu
+\]
+
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\quad\Rightarrow\quad
+\theta_+ > 0
+\]
+
+\[
+\nu_{\text{obs}} = 
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}
+\]
+
+\[
+\Delta\nu_{\text{echo}} \propto 
+\left|
+\frac{d\theta_+}{dt}
+\right|
+\]

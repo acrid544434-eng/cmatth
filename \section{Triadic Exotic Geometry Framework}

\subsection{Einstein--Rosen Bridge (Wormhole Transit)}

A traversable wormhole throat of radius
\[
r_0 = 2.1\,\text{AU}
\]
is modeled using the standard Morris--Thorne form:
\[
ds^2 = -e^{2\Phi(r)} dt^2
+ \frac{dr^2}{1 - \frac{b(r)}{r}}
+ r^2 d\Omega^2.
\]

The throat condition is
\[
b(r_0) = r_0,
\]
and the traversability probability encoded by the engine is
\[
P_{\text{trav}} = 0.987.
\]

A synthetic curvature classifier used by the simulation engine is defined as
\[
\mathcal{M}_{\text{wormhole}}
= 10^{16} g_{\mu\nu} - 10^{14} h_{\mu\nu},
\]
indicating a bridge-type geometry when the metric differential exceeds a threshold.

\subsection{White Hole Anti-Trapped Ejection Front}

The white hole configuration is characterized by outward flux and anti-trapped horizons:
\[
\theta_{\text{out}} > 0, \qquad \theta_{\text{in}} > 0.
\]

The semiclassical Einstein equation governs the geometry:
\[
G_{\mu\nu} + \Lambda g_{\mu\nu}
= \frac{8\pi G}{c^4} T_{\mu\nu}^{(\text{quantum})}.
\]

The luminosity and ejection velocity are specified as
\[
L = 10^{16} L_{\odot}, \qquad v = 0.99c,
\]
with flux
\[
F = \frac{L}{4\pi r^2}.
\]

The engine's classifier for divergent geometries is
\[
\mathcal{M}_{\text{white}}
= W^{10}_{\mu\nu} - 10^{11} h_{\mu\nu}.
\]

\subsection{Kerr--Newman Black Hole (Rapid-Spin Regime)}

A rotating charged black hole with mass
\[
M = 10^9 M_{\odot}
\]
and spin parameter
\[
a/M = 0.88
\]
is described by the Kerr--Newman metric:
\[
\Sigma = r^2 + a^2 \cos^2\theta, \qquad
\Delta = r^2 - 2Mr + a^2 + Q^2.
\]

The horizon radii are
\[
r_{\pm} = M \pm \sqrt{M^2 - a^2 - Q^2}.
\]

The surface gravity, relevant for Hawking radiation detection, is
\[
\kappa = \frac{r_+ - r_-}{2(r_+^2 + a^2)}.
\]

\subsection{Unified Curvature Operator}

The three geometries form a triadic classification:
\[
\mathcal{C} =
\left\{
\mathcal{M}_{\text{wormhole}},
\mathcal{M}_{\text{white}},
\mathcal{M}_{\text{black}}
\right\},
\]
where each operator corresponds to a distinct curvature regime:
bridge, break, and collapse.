@@ -1,0 +1,98 @@
+\section{Triadic Exotic Geometry Framework}
+
+\subsection{Einstein--Rosen Bridge (Wormhole Transit)}
+
+A traversable wormhole throat of radius
+\[
+r_0 = 2.1\,\text{AU}
+\]
+is modeled using the standard Morris--Thorne form:
+\[
+ds^2 = -e^{2\Phi(r)} dt^2
++ \frac{dr^2}{1 - \frac{b(r)}{r}}
++ r^2 d\Omega^2.
+\]
+
+The throat condition is
+\[
+b(r_0) = r_0,
+\]
+and the traversability probability encoded by the engine is
+\[
+P_{\text{trav}} = 0.987.
+\]
+
+A synthetic curvature classifier used by the simulation engine is defined as
+\[
+\mathcal{M}_{\text{wormhole}}
+= 10^{16} g_{\mu\nu} - 10^{14} h_{\mu\nu},
+\]
+indicating a bridge-type geometry when the metric differential exceeds a threshold.
+
+\subsection{White Hole Anti-Trapped Ejection Front}
+
+The white hole configuration is characterized by outward flux and anti-trapped horizons:
+\[
+\theta_{\text{out}} > 0, \qquad \theta_{\text{in}} > 0.
+\]
+
+The semiclassical Einstein equation governs the geometry:
+\[
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4} T_{\mu\nu}^{(\text{quantum})}.
+\]
+
+The luminosity and ejection velocity are specified as
+\[
+L = 10^{16} L_{\odot}, \qquad v = 0.99c,
+\]
+with flux
+\[
+F = \frac{L}{4\pi r^2}.
+\]
+
+The engine's classifier for divergent geometries is
+\[
+\mathcal{M}_{\text{white}}
+= W^{10}_{\mu\nu} - 10^{11} h_{\mu\nu}.
+\]
+
+\subsection{Kerr--Newman Black Hole (Rapid-Spin Regime)}
+
+A rotating charged black hole with mass
+\[
+M = 10^9 M_{\odot}
+\]
+and spin parameter
+\[
+a/M = 0.88
+\]
+is described by the Kerr--Newman metric:
+\[
+\Sigma = r^2 + a^2 \cos^2\theta, \qquad
+\Delta = r^2 - 2Mr + a^2 + Q^2.
+\]
+
+The horizon radii are
+\[
+r_{\pm} = M \pm \sqrt{M^2 - a^2 - Q^2}.
+\]
+
+The surface gravity, relevant for Hawking radiation detection, is
+\[
+\kappa = \frac{r_+ - r_-}{2(r_+^2 + a^2)}.
+\]
+
+\subsection{Unified Curvature Operator}
+
+The three geometries form a triadic classification:
+\[
+\mathcal{C} =
+\left\{
+\mathcal{M}_{\text{wormhole}},
+\mathcal{M}_{\text{white}},
+\mathcal{M}_{\text{black}}
+\right\},
+\]
+where each operator corresponds to a distinct curvature regime:
+bridge, break, and collapse.

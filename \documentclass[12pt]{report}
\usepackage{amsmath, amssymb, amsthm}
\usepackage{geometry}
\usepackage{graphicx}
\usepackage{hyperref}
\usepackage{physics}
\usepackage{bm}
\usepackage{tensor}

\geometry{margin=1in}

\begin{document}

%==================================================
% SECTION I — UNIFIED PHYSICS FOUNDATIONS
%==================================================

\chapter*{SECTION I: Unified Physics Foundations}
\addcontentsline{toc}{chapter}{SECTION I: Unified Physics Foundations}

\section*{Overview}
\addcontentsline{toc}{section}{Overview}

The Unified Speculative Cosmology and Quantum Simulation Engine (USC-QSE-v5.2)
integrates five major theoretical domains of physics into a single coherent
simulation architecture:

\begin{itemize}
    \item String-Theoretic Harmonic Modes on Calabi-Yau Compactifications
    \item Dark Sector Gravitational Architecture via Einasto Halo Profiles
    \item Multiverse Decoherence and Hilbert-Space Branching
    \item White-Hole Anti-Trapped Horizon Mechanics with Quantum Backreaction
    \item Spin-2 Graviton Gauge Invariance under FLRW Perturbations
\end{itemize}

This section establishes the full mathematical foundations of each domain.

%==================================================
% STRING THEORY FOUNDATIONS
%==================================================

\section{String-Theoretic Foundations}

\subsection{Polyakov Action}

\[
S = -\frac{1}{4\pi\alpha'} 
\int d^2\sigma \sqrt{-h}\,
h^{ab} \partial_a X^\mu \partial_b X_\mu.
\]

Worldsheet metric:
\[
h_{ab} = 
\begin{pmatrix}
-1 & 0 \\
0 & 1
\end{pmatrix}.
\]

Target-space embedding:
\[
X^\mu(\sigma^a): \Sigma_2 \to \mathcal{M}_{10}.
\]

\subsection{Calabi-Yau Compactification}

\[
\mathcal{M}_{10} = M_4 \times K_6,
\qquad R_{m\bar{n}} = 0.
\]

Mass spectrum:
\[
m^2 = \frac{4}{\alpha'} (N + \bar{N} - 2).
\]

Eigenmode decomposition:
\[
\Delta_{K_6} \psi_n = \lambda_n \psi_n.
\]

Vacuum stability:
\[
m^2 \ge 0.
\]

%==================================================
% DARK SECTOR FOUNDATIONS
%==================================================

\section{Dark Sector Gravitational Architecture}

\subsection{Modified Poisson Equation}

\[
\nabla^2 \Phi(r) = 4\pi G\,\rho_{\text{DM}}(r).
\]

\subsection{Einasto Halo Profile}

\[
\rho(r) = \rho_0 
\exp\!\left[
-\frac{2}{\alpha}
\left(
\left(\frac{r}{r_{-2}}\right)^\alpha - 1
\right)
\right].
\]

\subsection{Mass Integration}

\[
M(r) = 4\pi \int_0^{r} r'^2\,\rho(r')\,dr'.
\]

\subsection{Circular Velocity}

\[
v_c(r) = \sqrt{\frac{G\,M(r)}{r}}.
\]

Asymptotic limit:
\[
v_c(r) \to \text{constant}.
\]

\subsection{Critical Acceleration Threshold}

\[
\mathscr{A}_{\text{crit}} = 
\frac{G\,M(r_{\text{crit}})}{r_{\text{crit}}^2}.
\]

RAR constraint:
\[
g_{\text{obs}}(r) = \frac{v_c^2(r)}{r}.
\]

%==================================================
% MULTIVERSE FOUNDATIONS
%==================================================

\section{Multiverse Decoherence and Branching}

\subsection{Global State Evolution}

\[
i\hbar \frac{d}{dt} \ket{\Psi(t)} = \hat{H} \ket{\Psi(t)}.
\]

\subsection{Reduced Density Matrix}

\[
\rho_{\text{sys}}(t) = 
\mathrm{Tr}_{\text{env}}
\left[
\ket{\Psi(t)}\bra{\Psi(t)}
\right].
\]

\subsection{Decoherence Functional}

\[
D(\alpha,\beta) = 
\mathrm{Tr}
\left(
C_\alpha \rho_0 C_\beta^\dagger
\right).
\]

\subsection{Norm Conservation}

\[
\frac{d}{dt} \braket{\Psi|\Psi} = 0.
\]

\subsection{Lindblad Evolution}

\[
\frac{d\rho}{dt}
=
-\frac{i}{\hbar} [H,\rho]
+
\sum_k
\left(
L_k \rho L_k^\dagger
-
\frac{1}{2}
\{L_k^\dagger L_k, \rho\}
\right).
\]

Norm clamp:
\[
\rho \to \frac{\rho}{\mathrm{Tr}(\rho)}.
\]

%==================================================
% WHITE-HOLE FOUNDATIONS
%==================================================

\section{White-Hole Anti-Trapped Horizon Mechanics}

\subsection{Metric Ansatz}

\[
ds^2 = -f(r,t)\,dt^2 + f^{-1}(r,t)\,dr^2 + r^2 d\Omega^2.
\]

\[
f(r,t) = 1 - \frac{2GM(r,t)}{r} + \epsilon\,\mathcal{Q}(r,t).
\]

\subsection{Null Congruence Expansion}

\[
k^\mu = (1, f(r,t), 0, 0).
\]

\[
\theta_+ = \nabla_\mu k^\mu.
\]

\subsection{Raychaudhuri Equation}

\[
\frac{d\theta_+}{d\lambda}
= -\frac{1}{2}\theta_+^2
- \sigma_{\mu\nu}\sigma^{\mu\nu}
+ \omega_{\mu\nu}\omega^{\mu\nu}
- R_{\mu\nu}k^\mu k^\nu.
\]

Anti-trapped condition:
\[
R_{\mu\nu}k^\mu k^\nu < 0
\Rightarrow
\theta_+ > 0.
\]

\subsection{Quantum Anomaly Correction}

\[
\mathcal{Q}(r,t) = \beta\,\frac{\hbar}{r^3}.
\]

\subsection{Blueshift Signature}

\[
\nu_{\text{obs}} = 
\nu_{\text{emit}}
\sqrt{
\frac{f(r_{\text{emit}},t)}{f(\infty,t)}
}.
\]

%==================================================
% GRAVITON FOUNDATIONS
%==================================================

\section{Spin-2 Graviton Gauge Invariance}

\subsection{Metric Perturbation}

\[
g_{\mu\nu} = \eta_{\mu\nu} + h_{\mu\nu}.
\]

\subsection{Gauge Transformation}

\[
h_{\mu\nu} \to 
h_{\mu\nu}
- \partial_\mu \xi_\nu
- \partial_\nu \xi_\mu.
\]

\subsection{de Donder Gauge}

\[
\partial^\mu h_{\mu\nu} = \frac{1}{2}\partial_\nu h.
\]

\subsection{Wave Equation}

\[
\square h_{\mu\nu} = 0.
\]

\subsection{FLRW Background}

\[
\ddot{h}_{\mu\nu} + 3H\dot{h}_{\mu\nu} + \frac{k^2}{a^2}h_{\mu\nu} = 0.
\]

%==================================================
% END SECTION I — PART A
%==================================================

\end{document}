@@ -1,0 +1,302 @@
+\documentclass[12pt]{report}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{tensor}
+
+\geometry{margin=1in}
+
+\begin{document}
+
+%==================================================
+% SECTION I — UNIFIED PHYSICS FOUNDATIONS
+%==================================================
+
+\chapter*{SECTION I: Unified Physics Foundations}
+\addcontentsline{toc}{chapter}{SECTION I: Unified Physics Foundations}
+
+\section*{Overview}
+\addcontentsline{toc}{section}{Overview}
+
+The Unified Speculative Cosmology and Quantum Simulation Engine (USC-QSE-v5.2)
+integrates five major theoretical domains of physics into a single coherent
+simulation architecture:
+
+\begin{itemize}
+    \item String-Theoretic Harmonic Modes on Calabi-Yau Compactifications
+    \item Dark Sector Gravitational Architecture via Einasto Halo Profiles
+    \item Multiverse Decoherence and Hilbert-Space Branching
+    \item White-Hole Anti-Trapped Horizon Mechanics with Quantum Backreaction
+    \item Spin-2 Graviton Gauge Invariance under FLRW Perturbations
+\end{itemize}
+
+This section establishes the full mathematical foundations of each domain.
+
+%==================================================
+% STRING THEORY FOUNDATIONS
+%==================================================
+
+\section{String-Theoretic Foundations}
+
+\subsection{Polyakov Action}
+
+\[
+S = -\frac{1}{4\pi\alpha'} 
+\int d^2\sigma \sqrt{-h}\,
+h^{ab} \partial_a X^\mu \partial_b X_\mu.
+\]
+
+Worldsheet metric:
+\[
+h_{ab} = 
+\begin{pmatrix}
+-1 & 0 \\
+0 & 1
+\end{pmatrix}.
+\]
+
+Target-space embedding:
+\[
+X^\mu(\sigma^a): \Sigma_2 \to \mathcal{M}_{10}.
+\]
+
+\subsection{Calabi-Yau Compactification}
+
+\[
+\mathcal{M}_{10} = M_4 \times K_6,
+\qquad R_{m\bar{n}} = 0.
+\]
+
+Mass spectrum:
+\[
+m^2 = \frac{4}{\alpha'} (N + \bar{N} - 2).
+\]
+
+Eigenmode decomposition:
+\[
+\Delta_{K_6} \psi_n = \lambda_n \psi_n.
+\]
+
+Vacuum stability:
+\[
+m^2 \ge 0.
+\]
+
+%==================================================
+% DARK SECTOR FOUNDATIONS
+%==================================================
+
+\section{Dark Sector Gravitational Architecture}
+
+\subsection{Modified Poisson Equation}
+
+\[
+\nabla^2 \Phi(r) = 4\pi G\,\rho_{\text{DM}}(r).
+\]
+
+\subsection{Einasto Halo Profile}
+
+\[
+\rho(r) = \rho_0 
+\exp\!\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^\alpha - 1
+\right)
+\right].
+\]
+
+\subsection{Mass Integration}
+
+\[
+M(r) = 4\pi \int_0^{r} r'^2\,\rho(r')\,dr'.
+\]
+
+\subsection{Circular Velocity}
+
+\[
+v_c(r) = \sqrt{\frac{G\,M(r)}{r}}.
+\]
+
+Asymptotic limit:
+\[
+v_c(r) \to \text{constant}.
+\]
+
+\subsection{Critical Acceleration Threshold}
+
+\[
+\mathscr{A}_{\text{crit}} = 
+\frac{G\,M(r_{\text{crit}})}{r_{\text{crit}}^2}.
+\]
+
+RAR constraint:
+\[
+g_{\text{obs}}(r) = \frac{v_c^2(r)}{r}.
+\]
+
+%==================================================
+% MULTIVERSE FOUNDATIONS
+%==================================================
+
+\section{Multiverse Decoherence and Branching}
+
+\subsection{Global State Evolution}
+
+\[
+i\hbar \frac{d}{dt} \ket{\Psi(t)} = \hat{H} \ket{\Psi(t)}.
+\]
+
+\subsection{Reduced Density Matrix}
+
+\[
+\rho_{\text{sys}}(t) = 
+\mathrm{Tr}_{\text{env}}
+\left[
+\ket{\Psi(t)}\bra{\Psi(t)}
+\right].
+\]
+
+\subsection{Decoherence Functional}
+
+\[
+D(\alpha,\beta) = 
+\mathrm{Tr}
+\left(
+C_\alpha \rho_0 C_\beta^\dagger
+\right).
+\]
+
+\subsection{Norm Conservation}
+
+\[
+\frac{d}{dt} \braket{\Psi|\Psi} = 0.
+\]
+
+\subsection{Lindblad Evolution}
+
+\[
+\frac{d\rho}{dt}
+=
+-\frac{i}{\hbar} [H,\rho]
++
+\sum_k
+\left(
+L_k \rho L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k, \rho\}
+\right).
+\]
+
+Norm clamp:
+\[
+\rho \to \frac{\rho}{\mathrm{Tr}(\rho)}.
+\]
+
+%==================================================
+% WHITE-HOLE FOUNDATIONS
+%==================================================
+
+\section{White-Hole Anti-Trapped Horizon Mechanics}
+
+\subsection{Metric Ansatz}
+
+\[
+ds^2 = -f(r,t)\,dt^2 + f^{-1}(r,t)\,dr^2 + r^2 d\Omega^2.
+\]
+
+\[
+f(r,t) = 1 - \frac{2GM(r,t)}{r} + \epsilon\,\mathcal{Q}(r,t).
+\]
+
+\subsection{Null Congruence Expansion}
+
+\[
+k^\mu = (1, f(r,t), 0, 0).
+\]
+
+\[
+\theta_+ = \nabla_\mu k^\mu.
+\]
+
+\subsection{Raychaudhuri Equation}
+
+\[
+\frac{d\theta_+}{d\lambda}
+= -\frac{1}{2}\theta_+^2
+- \sigma_{\mu\nu}\sigma^{\mu\nu}
++ \omega_{\mu\nu}\omega^{\mu\nu}
+- R_{\mu\nu}k^\mu k^\nu.
+\]
+
+Anti-trapped condition:
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\Rightarrow
+\theta_+ > 0.
+\]
+
+\subsection{Quantum Anomaly Correction}
+
+\[
+\mathcal{Q}(r,t) = \beta\,\frac{\hbar}{r^3}.
+\]
+
+\subsection{Blueshift Signature}
+
+\[
+\nu_{\text{obs}} = 
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}.
+\]
+
+%==================================================
+% GRAVITON FOUNDATIONS
+%==================================================
+
+\section{Spin-2 Graviton Gauge Invariance}
+
+\subsection{Metric Perturbation}
+
+\[
+g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}.
+\]
+
+\subsection{Gauge Transformation}
+
+\[
+h_{\mu\nu} \to 
+h_{\mu\nu}
+- \partial_\mu \xi_\nu
+- \partial_\nu \xi_\mu.
+\]
+
+\subsection{de Donder Gauge}
+
+\[
+\partial^\mu h_{\mu\nu} = \frac{1}{2}\partial_\nu h.
+\]
+
+\subsection{Wave Equation}
+
+\[
+\square h_{\mu\nu} = 0.
+\]
+
+\subsection{FLRW Background}
+
+\[
+\ddot{h}_{\mu\nu} + 3H\dot{h}_{\mu\nu} + \frac{k^2}{a^2}h_{\mu\nu} = 0.
+\]
+
+%==================================================
+% END SECTION I — PART A
+%==================================================
+
+\end{document}

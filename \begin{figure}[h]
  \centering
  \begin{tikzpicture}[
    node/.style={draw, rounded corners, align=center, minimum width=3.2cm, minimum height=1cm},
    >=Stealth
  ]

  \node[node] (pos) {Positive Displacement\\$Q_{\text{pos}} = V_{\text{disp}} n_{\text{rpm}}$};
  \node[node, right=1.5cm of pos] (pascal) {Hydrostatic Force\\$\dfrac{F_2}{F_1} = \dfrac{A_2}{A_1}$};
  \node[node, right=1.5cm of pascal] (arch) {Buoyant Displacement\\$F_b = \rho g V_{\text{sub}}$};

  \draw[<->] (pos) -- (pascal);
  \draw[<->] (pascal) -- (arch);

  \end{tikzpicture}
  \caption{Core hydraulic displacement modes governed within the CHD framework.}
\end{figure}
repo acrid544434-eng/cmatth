@@ -1,0 +1,17 @@
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+    node/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=1cm},
+    >=Stealth
+  ]
+
+  \node[node] (pos) {Positive Displacement\\$Q_{\text{pos}} = V_{\text{disp}} n_{\text{rpm}}$};
+  \node[node, right=1.5cm of pos] (pascal) {Hydrostatic Force\\$\dfrac{F_2}{F_1} = \dfrac{A_2}{A_1}$};
+  \node[node, right=1.5cm of pascal] (arch) {Buoyant Displacement\\$F_b = \rho g V_{\text{sub}}$};
+
+  \draw[<->] (pos) -- (pascal);
+  \draw[<->] (pascal) -- (arch);
+
+  \end{tikzpicture}
+  \caption{Core hydraulic displacement modes governed within the CHD framework.}
+\end{figure}

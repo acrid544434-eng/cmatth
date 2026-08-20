@@ -1,0 +1,19 @@
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+    block/.style={draw, rounded corners, align=center, minimum width=3.5cm, minimum height=1cm},
+    >=Stealth
+  ]
+
+  \node[block] (ingest) {0--2.5 ms\\DMA Ingestion\\PQ KEM Validation};
+  \node[block, right=1.5cm of ingest] (solver) {2.5--15 ms\\SWE/NS Solver\\CFL-Constrained};
+  \node[block, right=1.5cm of solver] (bifur) {15--22.5 ms\\Bifurcation \& MPC\\Sub-Agent Loop};
+  \node[block, right=1.5cm of bifur] (ledger) {22.5--33.3 ms\\Structural Physics\\Merkle Commit};
+
+  \draw[->] (ingest) -- (solver);
+  \draw[->] (solver) -- (bifur);
+  \draw[->] (bifur) -- (ledger);
+
+  \end{tikzpicture}
+  \caption{CHD real-time execution pipeline within a 33.3 ms global control cycle.}
+\end{figure}

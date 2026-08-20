@@ -1,0 +1,32 @@
+\[
+g_{\text{bar}}(r) = \frac{G\,M_{\text{bar}}(r)}{r^2}
+\]
+
+\[
+g_{\text{DM}}(r) = \frac{G\,M_{\text{DM}}(r)}{r^2}
+\]
+
+\[
+g_{\text{bar}}(r_{\text{crit}}) = g_{\text{DM}}(r_{\text{crit}})
+\]
+
+\[
+\mathscr{A}_{\text{crit}} = g_{\text{DM}}(r_{\text{crit}})
+\]
+
+\[
+g_{\text{obs}}(r) \rightarrow \mathscr{F}(g_{\text{bar}}(r))
+\]
+
+\[
+\chi^2_{\text{JWST}}/\text{dof} < 1.2
+\]
+
+\[
+\left|
+\gamma_{t,\text{obs}}(\theta) - 
+\gamma_{t,\text{model}}(\theta)
+\right| > 3\sigma
+\quad\Rightarrow\quad
+\alpha\;\text{invalid}
+\]

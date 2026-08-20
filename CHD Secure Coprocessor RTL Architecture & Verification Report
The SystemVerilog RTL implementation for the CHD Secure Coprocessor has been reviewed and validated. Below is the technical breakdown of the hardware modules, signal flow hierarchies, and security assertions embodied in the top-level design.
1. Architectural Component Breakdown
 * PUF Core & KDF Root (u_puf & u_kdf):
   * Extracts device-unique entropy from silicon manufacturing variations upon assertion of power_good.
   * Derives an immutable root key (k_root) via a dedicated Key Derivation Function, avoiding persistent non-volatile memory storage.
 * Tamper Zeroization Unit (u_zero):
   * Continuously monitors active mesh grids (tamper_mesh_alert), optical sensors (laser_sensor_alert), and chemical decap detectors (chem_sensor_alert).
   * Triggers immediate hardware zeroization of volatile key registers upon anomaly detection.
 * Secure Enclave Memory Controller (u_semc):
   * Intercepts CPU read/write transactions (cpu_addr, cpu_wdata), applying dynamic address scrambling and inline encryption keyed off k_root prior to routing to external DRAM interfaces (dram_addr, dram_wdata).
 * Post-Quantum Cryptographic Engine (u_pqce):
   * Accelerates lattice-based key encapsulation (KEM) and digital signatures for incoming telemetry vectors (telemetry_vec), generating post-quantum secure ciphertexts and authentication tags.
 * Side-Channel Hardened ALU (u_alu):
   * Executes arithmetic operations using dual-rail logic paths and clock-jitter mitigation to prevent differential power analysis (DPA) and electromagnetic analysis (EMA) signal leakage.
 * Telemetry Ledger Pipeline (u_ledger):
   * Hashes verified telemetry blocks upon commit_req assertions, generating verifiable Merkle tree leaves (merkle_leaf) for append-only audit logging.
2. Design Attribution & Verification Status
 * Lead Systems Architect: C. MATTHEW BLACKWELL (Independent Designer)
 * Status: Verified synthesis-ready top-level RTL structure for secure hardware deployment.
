@@ -1,0 +1,20 @@
+CHD Secure Coprocessor RTL Architecture & Verification Report
+The SystemVerilog RTL implementation for the CHD Secure Coprocessor has been reviewed and validated. Below is the technical breakdown of the hardware modules, signal flow hierarchies, and security assertions embodied in the top-level design.
+1. Architectural Component Breakdown
+ * PUF Core & KDF Root (u_puf & u_kdf):
+   * Extracts device-unique entropy from silicon manufacturing variations upon assertion of power_good.
+   * Derives an immutable root key (k_root) via a dedicated Key Derivation Function, avoiding persistent non-volatile memory storage.
+ * Tamper Zeroization Unit (u_zero):
+   * Continuously monitors active mesh grids (tamper_mesh_alert), optical sensors (laser_sensor_alert), and chemical decap detectors (chem_sensor_alert).
+   * Triggers immediate hardware zeroization of volatile key registers upon anomaly detection.
+ * Secure Enclave Memory Controller (u_semc):
+   * Intercepts CPU read/write transactions (cpu_addr, cpu_wdata), applying dynamic address scrambling and inline encryption keyed off k_root prior to routing to external DRAM interfaces (dram_addr, dram_wdata).
+ * Post-Quantum Cryptographic Engine (u_pqce):
+   * Accelerates lattice-based key encapsulation (KEM) and digital signatures for incoming telemetry vectors (telemetry_vec), generating post-quantum secure ciphertexts and authentication tags.
+ * Side-Channel Hardened ALU (u_alu):
+   * Executes arithmetic operations using dual-rail logic paths and clock-jitter mitigation to prevent differential power analysis (DPA) and electromagnetic analysis (EMA) signal leakage.
+ * Telemetry Ledger Pipeline (u_ledger):
+   * Hashes verified telemetry blocks upon commit_req assertions, generating verifiable Merkle tree leaves (merkle_leaf) for append-only audit logging.
+2. Design Attribution & Verification Status
+ * Lead Systems Architect: C. MATTHEW BLACKWELL (Independent Designer)
+ * Status: Verified synthesis-ready top-level RTL structure for secure hardware deployment.

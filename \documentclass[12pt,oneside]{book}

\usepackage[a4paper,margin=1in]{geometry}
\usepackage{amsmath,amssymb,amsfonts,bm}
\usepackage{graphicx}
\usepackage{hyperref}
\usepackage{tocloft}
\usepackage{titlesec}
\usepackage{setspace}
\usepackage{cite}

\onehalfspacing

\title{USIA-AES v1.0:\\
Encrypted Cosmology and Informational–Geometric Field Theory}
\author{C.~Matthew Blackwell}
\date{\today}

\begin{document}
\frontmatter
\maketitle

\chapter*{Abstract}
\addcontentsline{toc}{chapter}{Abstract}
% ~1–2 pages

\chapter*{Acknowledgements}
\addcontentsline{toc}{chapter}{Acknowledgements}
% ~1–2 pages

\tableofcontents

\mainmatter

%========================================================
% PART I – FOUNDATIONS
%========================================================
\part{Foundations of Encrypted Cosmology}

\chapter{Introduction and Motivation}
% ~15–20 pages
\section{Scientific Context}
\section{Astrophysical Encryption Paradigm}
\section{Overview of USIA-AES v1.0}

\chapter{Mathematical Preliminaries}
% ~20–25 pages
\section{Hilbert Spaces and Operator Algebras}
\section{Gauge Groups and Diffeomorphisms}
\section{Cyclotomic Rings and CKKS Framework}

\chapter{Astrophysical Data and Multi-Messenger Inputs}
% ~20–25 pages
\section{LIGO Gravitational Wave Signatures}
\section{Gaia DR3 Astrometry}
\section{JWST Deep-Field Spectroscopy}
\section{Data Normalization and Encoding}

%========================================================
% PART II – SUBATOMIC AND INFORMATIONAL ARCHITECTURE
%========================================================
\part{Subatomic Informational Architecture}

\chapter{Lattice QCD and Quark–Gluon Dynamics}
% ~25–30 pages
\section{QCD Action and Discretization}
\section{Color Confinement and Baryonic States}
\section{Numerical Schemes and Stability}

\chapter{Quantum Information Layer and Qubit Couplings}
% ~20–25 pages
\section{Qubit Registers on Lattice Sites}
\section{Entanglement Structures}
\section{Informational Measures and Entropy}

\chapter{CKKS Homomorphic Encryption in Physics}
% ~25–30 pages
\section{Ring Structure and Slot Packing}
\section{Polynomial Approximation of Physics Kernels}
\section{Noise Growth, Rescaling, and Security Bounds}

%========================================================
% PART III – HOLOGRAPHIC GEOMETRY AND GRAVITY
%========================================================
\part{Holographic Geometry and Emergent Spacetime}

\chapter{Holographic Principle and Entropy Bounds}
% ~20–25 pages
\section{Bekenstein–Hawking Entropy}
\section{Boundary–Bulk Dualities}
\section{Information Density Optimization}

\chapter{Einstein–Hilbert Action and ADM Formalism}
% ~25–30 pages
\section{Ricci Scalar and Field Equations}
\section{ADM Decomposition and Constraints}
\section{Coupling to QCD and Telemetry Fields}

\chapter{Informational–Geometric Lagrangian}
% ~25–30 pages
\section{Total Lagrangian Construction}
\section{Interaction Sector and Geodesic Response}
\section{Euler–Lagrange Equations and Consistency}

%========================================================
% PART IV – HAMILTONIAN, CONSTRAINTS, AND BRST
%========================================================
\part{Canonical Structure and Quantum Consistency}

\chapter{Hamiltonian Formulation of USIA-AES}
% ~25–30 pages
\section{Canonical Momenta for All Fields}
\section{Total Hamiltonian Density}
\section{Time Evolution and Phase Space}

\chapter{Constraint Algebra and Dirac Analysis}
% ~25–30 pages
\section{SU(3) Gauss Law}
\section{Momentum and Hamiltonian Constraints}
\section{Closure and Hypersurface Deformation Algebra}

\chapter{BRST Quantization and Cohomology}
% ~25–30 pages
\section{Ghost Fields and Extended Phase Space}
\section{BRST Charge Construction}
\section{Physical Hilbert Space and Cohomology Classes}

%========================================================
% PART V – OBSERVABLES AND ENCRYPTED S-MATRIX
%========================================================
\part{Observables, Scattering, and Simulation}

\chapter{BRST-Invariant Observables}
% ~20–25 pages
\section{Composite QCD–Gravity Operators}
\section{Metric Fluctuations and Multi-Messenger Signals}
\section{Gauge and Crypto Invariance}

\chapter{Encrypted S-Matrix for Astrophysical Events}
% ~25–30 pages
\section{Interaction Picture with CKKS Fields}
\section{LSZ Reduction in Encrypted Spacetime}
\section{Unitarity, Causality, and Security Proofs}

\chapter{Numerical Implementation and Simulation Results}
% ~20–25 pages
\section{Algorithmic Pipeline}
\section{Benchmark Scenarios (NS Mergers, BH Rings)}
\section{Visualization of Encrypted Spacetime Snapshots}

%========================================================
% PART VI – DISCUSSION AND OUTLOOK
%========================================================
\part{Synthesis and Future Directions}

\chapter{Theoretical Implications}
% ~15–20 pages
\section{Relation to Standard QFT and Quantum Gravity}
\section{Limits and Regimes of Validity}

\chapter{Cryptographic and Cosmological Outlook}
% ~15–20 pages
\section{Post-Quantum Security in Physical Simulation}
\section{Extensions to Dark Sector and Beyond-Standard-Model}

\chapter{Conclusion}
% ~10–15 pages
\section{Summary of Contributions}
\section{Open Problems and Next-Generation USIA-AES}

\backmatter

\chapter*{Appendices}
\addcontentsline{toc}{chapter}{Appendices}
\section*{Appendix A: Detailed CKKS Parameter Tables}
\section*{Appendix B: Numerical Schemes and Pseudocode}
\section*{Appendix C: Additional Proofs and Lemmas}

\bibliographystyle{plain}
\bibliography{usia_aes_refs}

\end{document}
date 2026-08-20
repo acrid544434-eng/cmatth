@@ -1,0 +1,182 @@
+\documentclass[12pt,oneside]{book}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{cite}
+
+\onehalfspacing
+
+\title{USIA-AES v1.0:\\
+Encrypted Cosmology and Informational–Geometric Field Theory}
+\author{C.~Matthew Blackwell}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+% ~1–2 pages
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+% ~1–2 pages
+
+\tableofcontents
+
+\mainmatter
+
+%========================================================
+% PART I – FOUNDATIONS
+%========================================================
+\part{Foundations of Encrypted Cosmology}
+
+\chapter{Introduction and Motivation}
+% ~15–20 pages
+\section{Scientific Context}
+\section{Astrophysical Encryption Paradigm}
+\section{Overview of USIA-AES v1.0}
+
+\chapter{Mathematical Preliminaries}
+% ~20–25 pages
+\section{Hilbert Spaces and Operator Algebras}
+\section{Gauge Groups and Diffeomorphisms}
+\section{Cyclotomic Rings and CKKS Framework}
+
+\chapter{Astrophysical Data and Multi-Messenger Inputs}
+% ~20–25 pages
+\section{LIGO Gravitational Wave Signatures}
+\section{Gaia DR3 Astrometry}
+\section{JWST Deep-Field Spectroscopy}
+\section{Data Normalization and Encoding}
+
+%========================================================
+% PART II – SUBATOMIC AND INFORMATIONAL ARCHITECTURE
+%========================================================
+\part{Subatomic Informational Architecture}
+
+\chapter{Lattice QCD and Quark–Gluon Dynamics}
+% ~25–30 pages
+\section{QCD Action and Discretization}
+\section{Color Confinement and Baryonic States}
+\section{Numerical Schemes and Stability}
+
+\chapter{Quantum Information Layer and Qubit Couplings}
+% ~20–25 pages
+\section{Qubit Registers on Lattice Sites}
+\section{Entanglement Structures}
+\section{Informational Measures and Entropy}
+
+\chapter{CKKS Homomorphic Encryption in Physics}
+% ~25–30 pages
+\section{Ring Structure and Slot Packing}
+\section{Polynomial Approximation of Physics Kernels}
+\section{Noise Growth, Rescaling, and Security Bounds}
+
+%========================================================
+% PART III – HOLOGRAPHIC GEOMETRY AND GRAVITY
+%========================================================
+\part{Holographic Geometry and Emergent Spacetime}
+
+\chapter{Holographic Principle and Entropy Bounds}
+% ~20–25 pages
+\section{Bekenstein–Hawking Entropy}
+\section{Boundary–Bulk Dualities}
+\section{Information Density Optimization}
+
+\chapter{Einstein–Hilbert Action and ADM Formalism}
+% ~25–30 pages
+\section{Ricci Scalar and Field Equations}
+\section{ADM Decomposition and Constraints}
+\section{Coupling to QCD and Telemetry Fields}
+
+\chapter{Informational–Geometric Lagrangian}
+% ~25–30 pages
+\section{Total Lagrangian Construction}
+\section{Interaction Sector and Geodesic Response}
+\section{Euler–Lagrange Equations and Consistency}
+
+%========================================================
+% PART IV – HAMILTONIAN, CONSTRAINTS, AND BRST
+%========================================================
+\part{Canonical Structure and Quantum Consistency}
+
+\chapter{Hamiltonian Formulation of USIA-AES}
+% ~25–30 pages
+\section{Canonical Momenta for All Fields}
+\section{Total Hamiltonian Density}
+\section{Time Evolution and Phase Space}
+
+\chapter{Constraint Algebra and Dirac Analysis}
+% ~25–30 pages
+\section{SU(3) Gauss Law}
+\section{Momentum and Hamiltonian Constraints}
+\section{Closure and Hypersurface Deformation Algebra}
+
+\chapter{BRST Quantization and Cohomology}
+% ~25–30 pages
+\section{Ghost Fields and Extended Phase Space}
+\section{BRST Charge Construction}
+\section{Physical Hilbert Space and Cohomology Classes}
+
+%========================================================
+% PART V – OBSERVABLES AND ENCRYPTED S-MATRIX
+%========================================================
+\part{Observables, Scattering, and Simulation}
+
+\chapter{BRST-Invariant Observables}
+% ~20–25 pages
+\section{Composite QCD–Gravity Operators}
+\section{Metric Fluctuations and Multi-Messenger Signals}
+\section{Gauge and Crypto Invariance}
+
+\chapter{Encrypted S-Matrix for Astrophysical Events}
+% ~25–30 pages
+\section{Interaction Picture with CKKS Fields}
+\section{LSZ Reduction in Encrypted Spacetime}
+\section{Unitarity, Causality, and Security Proofs}
+
+\chapter{Numerical Implementation and Simulation Results}
+% ~20–25 pages
+\section{Algorithmic Pipeline}
+\section{Benchmark Scenarios (NS Mergers, BH Rings)}
+\section{Visualization of Encrypted Spacetime Snapshots}
+
+%========================================================
+% PART VI – DISCUSSION AND OUTLOOK
+%========================================================
+\part{Synthesis and Future Directions}
+
+\chapter{Theoretical Implications}
+% ~15–20 pages
+\section{Relation to Standard QFT and Quantum Gravity}
+\section{Limits and Regimes of Validity}
+
+\chapter{Cryptographic and Cosmological Outlook}
+% ~15–20 pages
+\section{Post-Quantum Security in Physical Simulation}
+\section{Extensions to Dark Sector and Beyond-Standard-Model}
+
+\chapter{Conclusion}
+% ~10–15 pages
+\section{Summary of Contributions}
+\section{Open Problems and Next-Generation USIA-AES}
+
+\backmatter
+
+\chapter*{Appendices}
+\addcontentsline{toc}{chapter}{Appendices}
+\section*{Appendix A: Detailed CKKS Parameter Tables}
+\section*{Appendix B: Numerical Schemes and Pseudocode}
+\section*{Appendix C: Additional Proofs and Lemmas}
+
+\bibliographystyle{plain}
+\bibliography{usia_aes_refs}
+
+\end{document}

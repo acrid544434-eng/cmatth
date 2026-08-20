@@ -1,0 +1,20 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=3.8cm, minimum height=1cm, align=center},
+  arrow/.style={->, thick},
+  >=stealth
+]
+
+\node[block] (telemetry) {Sensor Telemetry Stream};
+\node[block, right=2.5cm of telemetry] (kyber) {Kyber KEM\\Lattice Accelerator};
+\node[block, right=2.5cm of kyber] (dilithium) {Dilithium\\Signature Engine};
+\node[block, right=2.5cm of dilithium] (bus) {Encrypted Bus\\AES-GCM-256};
+
+\draw[arrow] (telemetry) -- (kyber);
+\draw[arrow] (kyber) -- (dilithium);
+\draw[arrow] (dilithium) -- (bus);
+
+\end{tikzpicture}
+\caption{Post-Quantum Cryptographic Engine (PQCE) silicon pipeline.}
+\end{figure}

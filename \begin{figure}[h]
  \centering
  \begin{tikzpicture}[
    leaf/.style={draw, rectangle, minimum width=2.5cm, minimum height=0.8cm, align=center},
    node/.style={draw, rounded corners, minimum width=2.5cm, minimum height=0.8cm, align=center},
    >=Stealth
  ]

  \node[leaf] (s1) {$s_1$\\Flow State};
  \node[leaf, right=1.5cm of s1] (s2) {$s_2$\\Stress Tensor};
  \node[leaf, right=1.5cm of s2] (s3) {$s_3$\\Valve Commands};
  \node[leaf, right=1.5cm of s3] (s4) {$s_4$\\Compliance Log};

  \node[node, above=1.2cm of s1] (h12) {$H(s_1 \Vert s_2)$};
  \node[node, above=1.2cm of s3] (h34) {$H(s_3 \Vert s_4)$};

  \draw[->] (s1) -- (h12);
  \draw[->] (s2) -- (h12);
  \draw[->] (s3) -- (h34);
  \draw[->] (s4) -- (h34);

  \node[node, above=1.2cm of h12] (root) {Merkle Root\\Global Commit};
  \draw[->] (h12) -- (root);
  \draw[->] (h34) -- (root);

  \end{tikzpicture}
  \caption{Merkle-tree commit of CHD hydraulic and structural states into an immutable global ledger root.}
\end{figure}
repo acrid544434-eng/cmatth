@@ -1,0 +1,28 @@
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+    leaf/.style={draw, rectangle, minimum width=2.5cm, minimum height=0.8cm, align=center},
+    node/.style={draw, rounded corners, minimum width=2.5cm, minimum height=0.8cm, align=center},
+    >=Stealth
+  ]
+
+  \node[leaf] (s1) {$s_1$\\Flow State};
+  \node[leaf, right=1.5cm of s1] (s2) {$s_2$\\Stress Tensor};
+  \node[leaf, right=1.5cm of s2] (s3) {$s_3$\\Valve Commands};
+  \node[leaf, right=1.5cm of s3] (s4) {$s_4$\\Compliance Log};
+
+  \node[node, above=1.2cm of s1] (h12) {$H(s_1 \Vert s_2)$};
+  \node[node, above=1.2cm of s3] (h34) {$H(s_3 \Vert s_4)$};
+
+  \draw[->] (s1) -- (h12);
+  \draw[->] (s2) -- (h12);
+  \draw[->] (s3) -- (h34);
+  \draw[->] (s4) -- (h34);
+
+  \node[node, above=1.2cm of h12] (root) {Merkle Root\\Global Commit};
+  \draw[->] (h12) -- (root);
+  \draw[->] (h34) -- (root);
+
+  \end{tikzpicture}
+  \caption{Merkle-tree commit of CHD hydraulic and structural states into an immutable global ledger root.}
+\end{figure}

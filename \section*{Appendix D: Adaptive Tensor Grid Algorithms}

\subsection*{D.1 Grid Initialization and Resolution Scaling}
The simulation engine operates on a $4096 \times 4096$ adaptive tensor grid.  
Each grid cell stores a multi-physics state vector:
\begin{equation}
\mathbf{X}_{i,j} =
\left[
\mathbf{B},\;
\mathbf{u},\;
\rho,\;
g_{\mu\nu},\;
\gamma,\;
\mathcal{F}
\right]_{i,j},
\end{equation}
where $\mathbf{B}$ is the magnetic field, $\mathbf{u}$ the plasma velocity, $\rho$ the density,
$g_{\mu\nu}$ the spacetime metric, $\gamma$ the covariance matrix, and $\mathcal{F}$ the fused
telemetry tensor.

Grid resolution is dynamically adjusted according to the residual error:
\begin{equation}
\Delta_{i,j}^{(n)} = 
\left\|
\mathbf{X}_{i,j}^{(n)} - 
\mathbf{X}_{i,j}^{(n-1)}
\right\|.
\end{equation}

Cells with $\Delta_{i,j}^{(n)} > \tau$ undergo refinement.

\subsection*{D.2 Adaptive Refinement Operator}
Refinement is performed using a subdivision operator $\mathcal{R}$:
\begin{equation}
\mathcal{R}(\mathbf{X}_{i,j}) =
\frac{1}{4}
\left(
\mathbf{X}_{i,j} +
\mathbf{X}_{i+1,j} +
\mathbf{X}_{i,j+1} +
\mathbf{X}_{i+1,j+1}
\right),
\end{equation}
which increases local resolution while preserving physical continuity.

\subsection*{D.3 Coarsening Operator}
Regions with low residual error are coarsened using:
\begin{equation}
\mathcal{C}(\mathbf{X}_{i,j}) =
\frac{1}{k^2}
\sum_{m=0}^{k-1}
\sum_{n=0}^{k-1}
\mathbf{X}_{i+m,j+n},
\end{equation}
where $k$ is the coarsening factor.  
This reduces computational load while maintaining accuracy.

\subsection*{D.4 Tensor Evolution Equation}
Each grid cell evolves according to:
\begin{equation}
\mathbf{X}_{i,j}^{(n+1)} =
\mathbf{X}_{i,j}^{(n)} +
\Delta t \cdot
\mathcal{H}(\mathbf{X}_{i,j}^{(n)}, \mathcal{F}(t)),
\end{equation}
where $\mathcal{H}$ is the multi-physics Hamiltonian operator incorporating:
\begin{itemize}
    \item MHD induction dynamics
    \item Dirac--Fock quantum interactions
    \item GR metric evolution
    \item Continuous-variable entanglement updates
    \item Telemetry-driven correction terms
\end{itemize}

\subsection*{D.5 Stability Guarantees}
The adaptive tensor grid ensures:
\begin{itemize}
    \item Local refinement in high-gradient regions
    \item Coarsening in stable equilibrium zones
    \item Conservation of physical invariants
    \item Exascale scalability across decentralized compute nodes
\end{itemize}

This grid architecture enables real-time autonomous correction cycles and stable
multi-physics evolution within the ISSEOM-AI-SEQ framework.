@@ -1,0 +1,85 @@
+\section*{Appendix D: Adaptive Tensor Grid Algorithms}
+
+\subsection*{D.1 Grid Initialization and Resolution Scaling}
+The simulation engine operates on a $4096 \times 4096$ adaptive tensor grid.  
+Each grid cell stores a multi-physics state vector:
+\begin{equation}
+\mathbf{X}_{i,j} =
+\left[
+\mathbf{B},\;
+\mathbf{u},\;
+\rho,\;
+g_{\mu\nu},\;
+\gamma,\;
+\mathcal{F}
+\right]_{i,j},
+\end{equation}
+where $\mathbf{B}$ is the magnetic field, $\mathbf{u}$ the plasma velocity, $\rho$ the density,
+$g_{\mu\nu}$ the spacetime metric, $\gamma$ the covariance matrix, and $\mathcal{F}$ the fused
+telemetry tensor.
+
+Grid resolution is dynamically adjusted according to the residual error:
+\begin{equation}
+\Delta_{i,j}^{(n)} = 
+\left\|
+\mathbf{X}_{i,j}^{(n)} - 
+\mathbf{X}_{i,j}^{(n-1)}
+\right\|.
+\end{equation}
+
+Cells with $\Delta_{i,j}^{(n)} > \tau$ undergo refinement.
+
+\subsection*{D.2 Adaptive Refinement Operator}
+Refinement is performed using a subdivision operator $\mathcal{R}$:
+\begin{equation}
+\mathcal{R}(\mathbf{X}_{i,j}) =
+\frac{1}{4}
+\left(
+\mathbf{X}_{i,j} +
+\mathbf{X}_{i+1,j} +
+\mathbf{X}_{i,j+1} +
+\mathbf{X}_{i+1,j+1}
+\right),
+\end{equation}
+which increases local resolution while preserving physical continuity.
+
+\subsection*{D.3 Coarsening Operator}
+Regions with low residual error are coarsened using:
+\begin{equation}
+\mathcal{C}(\mathbf{X}_{i,j}) =
+\frac{1}{k^2}
+\sum_{m=0}^{k-1}
+\sum_{n=0}^{k-1}
+\mathbf{X}_{i+m,j+n},
+\end{equation}
+where $k$ is the coarsening factor.  
+This reduces computational load while maintaining accuracy.
+
+\subsection*{D.4 Tensor Evolution Equation}
+Each grid cell evolves according to:
+\begin{equation}
+\mathbf{X}_{i,j}^{(n+1)} =
+\mathbf{X}_{i,j}^{(n)} +
+\Delta t \cdot
+\mathcal{H}(\mathbf{X}_{i,j}^{(n)}, \mathcal{F}(t)),
+\end{equation}
+where $\mathcal{H}$ is the multi-physics Hamiltonian operator incorporating:
+\begin{itemize}
+    \item MHD induction dynamics
+    \item Dirac--Fock quantum interactions
+    \item GR metric evolution
+    \item Continuous-variable entanglement updates
+    \item Telemetry-driven correction terms
+\end{itemize}
+
+\subsection*{D.5 Stability Guarantees}
+The adaptive tensor grid ensures:
+\begin{itemize}
+    \item Local refinement in high-gradient regions
+    \item Coarsening in stable equilibrium zones
+    \item Conservation of physical invariants
+    \item Exascale scalability across decentralized compute nodes
+\end{itemize}
+
+This grid architecture enables real-time autonomous correction cycles and stable
+multi-physics evolution within the ISSEOM-AI-SEQ framework.

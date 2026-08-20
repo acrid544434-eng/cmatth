@@ -1,0 +1,18 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=3.5cm, minimum height=1cm, align=center},
+  arrow/.style={->, thick},
+  >=stealth
+]
+
+\node[block] (puf) {Silicon PUF Core\\Entropy Source};
+\node[block, right=2.5cm of puf] (kdf) {Root Key Derivation\\$K_{\text{root}}$};
+\node[block, right=2.5cm of kdf] (enclave) {Secure Enclave\\Memory Controller};
+
+\draw[arrow] (puf) -- (kdf);
+\draw[arrow] (kdf) -- (enclave);
+
+\end{tikzpicture}
+\caption{CHD silicon Root-of-Trust pipeline: PUF → KDF → Secure Enclave Controller.}
+\end{figure}

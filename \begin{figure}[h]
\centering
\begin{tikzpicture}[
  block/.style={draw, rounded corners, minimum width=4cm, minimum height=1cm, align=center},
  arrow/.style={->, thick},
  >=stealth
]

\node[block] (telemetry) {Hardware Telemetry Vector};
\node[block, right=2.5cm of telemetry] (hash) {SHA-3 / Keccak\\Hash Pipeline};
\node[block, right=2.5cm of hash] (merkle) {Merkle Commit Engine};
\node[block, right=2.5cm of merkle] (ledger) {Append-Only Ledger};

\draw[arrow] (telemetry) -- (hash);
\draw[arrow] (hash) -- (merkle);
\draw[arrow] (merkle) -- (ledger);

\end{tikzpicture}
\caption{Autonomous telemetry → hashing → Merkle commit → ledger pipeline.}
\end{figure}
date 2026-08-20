@@ -1,0 +1,20 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=4cm, minimum height=1cm, align=center},
+  arrow/.style={->, thick},
+  >=stealth
+]
+
+\node[block] (telemetry) {Hardware Telemetry Vector};
+\node[block, right=2.5cm of telemetry] (hash) {SHA-3 / Keccak\\Hash Pipeline};
+\node[block, right=2.5cm of hash] (merkle) {Merkle Commit Engine};
+\node[block, right=2.5cm of merkle] (ledger) {Append-Only Ledger};
+
+\draw[arrow] (telemetry) -- (hash);
+\draw[arrow] (hash) -- (merkle);
+\draw[arrow] (merkle) -- (ledger);
+
+\end{tikzpicture}
+\caption{Autonomous telemetry → hashing → Merkle commit → ledger pipeline.}
+\end{figure}

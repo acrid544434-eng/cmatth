@@ -1,0 +1,187 @@
+%--------------------------------------------------
+% CHAPTER 2 — STRING-THEORETIC MICROSTRUCTURE
+%--------------------------------------------------
+
+\chapter{String-Theoretic Microstructure and Sub-Planckian Harmonics}
+
+\section{Polyakov Action and Worldsheet Geometry}
+
+The starting point of the USC-QSE string-theoretic subsystem is the Polyakov action:
+\[
+S = -\frac{1}{4\pi\alpha'} 
+\int d^2\sigma \sqrt{-h}\,
+h^{ab} \partial_a X^\mu \partial_b X_\mu,
+\]
+where $h_{ab}$ is the worldsheet metric and $X^\mu(\sigma^a)$ embeds the string
+into the target spacetime.
+
+\section{Compactification on Calabi-Yau Manifolds}
+
+We decompose the 10D spacetime:
+\[
+\mathcal{M}_{10} = M_4 \times K_6,
+\]
+where $K_6$ is a Calabi-Yau manifold satisfying:
+\[
+R_{m\bar{n}} = 0.
+\]
+
+The mass-squared operator becomes:
+\[
+m^2 = \frac{4}{\alpha'} (N + \bar{N} - 2).
+\]
+
+\section{Spectral Decomposition of Harmonic Modes}
+
+The USC-QSE engine computes eigenmodes of the Laplacian:
+\[
+\Delta_{K_6} \psi_n = \lambda_n \psi_n,
+\]
+with sub-Planckian resolution down to:
+\[
+\ell < 10^{-36}\,\text{m}.
+\]
+
+Vacuum stability requires:
+\[
+m^2 \ge 0.
+\]
+
+%--------------------------------------------------
+% CHAPTER 3 — DARK SECTOR GRAVITATIONAL ARCHITECTURE
+%--------------------------------------------------
+
+\chapter{Dark Sector Architecture and Einasto Halo Dynamics}
+
+\section{Modified Poisson Equation}
+
+The gravitational potential obeys:
+\[
+\nabla^2 \Phi(r) = 4\pi G\,\rho_{\text{DM}}(r).
+\]
+
+\section{Einasto Halo Profile}
+
+\[
+\rho_{\text{DM}}(r) = \rho_0 
+\exp\!\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^\alpha - 1
+\right)
+\right].
+\]
+
+\section{Mass Integration}
+
+\[
+M(r) = 4\pi \int_0^{r} r'^2\,\rho_{\text{DM}}(r')\,dr'.
+\]
+
+\section{Circular Velocity}
+
+\[
+v_c(r) = \sqrt{\frac{G\,M(r)}{r}}.
+\]
+
+Asymptotic limit:
+\[
+v_c(r) \to \text{constant}.
+\]
+
+\section{Critical Acceleration Threshold}
+
+\[
+\mathscr{A}_{\text{crit}} = 
+\frac{G\,M(r_{\text{crit}})}{r_{\text{crit}}^2}.
+\]
+
+\section{RAR Constraint}
+
+\[
+g_{\text{obs}}(r) = \frac{v_c^2(r)}{r}.
+\]
+
+\section{JWST Shear Constraint}
+
+\[
+\gamma_t(\theta) = 
+\frac{\overline{\Sigma}(<\theta)-\Sigma(\theta)}{\Sigma_{\text{crit}}}.
+\]
+
+Falsification condition:
+\[
+|\gamma_{t,\text{obs}} - \gamma_{t,\text{model}}| > 3\sigma.
+\]
+
+%--------------------------------------------------
+% CHAPTER 4 — MULTIVERSE DECOHERENCE AND BRANCHING
+%--------------------------------------------------
+
+\chapter{Multiverse Decoherence, Branching, and Hilbert-Space Stability}
+
+\section{Global State Evolution}
+
+\[
+i\hbar \frac{d}{dt} \ket{\Psi(t)} = \hat{H} \ket{\Psi(t)}.
+\]
+
+\section{Density Matrix Formalism}
+
+\[
+\rho_{\text{sys}}(t) = 
+\mathrm{Tr}_{\text{env}} 
+\left[
+\ket{\Psi(t)}\bra{\Psi(t)}
+\right].
+\]
+
+\section{Decoherence Functional}
+
+\[
+D(\alpha,\beta) = 
+\mathrm{Tr}
+\left(
+C_\alpha \rho_0 C_\beta^\dagger
+\right).
+\]
+
+\section{Norm Conservation}
+
+\[
+\frac{d}{dt} \braket{\Psi|\Psi} = 0.
+\]
+
+\section{Branching Stability}
+
+The USC-QSE engine enforces:
+\[
+\left|
+\braket{\Psi|\Psi} - 1
+\right| < 10^{-12}.
+\]
+
+\section{Lindblad Evolution}
+
+\[
+\frac{d\rho}{dt}
+=
+-\frac{i}{\hbar} [H,\rho]
++
+\sum_k
+\left(
+L_k \rho L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k, \rho\}
+\right).
+\]
+
+Norm clamp:
+\[
+\rho \to \frac{\rho}{\mathrm{Tr}(\rho)}.
+\]
+
+%--------------------------------------------------
+% END PART II
+%--------------------------------------------------

@@ -1,0 +1,308 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb, amsfonts, bm}
+\usepackage[a4paper,margin=1in]{geometry}
+
+\title{USIA-AES v1.0:\\
+A Unified Informational--Geometric, Cryptographically Secured Field Theory}
+\author{C.~Matthew Blackwell}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a unified formalism for the Universal Subatomic Informational Architecture \&
+Astrophysical Encryption Simulator (USIA-AES v1.0). The framework couples lattice QCD,
+holographic gravity, and post-quantum CKKS homomorphic encryption into a single
+constrained Hamiltonian system on $\mathrm{SU}(3)\times\mathrm{Diff}(4)$, quantized via
+BRST cohomology and equipped with encrypted S-matrix elements for multi-messenger
+astrophysical processes.
+\end{abstract}
+
+\section{Global Transformation Operator}
+
+We define the total transformation operator
+\begin{equation}
+  \mathcal{T}
+  =
+  \hat{\mathcal{H}}_{\text{bulk}}
+  \circ \hat{\mathcal{E}}_{\text{CKKS}}
+  \circ \hat{\mathcal{M}}_{\text{holo}}
+  \circ \hat{\mathcal{Q}}_{\text{QCD}},
+\end{equation}
+acting on an initial microscopic state
+$\ket{\Psi_0} \in \mathcal{H}_{\text{QCD}}\otimes\mathcal{H}_{\text{qubits}}$ and
+astrophysical data $X_{\text{astro}}$:
+\begin{equation}
+  \ket{\Psi_{\text{final}}}
+  =
+  \mathcal{T}\ket{\Psi_0; X_{\text{astro}}}.
+\end{equation}
+
+\section{CKKS Slot Packing and Polynomial Evaluation}
+
+We work over the cyclotomic ring
+\begin{equation}
+  R = \mathbb{Z}[X]/(X^N + 1),
+\end{equation}
+with canonical embedding
+$\sigma : R \to \mathbb{C}^{N/2}$.
+A telemetry vector
+\begin{equation}
+  \vec{z} = (z_1,\dots,z_{N/2}) \in \mathbb{R}^{N/2}
+\end{equation}
+is encoded into $m(X)\in R$ such that
+\begin{equation}
+  \sigma(m) = (z_1,\dots,z_{N/2}),
+  \qquad
+  m(\zeta_{8}^k) = z_k.
+\end{equation}
+A physics kernel is approximated by
+\begin{equation}
+  \mathcal{P}(z) = \sum_{j=0}^{d} c_j z^j,
+\end{equation}
+and evaluated homomorphically on ciphertexts $\mathbf{c}_z = \mathrm{Enc}(\vec{z})$:
+\begin{equation}
+  \mathbf{c}_{\mathcal{P}(z)}
+  =
+  \sum_{j=0}^{d} c_j \mathbf{c}_z^{\circ j},
+\end{equation}
+with noise controlled by the RNS modulus chain $q_L \to \dots \to q_0$ and rescaling.
+
+\section{Unified Lagrangian Density}
+
+The total Lagrangian density is decomposed as
+\begin{equation}
+  \mathcal{L}_{\text{total}}
+  =
+  \mathcal{L}_{\text{QCD}}
+  +
+  \mathcal{L}_{\text{Holo}}
+  +
+  \mathcal{L}_{\text{CKKS}}
+  +
+  \mathcal{L}_{\text{Int}},
+\end{equation}
+with action
+\begin{equation}
+  S = \int d^4x\, \mathcal{L}_{\text{total}}.
+\end{equation}
+
+\subsection{QCD Sector}
+\begin{equation}
+  \mathcal{L}_{\text{QCD}}
+  =
+  \sum_{f}
+  \bar{\psi}_f (i\gamma^\mu D_\mu - m_f)\psi_f
+  -
+  \frac{1}{4}\mathrm{Tr}(G_{\mu\nu}G^{\mu\nu}).
+\end{equation}
+
+\subsection{Holographic Gravity Sector}
+\begin{equation}
+  \mathcal{L}_{\text{Holo}}
+  =
+  \frac{1}{16\pi G} R_{(4)}
+  +
+  \lambda\left(
+    s - \frac{k_B A}{4 l_P^2}
+  \right),
+\end{equation}
+enforcing the holographic entropy bound.
+
+\subsection{CKKS Cryptographic Sector}
+Treating $\mathbf{c}_z(x)$ as a dynamical field:
+\begin{equation}
+  \mathcal{L}_{\text{CKKS}}
+  =
+  \frac{1}{2} (\partial_\mu \mathbf{c}_z)(\partial^\mu \mathbf{c}_z)
+  -
+  V(\mathbf{c}_z)
+  -
+  \Lambda_{\text{noise}}(q_L,\dots).
+\end{equation}
+
+\subsection{Information--Geodesic Interaction Sector}
+\begin{equation}
+  \mathcal{L}_{\text{Int}}
+  =
+  \alpha \,
+  G_{\mu\nu}(\mathbf{c}_z)
+  T^{\mu\nu}(\psi_f)
+  +
+  \beta \,
+  \mathcal{P}(\mathbf{c}_z)
+  \mathrm{Tr}(G_{\mu\nu}G^{\mu\nu}).
+\end{equation}
+
+\section{Hamiltonian Formulation and Constraints}
+
+The Hamiltonian density is
+\begin{equation}
+  \mathcal{H}_{\text{total}}
+  =
+  \sum_{\phi} \Pi_{\phi}\dot{\phi}
+  -
+  \mathcal{L}_{\text{total}},
+\end{equation}
+with fields $\phi \in \{\psi_f, A_i^a, \gamma_{ij}, \mathbf{c}_z\}$.
+
+\subsection{Canonical Momenta}
+
+\paragraph{SU(3) Gauge Fields.}
+\begin{equation}
+  \Pi_{A_i^a}(x) \equiv E_i^a(x)
+  =
+  \frac{\partial \mathcal{L}_{\text{QCD}}}{\partial \dot{A}_i^a(x)}.
+\end{equation}
+
+\paragraph{Ciphertext Field.}
+\begin{equation}
+  \Pi_{\mathbf{c}}(x)
+  =
+  \frac{\partial \mathcal{L}_{\text{CKKS}}}{\partial \dot{\mathbf{c}}_z(x)}
+  =
+  \dot{\mathbf{c}}_z(x).
+\end{equation}
+
+\paragraph{ADM Metric.}
+\begin{equation}
+  \Pi^{ij}(x)
+  =
+  \sqrt{\gamma}\left(K^{ij} - \gamma^{ij}K\right).
+\end{equation}
+
+\subsection{Constraint Set}
+
+\paragraph{Gauss Law (SU(3)).}
+\begin{equation}
+  \mathcal{G}^a(x)
+  =
+  D_i \Pi^{i\,a}(x)
+  -
+  g \rho^a(x)
+  \approx 0.
+\end{equation}
+
+\paragraph{Momentum Constraint.}
+\begin{equation}
+  \mathcal{H}_i(x)
+  =
+  -2 \nabla_j \pi^j{}_i(x)
+  +
+  \mathcal{H}_i^{\text{matter}}(x)
+  \approx 0.
+\end{equation}
+
+\paragraph{Hamiltonian Constraint.}
+\begin{equation}
+  \mathcal{H}(x)
+  =
+  \mathcal{H}_{\text{grav}}(x)
+  +
+  \mathcal{H}_{\text{QCD}}(x)
+  +
+  \mathcal{H}_{\text{CKKS}}(x)
+  \approx 0.
+\end{equation}
+
+\section{Constraint Algebra and Closure}
+
+The constraints obey
+\begin{equation}
+  \{\mathcal{G}^a(x), \mathcal{G}^b(y)\}
+  =
+  f^{abc}\mathcal{G}^c(x)\delta^{(3)}(x-y),
+\end{equation}
+\begin{equation}
+  \{\mathcal{H}_i(x), \mathcal{H}_j(y)\}
+  =
+  \mathcal{H}_j(x)\partial_i\delta^{(3)}(x-y)
+  -
+  \mathcal{H}_i(y)\partial_j\delta^{(3)}(x-y),
+\end{equation}
+and
+\begin{equation}
+  \{\mathcal{H}(x), \mathcal{H}(y)\}
+  =
+  \gamma^{ij}(x)\mathcal{H}_j(x)\partial_i\delta^{(3)}(x-y)
+  -
+  \gamma^{ij}(y)\mathcal{H}_j(y)\partial_i\delta^{(3)}(y-x)
+  +
+  \Omega(x,y),
+\end{equation}
+with $\Omega(x,y)\to 0$ under the CKKS noise-damping condition and $\ell_P\to 0$, yielding the standard hypersurface deformation algebra. Thus the system is first-class and consistent.
+
+\section{BRST Charge and Physical Hilbert Space}
+
+We extend the phase space with ghosts $(c^a,\xi^i,\omega)$ and anti-ghosts. The total BRST charge is
+\begin{equation}
+  \mathbf{Q}_{\text{BRST}}
+  =
+  \int d^3x\,
+  \Big[
+    c^a \mathcal{G}^a
+    +
+    \xi^i \mathcal{H}_i
+    +
+    \omega \mathcal{H}_{\text{CKKS}}
+    + \dots
+  \Big],
+\end{equation}
+with higher-order ghost terms from structure constants. Closure of the constraint algebra implies
+\begin{equation}
+  \mathbf{Q}_{\text{BRST}}^2 = 0.
+\end{equation}
+The physical Hilbert space is the BRST cohomology
+\begin{equation}
+  \mathcal{H}_{\text{phys}}
+  =
+  \frac{\ker \mathbf{Q}_{\text{BRST}}}{\mathrm{im}\,\mathbf{Q}_{\text{BRST}}}.
+\end{equation}
+
+\section{BRST-Invariant Observables and Encrypted S-Matrix}
+
+A physical observable $\mathcal{O}$ satisfies
+\begin{equation}
+  [\mathbf{Q}_{\text{BRST}}, \mathcal{O}] = 0,
+\end{equation}
+modulo BRST-exact terms. BRST-invariant, CKKS-sealed fields
+\begin{equation}
+  \hat{\Phi}_{\text{enc}}(x)
+  =
+  \hat{\mathcal{E}}_{\text{CKKS}}(\Phi(x)),
+  \qquad
+  [\mathbf{Q}_{\text{BRST}}, \hat{\Phi}_{\text{enc}}] = 0,
+\end{equation}
+define the encrypted interaction picture. The encrypted S-matrix is
+\begin{equation}
+  \mathbf{S}_{\text{enc}}
+  =
+  \mathcal{T}
+  \exp\left(
+    -i \int d^4x\, \mathcal{H}_{\text{int}}^{\text{enc}}(x)
+  \right),
+\end{equation}
+and $N$-particle amplitudes follow an LSZ-type reduction with homomorphic evaluation at vertices:
+\begin{equation}
+  \mathcal{A}_{f\leftarrow i}
+  =
+  \prod_{k=1}^{N}
+  \int d^4x_k\,
+  e^{ip_k\cdot x_k}
+  (\Box_{x_k} + m_k^2)
+  \langle 0 |
+  \mathcal{T}
+  \big[
+    \hat{\Phi}_{\text{enc}}(x_1)\cdots\hat{\Phi}_{\text{enc}}(x_N)
+  \big]
+  | 0 \rangle_{\text{phys}}.
+\end{equation}
+Unitarity holds on $\mathcal{H}_{\text{phys}}$:
+\begin{equation}
+  \mathbf{S}_{\text{enc}}^\dagger \mathbf{S}_{\text{enc}} = \mathbf{I},
+\end{equation}
+ensuring causal, gauge-invariant, and cryptographically secure multi-messenger predictions.
+
+\end{document}

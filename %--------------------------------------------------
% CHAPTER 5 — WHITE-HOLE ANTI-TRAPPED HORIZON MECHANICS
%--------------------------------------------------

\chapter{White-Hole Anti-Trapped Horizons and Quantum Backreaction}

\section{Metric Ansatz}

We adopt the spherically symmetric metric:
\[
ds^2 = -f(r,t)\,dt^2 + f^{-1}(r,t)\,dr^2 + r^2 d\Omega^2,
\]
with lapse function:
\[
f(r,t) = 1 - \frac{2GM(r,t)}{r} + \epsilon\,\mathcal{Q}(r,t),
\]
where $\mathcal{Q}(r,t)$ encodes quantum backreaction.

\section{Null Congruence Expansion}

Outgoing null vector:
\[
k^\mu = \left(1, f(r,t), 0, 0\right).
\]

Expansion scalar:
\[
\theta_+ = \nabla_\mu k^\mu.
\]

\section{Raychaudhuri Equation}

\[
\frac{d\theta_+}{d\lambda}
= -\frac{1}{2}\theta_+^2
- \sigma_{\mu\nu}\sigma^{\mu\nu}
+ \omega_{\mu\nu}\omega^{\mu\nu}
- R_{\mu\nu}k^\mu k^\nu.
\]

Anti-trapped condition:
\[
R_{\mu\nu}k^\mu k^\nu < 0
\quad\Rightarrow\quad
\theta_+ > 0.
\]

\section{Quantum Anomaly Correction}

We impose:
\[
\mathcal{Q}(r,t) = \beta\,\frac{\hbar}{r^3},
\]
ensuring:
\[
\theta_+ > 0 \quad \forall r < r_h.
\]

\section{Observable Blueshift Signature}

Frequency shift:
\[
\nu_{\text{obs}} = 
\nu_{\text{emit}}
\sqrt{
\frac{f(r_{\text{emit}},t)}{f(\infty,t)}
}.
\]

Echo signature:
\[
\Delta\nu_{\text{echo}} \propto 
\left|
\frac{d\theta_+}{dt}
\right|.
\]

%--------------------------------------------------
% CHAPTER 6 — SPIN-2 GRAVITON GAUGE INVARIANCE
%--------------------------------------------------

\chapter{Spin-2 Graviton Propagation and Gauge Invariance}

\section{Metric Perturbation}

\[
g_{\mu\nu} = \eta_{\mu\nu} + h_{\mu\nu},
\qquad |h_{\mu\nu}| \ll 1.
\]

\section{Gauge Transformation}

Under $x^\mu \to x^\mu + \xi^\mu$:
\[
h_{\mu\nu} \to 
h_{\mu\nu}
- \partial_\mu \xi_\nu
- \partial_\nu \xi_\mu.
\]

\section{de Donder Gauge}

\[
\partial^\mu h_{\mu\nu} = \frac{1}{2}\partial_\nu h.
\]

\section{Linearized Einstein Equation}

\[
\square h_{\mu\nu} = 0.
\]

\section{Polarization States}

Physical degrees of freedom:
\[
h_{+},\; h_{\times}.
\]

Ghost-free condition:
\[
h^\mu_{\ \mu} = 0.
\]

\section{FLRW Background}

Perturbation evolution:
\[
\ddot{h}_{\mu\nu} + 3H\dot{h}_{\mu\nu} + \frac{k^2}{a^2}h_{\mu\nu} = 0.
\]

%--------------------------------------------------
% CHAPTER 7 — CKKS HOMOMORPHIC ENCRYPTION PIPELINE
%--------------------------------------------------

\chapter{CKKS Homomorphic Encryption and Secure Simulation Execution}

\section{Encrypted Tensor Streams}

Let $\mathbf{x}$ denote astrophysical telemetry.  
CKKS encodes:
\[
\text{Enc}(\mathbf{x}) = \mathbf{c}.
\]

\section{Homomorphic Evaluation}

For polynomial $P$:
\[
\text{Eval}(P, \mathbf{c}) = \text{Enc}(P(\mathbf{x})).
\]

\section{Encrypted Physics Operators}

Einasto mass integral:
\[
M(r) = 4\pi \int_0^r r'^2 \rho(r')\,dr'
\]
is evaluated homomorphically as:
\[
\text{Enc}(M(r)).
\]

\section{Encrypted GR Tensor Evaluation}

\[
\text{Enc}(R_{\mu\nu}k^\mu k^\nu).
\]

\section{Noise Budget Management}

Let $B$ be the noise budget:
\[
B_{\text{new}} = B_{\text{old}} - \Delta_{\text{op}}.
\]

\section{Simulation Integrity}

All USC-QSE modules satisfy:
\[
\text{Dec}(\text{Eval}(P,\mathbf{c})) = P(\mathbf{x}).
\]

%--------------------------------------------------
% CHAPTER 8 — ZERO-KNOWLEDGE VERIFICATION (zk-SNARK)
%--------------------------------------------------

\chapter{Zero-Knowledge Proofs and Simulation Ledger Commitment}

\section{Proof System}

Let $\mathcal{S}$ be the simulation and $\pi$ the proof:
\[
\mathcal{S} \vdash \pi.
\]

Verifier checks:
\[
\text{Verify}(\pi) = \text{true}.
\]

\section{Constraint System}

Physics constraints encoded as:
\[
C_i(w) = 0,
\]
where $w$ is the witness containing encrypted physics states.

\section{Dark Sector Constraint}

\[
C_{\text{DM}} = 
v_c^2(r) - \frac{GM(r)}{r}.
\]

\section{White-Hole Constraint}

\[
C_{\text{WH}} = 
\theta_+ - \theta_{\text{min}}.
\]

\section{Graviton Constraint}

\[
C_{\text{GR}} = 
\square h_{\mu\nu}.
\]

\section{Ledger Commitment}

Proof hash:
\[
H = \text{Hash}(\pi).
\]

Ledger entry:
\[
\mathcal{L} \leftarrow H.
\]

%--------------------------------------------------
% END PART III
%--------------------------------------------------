@@ -1,0 +1,245 @@
+%--------------------------------------------------
+% CHAPTER 5 — WHITE-HOLE ANTI-TRAPPED HORIZON MECHANICS
+%--------------------------------------------------
+
+\chapter{White-Hole Anti-Trapped Horizons and Quantum Backreaction}
+
+\section{Metric Ansatz}
+
+We adopt the spherically symmetric metric:
+\[
+ds^2 = -f(r,t)\,dt^2 + f^{-1}(r,t)\,dr^2 + r^2 d\Omega^2,
+\]
+with lapse function:
+\[
+f(r,t) = 1 - \frac{2GM(r,t)}{r} + \epsilon\,\mathcal{Q}(r,t),
+\]
+where $\mathcal{Q}(r,t)$ encodes quantum backreaction.
+
+\section{Null Congruence Expansion}
+
+Outgoing null vector:
+\[
+k^\mu = \left(1, f(r,t), 0, 0\right).
+\]
+
+Expansion scalar:
+\[
+\theta_+ = \nabla_\mu k^\mu.
+\]
+
+\section{Raychaudhuri Equation}
+
+\[
+\frac{d\theta_+}{d\lambda}
+= -\frac{1}{2}\theta_+^2
+- \sigma_{\mu\nu}\sigma^{\mu\nu}
++ \omega_{\mu\nu}\omega^{\mu\nu}
+- R_{\mu\nu}k^\mu k^\nu.
+\]
+
+Anti-trapped condition:
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\quad\Rightarrow\quad
+\theta_+ > 0.
+\]
+
+\section{Quantum Anomaly Correction}
+
+We impose:
+\[
+\mathcal{Q}(r,t) = \beta\,\frac{\hbar}{r^3},
+\]
+ensuring:
+\[
+\theta_+ > 0 \quad \forall r < r_h.
+\]
+
+\section{Observable Blueshift Signature}
+
+Frequency shift:
+\[
+\nu_{\text{obs}} = 
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}.
+\]
+
+Echo signature:
+\[
+\Delta\nu_{\text{echo}} \propto 
+\left|
+\frac{d\theta_+}{dt}
+\right|.
+\]
+
+%--------------------------------------------------
+% CHAPTER 6 — SPIN-2 GRAVITON GAUGE INVARIANCE
+%--------------------------------------------------
+
+\chapter{Spin-2 Graviton Propagation and Gauge Invariance}
+
+\section{Metric Perturbation}
+
+\[
+g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
+\qquad |h_{\mu\nu}| \ll 1.
+\]
+
+\section{Gauge Transformation}
+
+Under $x^\mu \to x^\mu + \xi^\mu$:
+\[
+h_{\mu\nu} \to 
+h_{\mu\nu}
+- \partial_\mu \xi_\nu
+- \partial_\nu \xi_\mu.
+\]
+
+\section{de Donder Gauge}
+
+\[
+\partial^\mu h_{\mu\nu} = \frac{1}{2}\partial_\nu h.
+\]
+
+\section{Linearized Einstein Equation}
+
+\[
+\square h_{\mu\nu} = 0.
+\]
+
+\section{Polarization States}
+
+Physical degrees of freedom:
+\[
+h_{+},\; h_{\times}.
+\]
+
+Ghost-free condition:
+\[
+h^\mu_{\ \mu} = 0.
+\]
+
+\section{FLRW Background}
+
+Perturbation evolution:
+\[
+\ddot{h}_{\mu\nu} + 3H\dot{h}_{\mu\nu} + \frac{k^2}{a^2}h_{\mu\nu} = 0.
+\]
+
+%--------------------------------------------------
+% CHAPTER 7 — CKKS HOMOMORPHIC ENCRYPTION PIPELINE
+%--------------------------------------------------
+
+\chapter{CKKS Homomorphic Encryption and Secure Simulation Execution}
+
+\section{Encrypted Tensor Streams}
+
+Let $\mathbf{x}$ denote astrophysical telemetry.  
+CKKS encodes:
+\[
+\text{Enc}(\mathbf{x}) = \mathbf{c}.
+\]
+
+\section{Homomorphic Evaluation}
+
+For polynomial $P$:
+\[
+\text{Eval}(P, \mathbf{c}) = \text{Enc}(P(\mathbf{x})).
+\]
+
+\section{Encrypted Physics Operators}
+
+Einasto mass integral:
+\[
+M(r) = 4\pi \int_0^r r'^2 \rho(r')\,dr'
+\]
+is evaluated homomorphically as:
+\[
+\text{Enc}(M(r)).
+\]
+
+\section{Encrypted GR Tensor Evaluation}
+
+\[
+\text{Enc}(R_{\mu\nu}k^\mu k^\nu).
+\]
+
+\section{Noise Budget Management}
+
+Let $B$ be the noise budget:
+\[
+B_{\text{new}} = B_{\text{old}} - \Delta_{\text{op}}.
+\]
+
+\section{Simulation Integrity}
+
+All USC-QSE modules satisfy:
+\[
+\text{Dec}(\text{Eval}(P,\mathbf{c})) = P(\mathbf{x}).
+\]
+
+%--------------------------------------------------
+% CHAPTER 8 — ZERO-KNOWLEDGE VERIFICATION (zk-SNARK)
+%--------------------------------------------------
+
+\chapter{Zero-Knowledge Proofs and Simulation Ledger Commitment}
+
+\section{Proof System}
+
+Let $\mathcal{S}$ be the simulation and $\pi$ the proof:
+\[
+\mathcal{S} \vdash \pi.
+\]
+
+Verifier checks:
+\[
+\text{Verify}(\pi) = \text{true}.
+\]
+
+\section{Constraint System}
+
+Physics constraints encoded as:
+\[
+C_i(w) = 0,
+\]
+where $w$ is the witness containing encrypted physics states.
+
+\section{Dark Sector Constraint}
+
+\[
+C_{\text{DM}} = 
+v_c^2(r) - \frac{GM(r)}{r}.
+\]
+
+\section{White-Hole Constraint}
+
+\[
+C_{\text{WH}} = 
+\theta_+ - \theta_{\text{min}}.
+\]
+
+\section{Graviton Constraint}
+
+\[
+C_{\text{GR}} = 
+\square h_{\mu\nu}.
+\]
+
+\section{Ledger Commitment}
+
+Proof hash:
+\[
+H = \text{Hash}(\pi).
+\]
+
+Ledger entry:
+\[
+\mathcal{L} \leftarrow H.
+\]
+
+%--------------------------------------------------
+% END PART III
+%--------------------------------------------------

@@ -1,0 +1,61 @@
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{2cm}
+
+{\Huge \textbf{THE CEREMONIAL SEAL OF ISSEOM}} \\[1.5cm]
+
+{\Large \textbf{Sovereign Scientific Codex Seal}} \\[0.5cm]
+{\large \textit{Inscribed under the authority of}} \\[0.3cm]
+{\Large \textbf{C. MATTHEW BLACKWELL}} \\[0.2cm]
+{\large Independent Systems Architect \& Designer} \\[2cm]
+
+% --- Ceremonial Glyph Block ---
+\begin{figure}[h!]
+\centering
+\rule{0pt}{0pt}
+\vspace{0.5cm}
+\includegraphics[width=0.55\textwidth]{seal-placeholder.png}
+\vspace{0.5cm}
+\end{figure}
+
+{\large \textbf{ISSEOM Sovereign Glyph Sequence}} \\[0.5cm]
+
+{\Large
+$\displaystyle
+\begin{aligned}
+\mathcal{S}_{\text{ISSEOM}} &= 
+\left(
+\Xi_{\text{Origin}} \;\oplus\;
+\Lambda_{\text{Continuum}} \;\oplus\;
+\Omega_{\text{Sovereign}}
+\right)^{\star} \\[0.3cm]
+&=
+\left(
+\text{Autonomy} \;\otimes\;
+\text{Integrity} \;\otimes\;
+\text{Equilibrium}
+\right)
+\end{aligned}
+$}
+\\[2cm]
+
+{\large
+This seal affirms the sovereignty, authorship, and immutable cryptographic
+integrity of all scientific frameworks, simulation matrices, and autonomous
+intelligence systems operating under the ISSEOM Codex.
+}
+\\[1.5cm]
+
+{\large
+\textit{Inscribed and sealed in the year 2026, under the unified declaration of
+Autonomous Scientific Sovereignty.}
+}
+
+\vfill
+
+\end{center}
+
+\clearpage

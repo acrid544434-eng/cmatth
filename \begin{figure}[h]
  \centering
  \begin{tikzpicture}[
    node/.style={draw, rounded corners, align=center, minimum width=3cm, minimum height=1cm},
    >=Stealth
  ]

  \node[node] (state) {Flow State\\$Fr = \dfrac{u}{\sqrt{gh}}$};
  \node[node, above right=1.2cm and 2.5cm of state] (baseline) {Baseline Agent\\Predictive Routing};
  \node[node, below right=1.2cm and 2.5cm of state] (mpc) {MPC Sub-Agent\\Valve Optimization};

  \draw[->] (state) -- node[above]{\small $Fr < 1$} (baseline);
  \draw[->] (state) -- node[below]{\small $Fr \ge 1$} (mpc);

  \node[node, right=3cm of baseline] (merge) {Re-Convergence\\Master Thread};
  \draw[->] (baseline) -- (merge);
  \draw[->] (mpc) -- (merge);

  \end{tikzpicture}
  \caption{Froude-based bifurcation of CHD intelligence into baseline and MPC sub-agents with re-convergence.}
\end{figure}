@@ -1,0 +1,21 @@
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+    node/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=1cm},
+    >=Stealth
+  ]
+
+  \node[node] (state) {Flow State\\$Fr = \dfrac{u}{\sqrt{gh}}$};
+  \node[node, above right=1.2cm and 2.5cm of state] (baseline) {Baseline Agent\\Predictive Routing};
+  \node[node, below right=1.2cm and 2.5cm of state] (mpc) {MPC Sub-Agent\\Valve Optimization};
+
+  \draw[->] (state) -- node[above]{\small $Fr < 1$} (baseline);
+  \draw[->] (state) -- node[below]{\small $Fr \ge 1$} (mpc);
+
+  \node[node, right=3cm of baseline] (merge) {Re-Convergence\\Master Thread};
+  \draw[->] (baseline) -- (merge);
+  \draw[->] (mpc) -- (merge);
+
+  \end{tikzpicture}
+  \caption{Froude-based bifurcation of CHD intelligence into baseline and MPC sub-agents with re-convergence.}
+\end{figure}

@@ -1,0 +1,32 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  region/.style={draw, thick, rounded corners, minimum width=6cm, minimum height=4cm, align=center},
+  sub/.style={draw, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center},
+  >=stealth
+]
+
+% Enclave region
+\node[region] (enclave) {Secure Enclave Region};
+
+% Sub-blocks
+\node[sub, above left=0.8cm and -1.2cm of enclave.center] (addr) {Address Scrambler};
+\node[sub, above right=0.8cm and -1.2cm of enclave.center] (ime) {Inline Memory Encryption};
+\node[sub, below left=0.8cm and -1.2cm of enclave.center] (guard) {Boundary Guard};
+\node[sub, below right=0.8cm and -1.2cm of enclave.center] (attest) {Attestation Engine};
+
+% PQ accelerator region
+\node[region, right=3cm of enclave] (pqce) {PQCE Region};
+
+\node[sub, above=0.8cm of pqce.center] (kyber) {Kyber KEM};
+\node[sub, below=0.8cm of pqce.center] (dilithium) {Dilithium Signatures};
+
+% Interconnect
+\draw[->, thick] (addr) -- (kyber);
+\draw[->, thick] (ime) -- (dilithium);
+\draw[->, thick] (guard) -- (kyber);
+\draw[->, thick] (attest) -- (dilithium);
+
+\end{tikzpicture}
+\caption{Secure Enclave + PQ Accelerator floorplan with functional sub-blocks.}
+\end{figure}

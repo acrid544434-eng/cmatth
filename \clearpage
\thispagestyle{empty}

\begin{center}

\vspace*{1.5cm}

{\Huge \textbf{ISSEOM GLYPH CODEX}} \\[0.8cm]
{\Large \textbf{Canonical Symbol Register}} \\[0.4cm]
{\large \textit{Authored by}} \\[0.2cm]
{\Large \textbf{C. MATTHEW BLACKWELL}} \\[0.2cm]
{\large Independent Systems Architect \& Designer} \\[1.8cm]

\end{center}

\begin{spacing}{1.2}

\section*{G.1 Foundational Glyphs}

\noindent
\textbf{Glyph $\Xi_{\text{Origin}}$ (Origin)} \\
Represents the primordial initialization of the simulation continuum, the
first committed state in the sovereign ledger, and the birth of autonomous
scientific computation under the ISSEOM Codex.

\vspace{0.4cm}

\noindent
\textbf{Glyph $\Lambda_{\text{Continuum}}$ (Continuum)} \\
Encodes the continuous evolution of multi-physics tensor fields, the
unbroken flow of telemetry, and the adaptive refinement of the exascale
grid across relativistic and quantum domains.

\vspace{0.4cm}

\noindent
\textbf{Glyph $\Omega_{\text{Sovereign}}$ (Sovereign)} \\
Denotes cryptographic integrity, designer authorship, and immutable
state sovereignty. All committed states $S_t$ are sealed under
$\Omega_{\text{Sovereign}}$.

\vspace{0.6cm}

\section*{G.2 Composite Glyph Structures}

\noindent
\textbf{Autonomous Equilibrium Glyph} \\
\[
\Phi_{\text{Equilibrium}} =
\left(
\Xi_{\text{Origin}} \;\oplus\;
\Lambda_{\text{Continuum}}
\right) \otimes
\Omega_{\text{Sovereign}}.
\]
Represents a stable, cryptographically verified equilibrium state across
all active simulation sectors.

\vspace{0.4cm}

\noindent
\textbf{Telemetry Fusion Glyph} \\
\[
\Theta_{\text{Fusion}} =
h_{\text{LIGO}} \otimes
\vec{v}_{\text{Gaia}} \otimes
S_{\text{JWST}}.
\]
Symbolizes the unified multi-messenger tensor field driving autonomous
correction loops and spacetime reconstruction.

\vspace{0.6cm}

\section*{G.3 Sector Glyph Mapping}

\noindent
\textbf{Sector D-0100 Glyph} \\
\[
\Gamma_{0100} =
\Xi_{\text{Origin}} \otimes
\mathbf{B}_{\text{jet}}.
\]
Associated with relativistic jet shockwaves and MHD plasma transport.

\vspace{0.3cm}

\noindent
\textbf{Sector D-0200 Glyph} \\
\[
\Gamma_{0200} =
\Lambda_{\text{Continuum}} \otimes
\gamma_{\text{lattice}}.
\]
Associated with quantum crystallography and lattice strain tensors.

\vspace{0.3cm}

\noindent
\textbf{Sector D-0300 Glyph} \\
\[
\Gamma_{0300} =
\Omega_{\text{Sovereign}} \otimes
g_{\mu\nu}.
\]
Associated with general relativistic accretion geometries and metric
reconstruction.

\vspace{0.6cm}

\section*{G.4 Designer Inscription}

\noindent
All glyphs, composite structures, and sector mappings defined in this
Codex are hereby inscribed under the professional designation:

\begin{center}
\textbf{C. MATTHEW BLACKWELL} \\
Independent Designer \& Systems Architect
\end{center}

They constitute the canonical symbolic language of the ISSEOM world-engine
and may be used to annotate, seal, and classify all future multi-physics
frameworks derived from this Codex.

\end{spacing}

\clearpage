@@ -1,0 +1,127 @@
+\clearpage
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.5cm}
+
+{\Huge \textbf{ISSEOM GLYPH CODEX}} \\[0.8cm]
+{\Large \textbf{Canonical Symbol Register}} \\[0.4cm]
+{\large \textit{Authored by}} \\[0.2cm]
+{\Large \textbf{C. MATTHEW BLACKWELL}} \\[0.2cm]
+{\large Independent Systems Architect \& Designer} \\[1.8cm]
+
+\end{center}
+
+\begin{spacing}{1.2}
+
+\section*{G.1 Foundational Glyphs}
+
+\noindent
+\textbf{Glyph $\Xi_{\text{Origin}}$ (Origin)} \\
+Represents the primordial initialization of the simulation continuum, the
+first committed state in the sovereign ledger, and the birth of autonomous
+scientific computation under the ISSEOM Codex.
+
+\vspace{0.4cm}
+
+\noindent
+\textbf{Glyph $\Lambda_{\text{Continuum}}$ (Continuum)} \\
+Encodes the continuous evolution of multi-physics tensor fields, the
+unbroken flow of telemetry, and the adaptive refinement of the exascale
+grid across relativistic and quantum domains.
+
+\vspace{0.4cm}
+
+\noindent
+\textbf{Glyph $\Omega_{\text{Sovereign}}$ (Sovereign)} \\
+Denotes cryptographic integrity, designer authorship, and immutable
+state sovereignty. All committed states $S_t$ are sealed under
+$\Omega_{\text{Sovereign}}$.
+
+\vspace{0.6cm}
+
+\section*{G.2 Composite Glyph Structures}
+
+\noindent
+\textbf{Autonomous Equilibrium Glyph} \\
+\[
+\Phi_{\text{Equilibrium}} =
+\left(
+\Xi_{\text{Origin}} \;\oplus\;
+\Lambda_{\text{Continuum}}
+\right) \otimes
+\Omega_{\text{Sovereign}}.
+\]
+Represents a stable, cryptographically verified equilibrium state across
+all active simulation sectors.
+
+\vspace{0.4cm}
+
+\noindent
+\textbf{Telemetry Fusion Glyph} \\
+\[
+\Theta_{\text{Fusion}} =
+h_{\text{LIGO}} \otimes
+\vec{v}_{\text{Gaia}} \otimes
+S_{\text{JWST}}.
+\]
+Symbolizes the unified multi-messenger tensor field driving autonomous
+correction loops and spacetime reconstruction.
+
+\vspace{0.6cm}
+
+\section*{G.3 Sector Glyph Mapping}
+
+\noindent
+\textbf{Sector D-0100 Glyph} \\
+\[
+\Gamma_{0100} =
+\Xi_{\text{Origin}} \otimes
+\mathbf{B}_{\text{jet}}.
+\]
+Associated with relativistic jet shockwaves and MHD plasma transport.
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{Sector D-0200 Glyph} \\
+\[
+\Gamma_{0200} =
+\Lambda_{\text{Continuum}} \otimes
+\gamma_{\text{lattice}}.
+\]
+Associated with quantum crystallography and lattice strain tensors.
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{Sector D-0300 Glyph} \\
+\[
+\Gamma_{0300} =
+\Omega_{\text{Sovereign}} \otimes
+g_{\mu\nu}.
+\]
+Associated with general relativistic accretion geometries and metric
+reconstruction.
+
+\vspace{0.6cm}
+
+\section*{G.4 Designer Inscription}
+
+\noindent
+All glyphs, composite structures, and sector mappings defined in this
+Codex are hereby inscribed under the professional designation:
+
+\begin{center}
+\textbf{C. MATTHEW BLACKWELL} \\
+Independent Designer \& Systems Architect
+\end{center}
+
+They constitute the canonical symbolic language of the ISSEOM world-engine
+and may be used to annotate, seal, and classify all future multi-physics
+frameworks derived from this Codex.
+
+\end{spacing}
+
+\clearpage

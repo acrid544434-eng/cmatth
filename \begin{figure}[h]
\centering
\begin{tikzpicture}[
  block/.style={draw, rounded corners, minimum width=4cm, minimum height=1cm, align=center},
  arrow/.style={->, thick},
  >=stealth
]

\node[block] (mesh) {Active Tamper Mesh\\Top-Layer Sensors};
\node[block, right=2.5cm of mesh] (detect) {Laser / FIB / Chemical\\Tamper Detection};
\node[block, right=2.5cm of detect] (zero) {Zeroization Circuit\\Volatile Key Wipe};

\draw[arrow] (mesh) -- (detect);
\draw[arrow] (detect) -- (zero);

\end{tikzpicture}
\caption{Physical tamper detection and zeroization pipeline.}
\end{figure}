@@ -1,0 +1,18 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=4cm, minimum height=1cm, align=center},
+  arrow/.style={->, thick},
+  >=stealth
+]
+
+\node[block] (mesh) {Active Tamper Mesh\\Top-Layer Sensors};
+\node[block, right=2.5cm of mesh] (detect) {Laser / FIB / Chemical\\Tamper Detection};
+\node[block, right=2.5cm of detect] (zero) {Zeroization Circuit\\Volatile Key Wipe};
+
+\draw[arrow] (mesh) -- (detect);
+\draw[arrow] (detect) -- (zero);
+
+\end{tikzpicture}
+\caption{Physical tamper detection and zeroization pipeline.}
+\end{figure}

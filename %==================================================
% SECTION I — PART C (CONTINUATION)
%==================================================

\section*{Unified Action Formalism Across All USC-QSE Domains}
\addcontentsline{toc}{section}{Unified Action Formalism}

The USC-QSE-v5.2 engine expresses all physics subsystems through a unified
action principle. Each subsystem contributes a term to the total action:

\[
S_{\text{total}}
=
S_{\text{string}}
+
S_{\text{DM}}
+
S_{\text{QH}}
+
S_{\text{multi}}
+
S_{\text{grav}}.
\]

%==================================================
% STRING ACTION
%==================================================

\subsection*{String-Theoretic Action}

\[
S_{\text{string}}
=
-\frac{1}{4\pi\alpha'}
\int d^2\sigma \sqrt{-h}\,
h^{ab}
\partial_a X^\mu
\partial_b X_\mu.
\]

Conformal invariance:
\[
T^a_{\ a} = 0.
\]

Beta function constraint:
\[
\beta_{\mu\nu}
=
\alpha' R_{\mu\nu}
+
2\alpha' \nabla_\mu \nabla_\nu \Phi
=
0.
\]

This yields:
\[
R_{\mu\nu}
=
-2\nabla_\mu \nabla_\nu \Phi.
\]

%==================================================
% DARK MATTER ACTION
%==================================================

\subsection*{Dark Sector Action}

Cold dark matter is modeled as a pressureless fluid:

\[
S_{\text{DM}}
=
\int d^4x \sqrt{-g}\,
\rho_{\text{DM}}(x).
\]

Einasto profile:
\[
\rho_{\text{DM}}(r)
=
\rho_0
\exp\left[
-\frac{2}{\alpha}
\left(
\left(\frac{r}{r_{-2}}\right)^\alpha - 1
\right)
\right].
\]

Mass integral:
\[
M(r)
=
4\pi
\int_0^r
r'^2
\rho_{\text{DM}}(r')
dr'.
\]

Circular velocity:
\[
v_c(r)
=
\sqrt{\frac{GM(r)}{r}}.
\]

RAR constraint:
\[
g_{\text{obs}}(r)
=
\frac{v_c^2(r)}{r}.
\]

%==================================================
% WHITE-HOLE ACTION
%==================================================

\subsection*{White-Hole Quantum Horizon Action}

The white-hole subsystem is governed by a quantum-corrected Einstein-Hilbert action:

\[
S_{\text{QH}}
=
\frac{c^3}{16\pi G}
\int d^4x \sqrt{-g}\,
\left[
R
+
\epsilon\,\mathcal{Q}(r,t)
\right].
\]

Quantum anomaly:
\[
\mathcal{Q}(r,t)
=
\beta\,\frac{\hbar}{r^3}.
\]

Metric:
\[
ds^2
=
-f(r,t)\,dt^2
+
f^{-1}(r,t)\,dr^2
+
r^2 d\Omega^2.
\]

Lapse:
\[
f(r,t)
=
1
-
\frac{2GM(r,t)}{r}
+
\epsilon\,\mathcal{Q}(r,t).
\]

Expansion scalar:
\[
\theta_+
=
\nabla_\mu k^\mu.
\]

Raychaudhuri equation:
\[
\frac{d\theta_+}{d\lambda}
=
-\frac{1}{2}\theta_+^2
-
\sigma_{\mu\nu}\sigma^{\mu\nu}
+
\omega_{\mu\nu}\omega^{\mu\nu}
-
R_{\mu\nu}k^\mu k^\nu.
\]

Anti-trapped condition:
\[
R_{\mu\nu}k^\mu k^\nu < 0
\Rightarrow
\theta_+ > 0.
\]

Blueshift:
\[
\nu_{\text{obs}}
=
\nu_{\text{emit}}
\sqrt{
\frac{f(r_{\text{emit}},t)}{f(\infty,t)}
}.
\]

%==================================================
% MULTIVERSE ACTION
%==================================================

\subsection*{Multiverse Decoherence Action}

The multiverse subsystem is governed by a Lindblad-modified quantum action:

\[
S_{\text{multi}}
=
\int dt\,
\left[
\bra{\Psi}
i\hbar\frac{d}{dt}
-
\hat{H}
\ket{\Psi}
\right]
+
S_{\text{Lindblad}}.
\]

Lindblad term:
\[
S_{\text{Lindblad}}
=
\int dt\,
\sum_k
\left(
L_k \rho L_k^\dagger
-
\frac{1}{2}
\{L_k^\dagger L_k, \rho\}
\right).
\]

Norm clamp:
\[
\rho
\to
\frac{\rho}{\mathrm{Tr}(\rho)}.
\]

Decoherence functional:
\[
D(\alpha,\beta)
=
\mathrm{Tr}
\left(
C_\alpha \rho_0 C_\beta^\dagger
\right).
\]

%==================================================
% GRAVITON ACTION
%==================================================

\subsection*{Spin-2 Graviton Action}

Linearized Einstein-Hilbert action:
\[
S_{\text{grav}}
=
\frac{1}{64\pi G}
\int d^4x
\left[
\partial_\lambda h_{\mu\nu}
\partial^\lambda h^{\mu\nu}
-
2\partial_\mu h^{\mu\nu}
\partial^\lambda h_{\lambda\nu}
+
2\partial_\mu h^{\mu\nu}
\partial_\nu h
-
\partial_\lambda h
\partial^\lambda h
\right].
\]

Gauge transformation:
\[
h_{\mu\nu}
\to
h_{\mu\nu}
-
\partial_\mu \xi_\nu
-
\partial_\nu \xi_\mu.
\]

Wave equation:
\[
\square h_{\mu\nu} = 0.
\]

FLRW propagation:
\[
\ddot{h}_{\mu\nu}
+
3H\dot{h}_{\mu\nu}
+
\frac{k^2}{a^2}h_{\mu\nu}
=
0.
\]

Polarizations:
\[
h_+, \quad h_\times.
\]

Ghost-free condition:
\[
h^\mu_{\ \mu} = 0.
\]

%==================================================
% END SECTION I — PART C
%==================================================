@@ -1,0 +1,323 @@
+%==================================================
+% SECTION I — PART C (CONTINUATION)
+%==================================================
+
+\section*{Unified Action Formalism Across All USC-QSE Domains}
+\addcontentsline{toc}{section}{Unified Action Formalism}
+
+The USC-QSE-v5.2 engine expresses all physics subsystems through a unified
+action principle. Each subsystem contributes a term to the total action:
+
+\[
+S_{\text{total}}
+=
+S_{\text{string}}
++
+S_{\text{DM}}
++
+S_{\text{QH}}
++
+S_{\text{multi}}
++
+S_{\text{grav}}.
+\]
+
+%==================================================
+% STRING ACTION
+%==================================================
+
+\subsection*{String-Theoretic Action}
+
+\[
+S_{\text{string}}
+=
+-\frac{1}{4\pi\alpha'}
+\int d^2\sigma \sqrt{-h}\,
+h^{ab}
+\partial_a X^\mu
+\partial_b X_\mu.
+\]
+
+Conformal invariance:
+\[
+T^a_{\ a} = 0.
+\]
+
+Beta function constraint:
+\[
+\beta_{\mu\nu}
+=
+\alpha' R_{\mu\nu}
++
+2\alpha' \nabla_\mu \nabla_\nu \Phi
+=
+0.
+\]
+
+This yields:
+\[
+R_{\mu\nu}
+=
+-2\nabla_\mu \nabla_\nu \Phi.
+\]
+
+%==================================================
+% DARK MATTER ACTION
+%==================================================
+
+\subsection*{Dark Sector Action}
+
+Cold dark matter is modeled as a pressureless fluid:
+
+\[
+S_{\text{DM}}
+=
+\int d^4x \sqrt{-g}\,
+\rho_{\text{DM}}(x).
+\]
+
+Einasto profile:
+\[
+\rho_{\text{DM}}(r)
+=
+\rho_0
+\exp\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^\alpha - 1
+\right)
+\right].
+\]
+
+Mass integral:
+\[
+M(r)
+=
+4\pi
+\int_0^r
+r'^2
+\rho_{\text{DM}}(r')
+dr'.
+\]
+
+Circular velocity:
+\[
+v_c(r)
+=
+\sqrt{\frac{GM(r)}{r}}.
+\]
+
+RAR constraint:
+\[
+g_{\text{obs}}(r)
+=
+\frac{v_c^2(r)}{r}.
+\]
+
+%==================================================
+% WHITE-HOLE ACTION
+%==================================================
+
+\subsection*{White-Hole Quantum Horizon Action}
+
+The white-hole subsystem is governed by a quantum-corrected Einstein-Hilbert action:
+
+\[
+S_{\text{QH}}
+=
+\frac{c^3}{16\pi G}
+\int d^4x \sqrt{-g}\,
+\left[
+R
++
+\epsilon\,\mathcal{Q}(r,t)
+\right].
+\]
+
+Quantum anomaly:
+\[
+\mathcal{Q}(r,t)
+=
+\beta\,\frac{\hbar}{r^3}.
+\]
+
+Metric:
+\[
+ds^2
+=
+-f(r,t)\,dt^2
++
+f^{-1}(r,t)\,dr^2
++
+r^2 d\Omega^2.
+\]
+
+Lapse:
+\[
+f(r,t)
+=
+1
+-
+\frac{2GM(r,t)}{r}
++
+\epsilon\,\mathcal{Q}(r,t).
+\]
+
+Expansion scalar:
+\[
+\theta_+
+=
+\nabla_\mu k^\mu.
+\]
+
+Raychaudhuri equation:
+\[
+\frac{d\theta_+}{d\lambda}
+=
+-\frac{1}{2}\theta_+^2
+-
+\sigma_{\mu\nu}\sigma^{\mu\nu}
++
+\omega_{\mu\nu}\omega^{\mu\nu}
+-
+R_{\mu\nu}k^\mu k^\nu.
+\]
+
+Anti-trapped condition:
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\Rightarrow
+\theta_+ > 0.
+\]
+
+Blueshift:
+\[
+\nu_{\text{obs}}
+=
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}.
+\]
+
+%==================================================
+% MULTIVERSE ACTION
+%==================================================
+
+\subsection*{Multiverse Decoherence Action}
+
+The multiverse subsystem is governed by a Lindblad-modified quantum action:
+
+\[
+S_{\text{multi}}
+=
+\int dt\,
+\left[
+\bra{\Psi}
+i\hbar\frac{d}{dt}
+-
+\hat{H}
+\ket{\Psi}
+\right]
++
+S_{\text{Lindblad}}.
+\]
+
+Lindblad term:
+\[
+S_{\text{Lindblad}}
+=
+\int dt\,
+\sum_k
+\left(
+L_k \rho L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k, \rho\}
+\right).
+\]
+
+Norm clamp:
+\[
+\rho
+\to
+\frac{\rho}{\mathrm{Tr}(\rho)}.
+\]
+
+Decoherence functional:
+\[
+D(\alpha,\beta)
+=
+\mathrm{Tr}
+\left(
+C_\alpha \rho_0 C_\beta^\dagger
+\right).
+\]
+
+%==================================================
+% GRAVITON ACTION
+%==================================================
+
+\subsection*{Spin-2 Graviton Action}
+
+Linearized Einstein-Hilbert action:
+\[
+S_{\text{grav}}
+=
+\frac{1}{64\pi G}
+\int d^4x
+\left[
+\partial_\lambda h_{\mu\nu}
+\partial^\lambda h^{\mu\nu}
+-
+2\partial_\mu h^{\mu\nu}
+\partial^\lambda h_{\lambda\nu}
++
+2\partial_\mu h^{\mu\nu}
+\partial_\nu h
+-
+\partial_\lambda h
+\partial^\lambda h
+\right].
+\]
+
+Gauge transformation:
+\[
+h_{\mu\nu}
+\to
+h_{\mu\nu}
+-
+\partial_\mu \xi_\nu
+-
+\partial_\nu \xi_\mu.
+\]
+
+Wave equation:
+\[
+\square h_{\mu\nu} = 0.
+\]
+
+FLRW propagation:
+\[
+\ddot{h}_{\mu\nu}
++
+3H\dot{h}_{\mu\nu}
++
+\frac{k^2}{a^2}h_{\mu\nu}
+=
+0.
+\]
+
+Polarizations:
+\[
+h_+, \quad h_\times.
+\]
+
+Ghost-free condition:
+\[
+h^\mu_{\ \mu} = 0.
+\]
+
+%==================================================
+% END SECTION I — PART C
+%==================================================

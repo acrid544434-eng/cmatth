@@ -1,0 +1,20 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=4cm, minimum height=1cm, align=center},
+  arrow/.style={->, thick},
+  >=stealth
+]
+
+\node[block] (dualrail) {Dual-Rail Logic\\Balanced Switching};
+\node[block, right=2.5cm of dualrail] (jitter) {Clock Jitter Injector};
+\node[block, right=2.5cm of jitter] (constant) {Constant-Time ALU};
+\node[block, right=2.5cm of constant] (mask) {Operand Masking Unit};
+
+\draw[arrow] (dualrail) -- (jitter);
+\draw[arrow] (jitter) -- (constant);
+\draw[arrow] (constant) -- (mask);
+
+\end{tikzpicture}
+\caption{Side-channel hardened ALU pipeline for CHD silicon.}
+\end{figure}

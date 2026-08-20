@@ -1,0 +1,322 @@
+%==================================================
+% SECTION I — PART D (CONTINUATION)
+%==================================================
+
+\section*{Unified Field Equations Across All USC-QSE Domains}
+\addcontentsline{toc}{section}{Unified Field Equations}
+
+The USC-QSE-v5.2 engine expresses all physical subsystems through a unified
+field equation framework. Each subsystem contributes a term to the master
+field equation:
+
+\[
+\mathcal{F}_{\text{total}}
+=
+\mathcal{F}_{\text{string}}
++
+\mathcal{F}_{\text{DM}}
++
+\mathcal{F}_{\text{QH}}
++
+\mathcal{F}_{\text{multi}}
++
+\mathcal{F}_{\text{grav}}.
+\]
+
+%==================================================
+% STRING FIELD EQUATIONS
+%==================================================
+
+\subsection*{String-Theoretic Field Equations}
+
+The vanishing of the beta function yields the effective Einstein equation:
+
+\[
+R_{\mu\nu}
++
+2\nabla_\mu \nabla_\nu \Phi
+=
+0.
+\]
+
+Dilaton equation:
+\[
+\nabla^2 \Phi
+-
+2(\nabla\Phi)^2
++
+\frac{1}{4}R
+=
+0.
+\]
+
+Kalb-Ramond field strength:
+\[
+H_{\mu\nu\rho}
+=
+\partial_\mu B_{\nu\rho}
++
+\partial_\nu B_{\rho\mu}
++
+\partial_\rho B_{\mu\nu}.
+\]
+
+Field equation:
+\[
+\nabla^\mu H_{\mu\nu\rho}
+=
+0.
+\]
+
+%==================================================
+% DARK MATTER FIELD EQUATIONS
+%==================================================
+
+\subsection*{Dark Sector Field Equations}
+
+Einasto density:
+\[
+\rho(r)
+=
+\rho_0
+\exp\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^\alpha - 1
+\right)
+\right].
+\]
+
+Poisson equation:
+\[
+\nabla^2 \Phi(r)
+=
+4\pi G\,\rho(r).
+\]
+
+Mass integral:
+\[
+M(r)
+=
+4\pi
+\int_0^r
+r'^2
+\rho(r')
+dr'.
+\]
+
+Circular velocity:
+\[
+v_c(r)
+=
+\sqrt{\frac{GM(r)}{r}}.
+\]
+
+RAR constraint:
+\[
+g_{\text{obs}}(r)
+=
+\frac{v_c^2(r)}{r}.
+\]
+
+Critical acceleration:
+\[
+\mathscr{A}_{\text{crit}}
+=
+\frac{GM(r_{\text{crit}})}{r_{\text{crit}}^2}.
+\]
+
+%==================================================
+% WHITE-HOLE FIELD EQUATIONS
+%==================================================
+
+\subsection*{White-Hole Horizon Field Equations}
+
+Metric:
+\[
+ds^2
+=
+-f(r,t)\,dt^2
++
+f^{-1}(r,t)\,dr^2
++
+r^2 d\Omega^2.
+\]
+
+Quantum-corrected lapse:
+\[
+f(r,t)
+=
+1
+-
+\frac{2GM(r,t)}{r}
++
+\epsilon\,\mathcal{Q}(r,t).
+\]
+
+Quantum anomaly:
+\[
+\mathcal{Q}(r,t)
+=
+\beta\,\frac{\hbar}{r^3}.
+\]
+
+Expansion scalar:
+\[
+\theta_+
+=
+\nabla_\mu k^\mu.
+\]
+
+Raychaudhuri equation:
+\[
+\frac{d\theta_+}{d\lambda}
+=
+-\frac{1}{2}\theta_+^2
+-
+\sigma_{\mu\nu}\sigma^{\mu\nu}
++
+\omega_{\mu\nu}\omega^{\mu\nu}
+-
+R_{\mu\nu}k^\mu k^\nu.
+\]
+
+Anti-trapped condition:
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\Rightarrow
+\theta_+ > 0.
+\]
+
+Blueshift:
+\[
+\nu_{\text{obs}}
+=
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}.
+\]
+
+%==================================================
+% MULTIVERSE FIELD EQUATIONS
+%==================================================
+
+\subsection*{Multiverse Decoherence Field Equations}
+
+Global state evolution:
+\[
+i\hbar
+\frac{d}{dt}
+\ket{\Psi(t)}
+=
+\hat{H}
+\ket{\Psi(t)}.
+\]
+
+Density matrix:
+\[
+\rho
+=
+\ket{\Psi}\bra{\Psi}.
+\]
+
+Reduced density matrix:
+\[
+\rho_{\text{sys}}
+=
+\mathrm{Tr}_{\text{env}}(\rho).
+\]
+
+Decoherence functional:
+\[
+D(\alpha,\beta)
+=
+\mathrm{Tr}
+\left(
+C_\alpha \rho_0 C_\beta^\dagger
+\right).
+\]
+
+Lindblad evolution:
+\[
+\frac{d\rho}{dt}
+=
+-\frac{i}{\hbar}[H,\rho]
++
+\sum_k
+\left(
+L_k \rho L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k, \rho\}
+\right).
+\]
+
+Norm clamp:
+\[
+\rho
+\to
+\frac{\rho}{\mathrm{Tr}(\rho)}.
+\]
+
+%==================================================
+% GRAVITON FIELD EQUATIONS
+%==================================================
+
+\subsection*{Spin-2 Graviton Field Equations}
+
+Perturbation:
+\[
+g_{\mu\nu}
+=
+\eta_{\mu\nu}
++
+h_{\mu\nu}.
+\]
+
+Gauge transformation:
+\[
+h_{\mu\nu}
+\to
+h_{\mu\nu}
+-
+\partial_\mu \xi_\nu
+-
+\partial_\nu \xi_\mu.
+\]
+
+Wave equation:
+\[
+\square h_{\mu\nu}
+=
+0.
+\]
+
+FLRW propagation:
+\[
+\ddot{h}_{\mu\nu}
++
+3H\dot{h}_{\mu\nu}
++
+\frac{k^2}{a^2}
+h_{\mu\nu}
+=
+0.
+\]
+
+Polarizations:
+\[
+h_+, \quad h_\times.
+\]
+
+Ghost-free condition:
+\[
+h^\mu_{\ \mu}
+=
+0.
+\]
+
+%==================================================
+% END SECTION I — PART D
+%==================================================

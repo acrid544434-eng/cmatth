@@ -1,0 +1,49 @@
+\section*{References}
+
+\begin{thebibliography}{99}
+
+\bibitem{GaiaDR3}
+Gaia Collaboration, ``Gaia Data Release 3: Summary of the Content and Survey Properties,'' 
+\textit{Astronomy \& Astrophysics}, 2022.
+
+\bibitem{JWST}
+Rigby, J. et al., ``The Science Performance of the James Webb Space Telescope,'' 
+\textit{Publications of the Astronomical Society of the Pacific}, 2023.
+
+\bibitem{LIGO}
+Abbott, B. P. et al., ``Observation of Gravitational Waves from a Binary Black Hole Merger,'' 
+\textit{Physical Review Letters}, 2016.
+
+\bibitem{MHD}
+Goedbloed, J. P., Keppens, R., \& Poedts, S., 
+\textit{Magnetohydrodynamics of Laboratory and Astrophysical Plasmas}, Cambridge University Press, 2019.
+
+\bibitem{Dirac}
+Dirac, P. A. M., ``The Quantum Theory of the Electron,'' 
+\textit{Proceedings of the Royal Society A}, 1928.
+
+\bibitem{Fock}
+Fock, V., ``Self-Consistent Field Method for Molecular Orbitals,'' 
+\textit{Zeitschrift für Physik}, 1930.
+
+\bibitem{GR}
+Misner, C. W., Thorne, K. S., \& Wheeler, J. A., 
+\textit{Gravitation}, W. H. Freeman, 1973.
+
+\bibitem{Wigner}
+Wigner, E., ``On the Quantum Correction for Thermodynamic Equilibrium,'' 
+\textit{Physical Review}, 1932.
+
+\bibitem{CKKS}
+Cheon, J., Kim, A., \& Kim, M., ``Homomorphic Encryption for Arithmetic of Approximate Numbers,'' 
+\textit{ASIACRYPT}, 2017.
+
+\bibitem{MLKEM}
+National Institute of Standards and Technology (NIST), 
+``Post-Quantum Cryptography Standardization: ML-KEM,'' 2024.
+
+\bibitem{ZKSNARK}
+Ben-Sasson, E. et al., ``Scalable Zero Knowledge via Cycles of Elliptic Curves,'' 
+\textit{IACR ePrint Archive}, 2014.
+
+\end{thebibliography}

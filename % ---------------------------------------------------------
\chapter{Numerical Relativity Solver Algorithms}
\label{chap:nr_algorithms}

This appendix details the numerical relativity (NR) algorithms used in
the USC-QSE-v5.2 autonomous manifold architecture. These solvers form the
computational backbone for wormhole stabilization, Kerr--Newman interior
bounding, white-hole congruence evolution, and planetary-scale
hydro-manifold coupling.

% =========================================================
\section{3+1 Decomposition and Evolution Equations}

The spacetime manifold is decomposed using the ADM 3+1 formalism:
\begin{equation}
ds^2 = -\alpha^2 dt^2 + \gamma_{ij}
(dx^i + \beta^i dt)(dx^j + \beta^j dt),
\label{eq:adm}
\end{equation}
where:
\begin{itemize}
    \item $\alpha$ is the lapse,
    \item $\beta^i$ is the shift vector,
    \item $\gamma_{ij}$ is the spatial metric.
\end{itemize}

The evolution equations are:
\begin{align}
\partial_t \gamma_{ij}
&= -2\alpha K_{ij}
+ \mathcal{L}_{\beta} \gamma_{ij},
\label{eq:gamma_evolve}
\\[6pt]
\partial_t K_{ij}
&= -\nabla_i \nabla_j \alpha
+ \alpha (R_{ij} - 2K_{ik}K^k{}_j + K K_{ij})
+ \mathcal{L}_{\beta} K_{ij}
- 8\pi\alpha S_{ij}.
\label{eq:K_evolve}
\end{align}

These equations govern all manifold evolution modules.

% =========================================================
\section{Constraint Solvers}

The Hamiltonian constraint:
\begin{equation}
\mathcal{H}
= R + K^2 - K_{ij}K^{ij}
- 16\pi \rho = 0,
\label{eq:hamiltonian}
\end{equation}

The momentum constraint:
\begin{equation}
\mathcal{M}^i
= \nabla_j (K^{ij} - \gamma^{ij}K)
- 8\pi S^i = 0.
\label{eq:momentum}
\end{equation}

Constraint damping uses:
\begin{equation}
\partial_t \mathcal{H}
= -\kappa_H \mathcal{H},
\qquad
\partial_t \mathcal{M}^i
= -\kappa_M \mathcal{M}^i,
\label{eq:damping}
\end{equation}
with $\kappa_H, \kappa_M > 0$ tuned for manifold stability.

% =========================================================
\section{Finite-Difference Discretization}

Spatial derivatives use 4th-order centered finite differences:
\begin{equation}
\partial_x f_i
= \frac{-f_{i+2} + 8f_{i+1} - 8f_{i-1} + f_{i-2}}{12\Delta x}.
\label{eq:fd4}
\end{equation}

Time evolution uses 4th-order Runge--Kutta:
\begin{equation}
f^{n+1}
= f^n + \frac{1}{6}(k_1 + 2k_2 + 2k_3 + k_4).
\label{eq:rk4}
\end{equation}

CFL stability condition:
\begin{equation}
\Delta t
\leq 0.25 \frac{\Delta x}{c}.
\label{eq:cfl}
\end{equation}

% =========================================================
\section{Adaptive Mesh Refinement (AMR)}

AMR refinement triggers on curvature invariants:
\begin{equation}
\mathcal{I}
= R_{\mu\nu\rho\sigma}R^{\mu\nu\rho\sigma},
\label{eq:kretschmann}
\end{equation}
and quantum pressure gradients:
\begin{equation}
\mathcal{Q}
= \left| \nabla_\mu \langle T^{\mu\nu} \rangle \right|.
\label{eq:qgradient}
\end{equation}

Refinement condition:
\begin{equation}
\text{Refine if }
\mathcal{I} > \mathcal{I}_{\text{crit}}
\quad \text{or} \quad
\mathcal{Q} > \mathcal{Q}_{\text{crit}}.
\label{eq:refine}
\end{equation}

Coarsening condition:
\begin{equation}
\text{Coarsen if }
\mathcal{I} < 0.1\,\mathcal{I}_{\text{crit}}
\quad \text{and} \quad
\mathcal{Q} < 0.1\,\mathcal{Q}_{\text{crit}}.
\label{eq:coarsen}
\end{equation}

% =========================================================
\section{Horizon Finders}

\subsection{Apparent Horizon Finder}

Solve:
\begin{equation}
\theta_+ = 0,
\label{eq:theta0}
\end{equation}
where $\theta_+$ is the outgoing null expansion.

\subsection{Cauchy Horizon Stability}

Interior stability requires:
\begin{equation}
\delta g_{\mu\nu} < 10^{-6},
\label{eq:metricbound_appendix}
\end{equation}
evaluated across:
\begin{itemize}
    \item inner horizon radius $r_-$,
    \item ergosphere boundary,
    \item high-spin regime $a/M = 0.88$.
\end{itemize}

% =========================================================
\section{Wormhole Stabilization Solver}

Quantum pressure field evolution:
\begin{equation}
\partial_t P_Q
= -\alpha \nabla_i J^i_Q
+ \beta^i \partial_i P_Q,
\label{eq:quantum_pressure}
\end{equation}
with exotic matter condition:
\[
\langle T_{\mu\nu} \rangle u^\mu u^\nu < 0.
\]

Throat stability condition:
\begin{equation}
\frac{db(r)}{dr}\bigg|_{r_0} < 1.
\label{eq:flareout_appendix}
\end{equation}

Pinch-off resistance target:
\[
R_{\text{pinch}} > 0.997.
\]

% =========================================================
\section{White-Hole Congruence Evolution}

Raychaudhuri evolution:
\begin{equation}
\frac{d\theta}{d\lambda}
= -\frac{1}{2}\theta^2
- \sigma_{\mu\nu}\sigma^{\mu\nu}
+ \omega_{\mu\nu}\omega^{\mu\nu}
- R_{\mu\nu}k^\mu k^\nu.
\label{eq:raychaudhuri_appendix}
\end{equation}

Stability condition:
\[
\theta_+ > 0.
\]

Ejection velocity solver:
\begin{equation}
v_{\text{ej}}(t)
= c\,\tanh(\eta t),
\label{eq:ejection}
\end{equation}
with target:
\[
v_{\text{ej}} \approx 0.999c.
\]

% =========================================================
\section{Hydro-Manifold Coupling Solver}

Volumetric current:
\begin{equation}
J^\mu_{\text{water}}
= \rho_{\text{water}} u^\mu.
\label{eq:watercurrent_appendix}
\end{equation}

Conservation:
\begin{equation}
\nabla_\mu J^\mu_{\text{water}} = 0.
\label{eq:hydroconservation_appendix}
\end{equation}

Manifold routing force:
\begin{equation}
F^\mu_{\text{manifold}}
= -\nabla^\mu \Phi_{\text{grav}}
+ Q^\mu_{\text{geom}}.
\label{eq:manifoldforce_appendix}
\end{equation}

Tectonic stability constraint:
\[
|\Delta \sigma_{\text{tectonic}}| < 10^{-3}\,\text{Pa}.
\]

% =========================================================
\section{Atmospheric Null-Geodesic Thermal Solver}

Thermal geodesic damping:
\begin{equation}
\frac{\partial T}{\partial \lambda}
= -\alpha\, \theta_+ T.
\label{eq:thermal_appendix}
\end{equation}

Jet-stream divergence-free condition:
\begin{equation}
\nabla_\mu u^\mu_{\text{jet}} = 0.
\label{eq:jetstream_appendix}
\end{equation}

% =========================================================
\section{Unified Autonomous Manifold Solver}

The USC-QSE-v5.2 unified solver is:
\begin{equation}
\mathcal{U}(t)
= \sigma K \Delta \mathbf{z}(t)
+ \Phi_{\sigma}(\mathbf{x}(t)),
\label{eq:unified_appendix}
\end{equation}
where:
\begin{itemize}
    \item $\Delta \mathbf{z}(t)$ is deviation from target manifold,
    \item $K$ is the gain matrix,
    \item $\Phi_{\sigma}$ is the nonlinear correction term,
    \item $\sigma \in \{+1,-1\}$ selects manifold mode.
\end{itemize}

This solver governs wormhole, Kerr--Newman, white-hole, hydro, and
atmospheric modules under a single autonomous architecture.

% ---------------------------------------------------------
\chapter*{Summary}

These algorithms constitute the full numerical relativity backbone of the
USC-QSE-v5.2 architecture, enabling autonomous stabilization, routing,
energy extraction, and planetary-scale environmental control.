@@ -1,0 +1,284 @@
+% ---------------------------------------------------------
+\chapter{Numerical Relativity Solver Algorithms}
+\label{chap:nr_algorithms}
+
+This appendix details the numerical relativity (NR) algorithms used in
+the USC-QSE-v5.2 autonomous manifold architecture. These solvers form the
+computational backbone for wormhole stabilization, Kerr--Newman interior
+bounding, white-hole congruence evolution, and planetary-scale
+hydro-manifold coupling.
+
+% =========================================================
+\section{3+1 Decomposition and Evolution Equations}
+
+The spacetime manifold is decomposed using the ADM 3+1 formalism:
+\begin{equation}
+ds^2 = -\alpha^2 dt^2 + \gamma_{ij}
+(dx^i + \beta^i dt)(dx^j + \beta^j dt),
+\label{eq:adm}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\alpha$ is the lapse,
+    \item $\beta^i$ is the shift vector,
+    \item $\gamma_{ij}$ is the spatial metric.
+\end{itemize}
+
+The evolution equations are:
+\begin{align}
+\partial_t \gamma_{ij}
+&= -2\alpha K_{ij}
++ \mathcal{L}_{\beta} \gamma_{ij},
+\label{eq:gamma_evolve}
+\\[6pt]
+\partial_t K_{ij}
+&= -\nabla_i \nabla_j \alpha
++ \alpha (R_{ij} - 2K_{ik}K^k{}_j + K K_{ij})
++ \mathcal{L}_{\beta} K_{ij}
+- 8\pi\alpha S_{ij}.
+\label{eq:K_evolve}
+\end{align}
+
+These equations govern all manifold evolution modules.
+
+% =========================================================
+\section{Constraint Solvers}
+
+The Hamiltonian constraint:
+\begin{equation}
+\mathcal{H}
+= R + K^2 - K_{ij}K^{ij}
+- 16\pi \rho = 0,
+\label{eq:hamiltonian}
+\end{equation}
+
+The momentum constraint:
+\begin{equation}
+\mathcal{M}^i
+= \nabla_j (K^{ij} - \gamma^{ij}K)
+- 8\pi S^i = 0.
+\label{eq:momentum}
+\end{equation}
+
+Constraint damping uses:
+\begin{equation}
+\partial_t \mathcal{H}
+= -\kappa_H \mathcal{H},
+\qquad
+\partial_t \mathcal{M}^i
+= -\kappa_M \mathcal{M}^i,
+\label{eq:damping}
+\end{equation}
+with $\kappa_H, \kappa_M > 0$ tuned for manifold stability.
+
+% =========================================================
+\section{Finite-Difference Discretization}
+
+Spatial derivatives use 4th-order centered finite differences:
+\begin{equation}
+\partial_x f_i
+= \frac{-f_{i+2} + 8f_{i+1} - 8f_{i-1} + f_{i-2}}{12\Delta x}.
+\label{eq:fd4}
+\end{equation}
+
+Time evolution uses 4th-order Runge--Kutta:
+\begin{equation}
+f^{n+1}
+= f^n + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4).
+\label{eq:rk4}
+\end{equation}
+
+CFL stability condition:
+\begin{equation}
+\Delta t
+\leq 0.25 \frac{\Delta x}{c}.
+\label{eq:cfl}
+\end{equation}
+
+% =========================================================
+\section{Adaptive Mesh Refinement (AMR)}
+
+AMR refinement triggers on curvature invariants:
+\begin{equation}
+\mathcal{I}
+= R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma},
+\label{eq:kretschmann}
+\end{equation}
+and quantum pressure gradients:
+\begin{equation}
+\mathcal{Q}
+= \left| \nabla_\mu \langle T^{\mu\nu} \rangle \right|.
+\label{eq:qgradient}
+\end{equation}
+
+Refinement condition:
+\begin{equation}
+\text{Refine if }
+\mathcal{I} > \mathcal{I}_{\text{crit}}
+\quad \text{or} \quad
+\mathcal{Q} > \mathcal{Q}_{\text{crit}}.
+\label{eq:refine}
+\end{equation}
+
+Coarsening condition:
+\begin{equation}
+\text{Coarsen if }
+\mathcal{I} < 0.1\,\mathcal{I}_{\text{crit}}
+\quad \text{and} \quad
+\mathcal{Q} < 0.1\,\mathcal{Q}_{\text{crit}}.
+\label{eq:coarsen}
+\end{equation}
+
+% =========================================================
+\section{Horizon Finders}
+
+\subsection{Apparent Horizon Finder}
+
+Solve:
+\begin{equation}
+\theta_+ = 0,
+\label{eq:theta0}
+\end{equation}
+where $\theta_+$ is the outgoing null expansion.
+
+\subsection{Cauchy Horizon Stability}
+
+Interior stability requires:
+\begin{equation}
+\delta g_{\mu\nu} < 10^{-6},
+\label{eq:metricbound_appendix}
+\end{equation}
+evaluated across:
+\begin{itemize}
+    \item inner horizon radius $r_-$,
+    \item ergosphere boundary,
+    \item high-spin regime $a/M = 0.88$.
+\end{itemize}
+
+% =========================================================
+\section{Wormhole Stabilization Solver}
+
+Quantum pressure field evolution:
+\begin{equation}
+\partial_t P_Q
+= -\alpha \nabla_i J^i_Q
++ \beta^i \partial_i P_Q,
+\label{eq:quantum_pressure}
+\end{equation}
+with exotic matter condition:
+\[
+\langle T_{\mu\nu} \rangle u^\mu u^\nu < 0.
+\]
+
+Throat stability condition:
+\begin{equation}
+\frac{db(r)}{dr}\bigg|_{r_0} < 1.
+\label{eq:flareout_appendix}
+\end{equation}
+
+Pinch-off resistance target:
+\[
+R_{\text{pinch}} > 0.997.
+\]
+
+% =========================================================
+\section{White-Hole Congruence Evolution}
+
+Raychaudhuri evolution:
+\begin{equation}
+\frac{d\theta}{d\lambda}
+= -\frac{1}{2}\theta^2
+- \sigma_{\mu\nu}\sigma^{\mu\nu}
++ \omega_{\mu\nu}\omega^{\mu\nu}
+- R_{\mu\nu}k^\mu k^\nu.
+\label{eq:raychaudhuri_appendix}
+\end{equation}
+
+Stability condition:
+\[
+\theta_+ > 0.
+\]
+
+Ejection velocity solver:
+\begin{equation}
+v_{\text{ej}}(t)
+= c\,\tanh(\eta t),
+\label{eq:ejection}
+\end{equation}
+with target:
+\[
+v_{\text{ej}} \approx 0.999c.
+\]
+
+% =========================================================
+\section{Hydro-Manifold Coupling Solver}
+
+Volumetric current:
+\begin{equation}
+J^\mu_{\text{water}}
+= \rho_{\text{water}} u^\mu.
+\label{eq:watercurrent_appendix}
+\end{equation}
+
+Conservation:
+\begin{equation}
+\nabla_\mu J^\mu_{\text{water}} = 0.
+\label{eq:hydroconservation_appendix}
+\end{equation}
+
+Manifold routing force:
+\begin{equation}
+F^\mu_{\text{manifold}}
+= -\nabla^\mu \Phi_{\text{grav}}
++ Q^\mu_{\text{geom}}.
+\label{eq:manifoldforce_appendix}
+\end{equation}
+
+Tectonic stability constraint:
+\[
+|\Delta \sigma_{\text{tectonic}}| < 10^{-3}\,\text{Pa}.
+\]
+
+% =========================================================
+\section{Atmospheric Null-Geodesic Thermal Solver}
+
+Thermal geodesic damping:
+\begin{equation}
+\frac{\partial T}{\partial \lambda}
+= -\alpha\, \theta_+ T.
+\label{eq:thermal_appendix}
+\end{equation}
+
+Jet-stream divergence-free condition:
+\begin{equation}
+\nabla_\mu u^\mu_{\text{jet}} = 0.
+\label{eq:jetstream_appendix}
+\end{equation}
+
+% =========================================================
+\section{Unified Autonomous Manifold Solver}
+
+The USC-QSE-v5.2 unified solver is:
+\begin{equation}
+\mathcal{U}(t)
+= \sigma K \Delta \mathbf{z}(t)
++ \Phi_{\sigma}(\mathbf{x}(t)),
+\label{eq:unified_appendix}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\Delta \mathbf{z}(t)$ is deviation from target manifold,
+    \item $K$ is the gain matrix,
+    \item $\Phi_{\sigma}$ is the nonlinear correction term,
+    \item $\sigma \in \{+1,-1\}$ selects manifold mode.
+\end{itemize}
+
+This solver governs wormhole, Kerr--Newman, white-hole, hydro, and
+atmospheric modules under a single autonomous architecture.
+
+% ---------------------------------------------------------
+\chapter*{Summary}
+
+These algorithms constitute the full numerical relativity backbone of the
+USC-QSE-v5.2 architecture, enabling autonomous stabilization, routing,
+energy extraction, and planetary-scale environmental control.

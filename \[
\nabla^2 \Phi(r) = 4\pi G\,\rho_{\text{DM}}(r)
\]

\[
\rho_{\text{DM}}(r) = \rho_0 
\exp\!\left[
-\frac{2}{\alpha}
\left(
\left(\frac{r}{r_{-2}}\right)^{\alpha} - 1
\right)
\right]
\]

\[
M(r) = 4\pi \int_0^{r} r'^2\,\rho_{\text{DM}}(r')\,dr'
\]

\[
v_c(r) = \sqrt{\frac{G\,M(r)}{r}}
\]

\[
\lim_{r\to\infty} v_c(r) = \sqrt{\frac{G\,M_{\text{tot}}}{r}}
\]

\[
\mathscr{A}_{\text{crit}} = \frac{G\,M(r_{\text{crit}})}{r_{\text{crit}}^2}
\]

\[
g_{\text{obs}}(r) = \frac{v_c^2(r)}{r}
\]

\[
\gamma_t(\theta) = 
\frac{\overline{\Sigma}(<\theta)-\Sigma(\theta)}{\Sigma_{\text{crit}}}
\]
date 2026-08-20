@@ -1,0 +1,38 @@
+\[
+\nabla^2 \Phi(r) = 4\pi G\,\rho_{\text{DM}}(r)
+\]
+
+\[
+\rho_{\text{DM}}(r) = \rho_0 
+\exp\!\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^{\alpha} - 1
+\right)
+\right]
+\]
+
+\[
+M(r) = 4\pi \int_0^{r} r'^2\,\rho_{\text{DM}}(r')\,dr'
+\]
+
+\[
+v_c(r) = \sqrt{\frac{G\,M(r)}{r}}
+\]
+
+\[
+\lim_{r\to\infty} v_c(r) = \sqrt{\frac{G\,M_{\text{tot}}}{r}}
+\]
+
+\[
+\mathscr{A}_{\text{crit}} = \frac{G\,M(r_{\text{crit}})}{r_{\text{crit}}^2}
+\]
+
+\[
+g_{\text{obs}}(r) = \frac{v_c^2(r)}{r}
+\]
+
+\[
+\gamma_t(\theta) = 
+\frac{\overline{\Sigma}(<\theta)-\Sigma(\theta)}{\Sigma_{\text{crit}}}
+\]

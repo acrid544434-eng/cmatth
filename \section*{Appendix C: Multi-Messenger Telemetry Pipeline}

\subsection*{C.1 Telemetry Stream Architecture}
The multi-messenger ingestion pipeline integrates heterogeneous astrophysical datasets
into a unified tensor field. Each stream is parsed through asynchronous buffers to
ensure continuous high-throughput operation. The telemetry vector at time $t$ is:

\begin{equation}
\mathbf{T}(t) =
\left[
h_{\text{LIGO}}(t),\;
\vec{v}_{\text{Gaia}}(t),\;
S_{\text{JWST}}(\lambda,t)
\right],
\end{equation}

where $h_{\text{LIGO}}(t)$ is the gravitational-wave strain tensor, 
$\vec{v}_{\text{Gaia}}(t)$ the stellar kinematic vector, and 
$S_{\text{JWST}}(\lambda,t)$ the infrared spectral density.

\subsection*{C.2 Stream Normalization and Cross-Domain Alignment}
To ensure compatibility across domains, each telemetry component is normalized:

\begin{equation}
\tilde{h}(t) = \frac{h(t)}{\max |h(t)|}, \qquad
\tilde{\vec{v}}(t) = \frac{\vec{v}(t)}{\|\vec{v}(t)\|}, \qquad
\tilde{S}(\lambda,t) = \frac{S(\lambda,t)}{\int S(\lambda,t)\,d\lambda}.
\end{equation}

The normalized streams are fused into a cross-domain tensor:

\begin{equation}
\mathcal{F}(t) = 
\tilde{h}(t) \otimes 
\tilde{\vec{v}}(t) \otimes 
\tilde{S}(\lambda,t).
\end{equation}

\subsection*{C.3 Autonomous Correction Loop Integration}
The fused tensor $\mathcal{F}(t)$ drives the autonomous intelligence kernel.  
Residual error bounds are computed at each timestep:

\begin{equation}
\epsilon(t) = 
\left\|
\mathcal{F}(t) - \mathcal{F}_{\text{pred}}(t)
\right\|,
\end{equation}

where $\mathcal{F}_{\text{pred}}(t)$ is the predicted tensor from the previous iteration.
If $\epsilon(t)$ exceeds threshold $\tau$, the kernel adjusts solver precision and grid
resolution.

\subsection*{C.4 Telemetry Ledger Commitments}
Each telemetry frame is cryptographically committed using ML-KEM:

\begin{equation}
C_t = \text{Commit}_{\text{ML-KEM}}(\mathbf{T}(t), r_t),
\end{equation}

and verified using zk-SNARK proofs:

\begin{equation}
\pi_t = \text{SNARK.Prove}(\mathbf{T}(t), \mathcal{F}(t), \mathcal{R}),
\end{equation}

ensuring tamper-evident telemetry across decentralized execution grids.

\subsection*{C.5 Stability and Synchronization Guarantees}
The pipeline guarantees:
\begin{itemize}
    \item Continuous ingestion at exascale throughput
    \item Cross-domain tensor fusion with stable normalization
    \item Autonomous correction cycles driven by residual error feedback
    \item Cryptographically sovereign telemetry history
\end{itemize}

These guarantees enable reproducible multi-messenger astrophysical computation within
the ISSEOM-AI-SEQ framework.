@@ -1,0 +1,79 @@
+\section*{Appendix C: Multi-Messenger Telemetry Pipeline}
+
+\subsection*{C.1 Telemetry Stream Architecture}
+The multi-messenger ingestion pipeline integrates heterogeneous astrophysical datasets
+into a unified tensor field. Each stream is parsed through asynchronous buffers to
+ensure continuous high-throughput operation. The telemetry vector at time $t$ is:
+
+\begin{equation}
+\mathbf{T}(t) =
+\left[
+h_{\text{LIGO}}(t),\;
+\vec{v}_{\text{Gaia}}(t),\;
+S_{\text{JWST}}(\lambda,t)
+\right],
+\end{equation}
+
+where $h_{\text{LIGO}}(t)$ is the gravitational-wave strain tensor, 
+$\vec{v}_{\text{Gaia}}(t)$ the stellar kinematic vector, and 
+$S_{\text{JWST}}(\lambda,t)$ the infrared spectral density.
+
+\subsection*{C.2 Stream Normalization and Cross-Domain Alignment}
+To ensure compatibility across domains, each telemetry component is normalized:
+
+\begin{equation}
+\tilde{h}(t) = \frac{h(t)}{\max |h(t)|}, \qquad
+\tilde{\vec{v}}(t) = \frac{\vec{v}(t)}{\|\vec{v}(t)\|}, \qquad
+\tilde{S}(\lambda,t) = \frac{S(\lambda,t)}{\int S(\lambda,t)\,d\lambda}.
+\end{equation}
+
+The normalized streams are fused into a cross-domain tensor:
+
+\begin{equation}
+\mathcal{F}(t) = 
+\tilde{h}(t) \otimes 
+\tilde{\vec{v}}(t) \otimes 
+\tilde{S}(\lambda,t).
+\end{equation}
+
+\subsection*{C.3 Autonomous Correction Loop Integration}
+The fused tensor $\mathcal{F}(t)$ drives the autonomous intelligence kernel.  
+Residual error bounds are computed at each timestep:
+
+\begin{equation}
+\epsilon(t) = 
+\left\|
+\mathcal{F}(t) - \mathcal{F}_{\text{pred}}(t)
+\right\|,
+\end{equation}
+
+where $\mathcal{F}_{\text{pred}}(t)$ is the predicted tensor from the previous iteration.
+If $\epsilon(t)$ exceeds threshold $\tau$, the kernel adjusts solver precision and grid
+resolution.
+
+\subsection*{C.4 Telemetry Ledger Commitments}
+Each telemetry frame is cryptographically committed using ML-KEM:
+
+\begin{equation}
+C_t = \text{Commit}_{\text{ML-KEM}}(\mathbf{T}(t), r_t),
+\end{equation}
+
+and verified using zk-SNARK proofs:
+
+\begin{equation}
+\pi_t = \text{SNARK.Prove}(\mathbf{T}(t), \mathcal{F}(t), \mathcal{R}),
+\end{equation}
+
+ensuring tamper-evident telemetry across decentralized execution grids.
+
+\subsection*{C.5 Stability and Synchronization Guarantees}
+The pipeline guarantees:
+\begin{itemize}
+    \item Continuous ingestion at exascale throughput
+    \item Cross-domain tensor fusion with stable normalization
+    \item Autonomous correction cycles driven by residual error feedback
+    \item Cryptographically sovereign telemetry history
+\end{itemize}
+
+These guarantees enable reproducible multi-messenger astrophysical computation within
+the ISSEOM-AI-SEQ framework.

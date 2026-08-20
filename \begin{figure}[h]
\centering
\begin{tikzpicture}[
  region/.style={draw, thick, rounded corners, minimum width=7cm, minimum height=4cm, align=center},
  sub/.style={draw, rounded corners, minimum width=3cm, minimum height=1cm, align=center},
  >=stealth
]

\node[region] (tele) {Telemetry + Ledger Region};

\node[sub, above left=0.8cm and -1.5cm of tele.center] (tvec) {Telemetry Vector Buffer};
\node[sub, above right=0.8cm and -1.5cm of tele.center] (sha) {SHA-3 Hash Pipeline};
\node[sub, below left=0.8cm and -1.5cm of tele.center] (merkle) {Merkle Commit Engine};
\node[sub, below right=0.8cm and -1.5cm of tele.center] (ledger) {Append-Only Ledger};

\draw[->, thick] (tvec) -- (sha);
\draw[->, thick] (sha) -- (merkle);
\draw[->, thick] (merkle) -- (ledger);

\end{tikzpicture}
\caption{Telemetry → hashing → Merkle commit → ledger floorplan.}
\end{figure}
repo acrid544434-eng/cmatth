@@ -1,0 +1,22 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  region/.style={draw, thick, rounded corners, minimum width=7cm, minimum height=4cm, align=center},
+  sub/.style={draw, rounded corners, minimum width=3cm, minimum height=1cm, align=center},
+  >=stealth
+]
+
+\node[region] (tele) {Telemetry + Ledger Region};
+
+\node[sub, above left=0.8cm and -1.5cm of tele.center] (tvec) {Telemetry Vector Buffer};
+\node[sub, above right=0.8cm and -1.5cm of tele.center] (sha) {SHA-3 Hash Pipeline};
+\node[sub, below left=0.8cm and -1.5cm of tele.center] (merkle) {Merkle Commit Engine};
+\node[sub, below right=0.8cm and -1.5cm of tele.center] (ledger) {Append-Only Ledger};
+
+\draw[->, thick] (tvec) -- (sha);
+\draw[->, thick] (sha) -- (merkle);
+\draw[->, thick] (merkle) -- (ledger);
+
+\end{tikzpicture}
+\caption{Telemetry → hashing → Merkle commit → ledger floorplan.}
+\end{figure}

@@ -1,0 +1,22 @@
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+    node/.style={draw, rounded corners, align=center, minimum width=3cm, minimum height=1cm},
+    >=Stealth
+  ]
+
+  % Tier 1
+  \node[node] (edge1) {Tier 1\\Edge Telemetry\\Sensors \& Actuators};
+  \node[node, below=1.5cm of edge1] (regional) {Tier 2\\Regional GPU\\Enclave Clusters};
+  \node[node, below=1.5cm of regional] (global) {Tier 3\\Global Consensus\\Merkle Ledger};
+
+  \draw[->] (edge1) -- node[right]{encrypted\\telemetry} (regional);
+  \draw[->] (regional) -- node[right]{state commits} (global);
+  \draw[->, dashed] (global) -- node[left]{policies \&\\config updates} (regional);
+
+  \end{tikzpicture}
+  \caption{Tri-tier CEUME/CHD deployment topology: edge telemetry, regional encrypted compute, and global ledger.}
+\end{figure}

@@ -1,0 +1,305 @@
+%==================================================
+% SECTION I — PART B (CONTINUATION)
+%==================================================
+
+\section*{Unified Tensor Formulation of the USC-QSE Physics Domains}
+\addcontentsline{toc}{section}{Unified Tensor Formulation}
+
+The USC-QSE-v5.2 engine expresses all physical subsystems in a unified tensor
+formalism. This ensures compatibility between classical GR, quantum field
+operators, and string-theoretic harmonic modes.
+
+%==================================================
+% MASTER TENSOR DEFINITIONS
+%==================================================
+
+\subsection*{Master Curvature Tensor}
+
+The Riemann curvature tensor:
+\[
+R^\rho_{\ \sigma\mu\nu}
+=
+\partial_\mu \Gamma^\rho_{\sigma\nu}
+-
+\partial_\nu \Gamma^\rho_{\sigma\mu}
++
+\Gamma^\rho_{\lambda\mu}\Gamma^\lambda_{\sigma\nu}
+-
+\Gamma^\rho_{\lambda\nu}\Gamma^\lambda_{\sigma\mu}.
+\]
+
+Ricci tensor:
+\[
+R_{\mu\nu} = R^\rho_{\ \mu\rho\nu}.
+\]
+
+Scalar curvature:
+\[
+R = g^{\mu\nu} R_{\mu\nu}.
+\]
+
+Einstein tensor:
+\[
+G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R.
+\]
+
+%==================================================
+% STRING THEORY TENSOR COUPLING
+%==================================================
+
+\section*{String-Theoretic Tensor Coupling}
+
+The worldsheet stress-energy tensor:
+\[
+T_{ab}
+=
+\frac{2}{\sqrt{-h}}
+\frac{\delta S}{\delta h^{ab}}
+=
+\partial_a X^\mu \partial_b X_\mu
+-
+\frac{1}{2}
+h_{ab}
+h^{cd}
+\partial_c X^\mu \partial_d X_\mu.
+\]
+
+Conformal invariance requires:
+\[
+T^a_{\ a} = 0.
+\]
+
+The target-space beta function:
+\[
+\beta_{\mu\nu}
+=
+\alpha' R_{\mu\nu}
++
+2\alpha' \nabla_\mu \nabla_\nu \Phi
++
+\mathcal{O}(\alpha'^2).
+\]
+
+Conformal invariance condition:
+\[
+\beta_{\mu\nu} = 0.
+\]
+
+This yields the effective spacetime Einstein equations:
+\[
+R_{\mu\nu} + 2\nabla_\mu \nabla_\nu \Phi = 0.
+\]
+
+%==================================================
+% DARK SECTOR TENSOR FORMULATION
+%==================================================
+
+\section*{Dark Sector Tensor Formulation}
+
+Einasto density tensor:
+\[
+\rho_{\text{DM}}(r)
+=
+\rho_0
+\exp\left[
+-\frac{2}{\alpha}
+\left(
+\left(\frac{r}{r_{-2}}\right)^\alpha - 1
+\right)
+\right].
+\]
+
+Stress-energy tensor for cold dark matter:
+\[
+T_{\mu\nu}^{\text{DM}}
+=
+\rho_{\text{DM}} u_\mu u_\nu.
+\]
+
+Einstein equation:
+\[
+G_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+T_{\mu\nu}^{\text{DM}}.
+\]
+
+Radial acceleration:
+\[
+g(r) = \frac{GM(r)}{r^2}.
+\]
+
+RAR constraint:
+\[
+g_{\text{obs}}(r)
+=
+\frac{v_c^2(r)}{r}.
+\]
+
+%==================================================
+% MULTIVERSE TENSOR FORMULATION
+%==================================================
+
+\section*{Multiverse Decoherence Tensor Formulation}
+
+Density matrix:
+\[
+\rho = \ket{\Psi}\bra{\Psi}.
+\]
+
+Reduced density matrix:
+\[
+\rho_{\text{sys}}
+=
+\mathrm{Tr}_{\text{env}}(\rho).
+\]
+
+Decoherence functional:
+\[
+D(\alpha,\beta)
+=
+\mathrm{Tr}
+\left(
+C_\alpha \rho_0 C_\beta^\dagger
+\right).
+\]
+
+Lindblad operator tensor:
+\[
+\mathcal{L}(\rho)
+=
+-\frac{i}{\hbar}[H,\rho]
++
+\sum_k
+\left(
+L_k \rho L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k, \rho\}
+\right).
+\]
+
+Norm clamp:
+\[
+\rho \to \frac{\rho}{\mathrm{Tr}(\rho)}.
+\]
+
+%==================================================
+% WHITE-HOLE TENSOR FORMULATION
+%==================================================
+
+\section*{White-Hole Horizon Tensor Formulation}
+
+Metric:
+\[
+ds^2 = -f(r,t)\,dt^2 + f^{-1}(r,t)\,dr^2 + r^2 d\Omega^2.
+\]
+
+Quantum-corrected lapse:
+\[
+f(r,t)
+=
+1
+-
+\frac{2GM(r,t)}{r}
++
+\epsilon\,\mathcal{Q}(r,t).
+\]
+
+Expansion scalar:
+\[
+\theta_+ = \nabla_\mu k^\mu.
+\]
+
+Raychaudhuri tensor equation:
+\[
+\frac{d\theta_+}{d\lambda}
+=
+-\frac{1}{2}\theta_+^2
+-
+\sigma_{\mu\nu}\sigma^{\mu\nu}
++
+\omega_{\mu\nu}\omega^{\mu\nu}
+-
+R_{\mu\nu}k^\mu k^\nu.
+\]
+
+Anti-trapped condition:
+\[
+R_{\mu\nu}k^\mu k^\nu < 0
+\Rightarrow
+\theta_+ > 0.
+\]
+
+Quantum anomaly:
+\[
+\mathcal{Q}(r,t)
+=
+\beta\,\frac{\hbar}{r^3}.
+\]
+
+Blueshift:
+\[
+\nu_{\text{obs}}
+=
+\nu_{\text{emit}}
+\sqrt{
+\frac{f(r_{\text{emit}},t)}{f(\infty,t)}
+}.
+\]
+
+%==================================================
+% GRAVITON TENSOR FORMULATION
+%==================================================
+
+\section*{Spin-2 Graviton Tensor Formulation}
+
+Perturbation:
+\[
+g_{\mu\nu}
+=
+\eta_{\mu\nu}
++
+h_{\mu\nu}.
+\]
+
+Gauge transformation:
+\[
+h_{\mu\nu}
+\to
+h_{\mu\nu}
+-
+\partial_\mu \xi_\nu
+-
+\partial_\nu \xi_\mu.
+\]
+
+Wave equation:
+\[
+\square h_{\mu\nu} = 0.
+\]
+
+FLRW propagation:
+\[
+\ddot{h}_{\mu\nu}
++
+3H\dot{h}_{\mu\nu}
++
+\frac{k^2}{a^2}h_{\mu\nu}
+=
+0.
+\]
+
+Polarizations:
+\[
+h_+, \quad h_\times.
+\]
+
+Ghost-free condition:
+\[
+h^\mu_{\ \mu} = 0.
+\]
+
+%==================================================
+% END SECTION I — PART B
+%==================================================

@@ -1,0 +1,29 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  region/.style={draw, thick, rounded corners, minimum width=7cm, minimum height=4cm, align=center},
+  sub/.style={draw, rounded corners, minimum width=3cm, minimum height=1cm, align=center},
+  mesh/.style={draw, dashed, thick, rounded corners, minimum width=8cm, minimum height=5cm},
+  >=stealth
+]
+
+% Tamper mesh overlay
+\node[mesh] (mesh) {};
+
+% Silicon region
+\node[region] (core) {Secure Core Region};
+
+% Sub-blocks
+\node[sub, above left=0.8cm and -1.5cm of core.center] (detect) {Tamper Detection Grid};
+\node[sub, above right=0.8cm and -1.5cm of core.center] (fib) {Laser/FIB Sensors};
+\node[sub, below left=0.8cm and -1.5cm of core.center] (chem) {Chemical Decap Sensors};
+\node[sub, below right=0.8cm and -1.5cm of core.center] (zero) {Zeroization Circuit};
+
+% Arrows
+\draw[->, thick] (detect) -- (zero);
+\draw[->, thick] (fib) -- (zero);
+\draw[->, thick] (chem) -- (zero);
+
+\end{tikzpicture}
+\caption{Tamper mesh floorplan with multi-vector detection and zeroization pipeline.}
+\end{figure}

@@ -1,0 +1,87 @@
+\chapter{Unified System Overview}
+
+\section{Introduction}
+
+The BAAC-SE v1.0 architecture, authored by independent systems architect
+C.~Matthew Blackwell, represents a unified cyber-physical engine that merges
+multi-messenger astrophysical telemetry, approximate homomorphic encryption,
+zero-knowledge bounded-error verification, real-time operating system isolation,
+and biomechatronic actuation safety into a single deterministic framework.
+
+This chapter provides a consolidated overview of how the system’s mathematical,
+cryptographic, and hardware subsystems interlock to form a coherent,
+end-to-end verified bionic control pipeline.
+
+\section{Unified Dataflow Architecture}
+
+The BAAC-SE v1.0 pipeline is structured as a continuous, cryptographically
+verified flow of information:
+
+\begin{enumerate}
+    \item \textbf{Astrophysical Ingestion:}
+    High-frequency telemetry from Gaia, LIGO, and JWST is captured through
+    interrupt-driven ingestion on Core~0.
+
+    \item \textbf{Homomorphic Evaluation:}
+    The CKKS pipeline on Core~1 performs approximate encrypted computation over
+    polynomial rings $\mathbb{R}[X]/(X^N+1)$, producing decrypted plaintext
+    polynomials $m'(X)$.
+
+    \item \textbf{Residual Witness Generation:}
+    The bounded-error residual polynomial $e_{\text{error}}(X)$ is computed and
+    encoded into a structured witness vector.
+
+    \item \textbf{Zero-Knowledge Verification:}
+    Groth16 zk-SNARK verification on Core~2 ensures that all residual coefficients
+    satisfy the infinity norm bound $\|e_{\text{error}}\|_\infty \le B$.
+
+    \item \textbf{Bionic Actuation:}
+    Verified torque tensors are dispatched to prosthetic limbs, exoskeletons,
+    sensory implants, and neural-interface devices.
+
+    \item \textbf{Post-Quantum Audit Export:}
+    Each verified epoch is committed to a Merkle-root ledger and exported via
+    ML-KEM encapsulated channels to external verification nodes.
+\end{enumerate}
+
+\section{Unified Safety Guarantees}
+
+The unified architecture enforces three core safety guarantees:
+
+\begin{itemize}
+    \item \textbf{Cryptographic Correctness:}
+    Every computation is proven correct through Groth16 verification before
+    physical actuation occurs.
+
+    \item \textbf{Bounded Approximation Error:}
+    CKKS noise and floating-point drift are strictly confined through
+    bit-decomposition range checks.
+
+    \item \textbf{Real-Time Determinism:}
+    Kernel isolation parameters (\texttt{isolcpus}, \texttt{nohz\_full},
+    \texttt{irqaffinity}) ensure deterministic execution within the
+    12.5\,ms latency window.
+\end{itemize}
+
+\section{Unified Cyber-Physical Engine}
+
+The BAAC-SE v1.0 system forms a unified cyber-physical engine in which:
+
+\begin{itemize}
+    \item astrophysical dynamics act as external stimuli,
+    \item encrypted computation preserves privacy and integrity,
+    \item zero-knowledge proofs enforce correctness,
+    \item real-time OS isolation guarantees responsiveness,
+    \item biomechatronic hardware executes verified motion.
+\end{itemize}
+
+This integration establishes a new class of cryptographically governed
+bionic systems capable of responding to complex environmental signals with
+mathematically guaranteed safety.
+
+\section{Conclusion}
+
+The unified BAAC-SE v1.0 architecture demonstrates how astrophysics,
+cryptography, real-time systems engineering, and bionic control can be fused
+into a single deterministic pipeline. This chapter serves as the conceptual
+bridge linking the detailed subsystem analyses presented in Chapters~4–7.

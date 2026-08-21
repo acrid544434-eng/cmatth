@@ -1,0 +1,169 @@
+\documentclass[12pt]{book}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+\setstretch{1.15}
+
+\title{\Huge\textbf{ZOA-HE-ASTRO Codex}\\[6pt]
+\Large Phase-I to Phase-IV Cosmology Engine Specification}
+\author{\Large\textbf{C. MATTHEW BLACKWELL}\\
+\large Independent Systems Architect \& Software Designer}
+\date{August 2026}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{Abstract}
+The ZOA-HE-ASTRO Codex establishes the complete mathematical, cryptographic, and cosmological foundation for a fully homomorphic post-quantum cosmology engine. Designed under the independent systems architecture authority of \textbf{C. Matthew Blackwell}, this monograph unifies dust-extinction tensor correction, encrypted geodesic integration, cosmic-web filament reconstruction, rogue-planet microlensing, encrypted baryonic-flow MHD, and autonomous cosmology ignition protocols.
+
+\tableofcontents
+
+\mainmatter
+
+%---------------------------------------------------------
+\chapter{Phase-I: Foundational Operators}
+
+\section{Multi-Messenger Ingestion}
+The ingestion operator is defined as:
+\begin{equation}
+\mathcal{I}_{\text{multi}} :
+\{ I_{\text{JWST}}, I_{\text{GAIA}}, I_{\text{radio}}, I_{\text{GW}} \}
+\rightarrow
+\mathbf{F}(\mathbf{x},\lambda).
+\end{equation}
+
+\section{Dust-Extinction Tensor}
+\begin{equation}
+\mathbf{X}_{\mu\nu}
+=
+g_{\mu\nu}
+\exp\!\left(
+-\tau(\mathbf{x},\lambda)
+\right),
+\qquad
+\tau(\lambda)
+=
+\int_0^{s_{\text{ZOA}}}
+\rho_{\text{dust}}(s)\,
+\sigma_{\text{ext}}(\lambda)\,ds.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-II: Filaments, Microlensing, and Encrypted Rendering}
+
+\section{Encrypted Hessian for Filament Extraction}
+\begin{equation}
+\llbracket H_{ij} \rrbracket
+=
+\text{Enc}_{\text{CKKS}}\!\left(
+\frac{\partial^2 \Phi}{\partial x^i \partial x^j}
+\right).
+\end{equation}
+
+\section{Encrypted Microlensing}
+\begin{equation}
+\llbracket \mu_{\text{lens}} \rrbracket
+=
+\llbracket
+\frac{u^2 + 2}{u\sqrt{u^4 + 4}}
+\rrbracket,
+\qquad
+u(\tau)
+=
+\sqrt{
+u_0^2
++
+\left(
+\frac{\tau - t_0}{t_E}
+\right)^2
+}.
+\end{equation}
+
+\section{Encrypted Volumetric Rendering}
+\begin{equation}
+\llbracket L_{\text{pix}} \rrbracket
+=
+\int_0^{s_{\max}}
+\llbracket j(\mathbf{x}(s)) \rrbracket
+\exp\!\left(
+-
+\int_0^{s}
+\llbracket \kappa_{\text{ext}}(s') \rrbracket ds'
+\right)
+ds.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-III: Encrypted Baryonic Flow Reconstruction}
+
+\section{Encrypted Continuity Equation}
+\begin{equation}
+\frac{\partial \llbracket \rho \rrbracket}{\partial t}
++
+\nabla \cdot \llbracket \rho \mathbf{v} \rrbracket
+=
+\llbracket 0 \rrbracket.
+\end{equation}
+
+\section{Encrypted MHD Momentum Equation}
+\begin{equation}
+\frac{\partial \llbracket \rho \mathbf{v} \rrbracket}{\partial t}
++
+\nabla \cdot
+\llbracket
+\rho \mathbf{v} \otimes \mathbf{v}
+\rrbracket
+=
+-
+\nabla \llbracket P \rrbracket
++
+\llbracket
+\mathbf{J} \times \mathbf{B}
+\rrbracket.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-IV: Autonomous Cosmology Engine Ignition}
+
+\section{Ignition Operator}
+\begin{equation}
+\Psi_{\text{ignite}}
+=
+\Lambda_{\text{zk}}
+\circ
+\Phi_{\text{hom}}
+\circ
+\mathcal{T}_{\text{ext}}
+\circ
+\mathcal{I}_{\text{multi}}.
+\end{equation}
+
+\section{Autonomous Evolution}
+\begin{equation}
+\frac{d \llbracket \mathbf{U} \rrbracket}{dt}
+=
+\mathcal{A}
+\big(
+\llbracket \mathbf{U} \rrbracket,
+\llbracket \mathbf{G} \rrbracket,
+\llbracket \mathbf{B} \rrbracket
+\big).
+\end{equation}
+
+%---------------------------------------------------------
+\chapter*{Attribution}
+All phases, operators, and cryptographic-cosmological formulations in this Codex are designed and authored under the independent systems architecture authority of:
+
+\begin{center}
+\Large\textbf{C. MATTHEW BLACKWELL}\\
+\textit{Independent Systems Architect \& Software Designer}
+\end{center}
+
+\end{document}

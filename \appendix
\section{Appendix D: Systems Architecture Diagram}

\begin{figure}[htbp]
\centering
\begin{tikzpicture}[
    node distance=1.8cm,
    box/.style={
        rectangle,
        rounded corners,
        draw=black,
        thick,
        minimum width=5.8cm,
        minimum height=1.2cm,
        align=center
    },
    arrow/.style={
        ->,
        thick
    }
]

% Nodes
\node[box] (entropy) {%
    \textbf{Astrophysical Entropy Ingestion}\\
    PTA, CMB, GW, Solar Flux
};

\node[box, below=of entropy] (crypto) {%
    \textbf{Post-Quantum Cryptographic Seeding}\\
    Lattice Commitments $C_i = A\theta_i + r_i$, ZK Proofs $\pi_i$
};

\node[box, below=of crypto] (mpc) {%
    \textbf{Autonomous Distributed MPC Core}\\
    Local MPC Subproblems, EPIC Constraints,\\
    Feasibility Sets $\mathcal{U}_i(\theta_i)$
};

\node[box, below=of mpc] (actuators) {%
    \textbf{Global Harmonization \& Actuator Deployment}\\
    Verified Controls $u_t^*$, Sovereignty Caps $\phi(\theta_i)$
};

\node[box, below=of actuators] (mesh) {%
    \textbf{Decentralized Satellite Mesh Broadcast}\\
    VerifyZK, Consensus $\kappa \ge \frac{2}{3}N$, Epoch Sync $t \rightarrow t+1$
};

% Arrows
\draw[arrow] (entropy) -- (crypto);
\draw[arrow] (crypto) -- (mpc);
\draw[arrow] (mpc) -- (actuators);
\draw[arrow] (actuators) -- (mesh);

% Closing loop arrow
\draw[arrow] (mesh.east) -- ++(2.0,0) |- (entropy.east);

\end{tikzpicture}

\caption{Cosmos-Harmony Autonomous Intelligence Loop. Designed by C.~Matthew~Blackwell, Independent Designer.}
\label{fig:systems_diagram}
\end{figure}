@@ -1,0 +1,63 @@
+\appendix
+\section{Appendix D: Systems Architecture Diagram}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=1.8cm,
+    box/.style={
+        rectangle,
+        rounded corners,
+        draw=black,
+        thick,
+        minimum width=5.8cm,
+        minimum height=1.2cm,
+        align=center
+    },
+    arrow/.style={
+        ->,
+        thick
+    }
+]
+
+% Nodes
+\node[box] (entropy) {%
+    \textbf{Astrophysical Entropy Ingestion}\\
+    PTA, CMB, GW, Solar Flux
+};
+
+\node[box, below=of entropy] (crypto) {%
+    \textbf{Post-Quantum Cryptographic Seeding}\\
+    Lattice Commitments $C_i = A\theta_i + r_i$, ZK Proofs $\pi_i$
+};
+
+\node[box, below=of crypto] (mpc) {%
+    \textbf{Autonomous Distributed MPC Core}\\
+    Local MPC Subproblems, EPIC Constraints,\\
+    Feasibility Sets $\mathcal{U}_i(\theta_i)$
+};
+
+\node[box, below=of mpc] (actuators) {%
+    \textbf{Global Harmonization \& Actuator Deployment}\\
+    Verified Controls $u_t^*$, Sovereignty Caps $\phi(\theta_i)$
+};
+
+\node[box, below=of actuators] (mesh) {%
+    \textbf{Decentralized Satellite Mesh Broadcast}\\
+    VerifyZK, Consensus $\kappa \ge \frac{2}{3}N$, Epoch Sync $t \rightarrow t+1$
+};
+
+% Arrows
+\draw[arrow] (entropy) -- (crypto);
+\draw[arrow] (crypto) -- (mpc);
+\draw[arrow] (mpc) -- (actuators);
+\draw[arrow] (actuators) -- (mesh);
+
+% Closing loop arrow
+\draw[arrow] (mesh.east) -- ++(2.0,0) |- (entropy.east);
+
+\end{tikzpicture}
+
+\caption{Cosmos-Harmony Autonomous Intelligence Loop. Designed by C.~Matthew~Blackwell, Independent Designer.}
+\label{fig:systems_diagram}
+\end{figure}

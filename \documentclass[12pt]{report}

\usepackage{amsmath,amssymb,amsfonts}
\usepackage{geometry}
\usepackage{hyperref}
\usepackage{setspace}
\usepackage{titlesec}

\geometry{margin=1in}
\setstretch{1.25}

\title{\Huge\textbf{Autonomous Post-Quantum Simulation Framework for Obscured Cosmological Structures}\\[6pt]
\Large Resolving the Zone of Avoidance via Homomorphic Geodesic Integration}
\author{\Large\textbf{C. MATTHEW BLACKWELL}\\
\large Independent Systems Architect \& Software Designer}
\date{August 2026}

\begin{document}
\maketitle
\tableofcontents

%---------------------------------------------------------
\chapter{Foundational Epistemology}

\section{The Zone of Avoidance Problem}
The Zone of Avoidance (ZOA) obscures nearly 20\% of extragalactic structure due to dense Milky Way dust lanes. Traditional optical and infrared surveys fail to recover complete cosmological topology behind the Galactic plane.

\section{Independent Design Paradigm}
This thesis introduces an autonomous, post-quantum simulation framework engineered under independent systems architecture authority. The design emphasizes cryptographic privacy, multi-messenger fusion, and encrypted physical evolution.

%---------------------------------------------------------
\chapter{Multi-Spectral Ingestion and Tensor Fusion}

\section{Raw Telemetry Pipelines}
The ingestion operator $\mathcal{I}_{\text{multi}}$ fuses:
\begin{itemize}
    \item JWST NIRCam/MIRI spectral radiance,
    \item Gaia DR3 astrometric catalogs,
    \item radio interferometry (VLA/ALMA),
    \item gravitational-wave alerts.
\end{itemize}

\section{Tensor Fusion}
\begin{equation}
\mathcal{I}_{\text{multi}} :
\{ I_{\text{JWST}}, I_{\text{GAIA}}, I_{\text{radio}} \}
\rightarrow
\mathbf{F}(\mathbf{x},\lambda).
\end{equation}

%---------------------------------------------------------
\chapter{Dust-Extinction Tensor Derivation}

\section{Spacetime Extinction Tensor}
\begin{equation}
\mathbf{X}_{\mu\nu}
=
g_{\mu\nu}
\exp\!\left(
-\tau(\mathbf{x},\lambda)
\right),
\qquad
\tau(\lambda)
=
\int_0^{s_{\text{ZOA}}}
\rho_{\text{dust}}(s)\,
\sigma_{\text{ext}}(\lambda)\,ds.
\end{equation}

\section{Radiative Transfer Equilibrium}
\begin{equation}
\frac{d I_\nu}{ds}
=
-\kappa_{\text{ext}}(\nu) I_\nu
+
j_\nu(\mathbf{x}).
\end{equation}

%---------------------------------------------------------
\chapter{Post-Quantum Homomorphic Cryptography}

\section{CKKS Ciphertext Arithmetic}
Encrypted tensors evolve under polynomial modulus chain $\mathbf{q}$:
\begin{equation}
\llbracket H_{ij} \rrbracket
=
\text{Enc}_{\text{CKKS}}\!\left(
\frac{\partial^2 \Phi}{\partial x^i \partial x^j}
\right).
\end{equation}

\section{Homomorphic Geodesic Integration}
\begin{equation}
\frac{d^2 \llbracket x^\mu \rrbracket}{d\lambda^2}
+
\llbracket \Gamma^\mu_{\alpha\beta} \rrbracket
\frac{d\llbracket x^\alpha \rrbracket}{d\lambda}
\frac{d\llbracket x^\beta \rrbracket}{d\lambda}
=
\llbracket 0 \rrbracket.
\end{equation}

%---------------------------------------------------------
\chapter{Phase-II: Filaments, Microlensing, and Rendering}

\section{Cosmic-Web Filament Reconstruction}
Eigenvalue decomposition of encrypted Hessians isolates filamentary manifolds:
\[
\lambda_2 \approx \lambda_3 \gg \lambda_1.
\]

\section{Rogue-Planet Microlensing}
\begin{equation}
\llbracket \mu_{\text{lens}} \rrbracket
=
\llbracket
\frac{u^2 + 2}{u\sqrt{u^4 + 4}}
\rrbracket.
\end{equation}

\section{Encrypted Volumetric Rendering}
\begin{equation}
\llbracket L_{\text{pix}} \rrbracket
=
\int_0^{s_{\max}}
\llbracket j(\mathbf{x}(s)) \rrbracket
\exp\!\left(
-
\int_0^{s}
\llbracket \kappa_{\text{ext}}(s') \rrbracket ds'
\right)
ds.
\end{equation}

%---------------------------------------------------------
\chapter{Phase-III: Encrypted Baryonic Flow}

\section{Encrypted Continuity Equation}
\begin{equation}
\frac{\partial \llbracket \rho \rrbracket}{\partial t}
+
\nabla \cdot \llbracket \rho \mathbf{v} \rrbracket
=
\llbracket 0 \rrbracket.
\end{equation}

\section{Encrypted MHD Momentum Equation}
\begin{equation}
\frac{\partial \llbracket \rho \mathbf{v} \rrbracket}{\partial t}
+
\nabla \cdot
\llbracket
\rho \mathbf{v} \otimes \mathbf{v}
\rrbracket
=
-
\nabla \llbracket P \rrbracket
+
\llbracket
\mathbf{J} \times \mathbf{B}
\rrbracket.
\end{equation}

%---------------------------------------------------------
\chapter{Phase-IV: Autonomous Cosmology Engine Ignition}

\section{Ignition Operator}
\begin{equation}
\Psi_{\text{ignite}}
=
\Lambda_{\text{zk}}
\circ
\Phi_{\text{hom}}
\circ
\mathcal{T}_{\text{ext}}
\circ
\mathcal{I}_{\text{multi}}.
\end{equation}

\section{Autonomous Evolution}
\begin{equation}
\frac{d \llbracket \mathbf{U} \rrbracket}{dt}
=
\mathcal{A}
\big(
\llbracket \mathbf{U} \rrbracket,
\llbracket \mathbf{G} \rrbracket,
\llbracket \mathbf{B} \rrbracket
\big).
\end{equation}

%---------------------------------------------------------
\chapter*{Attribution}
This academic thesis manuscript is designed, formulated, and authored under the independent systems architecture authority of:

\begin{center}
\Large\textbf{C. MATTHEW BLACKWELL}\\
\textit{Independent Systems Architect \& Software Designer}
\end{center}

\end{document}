@@ -1,0 +1,201 @@
+\documentclass[12pt]{report}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\setstretch{1.25}
+
+\title{\Huge\textbf{Autonomous Post-Quantum Simulation Framework for Obscured Cosmological Structures}\\[6pt]
+\Large Resolving the Zone of Avoidance via Homomorphic Geodesic Integration}
+\author{\Large\textbf{C. MATTHEW BLACKWELL}\\
+\large Independent Systems Architect \& Software Designer}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%---------------------------------------------------------
+\chapter{Foundational Epistemology}
+
+\section{The Zone of Avoidance Problem}
+The Zone of Avoidance (ZOA) obscures nearly 20\% of extragalactic structure due to dense Milky Way dust lanes. Traditional optical and infrared surveys fail to recover complete cosmological topology behind the Galactic plane.
+
+\section{Independent Design Paradigm}
+This thesis introduces an autonomous, post-quantum simulation framework engineered under independent systems architecture authority. The design emphasizes cryptographic privacy, multi-messenger fusion, and encrypted physical evolution.
+
+%---------------------------------------------------------
+\chapter{Multi-Spectral Ingestion and Tensor Fusion}
+
+\section{Raw Telemetry Pipelines}
+The ingestion operator $\mathcal{I}_{\text{multi}}$ fuses:
+\begin{itemize}
+    \item JWST NIRCam/MIRI spectral radiance,
+    \item Gaia DR3 astrometric catalogs,
+    \item radio interferometry (VLA/ALMA),
+    \item gravitational-wave alerts.
+\end{itemize}
+
+\section{Tensor Fusion}
+\begin{equation}
+\mathcal{I}_{\text{multi}} :
+\{ I_{\text{JWST}}, I_{\text{GAIA}}, I_{\text{radio}} \}
+\rightarrow
+\mathbf{F}(\mathbf{x},\lambda).
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Dust-Extinction Tensor Derivation}
+
+\section{Spacetime Extinction Tensor}
+\begin{equation}
+\mathbf{X}_{\mu\nu}
+=
+g_{\mu\nu}
+\exp\!\left(
+-\tau(\mathbf{x},\lambda)
+\right),
+\qquad
+\tau(\lambda)
+=
+\int_0^{s_{\text{ZOA}}}
+\rho_{\text{dust}}(s)\,
+\sigma_{\text{ext}}(\lambda)\,ds.
+\end{equation}
+
+\section{Radiative Transfer Equilibrium}
+\begin{equation}
+\frac{d I_\nu}{ds}
+=
+-\kappa_{\text{ext}}(\nu) I_\nu
++
+j_\nu(\mathbf{x}).
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Post-Quantum Homomorphic Cryptography}
+
+\section{CKKS Ciphertext Arithmetic}
+Encrypted tensors evolve under polynomial modulus chain $\mathbf{q}$:
+\begin{equation}
+\llbracket H_{ij} \rrbracket
+=
+\text{Enc}_{\text{CKKS}}\!\left(
+\frac{\partial^2 \Phi}{\partial x^i \partial x^j}
+\right).
+\end{equation}
+
+\section{Homomorphic Geodesic Integration}
+\begin{equation}
+\frac{d^2 \llbracket x^\mu \rrbracket}{d\lambda^2}
++
+\llbracket \Gamma^\mu_{\alpha\beta} \rrbracket
+\frac{d\llbracket x^\alpha \rrbracket}{d\lambda}
+\frac{d\llbracket x^\beta \rrbracket}{d\lambda}
+=
+\llbracket 0 \rrbracket.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-II: Filaments, Microlensing, and Rendering}
+
+\section{Cosmic-Web Filament Reconstruction}
+Eigenvalue decomposition of encrypted Hessians isolates filamentary manifolds:
+\[
+\lambda_2 \approx \lambda_3 \gg \lambda_1.
+\]
+
+\section{Rogue-Planet Microlensing}
+\begin{equation}
+\llbracket \mu_{\text{lens}} \rrbracket
+=
+\llbracket
+\frac{u^2 + 2}{u\sqrt{u^4 + 4}}
+\rrbracket.
+\end{equation}
+
+\section{Encrypted Volumetric Rendering}
+\begin{equation}
+\llbracket L_{\text{pix}} \rrbracket
+=
+\int_0^{s_{\max}}
+\llbracket j(\mathbf{x}(s)) \rrbracket
+\exp\!\left(
+-
+\int_0^{s}
+\llbracket \kappa_{\text{ext}}(s') \rrbracket ds'
+\right)
+ds.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-III: Encrypted Baryonic Flow}
+
+\section{Encrypted Continuity Equation}
+\begin{equation}
+\frac{\partial \llbracket \rho \rrbracket}{\partial t}
++
+\nabla \cdot \llbracket \rho \mathbf{v} \rrbracket
+=
+\llbracket 0 \rrbracket.
+\end{equation}
+
+\section{Encrypted MHD Momentum Equation}
+\begin{equation}
+\frac{\partial \llbracket \rho \mathbf{v} \rrbracket}{\partial t}
++
+\nabla \cdot
+\llbracket
+\rho \mathbf{v} \otimes \mathbf{v}
+\rrbracket
+=
+-
+\nabla \llbracket P \rrbracket
++
+\llbracket
+\mathbf{J} \times \mathbf{B}
+\rrbracket.
+\end{equation}
+
+%---------------------------------------------------------
+\chapter{Phase-IV: Autonomous Cosmology Engine Ignition}
+
+\section{Ignition Operator}
+\begin{equation}
+\Psi_{\text{ignite}}
+=
+\Lambda_{\text{zk}}
+\circ
+\Phi_{\text{hom}}
+\circ
+\mathcal{T}_{\text{ext}}
+\circ
+\mathcal{I}_{\text{multi}}.
+\end{equation}
+
+\section{Autonomous Evolution}
+\begin{equation}
+\frac{d \llbracket \mathbf{U} \rrbracket}{dt}
+=
+\mathcal{A}
+\big(
+\llbracket \mathbf{U} \rrbracket,
+\llbracket \mathbf{G} \rrbracket,
+\llbracket \mathbf{B} \rrbracket
+\big).
+\end{equation}
+
+%---------------------------------------------------------
+\chapter*{Attribution}
+This academic thesis manuscript is designed, formulated, and authored under the independent systems architecture authority of:
+
+\begin{center}
+\Large\textbf{C. MATTHEW BLACKWELL}\\
+\textit{Independent Systems Architect \& Software Designer}
+\end{center}
+
+\end{document}

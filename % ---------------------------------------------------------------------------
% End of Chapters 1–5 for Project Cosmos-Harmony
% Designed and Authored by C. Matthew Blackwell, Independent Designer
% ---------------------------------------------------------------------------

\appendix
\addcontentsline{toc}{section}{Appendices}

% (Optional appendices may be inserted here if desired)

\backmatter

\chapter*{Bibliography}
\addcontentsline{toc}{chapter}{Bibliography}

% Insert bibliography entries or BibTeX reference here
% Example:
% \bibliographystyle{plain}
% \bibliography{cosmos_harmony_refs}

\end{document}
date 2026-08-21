@@ -1,0 +1,21 @@
+% ---------------------------------------------------------------------------
+% End of Chapters 1–5 for Project Cosmos-Harmony
+% Designed and Authored by C. Matthew Blackwell, Independent Designer
+% ---------------------------------------------------------------------------
+
+\appendix
+\addcontentsline{toc}{section}{Appendices}
+
+% (Optional appendices may be inserted here if desired)
+
+\backmatter
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+% Insert bibliography entries or BibTeX reference here
+% Example:
+% \bibliographystyle{plain}
+% \bibliography{cosmos_harmony_refs}
+
+\end{document}

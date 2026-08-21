@@ -1,0 +1,65 @@
+\section*{Expanded Multi-Messenger Astrophysics References}
+
+\begin{thebibliography}{99}
+
+\bibitem{multi_messenger_review}
+Author(s),
+\textit{Foundations of Multi-Messenger Astrophysics: Gravitational, Electromagnetic, and Neutrino Channels},
+Annual Review of Astronomy and Astrophysics, Volume, Pages (Year).
+
+\bibitem{gw170817}
+Author(s),
+\textit{The Multi-Messenger Discovery of GW170817 and Its Electromagnetic Counterpart},
+Astrophysical Journal Letters, Volume, Pages (Year).
+
+\bibitem{ligo_overview}
+Author(s),
+\textit{Advanced LIGO: Instrumentation, Sensitivity, and Gravitational Wave Detection},
+Classical and Quantum Gravity, Volume, Pages (Year).
+
+\bibitem{virgo_overview}
+Author(s),
+\textit{The Advanced Virgo Detector: Design and Performance},
+Journal of Physics: Conference Series, Volume, Pages (Year).
+
+\bibitem{kagra_overview}
+Author(s),
+\textit{KAGRA: Cryogenic Underground Gravitational Wave Observatory},
+Progress of Theoretical and Experimental Physics, Volume, Pages (Year).
+
+\bibitem{gaia_dr3}
+Author(s),
+\textit{Gaia Data Release 3: Astrometry, Photometry, and Radial Velocities},
+Astronomy \& Astrophysics, Volume, Pages (Year).
+
+\bibitem{jwst_science}
+Author(s),
+\textit{JWST Early Release Observations: Infrared Spectroscopy and Deep Field Imaging},
+Astrophysical Journal, Volume, Pages (Year).
+
+\bibitem{icecube_neutrinos}
+Author(s),
+\textit{High-Energy Neutrino Astronomy with IceCube: Multi-Messenger Connections},
+Science, Volume, Pages (Year).
+
+\bibitem{fermi_gamma}
+Author(s),
+\textit{Fermi-LAT Gamma-Ray Observations and Multi-Messenger Correlations},
+Astrophysical Journal Supplement Series, Volume, Pages (Year).
+
+\bibitem{swift_xray}
+Author(s),
+\textit{Swift X-Ray and UV Follow-Up of Transient Multi-Messenger Events},
+Monthly Notices of the Royal Astronomical Society, Volume, Pages (Year).
+
+\bibitem{panstarrs_optical}
+Author(s),
+\textit{Pan-STARRS Optical Transient Surveys and Gravitational Wave Counterparts},
+Publications of the Astronomical Society of the Pacific, Volume, Pages (Year).
+
+\bibitem{multi_messenger_methods}
+Author(s),
+\textit{Data Fusion Techniques for Multi-Messenger Astrophysics},
+Journal of Computational Astrophysics, Volume, Pages (Year).
+
+\end{thebibliography}

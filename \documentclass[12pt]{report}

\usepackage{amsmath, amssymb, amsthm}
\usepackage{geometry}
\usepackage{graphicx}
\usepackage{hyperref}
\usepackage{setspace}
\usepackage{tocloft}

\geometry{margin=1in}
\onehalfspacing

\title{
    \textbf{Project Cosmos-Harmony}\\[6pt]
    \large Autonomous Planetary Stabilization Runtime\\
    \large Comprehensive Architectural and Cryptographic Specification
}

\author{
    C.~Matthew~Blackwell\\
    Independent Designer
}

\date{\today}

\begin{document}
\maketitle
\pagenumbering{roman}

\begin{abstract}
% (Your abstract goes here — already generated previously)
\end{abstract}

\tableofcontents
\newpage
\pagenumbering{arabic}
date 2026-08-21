@@ -1,0 +1,36 @@
+\documentclass[12pt]{report}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{
+    \textbf{Project Cosmos-Harmony}\\[6pt]
+    \large Autonomous Planetary Stabilization Runtime\\
+    \large Comprehensive Architectural and Cryptographic Specification
+}
+
+\author{
+    C.~Matthew~Blackwell\\
+    Independent Designer
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+
+\begin{abstract}
+% (Your abstract goes here — already generated previously)
+\end{abstract}
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}

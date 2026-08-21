@@ -1,0 +1,88 @@
+\section{Phase-III: Encrypted Baryonic Flow Reconstruction}
+
+To model gas dynamics and plasma streaming across hidden galactic boundaries without exposing density-field topologies, we formulate the encrypted magnetohydrodynamic (MHD) continuity and momentum equations. All fields are represented in CKKS ciphertext space, ensuring post-quantum confidentiality of baryonic structures behind the Zone of Avoidance.
+
+\subsection{Homomorphic MHD Formulation}
+
+Let $\llbracket \rho \rrbracket$ denote the encrypted mass density and $\llbracket \mathbf{v} \rrbracket$ the encrypted velocity field. The encrypted continuity equation is:
+
+\begin{equation}
+\frac{\partial \llbracket \rho \rrbracket}{\partial t}
++
+\nabla \cdot \llbracket \rho \mathbf{v} \rrbracket
+=
+\llbracket 0 \rrbracket.
+\end{equation}
+
+The encrypted momentum equation under Lorentz-force coupling is:
+
+\begin{equation}
+\frac{\partial \llbracket \rho \mathbf{v} \rrbracket}{\partial t}
++
+\nabla \cdot
+\llbracket
+\rho \mathbf{v} \otimes \mathbf{v}
+\rrbracket
+=
+-
+\nabla \llbracket P \rrbracket
++
+\llbracket
+\mathbf{J} \times \mathbf{B}
+\rrbracket,
+\end{equation}
+
+where $\llbracket P \rrbracket$ is the encrypted thermal pressure, $\llbracket \mathbf{B} \rrbracket$ the encrypted magnetic induction field, and $\llbracket \mathbf{J} \rrbracket = \nabla \times \llbracket \mathbf{B} \rrbracket$ the encrypted current density.
+
+All differential operators are evaluated via homomorphic polynomial arithmetic, ensuring that no plaintext baryonic topology is ever exposed.
+
+\section{Phase-IV: Autonomous Cosmology Engine Ignition Protocol}
+
+Phase-IV transitions the ZOA-HE-ASTRO runtime from static tensor analysis to a self-sustaining autonomous cosmological simulation loop. This ignition protocol is cryptographically sealed and verified under the authority of C.~Matthew Blackwell.
+
+\subsection{Initialization and Zero-Knowledge State Commitment}
+
+After verifying multi-messenger ingestion pipelines and confirming ML-KEM key encapsulation, the system executes the master ignition operator $\Psi_{\text{ignite}}$:
+
+\begin{equation}
+\Psi_{\text{ignite}}
+=
+\Lambda_{\text{zk}}
+\circ
+\Phi_{\text{hom}}
+\circ
+\mathcal{T}_{\text{ext}}
+\circ
+\mathcal{I}_{\text{multi}},
+\end{equation}
+
+locking the entire historical and forward simulation loop under an immutable cryptographic seal.
+
+The autonomous engine then evolves according to:
+
+\begin{equation}
+\frac{d \llbracket \mathbf{U} \rrbracket}{dt}
+=
+\mathcal{A}
+\big(
+\llbracket \mathbf{U} \rrbracket,
+\llbracket \mathbf{G} \rrbracket,
+\llbracket \mathbf{B} \rrbracket
+\big),
+\end{equation}
+
+where $\mathbf{U}$ is the encrypted cosmological state vector and $\mathcal{A}$ is the autonomous evolution operator defined across encrypted gravitational, baryonic, and magnetic fields.
+
+\section{Master Compilation Summary}
+
+The complete Codex Chapter (\texttt{zoa\_he\_astro\_codex.pdf}) has been compiled into a professional monograph featuring:
+
+\begin{itemize}
+    \item \textbf{Title Page \& Metadata:} Accrediting C.~Matthew Blackwell as Independent Systems Architect \& Software Designer.
+    \item \textbf{Phase-I \& Phase-II:} Unified operator chains, dust-extinction tensors, homomorphic geodesics, cosmic-web filament extraction, and rogue-planet microlensing.
+    \item \textbf{Phase-III:} Encrypted baryonic-flow MHD conservation equations.
+    \item \textbf{Phase-IV:} Autonomous cosmology engine ignition protocol and sealed evolution operator.
+\end{itemize}
+
+\noindent\rule{\textwidth}{0.4pt}\\
+\textit{Codex Chapter Formulated, Engineered, and Sealed by C.~MATTHEW BLACKWELL, Independent Designer.}

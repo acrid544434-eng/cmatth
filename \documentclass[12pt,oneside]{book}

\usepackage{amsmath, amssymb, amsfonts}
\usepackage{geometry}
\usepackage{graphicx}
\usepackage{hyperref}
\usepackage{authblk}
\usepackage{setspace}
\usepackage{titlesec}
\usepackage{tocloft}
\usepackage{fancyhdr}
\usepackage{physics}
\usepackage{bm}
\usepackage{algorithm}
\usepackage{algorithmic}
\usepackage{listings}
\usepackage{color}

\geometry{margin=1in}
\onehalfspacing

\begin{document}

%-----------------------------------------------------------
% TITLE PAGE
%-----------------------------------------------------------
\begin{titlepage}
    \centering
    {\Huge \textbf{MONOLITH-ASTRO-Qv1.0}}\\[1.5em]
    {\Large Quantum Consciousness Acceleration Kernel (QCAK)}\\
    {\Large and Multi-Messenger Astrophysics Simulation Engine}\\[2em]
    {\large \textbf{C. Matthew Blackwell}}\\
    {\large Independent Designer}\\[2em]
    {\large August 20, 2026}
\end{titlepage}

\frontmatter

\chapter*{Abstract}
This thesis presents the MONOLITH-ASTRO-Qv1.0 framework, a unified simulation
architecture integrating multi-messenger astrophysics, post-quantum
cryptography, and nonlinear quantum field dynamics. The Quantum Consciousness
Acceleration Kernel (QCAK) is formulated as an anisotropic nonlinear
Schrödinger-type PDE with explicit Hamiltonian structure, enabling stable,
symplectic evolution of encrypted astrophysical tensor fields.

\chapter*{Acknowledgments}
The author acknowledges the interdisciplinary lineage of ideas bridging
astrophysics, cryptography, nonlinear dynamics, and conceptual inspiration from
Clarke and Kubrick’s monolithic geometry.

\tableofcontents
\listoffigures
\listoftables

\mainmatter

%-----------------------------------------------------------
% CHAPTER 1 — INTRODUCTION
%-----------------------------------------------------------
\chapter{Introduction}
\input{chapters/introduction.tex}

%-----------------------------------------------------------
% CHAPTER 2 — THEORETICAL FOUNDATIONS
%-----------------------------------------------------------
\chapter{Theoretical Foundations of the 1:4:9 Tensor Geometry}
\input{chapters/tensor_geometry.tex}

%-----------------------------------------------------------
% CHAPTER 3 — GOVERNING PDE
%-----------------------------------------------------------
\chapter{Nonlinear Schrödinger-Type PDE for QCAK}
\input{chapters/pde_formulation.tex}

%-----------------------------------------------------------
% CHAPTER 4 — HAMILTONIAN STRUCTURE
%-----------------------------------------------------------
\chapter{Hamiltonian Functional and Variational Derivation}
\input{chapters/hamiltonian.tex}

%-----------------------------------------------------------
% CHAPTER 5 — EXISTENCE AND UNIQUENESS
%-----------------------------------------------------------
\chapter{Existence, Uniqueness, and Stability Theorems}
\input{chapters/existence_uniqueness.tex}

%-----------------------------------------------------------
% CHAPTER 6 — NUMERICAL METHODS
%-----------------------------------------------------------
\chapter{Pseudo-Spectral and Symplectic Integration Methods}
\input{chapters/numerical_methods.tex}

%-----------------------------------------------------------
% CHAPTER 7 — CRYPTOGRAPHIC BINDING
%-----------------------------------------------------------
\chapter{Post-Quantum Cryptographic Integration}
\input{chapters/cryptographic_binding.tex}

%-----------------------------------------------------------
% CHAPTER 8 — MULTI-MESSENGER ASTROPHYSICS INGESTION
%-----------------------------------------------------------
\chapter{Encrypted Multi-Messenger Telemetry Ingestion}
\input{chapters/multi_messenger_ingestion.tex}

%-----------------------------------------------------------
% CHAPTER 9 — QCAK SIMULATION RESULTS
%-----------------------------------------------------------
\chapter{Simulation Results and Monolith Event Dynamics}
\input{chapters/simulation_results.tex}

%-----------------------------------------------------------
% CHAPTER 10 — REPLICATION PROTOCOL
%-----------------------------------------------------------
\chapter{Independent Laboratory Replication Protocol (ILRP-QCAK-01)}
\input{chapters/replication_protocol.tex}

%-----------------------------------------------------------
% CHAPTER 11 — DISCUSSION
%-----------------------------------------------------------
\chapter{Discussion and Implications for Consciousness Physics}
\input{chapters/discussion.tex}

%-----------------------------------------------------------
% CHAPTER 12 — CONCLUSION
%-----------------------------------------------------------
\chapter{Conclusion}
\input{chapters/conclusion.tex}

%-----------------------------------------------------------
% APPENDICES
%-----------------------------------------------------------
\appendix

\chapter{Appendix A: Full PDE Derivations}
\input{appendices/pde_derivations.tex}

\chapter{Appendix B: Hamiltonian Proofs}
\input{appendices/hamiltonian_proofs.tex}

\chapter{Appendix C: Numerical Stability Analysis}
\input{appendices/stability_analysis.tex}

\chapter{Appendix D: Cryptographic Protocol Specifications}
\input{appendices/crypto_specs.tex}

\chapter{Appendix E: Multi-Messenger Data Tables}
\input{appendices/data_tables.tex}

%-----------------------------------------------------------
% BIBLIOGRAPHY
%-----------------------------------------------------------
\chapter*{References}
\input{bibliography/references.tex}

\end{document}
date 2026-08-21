@@ -1,0 +1,156 @@
+\documentclass[12pt,oneside]{book}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{color}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\begin{document}
+
+%-----------------------------------------------------------
+% TITLE PAGE
+%-----------------------------------------------------------
+\begin{titlepage}
+    \centering
+    {\Huge \textbf{MONOLITH-ASTRO-Qv1.0}}\\[1.5em]
+    {\Large Quantum Consciousness Acceleration Kernel (QCAK)}\\
+    {\Large and Multi-Messenger Astrophysics Simulation Engine}\\[2em]
+    {\large \textbf{C. Matthew Blackwell}}\\
+    {\large Independent Designer}\\[2em]
+    {\large August 20, 2026}
+\end{titlepage}
+
+\frontmatter
+
+\chapter*{Abstract}
+This thesis presents the MONOLITH-ASTRO-Qv1.0 framework, a unified simulation
+architecture integrating multi-messenger astrophysics, post-quantum
+cryptography, and nonlinear quantum field dynamics. The Quantum Consciousness
+Acceleration Kernel (QCAK) is formulated as an anisotropic nonlinear
+Schrödinger-type PDE with explicit Hamiltonian structure, enabling stable,
+symplectic evolution of encrypted astrophysical tensor fields.
+
+\chapter*{Acknowledgments}
+The author acknowledges the interdisciplinary lineage of ideas bridging
+astrophysics, cryptography, nonlinear dynamics, and conceptual inspiration from
+Clarke and Kubrick’s monolithic geometry.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+%-----------------------------------------------------------
+% CHAPTER 1 — INTRODUCTION
+%-----------------------------------------------------------
+\chapter{Introduction}
+\input{chapters/introduction.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 2 — THEORETICAL FOUNDATIONS
+%-----------------------------------------------------------
+\chapter{Theoretical Foundations of the 1:4:9 Tensor Geometry}
+\input{chapters/tensor_geometry.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 3 — GOVERNING PDE
+%-----------------------------------------------------------
+\chapter{Nonlinear Schrödinger-Type PDE for QCAK}
+\input{chapters/pde_formulation.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 4 — HAMILTONIAN STRUCTURE
+%-----------------------------------------------------------
+\chapter{Hamiltonian Functional and Variational Derivation}
+\input{chapters/hamiltonian.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 5 — EXISTENCE AND UNIQUENESS
+%-----------------------------------------------------------
+\chapter{Existence, Uniqueness, and Stability Theorems}
+\input{chapters/existence_uniqueness.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 6 — NUMERICAL METHODS
+%-----------------------------------------------------------
+\chapter{Pseudo-Spectral and Symplectic Integration Methods}
+\input{chapters/numerical_methods.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 7 — CRYPTOGRAPHIC BINDING
+%-----------------------------------------------------------
+\chapter{Post-Quantum Cryptographic Integration}
+\input{chapters/cryptographic_binding.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 8 — MULTI-MESSENGER ASTROPHYSICS INGESTION
+%-----------------------------------------------------------
+\chapter{Encrypted Multi-Messenger Telemetry Ingestion}
+\input{chapters/multi_messenger_ingestion.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 9 — QCAK SIMULATION RESULTS
+%-----------------------------------------------------------
+\chapter{Simulation Results and Monolith Event Dynamics}
+\input{chapters/simulation_results.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 10 — REPLICATION PROTOCOL
+%-----------------------------------------------------------
+\chapter{Independent Laboratory Replication Protocol (ILRP-QCAK-01)}
+\input{chapters/replication_protocol.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 11 — DISCUSSION
+%-----------------------------------------------------------
+\chapter{Discussion and Implications for Consciousness Physics}
+\input{chapters/discussion.tex}
+
+%-----------------------------------------------------------
+% CHAPTER 12 — CONCLUSION
+%-----------------------------------------------------------
+\chapter{Conclusion}
+\input{chapters/conclusion.tex}
+
+%-----------------------------------------------------------
+% APPENDICES
+%-----------------------------------------------------------
+\appendix
+
+\chapter{Appendix A: Full PDE Derivations}
+\input{appendices/pde_derivations.tex}
+
+\chapter{Appendix B: Hamiltonian Proofs}
+\input{appendices/hamiltonian_proofs.tex}
+
+\chapter{Appendix C: Numerical Stability Analysis}
+\input{appendices/stability_analysis.tex}
+
+\chapter{Appendix D: Cryptographic Protocol Specifications}
+\input{appendices/crypto_specs.tex}
+
+\chapter{Appendix E: Multi-Messenger Data Tables}
+\input{appendices/data_tables.tex}
+
+%-----------------------------------------------------------
+% BIBLIOGRAPHY
+%-----------------------------------------------------------
+\chapter*{References}
+\input{bibliography/references.tex}
+
+\end{document}

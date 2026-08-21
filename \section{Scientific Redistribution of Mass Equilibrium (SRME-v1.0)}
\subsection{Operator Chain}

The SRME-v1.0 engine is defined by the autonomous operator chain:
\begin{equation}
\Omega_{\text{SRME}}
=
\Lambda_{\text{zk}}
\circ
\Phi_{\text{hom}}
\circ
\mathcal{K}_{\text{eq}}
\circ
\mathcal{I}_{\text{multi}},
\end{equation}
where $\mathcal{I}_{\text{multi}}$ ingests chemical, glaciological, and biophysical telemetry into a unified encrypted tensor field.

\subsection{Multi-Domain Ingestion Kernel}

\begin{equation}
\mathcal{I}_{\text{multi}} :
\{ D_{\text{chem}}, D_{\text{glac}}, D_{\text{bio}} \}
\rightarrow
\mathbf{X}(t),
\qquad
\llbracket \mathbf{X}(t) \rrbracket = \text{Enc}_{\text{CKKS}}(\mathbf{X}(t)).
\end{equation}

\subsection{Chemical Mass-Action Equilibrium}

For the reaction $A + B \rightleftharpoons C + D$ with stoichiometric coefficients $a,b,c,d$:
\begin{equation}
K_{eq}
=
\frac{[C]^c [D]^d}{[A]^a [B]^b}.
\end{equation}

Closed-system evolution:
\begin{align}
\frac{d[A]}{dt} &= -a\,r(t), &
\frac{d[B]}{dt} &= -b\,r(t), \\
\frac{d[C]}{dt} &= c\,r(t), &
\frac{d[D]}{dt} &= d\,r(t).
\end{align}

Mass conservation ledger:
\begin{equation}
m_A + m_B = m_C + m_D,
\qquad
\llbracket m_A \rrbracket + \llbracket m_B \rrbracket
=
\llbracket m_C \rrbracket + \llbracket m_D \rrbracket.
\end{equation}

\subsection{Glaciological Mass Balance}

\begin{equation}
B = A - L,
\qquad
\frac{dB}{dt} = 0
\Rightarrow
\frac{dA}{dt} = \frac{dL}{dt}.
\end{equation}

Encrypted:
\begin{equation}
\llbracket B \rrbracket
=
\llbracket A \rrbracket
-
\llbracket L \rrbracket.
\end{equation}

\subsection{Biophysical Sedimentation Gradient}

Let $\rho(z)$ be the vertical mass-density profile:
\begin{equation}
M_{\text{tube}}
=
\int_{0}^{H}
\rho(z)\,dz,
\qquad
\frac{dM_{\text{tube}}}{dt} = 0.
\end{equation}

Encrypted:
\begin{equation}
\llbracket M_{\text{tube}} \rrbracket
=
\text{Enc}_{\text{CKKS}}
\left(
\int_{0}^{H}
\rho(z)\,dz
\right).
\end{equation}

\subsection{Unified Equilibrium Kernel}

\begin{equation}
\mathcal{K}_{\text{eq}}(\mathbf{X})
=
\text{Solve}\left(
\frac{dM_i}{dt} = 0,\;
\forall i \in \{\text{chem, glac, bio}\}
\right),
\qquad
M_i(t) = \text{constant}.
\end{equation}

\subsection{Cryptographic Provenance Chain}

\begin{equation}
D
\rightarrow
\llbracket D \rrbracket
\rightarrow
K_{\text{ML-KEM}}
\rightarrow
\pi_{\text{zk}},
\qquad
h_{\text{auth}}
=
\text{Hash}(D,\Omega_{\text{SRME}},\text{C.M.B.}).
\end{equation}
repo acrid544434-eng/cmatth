@@ -1,0 +1,124 @@
+\section{Scientific Redistribution of Mass Equilibrium (SRME-v1.0)}
+\subsection{Operator Chain}
+
+The SRME-v1.0 engine is defined by the autonomous operator chain:
+\begin{equation}
+\Omega_{\text{SRME}}
+=
+\Lambda_{\text{zk}}
+\circ
+\Phi_{\text{hom}}
+\circ
+\mathcal{K}_{\text{eq}}
+\circ
+\mathcal{I}_{\text{multi}},
+\end{equation}
+where $\mathcal{I}_{\text{multi}}$ ingests chemical, glaciological, and biophysical telemetry into a unified encrypted tensor field.
+
+\subsection{Multi-Domain Ingestion Kernel}
+
+\begin{equation}
+\mathcal{I}_{\text{multi}} :
+\{ D_{\text{chem}}, D_{\text{glac}}, D_{\text{bio}} \}
+\rightarrow
+\mathbf{X}(t),
+\qquad
+\llbracket \mathbf{X}(t) \rrbracket = \text{Enc}_{\text{CKKS}}(\mathbf{X}(t)).
+\end{equation}
+
+\subsection{Chemical Mass-Action Equilibrium}
+
+For the reaction $A + B \rightleftharpoons C + D$ with stoichiometric coefficients $a,b,c,d$:
+\begin{equation}
+K_{eq}
+=
+\frac{[C]^c [D]^d}{[A]^a [B]^b}.
+\end{equation}
+
+Closed-system evolution:
+\begin{align}
+\frac{d[A]}{dt} &= -a\,r(t), &
+\frac{d[B]}{dt} &= -b\,r(t), \\
+\frac{d[C]}{dt} &= c\,r(t), &
+\frac{d[D]}{dt} &= d\,r(t).
+\end{align}
+
+Mass conservation ledger:
+\begin{equation}
+m_A + m_B = m_C + m_D,
+\qquad
+\llbracket m_A \rrbracket + \llbracket m_B \rrbracket
+=
+\llbracket m_C \rrbracket + \llbracket m_D \rrbracket.
+\end{equation}
+
+\subsection{Glaciological Mass Balance}
+
+\begin{equation}
+B = A - L,
+\qquad
+\frac{dB}{dt} = 0
+\Rightarrow
+\frac{dA}{dt} = \frac{dL}{dt}.
+\end{equation}
+
+Encrypted:
+\begin{equation}
+\llbracket B \rrbracket
+=
+\llbracket A \rrbracket
+-
+\llbracket L \rrbracket.
+\end{equation}
+
+\subsection{Biophysical Sedimentation Gradient}
+
+Let $\rho(z)$ be the vertical mass-density profile:
+\begin{equation}
+M_{\text{tube}}
+=
+\int_{0}^{H}
+\rho(z)\,dz,
+\qquad
+\frac{dM_{\text{tube}}}{dt} = 0.
+\end{equation}
+
+Encrypted:
+\begin{equation}
+\llbracket M_{\text{tube}} \rrbracket
+=
+\text{Enc}_{\text{CKKS}}
+\left(
+\int_{0}^{H}
+\rho(z)\,dz
+\right).
+\end{equation}
+
+\subsection{Unified Equilibrium Kernel}
+
+\begin{equation}
+\mathcal{K}_{\text{eq}}(\mathbf{X})
+=
+\text{Solve}\left(
+\frac{dM_i}{dt} = 0,\;
+\forall i \in \{\text{chem, glac, bio}\}
+\right),
+\qquad
+M_i(t) = \text{constant}.
+\end{equation}
+
+\subsection{Cryptographic Provenance Chain}
+
+\begin{equation}
+D
+\rightarrow
+\llbracket D \rrbracket
+\rightarrow
+K_{\text{ML-KEM}}
+\rightarrow
+\pi_{\text{zk}},
+\qquad
+h_{\text{auth}}
+=
+\text{Hash}(D,\Omega_{\text{SRME}},\text{C.M.B.}).
+\end{equation}

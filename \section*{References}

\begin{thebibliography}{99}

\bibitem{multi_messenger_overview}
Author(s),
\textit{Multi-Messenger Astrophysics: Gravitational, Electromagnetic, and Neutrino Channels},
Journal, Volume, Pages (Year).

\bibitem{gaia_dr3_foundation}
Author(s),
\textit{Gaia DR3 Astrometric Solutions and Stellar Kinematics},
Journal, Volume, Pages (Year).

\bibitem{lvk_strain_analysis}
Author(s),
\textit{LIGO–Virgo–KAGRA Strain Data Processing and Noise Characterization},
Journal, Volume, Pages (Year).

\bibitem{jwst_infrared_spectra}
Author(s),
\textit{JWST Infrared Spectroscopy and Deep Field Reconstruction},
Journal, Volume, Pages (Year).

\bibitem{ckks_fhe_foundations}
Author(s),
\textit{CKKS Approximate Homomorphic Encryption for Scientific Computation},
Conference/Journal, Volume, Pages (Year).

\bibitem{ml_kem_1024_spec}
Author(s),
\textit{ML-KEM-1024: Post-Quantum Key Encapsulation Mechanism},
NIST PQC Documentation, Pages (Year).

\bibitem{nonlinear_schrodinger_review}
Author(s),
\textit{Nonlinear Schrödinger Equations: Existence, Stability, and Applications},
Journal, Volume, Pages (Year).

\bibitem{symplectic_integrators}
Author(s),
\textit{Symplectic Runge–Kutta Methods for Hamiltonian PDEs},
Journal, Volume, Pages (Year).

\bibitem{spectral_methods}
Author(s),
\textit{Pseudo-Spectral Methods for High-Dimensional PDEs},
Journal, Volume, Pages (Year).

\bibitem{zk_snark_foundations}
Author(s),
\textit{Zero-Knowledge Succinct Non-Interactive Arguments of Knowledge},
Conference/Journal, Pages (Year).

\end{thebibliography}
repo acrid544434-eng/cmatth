@@ -1,0 +1,55 @@
+\section*{References}
+
+\begin{thebibliography}{99}
+
+\bibitem{multi_messenger_overview}
+Author(s),
+\textit{Multi-Messenger Astrophysics: Gravitational, Electromagnetic, and Neutrino Channels},
+Journal, Volume, Pages (Year).
+
+\bibitem{gaia_dr3_foundation}
+Author(s),
+\textit{Gaia DR3 Astrometric Solutions and Stellar Kinematics},
+Journal, Volume, Pages (Year).
+
+\bibitem{lvk_strain_analysis}
+Author(s),
+\textit{LIGO–Virgo–KAGRA Strain Data Processing and Noise Characterization},
+Journal, Volume, Pages (Year).
+
+\bibitem{jwst_infrared_spectra}
+Author(s),
+\textit{JWST Infrared Spectroscopy and Deep Field Reconstruction},
+Journal, Volume, Pages (Year).
+
+\bibitem{ckks_fhe_foundations}
+Author(s),
+\textit{CKKS Approximate Homomorphic Encryption for Scientific Computation},
+Conference/Journal, Volume, Pages (Year).
+
+\bibitem{ml_kem_1024_spec}
+Author(s),
+\textit{ML-KEM-1024: Post-Quantum Key Encapsulation Mechanism},
+NIST PQC Documentation, Pages (Year).
+
+\bibitem{nonlinear_schrodinger_review}
+Author(s),
+\textit{Nonlinear Schrödinger Equations: Existence, Stability, and Applications},
+Journal, Volume, Pages (Year).
+
+\bibitem{symplectic_integrators}
+Author(s),
+\textit{Symplectic Runge–Kutta Methods for Hamiltonian PDEs},
+Journal, Volume, Pages (Year).
+
+\bibitem{spectral_methods}
+Author(s),
+\textit{Pseudo-Spectral Methods for High-Dimensional PDEs},
+Journal, Volume, Pages (Year).
+
+\bibitem{zk_snark_foundations}
+Author(s),
+\textit{Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge},
+Conference/Journal, Pages (Year).
+
+\end{thebibliography}

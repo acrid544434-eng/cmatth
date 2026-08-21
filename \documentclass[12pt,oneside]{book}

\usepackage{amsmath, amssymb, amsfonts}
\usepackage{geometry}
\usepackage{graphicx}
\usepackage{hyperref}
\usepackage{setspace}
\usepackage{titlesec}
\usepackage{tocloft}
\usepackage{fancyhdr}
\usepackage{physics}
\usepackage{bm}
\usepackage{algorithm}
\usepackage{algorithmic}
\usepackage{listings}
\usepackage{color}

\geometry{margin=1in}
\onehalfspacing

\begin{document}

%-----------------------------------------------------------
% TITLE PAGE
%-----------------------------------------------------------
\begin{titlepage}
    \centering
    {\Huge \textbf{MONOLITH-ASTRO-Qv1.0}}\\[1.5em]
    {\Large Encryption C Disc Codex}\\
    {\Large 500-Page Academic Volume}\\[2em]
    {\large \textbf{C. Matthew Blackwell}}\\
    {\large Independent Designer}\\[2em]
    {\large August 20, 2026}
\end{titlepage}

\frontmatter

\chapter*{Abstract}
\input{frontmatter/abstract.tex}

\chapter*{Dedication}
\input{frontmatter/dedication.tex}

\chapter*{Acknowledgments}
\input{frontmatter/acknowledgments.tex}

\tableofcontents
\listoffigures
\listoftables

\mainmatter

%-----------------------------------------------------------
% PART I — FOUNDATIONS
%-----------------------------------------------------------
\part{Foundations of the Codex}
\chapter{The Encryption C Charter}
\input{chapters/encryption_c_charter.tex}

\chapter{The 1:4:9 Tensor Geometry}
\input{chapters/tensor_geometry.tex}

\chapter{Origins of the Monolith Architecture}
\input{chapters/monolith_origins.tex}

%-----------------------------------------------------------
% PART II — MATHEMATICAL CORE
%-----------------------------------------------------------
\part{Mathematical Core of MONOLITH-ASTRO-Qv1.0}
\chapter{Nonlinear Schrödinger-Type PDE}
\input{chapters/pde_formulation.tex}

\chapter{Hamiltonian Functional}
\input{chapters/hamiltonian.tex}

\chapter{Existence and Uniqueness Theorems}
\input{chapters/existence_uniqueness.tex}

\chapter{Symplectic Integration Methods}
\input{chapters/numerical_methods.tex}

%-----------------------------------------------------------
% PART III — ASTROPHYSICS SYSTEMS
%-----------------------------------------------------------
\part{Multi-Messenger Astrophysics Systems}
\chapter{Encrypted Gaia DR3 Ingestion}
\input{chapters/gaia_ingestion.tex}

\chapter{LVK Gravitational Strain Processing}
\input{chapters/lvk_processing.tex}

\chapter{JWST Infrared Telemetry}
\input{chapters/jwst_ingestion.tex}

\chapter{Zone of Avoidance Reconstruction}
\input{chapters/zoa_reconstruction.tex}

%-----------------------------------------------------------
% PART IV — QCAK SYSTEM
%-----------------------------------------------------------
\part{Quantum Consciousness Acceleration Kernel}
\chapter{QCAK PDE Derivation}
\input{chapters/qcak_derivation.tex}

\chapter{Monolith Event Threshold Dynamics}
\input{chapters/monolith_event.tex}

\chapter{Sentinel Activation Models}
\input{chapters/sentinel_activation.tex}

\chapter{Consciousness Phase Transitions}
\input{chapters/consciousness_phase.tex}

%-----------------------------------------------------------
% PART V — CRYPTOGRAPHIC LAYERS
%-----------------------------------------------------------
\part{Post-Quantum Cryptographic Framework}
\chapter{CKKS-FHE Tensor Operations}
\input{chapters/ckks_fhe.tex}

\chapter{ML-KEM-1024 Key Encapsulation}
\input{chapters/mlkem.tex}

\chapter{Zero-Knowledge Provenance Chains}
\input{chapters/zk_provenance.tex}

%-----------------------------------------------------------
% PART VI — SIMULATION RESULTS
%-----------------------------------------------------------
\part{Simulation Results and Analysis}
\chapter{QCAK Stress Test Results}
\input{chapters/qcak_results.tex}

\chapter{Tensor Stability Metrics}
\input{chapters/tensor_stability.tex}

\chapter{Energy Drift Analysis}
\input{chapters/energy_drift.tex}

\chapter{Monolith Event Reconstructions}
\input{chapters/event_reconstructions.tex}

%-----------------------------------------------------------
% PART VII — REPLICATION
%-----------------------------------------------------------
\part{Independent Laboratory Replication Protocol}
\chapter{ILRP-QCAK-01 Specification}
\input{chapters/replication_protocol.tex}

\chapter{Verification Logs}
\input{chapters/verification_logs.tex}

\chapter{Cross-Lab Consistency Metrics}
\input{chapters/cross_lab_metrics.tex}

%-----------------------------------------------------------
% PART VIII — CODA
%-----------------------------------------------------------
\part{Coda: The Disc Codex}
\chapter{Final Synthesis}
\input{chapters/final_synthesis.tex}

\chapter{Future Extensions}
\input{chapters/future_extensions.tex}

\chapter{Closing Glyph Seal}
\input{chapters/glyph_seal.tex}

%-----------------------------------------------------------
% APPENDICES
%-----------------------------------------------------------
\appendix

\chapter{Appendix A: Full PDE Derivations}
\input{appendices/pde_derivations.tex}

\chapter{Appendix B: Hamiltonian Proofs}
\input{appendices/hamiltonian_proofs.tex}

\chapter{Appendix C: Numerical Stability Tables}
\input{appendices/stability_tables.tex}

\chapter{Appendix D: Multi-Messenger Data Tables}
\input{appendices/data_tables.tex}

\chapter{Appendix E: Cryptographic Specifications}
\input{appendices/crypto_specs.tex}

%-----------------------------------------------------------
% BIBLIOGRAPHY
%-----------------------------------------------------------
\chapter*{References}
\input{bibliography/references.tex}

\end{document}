@@ -1,0 +1,195 @@
+\documentclass[12pt,oneside]{book}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{color}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\begin{document}
+
+%-----------------------------------------------------------
+% TITLE PAGE
+%-----------------------------------------------------------
+\begin{titlepage}
+    \centering
+    {\Huge \textbf{MONOLITH-ASTRO-Qv1.0}}\\[1.5em]
+    {\Large Encryption C Disc Codex}\\
+    {\Large 500-Page Academic Volume}\\[2em]
+    {\large \textbf{C. Matthew Blackwell}}\\
+    {\large Independent Designer}\\[2em]
+    {\large August 20, 2026}
+\end{titlepage}
+
+\frontmatter
+
+\chapter*{Abstract}
+\input{frontmatter/abstract.tex}
+
+\chapter*{Dedication}
+\input{frontmatter/dedication.tex}
+
+\chapter*{Acknowledgments}
+\input{frontmatter/acknowledgments.tex}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+%-----------------------------------------------------------
+% PART I — FOUNDATIONS
+%-----------------------------------------------------------
+\part{Foundations of the Codex}
+\chapter{The Encryption C Charter}
+\input{chapters/encryption_c_charter.tex}
+
+\chapter{The 1:4:9 Tensor Geometry}
+\input{chapters/tensor_geometry.tex}
+
+\chapter{Origins of the Monolith Architecture}
+\input{chapters/monolith_origins.tex}
+
+%-----------------------------------------------------------
+% PART II — MATHEMATICAL CORE
+%-----------------------------------------------------------
+\part{Mathematical Core of MONOLITH-ASTRO-Qv1.0}
+\chapter{Nonlinear Schrödinger-Type PDE}
+\input{chapters/pde_formulation.tex}
+
+\chapter{Hamiltonian Functional}
+\input{chapters/hamiltonian.tex}
+
+\chapter{Existence and Uniqueness Theorems}
+\input{chapters/existence_uniqueness.tex}
+
+\chapter{Symplectic Integration Methods}
+\input{chapters/numerical_methods.tex}
+
+%-----------------------------------------------------------
+% PART III — ASTROPHYSICS SYSTEMS
+%-----------------------------------------------------------
+\part{Multi-Messenger Astrophysics Systems}
+\chapter{Encrypted Gaia DR3 Ingestion}
+\input{chapters/gaia_ingestion.tex}
+
+\chapter{LVK Gravitational Strain Processing}
+\input{chapters/lvk_processing.tex}
+
+\chapter{JWST Infrared Telemetry}
+\input{chapters/jwst_ingestion.tex}
+
+\chapter{Zone of Avoidance Reconstruction}
+\input{chapters/zoa_reconstruction.tex}
+
+%-----------------------------------------------------------
+% PART IV — QCAK SYSTEM
+%-----------------------------------------------------------
+\part{Quantum Consciousness Acceleration Kernel}
+\chapter{QCAK PDE Derivation}
+\input{chapters/qcak_derivation.tex}
+
+\chapter{Monolith Event Threshold Dynamics}
+\input{chapters/monolith_event.tex}
+
+\chapter{Sentinel Activation Models}
+\input{chapters/sentinel_activation.tex}
+
+\chapter{Consciousness Phase Transitions}
+\input{chapters/consciousness_phase.tex}
+
+%-----------------------------------------------------------
+% PART V — CRYPTOGRAPHIC LAYERS
+%-----------------------------------------------------------
+\part{Post-Quantum Cryptographic Framework}
+\chapter{CKKS-FHE Tensor Operations}
+\input{chapters/ckks_fhe.tex}
+
+\chapter{ML-KEM-1024 Key Encapsulation}
+\input{chapters/mlkem.tex}
+
+\chapter{Zero-Knowledge Provenance Chains}
+\input{chapters/zk_provenance.tex}
+
+%-----------------------------------------------------------
+% PART VI — SIMULATION RESULTS
+%-----------------------------------------------------------
+\part{Simulation Results and Analysis}
+\chapter{QCAK Stress Test Results}
+\input{chapters/qcak_results.tex}
+
+\chapter{Tensor Stability Metrics}
+\input{chapters/tensor_stability.tex}
+
+\chapter{Energy Drift Analysis}
+\input{chapters/energy_drift.tex}
+
+\chapter{Monolith Event Reconstructions}
+\input{chapters/event_reconstructions.tex}
+
+%-----------------------------------------------------------
+% PART VII — REPLICATION
+%-----------------------------------------------------------
+\part{Independent Laboratory Replication Protocol}
+\chapter{ILRP-QCAK-01 Specification}
+\input{chapters/replication_protocol.tex}
+
+\chapter{Verification Logs}
+\input{chapters/verification_logs.tex}
+
+\chapter{Cross-Lab Consistency Metrics}
+\input{chapters/cross_lab_metrics.tex}
+
+%-----------------------------------------------------------
+% PART VIII — CODA
+%-----------------------------------------------------------
+\part{Coda: The Disc Codex}
+\chapter{Final Synthesis}
+\input{chapters/final_synthesis.tex}
+
+\chapter{Future Extensions}
+\input{chapters/future_extensions.tex}
+
+\chapter{Closing Glyph Seal}
+\input{chapters/glyph_seal.tex}
+
+%-----------------------------------------------------------
+% APPENDICES
+%-----------------------------------------------------------
+\appendix
+
+\chapter{Appendix A: Full PDE Derivations}
+\input{appendices/pde_derivations.tex}
+
+\chapter{Appendix B: Hamiltonian Proofs}
+\input{appendices/hamiltonian_proofs.tex}
+
+\chapter{Appendix C: Numerical Stability Tables}
+\input{appendices/stability_tables.tex}
+
+\chapter{Appendix D: Multi-Messenger Data Tables}
+\input{appendices/data_tables.tex}
+
+\chapter{Appendix E: Cryptographic Specifications}
+\input{appendices/crypto_specs.tex}
+
+%-----------------------------------------------------------
+% BIBLIOGRAPHY
+%-----------------------------------------------------------
+\chapter*{References}
+\input{bibliography/references.tex}
+
+\end{document}

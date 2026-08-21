@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{\textbf{ZOA-HE-ASTRO Phase-II Validation: Cosmic-Web Filament Reconstruction, Rogue-Planet Census, and Encrypted Volumetric Rendering}}
+\author{\textbf{C. MATTHEW BLACKWELL}\\\textit{Independent Systems Architect \& Software Designer}}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document establishes the Phase-II validation framework for the ZOA-HE-ASTRO v1.0 simulation engine, designed entirely under the independent authority of \textbf{C. MATTHEW BLACKWELL}. Building upon core dust-extinction tensors and homomorphic geodesic kernels, Phase-II introduces rigorous operational protocols for resolving obscured cosmic-web filaments, mapping unbound rogue-planet populations behind the Milky Way's Zone of Avoidance (ZOA), and rendering volumetric tensor fields under fully homomorphic post-quantum constraints.
+\end{abstract}
+
+\section{Cosmic-Web Filament Reconstruction Protocol}
+
+To resolve large-scale structure traversing the Galactic plane, the system ingests multi-messenger gravitational anomaly maps and applies a non-Euclidean Hessian filter in ciphertext space.
+
+Let $\llbracket H_{ij} \rrbracket$ represent the encrypted Hessian of the gravitational potential field $\llbracket \Phi \rrbracket$:
+
+\begin{equation}
+\llbracket H_{ij} \rrbracket
+=
+\text{Enc}_{\text{CKKS}}\!\left(
+\frac{\partial^2 \Phi}{\partial x^i \partial x^j}
+\right).
+\end{equation}
+
+Filamentary structures are extracted via eigenvalue decomposition of $\llbracket H_{ij} \rrbracket$, isolating regions where two eigenvalues dominate:
+
+\[
+\lambda_2 \approx \lambda_3 \gg \lambda_1,
+\]
+
+corresponding to collapsing 1D manifold geometries behind dense interstellar dust.
+
+\section{Rogue-Planet Census \& Gravitational Microlensing Ingestion}
+
+Unbound planetary-mass objects within the ZOA are detected by analyzing high-cadence gravitational microlensing distortions embedded in encrypted background stellar photometry.
+
+The magnification tensor $\mu_{\text{lens}}$ under the point-mass lens approximation is evaluated homomorphically:
+
+\begin{equation}
+\llbracket \mu_{\text{lens}} \rrbracket
+=
+\llbracket
+\frac{u^2 + 2}{u \sqrt{u^4 + 4}}
+\rrbracket,
+\qquad
+u(\tau)
+=
+\sqrt{
+u_0^2
++
+\left(
+\frac{\tau - t_0}{t_E}
+\right)^2
+}.
+\end{equation}
+
+Here $u_0$ is the impact parameter and $t_E$ is the Einstein crossing time, computed without exposing raw astrometric coordinates to unverified nodes.
+
+\section{Encrypted Volumetric Rendering Kernel}
+
+The final visualization pipeline converts high-dimensional ciphertext tensors into rendered volumetric voxel grids using homomorphic ray-marching algorithms.
+
+The accumulated pixel radiance $L_{\text{pix}}$ along ray path $s$ is computed via encrypted alpha-blending:
+
+\begin{equation}
+\llbracket L_{\text{pix}} \rrbracket
+=
+\int_{0}^{s_{\max}}
+\llbracket j(\mathbf{x}(s)) \rrbracket
+\exp\!\left(
+-
+\int_{0}^{s}
+\llbracket \kappa_{\text{ext}}(s') \rrbracket
+\, ds'
+\right)
+ds.
+\end{equation}
+
+This operator executes entirely in ciphertext space, ensuring that no raw volumetric coordinates or extinction coefficients are exposed during rendering.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}\\
+\textit{Phase-II Framework Formulated and Verified by C. MATTHEW BLACKWELL, Independent Designer.}
+
+\end{document}

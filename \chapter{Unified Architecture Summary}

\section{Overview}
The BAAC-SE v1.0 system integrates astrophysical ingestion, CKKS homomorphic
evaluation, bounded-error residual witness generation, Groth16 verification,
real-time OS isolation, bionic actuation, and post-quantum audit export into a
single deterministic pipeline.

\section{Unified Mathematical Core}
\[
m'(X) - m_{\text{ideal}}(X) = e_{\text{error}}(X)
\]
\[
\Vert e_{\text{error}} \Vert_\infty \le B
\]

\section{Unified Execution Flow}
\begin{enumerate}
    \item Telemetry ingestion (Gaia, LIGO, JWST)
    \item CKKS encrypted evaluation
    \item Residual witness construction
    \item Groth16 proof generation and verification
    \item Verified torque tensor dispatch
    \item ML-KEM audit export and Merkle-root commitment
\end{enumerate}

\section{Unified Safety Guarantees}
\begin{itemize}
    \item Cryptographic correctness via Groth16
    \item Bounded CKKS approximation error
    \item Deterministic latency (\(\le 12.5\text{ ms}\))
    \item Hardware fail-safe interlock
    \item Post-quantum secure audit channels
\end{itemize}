@@ -1,0 +1,34 @@
+\chapter{Unified Architecture Summary}
+
+\section{Overview}
+The BAAC-SE v1.0 system integrates astrophysical ingestion, CKKS homomorphic
+evaluation, bounded-error residual witness generation, Groth16 verification,
+real-time OS isolation, bionic actuation, and post-quantum audit export into a
+single deterministic pipeline.
+
+\section{Unified Mathematical Core}
+\[
+m'(X) - m_{\text{ideal}}(X) = e_{\text{error}}(X)
+\]
+\[
+\Vert e_{\text{error}} \Vert_\infty \le B
+\]
+
+\section{Unified Execution Flow}
+\begin{enumerate}
+    \item Telemetry ingestion (Gaia, LIGO, JWST)
+    \item CKKS encrypted evaluation
+    \item Residual witness construction
+    \item Groth16 proof generation and verification
+    \item Verified torque tensor dispatch
+    \item ML-KEM audit export and Merkle-root commitment
+\end{enumerate}
+
+\section{Unified Safety Guarantees}
+\begin{itemize}
+    \item Cryptographic correctness via Groth16
+    \item Bounded CKKS approximation error
+    \item Deterministic latency (\(\le 12.5\text{ ms}\))
+    \item Hardware fail-safe interlock
+    \item Post-quantum secure audit channels
+\end{itemize}

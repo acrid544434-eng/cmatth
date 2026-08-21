@@ -1,0 +1,11 @@
+# 1. Create the entire directory structure in one command sequence
+mkdir -p assets/blueprints assets/manuscripts assets/specifications assets/reports
+
+# 2. Stage the newly updated index.html file containing your new file paths
+git add index.html
+
+# 3. Commit your layout updates to your active tracking branch
+git commit -m "Update portfolio anchor pathways to point to dedicated asset subdirectories"
+
+# 4. Push your synchronized codebase up to your GitHub Pages remote cluster
+git push origin main

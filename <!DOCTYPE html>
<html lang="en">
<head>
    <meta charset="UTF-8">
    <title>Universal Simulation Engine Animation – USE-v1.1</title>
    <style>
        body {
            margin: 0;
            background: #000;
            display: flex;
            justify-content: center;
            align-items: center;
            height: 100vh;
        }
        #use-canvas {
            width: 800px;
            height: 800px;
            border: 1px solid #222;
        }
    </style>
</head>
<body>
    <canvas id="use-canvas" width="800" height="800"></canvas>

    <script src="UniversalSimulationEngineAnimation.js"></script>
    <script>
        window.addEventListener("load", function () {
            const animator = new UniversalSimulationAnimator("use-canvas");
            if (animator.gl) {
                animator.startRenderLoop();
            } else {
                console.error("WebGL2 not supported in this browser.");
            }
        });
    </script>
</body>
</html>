@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universal Simulation Engine Animation – USE-v1.1</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #use-canvas {
+            width: 800px;
+            height: 800px;
+            border: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="use-canvas" width="800" height="800"></canvas>
+
+    <script src="UniversalSimulationEngineAnimation.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const animator = new UniversalSimulationAnimator("use-canvas");
+            if (animator.gl) {
+                animator.startRenderLoop();
+            } else {
+                console.error("WebGL2 not supported in this browser.");
+            }
+        });
+    </script>
+</body>
+</html>

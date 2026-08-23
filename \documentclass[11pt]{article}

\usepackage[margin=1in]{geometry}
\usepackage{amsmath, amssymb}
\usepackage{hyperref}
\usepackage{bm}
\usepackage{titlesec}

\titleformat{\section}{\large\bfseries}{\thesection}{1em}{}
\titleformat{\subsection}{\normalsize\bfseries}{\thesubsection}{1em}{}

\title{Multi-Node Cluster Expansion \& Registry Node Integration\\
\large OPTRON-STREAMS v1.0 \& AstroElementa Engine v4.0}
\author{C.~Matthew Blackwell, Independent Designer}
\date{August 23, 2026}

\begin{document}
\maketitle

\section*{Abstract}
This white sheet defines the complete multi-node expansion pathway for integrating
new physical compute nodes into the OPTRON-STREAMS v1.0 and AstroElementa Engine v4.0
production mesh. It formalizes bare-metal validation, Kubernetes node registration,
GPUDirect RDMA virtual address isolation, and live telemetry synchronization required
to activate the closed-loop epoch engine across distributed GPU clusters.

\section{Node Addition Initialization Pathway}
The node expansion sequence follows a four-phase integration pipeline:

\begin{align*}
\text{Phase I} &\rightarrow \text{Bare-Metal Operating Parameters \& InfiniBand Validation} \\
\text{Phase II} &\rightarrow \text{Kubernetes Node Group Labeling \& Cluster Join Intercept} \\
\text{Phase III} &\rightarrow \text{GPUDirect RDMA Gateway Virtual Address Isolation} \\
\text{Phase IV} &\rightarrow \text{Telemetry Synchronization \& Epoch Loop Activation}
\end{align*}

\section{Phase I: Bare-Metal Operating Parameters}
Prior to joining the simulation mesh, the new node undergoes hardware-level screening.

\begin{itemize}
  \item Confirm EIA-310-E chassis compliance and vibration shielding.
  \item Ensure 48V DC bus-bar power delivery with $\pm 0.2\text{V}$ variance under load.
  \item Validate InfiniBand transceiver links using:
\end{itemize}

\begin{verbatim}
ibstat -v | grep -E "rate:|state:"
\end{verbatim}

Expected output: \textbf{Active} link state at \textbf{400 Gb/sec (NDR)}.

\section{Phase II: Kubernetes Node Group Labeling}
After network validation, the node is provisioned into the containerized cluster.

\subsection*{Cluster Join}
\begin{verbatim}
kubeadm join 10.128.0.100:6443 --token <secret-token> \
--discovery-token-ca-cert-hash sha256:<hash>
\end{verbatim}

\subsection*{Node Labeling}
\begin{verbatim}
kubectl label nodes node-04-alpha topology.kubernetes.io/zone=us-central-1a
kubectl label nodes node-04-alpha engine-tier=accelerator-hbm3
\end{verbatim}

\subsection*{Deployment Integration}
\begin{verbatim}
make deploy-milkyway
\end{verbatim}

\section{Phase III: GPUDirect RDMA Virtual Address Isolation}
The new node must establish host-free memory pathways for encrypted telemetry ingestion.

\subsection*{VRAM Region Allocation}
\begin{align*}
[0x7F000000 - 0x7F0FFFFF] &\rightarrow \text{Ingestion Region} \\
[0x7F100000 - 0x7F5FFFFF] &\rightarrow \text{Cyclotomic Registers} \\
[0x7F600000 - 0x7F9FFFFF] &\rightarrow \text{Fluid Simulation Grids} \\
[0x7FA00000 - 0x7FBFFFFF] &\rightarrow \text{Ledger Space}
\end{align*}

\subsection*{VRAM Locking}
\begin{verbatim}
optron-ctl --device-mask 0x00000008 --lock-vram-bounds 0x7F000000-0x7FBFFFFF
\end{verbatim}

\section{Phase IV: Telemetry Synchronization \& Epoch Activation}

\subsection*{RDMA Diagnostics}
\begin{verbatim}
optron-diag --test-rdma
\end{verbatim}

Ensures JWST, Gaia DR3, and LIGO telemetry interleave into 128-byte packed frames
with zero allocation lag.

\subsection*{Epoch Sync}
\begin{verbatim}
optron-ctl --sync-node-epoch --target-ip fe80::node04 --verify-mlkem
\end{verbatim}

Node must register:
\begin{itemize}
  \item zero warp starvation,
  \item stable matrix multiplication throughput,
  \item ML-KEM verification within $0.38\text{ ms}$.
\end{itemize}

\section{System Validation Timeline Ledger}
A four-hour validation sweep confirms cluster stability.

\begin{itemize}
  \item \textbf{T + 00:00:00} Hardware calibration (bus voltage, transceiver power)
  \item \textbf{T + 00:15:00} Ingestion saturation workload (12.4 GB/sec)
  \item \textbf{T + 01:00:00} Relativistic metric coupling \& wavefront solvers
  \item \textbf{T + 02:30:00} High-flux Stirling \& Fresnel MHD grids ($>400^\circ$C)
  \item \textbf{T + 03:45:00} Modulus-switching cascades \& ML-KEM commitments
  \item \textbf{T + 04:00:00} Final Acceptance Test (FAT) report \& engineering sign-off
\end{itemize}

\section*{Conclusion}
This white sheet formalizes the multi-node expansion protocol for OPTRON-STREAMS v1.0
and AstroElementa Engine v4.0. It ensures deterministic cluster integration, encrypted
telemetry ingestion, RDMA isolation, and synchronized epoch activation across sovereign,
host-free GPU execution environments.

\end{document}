@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{titlesec}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\title{Multi-Node Cluster Expansion \& Registry Node Integration\\
+\large OPTRON-STREAMS v1.0 \& AstroElementa Engine v4.0}
+\author{C.~Matthew Blackwell, Independent Designer}
+\date{August 23, 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+This white sheet defines the complete multi-node expansion pathway for integrating
+new physical compute nodes into the OPTRON-STREAMS v1.0 and AstroElementa Engine v4.0
+production mesh. It formalizes bare-metal validation, Kubernetes node registration,
+GPUDirect RDMA virtual address isolation, and live telemetry synchronization required
+to activate the closed-loop epoch engine across distributed GPU clusters.
+
+\section{Node Addition Initialization Pathway}
+The node expansion sequence follows a four-phase integration pipeline:
+
+\begin{align*}
+\text{Phase I} &\rightarrow \text{Bare-Metal Operating Parameters \& InfiniBand Validation} \\
+\text{Phase II} &\rightarrow \text{Kubernetes Node Group Labeling \& Cluster Join Intercept} \\
+\text{Phase III} &\rightarrow \text{GPUDirect RDMA Gateway Virtual Address Isolation} \\
+\text{Phase IV} &\rightarrow \text{Telemetry Synchronization \& Epoch Loop Activation}
+\end{align*}
+
+\section{Phase I: Bare-Metal Operating Parameters}
+Prior to joining the simulation mesh, the new node undergoes hardware-level screening.
+
+\begin{itemize}
+  \item Confirm EIA-310-E chassis compliance and vibration shielding.
+  \item Ensure 48V DC bus-bar power delivery with $\pm 0.2\text{V}$ variance under load.
+  \item Validate InfiniBand transceiver links using:
+\end{itemize}
+
+\begin{verbatim}
+ibstat -v | grep -E "rate:|state:"
+\end{verbatim}
+
+Expected output: \textbf{Active} link state at \textbf{400 Gb/sec (NDR)}.
+
+\section{Phase II: Kubernetes Node Group Labeling}
+After network validation, the node is provisioned into the containerized cluster.
+
+\subsection*{Cluster Join}
+\begin{verbatim}
+kubeadm join 10.128.0.100:6443 --token <secret-token> \
+--discovery-token-ca-cert-hash sha256:<hash>
+\end{verbatim}
+
+\subsection*{Node Labeling}
+\begin{verbatim}
+kubectl label nodes node-04-alpha topology.kubernetes.io/zone=us-central-1a
+kubectl label nodes node-04-alpha engine-tier=accelerator-hbm3
+\end{verbatim}
+
+\subsection*{Deployment Integration}
+\begin{verbatim}
+make deploy-milkyway
+\end{verbatim}
+
+\section{Phase III: GPUDirect RDMA Virtual Address Isolation}
+The new node must establish host-free memory pathways for encrypted telemetry ingestion.
+
+\subsection*{VRAM Region Allocation}
+\begin{align*}
+[0x7F000000 - 0x7F0FFFFF] &\rightarrow \text{Ingestion Region} \\
+[0x7F100000 - 0x7F5FFFFF] &\rightarrow \text{Cyclotomic Registers} \\
+[0x7F600000 - 0x7F9FFFFF] &\rightarrow \text{Fluid Simulation Grids} \\
+[0x7FA00000 - 0x7FBFFFFF] &\rightarrow \text{Ledger Space}
+\end{align*}
+
+\subsection*{VRAM Locking}
+\begin{verbatim}
+optron-ctl --device-mask 0x00000008 --lock-vram-bounds 0x7F000000-0x7FBFFFFF
+\end{verbatim}
+
+\section{Phase IV: Telemetry Synchronization \& Epoch Activation}
+
+\subsection*{RDMA Diagnostics}
+\begin{verbatim}
+optron-diag --test-rdma
+\end{verbatim}
+
+Ensures JWST, Gaia DR3, and LIGO telemetry interleave into 128-byte packed frames
+with zero allocation lag.
+
+\subsection*{Epoch Sync}
+\begin{verbatim}
+optron-ctl --sync-node-epoch --target-ip fe80::node04 --verify-mlkem
+\end{verbatim}
+
+Node must register:
+\begin{itemize}
+  \item zero warp starvation,
+  \item stable matrix multiplication throughput,
+  \item ML-KEM verification within $0.38\text{ ms}$.
+\end{itemize}
+
+\section{System Validation Timeline Ledger}
+A four-hour validation sweep confirms cluster stability.
+
+\begin{itemize}
+  \item \textbf{T + 00:00:00} Hardware calibration (bus voltage, transceiver power)
+  \item \textbf{T + 00:15:00} Ingestion saturation workload (12.4 GB/sec)
+  \item \textbf{T + 01:00:00} Relativistic metric coupling \& wavefront solvers
+  \item \textbf{T + 02:30:00} High-flux Stirling \& Fresnel MHD grids ($>400^\circ$C)
+  \item \textbf{T + 03:45:00} Modulus-switching cascades \& ML-KEM commitments
+  \item \textbf{T + 04:00:00} Final Acceptance Test (FAT) report \& engineering sign-off
+\end{itemize}
+
+\section*{Conclusion}
+This white sheet formalizes the multi-node expansion protocol for OPTRON-STREAMS v1.0
+and AstroElementa Engine v4.0. It ensures deterministic cluster integration, encrypted
+telemetry ingestion, RDMA isolation, and synchronized epoch activation across sovereign,
+host-free GPU execution environments.
+
+\end{document}

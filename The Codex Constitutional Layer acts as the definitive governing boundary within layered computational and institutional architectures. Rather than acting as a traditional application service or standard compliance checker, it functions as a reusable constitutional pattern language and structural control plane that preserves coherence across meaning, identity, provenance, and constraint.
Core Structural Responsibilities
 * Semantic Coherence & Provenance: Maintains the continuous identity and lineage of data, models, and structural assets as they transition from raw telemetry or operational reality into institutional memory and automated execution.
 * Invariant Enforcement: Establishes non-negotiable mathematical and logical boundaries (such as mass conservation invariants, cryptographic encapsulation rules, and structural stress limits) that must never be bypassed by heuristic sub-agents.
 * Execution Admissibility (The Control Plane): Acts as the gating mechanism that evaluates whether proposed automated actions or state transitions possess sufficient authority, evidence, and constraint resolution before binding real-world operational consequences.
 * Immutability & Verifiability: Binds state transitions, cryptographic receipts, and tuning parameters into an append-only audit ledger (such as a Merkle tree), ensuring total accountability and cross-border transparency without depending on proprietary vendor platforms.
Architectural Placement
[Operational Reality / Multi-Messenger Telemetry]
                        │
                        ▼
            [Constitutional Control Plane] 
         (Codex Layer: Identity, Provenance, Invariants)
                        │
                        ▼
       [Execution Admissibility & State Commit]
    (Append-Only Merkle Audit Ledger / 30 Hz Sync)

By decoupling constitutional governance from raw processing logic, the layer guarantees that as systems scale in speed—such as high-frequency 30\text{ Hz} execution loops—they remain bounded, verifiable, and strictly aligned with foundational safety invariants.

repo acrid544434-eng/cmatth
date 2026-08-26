@@ -1,0 +1,18 @@
+The Codex Constitutional Layer acts as the definitive governing boundary within layered computational and institutional architectures. Rather than acting as a traditional application service or standard compliance checker, it functions as a reusable constitutional pattern language and structural control plane that preserves coherence across meaning, identity, provenance, and constraint.
+Core Structural Responsibilities
+ * Semantic Coherence & Provenance: Maintains the continuous identity and lineage of data, models, and structural assets as they transition from raw telemetry or operational reality into institutional memory and automated execution.
+ * Invariant Enforcement: Establishes non-negotiable mathematical and logical boundaries (such as mass conservation invariants, cryptographic encapsulation rules, and structural stress limits) that must never be bypassed by heuristic sub-agents.
+ * Execution Admissibility (The Control Plane): Acts as the gating mechanism that evaluates whether proposed automated actions or state transitions possess sufficient authority, evidence, and constraint resolution before binding real-world operational consequences.
+ * Immutability & Verifiability: Binds state transitions, cryptographic receipts, and tuning parameters into an append-only audit ledger (such as a Merkle tree), ensuring total accountability and cross-border transparency without depending on proprietary vendor platforms.
+Architectural Placement
+[Operational Reality / Multi-Messenger Telemetry]
+                        │
+                        ▼
+            [Constitutional Control Plane] 
+         (Codex Layer: Identity, Provenance, Invariants)
+                        │
+                        ▼
+       [Execution Admissibility & State Commit]
+    (Append-Only Merkle Audit Ledger / 30 Hz Sync)
+
+By decoupling constitutional governance from raw processing logic, the layer guarantees that as systems scale in speed—such as high-frequency 30\text{ Hz} execution loops—they remain bounded, verifiable, and strictly aligned with foundational safety invariants.

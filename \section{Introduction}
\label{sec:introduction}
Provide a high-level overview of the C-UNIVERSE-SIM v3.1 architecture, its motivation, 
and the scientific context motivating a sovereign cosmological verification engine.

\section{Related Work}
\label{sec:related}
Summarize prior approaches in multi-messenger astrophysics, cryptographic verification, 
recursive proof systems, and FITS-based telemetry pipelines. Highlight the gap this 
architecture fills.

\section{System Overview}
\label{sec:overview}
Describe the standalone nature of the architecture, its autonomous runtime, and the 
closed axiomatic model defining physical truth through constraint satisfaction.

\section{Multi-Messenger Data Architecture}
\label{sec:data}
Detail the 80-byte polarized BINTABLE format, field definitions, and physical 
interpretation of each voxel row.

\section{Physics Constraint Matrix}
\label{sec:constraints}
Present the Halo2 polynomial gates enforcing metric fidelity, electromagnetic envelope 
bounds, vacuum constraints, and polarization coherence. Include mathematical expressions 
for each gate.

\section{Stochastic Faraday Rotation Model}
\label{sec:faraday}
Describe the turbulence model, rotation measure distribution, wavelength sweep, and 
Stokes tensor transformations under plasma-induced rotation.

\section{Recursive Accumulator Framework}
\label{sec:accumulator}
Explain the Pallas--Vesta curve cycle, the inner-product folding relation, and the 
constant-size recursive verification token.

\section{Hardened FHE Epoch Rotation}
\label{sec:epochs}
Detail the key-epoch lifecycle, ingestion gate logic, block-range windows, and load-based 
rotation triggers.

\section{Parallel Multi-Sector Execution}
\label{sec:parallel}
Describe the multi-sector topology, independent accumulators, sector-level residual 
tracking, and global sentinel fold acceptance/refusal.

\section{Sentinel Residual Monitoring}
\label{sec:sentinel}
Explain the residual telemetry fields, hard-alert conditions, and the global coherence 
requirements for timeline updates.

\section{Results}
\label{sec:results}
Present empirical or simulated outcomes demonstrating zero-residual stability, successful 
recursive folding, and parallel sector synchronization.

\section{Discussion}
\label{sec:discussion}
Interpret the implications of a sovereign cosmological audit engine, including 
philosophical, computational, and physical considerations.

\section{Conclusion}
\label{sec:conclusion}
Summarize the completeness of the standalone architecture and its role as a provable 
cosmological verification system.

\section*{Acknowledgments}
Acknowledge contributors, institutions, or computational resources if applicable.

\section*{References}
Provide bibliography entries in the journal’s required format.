@@ -1,0 +1,72 @@
+\section{Introduction}
+\label{sec:introduction}
+Provide a high-level overview of the C-UNIVERSE-SIM v3.1 architecture, its motivation, 
+and the scientific context motivating a sovereign cosmological verification engine.
+
+\section{Related Work}
+\label{sec:related}
+Summarize prior approaches in multi-messenger astrophysics, cryptographic verification, 
+recursive proof systems, and FITS-based telemetry pipelines. Highlight the gap this 
+architecture fills.
+
+\section{System Overview}
+\label{sec:overview}
+Describe the standalone nature of the architecture, its autonomous runtime, and the 
+closed axiomatic model defining physical truth through constraint satisfaction.
+
+\section{Multi-Messenger Data Architecture}
+\label{sec:data}
+Detail the 80-byte polarized BINTABLE format, field definitions, and physical 
+interpretation of each voxel row.
+
+\section{Physics Constraint Matrix}
+\label{sec:constraints}
+Present the Halo2 polynomial gates enforcing metric fidelity, electromagnetic envelope 
+bounds, vacuum constraints, and polarization coherence. Include mathematical expressions 
+for each gate.
+
+\section{Stochastic Faraday Rotation Model}
+\label{sec:faraday}
+Describe the turbulence model, rotation measure distribution, wavelength sweep, and 
+Stokes tensor transformations under plasma-induced rotation.
+
+\section{Recursive Accumulator Framework}
+\label{sec:accumulator}
+Explain the Pallas--Vesta curve cycle, the inner-product folding relation, and the 
+constant-size recursive verification token.
+
+\section{Hardened FHE Epoch Rotation}
+\label{sec:epochs}
+Detail the key-epoch lifecycle, ingestion gate logic, block-range windows, and load-based 
+rotation triggers.
+
+\section{Parallel Multi-Sector Execution}
+\label{sec:parallel}
+Describe the multi-sector topology, independent accumulators, sector-level residual 
+tracking, and global sentinel fold acceptance/refusal.
+
+\section{Sentinel Residual Monitoring}
+\label{sec:sentinel}
+Explain the residual telemetry fields, hard-alert conditions, and the global coherence 
+requirements for timeline updates.
+
+\section{Results}
+\label{sec:results}
+Present empirical or simulated outcomes demonstrating zero-residual stability, successful 
+recursive folding, and parallel sector synchronization.
+
+\section{Discussion}
+\label{sec:discussion}
+Interpret the implications of a sovereign cosmological audit engine, including 
+philosophical, computational, and physical considerations.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Summarize the completeness of the standalone architecture and its role as a provable 
+cosmological verification system.
+
+\section*{Acknowledgments}
+Acknowledge contributors, institutions, or computational resources if applicable.
+
+\section*{References}
+Provide bibliography entries in the journal’s required format.

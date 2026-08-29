@@ -1,0 +1,91 @@
+\subsection{Governing Equations for Multi-Phase Coastal Flow}
+
+\paragraph{Mixture Continuity.}
+The fluid--sediment mixture satisfies
+\[
+\frac{\partial \rho_m}{\partial t}
++ \nabla \cdot (\rho_m \mathbf{u}) = 0,
+\]
+where
+\[
+\rho_m = (1 - c)\rho_w + c\rho_s
+\]
+is the mixture density, $c$ is the sediment volume fraction, and
+$\mathbf{u}$ is the barycentric velocity vector.
+
+\paragraph{Momentum Conservation.}
+The momentum balance is given by
+\[
+\frac{\partial (\rho_m \mathbf{u})}{\partial t}
++ \nabla \cdot (\rho_m \mathbf{u}\otimes\mathbf{u})
+= -\nabla p
++ \nabla \cdot \boldsymbol{\tau}
++ \rho_m \mathbf{g}
++ \mathbf{F}_{\text{drag}},
+\]
+accounting for hydrostatic/dynamic pressure gradients $p$, viscous and
+turbulent stress tensors $\boldsymbol{\tau}$, gravitational body forces
+$\mathbf{g}$, and inter-phasic drag forces $\mathbf{F}_{\text{drag}}$.
+
+\paragraph{Suspended Sediment Transport.}
+Suspended sediment concentration evolves according to
+\[
+\frac{\partial c}{\partial t}
++ \nabla \cdot (c \mathbf{u})
++ \nabla \cdot (c \mathbf{v}_s)
+= \nabla \cdot \left( D_t \nabla c \right),
+\]
+where $\mathbf{v}_s$ is the settling velocity vector of sediment grains
+and $D_t$ is the turbulent eddy diffusivity.
+
+\paragraph{Bed Elevation Evolution (Exner Equation).}
+The bed level $z_b$ evolves via
+\[
+\frac{\partial z_b}{\partial t}
++ \frac{1}{1 - p_0}\,\nabla \cdot \mathbf{q}_b
+= \frac{D_b - E_b}{\rho_s (1 - p_0)},
+\]
+where $p_0$ is bed porosity, $\mathbf{q}_b$ is the bedload sediment flux,
+and $D_b$ and $E_b$ represent local deposition and erosion mass fluxes
+across the fluid--solid boundary.
+
+\subsection{The ``Coastal Sod Tube'' Test Case (Dam-Break Sediment Surge)}
+
+\paragraph{Domain Geometry.}
+We consider a $100\,\mathrm{m} \times 10\,\mathrm{m}$ vertical 2D channel
+with a flat, erodible sediment bed ($z_b = 0$) and an idealized vertical
+dam gate at $x = 50\,\mathrm{m}$.
+
+\paragraph{Initial Fluid States.}
+Left state ($x < 50\,\mathrm{m}$):
+\[
+h_L = 5.0\,\mathrm{m}, \quad \mathbf{u}_L = \mathbf{0}, \quad c_L = 0.
+\]
+Right state ($x > 50\,\mathrm{m}$):
+\[
+h_R = 1.0\,\mathrm{m}, \quad \mathbf{u}_R = \mathbf{0}, \quad c_R = 0,
+\]
+with a quiescent erodible bed.
+
+\paragraph{Boundary Conditions.}
+We impose symmetry/slip-wall conditions at the upper boundary, a quadratic
+bed-friction law
+\[
+\boldsymbol{\tau}_b = C_d \rho_m \lvert \mathbf{u} \rvert \mathbf{u}
+\]
+at the sediment interface, and transmissive outflow at the right domain
+boundary.
+
+\paragraph{Validation Metrics.}
+This test evaluates the shock-capturing HLLC Riemann solver's ability to
+resolve:
+\begin{itemize}
+  \item the rarefaction wave and dam-break shock front,
+  \item instantaneous bed excavation depth and subsequent deposition,
+  \item total mass conservation drift,
+\end{itemize}
+while avoiding spurious numerical oscillations or unphysical energy
+generation.
+
+\medskip
+\noindent\textit{C. Matthew Blackwell, independent designer}

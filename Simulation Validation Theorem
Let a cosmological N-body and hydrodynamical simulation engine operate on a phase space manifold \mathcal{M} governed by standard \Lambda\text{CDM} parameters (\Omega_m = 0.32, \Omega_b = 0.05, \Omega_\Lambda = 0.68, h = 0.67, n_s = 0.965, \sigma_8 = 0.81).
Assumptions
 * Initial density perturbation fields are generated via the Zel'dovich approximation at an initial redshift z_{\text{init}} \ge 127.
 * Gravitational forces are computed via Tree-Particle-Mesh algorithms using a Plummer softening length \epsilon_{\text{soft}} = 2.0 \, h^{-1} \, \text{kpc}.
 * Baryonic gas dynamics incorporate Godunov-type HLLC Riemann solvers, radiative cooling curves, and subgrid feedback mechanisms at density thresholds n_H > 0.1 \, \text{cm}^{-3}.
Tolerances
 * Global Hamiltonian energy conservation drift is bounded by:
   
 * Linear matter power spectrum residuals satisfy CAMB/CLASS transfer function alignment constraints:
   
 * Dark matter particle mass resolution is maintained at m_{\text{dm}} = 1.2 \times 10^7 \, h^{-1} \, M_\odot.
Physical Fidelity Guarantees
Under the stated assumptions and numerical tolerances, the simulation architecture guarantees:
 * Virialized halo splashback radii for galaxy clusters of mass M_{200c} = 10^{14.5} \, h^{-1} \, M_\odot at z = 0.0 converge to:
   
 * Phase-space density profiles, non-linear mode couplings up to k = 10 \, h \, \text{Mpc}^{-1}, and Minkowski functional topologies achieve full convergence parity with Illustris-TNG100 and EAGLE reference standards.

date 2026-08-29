@@ -1,0 +1,17 @@
+Simulation Validation Theorem
+Let a cosmological N-body and hydrodynamical simulation engine operate on a phase space manifold \mathcal{M} governed by standard \Lambda\text{CDM} parameters (\Omega_m = 0.32, \Omega_b = 0.05, \Omega_\Lambda = 0.68, h = 0.67, n_s = 0.965, \sigma_8 = 0.81).
+Assumptions
+ * Initial density perturbation fields are generated via the Zel'dovich approximation at an initial redshift z_{\text{init}} \ge 127.
+ * Gravitational forces are computed via Tree-Particle-Mesh algorithms using a Plummer softening length \epsilon_{\text{soft}} = 2.0 \, h^{-1} \, \text{kpc}.
+ * Baryonic gas dynamics incorporate Godunov-type HLLC Riemann solvers, radiative cooling curves, and subgrid feedback mechanisms at density thresholds n_H > 0.1 \, \text{cm}^{-3}.
+Tolerances
+ * Global Hamiltonian energy conservation drift is bounded by:
+   
+ * Linear matter power spectrum residuals satisfy CAMB/CLASS transfer function alignment constraints:
+   
+ * Dark matter particle mass resolution is maintained at m_{\text{dm}} = 1.2 \times 10^7 \, h^{-1} \, M_\odot.
+Physical Fidelity Guarantees
+Under the stated assumptions and numerical tolerances, the simulation architecture guarantees:
+ * Virialized halo splashback radii for galaxy clusters of mass M_{200c} = 10^{14.5} \, h^{-1} \, M_\odot at z = 0.0 converge to:
+   
+ * Phase-space density profiles, non-linear mode couplings up to k = 10 \, h \, \text{Mpc}^{-1}, and Minkowski functional topologies achieve full convergence parity with Illustris-TNG100 and EAGLE reference standards.

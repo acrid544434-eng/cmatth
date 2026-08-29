@@ -1,0 +1,21 @@
+CSI-SE v9.0 Monograph: Codex Volume II
+Chapter 6 — Quantum-Classical Hybrid Solvers & Vlasov-Maxwell Kinetic Integration (Pages 251–300)
+Module 22 — Foundations of Quantum-Classical Field Coupling (Pages 251–265)
+22.1 Bridging Continuous Manifolds and Discrete State Spaces
+While general relativity governs macro-scale spacetime geometry through deterministic metric tensors, extreme astrophysical environments (such as magnetar magnetospheres and relativistic plasma jets near event horizons) require simultaneous solution of kinetic plasma equations. CSI-SE v9.0 integrates quantum-classical hybrid solvers to evaluate Vlasov-Maxwell kinetics directly over curved spacetime manifolds without losing numerical fidelity.
+22.2 Governing Kinetic Equations
+The evolution of the particle distribution function f_s(x^\mu, p^\nu) for species s in phase space is governed by the relativistic Vlasov equation:
+Where \Gamma^\mu_{\alpha\beta} are the Christoffel symbols derived from the ADM metric, and F^\mu_\nu represents the electromagnetic field tensor satisfying covariant Maxwell equations.
+Module 23 — Vlasov-Maxwell Numerical Integration Kernels (Pages 266–285)
+23.1 Eulerian-Lagrangian Particle-in-Cell (PIC) Coupling
+To solve high-dimensional phase space equations efficiently, the simulation engine utilizes GPU-accelerated Particle-in-Cell (PIC) routines mapped onto distributed CUDA tensor cores:
+ * Field Interpolation: Electromagnetic and gravitational fields are interpolated from Eulerian grid nodes to Lagrangian particle positions.
+ * Moment Accumulation: Charge and current densities are deposited back onto grid boundaries to update Maxwell source terms.
+23.2 Symplectic Integrators and Conservation Laws
+To prevent artificial energy dissipation or numerical heating over long simulation horizons, time-stepping is governed by high-order symplectic partitioned Runge-Kutta schemes, preserving phase space volume according to Liouville's theorem.
+Module 24 — Quantum State Entanglement Simulation Protocols (Pages 286–295)
+24.1 Non-Local Field Correlations
+When modeling sub-planckian energy fluctuations or quantum vacuum polarization near strong-field gravitational boundaries, the solver invokes parallelized quantum circuit simulators to compute density matrix evolutions and entanglement entropy without violating relativistic causality bounds.
+Module 25 — Chapter Summary & Transition to Volume II Architecture (Pages 296–300)
+Chapter 6 establishes the kinetic integration framework of CSI-SE v9.0, proving that macroscopic general relativity and microscopic plasma physics can be solved concurrently within an invariant-governed compute pipeline.
+C. MATTHEW BLACKWELL independent designer

@@ -1,0 +1,75 @@
+from dataclasses import dataclass
+import numpy as np
+import hashlib
+
+@dataclass
+class RadiationFluxState:
+    timestamp_utc: float
+    proton_flux_mev: np.ndarray
+    gcr_fluence_rate: float
+    dpa_increment: float
+
+@dataclass
+class ThermoMechanicalState:
+    temperature_field: np.ndarray
+    stress_tensor: np.ndarray
+    csh_amorphization_ratio: float
+    spalling_risk_index: float
+
+@dataclass
+class CryptographicReceipt:
+    state_hash: bytes
+    ml_dsa_signature: bytes
+    signer_id: str = "C. Matthew Blackwell"
+
+def ml_dsa_stub_sign(state_bytes: bytes) -> bytes:
+    # Placeholder: real ML-DSA would replace this
+    return hashlib.shake_256(state_bytes).digest(32)
+
+def run_actf_simulation(config: SimulationConfig):
+    time_steps = int(config.total_time / config.dt)
+    for step in range(time_steps):
+        t = step * config.dt
+
+        # 1. Radiation & DPA
+        flux_e = np.linspace(1, 100, 1024)
+        phi_dpa = np.trapz(flux_e * 1e-6, flux_e)
+        dpa_total = phi_dpa * t
+        chi_csh = 1.0 - np.exp(-config.kappa_csh * dpa_total)
+
+        rad_state = RadiationFluxState(
+            timestamp_utc=t,
+            proton_flux_mev=flux_e,
+            gcr_fluence_rate=phi_dpa,
+            dpa_increment=dpa_total
+        )
+
+        # 2. Thermo-mechanical
+        r_spall = min(0.2 + 0.001 * t * (1.0 + chi_csh), 1.5)
+        stability_score = max(0.0, 1.0 - (r_spall + chi_csh) / 2.0)
+
+        thermo_state = ThermoMechanicalState(
+            temperature_field=np.array([120.0, 400.0]),
+            stress_tensor=np.eye(3) * r_spall,
+            csh_amorphization_ratio=chi_csh,
+            spalling_risk_index=r_spall
+        )
+
+        # 3. Feedback
+        if stability_score < config.xi_crit:
+            action = "A_mitigate"
+        else:
+            action = "A_safe"
+
+        # 4. Attestation
+        state_repr = f"{rad_state}|{thermo_state}|{action}"
+        state_bytes = state_repr.encode("utf-8")
+        state_hash = hashlib.shake_256(state_bytes).digest(32)
+        signature = ml_dsa_stub_sign(state_bytes)
+
+        receipt = CryptographicReceipt(
+            state_hash=state_hash,
+            ml_dsa_signature=signature
+        )
+
+        print(f"Epoch {step} t={t:.0f}s S={stability_score:.3f} {action} | Receipt={receipt}")

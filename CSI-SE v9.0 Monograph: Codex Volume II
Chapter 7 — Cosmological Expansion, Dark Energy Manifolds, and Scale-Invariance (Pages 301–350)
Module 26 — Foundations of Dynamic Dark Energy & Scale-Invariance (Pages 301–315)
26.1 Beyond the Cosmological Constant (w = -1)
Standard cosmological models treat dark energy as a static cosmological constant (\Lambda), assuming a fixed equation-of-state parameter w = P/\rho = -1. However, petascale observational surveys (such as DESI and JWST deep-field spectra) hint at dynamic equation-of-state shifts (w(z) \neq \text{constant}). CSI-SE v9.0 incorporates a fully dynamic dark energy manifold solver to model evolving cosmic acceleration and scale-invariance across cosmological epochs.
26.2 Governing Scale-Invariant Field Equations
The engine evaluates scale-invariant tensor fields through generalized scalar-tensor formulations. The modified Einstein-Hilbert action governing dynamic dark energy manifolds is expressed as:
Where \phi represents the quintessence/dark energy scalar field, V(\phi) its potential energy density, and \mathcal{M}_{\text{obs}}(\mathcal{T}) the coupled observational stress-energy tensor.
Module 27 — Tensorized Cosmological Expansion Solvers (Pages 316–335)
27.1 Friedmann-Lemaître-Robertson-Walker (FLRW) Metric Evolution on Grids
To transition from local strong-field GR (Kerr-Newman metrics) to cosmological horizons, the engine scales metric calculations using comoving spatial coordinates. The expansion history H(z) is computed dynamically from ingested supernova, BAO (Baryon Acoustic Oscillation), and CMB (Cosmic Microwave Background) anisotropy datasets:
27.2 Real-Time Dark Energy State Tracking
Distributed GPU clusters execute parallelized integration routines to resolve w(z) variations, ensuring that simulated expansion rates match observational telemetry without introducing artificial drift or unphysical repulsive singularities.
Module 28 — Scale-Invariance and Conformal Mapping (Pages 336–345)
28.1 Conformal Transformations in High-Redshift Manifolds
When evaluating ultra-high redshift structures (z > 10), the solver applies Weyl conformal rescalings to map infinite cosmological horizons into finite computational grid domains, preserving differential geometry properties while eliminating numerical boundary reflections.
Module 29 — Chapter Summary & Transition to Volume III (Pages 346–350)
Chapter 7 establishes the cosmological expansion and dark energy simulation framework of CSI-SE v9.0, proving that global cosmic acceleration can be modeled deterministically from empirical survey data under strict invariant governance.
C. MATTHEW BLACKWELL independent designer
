@@ -1,0 +1,19 @@
+CSI-SE v9.0 Monograph: Codex Volume II
+Chapter 7 — Cosmological Expansion, Dark Energy Manifolds, and Scale-Invariance (Pages 301–350)
+Module 26 — Foundations of Dynamic Dark Energy & Scale-Invariance (Pages 301–315)
+26.1 Beyond the Cosmological Constant (w = -1)
+Standard cosmological models treat dark energy as a static cosmological constant (\Lambda), assuming a fixed equation-of-state parameter w = P/\rho = -1. However, petascale observational surveys (such as DESI and JWST deep-field spectra) hint at dynamic equation-of-state shifts (w(z) \neq \text{constant}). CSI-SE v9.0 incorporates a fully dynamic dark energy manifold solver to model evolving cosmic acceleration and scale-invariance across cosmological epochs.
+26.2 Governing Scale-Invariant Field Equations
+The engine evaluates scale-invariant tensor fields through generalized scalar-tensor formulations. The modified Einstein-Hilbert action governing dynamic dark energy manifolds is expressed as:
+Where \phi represents the quintessence/dark energy scalar field, V(\phi) its potential energy density, and \mathcal{M}_{\text{obs}}(\mathcal{T}) the coupled observational stress-energy tensor.
+Module 27 — Tensorized Cosmological Expansion Solvers (Pages 316–335)
+27.1 Friedmann-Lemaître-Robertson-Walker (FLRW) Metric Evolution on Grids
+To transition from local strong-field GR (Kerr-Newman metrics) to cosmological horizons, the engine scales metric calculations using comoving spatial coordinates. The expansion history H(z) is computed dynamically from ingested supernova, BAO (Baryon Acoustic Oscillation), and CMB (Cosmic Microwave Background) anisotropy datasets:
+27.2 Real-Time Dark Energy State Tracking
+Distributed GPU clusters execute parallelized integration routines to resolve w(z) variations, ensuring that simulated expansion rates match observational telemetry without introducing artificial drift or unphysical repulsive singularities.
+Module 28 — Scale-Invariance and Conformal Mapping (Pages 336–345)
+28.1 Conformal Transformations in High-Redshift Manifolds
+When evaluating ultra-high redshift structures (z > 10), the solver applies Weyl conformal rescalings to map infinite cosmological horizons into finite computational grid domains, preserving differential geometry properties while eliminating numerical boundary reflections.
+Module 29 — Chapter Summary & Transition to Volume III (Pages 346–350)
+Chapter 7 establishes the cosmological expansion and dark energy simulation framework of CSI-SE v9.0, proving that global cosmic acceleration can be modeled deterministically from empirical survey data under strict invariant governance.
+C. MATTHEW BLACKWELL independent designer

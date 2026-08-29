@@ -1,0 +1,42 @@
+# Cosmological Simulation Engine (CSE)
+
+## Developer & Independent Designer
+**C. Matthew Blackwell**
+
+---
+
+## Overview
+
+The **Cosmological Simulation Engine (CSE)** is a production-scale, high-performance astrophysics workstation designed for multi-node GPU clusters. The architecture is engineered from the ground up to solve the modern "crisis in cosmology" by demonstrating that a stable cosmic web can be dynamically simulated using **ordinary baryonic matter (5%) alone**, completely removing the requirement for unobserved placeholders like dark matter or dark energy.
+
+To achieve this without breaking physical conservation laws, the engine implements a fully conservative, symplectic, adaptive-softening **$\nabla\epsilon$ corrective framework**. When particle-mesh operations scale dynamically with local phase-space density, the spatial gradient of the softening parameter ($\nabla\epsilon$) is evaluated analytically in real-time, eliminating the non-physical numerical heating that typically causes dark-matter-free models to collapse or fly apart.
+
+---
+
+## Technical Architecture & Subsystems
+
+1. **Morton-Ordered Octree Spatial Builder ($\mathcal{O}(N \log N)$)**  
+   Transforms high-dimensional coordinate datasets into a highly optimized, linear Z-order space-filling curve. This maximizes L1/L2 hardware cache locality across distributed GPU memories during short-range tree traversals.
+
+2. **CUDA-Accelerated Tree-PM Force & $\nabla\epsilon$ Solver**  
+   A single-pass, warp-optimized device kernel executing non-recursive tree walks inside shared memory. It calculates Newtonian gravity alongside the explicit $\nabla\epsilon$ work-energy tensor to preserve Hamiltonian invariants.
+
+3. **Symplectic Power-of-Two Leapfrog Coordinator**  
+   Implements a phase-locked Kick-Drift-Kick (KDK) integration pipeline with nested time-bin hierarchies ($\Delta t_n = \Delta t_0 / 2^n$). Particles drop down to micro-timesteps in dense galactic cores and promotion/demotion gates are restricted strictly to synchronous macro-steps to maintain total system energy drift below $\Delta E / E_0 < 10^{-5}$.
+
+4. **Orthogonal Recursive Bisection (ORB) Balancer**  
+   Dynamically partitions simulation box space across distributed MPI process domains. By using `std::nth_element` selection to split domains at absolute particle count medians rather than raw spatial geometry, it guarantees true compute-load equilibrium as clustering accelerates down to $z=0$.
+
+5. **CUDA-Aware MPI InfiniBand Communications**  
+   Bypasses host CPU staging layers completely. Utilizing GPUDirect RDMA, boundary halo particles are streamed directly from GPU VRAM to GPU VRAM using an event-driven synchronization design to protect against pipeline memory races.
+
+6. **Parallel HDF5 MPI-IO Snapshot Exporter**  
+   Eliminates the serialization bottleneck via collective hyperslab selection. All nodes pool data sizes through parallel scans and dump distributed coordinates into a single, shared binary file concurrently with zero data loss.
+
+7. **Tree-Accelerated $\xi(r)$ Analyzer Post-Processor**  
+   An advanced diagnostic utility leveraging the spatial octree structure to prune distant bounding boxes, accelerating two-point correlation pair counting down to $\mathcal{O}(N \log N)$ performance for strict observational benchmarking.
+
+---
+
+## Repository Directory Structure
+

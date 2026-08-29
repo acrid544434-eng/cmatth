@@ -1,0 +1,25 @@
+\documentclass{monograph}
+\usepackage{amsmath,amssymb,graphicx}
+
+\title{The Unified Dolly-Edouard Sequenced Dynamics: A Multi-Agent Earth-System Analysis}
+\author{C. Matthew Blackwell}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\section{Introduction and Theoretical Foundations}
+This chapter formalizes the sequential transition from the post-tropical remnant phase of Tropical Storm Dolly into the cyclogenesis initialization of Tropical Storm Edouard across the Atlantic basin. The coupled atmospheric state evolution vector $\mathbf{X}(x,y,z,t)$ satisfies the barotropic vorticity transport equation combined with moist convective latent heating terms:
+\begin{equation}
+\frac{\partial \zeta}{\partial t} + (\mathbf{u} \cdot \nabla)(\zeta + f) = (\left(\zeta + f\right) \cdot \nabla)\mathbf{u} + \hat{k} \cdot (\nabla \cdot \boldsymbol{\tau}_{\text{friction}}) + Q_{\text{latent}}
+\end{equation}
+where $\zeta = \nabla \times \mathbf{u}$ represents the relative vorticity, $f$ is the planetary Coriolis parameter, and $Q_{\text{latent}}$ is the subgrid convective heating driver derived from thermodynamic profiles.
+
+\section{Data Assimilation and State Optimization}
+To initialize subsequent vortex structures within the Main Development Region (MDR), the BIA-1 multi-agent architecture minimizes the 4D-Var cost function $\mathcal{J}(\mathbf{x})$:
+\begin{equation}
+\mathcal{J}(\mathbf{x}) = \frac{1}{2}(\mathbf{x} - \mathbf{x}_b)^T \mathbf{B}^{-1} (\mathbf{x} - \mathbf{x}_b) + \frac{1}{2}(\mathbf{y} - \mathcal{H}(\mathbf{x}))^T \mathbf{R}^{-1} (\mathbf{y} - \mathcal{H}(\mathbf{x}))
+\end{equation}
+assimilating NOAA GOES-19 radiometric swaths and surface scatterometry vector fields $\mathbf{y}$ against background model states $\mathbf{x}_b$.
+
+\end{document}

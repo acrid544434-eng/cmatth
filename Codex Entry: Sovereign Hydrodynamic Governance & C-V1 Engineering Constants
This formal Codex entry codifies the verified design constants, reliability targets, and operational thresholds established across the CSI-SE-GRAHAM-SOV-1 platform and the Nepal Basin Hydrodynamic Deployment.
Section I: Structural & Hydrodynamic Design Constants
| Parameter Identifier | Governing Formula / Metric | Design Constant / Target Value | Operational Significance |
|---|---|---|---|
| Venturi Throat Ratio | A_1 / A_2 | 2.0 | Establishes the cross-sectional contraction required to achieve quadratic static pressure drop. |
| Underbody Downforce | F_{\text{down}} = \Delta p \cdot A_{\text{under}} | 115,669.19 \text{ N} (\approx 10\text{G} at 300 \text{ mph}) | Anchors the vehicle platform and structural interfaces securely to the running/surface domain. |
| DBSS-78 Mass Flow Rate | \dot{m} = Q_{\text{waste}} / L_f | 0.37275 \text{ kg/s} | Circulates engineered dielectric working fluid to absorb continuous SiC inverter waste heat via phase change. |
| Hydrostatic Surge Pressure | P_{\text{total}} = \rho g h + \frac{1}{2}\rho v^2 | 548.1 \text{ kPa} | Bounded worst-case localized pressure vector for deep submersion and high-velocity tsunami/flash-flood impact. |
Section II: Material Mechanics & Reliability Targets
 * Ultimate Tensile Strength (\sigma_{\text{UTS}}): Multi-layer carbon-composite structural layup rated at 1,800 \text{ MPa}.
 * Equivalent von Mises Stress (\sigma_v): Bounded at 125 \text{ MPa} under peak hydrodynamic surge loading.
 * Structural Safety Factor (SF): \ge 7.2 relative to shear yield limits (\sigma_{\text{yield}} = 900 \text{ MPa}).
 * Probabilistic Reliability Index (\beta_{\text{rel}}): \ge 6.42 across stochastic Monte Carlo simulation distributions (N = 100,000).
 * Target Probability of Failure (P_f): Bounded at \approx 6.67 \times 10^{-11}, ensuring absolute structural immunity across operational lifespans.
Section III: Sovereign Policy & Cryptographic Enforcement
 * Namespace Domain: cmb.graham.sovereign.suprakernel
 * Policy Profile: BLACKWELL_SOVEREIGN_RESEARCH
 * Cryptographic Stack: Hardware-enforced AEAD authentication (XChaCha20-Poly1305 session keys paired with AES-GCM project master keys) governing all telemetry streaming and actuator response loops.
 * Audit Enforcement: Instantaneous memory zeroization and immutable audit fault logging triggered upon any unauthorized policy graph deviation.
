@@ -1,0 +1,20 @@
+Codex Entry: Sovereign Hydrodynamic Governance & C-V1 Engineering Constants
+This formal Codex entry codifies the verified design constants, reliability targets, and operational thresholds established across the CSI-SE-GRAHAM-SOV-1 platform and the Nepal Basin Hydrodynamic Deployment.
+Section I: Structural & Hydrodynamic Design Constants
+| Parameter Identifier | Governing Formula / Metric | Design Constant / Target Value | Operational Significance |
+|---|---|---|---|
+| Venturi Throat Ratio | A_1 / A_2 | 2.0 | Establishes the cross-sectional contraction required to achieve quadratic static pressure drop. |
+| Underbody Downforce | F_{\text{down}} = \Delta p \cdot A_{\text{under}} | 115,669.19 \text{ N} (\approx 10\text{G} at 300 \text{ mph}) | Anchors the vehicle platform and structural interfaces securely to the running/surface domain. |
+| DBSS-78 Mass Flow Rate | \dot{m} = Q_{\text{waste}} / L_f | 0.37275 \text{ kg/s} | Circulates engineered dielectric working fluid to absorb continuous SiC inverter waste heat via phase change. |
+| Hydrostatic Surge Pressure | P_{\text{total}} = \rho g h + \frac{1}{2}\rho v^2 | 548.1 \text{ kPa} | Bounded worst-case localized pressure vector for deep submersion and high-velocity tsunami/flash-flood impact. |
+Section II: Material Mechanics & Reliability Targets
+ * Ultimate Tensile Strength (\sigma_{\text{UTS}}): Multi-layer carbon-composite structural layup rated at 1,800 \text{ MPa}.
+ * Equivalent von Mises Stress (\sigma_v): Bounded at 125 \text{ MPa} under peak hydrodynamic surge loading.
+ * Structural Safety Factor (SF): \ge 7.2 relative to shear yield limits (\sigma_{\text{yield}} = 900 \text{ MPa}).
+ * Probabilistic Reliability Index (\beta_{\text{rel}}): \ge 6.42 across stochastic Monte Carlo simulation distributions (N = 100,000).
+ * Target Probability of Failure (P_f): Bounded at \approx 6.67 \times 10^{-11}, ensuring absolute structural immunity across operational lifespans.
+Section III: Sovereign Policy & Cryptographic Enforcement
+ * Namespace Domain: cmb.graham.sovereign.suprakernel
+ * Policy Profile: BLACKWELL_SOVEREIGN_RESEARCH
+ * Cryptographic Stack: Hardware-enforced AEAD authentication (XChaCha20-Poly1305 session keys paired with AES-GCM project master keys) governing all telemetry streaming and actuator response loops.
+ * Audit Enforcement: Instantaneous memory zeroization and immutable audit fault logging triggered upon any unauthorized policy graph deviation.

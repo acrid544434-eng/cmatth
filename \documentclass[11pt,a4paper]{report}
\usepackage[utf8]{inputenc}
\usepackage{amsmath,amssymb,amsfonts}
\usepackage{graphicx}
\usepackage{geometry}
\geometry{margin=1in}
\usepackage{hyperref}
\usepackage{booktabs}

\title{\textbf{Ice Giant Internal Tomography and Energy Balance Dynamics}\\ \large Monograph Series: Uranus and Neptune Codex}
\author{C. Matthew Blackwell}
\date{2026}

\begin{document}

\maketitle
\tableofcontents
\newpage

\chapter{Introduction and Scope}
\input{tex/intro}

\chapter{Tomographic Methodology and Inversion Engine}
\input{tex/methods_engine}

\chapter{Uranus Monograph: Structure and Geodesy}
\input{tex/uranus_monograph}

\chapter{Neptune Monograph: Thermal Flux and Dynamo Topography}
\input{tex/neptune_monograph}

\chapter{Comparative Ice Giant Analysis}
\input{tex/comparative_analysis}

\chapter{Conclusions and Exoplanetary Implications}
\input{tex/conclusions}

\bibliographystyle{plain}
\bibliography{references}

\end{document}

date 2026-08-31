@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\title{\textbf{Ice Giant Internal Tomography and Energy Balance Dynamics}\\ \large Monograph Series: Uranus and Neptune Codex}
+\author{C. Matthew Blackwell}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{Introduction and Scope}
+\input{tex/intro}
+
+\chapter{Tomographic Methodology and Inversion Engine}
+\input{tex/methods_engine}
+
+\chapter{Uranus Monograph: Structure and Geodesy}
+\input{tex/uranus_monograph}
+
+\chapter{Neptune Monograph: Thermal Flux and Dynamo Topography}
+\input{tex/neptune_monograph}
+
+\chapter{Comparative Ice Giant Analysis}
+\input{tex/comparative_analysis}
+
+\chapter{Conclusions and Exoplanetary Implications}
+\input{tex/conclusions}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

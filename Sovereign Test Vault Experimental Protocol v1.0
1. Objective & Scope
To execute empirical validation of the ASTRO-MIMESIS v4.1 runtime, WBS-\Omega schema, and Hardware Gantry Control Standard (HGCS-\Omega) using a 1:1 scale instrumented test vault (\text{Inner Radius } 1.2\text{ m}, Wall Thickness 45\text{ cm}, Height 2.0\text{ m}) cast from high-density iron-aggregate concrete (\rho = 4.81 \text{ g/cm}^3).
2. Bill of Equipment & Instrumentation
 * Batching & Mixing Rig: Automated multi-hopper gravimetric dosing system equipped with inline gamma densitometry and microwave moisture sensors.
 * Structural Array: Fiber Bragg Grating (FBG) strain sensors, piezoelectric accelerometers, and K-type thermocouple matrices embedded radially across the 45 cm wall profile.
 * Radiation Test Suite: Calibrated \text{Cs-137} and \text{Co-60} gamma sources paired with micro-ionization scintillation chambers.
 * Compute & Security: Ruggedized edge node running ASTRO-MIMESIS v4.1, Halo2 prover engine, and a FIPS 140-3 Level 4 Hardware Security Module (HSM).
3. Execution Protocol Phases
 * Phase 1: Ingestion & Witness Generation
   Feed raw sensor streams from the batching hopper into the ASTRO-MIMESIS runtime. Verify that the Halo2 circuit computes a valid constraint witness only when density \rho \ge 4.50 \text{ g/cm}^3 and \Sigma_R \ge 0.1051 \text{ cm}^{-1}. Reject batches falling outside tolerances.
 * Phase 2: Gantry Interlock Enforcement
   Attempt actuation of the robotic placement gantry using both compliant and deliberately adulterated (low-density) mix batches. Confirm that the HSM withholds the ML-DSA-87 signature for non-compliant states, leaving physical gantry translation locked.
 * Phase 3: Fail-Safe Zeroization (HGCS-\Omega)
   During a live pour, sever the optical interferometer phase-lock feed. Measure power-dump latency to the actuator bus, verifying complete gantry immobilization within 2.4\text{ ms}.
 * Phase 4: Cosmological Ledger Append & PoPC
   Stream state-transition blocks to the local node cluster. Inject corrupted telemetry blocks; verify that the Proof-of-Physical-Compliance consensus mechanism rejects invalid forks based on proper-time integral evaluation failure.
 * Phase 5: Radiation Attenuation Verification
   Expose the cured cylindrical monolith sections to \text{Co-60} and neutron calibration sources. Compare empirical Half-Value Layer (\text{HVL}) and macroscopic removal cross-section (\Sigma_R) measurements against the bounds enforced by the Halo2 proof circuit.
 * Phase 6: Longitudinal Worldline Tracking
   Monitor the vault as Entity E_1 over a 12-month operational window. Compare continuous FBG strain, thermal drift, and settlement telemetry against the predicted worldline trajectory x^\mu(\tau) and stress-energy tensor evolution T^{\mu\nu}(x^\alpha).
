@@ -1,0 +1,21 @@
+Sovereign Test Vault Experimental Protocol v1.0
+1. Objective & Scope
+To execute empirical validation of the ASTRO-MIMESIS v4.1 runtime, WBS-\Omega schema, and Hardware Gantry Control Standard (HGCS-\Omega) using a 1:1 scale instrumented test vault (\text{Inner Radius } 1.2\text{ m}, Wall Thickness 45\text{ cm}, Height 2.0\text{ m}) cast from high-density iron-aggregate concrete (\rho = 4.81 \text{ g/cm}^3).
+2. Bill of Equipment & Instrumentation
+ * Batching & Mixing Rig: Automated multi-hopper gravimetric dosing system equipped with inline gamma densitometry and microwave moisture sensors.
+ * Structural Array: Fiber Bragg Grating (FBG) strain sensors, piezoelectric accelerometers, and K-type thermocouple matrices embedded radially across the 45 cm wall profile.
+ * Radiation Test Suite: Calibrated \text{Cs-137} and \text{Co-60} gamma sources paired with micro-ionization scintillation chambers.
+ * Compute & Security: Ruggedized edge node running ASTRO-MIMESIS v4.1, Halo2 prover engine, and a FIPS 140-3 Level 4 Hardware Security Module (HSM).
+3. Execution Protocol Phases
+ * Phase 1: Ingestion & Witness Generation
+   Feed raw sensor streams from the batching hopper into the ASTRO-MIMESIS runtime. Verify that the Halo2 circuit computes a valid constraint witness only when density \rho \ge 4.50 \text{ g/cm}^3 and \Sigma_R \ge 0.1051 \text{ cm}^{-1}. Reject batches falling outside tolerances.
+ * Phase 2: Gantry Interlock Enforcement
+   Attempt actuation of the robotic placement gantry using both compliant and deliberately adulterated (low-density) mix batches. Confirm that the HSM withholds the ML-DSA-87 signature for non-compliant states, leaving physical gantry translation locked.
+ * Phase 3: Fail-Safe Zeroization (HGCS-\Omega)
+   During a live pour, sever the optical interferometer phase-lock feed. Measure power-dump latency to the actuator bus, verifying complete gantry immobilization within 2.4\text{ ms}.
+ * Phase 4: Cosmological Ledger Append & PoPC
+   Stream state-transition blocks to the local node cluster. Inject corrupted telemetry blocks; verify that the Proof-of-Physical-Compliance consensus mechanism rejects invalid forks based on proper-time integral evaluation failure.
+ * Phase 5: Radiation Attenuation Verification
+   Expose the cured cylindrical monolith sections to \text{Co-60} and neutron calibration sources. Compare empirical Half-Value Layer (\text{HVL}) and macroscopic removal cross-section (\Sigma_R) measurements against the bounds enforced by the Halo2 proof circuit.
+ * Phase 6: Longitudinal Worldline Tracking
+   Monitor the vault as Entity E_1 over a 12-month operational window. Compare continuous FBG strain, thermal drift, and settlement telemetry against the predicted worldline trajectory x^\mu(\tau) and stress-energy tensor evolution T^{\mu\nu}(x^\alpha).

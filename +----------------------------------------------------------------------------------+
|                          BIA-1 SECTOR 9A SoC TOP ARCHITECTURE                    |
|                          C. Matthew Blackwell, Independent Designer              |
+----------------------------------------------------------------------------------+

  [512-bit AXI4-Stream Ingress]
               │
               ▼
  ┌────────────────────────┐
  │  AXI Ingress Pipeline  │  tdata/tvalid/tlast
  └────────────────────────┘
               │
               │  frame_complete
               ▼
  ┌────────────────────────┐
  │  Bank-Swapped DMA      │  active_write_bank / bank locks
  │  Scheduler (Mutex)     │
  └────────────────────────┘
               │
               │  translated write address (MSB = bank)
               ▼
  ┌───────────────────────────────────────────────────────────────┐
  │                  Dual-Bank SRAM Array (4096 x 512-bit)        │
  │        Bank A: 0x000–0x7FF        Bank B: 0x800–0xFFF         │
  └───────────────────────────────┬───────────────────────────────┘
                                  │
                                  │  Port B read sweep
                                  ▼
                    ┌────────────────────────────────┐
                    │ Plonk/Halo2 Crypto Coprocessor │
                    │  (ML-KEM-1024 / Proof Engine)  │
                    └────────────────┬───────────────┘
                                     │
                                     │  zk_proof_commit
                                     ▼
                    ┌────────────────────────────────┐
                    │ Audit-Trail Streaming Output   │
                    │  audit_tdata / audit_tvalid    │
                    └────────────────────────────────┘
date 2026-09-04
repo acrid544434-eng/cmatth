@@ -1,0 +1,39 @@
++----------------------------------------------------------------------------------+
+|                          BIA-1 SECTOR 9A SoC TOP ARCHITECTURE                    |
+|                          C. Matthew Blackwell, Independent Designer              |
++----------------------------------------------------------------------------------+
+
+  [512-bit AXI4-Stream Ingress]
+               │
+               ▼
+  ┌────────────────────────┐
+  │  AXI Ingress Pipeline  │  tdata/tvalid/tlast
+  └────────────────────────┘
+               │
+               │  frame_complete
+               ▼
+  ┌────────────────────────┐
+  │  Bank-Swapped DMA      │  active_write_bank / bank locks
+  │  Scheduler (Mutex)     │
+  └────────────────────────┘
+               │
+               │  translated write address (MSB = bank)
+               ▼
+  ┌───────────────────────────────────────────────────────────────┐
+  │                  Dual-Bank SRAM Array (4096 x 512-bit)        │
+  │        Bank A: 0x000–0x7FF        Bank B: 0x800–0xFFF         │
+  └───────────────────────────────┬───────────────────────────────┘
+                                  │
+                                  │  Port B read sweep
+                                  ▼
+                    ┌────────────────────────────────┐
+                    │ Plonk/Halo2 Crypto Coprocessor │
+                    │  (ML-KEM-1024 / Proof Engine)  │
+                    └────────────────┬───────────────┘
+                                     │
+                                     │  zk_proof_commit
+                                     ▼
+                    ┌────────────────────────────────┐
+                    │ Audit-Trail Streaming Output   │
+                    │  audit_tdata / audit_tvalid    │
+                    └────────────────────────────────┘

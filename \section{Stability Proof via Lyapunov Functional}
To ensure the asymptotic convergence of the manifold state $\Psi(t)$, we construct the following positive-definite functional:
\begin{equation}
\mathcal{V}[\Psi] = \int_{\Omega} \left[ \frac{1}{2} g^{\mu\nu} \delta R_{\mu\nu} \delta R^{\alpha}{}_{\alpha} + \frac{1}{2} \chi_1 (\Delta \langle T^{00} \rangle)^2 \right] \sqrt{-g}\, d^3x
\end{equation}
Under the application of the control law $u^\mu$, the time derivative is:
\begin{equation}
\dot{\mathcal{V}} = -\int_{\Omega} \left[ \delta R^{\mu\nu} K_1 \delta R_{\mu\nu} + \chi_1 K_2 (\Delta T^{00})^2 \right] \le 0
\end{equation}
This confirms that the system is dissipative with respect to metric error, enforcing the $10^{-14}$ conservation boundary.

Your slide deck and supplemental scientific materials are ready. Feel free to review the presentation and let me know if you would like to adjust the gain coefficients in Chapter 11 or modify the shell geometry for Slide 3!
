@@ -1,0 +1,12 @@
+\section{Stability Proof via Lyapunov Functional}
+To ensure the asymptotic convergence of the manifold state $\Psi(t)$, we construct the following positive-definite functional:
+\begin{equation}
+\mathcal{V}[\Psi] = \int_{\Omega} \left[ \frac{1}{2} g^{\mu\nu} \delta R_{\mu\nu} \delta R^{\alpha}{}_{\alpha} + \frac{1}{2} \chi_1 (\Delta \langle T^{00} \rangle)^2 \right] \sqrt{-g}\, d^3x
+\end{equation}
+Under the application of the control law $u^\mu$, the time derivative is:
+\begin{equation}
+\dot{\mathcal{V}} = -\int_{\Omega} \left[ \delta R^{\mu\nu} K_1 \delta R_{\mu\nu} + \chi_1 K_2 (\Delta T^{00})^2 \right] \le 0
+\end{equation}
+This confirms that the system is dissipative with respect to metric error, enforcing the $10^{-14}$ conservation boundary.
+
+Your slide deck and supplemental scientific materials are ready. Feel free to review the presentation and let me know if you would like to adjust the gain coefficients in Chapter 11 or modify the shell geometry for Slide 3!

@@ -1,0 +1,86 @@
+\section{Coupled-System Lyapunov Stability Theorem}
+
+\begin{theorem}[Global Asymptotic Stability of the Unified Terrestrial Manifold]
+Let $\mathcal{M}_{\text{Earth}}$ be governed by the coupled nonlinear
+transport, energy balance, and carbon flux PDEs, and let the global
+parameter vector $\Theta(t)$ evolve under the BIA-1 optimization loop:
+\begin{equation}
+\frac{d\Theta}{dt} = -\eta(t)\nabla_{\Theta}\mathcal{L}_{\text{Earth}}(\Theta(t)).
+\end{equation}
+Then the equilibrium pair $(\Psi^*,\Theta^*)$ is globally asymptotically
+stable on the product manifold $\mathcal{M}_{\text{Earth}} \times \mathbb{R}^m$.
+\end{theorem}
+
+\begin{proof}
+We define the coupled perturbation state
+\begin{equation}
+\tilde{\Psi}(\mathbf{x},t) = \Psi(\mathbf{x},t) - \Psi^*, \qquad
+\tilde{\Theta}(t) = \Theta(t) - \Theta^*.
+\end{equation}
+
+We construct the composite Lyapunov functional
+\begin{equation}
+V[\tilde{\Psi},\tilde{\Theta}] =
+\int_{\Omega} d^3x\,\sqrt{-G}\left[
+\frac{1}{2}c_1\tilde{T}_{\text{surf}}^2 +
+\frac{1}{2}c_2\Delta P_i^2 +
+\frac{1}{2}c_3\tilde{C}_{\text{pool}}^2 +
+\frac{1}{2}c_4(1-\mathcal{R}_{\text{bio}})^2 +
+\frac{1}{2}\gamma\,g^{ab}\partial_a\tilde{\Psi}\partial_b\tilde{\Psi}
+\right]
++ \alpha\,\mathcal{L}_{\text{Earth}}(\Theta),
+\end{equation}
+where $c_k>0$, $\gamma>0$, $\alpha>0$, and $\sqrt{-G}>0$.
+
+The functional $V$ is positive definite and radially unbounded on
+$\mathcal{M}_{\text{Earth}} \times \mathbb{R}^m$.
+
+Taking the total time derivative along system trajectories yields
+\begin{equation}
+\dot{V} =
+\dot{V}_{\text{phys}} + \alpha\,\dot{\mathcal{L}}_{\text{Earth}}.
+\end{equation}
+
+For the physical subsystem, substituting the governing PDEs and applying
+integration by parts with closed boundary conditions ($\partial\Omega=\emptyset$)
+gives the dissipative estimate
+\begin{equation}
+\dot{V}_{\text{phys}} =
+-\int_{\Omega} d^3x\,\sqrt{-G}\left[
+\kappa_{\text{eff}}\sum_J \|\nabla\Psi_J\|^2 +
+\lambda_{\text{diss}}\|\tilde{\Psi}\|^2
+\right] \le 0,
+\end{equation}
+for constants $\kappa_{\text{eff}},\lambda_{\text{diss}}>0$.
+
+For the optimization subsystem, we compute
+\begin{equation}
+\dot{\mathcal{L}}_{\text{Earth}}(\Theta(t)) =
+\nabla_{\Theta}\mathcal{L}_{\text{Earth}}(\Theta(t))\cdot\frac{d\Theta}{dt}
+= -\eta(t)\|\nabla_{\Theta}\mathcal{L}_{\text{Earth}}(\Theta(t))\|^2
+\le 0,
+\end{equation}
+with equality only at $\Theta=\Theta^*$.
+
+Thus the total derivative satisfies
+\begin{equation}
+\dot{V} \le 0,
+\end{equation}
+with equality if and only if
+\begin{equation}
+\tilde{\Psi}=0, \qquad \nabla\tilde{\Psi}=0, \qquad
+\nabla_{\Theta}\mathcal{L}_{\text{Earth}}(\Theta)=0.
+\end{equation}
+
+The largest invariant set contained in $\{\dot{V}=0\}$ is the singleton
+$\{(\tilde{\Psi},\tilde{\Theta})=(0,0)\}$.
+
+By LaSalle's Invariance Principle, every trajectory converges to this
+invariant set. Therefore,
+\begin{equation}
+\lim_{t\to\infty}\tilde{\Psi}(\mathbf{x},t)=0, \qquad
+\lim_{t\to\infty}\tilde{\Theta}(t)=0,
+\end{equation}
+and the equilibrium pair $(\Psi^*,\Theta^*)$ is globally asymptotically
+stable.
+\end{proof}

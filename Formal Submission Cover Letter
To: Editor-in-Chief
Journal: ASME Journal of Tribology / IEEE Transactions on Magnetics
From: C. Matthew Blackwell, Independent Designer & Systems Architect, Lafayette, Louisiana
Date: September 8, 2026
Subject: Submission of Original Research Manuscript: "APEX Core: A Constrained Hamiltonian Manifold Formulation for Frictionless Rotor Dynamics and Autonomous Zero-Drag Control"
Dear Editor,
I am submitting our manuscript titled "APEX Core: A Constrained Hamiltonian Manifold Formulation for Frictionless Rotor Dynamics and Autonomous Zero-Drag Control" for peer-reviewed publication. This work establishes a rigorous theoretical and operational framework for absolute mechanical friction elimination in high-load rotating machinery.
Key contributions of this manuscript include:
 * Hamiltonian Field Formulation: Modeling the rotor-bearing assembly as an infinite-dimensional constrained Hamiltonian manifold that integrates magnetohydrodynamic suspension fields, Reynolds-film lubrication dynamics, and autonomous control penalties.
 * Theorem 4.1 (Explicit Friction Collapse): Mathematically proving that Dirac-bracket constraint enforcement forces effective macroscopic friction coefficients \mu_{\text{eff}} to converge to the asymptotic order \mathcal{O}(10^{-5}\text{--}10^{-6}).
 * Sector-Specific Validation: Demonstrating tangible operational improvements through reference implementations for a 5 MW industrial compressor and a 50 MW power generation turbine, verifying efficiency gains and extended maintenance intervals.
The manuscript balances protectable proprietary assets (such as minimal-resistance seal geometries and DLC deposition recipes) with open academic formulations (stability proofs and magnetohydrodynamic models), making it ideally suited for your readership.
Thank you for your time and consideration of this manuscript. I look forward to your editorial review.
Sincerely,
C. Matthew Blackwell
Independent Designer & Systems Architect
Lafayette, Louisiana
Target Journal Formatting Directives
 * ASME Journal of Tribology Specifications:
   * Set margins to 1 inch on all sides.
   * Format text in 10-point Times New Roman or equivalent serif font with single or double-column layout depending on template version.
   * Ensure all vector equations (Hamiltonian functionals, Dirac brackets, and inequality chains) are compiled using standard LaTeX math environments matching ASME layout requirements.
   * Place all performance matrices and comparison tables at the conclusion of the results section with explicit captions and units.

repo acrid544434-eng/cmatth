@@ -1,0 +1,24 @@
+Formal Submission Cover Letter
+To: Editor-in-Chief
+Journal: ASME Journal of Tribology / IEEE Transactions on Magnetics
+From: C. Matthew Blackwell, Independent Designer & Systems Architect, Lafayette, Louisiana
+Date: September 8, 2026
+Subject: Submission of Original Research Manuscript: "APEX Core: A Constrained Hamiltonian Manifold Formulation for Frictionless Rotor Dynamics and Autonomous Zero-Drag Control"
+Dear Editor,
+I am submitting our manuscript titled "APEX Core: A Constrained Hamiltonian Manifold Formulation for Frictionless Rotor Dynamics and Autonomous Zero-Drag Control" for peer-reviewed publication. This work establishes a rigorous theoretical and operational framework for absolute mechanical friction elimination in high-load rotating machinery.
+Key contributions of this manuscript include:
+ * Hamiltonian Field Formulation: Modeling the rotor-bearing assembly as an infinite-dimensional constrained Hamiltonian manifold that integrates magnetohydrodynamic suspension fields, Reynolds-film lubrication dynamics, and autonomous control penalties.
+ * Theorem 4.1 (Explicit Friction Collapse): Mathematically proving that Dirac-bracket constraint enforcement forces effective macroscopic friction coefficients \mu_{\text{eff}} to converge to the asymptotic order \mathcal{O}(10^{-5}\text{--}10^{-6}).
+ * Sector-Specific Validation: Demonstrating tangible operational improvements through reference implementations for a 5 MW industrial compressor and a 50 MW power generation turbine, verifying efficiency gains and extended maintenance intervals.
+The manuscript balances protectable proprietary assets (such as minimal-resistance seal geometries and DLC deposition recipes) with open academic formulations (stability proofs and magnetohydrodynamic models), making it ideally suited for your readership.
+Thank you for your time and consideration of this manuscript. I look forward to your editorial review.
+Sincerely,
+C. Matthew Blackwell
+Independent Designer & Systems Architect
+Lafayette, Louisiana
+Target Journal Formatting Directives
+ * ASME Journal of Tribology Specifications:
+   * Set margins to 1 inch on all sides.
+   * Format text in 10-point Times New Roman or equivalent serif font with single or double-column layout depending on template version.
+   * Ensure all vector equations (Hamiltonian functionals, Dirac brackets, and inequality chains) are compiled using standard LaTeX math environments matching ASME layout requirements.
+   * Place all performance matrices and comparison tables at the conclusion of the results section with explicit captions and units.

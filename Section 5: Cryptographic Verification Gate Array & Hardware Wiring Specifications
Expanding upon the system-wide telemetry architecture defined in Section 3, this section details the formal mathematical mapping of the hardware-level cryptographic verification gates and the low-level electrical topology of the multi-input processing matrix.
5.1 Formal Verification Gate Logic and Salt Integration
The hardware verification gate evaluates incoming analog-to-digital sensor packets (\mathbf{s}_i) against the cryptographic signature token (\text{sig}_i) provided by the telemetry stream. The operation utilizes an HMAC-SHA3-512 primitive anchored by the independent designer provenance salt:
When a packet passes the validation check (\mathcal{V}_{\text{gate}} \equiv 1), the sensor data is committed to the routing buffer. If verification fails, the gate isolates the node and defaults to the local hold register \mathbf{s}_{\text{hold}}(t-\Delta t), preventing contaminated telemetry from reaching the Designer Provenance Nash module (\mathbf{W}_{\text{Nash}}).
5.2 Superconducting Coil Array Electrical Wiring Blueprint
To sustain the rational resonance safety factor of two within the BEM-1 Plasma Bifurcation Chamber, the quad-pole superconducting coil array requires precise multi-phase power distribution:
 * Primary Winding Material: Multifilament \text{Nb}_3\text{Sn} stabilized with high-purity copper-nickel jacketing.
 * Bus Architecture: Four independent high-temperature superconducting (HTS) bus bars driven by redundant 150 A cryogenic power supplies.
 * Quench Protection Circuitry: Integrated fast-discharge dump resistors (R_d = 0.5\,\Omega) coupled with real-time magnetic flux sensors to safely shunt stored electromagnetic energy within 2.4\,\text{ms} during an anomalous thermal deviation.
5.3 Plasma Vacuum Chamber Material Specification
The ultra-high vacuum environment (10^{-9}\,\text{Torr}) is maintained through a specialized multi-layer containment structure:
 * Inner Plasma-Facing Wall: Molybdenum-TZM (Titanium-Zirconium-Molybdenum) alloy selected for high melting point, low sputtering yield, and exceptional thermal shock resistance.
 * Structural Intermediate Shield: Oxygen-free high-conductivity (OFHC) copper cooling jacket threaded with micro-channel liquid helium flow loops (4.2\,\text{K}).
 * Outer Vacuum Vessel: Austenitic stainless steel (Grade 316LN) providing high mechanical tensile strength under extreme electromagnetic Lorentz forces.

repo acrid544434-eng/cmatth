@@ -1,0 +1,15 @@
+Section 5: Cryptographic Verification Gate Array & Hardware Wiring Specifications
+Expanding upon the system-wide telemetry architecture defined in Section 3, this section details the formal mathematical mapping of the hardware-level cryptographic verification gates and the low-level electrical topology of the multi-input processing matrix.
+5.1 Formal Verification Gate Logic and Salt Integration
+The hardware verification gate evaluates incoming analog-to-digital sensor packets (\mathbf{s}_i) against the cryptographic signature token (\text{sig}_i) provided by the telemetry stream. The operation utilizes an HMAC-SHA3-512 primitive anchored by the independent designer provenance salt:
+When a packet passes the validation check (\mathcal{V}_{\text{gate}} \equiv 1), the sensor data is committed to the routing buffer. If verification fails, the gate isolates the node and defaults to the local hold register \mathbf{s}_{\text{hold}}(t-\Delta t), preventing contaminated telemetry from reaching the Designer Provenance Nash module (\mathbf{W}_{\text{Nash}}).
+5.2 Superconducting Coil Array Electrical Wiring Blueprint
+To sustain the rational resonance safety factor of two within the BEM-1 Plasma Bifurcation Chamber, the quad-pole superconducting coil array requires precise multi-phase power distribution:
+ * Primary Winding Material: Multifilament \text{Nb}_3\text{Sn} stabilized with high-purity copper-nickel jacketing.
+ * Bus Architecture: Four independent high-temperature superconducting (HTS) bus bars driven by redundant 150 A cryogenic power supplies.
+ * Quench Protection Circuitry: Integrated fast-discharge dump resistors (R_d = 0.5\,\Omega) coupled with real-time magnetic flux sensors to safely shunt stored electromagnetic energy within 2.4\,\text{ms} during an anomalous thermal deviation.
+5.3 Plasma Vacuum Chamber Material Specification
+The ultra-high vacuum environment (10^{-9}\,\text{Torr}) is maintained through a specialized multi-layer containment structure:
+ * Inner Plasma-Facing Wall: Molybdenum-TZM (Titanium-Zirconium-Molybdenum) alloy selected for high melting point, low sputtering yield, and exceptional thermal shock resistance.
+ * Structural Intermediate Shield: Oxygen-free high-conductivity (OFHC) copper cooling jacket threaded with micro-channel liquid helium flow loops (4.2\,\text{K}).
+ * Outer Vacuum Vessel: Austenitic stainless steel (Grade 316LN) providing high mechanical tensile strength under extreme electromagnetic Lorentz forces.

@@ -1,0 +1,21 @@
+Scenario Parameters: Supermassive Black Hole Station-Keeping
+ * Central Mass (M): 4.3 \times 10^6 M_\odot (Sagittarius A* archetype, M \approx 8.55 \times 10^{36} \text{ kg}).
+ * Target Radial Position (r): 1.0001 \, r_s (Station-keeping just outside the event horizon).
+ * Reference Observer: Stationary observer at asymptotic infinity (r \to \infty).
+Step 1: Compute the Schwarzschild Radius (r_s)
+Using the standard relativistic definition for the gravitational radius:
+
+Substituting fundamental constants (G = 6.6743 \times 10^{-11} \text{ m}^3 \text{ kg}^{-1} \text{ s}^{-2}, c = 2.9979 \times 10^8 \text{ m/s}):
+
+Step 2: Apply the Schwarzschild Metric for Proper Time Dilation
+The line element for a stationary clock in a Schwarzschild spacetime reduces to the temporal component:
+
+Taking the square root yields the proper time interval (\Delta \tau) elapsed for the payload relative to coordinate time (\Delta t) elapsed for the distant observer:
+
+Step 3: Evaluate at r = 1.0001 \, r_s
+Substitute the spatial coordinate into the time dilation equation:
+
+Physical Execution & Telemetry Results
+ * Time Dilation Factor: Approximately 100:1 ratio.
+ * Duration Mapping: Exactly 1.00 standard Earth year (\Delta t = 365.25 \text{ days}) measured at infinity maps to 3.65 days (\Delta \tau \approx 87.6 \text{ hours}) of onboard proper time for an autonomous probe station-keeping at 1.0001 \, r_s.
+ * Operational Implication: Deep-well relativistic telemetry requires localized clock-correction matrices running at high-frequency cryptographic cycles to synchronize high-velocity local loops with external universal frames.

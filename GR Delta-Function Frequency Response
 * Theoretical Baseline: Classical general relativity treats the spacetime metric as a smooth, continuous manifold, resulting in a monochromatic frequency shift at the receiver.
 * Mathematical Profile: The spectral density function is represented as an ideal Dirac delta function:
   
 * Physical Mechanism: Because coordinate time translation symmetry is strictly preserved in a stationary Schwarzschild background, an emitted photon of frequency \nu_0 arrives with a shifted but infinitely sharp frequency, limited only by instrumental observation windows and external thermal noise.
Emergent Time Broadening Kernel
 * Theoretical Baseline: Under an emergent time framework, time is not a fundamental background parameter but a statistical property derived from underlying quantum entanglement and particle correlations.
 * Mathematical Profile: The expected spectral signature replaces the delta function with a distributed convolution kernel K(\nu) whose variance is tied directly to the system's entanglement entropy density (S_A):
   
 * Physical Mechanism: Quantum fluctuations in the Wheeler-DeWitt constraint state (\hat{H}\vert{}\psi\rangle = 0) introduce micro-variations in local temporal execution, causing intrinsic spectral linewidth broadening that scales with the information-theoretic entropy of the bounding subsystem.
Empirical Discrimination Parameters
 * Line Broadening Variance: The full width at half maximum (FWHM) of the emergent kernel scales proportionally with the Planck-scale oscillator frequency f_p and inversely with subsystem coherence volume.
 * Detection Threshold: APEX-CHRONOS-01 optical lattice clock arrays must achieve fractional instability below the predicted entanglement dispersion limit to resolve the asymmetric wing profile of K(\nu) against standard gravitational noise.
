@@ -1,0 +1,13 @@
+GR Delta-Function Frequency Response
+ * Theoretical Baseline: Classical general relativity treats the spacetime metric as a smooth, continuous manifold, resulting in a monochromatic frequency shift at the receiver.
+ * Mathematical Profile: The spectral density function is represented as an ideal Dirac delta function:
+   
+ * Physical Mechanism: Because coordinate time translation symmetry is strictly preserved in a stationary Schwarzschild background, an emitted photon of frequency \nu_0 arrives with a shifted but infinitely sharp frequency, limited only by instrumental observation windows and external thermal noise.
+Emergent Time Broadening Kernel
+ * Theoretical Baseline: Under an emergent time framework, time is not a fundamental background parameter but a statistical property derived from underlying quantum entanglement and particle correlations.
+ * Mathematical Profile: The expected spectral signature replaces the delta function with a distributed convolution kernel K(\nu) whose variance is tied directly to the system's entanglement entropy density (S_A):
+   
+ * Physical Mechanism: Quantum fluctuations in the Wheeler-DeWitt constraint state (\hat{H}\vert{}\psi\rangle = 0) introduce micro-variations in local temporal execution, causing intrinsic spectral linewidth broadening that scales with the information-theoretic entropy of the bounding subsystem.
+Empirical Discrimination Parameters
+ * Line Broadening Variance: The full width at half maximum (FWHM) of the emergent kernel scales proportionally with the Planck-scale oscillator frequency f_p and inversely with subsystem coherence volume.
+ * Detection Threshold: APEX-CHRONOS-01 optical lattice clock arrays must achieve fractional instability below the predicted entanglement dispersion limit to resolve the asymmetric wing profile of K(\nu) against standard gravitational noise.

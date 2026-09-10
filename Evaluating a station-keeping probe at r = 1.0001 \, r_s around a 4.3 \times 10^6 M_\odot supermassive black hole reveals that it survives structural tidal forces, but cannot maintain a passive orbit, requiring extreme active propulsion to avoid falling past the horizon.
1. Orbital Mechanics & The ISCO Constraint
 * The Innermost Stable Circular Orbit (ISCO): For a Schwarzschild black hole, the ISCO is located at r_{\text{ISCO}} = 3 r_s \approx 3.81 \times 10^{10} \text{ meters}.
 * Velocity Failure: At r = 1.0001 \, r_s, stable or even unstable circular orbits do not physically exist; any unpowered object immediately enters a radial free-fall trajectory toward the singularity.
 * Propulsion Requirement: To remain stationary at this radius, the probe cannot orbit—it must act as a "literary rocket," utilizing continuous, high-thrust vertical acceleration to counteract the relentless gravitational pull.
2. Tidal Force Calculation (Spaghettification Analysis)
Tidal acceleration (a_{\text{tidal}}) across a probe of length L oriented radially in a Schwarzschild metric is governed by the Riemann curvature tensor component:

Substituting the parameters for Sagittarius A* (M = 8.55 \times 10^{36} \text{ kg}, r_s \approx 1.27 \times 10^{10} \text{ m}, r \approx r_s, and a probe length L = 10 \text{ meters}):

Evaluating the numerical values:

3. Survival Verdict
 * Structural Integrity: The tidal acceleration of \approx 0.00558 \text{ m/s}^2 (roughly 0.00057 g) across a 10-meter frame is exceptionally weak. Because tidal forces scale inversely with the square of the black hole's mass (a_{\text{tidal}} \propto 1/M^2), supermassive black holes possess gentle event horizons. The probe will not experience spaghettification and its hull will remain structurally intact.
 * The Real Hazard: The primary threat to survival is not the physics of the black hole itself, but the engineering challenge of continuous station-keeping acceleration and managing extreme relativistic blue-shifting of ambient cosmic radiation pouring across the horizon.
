@@ -1,0 +1,15 @@
+Evaluating a station-keeping probe at r = 1.0001 \, r_s around a 4.3 \times 10^6 M_\odot supermassive black hole reveals that it survives structural tidal forces, but cannot maintain a passive orbit, requiring extreme active propulsion to avoid falling past the horizon.
+1. Orbital Mechanics & The ISCO Constraint
+ * The Innermost Stable Circular Orbit (ISCO): For a Schwarzschild black hole, the ISCO is located at r_{\text{ISCO}} = 3 r_s \approx 3.81 \times 10^{10} \text{ meters}.
+ * Velocity Failure: At r = 1.0001 \, r_s, stable or even unstable circular orbits do not physically exist; any unpowered object immediately enters a radial free-fall trajectory toward the singularity.
+ * Propulsion Requirement: To remain stationary at this radius, the probe cannot orbit—it must act as a "literary rocket," utilizing continuous, high-thrust vertical acceleration to counteract the relentless gravitational pull.
+2. Tidal Force Calculation (Spaghettification Analysis)
+Tidal acceleration (a_{\text{tidal}}) across a probe of length L oriented radially in a Schwarzschild metric is governed by the Riemann curvature tensor component:
+
+Substituting the parameters for Sagittarius A* (M = 8.55 \times 10^{36} \text{ kg}, r_s \approx 1.27 \times 10^{10} \text{ m}, r \approx r_s, and a probe length L = 10 \text{ meters}):
+
+Evaluating the numerical values:
+
+3. Survival Verdict
+ * Structural Integrity: The tidal acceleration of \approx 0.00558 \text{ m/s}^2 (roughly 0.00057 g) across a 10-meter frame is exceptionally weak. Because tidal forces scale inversely with the square of the black hole's mass (a_{\text{tidal}} \propto 1/M^2), supermassive black holes possess gentle event horizons. The probe will not experience spaghettification and its hull will remain structurally intact.
+ * The Real Hazard: The primary threat to survival is not the physics of the black hole itself, but the engineering challenge of continuous station-keeping acceleration and managing extreme relativistic blue-shifting of ambient cosmic radiation pouring across the horizon.

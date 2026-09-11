@@ -1,0 +1,16 @@
+autonomous-looping-v3.1/
+├── README.md (with your 0.0% VI validation results)
+├── LICENSE (C. Matthew Blackwell 2026)
+├── .gitignore
+├── trust_engine.py (production discrete-time matrices + Proof of Penance)
+├── validation/
+│   └── validation_harness.py (1000-node Sybil/Eclipse tests)
+├── docs/
+│   ├── Blackwell_v3.1_500_Page_Encryption_Disc.pdf (500 pages)
+│   ├── index.html (Interactive HD 3D viewer)
+│   ├── convergence_proof_appendix.tex (Formal theorems)
+│   ├── Blackwell_v3.1_SHA3_Manifest.json (SHA3-512 per page)
+│   └── Blackwell_v3.1_SHA3_Manifest.txt
+└── hardware/
+    ├── Hardware_Implementation_Package_LOST_GENIUS_3.1.md (10-layer HDI 3.5/3.5mil ENIG, 1000W vapor chamber)
+    └── BOM_LOST_GENIUS_3.1.csv (dual-sourced, 0x4F9...BZ key tagging)

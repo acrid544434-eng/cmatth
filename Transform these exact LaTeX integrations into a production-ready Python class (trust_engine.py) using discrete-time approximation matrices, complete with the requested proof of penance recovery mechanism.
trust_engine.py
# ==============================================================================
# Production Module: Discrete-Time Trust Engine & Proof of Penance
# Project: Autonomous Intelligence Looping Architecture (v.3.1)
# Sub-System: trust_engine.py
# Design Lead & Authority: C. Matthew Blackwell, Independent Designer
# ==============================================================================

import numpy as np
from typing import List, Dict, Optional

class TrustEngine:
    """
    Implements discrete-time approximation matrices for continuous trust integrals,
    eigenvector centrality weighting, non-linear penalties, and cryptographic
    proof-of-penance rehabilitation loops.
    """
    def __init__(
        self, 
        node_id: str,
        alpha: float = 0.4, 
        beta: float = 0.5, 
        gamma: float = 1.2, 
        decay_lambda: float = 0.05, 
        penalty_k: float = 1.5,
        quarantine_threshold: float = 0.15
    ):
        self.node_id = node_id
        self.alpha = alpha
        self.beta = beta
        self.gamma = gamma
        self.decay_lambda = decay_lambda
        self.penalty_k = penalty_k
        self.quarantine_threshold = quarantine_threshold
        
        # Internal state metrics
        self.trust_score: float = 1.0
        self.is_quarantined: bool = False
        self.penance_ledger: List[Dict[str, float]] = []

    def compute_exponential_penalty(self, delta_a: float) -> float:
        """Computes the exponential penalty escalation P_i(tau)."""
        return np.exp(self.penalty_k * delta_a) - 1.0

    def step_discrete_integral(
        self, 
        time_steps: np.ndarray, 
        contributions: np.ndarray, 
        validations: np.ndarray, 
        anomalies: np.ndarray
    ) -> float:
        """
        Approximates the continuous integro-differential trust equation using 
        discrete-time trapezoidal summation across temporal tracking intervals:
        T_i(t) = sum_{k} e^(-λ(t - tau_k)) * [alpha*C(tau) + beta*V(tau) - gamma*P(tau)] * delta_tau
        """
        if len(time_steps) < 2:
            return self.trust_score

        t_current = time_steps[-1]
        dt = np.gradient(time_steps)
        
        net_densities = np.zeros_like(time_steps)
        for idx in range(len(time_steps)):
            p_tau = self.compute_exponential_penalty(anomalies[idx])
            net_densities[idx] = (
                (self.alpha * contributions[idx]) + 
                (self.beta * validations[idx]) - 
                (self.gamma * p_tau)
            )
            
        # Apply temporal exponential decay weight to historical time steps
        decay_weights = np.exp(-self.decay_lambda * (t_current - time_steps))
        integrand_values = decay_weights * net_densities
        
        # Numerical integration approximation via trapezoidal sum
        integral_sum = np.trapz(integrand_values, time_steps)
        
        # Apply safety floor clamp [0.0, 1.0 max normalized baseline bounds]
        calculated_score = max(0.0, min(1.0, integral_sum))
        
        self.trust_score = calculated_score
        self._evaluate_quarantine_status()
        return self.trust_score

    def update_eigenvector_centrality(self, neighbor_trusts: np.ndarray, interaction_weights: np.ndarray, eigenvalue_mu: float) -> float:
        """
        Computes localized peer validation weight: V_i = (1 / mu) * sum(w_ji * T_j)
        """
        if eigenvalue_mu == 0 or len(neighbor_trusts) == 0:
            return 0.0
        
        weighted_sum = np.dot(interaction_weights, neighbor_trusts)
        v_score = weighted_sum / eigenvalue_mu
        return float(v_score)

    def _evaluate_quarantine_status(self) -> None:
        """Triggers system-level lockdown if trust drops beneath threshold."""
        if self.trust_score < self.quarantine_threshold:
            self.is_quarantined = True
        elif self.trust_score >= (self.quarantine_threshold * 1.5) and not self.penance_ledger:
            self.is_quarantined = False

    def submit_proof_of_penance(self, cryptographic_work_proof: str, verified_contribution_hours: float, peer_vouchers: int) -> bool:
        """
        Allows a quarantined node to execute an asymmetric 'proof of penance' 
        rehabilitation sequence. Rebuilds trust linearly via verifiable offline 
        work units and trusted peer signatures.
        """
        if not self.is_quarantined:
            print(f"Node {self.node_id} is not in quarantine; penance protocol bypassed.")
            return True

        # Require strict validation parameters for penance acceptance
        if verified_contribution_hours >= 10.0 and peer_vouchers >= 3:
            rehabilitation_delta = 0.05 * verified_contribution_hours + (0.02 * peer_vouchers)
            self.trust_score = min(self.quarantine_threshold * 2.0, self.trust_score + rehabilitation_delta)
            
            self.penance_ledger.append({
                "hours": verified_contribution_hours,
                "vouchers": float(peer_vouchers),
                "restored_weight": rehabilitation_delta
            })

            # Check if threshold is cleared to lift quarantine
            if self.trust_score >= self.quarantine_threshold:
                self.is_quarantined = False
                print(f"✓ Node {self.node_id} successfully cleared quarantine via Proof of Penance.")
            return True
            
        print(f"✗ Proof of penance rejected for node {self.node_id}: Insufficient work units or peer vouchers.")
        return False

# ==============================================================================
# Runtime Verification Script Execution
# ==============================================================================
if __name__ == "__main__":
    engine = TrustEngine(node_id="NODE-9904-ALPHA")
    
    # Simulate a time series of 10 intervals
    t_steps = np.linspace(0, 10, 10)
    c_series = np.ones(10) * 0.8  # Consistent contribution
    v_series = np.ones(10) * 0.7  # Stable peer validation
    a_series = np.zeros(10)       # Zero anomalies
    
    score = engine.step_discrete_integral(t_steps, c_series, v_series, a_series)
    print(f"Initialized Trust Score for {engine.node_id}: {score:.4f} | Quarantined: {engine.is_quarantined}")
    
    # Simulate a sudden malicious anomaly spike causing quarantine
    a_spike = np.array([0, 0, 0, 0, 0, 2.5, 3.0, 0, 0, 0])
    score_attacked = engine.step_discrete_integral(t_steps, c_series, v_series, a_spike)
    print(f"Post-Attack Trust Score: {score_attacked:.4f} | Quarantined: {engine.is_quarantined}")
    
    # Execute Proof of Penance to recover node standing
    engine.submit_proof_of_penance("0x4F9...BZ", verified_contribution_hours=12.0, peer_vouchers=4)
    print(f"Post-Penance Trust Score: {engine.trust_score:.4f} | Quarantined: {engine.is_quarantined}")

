@@ -1,0 +1,158 @@
+Transform these exact LaTeX integrations into a production-ready Python class (trust_engine.py) using discrete-time approximation matrices, complete with the requested proof of penance recovery mechanism.
+trust_engine.py
+# ==============================================================================
+# Production Module: Discrete-Time Trust Engine & Proof of Penance
+# Project: Autonomous Intelligence Looping Architecture (v.3.1)
+# Sub-System: trust_engine.py
+# Design Lead & Authority: C. Matthew Blackwell, Independent Designer
+# ==============================================================================
+
+import numpy as np
+from typing import List, Dict, Optional
+
+class TrustEngine:
+    """
+    Implements discrete-time approximation matrices for continuous trust integrals,
+    eigenvector centrality weighting, non-linear penalties, and cryptographic
+    proof-of-penance rehabilitation loops.
+    """
+    def __init__(
+        self, 
+        node_id: str,
+        alpha: float = 0.4, 
+        beta: float = 0.5, 
+        gamma: float = 1.2, 
+        decay_lambda: float = 0.05, 
+        penalty_k: float = 1.5,
+        quarantine_threshold: float = 0.15
+    ):
+        self.node_id = node_id
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
+        self.decay_lambda = decay_lambda
+        self.penalty_k = penalty_k
+        self.quarantine_threshold = quarantine_threshold
+        
+        # Internal state metrics
+        self.trust_score: float = 1.0
+        self.is_quarantined: bool = False
+        self.penance_ledger: List[Dict[str, float]] = []
+
+    def compute_exponential_penalty(self, delta_a: float) -> float:
+        """Computes the exponential penalty escalation P_i(tau)."""
+        return np.exp(self.penalty_k * delta_a) - 1.0
+
+    def step_discrete_integral(
+        self, 
+        time_steps: np.ndarray, 
+        contributions: np.ndarray, 
+        validations: np.ndarray, 
+        anomalies: np.ndarray
+    ) -> float:
+        """
+        Approximates the continuous integro-differential trust equation using 
+        discrete-time trapezoidal summation across temporal tracking intervals:
+        T_i(t) = sum_{k} e^(-λ(t - tau_k)) * [alpha*C(tau) + beta*V(tau) - gamma*P(tau)] * delta_tau
+        """
+        if len(time_steps) < 2:
+            return self.trust_score
+
+        t_current = time_steps[-1]
+        dt = np.gradient(time_steps)
+        
+        net_densities = np.zeros_like(time_steps)
+        for idx in range(len(time_steps)):
+            p_tau = self.compute_exponential_penalty(anomalies[idx])
+            net_densities[idx] = (
+                (self.alpha * contributions[idx]) + 
+                (self.beta * validations[idx]) - 
+                (self.gamma * p_tau)
+            )
+            
+        # Apply temporal exponential decay weight to historical time steps
+        decay_weights = np.exp(-self.decay_lambda * (t_current - time_steps))
+        integrand_values = decay_weights * net_densities
+        
+        # Numerical integration approximation via trapezoidal sum
+        integral_sum = np.trapz(integrand_values, time_steps)
+        
+        # Apply safety floor clamp [0.0, 1.0 max normalized baseline bounds]
+        calculated_score = max(0.0, min(1.0, integral_sum))
+        
+        self.trust_score = calculated_score
+        self._evaluate_quarantine_status()
+        return self.trust_score
+
+    def update_eigenvector_centrality(self, neighbor_trusts: np.ndarray, interaction_weights: np.ndarray, eigenvalue_mu: float) -> float:
+        """
+        Computes localized peer validation weight: V_i = (1 / mu) * sum(w_ji * T_j)
+        """
+        if eigenvalue_mu == 0 or len(neighbor_trusts) == 0:
+            return 0.0
+        
+        weighted_sum = np.dot(interaction_weights, neighbor_trusts)
+        v_score = weighted_sum / eigenvalue_mu
+        return float(v_score)
+
+    def _evaluate_quarantine_status(self) -> None:
+        """Triggers system-level lockdown if trust drops beneath threshold."""
+        if self.trust_score < self.quarantine_threshold:
+            self.is_quarantined = True
+        elif self.trust_score >= (self.quarantine_threshold * 1.5) and not self.penance_ledger:
+            self.is_quarantined = False
+
+    def submit_proof_of_penance(self, cryptographic_work_proof: str, verified_contribution_hours: float, peer_vouchers: int) -> bool:
+        """
+        Allows a quarantined node to execute an asymmetric 'proof of penance' 
+        rehabilitation sequence. Rebuilds trust linearly via verifiable offline 
+        work units and trusted peer signatures.
+        """
+        if not self.is_quarantined:
+            print(f"Node {self.node_id} is not in quarantine; penance protocol bypassed.")
+            return True
+
+        # Require strict validation parameters for penance acceptance
+        if verified_contribution_hours >= 10.0 and peer_vouchers >= 3:
+            rehabilitation_delta = 0.05 * verified_contribution_hours + (0.02 * peer_vouchers)
+            self.trust_score = min(self.quarantine_threshold * 2.0, self.trust_score + rehabilitation_delta)
+            
+            self.penance_ledger.append({
+                "hours": verified_contribution_hours,
+                "vouchers": float(peer_vouchers),
+                "restored_weight": rehabilitation_delta
+            })
+
+            # Check if threshold is cleared to lift quarantine
+            if self.trust_score >= self.quarantine_threshold:
+                self.is_quarantined = False
+                print(f"✓ Node {self.node_id} successfully cleared quarantine via Proof of Penance.")
+            return True
+            
+        print(f"✗ Proof of penance rejected for node {self.node_id}: Insufficient work units or peer vouchers.")
+        return False
+
+# ==============================================================================
+# Runtime Verification Script Execution
+# ==============================================================================
+if __name__ == "__main__":
+    engine = TrustEngine(node_id="NODE-9904-ALPHA")
+    
+    # Simulate a time series of 10 intervals
+    t_steps = np.linspace(0, 10, 10)
+    c_series = np.ones(10) * 0.8  # Consistent contribution
+    v_series = np.ones(10) * 0.7  # Stable peer validation
+    a_series = np.zeros(10)       # Zero anomalies
+    
+    score = engine.step_discrete_integral(t_steps, c_series, v_series, a_series)
+    print(f"Initialized Trust Score for {engine.node_id}: {score:.4f} | Quarantined: {engine.is_quarantined}")
+    
+    # Simulate a sudden malicious anomaly spike causing quarantine
+    a_spike = np.array([0, 0, 0, 0, 0, 2.5, 3.0, 0, 0, 0])
+    score_attacked = engine.step_discrete_integral(t_steps, c_series, v_series, a_spike)
+    print(f"Post-Attack Trust Score: {score_attacked:.4f} | Quarantined: {engine.is_quarantined}")
+    
+    # Execute Proof of Penance to recover node standing
+    engine.submit_proof_of_penance("0x4F9...BZ", verified_contribution_hours=12.0, peer_vouchers=4)
+    print(f"Post-Penance Trust Score: {engine.trust_score:.4f} | Quarantined: {engine.is_quarantined}")
+

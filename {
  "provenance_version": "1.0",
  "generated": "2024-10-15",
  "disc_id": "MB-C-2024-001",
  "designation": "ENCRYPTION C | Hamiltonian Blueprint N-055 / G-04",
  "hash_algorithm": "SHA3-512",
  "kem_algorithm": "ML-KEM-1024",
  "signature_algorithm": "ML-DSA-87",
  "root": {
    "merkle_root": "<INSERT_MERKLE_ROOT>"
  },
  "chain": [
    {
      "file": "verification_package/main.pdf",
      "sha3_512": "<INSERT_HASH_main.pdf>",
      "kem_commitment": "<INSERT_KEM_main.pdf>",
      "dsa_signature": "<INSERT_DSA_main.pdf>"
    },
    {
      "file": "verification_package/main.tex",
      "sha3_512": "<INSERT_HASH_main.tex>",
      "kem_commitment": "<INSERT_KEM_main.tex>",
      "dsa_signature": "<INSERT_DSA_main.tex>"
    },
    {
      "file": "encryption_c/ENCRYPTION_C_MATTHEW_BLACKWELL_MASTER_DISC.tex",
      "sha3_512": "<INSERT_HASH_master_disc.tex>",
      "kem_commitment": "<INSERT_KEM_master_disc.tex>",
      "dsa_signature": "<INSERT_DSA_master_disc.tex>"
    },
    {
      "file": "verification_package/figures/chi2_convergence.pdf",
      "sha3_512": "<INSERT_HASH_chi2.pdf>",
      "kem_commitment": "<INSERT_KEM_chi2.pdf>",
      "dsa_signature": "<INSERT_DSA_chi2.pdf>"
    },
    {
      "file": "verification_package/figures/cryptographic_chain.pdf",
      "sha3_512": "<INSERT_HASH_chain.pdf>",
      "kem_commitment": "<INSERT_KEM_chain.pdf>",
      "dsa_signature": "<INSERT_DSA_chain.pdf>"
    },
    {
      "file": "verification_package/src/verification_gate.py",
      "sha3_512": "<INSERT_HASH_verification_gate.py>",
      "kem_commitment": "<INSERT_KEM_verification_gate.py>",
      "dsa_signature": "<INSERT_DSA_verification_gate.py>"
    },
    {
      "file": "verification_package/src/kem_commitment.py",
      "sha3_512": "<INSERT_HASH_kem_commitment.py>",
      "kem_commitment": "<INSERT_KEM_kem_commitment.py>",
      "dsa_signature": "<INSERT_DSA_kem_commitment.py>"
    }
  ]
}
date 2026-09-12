@@ -1,0 +1,56 @@
+{
+  "provenance_version": "1.0",
+  "generated": "2024-10-15",
+  "disc_id": "MB-C-2024-001",
+  "designation": "ENCRYPTION C | Hamiltonian Blueprint N-055 / G-04",
+  "hash_algorithm": "SHA3-512",
+  "kem_algorithm": "ML-KEM-1024",
+  "signature_algorithm": "ML-DSA-87",
+  "root": {
+    "merkle_root": "<INSERT_MERKLE_ROOT>"
+  },
+  "chain": [
+    {
+      "file": "verification_package/main.pdf",
+      "sha3_512": "<INSERT_HASH_main.pdf>",
+      "kem_commitment": "<INSERT_KEM_main.pdf>",
+      "dsa_signature": "<INSERT_DSA_main.pdf>"
+    },
+    {
+      "file": "verification_package/main.tex",
+      "sha3_512": "<INSERT_HASH_main.tex>",
+      "kem_commitment": "<INSERT_KEM_main.tex>",
+      "dsa_signature": "<INSERT_DSA_main.tex>"
+    },
+    {
+      "file": "encryption_c/ENCRYPTION_C_MATTHEW_BLACKWELL_MASTER_DISC.tex",
+      "sha3_512": "<INSERT_HASH_master_disc.tex>",
+      "kem_commitment": "<INSERT_KEM_master_disc.tex>",
+      "dsa_signature": "<INSERT_DSA_master_disc.tex>"
+    },
+    {
+      "file": "verification_package/figures/chi2_convergence.pdf",
+      "sha3_512": "<INSERT_HASH_chi2.pdf>",
+      "kem_commitment": "<INSERT_KEM_chi2.pdf>",
+      "dsa_signature": "<INSERT_DSA_chi2.pdf>"
+    },
+    {
+      "file": "verification_package/figures/cryptographic_chain.pdf",
+      "sha3_512": "<INSERT_HASH_chain.pdf>",
+      "kem_commitment": "<INSERT_KEM_chain.pdf>",
+      "dsa_signature": "<INSERT_DSA_chain.pdf>"
+    },
+    {
+      "file": "verification_package/src/verification_gate.py",
+      "sha3_512": "<INSERT_HASH_verification_gate.py>",
+      "kem_commitment": "<INSERT_KEM_verification_gate.py>",
+      "dsa_signature": "<INSERT_DSA_verification_gate.py>"
+    },
+    {
+      "file": "verification_package/src/kem_commitment.py",
+      "sha3_512": "<INSERT_HASH_kem_commitment.py>",
+      "kem_commitment": "<INSERT_KEM_kem_commitment.py>",
+      "dsa_signature": "<INSERT_DSA_kem_commitment.py>"
+    }
+  ]
+}

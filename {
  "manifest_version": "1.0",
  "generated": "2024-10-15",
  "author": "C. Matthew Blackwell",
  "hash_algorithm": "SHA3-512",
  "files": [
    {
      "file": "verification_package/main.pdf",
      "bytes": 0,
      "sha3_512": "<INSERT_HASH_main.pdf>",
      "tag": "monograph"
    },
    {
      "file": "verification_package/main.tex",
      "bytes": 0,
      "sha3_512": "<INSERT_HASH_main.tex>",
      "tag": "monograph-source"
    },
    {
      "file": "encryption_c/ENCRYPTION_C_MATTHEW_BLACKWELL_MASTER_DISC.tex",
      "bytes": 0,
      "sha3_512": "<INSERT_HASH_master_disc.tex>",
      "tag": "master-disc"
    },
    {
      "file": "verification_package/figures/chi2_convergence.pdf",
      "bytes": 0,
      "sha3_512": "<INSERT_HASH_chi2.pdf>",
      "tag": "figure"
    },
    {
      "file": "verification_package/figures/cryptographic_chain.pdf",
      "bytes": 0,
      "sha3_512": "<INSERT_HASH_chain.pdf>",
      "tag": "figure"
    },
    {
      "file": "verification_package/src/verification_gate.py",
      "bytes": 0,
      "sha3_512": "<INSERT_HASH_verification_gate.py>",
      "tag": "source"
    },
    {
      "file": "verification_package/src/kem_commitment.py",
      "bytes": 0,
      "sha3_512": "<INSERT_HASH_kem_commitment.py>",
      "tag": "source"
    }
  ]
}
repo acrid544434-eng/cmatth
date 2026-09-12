@@ -1,0 +1,50 @@
+{
+  "manifest_version": "1.0",
+  "generated": "2024-10-15",
+  "author": "C. Matthew Blackwell",
+  "hash_algorithm": "SHA3-512",
+  "files": [
+    {
+      "file": "verification_package/main.pdf",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_main.pdf>",
+      "tag": "monograph"
+    },
+    {
+      "file": "verification_package/main.tex",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_main.tex>",
+      "tag": "monograph-source"
+    },
+    {
+      "file": "encryption_c/ENCRYPTION_C_MATTHEW_BLACKWELL_MASTER_DISC.tex",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_master_disc.tex>",
+      "tag": "master-disc"
+    },
+    {
+      "file": "verification_package/figures/chi2_convergence.pdf",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_chi2.pdf>",
+      "tag": "figure"
+    },
+    {
+      "file": "verification_package/figures/cryptographic_chain.pdf",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_chain.pdf>",
+      "tag": "figure"
+    },
+    {
+      "file": "verification_package/src/verification_gate.py",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_verification_gate.py>",
+      "tag": "source"
+    },
+    {
+      "file": "verification_package/src/kem_commitment.py",
+      "bytes": 0,
+      "sha3_512": "<INSERT_HASH_kem_commitment.py>",
+      "tag": "source"
+    }
+  ]
+}

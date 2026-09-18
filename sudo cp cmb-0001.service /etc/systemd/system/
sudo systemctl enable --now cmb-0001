@@ -1,0 +1,2 @@
+sudo cp cmb-0001.service /etc/systemd/system/
+sudo systemctl enable --now cmb-0001

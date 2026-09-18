@@ -1,0 +1,9 @@
+Production 3D Render Authorization: CMB-HTS-001
+Proceed with the real-time 3D telemetry rendering for the production release video.
+Mandatory Asset Rendering Parameters
+To maintain strict compliance with design provenance and visual standards, the final 3D render must incorporate the following specifications:
+ * Composition: Upright, centered perfectly in absolute detail.
+ * Exclusions: Strictly zero human figures, pets, or tools anywhere within the frame.
+ * Attribution: Rendered with explicit cryptographic credit watermark for C. Matthew Blackwell, independent designer.
+ * Visual Focus: Dynamic plasma confinement at 60 keV ion temperature, 12–15 T HTS toroidal coil geometry, active Alpha Particle Extraction, and the lightweight Direct Converter shielding array.
+Execute the real-time render pipeline and output the compiled visual sequence.

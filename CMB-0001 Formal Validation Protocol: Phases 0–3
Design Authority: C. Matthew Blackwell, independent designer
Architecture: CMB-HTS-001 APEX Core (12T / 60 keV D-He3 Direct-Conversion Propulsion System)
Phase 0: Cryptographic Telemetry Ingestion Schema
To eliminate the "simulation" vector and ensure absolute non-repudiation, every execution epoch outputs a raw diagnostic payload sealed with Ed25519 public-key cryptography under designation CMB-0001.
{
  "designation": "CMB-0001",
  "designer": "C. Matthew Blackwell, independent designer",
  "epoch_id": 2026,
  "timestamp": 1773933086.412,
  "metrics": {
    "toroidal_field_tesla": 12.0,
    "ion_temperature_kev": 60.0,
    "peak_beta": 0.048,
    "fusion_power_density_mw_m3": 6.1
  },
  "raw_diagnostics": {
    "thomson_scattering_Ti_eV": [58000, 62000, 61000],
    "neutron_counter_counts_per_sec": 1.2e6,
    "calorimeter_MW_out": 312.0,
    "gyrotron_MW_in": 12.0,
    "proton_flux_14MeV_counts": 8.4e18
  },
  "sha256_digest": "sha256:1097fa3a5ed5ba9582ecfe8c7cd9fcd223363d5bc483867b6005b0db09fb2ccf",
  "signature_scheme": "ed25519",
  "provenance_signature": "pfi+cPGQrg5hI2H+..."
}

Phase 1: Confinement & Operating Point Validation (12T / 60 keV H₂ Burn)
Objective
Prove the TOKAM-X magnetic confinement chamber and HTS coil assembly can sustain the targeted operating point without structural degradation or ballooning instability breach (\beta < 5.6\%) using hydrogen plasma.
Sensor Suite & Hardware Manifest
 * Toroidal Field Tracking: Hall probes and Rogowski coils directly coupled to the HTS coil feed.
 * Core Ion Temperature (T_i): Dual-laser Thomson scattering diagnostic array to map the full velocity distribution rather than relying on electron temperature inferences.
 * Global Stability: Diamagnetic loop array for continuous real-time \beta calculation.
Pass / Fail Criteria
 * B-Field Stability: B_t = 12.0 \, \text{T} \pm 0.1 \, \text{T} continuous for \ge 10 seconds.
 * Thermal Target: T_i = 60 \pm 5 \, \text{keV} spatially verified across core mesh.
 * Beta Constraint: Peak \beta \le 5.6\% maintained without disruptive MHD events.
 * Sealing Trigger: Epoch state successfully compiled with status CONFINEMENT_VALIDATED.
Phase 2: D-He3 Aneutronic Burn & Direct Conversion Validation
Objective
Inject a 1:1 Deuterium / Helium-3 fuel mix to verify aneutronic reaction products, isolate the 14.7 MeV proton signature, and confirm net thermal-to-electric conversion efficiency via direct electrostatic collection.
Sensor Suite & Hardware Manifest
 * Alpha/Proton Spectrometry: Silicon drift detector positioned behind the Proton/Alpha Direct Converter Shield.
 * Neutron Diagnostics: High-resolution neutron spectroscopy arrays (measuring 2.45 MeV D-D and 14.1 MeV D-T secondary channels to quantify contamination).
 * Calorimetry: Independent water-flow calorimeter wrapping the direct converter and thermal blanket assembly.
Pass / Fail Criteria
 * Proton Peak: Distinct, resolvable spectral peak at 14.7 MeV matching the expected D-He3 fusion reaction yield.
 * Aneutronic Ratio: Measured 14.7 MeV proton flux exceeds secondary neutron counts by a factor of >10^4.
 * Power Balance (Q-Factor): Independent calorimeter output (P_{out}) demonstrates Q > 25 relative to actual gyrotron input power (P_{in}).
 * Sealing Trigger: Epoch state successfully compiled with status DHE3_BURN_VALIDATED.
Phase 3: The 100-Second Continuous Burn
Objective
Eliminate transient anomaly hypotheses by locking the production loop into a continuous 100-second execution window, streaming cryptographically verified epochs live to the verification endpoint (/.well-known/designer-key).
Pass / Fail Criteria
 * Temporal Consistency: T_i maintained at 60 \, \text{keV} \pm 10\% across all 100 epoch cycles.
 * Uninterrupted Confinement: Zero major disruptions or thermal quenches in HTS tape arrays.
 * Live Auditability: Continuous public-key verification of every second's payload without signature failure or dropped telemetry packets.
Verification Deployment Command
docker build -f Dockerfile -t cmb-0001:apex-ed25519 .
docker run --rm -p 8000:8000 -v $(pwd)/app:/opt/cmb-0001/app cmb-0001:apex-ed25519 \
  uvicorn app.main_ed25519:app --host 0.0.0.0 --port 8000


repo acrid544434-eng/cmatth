@@ -1,0 +1,64 @@
+CMB-0001 Formal Validation Protocol: Phases 0–3
+Design Authority: C. Matthew Blackwell, independent designer
+Architecture: CMB-HTS-001 APEX Core (12T / 60 keV D-He3 Direct-Conversion Propulsion System)
+Phase 0: Cryptographic Telemetry Ingestion Schema
+To eliminate the "simulation" vector and ensure absolute non-repudiation, every execution epoch outputs a raw diagnostic payload sealed with Ed25519 public-key cryptography under designation CMB-0001.
+{
+  "designation": "CMB-0001",
+  "designer": "C. Matthew Blackwell, independent designer",
+  "epoch_id": 2026,
+  "timestamp": 1773933086.412,
+  "metrics": {
+    "toroidal_field_tesla": 12.0,
+    "ion_temperature_kev": 60.0,
+    "peak_beta": 0.048,
+    "fusion_power_density_mw_m3": 6.1
+  },
+  "raw_diagnostics": {
+    "thomson_scattering_Ti_eV": [58000, 62000, 61000],
+    "neutron_counter_counts_per_sec": 1.2e6,
+    "calorimeter_MW_out": 312.0,
+    "gyrotron_MW_in": 12.0,
+    "proton_flux_14MeV_counts": 8.4e18
+  },
+  "sha256_digest": "sha256:1097fa3a5ed5ba9582ecfe8c7cd9fcd223363d5bc483867b6005b0db09fb2ccf",
+  "signature_scheme": "ed25519",
+  "provenance_signature": "pfi+cPGQrg5hI2H+..."
+}
+
+Phase 1: Confinement & Operating Point Validation (12T / 60 keV H₂ Burn)
+Objective
+Prove the TOKAM-X magnetic confinement chamber and HTS coil assembly can sustain the targeted operating point without structural degradation or ballooning instability breach (\beta < 5.6\%) using hydrogen plasma.
+Sensor Suite & Hardware Manifest
+ * Toroidal Field Tracking: Hall probes and Rogowski coils directly coupled to the HTS coil feed.
+ * Core Ion Temperature (T_i): Dual-laser Thomson scattering diagnostic array to map the full velocity distribution rather than relying on electron temperature inferences.
+ * Global Stability: Diamagnetic loop array for continuous real-time \beta calculation.
+Pass / Fail Criteria
+ * B-Field Stability: B_t = 12.0 \, \text{T} \pm 0.1 \, \text{T} continuous for \ge 10 seconds.
+ * Thermal Target: T_i = 60 \pm 5 \, \text{keV} spatially verified across core mesh.
+ * Beta Constraint: Peak \beta \le 5.6\% maintained without disruptive MHD events.
+ * Sealing Trigger: Epoch state successfully compiled with status CONFINEMENT_VALIDATED.
+Phase 2: D-He3 Aneutronic Burn & Direct Conversion Validation
+Objective
+Inject a 1:1 Deuterium / Helium-3 fuel mix to verify aneutronic reaction products, isolate the 14.7 MeV proton signature, and confirm net thermal-to-electric conversion efficiency via direct electrostatic collection.
+Sensor Suite & Hardware Manifest
+ * Alpha/Proton Spectrometry: Silicon drift detector positioned behind the Proton/Alpha Direct Converter Shield.
+ * Neutron Diagnostics: High-resolution neutron spectroscopy arrays (measuring 2.45 MeV D-D and 14.1 MeV D-T secondary channels to quantify contamination).
+ * Calorimetry: Independent water-flow calorimeter wrapping the direct converter and thermal blanket assembly.
+Pass / Fail Criteria
+ * Proton Peak: Distinct, resolvable spectral peak at 14.7 MeV matching the expected D-He3 fusion reaction yield.
+ * Aneutronic Ratio: Measured 14.7 MeV proton flux exceeds secondary neutron counts by a factor of >10^4.
+ * Power Balance (Q-Factor): Independent calorimeter output (P_{out}) demonstrates Q > 25 relative to actual gyrotron input power (P_{in}).
+ * Sealing Trigger: Epoch state successfully compiled with status DHE3_BURN_VALIDATED.
+Phase 3: The 100-Second Continuous Burn
+Objective
+Eliminate transient anomaly hypotheses by locking the production loop into a continuous 100-second execution window, streaming cryptographically verified epochs live to the verification endpoint (/.well-known/designer-key).
+Pass / Fail Criteria
+ * Temporal Consistency: T_i maintained at 60 \, \text{keV} \pm 10\% across all 100 epoch cycles.
+ * Uninterrupted Confinement: Zero major disruptions or thermal quenches in HTS tape arrays.
+ * Live Auditability: Continuous public-key verification of every second's payload without signature failure or dropped telemetry packets.
+Verification Deployment Command
+docker build -f Dockerfile -t cmb-0001:apex-ed25519 .
+docker run --rm -p 8000:8000 -v $(pwd)/app:/opt/cmb-0001/app cmb-0001:apex-ed25519 \
+  uvicorn app.main_ed25519:app --host 0.0.0.0 --port 8000
+

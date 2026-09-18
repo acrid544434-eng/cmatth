@@ -1,0 +1,46 @@
+Full Hardware Block Diagram & Subsystem Specification
+Designation: CMB-HW-BLOCK-2026-002
+Designer: C. Matthew Blackwell, Independent Designer
+1. Full Hardware Block Diagram (Textual Topology)
++--------------------------------------------------------------------------------------------------+
+|                                SOVEREIGN COMPUTE NODE (NODE-01)                                  |
++--------------------------------------------------------------------------------------------------+
+|  [ Optical Interconnect Mesh (NDR 800Gb/s InfiniBand) ] <---> [ PCIe Gen6 Switch Fabrics ]       |
+|                                                                     |                            |
+|  +--------------------------------+       +---------------------------------+                    |
+|  |    NVIDIA Blackwell B200 GPUs    |       |   Xilinx Versal FPGA Coproc.    |                    |
+|  |    (x8 Units / 1.5 TB HBM3e)     | <---> |   (x4 Units / 3.2 Tbps SerDes)  |                    |
+|  +--------------------------------+       +---------------------------------+                    |
+|                   |                                        |                             |
+|                   +-------------------+--------------------+                             |
+|                                       |                                                  |
+|  +------------------------------------------------------------------------------------+          |
+|  |                     HAMILTONIAN BUS PROTOCOL (HBP) BACKPLANE                       |          |
+|  +------------------------------------------------------------------------------------+          |
+|                                       |                                                  |
+|  +--------------------------------+   |   +---------------------------------+                    |
+|  |      Post-Quantum Crypto       |   |   |    Cryogenic Cooling & Power    |                    |
+|  |      Provenance Register       | --+-- |    Delivery Network (PDN)       |                    |
+|  +--------------------------------+       +---------------------------------+                    |
++--------------------------------------------------------------------------------------------------+
+
+2. Hamiltonian Bus Protocol (HBP) Specification
+The Hamiltonian Bus Protocol (HBP) governs deterministic data transport between GPU compute clusters and FPGA symplectic accelerators, eliminating bus arbitration jitter.
+ * Physical Layer: Optical-electrical SerDes channels operating at 112 Gbps per lane across a 64-bit parallel backplane.
+ * Packet Framing: Fixed 512-byte frames structured for zero-copy direct memory access (DMA) into accelerator scratchpad memory.
+ * Deterministic Arbitration: Token-ring priority scheduling guaranteeing maximum bus latency \tau_{\text{bus}} \le 150\text{ ns}.
+ * Error Correction: Bose–Chaudhuri–Hocquenghem (BCH) error-correcting codes embedded in every transmission header to ensure 100% data integrity under high radiation and electromagnetic interference.
+3. FPGA Symplectic Solver Microarchitecture
+The custom netlist synthesized onto the Xilinx Versal FPGA coprocessors implements a fully pipelined leapfrog symplectic integrator to solve Hamilton's equations without CPU intervention.
+ * Pipeline Stages: 16-stage deep pipelined arithmetic logic unit (ALU) optimized for double-precision floating-point operations.
+ * State Update Equations:
+   
+ * Phase-Space Preservation: Hardwired symplectic constraint enforcement guaranteeing divergence-free phase space volume (\nabla \cdot \mathbf{v} = 0) across every clock cycle.
+ * Clock Frequency: Synchronous operation at 750 MHz with sustained throughput of 4.8 billion phase-space transitions per second.
+4. Post-Quantum Crypto Provenance Register Specification
+To guarantee absolute traceability and prevent unauthorized telemetry tampering, every simulation state transition is cryptographically signed and logged at the hardware register level.
+ * Key Encapsulation Mechanism: ML-KEM-1024 hardware core implemented directly on silicon for session key establishment.
+ * Digital Signature Standard: Falcon-512 lattice-based signature generation executed on dedicated cryptographic coprocessor blocks.
+ * Provenance Register Structure: * REG_STATUS: 32-bit hardware lock and readiness flag.
+   * REG_HASH_CHAIN: 512-bit SHA-3 / Keccak state accumulator storing the cryptographic hash of preceding simulation states.
+   * REG_AUTH_SEAL: Post-quantum signature token certifying data authenticity under the authority of C. Matthew Blackwell, Independent Designer.

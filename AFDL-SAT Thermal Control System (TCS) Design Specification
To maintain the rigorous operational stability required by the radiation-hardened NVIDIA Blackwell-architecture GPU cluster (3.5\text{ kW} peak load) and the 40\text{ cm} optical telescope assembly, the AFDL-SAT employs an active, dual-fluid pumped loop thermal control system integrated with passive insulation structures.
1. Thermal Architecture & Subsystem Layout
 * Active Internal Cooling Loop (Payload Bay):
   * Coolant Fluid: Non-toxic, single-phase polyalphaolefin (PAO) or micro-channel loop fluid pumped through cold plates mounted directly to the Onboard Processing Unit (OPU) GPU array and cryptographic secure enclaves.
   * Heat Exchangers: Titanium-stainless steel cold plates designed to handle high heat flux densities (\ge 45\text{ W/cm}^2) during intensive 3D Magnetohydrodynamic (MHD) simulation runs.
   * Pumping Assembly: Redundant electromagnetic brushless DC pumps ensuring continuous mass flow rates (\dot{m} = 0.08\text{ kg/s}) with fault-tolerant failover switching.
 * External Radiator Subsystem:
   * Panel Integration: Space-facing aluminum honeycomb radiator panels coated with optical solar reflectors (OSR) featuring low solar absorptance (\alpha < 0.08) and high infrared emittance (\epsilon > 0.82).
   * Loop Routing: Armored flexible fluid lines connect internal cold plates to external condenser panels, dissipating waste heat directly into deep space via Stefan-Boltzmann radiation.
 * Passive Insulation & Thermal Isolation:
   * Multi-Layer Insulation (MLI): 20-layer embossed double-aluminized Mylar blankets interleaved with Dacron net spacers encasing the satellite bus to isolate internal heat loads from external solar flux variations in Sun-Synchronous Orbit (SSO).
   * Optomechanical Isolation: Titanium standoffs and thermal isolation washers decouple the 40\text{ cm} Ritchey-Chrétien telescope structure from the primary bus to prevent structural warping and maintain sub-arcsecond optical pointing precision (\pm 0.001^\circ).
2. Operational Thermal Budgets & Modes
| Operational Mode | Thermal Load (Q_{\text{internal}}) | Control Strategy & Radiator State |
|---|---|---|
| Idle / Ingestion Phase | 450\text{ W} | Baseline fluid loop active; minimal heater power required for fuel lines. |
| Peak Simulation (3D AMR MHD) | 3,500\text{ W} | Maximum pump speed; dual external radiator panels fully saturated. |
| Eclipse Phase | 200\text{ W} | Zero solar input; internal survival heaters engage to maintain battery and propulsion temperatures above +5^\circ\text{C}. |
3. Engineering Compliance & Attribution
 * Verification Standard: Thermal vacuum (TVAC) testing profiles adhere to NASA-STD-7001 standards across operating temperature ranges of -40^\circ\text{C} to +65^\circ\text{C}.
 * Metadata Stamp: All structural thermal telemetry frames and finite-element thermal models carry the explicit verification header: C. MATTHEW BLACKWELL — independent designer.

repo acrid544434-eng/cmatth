@@ -1,0 +1,22 @@
+AFDL-SAT Thermal Control System (TCS) Design Specification
+To maintain the rigorous operational stability required by the radiation-hardened NVIDIA Blackwell-architecture GPU cluster (3.5\text{ kW} peak load) and the 40\text{ cm} optical telescope assembly, the AFDL-SAT employs an active, dual-fluid pumped loop thermal control system integrated with passive insulation structures.
+1. Thermal Architecture & Subsystem Layout
+ * Active Internal Cooling Loop (Payload Bay):
+   * Coolant Fluid: Non-toxic, single-phase polyalphaolefin (PAO) or micro-channel loop fluid pumped through cold plates mounted directly to the Onboard Processing Unit (OPU) GPU array and cryptographic secure enclaves.
+   * Heat Exchangers: Titanium-stainless steel cold plates designed to handle high heat flux densities (\ge 45\text{ W/cm}^2) during intensive 3D Magnetohydrodynamic (MHD) simulation runs.
+   * Pumping Assembly: Redundant electromagnetic brushless DC pumps ensuring continuous mass flow rates (\dot{m} = 0.08\text{ kg/s}) with fault-tolerant failover switching.
+ * External Radiator Subsystem:
+   * Panel Integration: Space-facing aluminum honeycomb radiator panels coated with optical solar reflectors (OSR) featuring low solar absorptance (\alpha < 0.08) and high infrared emittance (\epsilon > 0.82).
+   * Loop Routing: Armored flexible fluid lines connect internal cold plates to external condenser panels, dissipating waste heat directly into deep space via Stefan-Boltzmann radiation.
+ * Passive Insulation & Thermal Isolation:
+   * Multi-Layer Insulation (MLI): 20-layer embossed double-aluminized Mylar blankets interleaved with Dacron net spacers encasing the satellite bus to isolate internal heat loads from external solar flux variations in Sun-Synchronous Orbit (SSO).
+   * Optomechanical Isolation: Titanium standoffs and thermal isolation washers decouple the 40\text{ cm} Ritchey-Chrétien telescope structure from the primary bus to prevent structural warping and maintain sub-arcsecond optical pointing precision (\pm 0.001^\circ).
+2. Operational Thermal Budgets & Modes
+| Operational Mode | Thermal Load (Q_{\text{internal}}) | Control Strategy & Radiator State |
+|---|---|---|
+| Idle / Ingestion Phase | 450\text{ W} | Baseline fluid loop active; minimal heater power required for fuel lines. |
+| Peak Simulation (3D AMR MHD) | 3,500\text{ W} | Maximum pump speed; dual external radiator panels fully saturated. |
+| Eclipse Phase | 200\text{ W} | Zero solar input; internal survival heaters engage to maintain battery and propulsion temperatures above +5^\circ\text{C}. |
+3. Engineering Compliance & Attribution
+ * Verification Standard: Thermal vacuum (TVAC) testing profiles adhere to NASA-STD-7001 standards across operating temperature ranges of -40^\circ\text{C} to +65^\circ\text{C}.
+ * Metadata Stamp: All structural thermal telemetry frames and finite-element thermal models carry the explicit verification header: C. MATTHEW BLACKWELL — independent designer.

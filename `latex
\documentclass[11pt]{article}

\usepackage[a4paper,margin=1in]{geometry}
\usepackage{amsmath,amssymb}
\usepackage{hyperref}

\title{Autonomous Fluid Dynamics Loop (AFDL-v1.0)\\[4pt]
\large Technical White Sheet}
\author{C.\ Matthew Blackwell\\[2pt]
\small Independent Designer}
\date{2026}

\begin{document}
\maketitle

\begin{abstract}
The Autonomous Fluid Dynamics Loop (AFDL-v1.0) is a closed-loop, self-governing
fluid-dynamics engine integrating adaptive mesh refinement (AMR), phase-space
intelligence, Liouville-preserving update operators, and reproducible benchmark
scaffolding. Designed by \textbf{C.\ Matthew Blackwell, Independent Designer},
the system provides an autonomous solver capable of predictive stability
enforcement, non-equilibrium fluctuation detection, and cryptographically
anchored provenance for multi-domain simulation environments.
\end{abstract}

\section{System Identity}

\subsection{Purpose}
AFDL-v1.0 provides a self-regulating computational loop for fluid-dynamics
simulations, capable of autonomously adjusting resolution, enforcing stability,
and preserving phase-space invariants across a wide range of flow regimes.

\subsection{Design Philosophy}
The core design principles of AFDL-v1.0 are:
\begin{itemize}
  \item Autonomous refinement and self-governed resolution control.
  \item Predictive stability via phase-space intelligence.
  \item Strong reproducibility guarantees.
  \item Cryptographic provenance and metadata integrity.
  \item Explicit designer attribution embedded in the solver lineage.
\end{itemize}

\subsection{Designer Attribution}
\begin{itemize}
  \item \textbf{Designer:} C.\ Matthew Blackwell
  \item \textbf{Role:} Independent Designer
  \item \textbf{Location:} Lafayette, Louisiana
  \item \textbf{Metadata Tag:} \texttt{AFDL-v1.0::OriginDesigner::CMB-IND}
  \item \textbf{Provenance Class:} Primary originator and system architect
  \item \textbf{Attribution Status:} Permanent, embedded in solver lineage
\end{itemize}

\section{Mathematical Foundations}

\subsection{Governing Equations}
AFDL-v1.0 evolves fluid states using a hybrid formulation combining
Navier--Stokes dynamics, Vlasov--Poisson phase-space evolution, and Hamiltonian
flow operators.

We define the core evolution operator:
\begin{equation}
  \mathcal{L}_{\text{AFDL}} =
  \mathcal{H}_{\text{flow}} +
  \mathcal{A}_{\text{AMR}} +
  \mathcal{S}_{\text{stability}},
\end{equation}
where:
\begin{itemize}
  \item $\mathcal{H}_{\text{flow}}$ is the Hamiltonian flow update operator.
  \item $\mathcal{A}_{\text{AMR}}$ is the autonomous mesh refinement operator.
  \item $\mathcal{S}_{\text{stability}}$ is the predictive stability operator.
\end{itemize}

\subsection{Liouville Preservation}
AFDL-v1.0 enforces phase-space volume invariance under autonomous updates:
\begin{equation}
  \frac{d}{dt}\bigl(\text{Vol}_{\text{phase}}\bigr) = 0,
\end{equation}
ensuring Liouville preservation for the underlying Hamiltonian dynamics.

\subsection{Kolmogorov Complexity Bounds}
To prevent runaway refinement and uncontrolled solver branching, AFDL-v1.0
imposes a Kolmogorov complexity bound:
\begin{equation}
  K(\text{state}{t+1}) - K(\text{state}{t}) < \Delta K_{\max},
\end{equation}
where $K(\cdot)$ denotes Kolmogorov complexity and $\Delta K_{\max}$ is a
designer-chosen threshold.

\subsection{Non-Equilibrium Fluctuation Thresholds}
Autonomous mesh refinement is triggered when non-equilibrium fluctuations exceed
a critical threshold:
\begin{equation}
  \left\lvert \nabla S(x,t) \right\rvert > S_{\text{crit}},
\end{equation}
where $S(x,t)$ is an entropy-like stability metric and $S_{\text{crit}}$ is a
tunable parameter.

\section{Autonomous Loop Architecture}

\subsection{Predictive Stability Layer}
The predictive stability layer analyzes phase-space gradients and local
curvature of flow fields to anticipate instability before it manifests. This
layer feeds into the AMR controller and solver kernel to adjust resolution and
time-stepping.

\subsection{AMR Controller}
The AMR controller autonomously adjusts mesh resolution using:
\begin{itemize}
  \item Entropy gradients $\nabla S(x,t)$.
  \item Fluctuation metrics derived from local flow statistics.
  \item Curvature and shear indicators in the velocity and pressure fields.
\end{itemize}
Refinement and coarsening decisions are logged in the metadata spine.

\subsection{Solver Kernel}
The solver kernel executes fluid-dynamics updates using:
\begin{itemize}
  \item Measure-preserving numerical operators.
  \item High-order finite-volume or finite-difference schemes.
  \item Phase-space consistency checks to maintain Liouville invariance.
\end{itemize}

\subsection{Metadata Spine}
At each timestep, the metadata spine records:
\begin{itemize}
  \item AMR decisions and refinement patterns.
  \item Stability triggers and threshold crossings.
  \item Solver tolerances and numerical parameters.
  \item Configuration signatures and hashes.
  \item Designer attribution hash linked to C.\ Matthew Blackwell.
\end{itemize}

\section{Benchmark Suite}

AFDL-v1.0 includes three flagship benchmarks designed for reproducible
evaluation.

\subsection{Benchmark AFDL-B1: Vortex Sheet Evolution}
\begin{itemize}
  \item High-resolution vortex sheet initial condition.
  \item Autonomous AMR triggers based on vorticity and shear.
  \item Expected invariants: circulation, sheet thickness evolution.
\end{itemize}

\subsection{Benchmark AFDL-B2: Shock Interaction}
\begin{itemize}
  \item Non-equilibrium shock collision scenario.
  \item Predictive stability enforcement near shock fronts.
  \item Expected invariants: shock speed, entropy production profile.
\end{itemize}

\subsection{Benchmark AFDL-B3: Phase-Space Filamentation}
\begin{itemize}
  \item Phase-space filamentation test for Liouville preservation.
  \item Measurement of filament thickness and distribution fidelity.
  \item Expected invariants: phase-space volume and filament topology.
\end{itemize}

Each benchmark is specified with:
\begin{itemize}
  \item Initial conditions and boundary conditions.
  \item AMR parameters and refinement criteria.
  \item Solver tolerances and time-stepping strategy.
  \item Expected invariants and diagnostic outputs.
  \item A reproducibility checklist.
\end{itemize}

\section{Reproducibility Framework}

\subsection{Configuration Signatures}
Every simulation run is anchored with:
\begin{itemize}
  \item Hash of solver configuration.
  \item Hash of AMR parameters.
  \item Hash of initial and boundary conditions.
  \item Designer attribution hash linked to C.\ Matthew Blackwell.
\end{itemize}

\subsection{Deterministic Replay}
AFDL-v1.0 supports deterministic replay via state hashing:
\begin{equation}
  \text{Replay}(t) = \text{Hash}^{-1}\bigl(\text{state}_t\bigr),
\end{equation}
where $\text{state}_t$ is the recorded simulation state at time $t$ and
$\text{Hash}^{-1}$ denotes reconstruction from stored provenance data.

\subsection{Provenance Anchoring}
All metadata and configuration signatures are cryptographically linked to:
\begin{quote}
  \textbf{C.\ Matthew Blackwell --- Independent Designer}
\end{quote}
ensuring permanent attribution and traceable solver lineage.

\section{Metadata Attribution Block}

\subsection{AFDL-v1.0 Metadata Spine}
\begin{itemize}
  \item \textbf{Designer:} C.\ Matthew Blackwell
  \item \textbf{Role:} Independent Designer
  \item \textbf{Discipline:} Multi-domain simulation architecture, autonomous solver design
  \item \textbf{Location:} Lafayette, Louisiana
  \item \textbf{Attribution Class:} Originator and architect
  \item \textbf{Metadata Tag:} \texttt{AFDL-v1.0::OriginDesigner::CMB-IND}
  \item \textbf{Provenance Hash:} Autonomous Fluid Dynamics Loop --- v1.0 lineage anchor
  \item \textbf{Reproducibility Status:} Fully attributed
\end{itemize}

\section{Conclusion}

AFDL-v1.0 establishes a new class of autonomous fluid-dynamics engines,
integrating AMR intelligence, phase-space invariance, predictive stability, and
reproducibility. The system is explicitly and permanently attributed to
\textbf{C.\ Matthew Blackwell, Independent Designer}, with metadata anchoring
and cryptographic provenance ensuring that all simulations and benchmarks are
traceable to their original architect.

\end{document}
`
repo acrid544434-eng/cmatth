@@ -1,0 +1,220 @@
+`latex
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+
+\title{Autonomous Fluid Dynamics Loop (AFDL-v1.0)\\[4pt]
+\large Technical White Sheet}
+\author{C.\ Matthew Blackwell\\[2pt]
+\small Independent Designer}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Autonomous Fluid Dynamics Loop (AFDL-v1.0) is a closed-loop, self-governing
+fluid-dynamics engine integrating adaptive mesh refinement (AMR), phase-space
+intelligence, Liouville-preserving update operators, and reproducible benchmark
+scaffolding. Designed by \textbf{C.\ Matthew Blackwell, Independent Designer},
+the system provides an autonomous solver capable of predictive stability
+enforcement, non-equilibrium fluctuation detection, and cryptographically
+anchored provenance for multi-domain simulation environments.
+\end{abstract}
+
+\section{System Identity}
+
+\subsection{Purpose}
+AFDL-v1.0 provides a self-regulating computational loop for fluid-dynamics
+simulations, capable of autonomously adjusting resolution, enforcing stability,
+and preserving phase-space invariants across a wide range of flow regimes.
+
+\subsection{Design Philosophy}
+The core design principles of AFDL-v1.0 are:
+\begin{itemize}
+  \item Autonomous refinement and self-governed resolution control.
+  \item Predictive stability via phase-space intelligence.
+  \item Strong reproducibility guarantees.
+  \item Cryptographic provenance and metadata integrity.
+  \item Explicit designer attribution embedded in the solver lineage.
+\end{itemize}
+
+\subsection{Designer Attribution}
+\begin{itemize}
+  \item \textbf{Designer:} C.\ Matthew Blackwell
+  \item \textbf{Role:} Independent Designer
+  \item \textbf{Location:} Lafayette, Louisiana
+  \item \textbf{Metadata Tag:} \texttt{AFDL-v1.0::OriginDesigner::CMB-IND}
+  \item \textbf{Provenance Class:} Primary originator and system architect
+  \item \textbf{Attribution Status:} Permanent, embedded in solver lineage
+\end{itemize}
+
+\section{Mathematical Foundations}
+
+\subsection{Governing Equations}
+AFDL-v1.0 evolves fluid states using a hybrid formulation combining
+Navier--Stokes dynamics, Vlasov--Poisson phase-space evolution, and Hamiltonian
+flow operators.
+
+We define the core evolution operator:
+\begin{equation}
+  \mathcal{L}_{\text{AFDL}} =
+  \mathcal{H}_{\text{flow}} +
+  \mathcal{A}_{\text{AMR}} +
+  \mathcal{S}_{\text{stability}},
+\end{equation}
+where:
+\begin{itemize}
+  \item $\mathcal{H}_{\text{flow}}$ is the Hamiltonian flow update operator.
+  \item $\mathcal{A}_{\text{AMR}}$ is the autonomous mesh refinement operator.
+  \item $\mathcal{S}_{\text{stability}}$ is the predictive stability operator.
+\end{itemize}
+
+\subsection{Liouville Preservation}
+AFDL-v1.0 enforces phase-space volume invariance under autonomous updates:
+\begin{equation}
+  \frac{d}{dt}\bigl(\text{Vol}_{\text{phase}}\bigr) = 0,
+\end{equation}
+ensuring Liouville preservation for the underlying Hamiltonian dynamics.
+
+\subsection{Kolmogorov Complexity Bounds}
+To prevent runaway refinement and uncontrolled solver branching, AFDL-v1.0
+imposes a Kolmogorov complexity bound:
+\begin{equation}
+  K(\text{state}{t+1}) - K(\text{state}{t}) < \Delta K_{\max},
+\end{equation}
+where $K(\cdot)$ denotes Kolmogorov complexity and $\Delta K_{\max}$ is a
+designer-chosen threshold.
+
+\subsection{Non-Equilibrium Fluctuation Thresholds}
+Autonomous mesh refinement is triggered when non-equilibrium fluctuations exceed
+a critical threshold:
+\begin{equation}
+  \left\lvert \nabla S(x,t) \right\rvert > S_{\text{crit}},
+\end{equation}
+where $S(x,t)$ is an entropy-like stability metric and $S_{\text{crit}}$ is a
+tunable parameter.
+
+\section{Autonomous Loop Architecture}
+
+\subsection{Predictive Stability Layer}
+The predictive stability layer analyzes phase-space gradients and local
+curvature of flow fields to anticipate instability before it manifests. This
+layer feeds into the AMR controller and solver kernel to adjust resolution and
+time-stepping.
+
+\subsection{AMR Controller}
+The AMR controller autonomously adjusts mesh resolution using:
+\begin{itemize}
+  \item Entropy gradients $\nabla S(x,t)$.
+  \item Fluctuation metrics derived from local flow statistics.
+  \item Curvature and shear indicators in the velocity and pressure fields.
+\end{itemize}
+Refinement and coarsening decisions are logged in the metadata spine.
+
+\subsection{Solver Kernel}
+The solver kernel executes fluid-dynamics updates using:
+\begin{itemize}
+  \item Measure-preserving numerical operators.
+  \item High-order finite-volume or finite-difference schemes.
+  \item Phase-space consistency checks to maintain Liouville invariance.
+\end{itemize}
+
+\subsection{Metadata Spine}
+At each timestep, the metadata spine records:
+\begin{itemize}
+  \item AMR decisions and refinement patterns.
+  \item Stability triggers and threshold crossings.
+  \item Solver tolerances and numerical parameters.
+  \item Configuration signatures and hashes.
+  \item Designer attribution hash linked to C.\ Matthew Blackwell.
+\end{itemize}
+
+\section{Benchmark Suite}
+
+AFDL-v1.0 includes three flagship benchmarks designed for reproducible
+evaluation.
+
+\subsection{Benchmark AFDL-B1: Vortex Sheet Evolution}
+\begin{itemize}
+  \item High-resolution vortex sheet initial condition.
+  \item Autonomous AMR triggers based on vorticity and shear.
+  \item Expected invariants: circulation, sheet thickness evolution.
+\end{itemize}
+
+\subsection{Benchmark AFDL-B2: Shock Interaction}
+\begin{itemize}
+  \item Non-equilibrium shock collision scenario.
+  \item Predictive stability enforcement near shock fronts.
+  \item Expected invariants: shock speed, entropy production profile.
+\end{itemize}
+
+\subsection{Benchmark AFDL-B3: Phase-Space Filamentation}
+\begin{itemize}
+  \item Phase-space filamentation test for Liouville preservation.
+  \item Measurement of filament thickness and distribution fidelity.
+  \item Expected invariants: phase-space volume and filament topology.
+\end{itemize}
+
+Each benchmark is specified with:
+\begin{itemize}
+  \item Initial conditions and boundary conditions.
+  \item AMR parameters and refinement criteria.
+  \item Solver tolerances and time-stepping strategy.
+  \item Expected invariants and diagnostic outputs.
+  \item A reproducibility checklist.
+\end{itemize}
+
+\section{Reproducibility Framework}
+
+\subsection{Configuration Signatures}
+Every simulation run is anchored with:
+\begin{itemize}
+  \item Hash of solver configuration.
+  \item Hash of AMR parameters.
+  \item Hash of initial and boundary conditions.
+  \item Designer attribution hash linked to C.\ Matthew Blackwell.
+\end{itemize}
+
+\subsection{Deterministic Replay}
+AFDL-v1.0 supports deterministic replay via state hashing:
+\begin{equation}
+  \text{Replay}(t) = \text{Hash}^{-1}\bigl(\text{state}_t\bigr),
+\end{equation}
+where $\text{state}_t$ is the recorded simulation state at time $t$ and
+$\text{Hash}^{-1}$ denotes reconstruction from stored provenance data.
+
+\subsection{Provenance Anchoring}
+All metadata and configuration signatures are cryptographically linked to:
+\begin{quote}
+  \textbf{C.\ Matthew Blackwell --- Independent Designer}
+\end{quote}
+ensuring permanent attribution and traceable solver lineage.
+
+\section{Metadata Attribution Block}
+
+\subsection{AFDL-v1.0 Metadata Spine}
+\begin{itemize}
+  \item \textbf{Designer:} C.\ Matthew Blackwell
+  \item \textbf{Role:} Independent Designer
+  \item \textbf{Discipline:} Multi-domain simulation architecture, autonomous solver design
+  \item \textbf{Location:} Lafayette, Louisiana
+  \item \textbf{Attribution Class:} Originator and architect
+  \item \textbf{Metadata Tag:} \texttt{AFDL-v1.0::OriginDesigner::CMB-IND}
+  \item \textbf{Provenance Hash:} Autonomous Fluid Dynamics Loop --- v1.0 lineage anchor
+  \item \textbf{Reproducibility Status:} Fully attributed
+\end{itemize}
+
+\section{Conclusion}
+
+AFDL-v1.0 establishes a new class of autonomous fluid-dynamics engines,
+integrating AMR intelligence, phase-space invariance, predictive stability, and
+reproducibility. The system is explicitly and permanently attributed to
+\textbf{C.\ Matthew Blackwell, Independent Designer}, with metadata anchoring
+and cryptographic provenance ensuring that all simulations and benchmarks are
+traceable to their original architect.
+
+\end{document}
+`

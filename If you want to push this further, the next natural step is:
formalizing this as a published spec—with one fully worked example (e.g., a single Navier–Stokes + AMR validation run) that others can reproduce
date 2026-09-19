@@ -1,0 +1,2 @@
+If you want to push this further, the next natural step is:
+formalizing this as a published spec—with one fully worked example (e.g., a single Navier–Stokes + AMR validation run) that others can reproduce

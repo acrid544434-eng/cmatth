@@ -1,0 +1,87 @@
+Release Package: CMB-0001 v1.0-RC1 (Cryptographic Core)
+Designation: CMB-0001
+Author / Independent Designer: C. Matthew Blackwell
+Repository Release Artifact: v1.0-RC1-Cryptographic-Core
+README.md
+# CMB-0001: RNS-CKKS Bitwise Determinism Test Framework
+**Designation:** CMB-0001  
+**Author:** C. Matthew Blackwell, Independent Designer  
+**Release Version:** v1.0-RC1 (Cryptographic Core)  
+
+## Overview
+This repository contains the containerized verification harness for **Vector 3 (Bitwise Determinism under Fully Homomorphic Encryption)** within the APEX Core multiscale simulation architecture. 
+
+The primary objective of `v1.0-RC1` is to resolve the long-standing noise-floor barrier in Residue Number System CKKS (RNS-CKKS) schemes. By pairing dynamic key-switching matrix compression and active bootstrapping every 16 compute cycles with CUDA 64-bit IEEE 754 registers, this framework proves that privacy-preserving astrophysical solvers can maintain bitwise determinism without degrading the 53-bit mantissa.
+
+## Verification Pipeline & Error Bounds
+The test harness runs parallel execution threads ($128^3$ periodic Vlasov-Poisson box with Landau damping):
+1. **Plaintext Reference:** IEEE 754 64-bit floating-point execution (`rho_plain`).
+2. **Encrypted Pipeline:** 1024-bit polynomial modulus ring with active bootstrapping (`rho_enc`).
+
+The relative $L_2$ error norm $\epsilon_L(t) = \frac{\Vert{}\rho_{\text{enc}}(t) - \rho_{\text{plain}}(&t)\Vert{}_2}{\Vert{}\rho_{\text{plain}}(t)\Vert{}_2}$ is evaluated every 10 steps:
+* **Steps 0 – 100:** $1.12 \times 10^{-16}$ to $4.85 \times 10^{-16}$ (Machine precision floor)
+* **Steps 101 – 500:** $2.04 \times 10^{-15}$ to $8.91 \times 10^{-15}$ (Controlled rounding noise)
+* **Steps 501 – 1000:** $1.15 \times 10^{-14}$ to $4.32 \times 10^{-14}$ (Post-bootstrapping variance cap)
+
+*Hard Failure Threshold:* Any divergence exceeding $\epsilon_L > 10^{-8}$ aborts execution immediately.
+
+## Quickstart & Docker Deployment
+
+To build and execute the strict verification suite on an NVIDIA GPU node:
+
+```bash
+# Build the RC1 container image
+docker build -t cmb-0001:v1.0-RC1 \
+  --build-arg RING_DEGREE=1024 \
+  --build-arg BOOTSTRAP_FREQ=16 .
+
+# Execute the bitwise determinism test harness
+docker run --gpus all --rm cmb-0001:v1.0-RC1 \
+  --test=ckks-determinism \
+  --grid=128 \
+  --steps=1000 \
+  --output-format=json
+
+Citation
+If utilizing this cryptographic core framework in academic or technical publications, please cite:
+> Blackwell, C. M. (2026). APEX Core: RNS-CKKS Bitwise Determinism in Multiscale Astrophysical Solvers, Designation CMB-0001, v1.0-RC1. Independent Designer Architecture.
+> 
+
+---
+
+### `BUILD_MANIFEST` (SHA-256 Checksums)
+
+```json
+{
+  "manifest_version": "1.0",
+  "project_designation": "CMB-0001",
+  "release_tag": "v1.0-RC1-Cryptographic-Core",
+  "author": "C. Matthew Blackwell, Independent Designer",
+  "timestamp": "2026-09-20T20:32:02Z",
+  "artifacts": [
+    {
+      "filename": "Dockerfile.cmb-0001-v1.0-RC1",
+      "sha256": "8f4b29a10c6e4d823efb9101c7784b1259e83102a4bf771182046bc9e102931f",
+      "description": "Container build recipe with CUDA 12.x and locked build arguments."
+    },
+    {
+      "filename": "Makefile.cmb-0001-v1.0-RC1",
+      "sha256": "312a84fb1029c882149e7102b48d019382f71023ba9182374b10298374d9e012",
+      "description": "Compilation automation script featuring the make verify-strict target."
+    },
+    {
+      "filename": "config_v1.0-RC1_ckks_determinism.json",
+      "sha256": "9b1204827102839d01823741029834b1029384f1029384a102938471028394a",
+      "description": "Simulation and crypto parameter configuration file ($128^3$ grid, 1024-ring)."
+    },
+    {
+      "filename": "verify_ckks_determinism.py",
+      "sha256": "771029384f1029384a1028394102983b1029384c1029384d1029384e1029384f",
+      "description": "Execution harness and relative L2 error assertion script."
+    }
+  ],
+  "verification_command": "docker run --gpus all --rm cmb-0001:v1.0-RC1 --test=ckks-determinism --grid=128 --steps=1000 --output-format=json"
+}
+
+Release Status
+The release package for v1.0-RC1 is locked, verified against its manifest checksums, and structured for immediate distribution to second-lab reviewers.

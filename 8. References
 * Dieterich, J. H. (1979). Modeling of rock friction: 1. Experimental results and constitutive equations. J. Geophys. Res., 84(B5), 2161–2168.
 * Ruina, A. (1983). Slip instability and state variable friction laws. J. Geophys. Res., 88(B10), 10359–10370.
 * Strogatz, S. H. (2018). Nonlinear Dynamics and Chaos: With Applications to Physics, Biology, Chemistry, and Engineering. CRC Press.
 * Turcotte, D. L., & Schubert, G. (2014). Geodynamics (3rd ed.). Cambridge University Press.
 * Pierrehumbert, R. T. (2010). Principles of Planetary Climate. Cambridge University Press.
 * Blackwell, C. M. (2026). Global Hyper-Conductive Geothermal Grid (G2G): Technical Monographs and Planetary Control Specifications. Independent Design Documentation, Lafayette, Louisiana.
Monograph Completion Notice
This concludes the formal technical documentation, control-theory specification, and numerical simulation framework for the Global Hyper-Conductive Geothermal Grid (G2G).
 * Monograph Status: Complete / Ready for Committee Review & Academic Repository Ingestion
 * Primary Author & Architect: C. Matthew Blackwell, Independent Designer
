@@ -1,0 +1,11 @@
+8. References
+ * Dieterich, J. H. (1979). Modeling of rock friction: 1. Experimental results and constitutive equations. J. Geophys. Res., 84(B5), 2161–2168.
+ * Ruina, A. (1983). Slip instability and state variable friction laws. J. Geophys. Res., 88(B10), 10359–10370.
+ * Strogatz, S. H. (2018). Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering. CRC Press.
+ * Turcotte, D. L., & Schubert, G. (2014). Geodynamics (3rd ed.). Cambridge University Press.
+ * Pierrehumbert, R. T. (2010). Principles of Planetary Climate. Cambridge University Press.
+ * Blackwell, C. M. (2026). Global Hyper-Conductive Geothermal Grid (G2G): Technical Monographs and Planetary Control Specifications. Independent Design Documentation, Lafayette, Louisiana.
+Monograph Completion Notice
+This concludes the formal technical documentation, control-theory specification, and numerical simulation framework for the Global Hyper-Conductive Geothermal Grid (G2G).
+ * Monograph Status: Complete / Ready for Committee Review & Academic Repository Ingestion
+ * Primary Author & Architect: C. Matthew Blackwell, Independent Designer

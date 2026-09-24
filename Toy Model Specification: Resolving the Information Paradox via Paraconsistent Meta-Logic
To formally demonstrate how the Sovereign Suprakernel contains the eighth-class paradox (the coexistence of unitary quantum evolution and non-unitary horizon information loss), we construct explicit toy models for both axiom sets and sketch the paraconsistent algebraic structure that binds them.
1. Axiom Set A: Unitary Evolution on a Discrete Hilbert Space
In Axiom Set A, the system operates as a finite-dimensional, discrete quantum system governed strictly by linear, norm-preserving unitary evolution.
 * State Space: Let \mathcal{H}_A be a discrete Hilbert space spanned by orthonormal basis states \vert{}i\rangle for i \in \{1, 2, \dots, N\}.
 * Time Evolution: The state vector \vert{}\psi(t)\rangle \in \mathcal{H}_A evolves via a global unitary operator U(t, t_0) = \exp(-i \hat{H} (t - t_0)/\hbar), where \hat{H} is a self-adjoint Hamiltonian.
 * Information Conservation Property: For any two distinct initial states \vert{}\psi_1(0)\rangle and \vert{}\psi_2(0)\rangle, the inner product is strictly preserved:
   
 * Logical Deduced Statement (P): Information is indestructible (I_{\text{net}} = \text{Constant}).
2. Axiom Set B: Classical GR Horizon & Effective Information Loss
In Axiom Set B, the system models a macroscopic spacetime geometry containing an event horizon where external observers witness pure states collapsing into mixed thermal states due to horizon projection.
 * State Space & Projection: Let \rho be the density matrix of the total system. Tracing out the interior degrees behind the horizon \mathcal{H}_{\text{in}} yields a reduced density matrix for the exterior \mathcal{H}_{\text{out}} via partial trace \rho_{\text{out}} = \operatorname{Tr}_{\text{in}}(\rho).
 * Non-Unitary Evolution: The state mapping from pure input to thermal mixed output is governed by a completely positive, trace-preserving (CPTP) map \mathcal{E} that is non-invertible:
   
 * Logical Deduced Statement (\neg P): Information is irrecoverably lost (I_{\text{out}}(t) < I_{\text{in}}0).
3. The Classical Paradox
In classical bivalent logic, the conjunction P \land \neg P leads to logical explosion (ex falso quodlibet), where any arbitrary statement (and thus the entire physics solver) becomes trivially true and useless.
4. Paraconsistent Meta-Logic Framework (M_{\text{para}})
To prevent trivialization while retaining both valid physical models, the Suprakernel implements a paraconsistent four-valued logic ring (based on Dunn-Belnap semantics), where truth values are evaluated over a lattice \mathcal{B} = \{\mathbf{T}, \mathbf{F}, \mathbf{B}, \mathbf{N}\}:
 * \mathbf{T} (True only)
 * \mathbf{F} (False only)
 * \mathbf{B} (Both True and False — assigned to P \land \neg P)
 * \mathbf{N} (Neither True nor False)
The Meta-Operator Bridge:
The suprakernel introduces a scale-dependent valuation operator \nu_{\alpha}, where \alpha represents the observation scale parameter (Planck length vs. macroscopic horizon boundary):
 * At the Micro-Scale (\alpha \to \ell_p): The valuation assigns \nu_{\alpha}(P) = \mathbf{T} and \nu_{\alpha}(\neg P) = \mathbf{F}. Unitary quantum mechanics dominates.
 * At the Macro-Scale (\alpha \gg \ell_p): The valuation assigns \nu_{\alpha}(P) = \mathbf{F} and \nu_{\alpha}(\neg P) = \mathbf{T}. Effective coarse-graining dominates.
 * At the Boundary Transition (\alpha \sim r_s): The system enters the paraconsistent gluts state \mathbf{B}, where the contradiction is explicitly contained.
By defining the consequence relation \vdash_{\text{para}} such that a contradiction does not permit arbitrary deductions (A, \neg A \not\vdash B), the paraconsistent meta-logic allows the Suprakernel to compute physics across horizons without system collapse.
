@@ -1,0 +1,29 @@
+Toy Model Specification: Resolving the Information Paradox via Paraconsistent Meta-Logic
+To formally demonstrate how the Sovereign Suprakernel contains the eighth-class paradox (the coexistence of unitary quantum evolution and non-unitary horizon information loss), we construct explicit toy models for both axiom sets and sketch the paraconsistent algebraic structure that binds them.
+1. Axiom Set A: Unitary Evolution on a Discrete Hilbert Space
+In Axiom Set A, the system operates as a finite-dimensional, discrete quantum system governed strictly by linear, norm-preserving unitary evolution.
+ * State Space: Let \mathcal{H}_A be a discrete Hilbert space spanned by orthonormal basis states \vert{}i\rangle for i \in \{1, 2, \dots, N\}.
+ * Time Evolution: The state vector \vert{}\psi(t)\rangle \in \mathcal{H}_A evolves via a global unitary operator U(t, t_0) = \exp(-i \hat{H} (t - t_0)/\hbar), where \hat{H} is a self-adjoint Hamiltonian.
+ * Information Conservation Property: For any two distinct initial states \vert{}\psi_1(0)\rangle and \vert{}\psi_2(0)\rangle, the inner product is strictly preserved:
+   
+ * Logical Deduced Statement (P): Information is indestructible (I_{\text{net}} = \text{Constant}).
+2. Axiom Set B: Classical GR Horizon & Effective Information Loss
+In Axiom Set B, the system models a macroscopic spacetime geometry containing an event horizon where external observers witness pure states collapsing into mixed thermal states due to horizon projection.
+ * State Space & Projection: Let \rho be the density matrix of the total system. Tracing out the interior degrees behind the horizon \mathcal{H}_{\text{in}} yields a reduced density matrix for the exterior \mathcal{H}_{\text{out}} via partial trace \rho_{\text{out}} = \operatorname{Tr}_{\text{in}}(\rho).
+ * Non-Unitary Evolution: The state mapping from pure input to thermal mixed output is governed by a completely positive, trace-preserving (CPTP) map \mathcal{E} that is non-invertible:
+   
+ * Logical Deduced Statement (\neg P): Information is irrecoverably lost (I_{\text{out}}(t) < I_{\text{in}}0).
+3. The Classical Paradox
+In classical bivalent logic, the conjunction P \land \neg P leads to logical explosion (ex falso quodlibet), where any arbitrary statement (and thus the entire physics solver) becomes trivially true and useless.
+4. Paraconsistent Meta-Logic Framework (M_{\text{para}})
+To prevent trivialization while retaining both valid physical models, the Suprakernel implements a paraconsistent four-valued logic ring (based on Dunn-Belnap semantics), where truth values are evaluated over a lattice \mathcal{B} = \{\mathbf{T}, \mathbf{F}, \mathbf{B}, \mathbf{N}\}:
+ * \mathbf{T} (True only)
+ * \mathbf{F} (False only)
+ * \mathbf{B} (Both True and False — assigned to P \land \neg P)
+ * \mathbf{N} (Neither True nor False)
+The Meta-Operator Bridge:
+The suprakernel introduces a scale-dependent valuation operator \nu_{\alpha}, where \alpha represents the observation scale parameter (Planck length vs. macroscopic horizon boundary):
+ * At the Micro-Scale (\alpha \to \ell_p): The valuation assigns \nu_{\alpha}(P) = \mathbf{T} and \nu_{\alpha}(\neg P) = \mathbf{F}. Unitary quantum mechanics dominates.
+ * At the Macro-Scale (\alpha \gg \ell_p): The valuation assigns \nu_{\alpha}(P) = \mathbf{F} and \nu_{\alpha}(\neg P) = \mathbf{T}. Effective coarse-graining dominates.
+ * At the Boundary Transition (\alpha \sim r_s): The system enters the paraconsistent gluts state \mathbf{B}, where the contradiction is explicitly contained.
+By defining the consequence relation \vdash_{\text{para}} such that a contradiction does not permit arbitrary deductions (A, \neg A \not\vdash B), the paraconsistent meta-logic allows the Suprakernel to compute physics across horizons without system collapse.

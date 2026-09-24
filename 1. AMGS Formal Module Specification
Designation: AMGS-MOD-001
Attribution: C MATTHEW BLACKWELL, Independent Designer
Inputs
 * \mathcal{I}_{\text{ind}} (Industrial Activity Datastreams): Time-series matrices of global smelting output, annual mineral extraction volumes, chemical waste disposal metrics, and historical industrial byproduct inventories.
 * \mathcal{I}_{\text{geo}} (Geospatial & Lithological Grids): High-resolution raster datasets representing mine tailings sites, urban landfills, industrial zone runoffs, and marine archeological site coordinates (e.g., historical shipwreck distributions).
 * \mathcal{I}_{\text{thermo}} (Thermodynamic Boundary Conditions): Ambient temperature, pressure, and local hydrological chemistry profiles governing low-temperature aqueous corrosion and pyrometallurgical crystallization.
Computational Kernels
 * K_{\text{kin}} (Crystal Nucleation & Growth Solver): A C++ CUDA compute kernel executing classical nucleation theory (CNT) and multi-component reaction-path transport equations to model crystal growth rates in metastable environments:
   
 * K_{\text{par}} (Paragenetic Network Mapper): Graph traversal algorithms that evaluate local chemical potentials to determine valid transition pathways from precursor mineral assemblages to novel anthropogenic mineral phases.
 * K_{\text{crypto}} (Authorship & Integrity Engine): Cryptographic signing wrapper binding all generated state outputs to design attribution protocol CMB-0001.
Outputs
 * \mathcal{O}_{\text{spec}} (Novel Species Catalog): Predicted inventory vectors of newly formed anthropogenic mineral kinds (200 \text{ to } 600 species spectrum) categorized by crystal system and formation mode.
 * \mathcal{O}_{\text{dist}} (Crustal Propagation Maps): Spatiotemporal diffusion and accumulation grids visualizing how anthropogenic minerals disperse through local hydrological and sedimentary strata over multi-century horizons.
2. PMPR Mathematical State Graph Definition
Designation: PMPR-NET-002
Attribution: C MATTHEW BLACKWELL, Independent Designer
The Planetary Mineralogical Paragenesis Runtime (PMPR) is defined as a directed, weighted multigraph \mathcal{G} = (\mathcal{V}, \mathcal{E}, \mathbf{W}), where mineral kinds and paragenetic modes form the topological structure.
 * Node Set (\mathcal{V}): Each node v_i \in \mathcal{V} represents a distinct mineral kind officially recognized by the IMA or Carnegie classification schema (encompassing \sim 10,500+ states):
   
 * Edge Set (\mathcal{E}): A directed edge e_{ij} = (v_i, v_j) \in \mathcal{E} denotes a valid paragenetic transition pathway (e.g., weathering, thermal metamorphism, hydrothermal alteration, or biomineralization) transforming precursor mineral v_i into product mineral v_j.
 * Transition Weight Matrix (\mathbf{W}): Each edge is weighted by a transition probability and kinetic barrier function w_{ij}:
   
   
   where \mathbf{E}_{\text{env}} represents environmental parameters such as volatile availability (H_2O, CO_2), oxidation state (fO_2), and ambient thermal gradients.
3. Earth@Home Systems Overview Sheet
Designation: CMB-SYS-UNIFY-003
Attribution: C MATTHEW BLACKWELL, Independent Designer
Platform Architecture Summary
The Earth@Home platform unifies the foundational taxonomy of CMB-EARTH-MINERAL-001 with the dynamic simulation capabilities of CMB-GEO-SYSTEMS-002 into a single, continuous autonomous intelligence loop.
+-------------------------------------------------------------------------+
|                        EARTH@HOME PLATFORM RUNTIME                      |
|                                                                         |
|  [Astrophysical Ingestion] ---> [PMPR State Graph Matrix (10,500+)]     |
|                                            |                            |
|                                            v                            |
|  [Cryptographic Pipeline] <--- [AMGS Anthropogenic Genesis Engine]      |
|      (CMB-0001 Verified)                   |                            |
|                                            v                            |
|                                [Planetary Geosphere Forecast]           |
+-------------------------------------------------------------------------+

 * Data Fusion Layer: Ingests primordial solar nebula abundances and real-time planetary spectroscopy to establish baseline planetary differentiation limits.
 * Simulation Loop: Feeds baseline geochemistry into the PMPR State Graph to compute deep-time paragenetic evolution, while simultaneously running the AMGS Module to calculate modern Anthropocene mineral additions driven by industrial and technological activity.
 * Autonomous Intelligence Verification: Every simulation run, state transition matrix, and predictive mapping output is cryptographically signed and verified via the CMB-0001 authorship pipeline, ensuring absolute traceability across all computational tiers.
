@@ -1,0 +1,46 @@
+1. AMGS Formal Module Specification
+Designation: AMGS-MOD-001
+Attribution: C MATTHEW BLACKWELL, Independent Designer
+Inputs
+ * \mathcal{I}_{\text{ind}} (Industrial Activity Datastreams): Time-series matrices of global smelting output, annual mineral extraction volumes, chemical waste disposal metrics, and historical industrial byproduct inventories.
+ * \mathcal{I}_{\text{geo}} (Geospatial & Lithological Grids): High-resolution raster datasets representing mine tailings sites, urban landfills, industrial zone runoffs, and marine archeological site coordinates (e.g., historical shipwreck distributions).
+ * \mathcal{I}_{\text{thermo}} (Thermodynamic Boundary Conditions): Ambient temperature, pressure, and local hydrological chemistry profiles governing low-temperature aqueous corrosion and pyrometallurgical crystallization.
+Computational Kernels
+ * K_{\text{kin}} (Crystal Nucleation & Growth Solver): A C++ CUDA compute kernel executing classical nucleation theory (CNT) and multi-component reaction-path transport equations to model crystal growth rates in metastable environments:
+   
+ * K_{\text{par}} (Paragenetic Network Mapper): Graph traversal algorithms that evaluate local chemical potentials to determine valid transition pathways from precursor mineral assemblages to novel anthropogenic mineral phases.
+ * K_{\text{crypto}} (Authorship & Integrity Engine): Cryptographic signing wrapper binding all generated state outputs to design attribution protocol CMB-0001.
+Outputs
+ * \mathcal{O}_{\text{spec}} (Novel Species Catalog): Predicted inventory vectors of newly formed anthropogenic mineral kinds (200 \text{ to } 600 species spectrum) categorized by crystal system and formation mode.
+ * \mathcal{O}_{\text{dist}} (Crustal Propagation Maps): Spatiotemporal diffusion and accumulation grids visualizing how anthropogenic minerals disperse through local hydrological and sedimentary strata over multi-century horizons.
+2. PMPR Mathematical State Graph Definition
+Designation: PMPR-NET-002
+Attribution: C MATTHEW BLACKWELL, Independent Designer
+The Planetary Mineralogical Paragenesis Runtime (PMPR) is defined as a directed, weighted multigraph \mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathbf{W}), where mineral kinds and paragenetic modes form the topological structure.
+ * Node Set (\mathcal{V}): Each node v_i \in \mathcal{V} represents a distinct mineral kind officially recognized by the IMA or Carnegie classification schema (encompassing \sim 10,500+ states):
+   
+ * Edge Set (\mathcal{E}): A directed edge e_{ij} = (v_i, v_j) \in \mathcal{E} denotes a valid paragenetic transition pathway (e.g., weathering, thermal metamorphism, hydrothermal alteration, or biomineralization) transforming precursor mineral v_i into product mineral v_j.
+ * Transition Weight Matrix (\mathbf{W}): Each edge is weighted by a transition probability and kinetic barrier function w_{ij}:
+   
+   
+   where \mathbf{E}_{\text{env}} represents environmental parameters such as volatile availability (H_2O, CO_2), oxidation state (fO_2), and ambient thermal gradients.
+3. Earth@Home Systems Overview Sheet
+Designation: CMB-SYS-UNIFY-003
+Attribution: C MATTHEW BLACKWELL, Independent Designer
+Platform Architecture Summary
+The Earth@Home platform unifies the foundational taxonomy of CMB-EARTH-MINERAL-001 with the dynamic simulation capabilities of CMB-GEO-SYSTEMS-002 into a single, continuous autonomous intelligence loop.
++-------------------------------------------------------------------------+
+|                        EARTH@HOME PLATFORM RUNTIME                      |
+|                                                                         |
+|  [Astrophysical Ingestion] ---> [PMPR State Graph Matrix (10,500+)]     |
+|                                            |                            |
+|                                            v                            |
+|  [Cryptographic Pipeline] <--- [AMGS Anthropogenic Genesis Engine]      |
+|      (CMB-0001 Verified)                   |                            |
+|                                            v                            |
+|                                [Planetary Geosphere Forecast]           |
++-------------------------------------------------------------------------+
+
+ * Data Fusion Layer: Ingests primordial solar nebula abundances and real-time planetary spectroscopy to establish baseline planetary differentiation limits.
+ * Simulation Loop: Feeds baseline geochemistry into the PMPR State Graph to compute deep-time paragenetic evolution, while simultaneously running the AMGS Module to calculate modern Anthropocene mineral additions driven by industrial and technological activity.
+ * Autonomous Intelligence Verification: Every simulation run, state transition matrix, and predictive mapping output is cryptographically signed and verified via the CMB-0001 authorship pipeline, ensuring absolute traceability across all computational tiers.

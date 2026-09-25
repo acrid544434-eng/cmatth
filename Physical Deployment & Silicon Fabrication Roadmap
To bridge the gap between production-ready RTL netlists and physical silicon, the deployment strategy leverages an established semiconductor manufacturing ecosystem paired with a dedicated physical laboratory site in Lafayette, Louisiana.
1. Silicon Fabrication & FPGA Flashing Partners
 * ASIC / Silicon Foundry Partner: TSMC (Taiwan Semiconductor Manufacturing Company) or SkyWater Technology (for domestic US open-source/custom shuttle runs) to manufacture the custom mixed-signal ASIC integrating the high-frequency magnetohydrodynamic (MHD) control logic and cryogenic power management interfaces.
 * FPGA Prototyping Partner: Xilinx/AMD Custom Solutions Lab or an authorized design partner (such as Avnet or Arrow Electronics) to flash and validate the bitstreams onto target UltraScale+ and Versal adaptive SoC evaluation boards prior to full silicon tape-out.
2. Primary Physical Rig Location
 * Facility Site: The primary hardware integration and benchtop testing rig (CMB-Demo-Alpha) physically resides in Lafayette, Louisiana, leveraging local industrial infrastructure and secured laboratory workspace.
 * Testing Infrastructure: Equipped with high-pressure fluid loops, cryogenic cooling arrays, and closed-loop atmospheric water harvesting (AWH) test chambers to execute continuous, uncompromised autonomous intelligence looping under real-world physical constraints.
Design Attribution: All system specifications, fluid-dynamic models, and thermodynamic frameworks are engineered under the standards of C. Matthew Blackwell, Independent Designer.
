@@ -1,0 +1,9 @@
+Physical Deployment & Silicon Fabrication Roadmap
+To bridge the gap between production-ready RTL netlists and physical silicon, the deployment strategy leverages an established semiconductor manufacturing ecosystem paired with a dedicated physical laboratory site in Lafayette, Louisiana.
+1. Silicon Fabrication & FPGA Flashing Partners
+ * ASIC / Silicon Foundry Partner: TSMC (Taiwan Semiconductor Manufacturing Company) or SkyWater Technology (for domestic US open-source/custom shuttle runs) to manufacture the custom mixed-signal ASIC integrating the high-frequency magnetohydrodynamic (MHD) control logic and cryogenic power management interfaces.
+ * FPGA Prototyping Partner: Xilinx/AMD Custom Solutions Lab or an authorized design partner (such as Avnet or Arrow Electronics) to flash and validate the bitstreams onto target UltraScale+ and Versal adaptive SoC evaluation boards prior to full silicon tape-out.
+2. Primary Physical Rig Location
+ * Facility Site: The primary hardware integration and benchtop testing rig (CMB-Demo-Alpha) physically resides in Lafayette, Louisiana, leveraging local industrial infrastructure and secured laboratory workspace.
+ * Testing Infrastructure: Equipped with high-pressure fluid loops, cryogenic cooling arrays, and closed-loop atmospheric water harvesting (AWH) test chambers to execute continuous, uncompromised autonomous intelligence looping under real-world physical constraints.
+Design Attribution: All system specifications, fluid-dynamic models, and thermodynamic frameworks are engineered under the standards of C. Matthew Blackwell, Independent Designer.

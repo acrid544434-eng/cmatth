@@ -1,0 +1,142 @@
+\section{Control Loop Block Diagrams}
+
+\subsection{Overview}
+This section provides formal block diagrams illustrating the closed-loop control architecture of the Niagara-Logic Hydrodynamic Control Fabric. 
+Each figure is structured for scientific publication and may be replaced with rendered diagrams during final production.
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 7: Closed-Loop Hydrodynamic Control Architecture}\\[10pt]
+
+\begin{tabular}{c}
+\textbf{Telemetry Ingestion Block} \\
+IoT Sensors \quad Hydrostatic Pressure \quad Soil Moisture \quad Meteorological Streams \\
+$\downarrow$ \\[6pt]
+
+\textbf{Encryption \& Transport Block} \\
+ML-KEM-1024 \quad AES-256-GCM \\
+Zero-Trust Node Communication \\
+$\downarrow$ \\[6pt]
+
+\textbf{State Estimation Block (FPGA/GPU)} \\
+Shallow-Water PDE Solvers \\
+Surrogate CFD Models (FP4/FP6 Precision) \\
+Sub-Second State Forecasting \\
+$\downarrow$ \\[6pt]
+
+\textbf{Constraint Optimization Block} \\
+Structural Stress Limits \\
+Ecological Flow Baselines \\
+Retention Threshold Constraints \\
+Risk-Minimization Heuristics \\
+$\downarrow$ \\[6pt]
+
+\textbf{Actuation Block} \\
+Reversible Pump Commands \\
+Variable Weir Position Commands \\
+Permanent Spillway Adjustments \\
+$\downarrow$ \\[6pt]
+
+\textbf{Verification Block} \\
+Downstream Flow Meters \\
+Hydrostatic Pressure Feedback \\
+Model Error Measurement \\
+$\downarrow$ \\[6pt]
+
+\textbf{Self-Calibration Block} \\
+Surrogate Weight Updates \\
+Solver Coefficient Adjustments \\
+Continuous Model Refinement \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Block diagram of the closed-loop hydrodynamic control architecture.}
+\label{fig:control_loop_block}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 8: Control Signal Routing Diagram}\\[10pt]
+
+\begin{tabular}{c}
+\textbf{Sensor Input Block} \\
+Hydrological Telemetry \\
+Atmospheric Telemetry \\
+Astrophysical Telemetry \\
+$\downarrow$ \\[6pt]
+
+\textbf{Compute Block} \\
+FPGA Nodes \quad GPU Nodes \\
+High-Speed NVLink Interconnect \\
+$\downarrow$ \\[6pt]
+
+\textbf{Decision Block} \\
+Constraint Solvers \\
+Policy Engines \\
+Safety Invariant Checkers \\
+$\downarrow$ \\[6pt]
+
+\textbf{Actuation Block} \\
+Pump Control Channels \\
+Weir Position Channels \\
+Spillway Gate Channels \\
+$\downarrow$ \\[6pt]
+
+\textbf{Feedback Block} \\
+Downstream Flow Telemetry \\
+Hydrostatic Pressure Feedback \\
+Model Error Signals \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Routing of control signals through the cyber-physical control fabric.}
+\label{fig:signal_routing}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 9: Basin-Level Control Loop}\\[10pt]
+
+\begin{tabular}{c}
+\textbf{Upper Basin Controller} \\
+Retention Level Monitoring \\
+Pump Routing Logic \\
+Pre-Flow Spillway Control \\
+$\downarrow$ \\[6pt]
+
+\textbf{Mid-Tier Controller} \\
+Labyrinth Weir Micro-Adjustment \\
+Structural Stress Distribution \\
+Reversible Pump Load Balancing \\
+$\downarrow$ \\[6pt]
+
+\textbf{Lower Basin Controller} \\
+Discharge Flow Regulation \\
+Energy Dissipation Control \\
+Downstream Integration Logic \\
+$\downarrow$ \\[6pt]
+
+\textbf{Unified Basin Control Fabric} \\
+Cross-Tier Synchronization \\
+Hydraulic Head Equalization \\
+Continuous Spill Logic Enforcement \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Block diagram of basin-level control loops across the multi-tier architecture.}
+\label{fig:bassin_control}
+\end{figure}
+
+\clearpage

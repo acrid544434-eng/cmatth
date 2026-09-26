@@ -1,0 +1,154 @@
+Here’s a focused LaTeX section you can drop into your Hybrid Scientific–Engineering White Sheet (right before \section{Validation Pathway}) to add full math derivations.
+
+`latex
+\section{Detailed Mathematical Derivations}
+
+\subsection{Governing Hydrodynamic Equations}
+
+We model each basin segment using the depth-averaged shallow-water equations. Let $h(x,t)$ be the water depth, $u(x,t)$ the horizontal velocity field, $z(x)$ the bed elevation, and $g$ gravitational acceleration.
+
+Mass conservation:
+\begin{equation}
+\frac{\partial h}{\partial t} + \nabla \cdot (h u) = q{\text{in}}(x,t) - q{\text{out}}(x,t),
+\label{eq:mass}
+\end{equation}
+where $q{\text{in}}$ and $q{\text{out}}$ represent controlled inflow and outflow via pumps and weirs.
+
+Momentum conservation:
+\begin{equation}
+\frac{\partial (h u)}{\partial t}
++ \nabla \cdot \left( h u \otimes u + \frac{1}{2} g h^2 I \right)
+= - g h \nabla z - \taub(h,u) + F{\text{ctrl}}(x,t),
+\label{eq:momentum}
+\end{equation}
+where $\taub$ is bed friction and $F{\text{ctrl}}$ encodes control forces induced by actuation (pumps, gates, weirs).
+
+\subsection{Reduced-Order Basin State Model}
+
+For control design, we aggregate each basin tier into lumped states. Let
+\begin{equation}
+x(t) = 
+\begin{bmatrix}
+h_1(t) \\
+h_2(t) \\
+\vdots \\
+h_n(t)
+\end{bmatrix},
+\qquad
+u(t) =
+\begin{bmatrix}
+p_1(t) \\
+w_1(t) \\
+\vdots \\
+p_m(t) \\
+w_m(t)
+\end{bmatrix},
+\end{equation}
+where $hi$ are effective water levels in each compartment, and $pj, w_j$ are pump rates and weir positions.
+
+The dynamics can be written as:
+\begin{equation}
+\dot{x}(t) = f(x(t)) + B u(t) + d(t),
+\label{eq:lumped}
+\end{equation}
+where $f(x)$ encodes gravity-driven flows and spillway behavior, $B$ is the actuation matrix, and $d(t)$ represents exogenous storm forcing.
+
+\subsection{Control Law and Closed-Loop System}
+
+We define a state-feedback control law:
+\begin{equation}
+u(t) = K x(t),
+\label{eq:control_law}
+\end{equation}
+where $K$ is designed to enforce safe basin levels and flow regimes.
+
+Substituting \eqref{eq:control_law} into \eqref{eq:lumped}:
+\begin{equation}
+\dot{x}(t) = f(x(t)) + B K x(t) + d(t).
+\label{eq:closed_loop}
+\end{equation}
+
+Linearizing around an operating point $x^\star$ with $d(t)$ treated as a bounded disturbance:
+\begin{equation}
+\dot{\tilde{x}}(t) = A \tilde{x}(t) + \tilde{d}(t),
+\end{equation}
+where $\tilde{x} = x - x^\star$, and $A = \left.\frac{\partial f}{\partial x}\right|_{x^\star} + B K$.
+
+\subsection{Lyapunov Stability Derivation}
+
+We seek a quadratic Lyapunov function:
+\begin{equation}
+V(\tilde{x}) = \tilde{x}^\top P \tilde{x},
+\end{equation}
+with $P = P^\top > 0$.
+
+Its time derivative along trajectories:
+\begin{equation}
+\dot{V} = \tilde{x}^\top (A^\top P + P A) \tilde{x} + 2 \tilde{x}^\top P \tilde{d}(t).
+\end{equation}
+
+If we choose $P$ such that:
+\begin{equation}
+A^\top P + P A = -Q,
+\qquad Q = Q^\top > 0,
+\end{equation}
+then:
+\begin{equation}
+\dot{V} = - \tilde{x}^\top Q \tilde{x} + 2 \tilde{x}^\top P \tilde{d}(t).
+\end{equation}
+
+For bounded disturbances $\|\tilde{d}(t)\| \leq \delta$, we obtain:
+\begin{equation}
+\dot{V} \leq - \lambda_{\min}(Q) \|\tilde{x}\|^2 + 2 \|P\| \|\tilde{x}\| \delta.
+\end{equation}
+
+This yields input-to-state stability (ISS) bounds and guarantees asymptotic convergence when disturbances vanish, or bounded deviation under persistent forcing.
+
+\subsection{Overshoot and Actuation Latency Bounds}
+
+Let $hi(t)$ be the level in a critical compartment with safe threshold $h{\text{safe},i}$. From \eqref{eq:lumped}, for that compartment:
+\begin{equation}
+\dot{h}i(t) = fi(x(t)) + bi^\top u(t) + di(t).
+\end{equation}
+
+Assuming maximum inflow $di(t) \leq d{\max}$ and maximum actuation rate $|bi^\top u(t)| \leq u{\max}$, we can bound:
+\begin{equation}
+\dot{h}i(t) \leq fi^{\max} + u{\max} + d{\max}.
+\end{equation}
+
+If actuation latency is $\tau_{\max}$, the worst-case level increase over that interval is:
+\begin{equation}
+\Delta hi \leq (fi^{\max} + u{\max} + d{\max}) \tau_{\max}.
+\end{equation}
+
+Imposing:
+\begin{equation}
+hi(0) + \Delta hi \leq h_{\text{safe},i}
+\end{equation}
+yields an explicit design constraint on $\tau_{\max}$:
+\begin{equation}
+\tau{\max} \leq \frac{h{\text{safe},i} - hi(0)}{fi^{\max} + u{\max} + d{\max}}.
+\end{equation}
+
+\subsection{Safety Invariants Under Telemetry Failure}
+
+In the event of telemetry loss, the control law is replaced by a static fail-safe configuration:
+\begin{equation}
+u{\text{fail}} = K{\text{safe}},
+\end{equation}
+where $K_{\text{safe}}$ encodes conservative spillway opening, low-power continuous pumping, and safe weir positions.
+
+The dynamics become:
+\begin{equation}
+\dot{x}(t) = f(x(t)) + B K_{\text{safe}} + d(t).
+\end{equation}
+
+We design $K_{\text{safe}}$ such that:
+\begin{equation}
+\frac{\partial h_i}{\partial t} \leq 0 \quad \text{for all critical compartments } i,
+\end{equation}
+under worst-case $d(t)$, ensuring monotone non-increase of critical levels and preventing uncontrolled surge.
+
+These conditions can be encoded as linear or nonlinear inequality constraints on $K_{\text{safe}}$ and verified using formal methods (e.g., model checking or barrier certificates).
+
+`

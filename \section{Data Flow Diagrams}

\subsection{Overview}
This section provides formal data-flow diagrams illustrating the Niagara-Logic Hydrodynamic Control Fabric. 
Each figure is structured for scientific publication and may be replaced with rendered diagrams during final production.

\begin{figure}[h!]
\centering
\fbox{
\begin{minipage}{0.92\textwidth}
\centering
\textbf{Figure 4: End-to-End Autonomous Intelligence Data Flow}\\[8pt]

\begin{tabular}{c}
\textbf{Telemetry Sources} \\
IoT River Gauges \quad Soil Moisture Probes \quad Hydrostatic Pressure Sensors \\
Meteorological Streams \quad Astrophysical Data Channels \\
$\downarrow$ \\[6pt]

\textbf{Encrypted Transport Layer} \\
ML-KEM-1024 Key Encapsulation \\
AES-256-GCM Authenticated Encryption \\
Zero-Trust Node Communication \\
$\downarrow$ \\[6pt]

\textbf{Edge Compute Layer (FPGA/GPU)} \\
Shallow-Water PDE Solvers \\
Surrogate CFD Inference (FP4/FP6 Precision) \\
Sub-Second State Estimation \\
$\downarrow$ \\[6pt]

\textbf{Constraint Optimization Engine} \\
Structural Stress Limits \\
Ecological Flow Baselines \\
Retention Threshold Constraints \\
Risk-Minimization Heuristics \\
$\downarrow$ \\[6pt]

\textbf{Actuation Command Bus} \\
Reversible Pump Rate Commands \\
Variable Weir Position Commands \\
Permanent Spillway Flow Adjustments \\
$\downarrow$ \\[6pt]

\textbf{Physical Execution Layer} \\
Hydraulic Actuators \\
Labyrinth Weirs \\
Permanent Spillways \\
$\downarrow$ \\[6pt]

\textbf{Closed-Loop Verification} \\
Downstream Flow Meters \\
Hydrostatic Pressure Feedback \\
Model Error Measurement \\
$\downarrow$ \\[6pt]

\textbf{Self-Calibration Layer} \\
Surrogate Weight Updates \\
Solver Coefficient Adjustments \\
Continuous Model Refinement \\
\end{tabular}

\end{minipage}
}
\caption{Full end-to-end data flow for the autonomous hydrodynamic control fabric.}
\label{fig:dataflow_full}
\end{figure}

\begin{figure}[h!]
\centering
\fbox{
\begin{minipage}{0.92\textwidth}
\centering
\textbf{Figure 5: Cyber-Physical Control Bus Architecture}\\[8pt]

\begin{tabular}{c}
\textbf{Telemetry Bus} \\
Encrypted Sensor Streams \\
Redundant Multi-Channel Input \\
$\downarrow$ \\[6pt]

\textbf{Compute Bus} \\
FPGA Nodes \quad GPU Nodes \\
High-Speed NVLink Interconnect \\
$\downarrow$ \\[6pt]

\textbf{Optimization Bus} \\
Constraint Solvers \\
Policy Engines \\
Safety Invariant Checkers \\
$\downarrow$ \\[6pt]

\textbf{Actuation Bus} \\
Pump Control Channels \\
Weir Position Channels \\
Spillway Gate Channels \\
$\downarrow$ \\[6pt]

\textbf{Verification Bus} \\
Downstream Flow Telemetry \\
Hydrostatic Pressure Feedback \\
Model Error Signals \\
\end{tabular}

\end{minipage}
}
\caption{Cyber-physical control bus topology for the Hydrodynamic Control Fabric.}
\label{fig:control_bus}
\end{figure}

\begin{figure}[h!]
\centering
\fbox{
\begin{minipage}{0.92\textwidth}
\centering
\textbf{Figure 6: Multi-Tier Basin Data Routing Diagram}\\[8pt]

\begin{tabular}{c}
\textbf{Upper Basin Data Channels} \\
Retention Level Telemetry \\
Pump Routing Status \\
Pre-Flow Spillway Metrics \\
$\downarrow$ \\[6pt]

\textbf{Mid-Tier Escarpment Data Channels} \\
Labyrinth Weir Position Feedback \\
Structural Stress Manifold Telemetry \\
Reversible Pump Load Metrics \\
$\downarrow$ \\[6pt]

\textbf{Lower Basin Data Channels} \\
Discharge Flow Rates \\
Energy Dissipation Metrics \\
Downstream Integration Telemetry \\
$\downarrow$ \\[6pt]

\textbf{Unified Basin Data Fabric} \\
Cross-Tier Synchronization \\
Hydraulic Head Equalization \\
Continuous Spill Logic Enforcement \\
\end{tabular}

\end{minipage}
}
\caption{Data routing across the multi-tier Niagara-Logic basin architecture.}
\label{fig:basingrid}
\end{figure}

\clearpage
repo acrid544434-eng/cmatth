@@ -1,0 +1,149 @@
+\section{Data Flow Diagrams}
+
+\subsection{Overview}
+This section provides formal data-flow diagrams illustrating the Niagara-Logic Hydrodynamic Control Fabric. 
+Each figure is structured for scientific publication and may be replaced with rendered diagrams during final production.
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 4: End-to-End Autonomous Intelligence Data Flow}\\[8pt]
+
+\begin{tabular}{c}
+\textbf{Telemetry Sources} \\
+IoT River Gauges \quad Soil Moisture Probes \quad Hydrostatic Pressure Sensors \\
+Meteorological Streams \quad Astrophysical Data Channels \\
+$\downarrow$ \\[6pt]
+
+\textbf{Encrypted Transport Layer} \\
+ML-KEM-1024 Key Encapsulation \\
+AES-256-GCM Authenticated Encryption \\
+Zero-Trust Node Communication \\
+$\downarrow$ \\[6pt]
+
+\textbf{Edge Compute Layer (FPGA/GPU)} \\
+Shallow-Water PDE Solvers \\
+Surrogate CFD Inference (FP4/FP6 Precision) \\
+Sub-Second State Estimation \\
+$\downarrow$ \\[6pt]
+
+\textbf{Constraint Optimization Engine} \\
+Structural Stress Limits \\
+Ecological Flow Baselines \\
+Retention Threshold Constraints \\
+Risk-Minimization Heuristics \\
+$\downarrow$ \\[6pt]
+
+\textbf{Actuation Command Bus} \\
+Reversible Pump Rate Commands \\
+Variable Weir Position Commands \\
+Permanent Spillway Flow Adjustments \\
+$\downarrow$ \\[6pt]
+
+\textbf{Physical Execution Layer} \\
+Hydraulic Actuators \\
+Labyrinth Weirs \\
+Permanent Spillways \\
+$\downarrow$ \\[6pt]
+
+\textbf{Closed-Loop Verification} \\
+Downstream Flow Meters \\
+Hydrostatic Pressure Feedback \\
+Model Error Measurement \\
+$\downarrow$ \\[6pt]
+
+\textbf{Self-Calibration Layer} \\
+Surrogate Weight Updates \\
+Solver Coefficient Adjustments \\
+Continuous Model Refinement \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Full end-to-end data flow for the autonomous hydrodynamic control fabric.}
+\label{fig:dataflow_full}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 5: Cyber-Physical Control Bus Architecture}\\[8pt]
+
+\begin{tabular}{c}
+\textbf{Telemetry Bus} \\
+Encrypted Sensor Streams \\
+Redundant Multi-Channel Input \\
+$\downarrow$ \\[6pt]
+
+\textbf{Compute Bus} \\
+FPGA Nodes \quad GPU Nodes \\
+High-Speed NVLink Interconnect \\
+$\downarrow$ \\[6pt]
+
+\textbf{Optimization Bus} \\
+Constraint Solvers \\
+Policy Engines \\
+Safety Invariant Checkers \\
+$\downarrow$ \\[6pt]
+
+\textbf{Actuation Bus} \\
+Pump Control Channels \\
+Weir Position Channels \\
+Spillway Gate Channels \\
+$\downarrow$ \\[6pt]
+
+\textbf{Verification Bus} \\
+Downstream Flow Telemetry \\
+Hydrostatic Pressure Feedback \\
+Model Error Signals \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Cyber-physical control bus topology for the Hydrodynamic Control Fabric.}
+\label{fig:control_bus}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\fbox{
+\begin{minipage}{0.92\textwidth}
+\centering
+\textbf{Figure 6: Multi-Tier Basin Data Routing Diagram}\\[8pt]
+
+\begin{tabular}{c}
+\textbf{Upper Basin Data Channels} \\
+Retention Level Telemetry \\
+Pump Routing Status \\
+Pre-Flow Spillway Metrics \\
+$\downarrow$ \\[6pt]
+
+\textbf{Mid-Tier Escarpment Data Channels} \\
+Labyrinth Weir Position Feedback \\
+Structural Stress Manifold Telemetry \\
+Reversible Pump Load Metrics \\
+$\downarrow$ \\[6pt]
+
+\textbf{Lower Basin Data Channels} \\
+Discharge Flow Rates \\
+Energy Dissipation Metrics \\
+Downstream Integration Telemetry \\
+$\downarrow$ \\[6pt]
+
+\textbf{Unified Basin Data Fabric} \\
+Cross-Tier Synchronization \\
+Hydraulic Head Equalization \\
+Continuous Spill Logic Enforcement \\
+\end{tabular}
+
+\end{minipage}
+}
+\caption{Data routing across the multi-tier Niagara-Logic basin architecture.}
+\label{fig:basingrid}
+\end{figure}
+
+\clearpage

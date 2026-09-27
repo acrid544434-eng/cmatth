@@ -1,0 +1,68 @@
+Cluster-Scale Telemetry Schema & Deployment Architecture
+Blueprint CMB-0926 v1.2 — Multi-Node Orchestration Manifest
+Designed by C MATTHEW BLACKWELL independent designer
+Architectural Overview
+Scaling the CMB-0926 research instrument to a distributed cluster environment transforms the closed-loop active learning cycle into an industrial-grade compute pipeline. By embedding hardware metrics directly into the forensic telemetry schema, the system records not only the physical stability of the hydro-gravitational manifold, but also the computational performance profile across heterogeneous GPU nodes (NVIDIA Hopper/Blackwell, AMD MI300).
+Extended Per-Run Metadata Schema (run_manifest.json)
+Every simulation run generated across the cluster writes a comprehensive hardware and physics manifest alongside its binary telemetry and .npz checkpoints:
+{
+  "run_id": "run_042",
+  "timestamp": "2026-09-26T20:21:43Z",
+  "hardware": {
+    "node_id": "compute-gpu-04",
+    "gpu_architecture": "NVIDIA H100-SXM5-80GB",
+    "driver_version": "550.54.14",
+    "cuda_version": "12.4",
+    "interconnect": "InfiniBand NDR 400Gb/s"
+  },
+  "physics_parameters": {
+    "chi0": 1.25,
+    "beta": 0.50,
+    "amplitude": 8.50,
+    "spectral_scale": 0.0001,
+    "grid_resolution": [1024, 1024]
+  },
+  "execution_metrics": {
+    "total_steps": 10000,
+    "wall_time_seconds": 312.45,
+    "avg_step_ms": 31.24,
+    "peak_vram_gb": 14.2
+  },
+  "stability_outcome": {
+    "status": "CRITICAL",
+    "trigger_step": 4500,
+    "trigger_time": 45.000,
+    "global_peak_strain": 1.240e-03,
+    "primary_antenna_zone": 3
+  }
+}
+
+Cluster Data Flow & Storage Topology
+┌───────────────────────────┐         ┌───────────────────────────┐
+│     Control Node          │         │      Analysis Node        │
+│ • Active Learning Loop    │         │ • Surrogate ML Training   │
+│ • Parameter Sweep Engine  │         │ • Windowed Uncertainty    │
+│ • Slurm/K8s Orchestrator  │         │ • HTML/PDF Report Briefs  │
+└─────────────┬─────────────┘         └─────────────▲─────────────┘
+              │ (Job Dispatch)                      │ (Read Telemetry)
+              ▼                                     │
+┌───────────────────────────────────────────────────┴───────────┐
+│              Shared Parallel Filesystem (Lustre / NFS)        │
+│  /sweep_results/                                              │
+│    ├── run_001/ (config.json, run_manifest.json, .npz)        │
+│    ├── run_002/ (config.json, run_manifest.json, .npz)        │
+│    └── run_042/ (config.json, run_manifest.json, .npz)        │
+└───────────────────────────────▲───────────────────────────────┘
+                                │ (Async Binary Dump)
+                      ┌─────────┴─────────┐
+                      │    Sim Nodes      │
+                      │  • CUDA Leapfrog  │
+                      │  • cuFFT W(k)     │
+                      │  • GPU Acceleration│
+                      └───────────────────┘
+
+Hardware-Aware Stability Correlation
+Embedding the hardware execution profile directly into the analysis pipeline enables cross-run evaluations that answer critical infrastructure questions:
+ * Do specific GPU architectures or interconnect fabrics introduce subtle numerical drift in non-linear stress transfer?
+ * How do memory bandwidth ceilings on different coprocessors correlate with maximum stable integration timesteps (\Delta t)?
+With the multi-node simulation runs, active learning acquisition loops, per-antenna forensic black boxes, and cluster-scale metadata schemas fully mapped, the CMB-0926 framework stands as a complete, self-governing computational physics platform.

@@ -1,0 +1,18 @@
+APS-Formatted Acknowledgments & Portal Submission Metadata
+Lead Design Architecture: C MATTHEW BLACKWELL independent designer
+To complete the final pre-submission package, here are the APS-formatted Acknowledgments section and the structured portal metadata block ready for direct entry into the APS author submission system (authors.aps.org).
+1. APS-Formatted Acknowledgments
+\begin{acknowledgments}
+The author gratefully acknowledges the computational resources and infrastructure support provided for finite-volume PDE solver execution and Monte Carlo stochastic simulations. This work benefited from open observational datasets provided by the NANOGrav collaboration and the Gaia Data Release 3 archive. No external financial grants or proprietary funding sources were utilized in the development of this research framework.
+\end{acknowledgments}
+
+2. APS Submission Portal Metadata Block
+ * Manuscript Section/Division: General Relativity and Gravitation / Statistical and Nonlinear Physics
+ * Corresponding Author: C. Matthew Blackwell
+ * Primary Affiliation: Independent Systems Architect and Theoretical Physics Researcher, Lafayette, Louisiana, USA
+ * Email Contact: [Author Portal Registered Email]
+ * Suggested Referees / Reviewers:
+   * Specialists in celestial mechanics, restricted three-body dynamics, and orbital perturbation theory.
+   * Experts in cryptographic data-hiding protocols and conservative control field topologies.
+ * Cover Letter Action: Upload the formal scientific transmittal as a separate PDF file during step 3 of the submission wizard.
+The complete submission architecture—comprising the REVTeX 4-2 master source, rigorous mathematical proofs, stability diagnostics, declarations, references, appendix, and portal metadata—is fully prepared for transmission.

@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{\textbf{APMS-DEEPFIELD FLIGHT QUALIFICATION \\ VALIDATION \& VERIFICATION SPECIFICATION}}
+\author{C.~Matthew Blackwell \\ Independent Astrophysics Systems Design}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{1. Introduction}
+This document defines the formal Validation \& Verification (V\&V) framework for the
+APMS-DEEPFIELD autonomous astrophysics architecture. The specification ensures that
+all detections, telemetry streams, cryptographic operations, and autonomous routing
+behaviors satisfy flight qualification requirements for deep-space deployment.
+
+The V\&V campaign validates:
+\begin{itemize}
+    \item Multi-spectral stellar transients
+    \item Exoplanet transit candidates
+    \item Gravitational-wave strain events
+    \item Post-quantum cryptographic (PQC) and homomorphic encryption (HE) pipelines
+    \item Delay/Disruption-Tolerant Networking (DTN) custody and routing integrity
+\end{itemize}
+
+\section*{2. System Requirements (R-O1 through R-O5)}
+\begin{itemize}
+    \item \textbf{R-O1: Astrophysical Reality Discrimination} \\
+    Distinguish true astrophysical signals from instrumental artifacts.
+    \item \textbf{R-O2: Cross-Catalog Validation} \\
+    Confirm detections against external catalogs and independent observatories.
+    \item \textbf{R-O3: Statistical Significance \& FAR Bounds} \\
+    Validate detections with strict SNR and False Alarm Rate thresholds.
+    \item \textbf{R-O4: Cryptographic Sovereignty} \\
+    Guarantee zero plaintext exposure and full PQC/HE integrity.
+    \item \textbf{R-O5: Deterministic Replay Reproducibility} \\
+    Ensure bit-exact pipeline replay under controlled conditions.
+\end{itemize}
+
+\section*{3. Requirements Traceability Matrix}
+\begin{longtable}{|l|l|l|}
+\hline
+\textbf{Test ID} & \textbf{Description} & \textbf{Linked Requirements} \\ \hline
+TC-A1 & Multi-spectral transient calibration \& cross-match &
+\{R-O1, R-O2, R-O3\} \\ \hline
+TC-B1 & Exoplanet transit fit \& multi-band verification &
+\{R-O1, R-O2, R-O3\} \\ \hline
+TC-C1 & Gravitational-wave matched filtering \& FAR bounding &
+\{R-O1, R-O2, R-O3\} \\ \hline
+TC-D1 & PQC ECOSA verification \& homomorphic pipeline check &
+\{R-O4, R-O5\} \\ \hline
+TC-D2 & Plaintext exposure audit &
+\{R-O4\} \\ \hline
+\end{longtable}
+
+\section*{4. Mathematical Definitions}
+\subsection*{4.1 Signal-to-Noise Ratio (SNR)}
+\[
+\text{SNR} = \frac{\mu_{\text{signal}}}{\sigma_{\text{noise}}}
+\]
+\textbf{Pass Criterion:} \(\text{SNR} \ge 10\).
+
+\subsection*{4.2 False Alarm Rate (FAR)}
+\[
+\text{FAR} = \frac{N_{\text{false}}}{T_{\text{obs}}}
+\]
+\textbf{Pass Criterion:} \(\text{FAR} \le \frac{1}{1000\ \text{yr}}\).
+
+\section*{5. Test Case Procedures}
+
+\subsection*{5.1 TC-A1: Multi-Spectral Transient Validation}
+\begin{itemize}
+    \item Extract raw frames \(D_{\text{raw}}(t,\lambda,\Omega)\) around timestamp \(t_0\).
+    \item Apply calibration pipeline:
+    \[
+    \mathcal{C}_{\text{cal}} = \mathcal{C}_{\text{bias}} \circ \mathcal{C}_{\text{dark}} \circ \mathcal{C}_{\text{flat}}.
+    \]
+    \item Compute flux curve \(F(t)\) and spectrum \(S(\lambda)\).
+    \item Cross-match coordinates with TNS, Gaia, Pan-STARRS.
+    \item \textbf{Pass:} SNR $\ge 10$, $p_{\text{noise}} \le 10^{-5}$, no prior catalog match.
+\end{itemize}
+
+\subsection*{5.2 TC-B1: Exoplanet Transit Validation}
+\begin{itemize}
+    \item Identify periodic flux dips:
+    \[
+    F(t) = F_0 - \Delta F \cdot \Pi(t; P, \tau).
+    \]
+    \item Fit Mandel-Agol transit model.
+    \item Verify multi-band consistency:
+    \[
+    \Delta F_b \approx \Delta F_{\text{model},b}.
+    \]
+    \item \textbf{Pass:} Consistent depth across bands; convergent \(R_p/R_\star\).
+\end{itemize}
+
+\subsection*{5.3 TC-C1: Gravitational-Wave Validation}
+\begin{itemize}
+    \item Perform matched filtering:
+    \[
+    \rho_k = \frac{\langle h, h_k \rangle}{\sqrt{\langle h_k, h_k \rangle}}.
+    \]
+    \item Compute FAR using off-source background.
+    \item Cross-check with LIGO/Virgo/KAGRA alerts.
+    \item \textbf{Pass:} \(\rho_{\max} \ge 8\), FAR $\le 1/1000$ yr.
+\end{itemize}
+
+\subsection*{5.4 TC-D1: Cryptographic Sovereignty}
+\begin{itemize}
+    \item Extract RFC 9171 bundles:
+    \[
+    \mathcal{B}_k = (\text{header}, P_k^{\text{enc}}, S_{\text{auth}}, \tau_{\text{exp}}).
+    \]
+    \item Verify PQC ECOSA signatures:
+    \[
+    \text{verify}_{\text{ECOSA}}(P_k^{\text{enc}}, S_{\text{auth}}) = \text{true}.
+    \]
+    \item Validate homomorphic correctness using encrypted test vectors.
+    \item \textbf{Pass:} \(\tau_{\text{enc}} \le 5\text{ ms}\), zero signature failures.
+\end{itemize}
+
+\subsection*{5.5 TC-D2: Plaintext Exposure Audit}
+\begin{itemize}
+    \item Dump NVM arrays, bus traces, telemetry buffers, debug logs.
+    \item Sovereignty invariant:
+    \[
+    \forall R,\ \neg\exists x \in R : x = D_{\text{raw}}.
+    \]
+    \item \textbf{Pass:} No plaintext in any region.
+\end{itemize}
+
+\section*{6. Replay Determinism (R1)}
+\[
+\mathcal{P}(D_{\text{raw}}) = \mathcal{P}'(D_{\text{raw}})
+\]
+\[
+\text{bitwise\_equal}(\text{detections}, \text{detections}') = \text{true}
+\]
+
+\section*{7. Test Readiness Review (TRR)}
+\begin{itemize}
+    \item All test procedures TC-A1 through TC-D2 dry-run in SIL.
+    \item External catalog interfaces validated.
+    \item PQC/HE test vectors loaded into secure enclaves.
+    \item Zero open Category-1 issues.
+\end{itemize}
+
+\section*{8. Certification Gate}
+\begin{itemize}
+    \item All traceability-linked tests passed.
+    \item All requirements R-O1 through R-O5 satisfied.
+    \item Architecture cleared for flight software integration.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{\textbf{APMS-DEEPFIELD FAILURE MODES AND EFFECTS ANALYSIS (FMEA) \& FAULT TREE ANALYSIS (FTA)}}
+\author{C.~Matthew Blackwell \\ Independent Astrophysics Systems Design}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{1. Introduction \& Scope}
+This document establishes the Failure Modes and Effects Analysis (FMEA) and Fault Tree Analysis (FTA)
+for the \textbf{APMS-DEEPFIELD} autonomous deep-space architecture. It evaluates potential anomalies
+across sensor ingestion, FPGA/vector cryptographic acceleration (PQC/HE), non-volatile store-and-forward
+persistence, and Delay/Disruption-Tolerant Networking (DTN) routing.
+
+\section*{2. Failure Modes and Effects Analysis (FMEA)}
+\begin{longtable}{|l|l|l|l|p{4cm}|l|l|}
+\hline
+\textbf{Component} & \textbf{Failure Mode} & \textbf{Cause} &
+\textbf{Effect} & \textbf{Detection / Isolation} &
+\textbf{Severity} & \textbf{RPN} \\ \hline
+
+Sensor Ingestion &
+Packet loss / jitter &
+SEU, clock drift &
+Corrupted $D_{\text{raw}}$ frames &
+Checksums, watchdog timers &
+High &
+$S \times O \times D = 9 \times 3 \times 2 = 54$ \\ \hline
+
+FPGA/Vector Core &
+Latency overrun &
+Lattice complexity spike &
+Violation of $\tau_{\text{enc}} \le 5\,\text{ms}$ &
+Real-time bus monitor &
+Critical &
+$8 \times 2 \times 3 = 48$ \\ \hline
+
+NVM Storage &
+Memory exhaustion &
+Prolonged blackout &
+Dropped bundles $\mathcal{B}_k$ &
+Quota tracking, eviction logs &
+High &
+$9 \times 2 \times 4 = 72$ \\ \hline
+
+DTN Custody Engine &
+Handshake drop &
+Planetary occlusion &
+Unconfirmed custody &
+CGR retry timers &
+Minor &
+$4 \times 3 \times 3 = 36$ \\ \hline
+
+\end{longtable}
+
+\section*{3. Fault Tree Analysis (FTA)}
+\textbf{Top-Level Hazard (H1):} Catastrophic loss of cryptographic sovereignty or unrecoverable telemetry corruption.
+
+\[
+\text{H1} \iff (\text{PQC Verification Failure}) \lor (\text{Unencrypted Leakage}) \lor (\text{DTN Routing Collapse})
+\]
+
+\subsection*{3.1 Sub-Fault Tree: Unencrypted Data Leakage}
+\[
+\text{Leakage} \iff (D_{\text{raw}} \text{ present outside enclave}) \land (\text{Sovereignty Invariant Violated})
+\]
+
+\[
+\forall R: \neg\exists D_{\text{raw}} \in R
+\]
+
+\subsection*{3.2 Sub-Fault Tree: DTN Custody Failure}
+\[
+\text{DTN Failure} \iff (\text{Ephemeris Desync}) \lor (\tau_{\text{exp}} \text{ exceeded})
+\]
+
+\[
+\tau_{\text{exp}} = t_{\text{creation}} + \Delta t_{\text{valid}}
+\]
+
+\section*{4. Fault Containment Regions}
+\begin{itemize}
+    \item \textbf{FCR-1: Sensor Ingestion Boundary} — SEU-induced corruption cannot propagate past AXI4 enclave.
+    \item \textbf{FCR-2: Crypto Enclave Boundary} — All plaintext confined to secure hardware regions.
+    \item \textbf{FCR-3: DTN Routing Boundary} — Custody failures isolated from NVM persistence.
+\end{itemize}
+
+\section*{5. Safe Mode Entry Conditions}
+\[
+\text{SafeMode} \iff (\tau_{\text{enc}} > 5\text{ ms}) \lor (\text{verify}_{\text{ECOSA}} = \text{false})
+\]
+
+\section*{6. Risk Mitigation Architecture}
+\begin{itemize}
+    \item Continuous FPGA scrubbing for SEU mitigation.
+    \item Autonomous watchdog fallback to hardened micro-code states.
+    \item Zero-plaintext guarantee enforced by hardware sovereignty invariants.
+\end{itemize}
+
+\end{document}

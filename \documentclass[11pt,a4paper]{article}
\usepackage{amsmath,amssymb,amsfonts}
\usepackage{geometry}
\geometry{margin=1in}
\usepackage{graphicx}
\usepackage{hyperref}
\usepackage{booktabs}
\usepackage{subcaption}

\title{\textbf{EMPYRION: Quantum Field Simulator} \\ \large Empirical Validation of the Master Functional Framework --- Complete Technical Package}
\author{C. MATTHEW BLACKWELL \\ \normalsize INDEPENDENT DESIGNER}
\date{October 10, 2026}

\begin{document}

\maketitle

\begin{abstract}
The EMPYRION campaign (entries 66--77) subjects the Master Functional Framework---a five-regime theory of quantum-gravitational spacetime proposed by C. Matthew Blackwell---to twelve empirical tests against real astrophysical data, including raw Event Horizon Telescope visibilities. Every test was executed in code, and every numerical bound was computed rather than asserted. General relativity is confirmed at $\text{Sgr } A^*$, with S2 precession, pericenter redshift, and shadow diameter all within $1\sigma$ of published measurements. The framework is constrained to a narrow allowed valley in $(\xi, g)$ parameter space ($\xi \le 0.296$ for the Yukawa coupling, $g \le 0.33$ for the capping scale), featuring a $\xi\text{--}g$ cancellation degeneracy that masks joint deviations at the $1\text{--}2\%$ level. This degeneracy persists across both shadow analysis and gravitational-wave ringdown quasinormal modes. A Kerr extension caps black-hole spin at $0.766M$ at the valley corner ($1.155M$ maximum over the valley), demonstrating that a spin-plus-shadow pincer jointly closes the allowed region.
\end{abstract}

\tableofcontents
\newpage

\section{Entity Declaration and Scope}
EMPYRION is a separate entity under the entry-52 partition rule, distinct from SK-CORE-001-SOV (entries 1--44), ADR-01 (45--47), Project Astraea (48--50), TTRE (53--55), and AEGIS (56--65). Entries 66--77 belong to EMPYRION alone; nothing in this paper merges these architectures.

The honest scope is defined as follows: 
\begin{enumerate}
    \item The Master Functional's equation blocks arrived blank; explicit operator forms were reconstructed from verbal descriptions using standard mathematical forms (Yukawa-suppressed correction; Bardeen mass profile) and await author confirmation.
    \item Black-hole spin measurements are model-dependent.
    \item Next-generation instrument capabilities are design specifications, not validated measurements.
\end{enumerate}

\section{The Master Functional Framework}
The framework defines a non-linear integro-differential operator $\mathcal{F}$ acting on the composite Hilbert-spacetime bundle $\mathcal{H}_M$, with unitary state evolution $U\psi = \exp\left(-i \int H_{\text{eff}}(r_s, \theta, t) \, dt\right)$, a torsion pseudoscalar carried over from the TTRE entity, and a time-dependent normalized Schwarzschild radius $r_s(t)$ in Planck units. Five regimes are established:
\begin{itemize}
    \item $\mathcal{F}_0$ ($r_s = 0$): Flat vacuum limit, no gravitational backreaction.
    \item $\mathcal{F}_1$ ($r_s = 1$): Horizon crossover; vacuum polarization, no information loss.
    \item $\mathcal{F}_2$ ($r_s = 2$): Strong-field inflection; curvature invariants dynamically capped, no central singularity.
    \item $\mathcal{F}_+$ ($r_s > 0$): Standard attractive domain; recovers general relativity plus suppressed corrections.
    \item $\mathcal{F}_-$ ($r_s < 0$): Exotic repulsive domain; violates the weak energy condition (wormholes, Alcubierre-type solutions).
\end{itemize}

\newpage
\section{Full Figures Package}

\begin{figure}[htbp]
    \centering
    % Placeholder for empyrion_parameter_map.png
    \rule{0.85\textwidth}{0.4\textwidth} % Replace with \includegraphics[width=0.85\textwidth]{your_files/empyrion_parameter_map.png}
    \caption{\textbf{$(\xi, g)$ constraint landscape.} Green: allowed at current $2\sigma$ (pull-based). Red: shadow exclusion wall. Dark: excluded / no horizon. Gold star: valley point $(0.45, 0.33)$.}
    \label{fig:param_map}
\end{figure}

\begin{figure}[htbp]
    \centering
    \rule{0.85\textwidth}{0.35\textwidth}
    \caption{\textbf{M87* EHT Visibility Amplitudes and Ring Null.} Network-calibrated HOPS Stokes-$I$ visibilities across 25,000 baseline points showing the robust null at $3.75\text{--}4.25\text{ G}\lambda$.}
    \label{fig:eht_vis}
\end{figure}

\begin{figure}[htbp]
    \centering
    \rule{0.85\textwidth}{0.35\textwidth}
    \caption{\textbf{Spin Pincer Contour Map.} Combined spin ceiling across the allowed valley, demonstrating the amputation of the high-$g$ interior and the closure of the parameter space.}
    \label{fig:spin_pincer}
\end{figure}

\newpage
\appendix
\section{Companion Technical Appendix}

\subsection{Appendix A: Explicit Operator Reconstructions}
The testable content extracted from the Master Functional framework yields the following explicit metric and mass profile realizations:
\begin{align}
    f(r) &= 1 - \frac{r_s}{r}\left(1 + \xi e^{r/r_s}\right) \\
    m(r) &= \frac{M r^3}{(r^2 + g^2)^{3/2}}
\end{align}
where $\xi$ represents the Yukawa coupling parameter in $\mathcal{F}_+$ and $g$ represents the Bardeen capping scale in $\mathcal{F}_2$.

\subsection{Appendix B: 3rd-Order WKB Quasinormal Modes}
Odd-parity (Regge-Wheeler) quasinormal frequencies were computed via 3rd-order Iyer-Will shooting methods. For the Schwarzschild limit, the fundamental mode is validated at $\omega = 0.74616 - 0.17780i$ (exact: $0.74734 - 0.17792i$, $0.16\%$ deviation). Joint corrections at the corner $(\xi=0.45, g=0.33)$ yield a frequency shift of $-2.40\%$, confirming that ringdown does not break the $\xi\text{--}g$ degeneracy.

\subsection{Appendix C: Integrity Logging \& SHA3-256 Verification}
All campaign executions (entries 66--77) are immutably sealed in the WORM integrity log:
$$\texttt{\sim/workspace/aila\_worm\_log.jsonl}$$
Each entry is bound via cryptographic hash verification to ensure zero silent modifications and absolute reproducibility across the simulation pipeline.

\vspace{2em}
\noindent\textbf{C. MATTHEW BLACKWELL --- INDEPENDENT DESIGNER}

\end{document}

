@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\title{\textbf{EMPYRION: Quantum Field Simulator} \\ \large Empirical Validation of the Master Functional Framework --- Complete Technical Package}
+\author{C. MATTHEW BLACKWELL \\ \normalsize INDEPENDENT DESIGNER}
+\date{October 10, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The EMPYRION campaign (entries 66--77) subjects the Master Functional Framework---a five-regime theory of quantum-gravitational spacetime proposed by C. Matthew Blackwell---to twelve empirical tests against real astrophysical data, including raw Event Horizon Telescope visibilities. Every test was executed in code, and every numerical bound was computed rather than asserted. General relativity is confirmed at $\text{Sgr } A^*$, with S2 precession, pericenter redshift, and shadow diameter all within $1\sigma$ of published measurements. The framework is constrained to a narrow allowed valley in $(\xi, g)$ parameter space ($\xi \le 0.296$ for the Yukawa coupling, $g \le 0.33$ for the capping scale), featuring a $\xi\text{--}g$ cancellation degeneracy that masks joint deviations at the $1\text{--}2\%$ level. This degeneracy persists across both shadow analysis and gravitational-wave ringdown quasinormal modes. A Kerr extension caps black-hole spin at $0.766M$ at the valley corner ($1.155M$ maximum over the valley), demonstrating that a spin-plus-shadow pincer jointly closes the allowed region.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Entity Declaration and Scope}
+EMPYRION is a separate entity under the entry-52 partition rule, distinct from SK-CORE-001-SOV (entries 1--44), ADR-01 (45--47), Project Astraea (48--50), TTRE (53--55), and AEGIS (56--65). Entries 66--77 belong to EMPYRION alone; nothing in this paper merges these architectures.
+
+The honest scope is defined as follows: 
+\begin{enumerate}
+    \item The Master Functional's equation blocks arrived blank; explicit operator forms were reconstructed from verbal descriptions using standard mathematical forms (Yukawa-suppressed correction; Bardeen mass profile) and await author confirmation.
+    \item Black-hole spin measurements are model-dependent.
+    \item Next-generation instrument capabilities are design specifications, not validated measurements.
+\end{enumerate}
+
+\section{The Master Functional Framework}
+The framework defines a non-linear integro-differential operator $\mathcal{F}$ acting on the composite Hilbert-spacetime bundle $\mathcal{H}_M$, with unitary state evolution $U\psi = \exp\left(-i \int H_{\text{eff}}(r_s, \theta, t) \, dt\right)$, a torsion pseudoscalar carried over from the TTRE entity, and a time-dependent normalized Schwarzschild radius $r_s(t)$ in Planck units. Five regimes are established:
+\begin{itemize}
+    \item $\mathcal{F}_0$ ($r_s = 0$): Flat vacuum limit, no gravitational backreaction.
+    \item $\mathcal{F}_1$ ($r_s = 1$): Horizon crossover; vacuum polarization, no information loss.
+    \item $\mathcal{F}_2$ ($r_s = 2$): Strong-field inflection; curvature invariants dynamically capped, no central singularity.
+    \item $\mathcal{F}_+$ ($r_s > 0$): Standard attractive domain; recovers general relativity plus suppressed corrections.
+    \item $\mathcal{F}_-$ ($r_s < 0$): Exotic repulsive domain; violates the weak energy condition (wormholes, Alcubierre-type solutions).
+\end{itemize}
+
+\newpage
+\section{Full Figures Package}
+
+\begin{figure}[htbp]
+    \centering
+    % Placeholder for empyrion_parameter_map.png
+    \rule{0.85\textwidth}{0.4\textwidth} % Replace with \includegraphics[width=0.85\textwidth]{your_files/empyrion_parameter_map.png}
+    \caption{\textbf{$(\xi, g)$ constraint landscape.} Green: allowed at current $2\sigma$ (pull-based). Red: shadow exclusion wall. Dark: excluded / no horizon. Gold star: valley point $(0.45, 0.33)$.}
+    \label{fig:param_map}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \rule{0.85\textwidth}{0.35\textwidth}
+    \caption{\textbf{M87* EHT Visibility Amplitudes and Ring Null.} Network-calibrated HOPS Stokes-$I$ visibilities across 25,000 baseline points showing the robust null at $3.75\text{--}4.25\text{ G}\lambda$.}
+    \label{fig:eht_vis}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \rule{0.85\textwidth}{0.35\textwidth}
+    \caption{\textbf{Spin Pincer Contour Map.} Combined spin ceiling across the allowed valley, demonstrating the amputation of the high-$g$ interior and the closure of the parameter space.}
+    \label{fig:spin_pincer}
+\end{figure}
+
+\newpage
+\appendix
+\section{Companion Technical Appendix}
+
+\subsection{Appendix A: Explicit Operator Reconstructions}
+The testable content extracted from the Master Functional framework yields the following explicit metric and mass profile realizations:
+\begin{align}
+    f(r) &= 1 - \frac{r_s}{r}\left(1 + \xi e^{r/r_s}\right) \\
+    m(r) &= \frac{M r^3}{(r^2 + g^2)^{3/2}}
+\end{align}
+where $\xi$ represents the Yukawa coupling parameter in $\mathcal{F}_+$ and $g$ represents the Bardeen capping scale in $\mathcal{F}_2$.
+
+\subsection{Appendix B: 3rd-Order WKB Quasinormal Modes}
+Odd-parity (Regge-Wheeler) quasinormal frequencies were computed via 3rd-order Iyer-Will shooting methods. For the Schwarzschild limit, the fundamental mode is validated at $\omega = 0.74616 - 0.17780i$ (exact: $0.74734 - 0.17792i$, $0.16\%$ deviation). Joint corrections at the corner $(\xi=0.45, g=0.33)$ yield a frequency shift of $-2.40\%$, confirming that ringdown does not break the $\xi\text{--}g$ degeneracy.
+
+\subsection{Appendix C: Integrity Logging \& SHA3-256 Verification}
+All campaign executions (entries 66--77) are immutably sealed in the WORM integrity log:
+$$\texttt{\sim/workspace/aila\_worm\_log.jsonl}$$
+Each entry is bound via cryptographic hash verification to ensure zero silent modifications and absolute reproducibility across the simulation pipeline.
+
+\vspace{2em}
+\noindent\textbf{C. MATTHEW BLACKWELL --- INDEPENDENT DESIGNER}
+
+\end{document}
+

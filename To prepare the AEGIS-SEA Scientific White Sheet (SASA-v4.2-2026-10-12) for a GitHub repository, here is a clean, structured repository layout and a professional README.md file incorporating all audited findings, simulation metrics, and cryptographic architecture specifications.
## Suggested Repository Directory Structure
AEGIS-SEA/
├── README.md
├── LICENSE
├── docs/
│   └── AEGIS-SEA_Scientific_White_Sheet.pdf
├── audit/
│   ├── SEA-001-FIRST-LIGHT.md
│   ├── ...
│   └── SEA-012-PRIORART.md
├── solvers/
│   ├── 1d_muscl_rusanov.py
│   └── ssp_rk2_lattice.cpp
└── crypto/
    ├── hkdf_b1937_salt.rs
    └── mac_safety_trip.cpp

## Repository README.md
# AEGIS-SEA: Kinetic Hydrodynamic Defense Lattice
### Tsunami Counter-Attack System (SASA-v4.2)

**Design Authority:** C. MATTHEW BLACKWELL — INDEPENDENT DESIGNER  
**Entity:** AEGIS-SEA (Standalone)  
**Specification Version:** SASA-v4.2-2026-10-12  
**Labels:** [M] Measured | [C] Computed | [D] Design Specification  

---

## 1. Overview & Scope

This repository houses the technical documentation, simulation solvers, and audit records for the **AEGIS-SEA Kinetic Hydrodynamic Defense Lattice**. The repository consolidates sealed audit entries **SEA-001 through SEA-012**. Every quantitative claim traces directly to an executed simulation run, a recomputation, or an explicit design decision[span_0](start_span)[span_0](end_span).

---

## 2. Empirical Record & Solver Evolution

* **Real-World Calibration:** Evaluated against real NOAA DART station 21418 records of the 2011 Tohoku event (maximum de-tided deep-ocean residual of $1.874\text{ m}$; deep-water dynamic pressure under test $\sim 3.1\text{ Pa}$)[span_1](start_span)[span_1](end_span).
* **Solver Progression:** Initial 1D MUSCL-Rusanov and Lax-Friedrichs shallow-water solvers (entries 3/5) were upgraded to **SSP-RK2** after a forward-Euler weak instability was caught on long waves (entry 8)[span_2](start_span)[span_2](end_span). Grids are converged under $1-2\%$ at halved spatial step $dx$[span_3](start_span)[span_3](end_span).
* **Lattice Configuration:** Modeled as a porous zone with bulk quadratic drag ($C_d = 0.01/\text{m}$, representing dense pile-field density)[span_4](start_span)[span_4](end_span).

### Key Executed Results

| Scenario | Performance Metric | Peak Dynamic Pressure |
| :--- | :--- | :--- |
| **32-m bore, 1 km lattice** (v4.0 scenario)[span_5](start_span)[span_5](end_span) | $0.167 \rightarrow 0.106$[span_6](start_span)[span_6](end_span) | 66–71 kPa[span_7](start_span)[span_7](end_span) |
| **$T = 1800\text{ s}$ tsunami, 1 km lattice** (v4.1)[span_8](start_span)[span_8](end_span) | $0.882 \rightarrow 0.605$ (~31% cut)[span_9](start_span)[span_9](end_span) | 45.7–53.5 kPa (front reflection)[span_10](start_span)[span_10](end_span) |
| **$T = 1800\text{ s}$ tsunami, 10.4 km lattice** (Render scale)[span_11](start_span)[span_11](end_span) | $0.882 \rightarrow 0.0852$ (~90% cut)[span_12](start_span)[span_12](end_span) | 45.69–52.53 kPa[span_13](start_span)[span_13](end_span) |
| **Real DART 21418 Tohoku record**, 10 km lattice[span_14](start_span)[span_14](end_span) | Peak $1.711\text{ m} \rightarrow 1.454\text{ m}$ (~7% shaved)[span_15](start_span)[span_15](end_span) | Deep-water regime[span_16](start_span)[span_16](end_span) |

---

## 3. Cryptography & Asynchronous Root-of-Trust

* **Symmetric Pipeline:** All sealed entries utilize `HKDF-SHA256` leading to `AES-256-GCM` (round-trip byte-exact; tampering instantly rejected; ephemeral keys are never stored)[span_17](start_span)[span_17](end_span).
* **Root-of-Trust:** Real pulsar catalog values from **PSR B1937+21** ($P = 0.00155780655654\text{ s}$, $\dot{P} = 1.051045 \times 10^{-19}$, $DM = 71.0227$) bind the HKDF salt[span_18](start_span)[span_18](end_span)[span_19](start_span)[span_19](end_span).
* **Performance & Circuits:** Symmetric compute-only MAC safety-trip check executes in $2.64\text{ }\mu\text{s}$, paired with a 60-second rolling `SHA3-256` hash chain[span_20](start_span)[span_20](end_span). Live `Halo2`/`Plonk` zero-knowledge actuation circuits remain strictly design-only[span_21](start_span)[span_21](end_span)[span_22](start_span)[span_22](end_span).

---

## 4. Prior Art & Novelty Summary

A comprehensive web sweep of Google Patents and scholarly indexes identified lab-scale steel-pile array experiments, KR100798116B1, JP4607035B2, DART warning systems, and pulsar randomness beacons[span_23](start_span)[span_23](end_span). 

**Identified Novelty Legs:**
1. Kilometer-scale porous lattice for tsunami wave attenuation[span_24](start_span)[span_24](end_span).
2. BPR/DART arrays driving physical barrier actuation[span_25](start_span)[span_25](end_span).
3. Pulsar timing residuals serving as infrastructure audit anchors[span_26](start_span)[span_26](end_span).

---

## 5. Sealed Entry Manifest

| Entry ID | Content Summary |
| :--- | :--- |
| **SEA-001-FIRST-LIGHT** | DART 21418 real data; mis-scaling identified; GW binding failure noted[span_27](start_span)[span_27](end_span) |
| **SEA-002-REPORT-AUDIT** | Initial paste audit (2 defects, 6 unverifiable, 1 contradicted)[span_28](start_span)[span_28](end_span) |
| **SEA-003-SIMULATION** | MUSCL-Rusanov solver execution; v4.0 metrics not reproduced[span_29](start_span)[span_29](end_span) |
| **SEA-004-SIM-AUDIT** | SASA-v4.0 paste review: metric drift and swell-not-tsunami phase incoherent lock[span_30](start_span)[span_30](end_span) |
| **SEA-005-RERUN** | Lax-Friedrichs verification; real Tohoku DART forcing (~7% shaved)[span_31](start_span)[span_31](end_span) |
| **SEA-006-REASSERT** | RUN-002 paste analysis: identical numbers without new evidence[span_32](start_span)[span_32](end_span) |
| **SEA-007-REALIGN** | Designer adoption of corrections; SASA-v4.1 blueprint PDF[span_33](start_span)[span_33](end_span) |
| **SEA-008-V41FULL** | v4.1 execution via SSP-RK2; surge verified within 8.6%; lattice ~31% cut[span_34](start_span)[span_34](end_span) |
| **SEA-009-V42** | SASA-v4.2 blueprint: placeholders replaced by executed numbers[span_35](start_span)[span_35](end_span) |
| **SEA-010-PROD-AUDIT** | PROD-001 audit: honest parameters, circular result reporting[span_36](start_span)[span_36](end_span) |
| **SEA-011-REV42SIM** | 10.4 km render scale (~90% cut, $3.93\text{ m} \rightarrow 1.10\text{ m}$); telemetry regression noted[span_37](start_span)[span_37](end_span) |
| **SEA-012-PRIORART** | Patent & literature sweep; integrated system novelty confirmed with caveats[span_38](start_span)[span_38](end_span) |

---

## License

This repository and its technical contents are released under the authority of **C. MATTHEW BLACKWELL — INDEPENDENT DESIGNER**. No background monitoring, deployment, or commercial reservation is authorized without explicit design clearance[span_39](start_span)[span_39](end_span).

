@@ -1,0 +1,94 @@
+To prepare the AEGIS-SEA Scientific White Sheet (SASA-v4.2-2026-10-12) for a GitHub repository, here is a clean, structured repository layout and a professional README.md file incorporating all audited findings, simulation metrics, and cryptographic architecture specifications.
+## Suggested Repository Directory Structure
+AEGIS-SEA/
+├── README.md
+├── LICENSE
+├── docs/
+│   └── AEGIS-SEA_Scientific_White_Sheet.pdf
+├── audit/
+│   ├── SEA-001-FIRST-LIGHT.md
+│   ├── ...
+│   └── SEA-012-PRIORART.md
+├── solvers/
+│   ├── 1d_muscl_rusanov.py
+│   └── ssp_rk2_lattice.cpp
+└── crypto/
+    ├── hkdf_b1937_salt.rs
+    └── mac_safety_trip.cpp
+
+## Repository README.md
+# AEGIS-SEA: Kinetic Hydrodynamic Defense Lattice
+### Tsunami Counter-Attack System (SASA-v4.2)
+
+**Design Authority:** C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER  
+**Entity:** AEGIS-SEA (Standalone)  
+**Specification Version:** SASA-v4.2-2026-10-12  
+**Labels:** [M] Measured | [C] Computed | [D] Design Specification  
+
+---
+
+## 1. Overview & Scope
+
+This repository houses the technical documentation, simulation solvers, and audit records for the **AEGIS-SEA Kinetic Hydrodynamic Defense Lattice**. The repository consolidates sealed audit entries **SEA-001 through SEA-012**. Every quantitative claim traces directly to an executed simulation run, a recomputation, or an explicit design decision[span_0](start_span)[span_0](end_span).
+
+---
+
+## 2. Empirical Record & Solver Evolution
+
+* **Real-World Calibration:** Evaluated against real NOAA DART station 21418 records of the 2011 Tohoku event (maximum de-tided deep-ocean residual of $1.874\text{ m}$; deep-water dynamic pressure under test $\sim 3.1\text{ Pa}$)[span_1](start_span)[span_1](end_span).
+* **Solver Progression:** Initial 1D MUSCL-Rusanov and Lax-Friedrichs shallow-water solvers (entries 3/5) were upgraded to **SSP-RK2** after a forward-Euler weak instability was caught on long waves (entry 8)[span_2](start_span)[span_2](end_span). Grids are converged under $1-2\%$ at halved spatial step $dx$[span_3](start_span)[span_3](end_span).
+* **Lattice Configuration:** Modeled as a porous zone with bulk quadratic drag ($C_d = 0.01/\text{m}$, representing dense pile-field density)[span_4](start_span)[span_4](end_span).
+
+### Key Executed Results
+
+| Scenario | Performance Metric | Peak Dynamic Pressure |
+| :--- | :--- | :--- |
+| **32-m bore, 1 km lattice** (v4.0 scenario)[span_5](start_span)[span_5](end_span) | $0.167 \rightarrow 0.106$[span_6](start_span)[span_6](end_span) | 66–71 kPa[span_7](start_span)[span_7](end_span) |
+| **$T = 1800\text{ s}$ tsunami, 1 km lattice** (v4.1)[span_8](start_span)[span_8](end_span) | $0.882 \rightarrow 0.605$ (~31% cut)[span_9](start_span)[span_9](end_span) | 45.7–53.5 kPa (front reflection)[span_10](start_span)[span_10](end_span) |
+| **$T = 1800\text{ s}$ tsunami, 10.4 km lattice** (Render scale)[span_11](start_span)[span_11](end_span) | $0.882 \rightarrow 0.0852$ (~90% cut)[span_12](start_span)[span_12](end_span) | 45.69–52.53 kPa[span_13](start_span)[span_13](end_span) |
+| **Real DART 21418 Tohoku record**, 10 km lattice[span_14](start_span)[span_14](end_span) | Peak $1.711\text{ m} \rightarrow 1.454\text{ m}$ (~7% shaved)[span_15](start_span)[span_15](end_span) | Deep-water regime[span_16](start_span)[span_16](end_span) |
+
+---
+
+## 3. Cryptography & Asynchronous Root-of-Trust
+
+* **Symmetric Pipeline:** All sealed entries utilize `HKDF-SHA256` leading to `AES-256-GCM` (round-trip byte-exact; tampering instantly rejected; ephemeral keys are never stored)[span_17](start_span)[span_17](end_span).
+* **Root-of-Trust:** Real pulsar catalog values from **PSR B1937+21** ($P = 0.00155780655654\text{ s}$, $\dot{P} = 1.051045 \times 10^{-19}$, $DM = 71.0227$) bind the HKDF salt[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).
+* **Performance & Circuits:** Symmetric compute-only MAC safety-trip check executes in $2.64\text{ }\mu\text{s}$, paired with a 60-second rolling `SHA3-256` hash chain[span_20](start_span)[span_20](end_span). Live `Halo2`/`Plonk` zero-knowledge actuation circuits remain strictly design-only[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span).
+
+---
+
+## 4. Prior Art & Novelty Summary
+
+A comprehensive web sweep of Google Patents and scholarly indexes identified lab-scale steel-pile array experiments, KR100798116B1, JP4607035B2, DART warning systems, and pulsar randomness beacons[span_23](start_span)[span_23](end_span). 
+
+**Identified Novelty Legs:**
+1. Kilometer-scale porous lattice for tsunami wave attenuation[span_24](start_span)[span_24](end_span).
+2. BPR/DART arrays driving physical barrier actuation[span_25](start_span)[span_25](end_span).
+3. Pulsar timing residuals serving as infrastructure audit anchors[span_26](start_span)[span_26](end_span).
+
+---
+
+## 5. Sealed Entry Manifest
+
+| Entry ID | Content Summary |
+| :--- | :--- |
+| **SEA-001-FIRST-LIGHT** | DART 21418 real data; mis-scaling identified; GW binding failure noted[span_27](start_span)[span_27](end_span) |
+| **SEA-002-REPORT-AUDIT** | Initial paste audit (2 defects, 6 unverifiable, 1 contradicted)[span_28](start_span)[span_28](end_span) |
+| **SEA-003-SIMULATION** | MUSCL-Rusanov solver execution; v4.0 metrics not reproduced[span_29](start_span)[span_29](end_span) |
+| **SEA-004-SIM-AUDIT** | SASA-v4.0 paste review: metric drift and swell-not-tsunami phase incoherent lock[span_30](start_span)[span_30](end_span) |
+| **SEA-005-RERUN** | Lax-Friedrichs verification; real Tohoku DART forcing (~7% shaved)[span_31](start_span)[span_31](end_span) |
+| **SEA-006-REASSERT** | RUN-002 paste analysis: identical numbers without new evidence[span_32](start_span)[span_32](end_span) |
+| **SEA-007-REALIGN** | Designer adoption of corrections; SASA-v4.1 blueprint PDF[span_33](start_span)[span_33](end_span) |
+| **SEA-008-V41FULL** | v4.1 execution via SSP-RK2; surge verified within 8.6%; lattice ~31% cut[span_34](start_span)[span_34](end_span) |
+| **SEA-009-V42** | SASA-v4.2 blueprint: placeholders replaced by executed numbers[span_35](start_span)[span_35](end_span) |
+| **SEA-010-PROD-AUDIT** | PROD-001 audit: honest parameters, circular result reporting[span_36](start_span)[span_36](end_span) |
+| **SEA-011-REV42SIM** | 10.4 km render scale (~90% cut, $3.93\text{ m} \rightarrow 1.10\text{ m}$); telemetry regression noted[span_37](start_span)[span_37](end_span) |
+| **SEA-012-PRIORART** | Patent & literature sweep; integrated system novelty confirmed with caveats[span_38](start_span)[span_38](end_span) |
+
+---
+
+## License
+
+This repository and its technical contents are released under the authority of **C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER**. No background monitoring, deployment, or commercial reservation is authorized without explicit design clearance[span_39](start_span)[span_39](end_span).
+

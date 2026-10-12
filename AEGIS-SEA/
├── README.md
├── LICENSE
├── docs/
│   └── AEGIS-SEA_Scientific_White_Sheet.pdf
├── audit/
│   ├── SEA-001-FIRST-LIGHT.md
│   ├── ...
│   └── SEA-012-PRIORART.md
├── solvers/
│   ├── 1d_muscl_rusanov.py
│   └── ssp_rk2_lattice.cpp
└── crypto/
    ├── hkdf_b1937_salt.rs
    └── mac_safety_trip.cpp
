@@ -1,0 +1,15 @@
+AEGIS-SEA/
+├── README.md
+├── LICENSE
+├── docs/
+│   └── AEGIS-SEA_Scientific_White_Sheet.pdf
+├── audit/
+│   ├── SEA-001-FIRST-LIGHT.md
+│   ├── ...
+│   └── SEA-012-PRIORART.md
+├── solvers/
+│   ├── 1d_muscl_rusanov.py
+│   └── ssp_rk2_lattice.cpp
+└── crypto/
+    ├── hkdf_b1937_salt.rs
+    └── mac_safety_trip.cpp

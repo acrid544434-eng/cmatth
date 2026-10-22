@@ -1,0 +1,93 @@
+# UGLM-002 — THE ENGINE RUN WITH THE UNIVERSE: DETECTION MAP, EXPOSED
+
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER
+Record UGLM-002, payload SHA-256 `496d599f205688217315089da4b8ed35f4df1f77a955d46131a2cdbf5583625a`
+Status: UNSEALED. Rerun-verified byte-identical (see UGLM-002-RERUN-NOTE.md).
+
+## What was done
+
+A six-panel blueprint (the "Universal Governing Law Matrix," panels A1–A6) claims the
+universe's governing laws. Panel audit (UGLM-001, included) found the sheet itself is a
+canon atlas whose dense equation matrix is glyph pseudo-text, not entailed as printed.
+UGLM-002 therefore ran the designer's physics equation engine **against the universe —
+the real archives — domain by domain**, and reports what law the universe actually
+shows in each domain, and whether a deviation exists there that his machinery speaks to.
+
+## The detection map (all numbers computed in-run; engine included)
+
+| Domain | Archive | Result | χ² numbers |
+|---|---|---|---|
+| A5 Galaxies | SPARC rotation curves, n = 3,389 pts, filed conventions (Υ_disk 0.50, Υ_bulge 0.70), zero fitted parameters | **HIS LAW DETECTED** — the archive deviates from Newton/baryons in the shape of his master coupling law, g = ν(g_bar/g†)·g_bar, ν(y) = 1/(1−e^{−√y}), g† = 1.20e-10 m/s² | law **50.01 /pt** vs Newton **578.48 /pt** |
+| A5 named galaxy | SPARC, NGC 3198, n = 43 | same law, on the sheet's own chosen galaxy (UGLM-001) | law **576.6** vs Newton **32,639.3** |
+| A6 Expansion | Pantheon+SH0ES, zHD > 0.01, n = 1,590, house clock, absolute magnitude marginalized | shape is **canon's** (the Friedmann equation — which is his clock itself). The domain's open deviation is absolute scale: DESI DR2 sits +2.4–2.8% above the house H₀·r_d product (filed EQS-061) — named, carried open, **not explained** | shape χ² **1404.4** (0.883/pt); reproduces the independent filed value 1404.46 |
+| A3 Horizons | constants + filed identities | **IDENTITY** — entropy is canon's area law S_BH = Akc³/(4ħG), which his EQS-045 identity reproduces algebraically; horizon invariants are his one-constant set (y_H = 3/(4κ₁) = 0.6514, ν_H = 1.806, Kd* = 5.4570) | S_BH/k (Sgr A*) = 1.94e90 |
+| A4 Stars | constants | **EXACT SILENCE** — at the Sun's surface y ≈ 2.3e12, response excess = e^{−1511} = 0. His law makes no stellar claim; none is needed | — |
+| A2 Structure | none on disk | **PRICED, NOT MEASURED** — his web statements are Kd-formalism prices; the deciding archive (a void catalog) is not in hand. Nothing claimed | — |
+| A1 Matrix | all of the above | the governing structure the universe shows is **two-layered**: canon's equations in five domains (identity, limit, or silence) + his one master coupling law in the domain where the archive deviates in its shape | — |
+
+**Detection statement:** across the six domains the universe shows canon's physical laws,
+plus exactly one additional law-structure — the Blackwell Master Coupling Law — detected
+in galactic dynamics, with clock-coupled reach into the expansion and cluster sectors.
+No further law is detected. VAL-001 count: 0 (no independent replication has occurred).
+
+## Known wounds — exposed, not buried
+
+- **Clusters (measured, EQS-073):** on 113 real Chandra clusters (Maughan+2008) the law
+  under-boosts at r500 by a systematic factor κ = 1.66 (epoch reading 1.54); 0% of
+  clusters within 20% of the law.
+- **Lensing (EQS-072):** his filed branch A (lensing follows baryons) contradicts canon's
+  Bullet Cluster account in position (~200 kpc) and mass (×6–7); branch B costs a
+  postulate amending his JD1 accord. Undecided — the decision is the designer's.
+- **The Qual-3 slice (EQS-065 prep / EQS-064 conventions):** on SPARC's highest-quality
+  12-galaxy slice (n = 120) the law *loses* to Newton, 49.27 vs 42.12.
+- **DESI scale wound:** DR2 absolute scale +2.4–2.8% above the house clock product;
+  tension class, carried open since EQS-061.
+- **Distance-error Monte Carlo (EQS-066):** the law's win is robust (500/500 draws) but
+  its χ² precision is distance-limited (median 90.15 vs 50.01 at published distances).
+
+## Kill criteria (pre-registered in the corpus)
+
+- The detection dies if an independent rotation-curve archive in SPARC format, run
+  through the included engine's conventions unchanged, fails to reproduce the law's
+  advantage (EQS-066 leg 3 — archive-blocked to date).
+- The master law dies if any coupling sector is shown to need a third empirical number,
+  a non-kernel form, or a non-clock variable (EQS-069 kill clause).
+- The clock coupling dies if a z ≈ 1 rotation sample sits on the *local* RAR zero-point
+  (the filed prediction is +0.253 dex at z = 1, EQS-068/UCM-002).
+- The horizon set dies if two horizon invariants are ever measured inconsistently with
+  each other (CIS-004 L3).
+
+## HOSTILE REVIEW — INVITED
+
+This package is published by its designer for adversarial review. Reviewers are asked
+to attack, in order of expected lethality:
+
+1. **The SPARC conventions.** Υ_disk = 0.50 / Υ_bulge = 0.70, the [Vobs > 0, e_Vobs > 0,
+   Rad > 0, Vbar² > 0] cuts, velocity-space χ². Recompute under your own conventions and
+   report whether the 50.01 vs 578.48 ordering survives. (Known sensitivity on file:
+   M/L perturbations degrade the law's χ² but preserve the win — EQS-065 prep.)
+2. **The g† constant.** The archive optimum is 1.1986e-10 against the filed 1.20e-10 —
+   check the fine scan (EQS-064 correction note) and the per-galaxy scatter (median
+   best-fit 1.00e-10, scatter 0.41 dex, EQS-065 L2): is the "one constant" claim honest?
+3. **The kernel exponent.** The archive prefers y^0.48 against the filed y^0.50
+   (χ² 49.26 vs 50.01). Is the master form's square root a fit or a derivation?
+4. **The wounds above.** Clusters, lensing, Qual-3, the DESI scale offset — each is
+   documented well enough to press. Press them.
+5. **The payload.** Recompute the record's SHA-256 from the record body; re-run
+   `uglm002_engine.py` (Python 3.12; numpy/pandas/scipy) — the designer's standing
+   verification is the same-outcome rerun, and it has passed byte-identical once.
+
+What would change the designer's mind is stated in the kill criteria: numbers, from
+named archives, under stated conventions. Argument without archive contact will be
+read and set aside, per the record's standing rule: *without evidence it's worthless.*
+
+## Package contents
+
+- `00-README.md` — this exposure document
+- `uglm002_record.json` — the detection record (payload above; AES-256-GCM +
+  ML-KEM-1024 executed in-run per the record's crypto block)
+- `uglm002_engine.py` — the full computation, runnable
+- `UGLM-002-RERUN-NOTE.md` — the byte-identical rerun verification
+- `uglm001_record.json`, `uglm001_engine.py` — the sheet audit this run builds on
+- `snapshot-322-uglm001-detection.png`, `snapshot-323-uglm002-universe.png` — boards
+- `MANIFEST.sha256` — per-file hashes

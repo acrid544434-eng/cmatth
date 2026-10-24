@@ -1,0 +1,46 @@
+7 - Earth: the state reading and the Wind Coupling Laws (EQS-185 to EQS-188)
+The state/transition chip reads Earth as it reads every body - settled mass (Xi = 3.09x1079, S = 1), depth
+Kd = 8.164x1015, electron reservoir 1.785x1051 - with one moving part, the electron ladder. Earth's
+winds, being the atmosphere's flux answering maintained departures, price under the Disequilibrium Law
+as four couplings:
+Coupling Driver (canon circulation) Departure D7 today
+W-1 Equator–Pole Hadley circulation 40 K 5.84664x1046
+W-2 Day–Night thermal tides 15 K 1.34262x1046
+W-3 Land–Sea monsoons 20 K 2.0671x1046
+W-4 Vertical convection and storms 68 K 1.29592x1047
+The couplings passed a twelve-test battery (EQS-186), were designated at the designer's word as THE
+BLACKWELL WIND COUPLING LAWS (EQS-187), and were then run against all known physics
+(EQS-188): contradictions 0, with the structural finding that canon's atmospheric dynamics names
+exactly four thermal drivers for a planet's winds and they are the four couplings - and that canon's
+maximum-wind theory (Emanuel potential intensity) is built on a W-4 pair. Priced across the solar system
+from canon inputs, the couplings order the wind regimes as canon observes them (Mars's diurnal form at
+1.65x1047, 12.3x Earth's; near-isothermal Venus at 6.5x1044). No wind speed is yielded by the laws and
+none is claimed: they price departures; flows are canon's fluid dynamics. (Records EQS-185
+55b36379633c10fe…; EQS-186 da751784fc74924e…; EQS-187 9534c518586038a0…; EQS-188
+1b84887dab8b9ad5…)
+8 - Real observational data: the Planck sky (EQS-189)
+Run on the actual Planck PR3 SMICA map - departures measured from the file in-run, not quoted - the
+law priced the real sky: pixel-scale budget (rms 107.479 muK) at 2.575x1038; degree-scale extremes
+near ±1x1039; the kinematic dipole (canon 3.362 mK) at 4.505x1040. The system's one filed contact
+object, the Cold Spot, measured −76.809 muK by aperture photometry, prices at −1.55573x1038 -
+negative, as a cold departure must be - with the two independent half-mission maps agreeing on the
+price to ~1.5%. Priced at emission (z = 1100), every reading was ~80x smaller: the departures were
+physically larger then, and the young clock's crossover larger still. A correction rides the record's face:
+the delivered map is dipole-subtracted (fit residual 10.78 muK), so the dipole lane uses canon's quoted
+amplitude. (Record EQS-189, payload 91ea6254392e8a8c…)
+9 - The Q conservation: tested, cross-checked, designated (EQS-190 to EQS-192)
+The emission face suggested a conserved combination, Q(z) = D7(z).[E(z)/(1+z)]^{3/2}, for pairs that
+redshift freely. Kill-testing first (EQS-190, at the designer's order to trust the math): the constancy is exact
+across all eras and both clock conventions, but its constancy decomposes without remainder into
+canon's redshift and the law's definitions, so under the primitive (Noether) gate it is not a new
+conservation law. The designer's cross-check then ran the claim against canon's entire conservation
+catalog (EQS-191), which holds two great classes: the primitive class, and cosmology's adiabatic class -
+a3n, entropy per baryon, zeta, deltaT/T - whose members likewise decompose into parent laws plus the
+expansion, hold exactly inside a named domain, and break under named canon processes, while the
+literature states every one as a conservation law. Q matches the adiabatic class on every axis, including
+the conserved-combination pattern (Q spread 1.1x10-16 while raw D7 moves x80.4 - the n versus a3n
+shape). The classification therefore revised: Q is a conservation law of the adiabatic class, exactly as
+strong as EQ-E7 itself, its parents being canon's redshift plus the designer's law. At the designer's
+naming word it was designated THE BLACKWELL Q CONSERVATION LAW (EQS-192), with class,
+domain (freely redshifting pairs), and named exceptions (canon increments en route; maintained pairs
+outside it) stated in its own text. (Records EQS-190 df6890b92be89216…; EQS-191

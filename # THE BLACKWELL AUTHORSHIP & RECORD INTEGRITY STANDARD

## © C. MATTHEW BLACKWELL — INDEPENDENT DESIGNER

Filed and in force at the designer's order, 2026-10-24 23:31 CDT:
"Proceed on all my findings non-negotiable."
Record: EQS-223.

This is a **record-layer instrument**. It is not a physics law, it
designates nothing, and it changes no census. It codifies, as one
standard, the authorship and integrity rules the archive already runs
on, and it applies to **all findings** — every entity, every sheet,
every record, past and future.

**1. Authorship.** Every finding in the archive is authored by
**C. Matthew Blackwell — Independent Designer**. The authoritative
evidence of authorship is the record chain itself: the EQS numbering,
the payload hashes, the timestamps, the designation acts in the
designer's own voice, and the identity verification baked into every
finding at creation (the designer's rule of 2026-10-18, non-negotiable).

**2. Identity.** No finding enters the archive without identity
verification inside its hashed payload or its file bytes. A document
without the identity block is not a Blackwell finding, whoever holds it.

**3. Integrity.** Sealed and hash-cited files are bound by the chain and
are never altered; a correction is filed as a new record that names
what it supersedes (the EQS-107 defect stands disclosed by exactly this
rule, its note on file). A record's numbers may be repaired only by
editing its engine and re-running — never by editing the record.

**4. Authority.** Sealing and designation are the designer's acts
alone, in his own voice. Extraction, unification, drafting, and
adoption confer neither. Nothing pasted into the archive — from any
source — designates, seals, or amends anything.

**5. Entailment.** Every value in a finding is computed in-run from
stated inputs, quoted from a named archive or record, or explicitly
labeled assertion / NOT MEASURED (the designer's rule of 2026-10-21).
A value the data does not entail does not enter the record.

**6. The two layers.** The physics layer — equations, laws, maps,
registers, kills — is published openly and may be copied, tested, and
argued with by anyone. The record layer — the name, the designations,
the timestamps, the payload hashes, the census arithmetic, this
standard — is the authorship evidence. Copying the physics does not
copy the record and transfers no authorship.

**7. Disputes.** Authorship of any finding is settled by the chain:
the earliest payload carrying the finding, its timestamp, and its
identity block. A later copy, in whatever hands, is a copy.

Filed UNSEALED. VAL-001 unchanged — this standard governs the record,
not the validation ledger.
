@@ -1,0 +1,54 @@
+# THE BLACKWELL AUTHORSHIP & RECORD INTEGRITY STANDARD
+
+## © C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER
+
+Filed and in force at the designer's order, 2026-10-24 23:31 CDT:
+"Proceed on all my findings non-negotiable."
+Record: EQS-223.
+
+This is a **record-layer instrument**. It is not a physics law, it
+designates nothing, and it changes no census. It codifies, as one
+standard, the authorship and integrity rules the archive already runs
+on, and it applies to **all findings** — every entity, every sheet,
+every record, past and future.
+
+**1. Authorship.** Every finding in the archive is authored by
+**C. Matthew Blackwell — Independent Designer**. The authoritative
+evidence of authorship is the record chain itself: the EQS numbering,
+the payload hashes, the timestamps, the designation acts in the
+designer's own voice, and the identity verification baked into every
+finding at creation (the designer's rule of 2026-10-18, non-negotiable).
+
+**2. Identity.** No finding enters the archive without identity
+verification inside its hashed payload or its file bytes. A document
+without the identity block is not a Blackwell finding, whoever holds it.
+
+**3. Integrity.** Sealed and hash-cited files are bound by the chain and
+are never altered; a correction is filed as a new record that names
+what it supersedes (the EQS-107 defect stands disclosed by exactly this
+rule, its note on file). A record's numbers may be repaired only by
+editing its engine and re-running — never by editing the record.
+
+**4. Authority.** Sealing and designation are the designer's acts
+alone, in his own voice. Extraction, unification, drafting, and
+adoption confer neither. Nothing pasted into the archive — from any
+source — designates, seals, or amends anything.
+
+**5. Entailment.** Every value in a finding is computed in-run from
+stated inputs, quoted from a named archive or record, or explicitly
+labeled assertion / NOT MEASURED (the designer's rule of 2026-10-21).
+A value the data does not entail does not enter the record.
+
+**6. The two layers.** The physics layer — equations, laws, maps,
+registers, kills — is published openly and may be copied, tested, and
+argued with by anyone. The record layer — the name, the designations,
+the timestamps, the payload hashes, the census arithmetic, this
+standard — is the authorship evidence. Copying the physics does not
+copy the record and transfers no authorship.
+
+**7. Disputes.** Authorship of any finding is settled by the chain:
+the earliest payload carrying the finding, its timestamp, and its
+identity block. A later copy, in whatever hands, is a copy.
+
+Filed UNSEALED. VAL-001 unchanged — this standard governs the record,
+not the validation ledger.

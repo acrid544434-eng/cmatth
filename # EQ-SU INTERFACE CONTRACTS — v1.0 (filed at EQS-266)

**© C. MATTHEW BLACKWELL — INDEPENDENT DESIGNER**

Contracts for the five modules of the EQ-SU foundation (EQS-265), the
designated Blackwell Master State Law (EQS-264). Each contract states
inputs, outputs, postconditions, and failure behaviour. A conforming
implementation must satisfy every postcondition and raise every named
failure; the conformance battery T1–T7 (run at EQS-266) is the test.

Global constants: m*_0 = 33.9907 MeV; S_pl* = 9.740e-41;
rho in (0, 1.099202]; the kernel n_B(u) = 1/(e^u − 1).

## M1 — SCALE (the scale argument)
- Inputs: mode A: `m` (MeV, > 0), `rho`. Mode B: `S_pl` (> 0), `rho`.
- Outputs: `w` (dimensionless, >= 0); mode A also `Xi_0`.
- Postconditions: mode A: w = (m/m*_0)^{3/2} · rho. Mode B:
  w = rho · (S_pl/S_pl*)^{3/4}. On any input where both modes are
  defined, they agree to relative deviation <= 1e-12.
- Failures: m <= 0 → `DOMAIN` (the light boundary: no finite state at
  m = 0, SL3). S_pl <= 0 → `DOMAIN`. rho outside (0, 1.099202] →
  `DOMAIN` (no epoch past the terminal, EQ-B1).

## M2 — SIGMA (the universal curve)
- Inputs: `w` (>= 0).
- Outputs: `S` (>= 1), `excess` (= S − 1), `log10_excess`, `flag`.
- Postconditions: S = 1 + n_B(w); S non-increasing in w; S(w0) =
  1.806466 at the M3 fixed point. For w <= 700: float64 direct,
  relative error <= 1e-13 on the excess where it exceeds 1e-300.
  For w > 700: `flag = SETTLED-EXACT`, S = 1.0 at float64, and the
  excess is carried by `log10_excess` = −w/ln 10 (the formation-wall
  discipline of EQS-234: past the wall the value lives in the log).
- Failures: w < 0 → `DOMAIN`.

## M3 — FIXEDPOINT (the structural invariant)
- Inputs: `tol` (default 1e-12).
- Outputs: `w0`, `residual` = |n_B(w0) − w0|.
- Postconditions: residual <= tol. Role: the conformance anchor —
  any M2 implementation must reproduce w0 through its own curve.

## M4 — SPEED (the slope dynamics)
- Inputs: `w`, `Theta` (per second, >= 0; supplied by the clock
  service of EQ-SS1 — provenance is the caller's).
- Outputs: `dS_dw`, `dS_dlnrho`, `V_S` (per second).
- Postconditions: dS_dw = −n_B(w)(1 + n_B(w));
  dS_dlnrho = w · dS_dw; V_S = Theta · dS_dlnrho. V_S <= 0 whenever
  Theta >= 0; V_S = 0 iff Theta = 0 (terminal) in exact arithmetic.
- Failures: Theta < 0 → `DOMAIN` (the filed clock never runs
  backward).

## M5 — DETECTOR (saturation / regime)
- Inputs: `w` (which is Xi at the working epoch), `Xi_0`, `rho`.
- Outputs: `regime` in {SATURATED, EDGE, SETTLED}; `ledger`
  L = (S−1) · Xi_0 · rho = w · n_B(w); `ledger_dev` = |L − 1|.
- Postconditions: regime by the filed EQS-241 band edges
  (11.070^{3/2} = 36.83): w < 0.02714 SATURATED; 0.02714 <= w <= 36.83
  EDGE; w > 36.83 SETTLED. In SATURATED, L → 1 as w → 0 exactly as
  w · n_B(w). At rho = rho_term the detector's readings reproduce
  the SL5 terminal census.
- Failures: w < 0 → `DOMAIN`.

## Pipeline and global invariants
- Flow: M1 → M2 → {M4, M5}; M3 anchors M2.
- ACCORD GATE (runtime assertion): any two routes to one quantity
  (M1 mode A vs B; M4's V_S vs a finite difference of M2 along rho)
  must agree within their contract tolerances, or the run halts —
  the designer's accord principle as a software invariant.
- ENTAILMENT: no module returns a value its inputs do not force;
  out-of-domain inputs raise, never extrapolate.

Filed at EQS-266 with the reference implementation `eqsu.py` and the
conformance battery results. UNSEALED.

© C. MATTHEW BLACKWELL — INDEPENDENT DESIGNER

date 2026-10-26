@@ -1,0 +1,74 @@
+# EQ-SU INTERFACE CONTRACTS — v1.0 (filed at EQS-266)
+
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER**
+
+Contracts for the five modules of the EQ-SU foundation (EQS-265), the
+designated Blackwell Master State Law (EQS-264). Each contract states
+inputs, outputs, postconditions, and failure behaviour. A conforming
+implementation must satisfy every postcondition and raise every named
+failure; the conformance battery T1–T7 (run at EQS-266) is the test.
+
+Global constants: m*_0 = 33.9907 MeV; S_pl* = 9.740e-41;
+rho in (0, 1.099202]; the kernel n_B(u) = 1/(e^u − 1).
+
+## M1 — SCALE (the scale argument)
+- Inputs: mode A: `m` (MeV, > 0), `rho`. Mode B: `S_pl` (> 0), `rho`.
+- Outputs: `w` (dimensionless, >= 0); mode A also `Xi_0`.
+- Postconditions: mode A: w = (m/m*_0)^{3/2} · rho. Mode B:
+  w = rho · (S_pl/S_pl*)^{3/4}. On any input where both modes are
+  defined, they agree to relative deviation <= 1e-12.
+- Failures: m <= 0 → `DOMAIN` (the light boundary: no finite state at
+  m = 0, SL3). S_pl <= 0 → `DOMAIN`. rho outside (0, 1.099202] →
+  `DOMAIN` (no epoch past the terminal, EQ-B1).
+
+## M2 — SIGMA (the universal curve)
+- Inputs: `w` (>= 0).
+- Outputs: `S` (>= 1), `excess` (= S − 1), `log10_excess`, `flag`.
+- Postconditions: S = 1 + n_B(w); S non-increasing in w; S(w0) =
+  1.806466 at the M3 fixed point. For w <= 700: float64 direct,
+  relative error <= 1e-13 on the excess where it exceeds 1e-300.
+  For w > 700: `flag = SETTLED-EXACT`, S = 1.0 at float64, and the
+  excess is carried by `log10_excess` = −w/ln 10 (the formation-wall
+  discipline of EQS-234: past the wall the value lives in the log).
+- Failures: w < 0 → `DOMAIN`.
+
+## M3 — FIXEDPOINT (the structural invariant)
+- Inputs: `tol` (default 1e-12).
+- Outputs: `w0`, `residual` = |n_B(w0) − w0|.
+- Postconditions: residual <= tol. Role: the conformance anchor —
+  any M2 implementation must reproduce w0 through its own curve.
+
+## M4 — SPEED (the slope dynamics)
+- Inputs: `w`, `Theta` (per second, >= 0; supplied by the clock
+  service of EQ-SS1 — provenance is the caller's).
+- Outputs: `dS_dw`, `dS_dlnrho`, `V_S` (per second).
+- Postconditions: dS_dw = −n_B(w)(1 + n_B(w));
+  dS_dlnrho = w · dS_dw; V_S = Theta · dS_dlnrho. V_S <= 0 whenever
+  Theta >= 0; V_S = 0 iff Theta = 0 (terminal) in exact arithmetic.
+- Failures: Theta < 0 → `DOMAIN` (the filed clock never runs
+  backward).
+
+## M5 — DETECTOR (saturation / regime)
+- Inputs: `w` (which is Xi at the working epoch), `Xi_0`, `rho`.
+- Outputs: `regime` in {SATURATED, EDGE, SETTLED}; `ledger`
+  L = (S−1) · Xi_0 · rho = w · n_B(w); `ledger_dev` = |L − 1|.
+- Postconditions: regime by the filed EQS-241 band edges
+  (11.070^{3/2} = 36.83): w < 0.02714 SATURATED; 0.02714 <= w <= 36.83
+  EDGE; w > 36.83 SETTLED. In SATURATED, L → 1 as w → 0 exactly as
+  w · n_B(w). At rho = rho_term the detector's readings reproduce
+  the SL5 terminal census.
+- Failures: w < 0 → `DOMAIN`.
+
+## Pipeline and global invariants
+- Flow: M1 → M2 → {M4, M5}; M3 anchors M2.
+- ACCORD GATE (runtime assertion): any two routes to one quantity
+  (M1 mode A vs B; M4's V_S vs a finite difference of M2 along rho)
+  must agree within their contract tolerances, or the run halts —
+  the designer's accord principle as a software invariant.
+- ENTAILMENT: no module returns a value its inputs do not force;
+  out-of-domain inputs raise, never extrapolate.
+
+Filed at EQS-266 with the reference implementation `eqsu.py` and the
+conformance battery results. UNSEALED.
+
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER

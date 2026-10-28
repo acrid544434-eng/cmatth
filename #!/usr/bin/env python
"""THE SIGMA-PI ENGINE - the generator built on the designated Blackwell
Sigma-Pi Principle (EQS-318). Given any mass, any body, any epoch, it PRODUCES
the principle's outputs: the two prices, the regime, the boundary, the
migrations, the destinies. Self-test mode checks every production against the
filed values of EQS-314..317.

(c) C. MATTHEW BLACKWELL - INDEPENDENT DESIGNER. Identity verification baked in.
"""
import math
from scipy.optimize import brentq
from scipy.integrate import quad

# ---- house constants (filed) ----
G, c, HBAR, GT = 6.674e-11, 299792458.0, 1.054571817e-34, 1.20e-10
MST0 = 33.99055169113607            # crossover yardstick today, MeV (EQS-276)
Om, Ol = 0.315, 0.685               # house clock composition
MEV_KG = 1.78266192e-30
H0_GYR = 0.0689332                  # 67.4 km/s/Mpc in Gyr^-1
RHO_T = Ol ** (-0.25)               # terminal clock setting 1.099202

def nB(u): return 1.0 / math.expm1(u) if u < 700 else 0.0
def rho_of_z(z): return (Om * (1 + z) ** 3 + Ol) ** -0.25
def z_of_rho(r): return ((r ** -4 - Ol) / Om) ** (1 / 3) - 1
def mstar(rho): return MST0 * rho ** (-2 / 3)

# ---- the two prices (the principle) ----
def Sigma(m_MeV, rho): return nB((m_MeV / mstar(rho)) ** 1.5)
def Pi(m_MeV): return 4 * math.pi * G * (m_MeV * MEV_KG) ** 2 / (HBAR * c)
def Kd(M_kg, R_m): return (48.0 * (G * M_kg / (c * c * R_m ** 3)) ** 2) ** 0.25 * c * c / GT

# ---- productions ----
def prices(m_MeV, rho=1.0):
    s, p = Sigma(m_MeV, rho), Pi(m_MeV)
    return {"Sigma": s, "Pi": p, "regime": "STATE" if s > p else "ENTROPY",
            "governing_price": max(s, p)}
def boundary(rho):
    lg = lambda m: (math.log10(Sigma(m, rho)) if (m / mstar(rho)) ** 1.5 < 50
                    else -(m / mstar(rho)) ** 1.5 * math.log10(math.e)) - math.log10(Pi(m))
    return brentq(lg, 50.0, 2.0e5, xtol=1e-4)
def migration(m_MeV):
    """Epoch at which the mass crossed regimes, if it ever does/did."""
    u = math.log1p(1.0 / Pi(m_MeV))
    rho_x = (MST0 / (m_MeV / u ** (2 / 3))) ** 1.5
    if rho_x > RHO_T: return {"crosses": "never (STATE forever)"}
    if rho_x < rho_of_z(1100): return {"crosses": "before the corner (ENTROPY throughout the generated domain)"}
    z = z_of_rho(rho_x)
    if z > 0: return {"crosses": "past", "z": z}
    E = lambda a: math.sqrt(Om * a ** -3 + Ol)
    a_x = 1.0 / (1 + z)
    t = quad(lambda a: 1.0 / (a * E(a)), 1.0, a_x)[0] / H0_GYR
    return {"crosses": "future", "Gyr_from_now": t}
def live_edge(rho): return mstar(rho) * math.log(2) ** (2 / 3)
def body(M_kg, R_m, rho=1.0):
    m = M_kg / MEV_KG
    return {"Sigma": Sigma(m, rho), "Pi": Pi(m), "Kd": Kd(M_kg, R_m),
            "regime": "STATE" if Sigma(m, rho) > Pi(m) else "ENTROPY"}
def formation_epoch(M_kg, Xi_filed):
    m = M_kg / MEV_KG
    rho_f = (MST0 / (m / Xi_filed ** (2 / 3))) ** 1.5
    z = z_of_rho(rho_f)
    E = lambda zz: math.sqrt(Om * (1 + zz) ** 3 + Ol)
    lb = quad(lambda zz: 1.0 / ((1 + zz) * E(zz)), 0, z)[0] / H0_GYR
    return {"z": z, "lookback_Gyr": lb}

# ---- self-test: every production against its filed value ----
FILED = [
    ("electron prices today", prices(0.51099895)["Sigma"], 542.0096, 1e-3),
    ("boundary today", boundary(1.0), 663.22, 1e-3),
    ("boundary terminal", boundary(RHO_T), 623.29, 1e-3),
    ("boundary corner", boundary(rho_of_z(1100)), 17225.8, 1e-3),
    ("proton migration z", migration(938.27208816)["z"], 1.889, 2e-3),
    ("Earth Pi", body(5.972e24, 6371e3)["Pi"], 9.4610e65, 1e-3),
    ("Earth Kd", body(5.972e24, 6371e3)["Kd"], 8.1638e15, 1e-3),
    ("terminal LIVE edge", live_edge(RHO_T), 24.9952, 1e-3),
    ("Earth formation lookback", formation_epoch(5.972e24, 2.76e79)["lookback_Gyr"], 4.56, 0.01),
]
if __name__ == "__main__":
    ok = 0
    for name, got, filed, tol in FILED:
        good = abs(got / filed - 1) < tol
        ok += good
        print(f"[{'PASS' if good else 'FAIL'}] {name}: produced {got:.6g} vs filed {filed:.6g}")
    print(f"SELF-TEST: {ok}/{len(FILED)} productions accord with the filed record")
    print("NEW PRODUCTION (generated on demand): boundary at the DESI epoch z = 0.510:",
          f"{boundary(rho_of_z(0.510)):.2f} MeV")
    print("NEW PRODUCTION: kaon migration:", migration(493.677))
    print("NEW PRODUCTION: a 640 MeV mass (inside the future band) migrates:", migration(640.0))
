@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+"""THE SIGMA-PI ENGINE - the generator built on the designated Blackwell
+Sigma-Pi Principle (EQS-318). Given any mass, any body, any epoch, it PRODUCES
+the principle's outputs: the two prices, the regime, the boundary, the
+migrations, the destinies. Self-test mode checks every production against the
+filed values of EQS-314..317.
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER. Identity verification baked in.
+"""
+import math
+from scipy.optimize import brentq
+from scipy.integrate import quad
+
+# ---- house constants (filed) ----
+G, c, HBAR, GT = 6.674e-11, 299792458.0, 1.054571817e-34, 1.20e-10
+MST0 = 33.99055169113607            # crossover yardstick today, MeV (EQS-276)
+Om, Ol = 0.315, 0.685               # house clock composition
+MEV_KG = 1.78266192e-30
+H0_GYR = 0.0689332                  # 67.4 km/s/Mpc in Gyr^-1
+RHO_T = Ol ** (-0.25)               # terminal clock setting 1.099202
+
+def nB(u): return 1.0 / math.expm1(u) if u < 700 else 0.0
+def rho_of_z(z): return (Om * (1 + z) ** 3 + Ol) ** -0.25
+def z_of_rho(r): return ((r ** -4 - Ol) / Om) ** (1 / 3) - 1
+def mstar(rho): return MST0 * rho ** (-2 / 3)
+
+# ---- the two prices (the principle) ----
+def Sigma(m_MeV, rho): return nB((m_MeV / mstar(rho)) ** 1.5)
+def Pi(m_MeV): return 4 * math.pi * G * (m_MeV * MEV_KG) ** 2 / (HBAR * c)
+def Kd(M_kg, R_m): return (48.0 * (G * M_kg / (c * c * R_m ** 3)) ** 2) ** 0.25 * c * c / GT
+
+# ---- productions ----
+def prices(m_MeV, rho=1.0):
+    s, p = Sigma(m_MeV, rho), Pi(m_MeV)
+    return {"Sigma": s, "Pi": p, "regime": "STATE" if s > p else "ENTROPY",
+            "governing_price": max(s, p)}
+def boundary(rho):
+    lg = lambda m: (math.log10(Sigma(m, rho)) if (m / mstar(rho)) ** 1.5 < 50
+                    else -(m / mstar(rho)) ** 1.5 * math.log10(math.e)) - math.log10(Pi(m))
+    return brentq(lg, 50.0, 2.0e5, xtol=1e-4)
+def migration(m_MeV):
+    """Epoch at which the mass crossed regimes, if it ever does/did."""
+    u = math.log1p(1.0 / Pi(m_MeV))
+    rho_x = (MST0 / (m_MeV / u ** (2 / 3))) ** 1.5
+    if rho_x > RHO_T: return {"crosses": "never (STATE forever)"}
+    if rho_x < rho_of_z(1100): return {"crosses": "before the corner (ENTROPY throughout the generated domain)"}
+    z = z_of_rho(rho_x)
+    if z > 0: return {"crosses": "past", "z": z}
+    E = lambda a: math.sqrt(Om * a ** -3 + Ol)
+    a_x = 1.0 / (1 + z)
+    t = quad(lambda a: 1.0 / (a * E(a)), 1.0, a_x)[0] / H0_GYR
+    return {"crosses": "future", "Gyr_from_now": t}
+def live_edge(rho): return mstar(rho) * math.log(2) ** (2 / 3)
+def body(M_kg, R_m, rho=1.0):
+    m = M_kg / MEV_KG
+    return {"Sigma": Sigma(m, rho), "Pi": Pi(m), "Kd": Kd(M_kg, R_m),
+            "regime": "STATE" if Sigma(m, rho) > Pi(m) else "ENTROPY"}
+def formation_epoch(M_kg, Xi_filed):
+    m = M_kg / MEV_KG
+    rho_f = (MST0 / (m / Xi_filed ** (2 / 3))) ** 1.5
+    z = z_of_rho(rho_f)
+    E = lambda zz: math.sqrt(Om * (1 + zz) ** 3 + Ol)
+    lb = quad(lambda zz: 1.0 / ((1 + zz) * E(zz)), 0, z)[0] / H0_GYR
+    return {"z": z, "lookback_Gyr": lb}
+
+# ---- self-test: every production against its filed value ----
+FILED = [
+    ("electron prices today", prices(0.51099895)["Sigma"], 542.0096, 1e-3),
+    ("boundary today", boundary(1.0), 663.22, 1e-3),
+    ("boundary terminal", boundary(RHO_T), 623.29, 1e-3),
+    ("boundary corner", boundary(rho_of_z(1100)), 17225.8, 1e-3),
+    ("proton migration z", migration(938.27208816)["z"], 1.889, 2e-3),
+    ("Earth Pi", body(5.972e24, 6371e3)["Pi"], 9.4610e65, 1e-3),
+    ("Earth Kd", body(5.972e24, 6371e3)["Kd"], 8.1638e15, 1e-3),
+    ("terminal LIVE edge", live_edge(RHO_T), 24.9952, 1e-3),
+    ("Earth formation lookback", formation_epoch(5.972e24, 2.76e79)["lookback_Gyr"], 4.56, 0.01),
+]
+if __name__ == "__main__":
+    ok = 0
+    for name, got, filed, tol in FILED:
+        good = abs(got / filed - 1) < tol
+        ok += good
+        print(f"[{'PASS' if good else 'FAIL'}] {name}: produced {got:.6g} vs filed {filed:.6g}")
+    print(f"SELF-TEST: {ok}/{len(FILED)} productions accord with the filed record")
+    print("NEW PRODUCTION (generated on demand): boundary at the DESI epoch z = 0.510:",
+          f"{boundary(rho_of_z(0.510)):.2f} MeV")
+    print("NEW PRODUCTION: kaon migration:", migration(493.677))
+    print("NEW PRODUCTION: a 640 MeV mass (inside the future band) migrates:", migration(640.0))

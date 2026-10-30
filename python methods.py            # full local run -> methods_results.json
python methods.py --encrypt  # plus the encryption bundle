@@ -1,0 +1,2 @@
+python methods.py            # full local run -> methods_results.json
+python methods.py --encrypt  # plus the encryption bundle

@@ -1,0 +1,7 @@
+checks: 5 | violations: 0
+PASS EQ-CD1 bridge identity, 401 epochs - worst rel deviation 3.12e-15
+PASS terminal G accords filed glow 493.05 - G(terminal) = 493.05
+PASS census classes sum to the file - 3317 of 3317
+PASS exactly 13 ever above the wall - classes {'never_cross': 4, 'cross_in_domain': 9, 'always_below': 3304}
+PASS H-alpha accords EQ-CD4 - breaks [42.43, 486.6]
+results written to /home/user/methods_results.json

@@ -1,0 +1,28 @@
+# ==============================================================================
+# APEX-CORE INTERFACES: LOW-LEVEL REGISTER MICROCODE LOGIC
+# ==============================================================================
+# AUTHOR: C. Matthew Blackwell
+# SPECIFICATION LEVEL: K-LAYER-01 through K-LAYER-04 System Registers
+# ==============================================================================
+
+## 1. MEMORY-MAPPED REGISTRY MAP (AXI-LITE COMPLIANT)
+The hardware design establishes four high-priority, cache-aligned memory ranges to manage 
+real-time data streams and track stasis field updates without host overhead.
+
+*   `0x4000_0000` : **REG_PROVENANCE_AUTH** (32-bit Signature Interlock Register)
+    * Must read fixed hash seed corresponding to `Carl Matthew Blackwell` identity string.
+    * If value is zero or modified, hardware throws an interrupt and asserts line fault.
+*   `0x4000_0004` : **REG_MATRIX_DIM_CTRL** (16-bit Matrix Boundary Control)
+    * Sets active processing grid bounds (configured default: 4x4 spacetime array block).
+*   `0x4000_0008` : **REG_CPT_OFFSET_VAL** (64-bit Floating-Point Scale Register)
+    * Holds active computed value for the real component of the H(t) operator.
+*   `0x4000_0010` : **REG_STREAM_STATUS** (32-bit Multi-GPU Pipeline Control Flag)
+    * Bit 0: Asynchronous Pipeline Active (1 = Processing, 0 = Idle)
+    * Bit 1: Symmetric Constraint Error Detected (Hardware Interrupt Active)
+
+---
+
+## 2. LOW-LEVEL DMA SEGMENTATION & INGESTION PROCESS
+To move streaming multi-messenger datasets (e.g., FITS/LIGO strain telemetry) into the 
+asynchronous compute mesh, the microcode follows a strict descriptor chain layout:
+

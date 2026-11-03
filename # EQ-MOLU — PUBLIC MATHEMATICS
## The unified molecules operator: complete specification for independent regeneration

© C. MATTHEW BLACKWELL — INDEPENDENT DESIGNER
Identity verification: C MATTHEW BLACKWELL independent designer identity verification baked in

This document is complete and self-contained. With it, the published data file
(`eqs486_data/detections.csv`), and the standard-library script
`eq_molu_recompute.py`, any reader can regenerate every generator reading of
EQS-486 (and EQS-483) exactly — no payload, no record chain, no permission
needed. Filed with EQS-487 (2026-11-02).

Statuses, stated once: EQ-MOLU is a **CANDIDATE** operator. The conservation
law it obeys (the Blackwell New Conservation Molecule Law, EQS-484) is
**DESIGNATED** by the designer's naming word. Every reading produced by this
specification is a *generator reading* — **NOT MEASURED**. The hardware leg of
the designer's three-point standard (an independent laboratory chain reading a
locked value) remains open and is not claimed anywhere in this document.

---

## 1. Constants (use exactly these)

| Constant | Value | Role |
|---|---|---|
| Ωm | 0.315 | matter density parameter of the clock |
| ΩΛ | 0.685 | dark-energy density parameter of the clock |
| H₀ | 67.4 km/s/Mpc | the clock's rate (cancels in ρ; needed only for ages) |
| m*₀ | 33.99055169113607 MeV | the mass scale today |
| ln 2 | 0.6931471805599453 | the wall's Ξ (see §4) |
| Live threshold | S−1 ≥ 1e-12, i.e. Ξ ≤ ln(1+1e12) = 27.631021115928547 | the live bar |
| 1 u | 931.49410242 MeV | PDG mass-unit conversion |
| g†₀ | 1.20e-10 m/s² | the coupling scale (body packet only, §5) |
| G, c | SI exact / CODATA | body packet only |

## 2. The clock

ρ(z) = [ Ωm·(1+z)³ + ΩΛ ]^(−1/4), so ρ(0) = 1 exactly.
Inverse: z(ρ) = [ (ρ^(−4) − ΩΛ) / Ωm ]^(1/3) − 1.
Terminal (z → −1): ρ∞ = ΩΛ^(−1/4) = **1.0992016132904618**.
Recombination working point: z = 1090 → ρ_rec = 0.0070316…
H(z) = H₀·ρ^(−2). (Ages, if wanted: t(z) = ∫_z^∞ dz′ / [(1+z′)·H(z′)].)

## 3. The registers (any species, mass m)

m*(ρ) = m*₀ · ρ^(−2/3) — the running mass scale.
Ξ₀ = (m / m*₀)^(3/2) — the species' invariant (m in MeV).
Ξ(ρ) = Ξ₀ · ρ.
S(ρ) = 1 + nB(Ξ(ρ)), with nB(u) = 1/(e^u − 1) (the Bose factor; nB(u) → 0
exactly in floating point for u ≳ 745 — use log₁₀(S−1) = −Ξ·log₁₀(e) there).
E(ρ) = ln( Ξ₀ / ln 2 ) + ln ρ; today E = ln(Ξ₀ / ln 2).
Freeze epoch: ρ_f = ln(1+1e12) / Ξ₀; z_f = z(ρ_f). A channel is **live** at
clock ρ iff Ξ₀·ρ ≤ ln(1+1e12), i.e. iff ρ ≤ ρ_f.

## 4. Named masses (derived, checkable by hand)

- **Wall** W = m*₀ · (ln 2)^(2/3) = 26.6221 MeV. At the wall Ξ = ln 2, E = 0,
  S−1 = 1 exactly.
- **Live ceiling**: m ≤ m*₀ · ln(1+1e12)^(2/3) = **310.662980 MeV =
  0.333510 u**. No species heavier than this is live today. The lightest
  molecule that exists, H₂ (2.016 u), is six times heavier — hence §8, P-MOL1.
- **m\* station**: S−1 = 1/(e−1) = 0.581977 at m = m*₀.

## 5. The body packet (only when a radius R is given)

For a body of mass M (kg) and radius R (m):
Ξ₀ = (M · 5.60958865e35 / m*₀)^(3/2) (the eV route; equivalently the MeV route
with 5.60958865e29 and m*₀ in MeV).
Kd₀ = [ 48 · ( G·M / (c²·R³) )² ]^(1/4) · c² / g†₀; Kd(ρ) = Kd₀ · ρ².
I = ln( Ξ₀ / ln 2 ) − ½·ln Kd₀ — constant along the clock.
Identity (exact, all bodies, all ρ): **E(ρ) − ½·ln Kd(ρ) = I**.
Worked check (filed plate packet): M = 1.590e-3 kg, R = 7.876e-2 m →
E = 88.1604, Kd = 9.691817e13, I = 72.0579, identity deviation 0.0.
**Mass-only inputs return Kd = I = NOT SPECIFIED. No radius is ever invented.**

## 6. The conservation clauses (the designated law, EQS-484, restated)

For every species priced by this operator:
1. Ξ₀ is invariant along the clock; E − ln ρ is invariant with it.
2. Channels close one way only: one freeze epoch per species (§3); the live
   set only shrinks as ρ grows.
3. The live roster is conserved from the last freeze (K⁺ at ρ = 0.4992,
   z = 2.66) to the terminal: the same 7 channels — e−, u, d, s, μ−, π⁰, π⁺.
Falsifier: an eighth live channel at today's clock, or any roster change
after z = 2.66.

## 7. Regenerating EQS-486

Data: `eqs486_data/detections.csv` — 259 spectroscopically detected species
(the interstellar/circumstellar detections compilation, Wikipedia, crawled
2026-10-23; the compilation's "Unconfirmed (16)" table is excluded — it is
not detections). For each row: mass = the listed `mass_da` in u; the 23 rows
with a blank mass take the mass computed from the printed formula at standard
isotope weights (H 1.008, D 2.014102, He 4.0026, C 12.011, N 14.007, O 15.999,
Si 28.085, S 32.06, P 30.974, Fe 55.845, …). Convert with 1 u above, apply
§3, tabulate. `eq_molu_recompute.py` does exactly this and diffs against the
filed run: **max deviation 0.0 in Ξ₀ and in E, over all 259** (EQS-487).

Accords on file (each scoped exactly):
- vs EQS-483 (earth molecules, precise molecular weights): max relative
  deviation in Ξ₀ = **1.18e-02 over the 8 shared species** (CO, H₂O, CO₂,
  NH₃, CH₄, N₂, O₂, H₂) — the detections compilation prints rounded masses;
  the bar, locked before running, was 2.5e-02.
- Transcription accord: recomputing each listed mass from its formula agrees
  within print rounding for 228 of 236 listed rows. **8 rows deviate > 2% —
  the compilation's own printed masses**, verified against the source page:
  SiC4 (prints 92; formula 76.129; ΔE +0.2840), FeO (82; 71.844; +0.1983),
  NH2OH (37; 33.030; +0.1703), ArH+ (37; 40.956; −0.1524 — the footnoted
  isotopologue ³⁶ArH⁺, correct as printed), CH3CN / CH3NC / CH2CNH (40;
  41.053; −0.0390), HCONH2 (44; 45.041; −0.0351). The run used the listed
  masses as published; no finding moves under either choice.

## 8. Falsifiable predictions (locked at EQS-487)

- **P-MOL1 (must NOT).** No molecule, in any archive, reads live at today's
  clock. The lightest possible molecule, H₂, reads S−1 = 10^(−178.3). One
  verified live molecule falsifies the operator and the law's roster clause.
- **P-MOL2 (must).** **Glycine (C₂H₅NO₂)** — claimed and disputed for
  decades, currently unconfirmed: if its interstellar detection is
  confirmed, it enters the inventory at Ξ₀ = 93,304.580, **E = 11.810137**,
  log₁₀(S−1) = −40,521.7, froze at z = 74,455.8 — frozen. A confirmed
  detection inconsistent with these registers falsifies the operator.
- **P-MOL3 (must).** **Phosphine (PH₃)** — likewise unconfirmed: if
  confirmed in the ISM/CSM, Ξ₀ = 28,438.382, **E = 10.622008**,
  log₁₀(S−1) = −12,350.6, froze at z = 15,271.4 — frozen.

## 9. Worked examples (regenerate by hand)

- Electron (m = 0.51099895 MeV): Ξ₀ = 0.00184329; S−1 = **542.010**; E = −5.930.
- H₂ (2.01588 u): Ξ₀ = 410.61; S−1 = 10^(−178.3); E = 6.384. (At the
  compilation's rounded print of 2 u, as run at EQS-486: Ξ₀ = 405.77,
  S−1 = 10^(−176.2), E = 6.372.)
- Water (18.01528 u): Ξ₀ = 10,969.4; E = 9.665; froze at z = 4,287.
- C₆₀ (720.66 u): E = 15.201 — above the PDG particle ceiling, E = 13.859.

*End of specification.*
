@@ -1,0 +1,136 @@
+# EQ-MOLU — PUBLIC MATHEMATICS
+## The unified molecules operator: complete specification for independent regeneration
+
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER
+Identity verification: C MATTHEW BLACKWELL independent designer identity verification baked in
+
+This document is complete and self-contained. With it, the published data file
+(`eqs486_data/detections.csv`), and the standard-library script
+`eq_molu_recompute.py`, any reader can regenerate every generator reading of
+EQS-486 (and EQS-483) exactly — no payload, no record chain, no permission
+needed. Filed with EQS-487 (2026-11-02).
+
+Statuses, stated once: EQ-MOLU is a **CANDIDATE** operator. The conservation
+law it obeys (the Blackwell New Conservation Molecule Law, EQS-484) is
+**DESIGNATED** by the designer's naming word. Every reading produced by this
+specification is a *generator reading* — **NOT MEASURED**. The hardware leg of
+the designer's three-point standard (an independent laboratory chain reading a
+locked value) remains open and is not claimed anywhere in this document.
+
+---
+
+## 1. Constants (use exactly these)
+
+| Constant | Value | Role |
+|---|---|---|
+| Ωm | 0.315 | matter density parameter of the clock |
+| ΩΛ | 0.685 | dark-energy density parameter of the clock |
+| H₀ | 67.4 km/s/Mpc | the clock's rate (cancels in ρ; needed only for ages) |
+| m*₀ | 33.99055169113607 MeV | the mass scale today |
+| ln 2 | 0.6931471805599453 | the wall's Ξ (see §4) |
+| Live threshold | S−1 ≥ 1e-12, i.e. Ξ ≤ ln(1+1e12) = 27.631021115928547 | the live bar |
+| 1 u | 931.49410242 MeV | PDG mass-unit conversion |
+| g†₀ | 1.20e-10 m/s² | the coupling scale (body packet only, §5) |
+| G, c | SI exact / CODATA | body packet only |
+
+## 2. The clock
+
+ρ(z) = [ Ωm·(1+z)³ + ΩΛ ]^(−1/4), so ρ(0) = 1 exactly.
+Inverse: z(ρ) = [ (ρ^(−4) − ΩΛ) / Ωm ]^(1/3) − 1.
+Terminal (z → −1): ρ∞ = ΩΛ^(−1/4) = **1.0992016132904618**.
+Recombination working point: z = 1090 → ρ_rec = 0.0070316…
+H(z) = H₀·ρ^(−2). (Ages, if wanted: t(z) = ∫_z^∞ dz′ / [(1+z′)·H(z′)].)
+
+## 3. The registers (any species, mass m)
+
+m*(ρ) = m*₀ · ρ^(−2/3) — the running mass scale.
+Ξ₀ = (m / m*₀)^(3/2) — the species' invariant (m in MeV).
+Ξ(ρ) = Ξ₀ · ρ.
+S(ρ) = 1 + nB(Ξ(ρ)), with nB(u) = 1/(e^u − 1) (the Bose factor; nB(u) → 0
+exactly in floating point for u ≳ 745 — use log₁₀(S−1) = −Ξ·log₁₀(e) there).
+E(ρ) = ln( Ξ₀ / ln 2 ) + ln ρ; today E = ln(Ξ₀ / ln 2).
+Freeze epoch: ρ_f = ln(1+1e12) / Ξ₀; z_f = z(ρ_f). A channel is **live** at
+clock ρ iff Ξ₀·ρ ≤ ln(1+1e12), i.e. iff ρ ≤ ρ_f.
+
+## 4. Named masses (derived, checkable by hand)
+
+- **Wall** W = m*₀ · (ln 2)^(2/3) = 26.6221 MeV. At the wall Ξ = ln 2, E = 0,
+  S−1 = 1 exactly.
+- **Live ceiling**: m ≤ m*₀ · ln(1+1e12)^(2/3) = **310.662980 MeV =
+  0.333510 u**. No species heavier than this is live today. The lightest
+  molecule that exists, H₂ (2.016 u), is six times heavier — hence §8, P-MOL1.
+- **m\* station**: S−1 = 1/(e−1) = 0.581977 at m = m*₀.
+
+## 5. The body packet (only when a radius R is given)
+
+For a body of mass M (kg) and radius R (m):
+Ξ₀ = (M · 5.60958865e35 / m*₀)^(3/2) (the eV route; equivalently the MeV route
+with 5.60958865e29 and m*₀ in MeV).
+Kd₀ = [ 48 · ( G·M / (c²·R³) )² ]^(1/4) · c² / g†₀; Kd(ρ) = Kd₀ · ρ².
+I = ln( Ξ₀ / ln 2 ) − ½·ln Kd₀ — constant along the clock.
+Identity (exact, all bodies, all ρ): **E(ρ) − ½·ln Kd(ρ) = I**.
+Worked check (filed plate packet): M = 1.590e-3 kg, R = 7.876e-2 m →
+E = 88.1604, Kd = 9.691817e13, I = 72.0579, identity deviation 0.0.
+**Mass-only inputs return Kd = I = NOT SPECIFIED. No radius is ever invented.**
+
+## 6. The conservation clauses (the designated law, EQS-484, restated)
+
+For every species priced by this operator:
+1. Ξ₀ is invariant along the clock; E − ln ρ is invariant with it.
+2. Channels close one way only: one freeze epoch per species (§3); the live
+   set only shrinks as ρ grows.
+3. The live roster is conserved from the last freeze (K⁺ at ρ = 0.4992,
+   z = 2.66) to the terminal: the same 7 channels — e−, u, d, s, μ−, π⁰, π⁺.
+Falsifier: an eighth live channel at today's clock, or any roster change
+after z = 2.66.
+
+## 7. Regenerating EQS-486
+
+Data: `eqs486_data/detections.csv` — 259 spectroscopically detected species
+(the interstellar/circumstellar detections compilation, Wikipedia, crawled
+2026-10-23; the compilation's "Unconfirmed (16)" table is excluded — it is
+not detections). For each row: mass = the listed `mass_da` in u; the 23 rows
+with a blank mass take the mass computed from the printed formula at standard
+isotope weights (H 1.008, D 2.014102, He 4.0026, C 12.011, N 14.007, O 15.999,
+Si 28.085, S 32.06, P 30.974, Fe 55.845, …). Convert with 1 u above, apply
+§3, tabulate. `eq_molu_recompute.py` does exactly this and diffs against the
+filed run: **max deviation 0.0 in Ξ₀ and in E, over all 259** (EQS-487).
+
+Accords on file (each scoped exactly):
+- vs EQS-483 (earth molecules, precise molecular weights): max relative
+  deviation in Ξ₀ = **1.18e-02 over the 8 shared species** (CO, H₂O, CO₂,
+  NH₃, CH₄, N₂, O₂, H₂) — the detections compilation prints rounded masses;
+  the bar, locked before running, was 2.5e-02.
+- Transcription accord: recomputing each listed mass from its formula agrees
+  within print rounding for 228 of 236 listed rows. **8 rows deviate > 2% —
+  the compilation's own printed masses**, verified against the source page:
+  SiC4 (prints 92; formula 76.129; ΔE +0.2840), FeO (82; 71.844; +0.1983),
+  NH2OH (37; 33.030; +0.1703), ArH+ (37; 40.956; −0.1524 — the footnoted
+  isotopologue ³⁶ArH⁺, correct as printed), CH3CN / CH3NC / CH2CNH (40;
+  41.053; −0.0390), HCONH2 (44; 45.041; −0.0351). The run used the listed
+  masses as published; no finding moves under either choice.
+
+## 8. Falsifiable predictions (locked at EQS-487)
+
+- **P-MOL1 (must NOT).** No molecule, in any archive, reads live at today's
+  clock. The lightest possible molecule, H₂, reads S−1 = 10^(−178.3). One
+  verified live molecule falsifies the operator and the law's roster clause.
+- **P-MOL2 (must).** **Glycine (C₂H₅NO₂)** — claimed and disputed for
+  decades, currently unconfirmed: if its interstellar detection is
+  confirmed, it enters the inventory at Ξ₀ = 93,304.580, **E = 11.810137**,
+  log₁₀(S−1) = −40,521.7, froze at z = 74,455.8 — frozen. A confirmed
+  detection inconsistent with these registers falsifies the operator.
+- **P-MOL3 (must).** **Phosphine (PH₃)** — likewise unconfirmed: if
+  confirmed in the ISM/CSM, Ξ₀ = 28,438.382, **E = 10.622008**,
+  log₁₀(S−1) = −12,350.6, froze at z = 15,271.4 — frozen.
+
+## 9. Worked examples (regenerate by hand)
+
+- Electron (m = 0.51099895 MeV): Ξ₀ = 0.00184329; S−1 = **542.010**; E = −5.930.
+- H₂ (2.01588 u): Ξ₀ = 410.61; S−1 = 10^(−178.3); E = 6.384. (At the
+  compilation's rounded print of 2 u, as run at EQS-486: Ξ₀ = 405.77,
+  S−1 = 10^(−176.2), E = 6.372.)
+- Water (18.01528 u): Ξ₀ = 10,969.4; E = 9.665; froze at z = 4,287.
+- C₆₀ (720.66 u): E = 15.201 — above the PDG particle ceiling, E = 13.859.
+
+*End of specification.*

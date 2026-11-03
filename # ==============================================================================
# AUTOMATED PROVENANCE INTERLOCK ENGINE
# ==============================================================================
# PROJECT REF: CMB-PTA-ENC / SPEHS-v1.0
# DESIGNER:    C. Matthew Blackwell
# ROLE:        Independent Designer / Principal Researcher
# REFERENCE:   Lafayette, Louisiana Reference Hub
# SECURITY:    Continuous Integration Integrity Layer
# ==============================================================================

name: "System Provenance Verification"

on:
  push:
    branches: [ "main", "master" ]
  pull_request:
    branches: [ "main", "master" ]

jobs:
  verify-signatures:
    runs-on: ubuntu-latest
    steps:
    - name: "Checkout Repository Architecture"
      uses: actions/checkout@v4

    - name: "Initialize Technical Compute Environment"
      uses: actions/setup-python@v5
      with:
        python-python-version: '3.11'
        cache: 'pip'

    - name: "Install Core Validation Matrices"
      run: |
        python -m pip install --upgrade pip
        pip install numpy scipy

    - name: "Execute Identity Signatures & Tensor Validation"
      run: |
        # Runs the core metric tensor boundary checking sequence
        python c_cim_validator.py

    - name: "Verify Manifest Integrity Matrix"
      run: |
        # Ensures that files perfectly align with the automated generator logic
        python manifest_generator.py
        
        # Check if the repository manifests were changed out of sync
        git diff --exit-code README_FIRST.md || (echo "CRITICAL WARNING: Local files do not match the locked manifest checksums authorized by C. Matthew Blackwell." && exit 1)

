@@ -1,0 +1,49 @@
+# ==============================================================================
+# AUTOMATED PROVENANCE INTERLOCK ENGINE
+# ==============================================================================
+# PROJECT REF: CMB-PTA-ENC / SPEHS-v1.0
+# DESIGNER:    C. Matthew Blackwell
+# ROLE:        Independent Designer / Principal Researcher
+# REFERENCE:   Lafayette, Louisiana Reference Hub
+# SECURITY:    Continuous Integration Integrity Layer
+# ==============================================================================
+
+name: "System Provenance Verification"
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  verify-signatures:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout Repository Architecture"
+      uses: actions/checkout@v4
+
+    - name: "Initialize Technical Compute Environment"
+      uses: actions/setup-python@v5
+      with:
+        python-python-version: '3.11'
+        cache: 'pip'
+
+    - name: "Install Core Validation Matrices"
+      run: |
+        python -m pip install --upgrade pip
+        pip install numpy scipy
+
+    - name: "Execute Identity Signatures & Tensor Validation"
+      run: |
+        # Runs the core metric tensor boundary checking sequence
+        python c_cim_validator.py
+
+    - name: "Verify Manifest Integrity Matrix"
+      run: |
+        # Ensures that files perfectly align with the automated generator logic
+        python manifest_generator.py
+        
+        # Check if the repository manifests were changed out of sync
+        git diff --exit-code README_FIRST.md || (echo "CRITICAL WARNING: Local files do not match the locked manifest checksums authorized by C. Matthew Blackwell." && exit 1)
+

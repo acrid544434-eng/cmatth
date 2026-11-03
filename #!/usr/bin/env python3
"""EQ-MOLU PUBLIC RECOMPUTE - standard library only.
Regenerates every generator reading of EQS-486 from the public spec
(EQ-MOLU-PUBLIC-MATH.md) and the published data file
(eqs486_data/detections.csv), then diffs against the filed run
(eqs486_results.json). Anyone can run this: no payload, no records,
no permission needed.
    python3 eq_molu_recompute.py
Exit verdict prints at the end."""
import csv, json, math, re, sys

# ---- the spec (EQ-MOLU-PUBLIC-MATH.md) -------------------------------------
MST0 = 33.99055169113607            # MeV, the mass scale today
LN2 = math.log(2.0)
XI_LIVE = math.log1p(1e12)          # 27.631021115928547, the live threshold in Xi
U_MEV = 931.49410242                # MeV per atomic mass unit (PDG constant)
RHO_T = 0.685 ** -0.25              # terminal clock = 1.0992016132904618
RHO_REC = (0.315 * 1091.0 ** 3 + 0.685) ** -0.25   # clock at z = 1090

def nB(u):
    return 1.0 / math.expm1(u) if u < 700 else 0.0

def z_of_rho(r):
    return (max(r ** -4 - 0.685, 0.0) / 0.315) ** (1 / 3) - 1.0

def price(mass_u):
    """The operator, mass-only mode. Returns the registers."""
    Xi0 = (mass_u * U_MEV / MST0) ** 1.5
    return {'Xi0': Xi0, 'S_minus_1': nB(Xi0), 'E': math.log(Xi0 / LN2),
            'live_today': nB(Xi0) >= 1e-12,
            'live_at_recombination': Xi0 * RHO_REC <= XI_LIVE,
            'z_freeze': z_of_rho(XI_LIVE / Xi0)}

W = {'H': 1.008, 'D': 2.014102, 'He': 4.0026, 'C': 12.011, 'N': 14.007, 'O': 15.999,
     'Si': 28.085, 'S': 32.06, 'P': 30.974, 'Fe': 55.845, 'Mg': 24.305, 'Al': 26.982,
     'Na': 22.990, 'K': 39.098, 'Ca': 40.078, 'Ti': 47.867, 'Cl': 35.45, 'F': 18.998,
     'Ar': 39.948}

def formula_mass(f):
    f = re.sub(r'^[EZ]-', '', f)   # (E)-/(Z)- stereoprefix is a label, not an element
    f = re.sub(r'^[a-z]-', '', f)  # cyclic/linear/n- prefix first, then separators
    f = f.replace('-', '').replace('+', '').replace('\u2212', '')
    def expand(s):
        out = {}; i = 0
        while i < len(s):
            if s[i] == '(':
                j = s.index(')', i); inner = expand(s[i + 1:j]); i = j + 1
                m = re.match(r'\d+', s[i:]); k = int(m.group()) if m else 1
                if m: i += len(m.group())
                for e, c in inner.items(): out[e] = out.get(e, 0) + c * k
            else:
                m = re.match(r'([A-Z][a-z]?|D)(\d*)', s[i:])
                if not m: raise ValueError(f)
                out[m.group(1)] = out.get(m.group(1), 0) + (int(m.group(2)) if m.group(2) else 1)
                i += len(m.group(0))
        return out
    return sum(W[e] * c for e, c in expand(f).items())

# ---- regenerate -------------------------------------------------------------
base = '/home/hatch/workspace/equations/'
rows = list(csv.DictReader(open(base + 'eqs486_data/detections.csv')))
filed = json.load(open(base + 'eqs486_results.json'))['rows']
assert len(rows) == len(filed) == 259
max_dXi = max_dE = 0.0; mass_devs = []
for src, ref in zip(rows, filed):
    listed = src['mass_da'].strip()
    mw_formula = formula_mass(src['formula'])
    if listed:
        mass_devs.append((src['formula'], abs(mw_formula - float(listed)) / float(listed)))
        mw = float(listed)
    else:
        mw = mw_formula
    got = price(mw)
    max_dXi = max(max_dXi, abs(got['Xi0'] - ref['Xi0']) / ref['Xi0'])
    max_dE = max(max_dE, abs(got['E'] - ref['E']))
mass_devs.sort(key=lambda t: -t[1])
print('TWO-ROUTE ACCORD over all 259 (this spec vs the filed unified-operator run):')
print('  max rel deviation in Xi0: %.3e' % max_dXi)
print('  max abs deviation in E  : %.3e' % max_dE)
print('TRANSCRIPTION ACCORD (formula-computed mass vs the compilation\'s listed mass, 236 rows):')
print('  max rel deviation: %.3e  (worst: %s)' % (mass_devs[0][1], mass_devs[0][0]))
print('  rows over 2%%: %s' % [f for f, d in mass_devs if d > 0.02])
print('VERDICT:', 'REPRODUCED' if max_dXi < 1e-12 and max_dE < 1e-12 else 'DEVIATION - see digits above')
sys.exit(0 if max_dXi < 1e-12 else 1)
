@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""EQ-MOLU PUBLIC RECOMPUTE - standard library only.
+Regenerates every generator reading of EQS-486 from the public spec
+(EQ-MOLU-PUBLIC-MATH.md) and the published data file
+(eqs486_data/detections.csv), then diffs against the filed run
+(eqs486_results.json). Anyone can run this: no payload, no records,
+no permission needed.
+    python3 eq_molu_recompute.py
+Exit verdict prints at the end."""
+import csv, json, math, re, sys
+
+# ---- the spec (EQ-MOLU-PUBLIC-MATH.md) -------------------------------------
+MST0 = 33.99055169113607            # MeV, the mass scale today
+LN2 = math.log(2.0)
+XI_LIVE = math.log1p(1e12)          # 27.631021115928547, the live threshold in Xi
+U_MEV = 931.49410242                # MeV per atomic mass unit (PDG constant)
+RHO_T = 0.685 ** -0.25              # terminal clock = 1.0992016132904618
+RHO_REC = (0.315 * 1091.0 ** 3 + 0.685) ** -0.25   # clock at z = 1090
+
+def nB(u):
+    return 1.0 / math.expm1(u) if u < 700 else 0.0
+
+def z_of_rho(r):
+    return (max(r ** -4 - 0.685, 0.0) / 0.315) ** (1 / 3) - 1.0
+
+def price(mass_u):
+    """The operator, mass-only mode. Returns the registers."""
+    Xi0 = (mass_u * U_MEV / MST0) ** 1.5
+    return {'Xi0': Xi0, 'S_minus_1': nB(Xi0), 'E': math.log(Xi0 / LN2),
+            'live_today': nB(Xi0) >= 1e-12,
+            'live_at_recombination': Xi0 * RHO_REC <= XI_LIVE,
+            'z_freeze': z_of_rho(XI_LIVE / Xi0)}
+
+W = {'H': 1.008, 'D': 2.014102, 'He': 4.0026, 'C': 12.011, 'N': 14.007, 'O': 15.999,
+     'Si': 28.085, 'S': 32.06, 'P': 30.974, 'Fe': 55.845, 'Mg': 24.305, 'Al': 26.982,
+     'Na': 22.990, 'K': 39.098, 'Ca': 40.078, 'Ti': 47.867, 'Cl': 35.45, 'F': 18.998,
+     'Ar': 39.948}
+
+def formula_mass(f):
+    f = re.sub(r'^[EZ]-', '', f)   # (E)-/(Z)- stereoprefix is a label, not an element
+    f = re.sub(r'^[a-z]-', '', f)  # cyclic/linear/n- prefix first, then separators
+    f = f.replace('-', '').replace('+', '').replace('\u2212', '')
+    def expand(s):
+        out = {}; i = 0
+        while i < len(s):
+            if s[i] == '(':
+                j = s.index(')', i); inner = expand(s[i + 1:j]); i = j + 1
+                m = re.match(r'\d+', s[i:]); k = int(m.group()) if m else 1
+                if m: i += len(m.group())
+                for e, c in inner.items(): out[e] = out.get(e, 0) + c * k
+            else:
+                m = re.match(r'([A-Z][a-z]?|D)(\d*)', s[i:])
+                if not m: raise ValueError(f)
+                out[m.group(1)] = out.get(m.group(1), 0) + (int(m.group(2)) if m.group(2) else 1)
+                i += len(m.group(0))
+        return out
+    return sum(W[e] * c for e, c in expand(f).items())
+
+# ---- regenerate -------------------------------------------------------------
+base = '/home/hatch/workspace/equations/'
+rows = list(csv.DictReader(open(base + 'eqs486_data/detections.csv')))
+filed = json.load(open(base + 'eqs486_results.json'))['rows']
+assert len(rows) == len(filed) == 259
+max_dXi = max_dE = 0.0; mass_devs = []
+for src, ref in zip(rows, filed):
+    listed = src['mass_da'].strip()
+    mw_formula = formula_mass(src['formula'])
+    if listed:
+        mass_devs.append((src['formula'], abs(mw_formula - float(listed)) / float(listed)))
+        mw = float(listed)
+    else:
+        mw = mw_formula
+    got = price(mw)
+    max_dXi = max(max_dXi, abs(got['Xi0'] - ref['Xi0']) / ref['Xi0'])
+    max_dE = max(max_dE, abs(got['E'] - ref['E']))
+mass_devs.sort(key=lambda t: -t[1])
+print('TWO-ROUTE ACCORD over all 259 (this spec vs the filed unified-operator run):')
+print('  max rel deviation in Xi0: %.3e' % max_dXi)
+print('  max abs deviation in E  : %.3e' % max_dE)
+print('TRANSCRIPTION ACCORD (formula-computed mass vs the compilation\'s listed mass, 236 rows):')
+print('  max rel deviation: %.3e  (worst: %s)' % (mass_devs[0][1], mass_devs[0][0]))
+print('  rows over 2%%: %s' % [f for f, d in mass_devs if d > 0.02])
+print('VERDICT:', 'REPRODUCED' if max_dXi < 1e-12 and max_dE < 1e-12 else 'DEVIATION - see digits above')
+sys.exit(0 if max_dXi < 1e-12 else 1)

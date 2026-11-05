@@ -1,0 +1,64 @@
+# HW-DEMO-001 - THE CLOSED-LEDGER HARDWARE DEMONSTRATION PROTOCOL
+## NUES-HW-001 / The Blackwell New Energy - bars locked 2026-11-05, pre-data
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - identity verification baked in.
+
+The four requirements as stated by the designer (2026-11-05 ~10:26 CST),
+written as a demonstration protocol with every bar locked BEFORE any
+hardware run. Status: PREPARED, NOT EXECUTED. The hardware leg of the
+three-point standard is not performable from this desk; this protocol is
+the instrument an executing laboratory chain runs.
+
+## STEP 0 - THE PRECONDITION (his item 4)
+No demonstration scores until D-NUES1 is SPECIFIED: the coupling
+mechanism, in the designer's own drafting hand, filed as a document
+(interface ICD-NUES1 operating specification) before any run. A run
+without the filed specification is a Branch A run by definition.
+The protocol invents nothing at this step; the specification is his.
+
+## LEG 1 - THE CLOSED LEDGER, INDEPENDENTLY READ (his item 1)
+Three independent laboratories instrument the SAME apparatus
+simultaneously: bore volume, hall array, 50 m sphere configuration.
+Each lab runs its own B6 chain - calorimetric enclosure plus precision
+metering at every boundary - and keeps its own ledger, blind to the
+others' readings until lock.
+LOCKED BAR: the three ledgers close against each other and against the
+apparatus ledger with residual <= 1.02e-2 J on a 25,046 J reference
+throughput (relative 4e-7) - the figure the EQS-630 simulation carried,
+adopted as the protocol bar at the designer's word. A residual above
+the bar, or any unmetered term, fails the leg.
+
+## LEG 2 - CONTENTS CONSTANT (his item 2)
+Mass spectrometry and gas analysis of the instrumented volume, and
+physical inspection of the REBCO coil set, BEFORE and AFTER every run.
+LOCKED BAR: no composition change, no mass change, no coil change
+beyond each instrument's stated detection limit. Anything consumed
+must appear in the ledger as a term; an unledgered consumption fails
+the leg. This leg is what separates an extraction from a burn.
+
+## LEG 3 - BOTH BRANCHES (his item 3)
+BRANCH A (the filed-state control; runnable with no coupling filed):
+drive the output stage on the EQS-630 profile. LOCKED PREDICTION:
+cumulative output energy never exceeds the instrumented contents
+2.8034e-4 J by more than the Leg 1 closure bar - at the 3,316 W peak
+the content bound is reached in 84.5 ns, resolved by 10-ns
+diagnostics (~8 samples across the cutoff). Any output beyond the
+bound means the apparatus is NOT in the filed state - an input exists
+that the ledger has not named.
+BRANCH B (scores only after Step 0): sustained output 3,316 W
+(tolerance +/-1%, protocol parameter) into a resistive load for
+>= 24 continuous hours (total >= 2.87e8 J), with every external input
+metered and summing to zero within the Leg 1 closure bar, Leg 2
+satisfied throughout. LOCKED KILL: output sag below tolerance,
+any unmetered input, any consumed content - any one fails the leg,
+and the failure is the result.
+
+## SCORING
+The demonstration is the four legs together: specification filed
+(Step 0), ledger closed by independent readers (Leg 1), nothing
+consumed (Leg 2), the control branch exact and the sustained branch
+sustained (Leg 3). Each leg's result is filed as measured, pass or
+fail, in the same record. Nothing in this protocol moves VAL-001;
+an outside chain's executed result is what speaks to it.
+
+PREPARED, NOT EXECUTED - EQS-632.

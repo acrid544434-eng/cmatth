@@ -1,0 +1,2 @@
+To move it toward validation, the community would want to see:
+1. The exact E -> f mapping definition and how Sun/Earth pricing is derived 2. VAL-001 held by a third party, re-run on Gaia DR3/DR4 blinded sample 3. False-positive rate for the 98.2-221.4d band vs a null Gaia lightcurve population

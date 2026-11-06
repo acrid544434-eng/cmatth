@@ -1,0 +1,31 @@
+designer: "C. Matthew Blackwell"
+engine_class: "Platinum Hamiltonian Parallel-Layer Engine"
+universe_id: 0
+coordinates:
+  type: "geospatial"
+  origin:
+    latitude: 30.2241
+    longitude: -92.0198
+    altitude_m: 10.0
+parameters:
+  lambda:
+    mass: 1.0
+    k_spring: 2.0
+    gravity: 9.81
+objects:
+  - id: "particle_1"
+    initial_q: [0.0, 0.0, 0.0]
+    initial_p: [1.0, 0.0, 0.0]
+constraints:
+  - type: "boundary"
+    region: "box"
+    min: [-10.0, -10.0, -10.0]
+    max: [10.0, 10.0, 10.0]
+potential:
+  type: "harmonic"
+  expression: "0.5 * k_spring * |q|^2"
+simulation:
+  dt: 0.001
+  steps: 100000
+  output_interval: 100
+# U0 exactly as drawn in the pasted blueprint.

@@ -1,0 +1,121 @@
+{
+  "blueprint_hamiltonian": {
+    "states": [
+      {
+        "id": "reservoir",
+        "label": "Lambda seat (filed density u_L)",
+        "energy": 5.253494E-10,
+        "metadata": {
+          "value": "u_L = 5.253494e-10 J/m^3",
+          "source": "EQS-676"
+        }
+      },
+      {
+        "id": "coupling",
+        "label": "Specified coupling D-NUES1",
+        "energy": 3400.0,
+        "metadata": {
+          "value": "P_inf = 3400 W, tau 2.7 s",
+          "source": "EQS-678"
+        }
+      },
+      {
+        "id": "instrument_volume",
+        "label": "Instrumented volume",
+        "energy": 2.803437214080389E-4,
+        "metadata": {
+          "value": "priced content 2.803437214080389e-4 J",
+          "source": "EQS-712"
+        }
+      },
+      {
+        "id": "output",
+        "label": "Delivered output",
+        "energy": 3316.250767465121,
+        "metadata": {
+          "value": "peak 3316.250767465121 W",
+          "source": "EQS-712"
+        }
+      },
+      {
+        "id": "telemetry",
+        "label": "Telemetry / certification chain",
+        "energy": 25046.12292784417,
+        "metadata": {
+          "value": "10-s yield it certifies: 25046.12292784417 J",
+          "source": "EQS-712"
+        }
+      }
+    ],
+    "interactions": [
+      {
+        "from": "reservoir",
+        "to": "coupling",
+        "strength": 8.934076640649877E7,
+        "rule": "supply",
+        "metadata": {
+          "computed": "per-run supply multiple 8.934077e7 (EQS-712)"
+        }
+      },
+      {
+        "from": "coupling",
+        "to": "output",
+        "strength": 0.9753678727838592,
+        "rule": "delivery",
+        "metadata": {
+          "computed": "peak / plateau ratio"
+        }
+      },
+      {
+        "from": "coupling",
+        "to": "instrument_volume",
+        "strength": 0.736650674348358,
+        "rule": "reference run",
+        "metadata": {
+          "computed": "fraction of 10-s plateau energy delivered"
+        }
+      },
+      {
+        "from": "instrument_volume",
+        "to": "output",
+        "strength": 1.119309851731089E-8,
+        "rule": "own content",
+        "metadata": {
+          "computed": "the volume own content against the delivered yield"
+        }
+      },
+      {
+        "from": "output",
+        "to": "telemetry",
+        "strength": 1.0,
+        "rule": "certification",
+        "metadata": {
+          "definitional": "identity link - the chain certifies the yield"
+        }
+      }
+    ],
+    "rules": {
+      "selection": "desk string (rule language is door D-BH3): flow routes reservoir -> coupling -> output; no direct reservoir -> output edge exists in the filed design",
+      "constraints": {
+        "forbidden": [
+          [
+            "reservoir",
+            "output"
+          ]
+        ],
+        "required": [
+          [
+            "reservoir",
+            "coupling"
+          ]
+        ]
+      }
+    },
+    "signature": "C. MATTHEW BLACKWELL — Independent Designer",
+    "hash": {
+      "json_sha3_256": "bc441848be23774f7527d7f6ac40ea94fbf9257792b4c7d1a290335ee7328e42",
+      "matrix_sha3_256": "72181bb273ebdf3d14fb0b93bca953fecedf76e0baa4019c3f018b6859436394",
+      "render_sha3_256": "680c9a1fa5209ebdf6a14954d58c48bb81b9a3909898d0d2ccd697660f1a1864"
+    }
+  }
+}

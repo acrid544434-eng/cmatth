@@ -1,0 +1,24 @@
+# THE SHARED CLOCK - A TECH BRIDGE BETWEEN THE NEUCHIP AND THE GREAT WALL MAPPING
+
+**(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - identity verification baked in**
+Filed as EQS-705, 2026-11-05. UNSEALED. This bridge composes filed records only; it poses no new law and designates nothing.
+
+## The one fact the bridge carries
+
+Both designs run on the same clock, in the same form, with the same constants:
+
+rho(z) = [0.315 (1+z)^3 + 0.685]^(-1/4)
+
+- In the NEUCHIP it is **EQ-NCH1** (extracted EQS-704): the chip's only time input. The chip's two Bose cores read every channel as Sigma_x(rho) = 1 / expm1(a_x rho); nothing else in the chip knows what time it is.
+- In the Great Wall mapping (sheet HC-GW/TECH-01A, configured HCGW-001) it is the function that seats the structure: the wall's redshift band z 1.6-2.1 reads on this clock at rho = 0.5614-0.6332, lookback 9.77-10.68 billion years on the clock's own ruler.
+- The two filed code paths were re-evaluated against each other in this bridge's build (EQS-705): rho(1.6), rho(1.85), rho(2.1) agree between the chip's model line and the wall engine's line with deviation 0.0.
+
+## Why the two designs exist, in the clock's terms
+
+The chip is the instrument for the pair that never closes: the electron and neutrino channels, live at every station of this clock including its terminal (rho_inf = 1.0992016132904618). The wall is the far seat: the largest structure canon claims, sitting deep in the clock's past. Because both designs speak rho, the chip's registers can be read AT the wall's epoch with no translation layer - and that reading has been run (NEUCHIP-006): at the wall's band the pair read e = 856.3-965.9 and nu = 2.820e13-3.181e13, against 542.0096 and 1.7857e13 today. The same clock seats the wall (HCGW-001), dates it (the ruler of EQ-TR5), and carries the pair across it.
+
+One clock, two ends: the chip computes the universe's running pair; the wall mapping reads the pair's state at the largest claimed structure's epoch. A reviewer who sees the shared rho(z) sees the program: one state book, one time variable, every design seated by it.
+
+## Statuses carried, unchanged
+
+The wall's existence stands as canon's contested claim (HCGW-002: wide-box excess present at shuffle p = 0.0029 in tonight's live catalogue, core box unresolved). The chip stands DESIGNED + SIMULATED, NOT FABRICATED. The neutrino mass input (0.05 eV) stands LABELLED NOT MEASURED. VAL-001 unchanged.

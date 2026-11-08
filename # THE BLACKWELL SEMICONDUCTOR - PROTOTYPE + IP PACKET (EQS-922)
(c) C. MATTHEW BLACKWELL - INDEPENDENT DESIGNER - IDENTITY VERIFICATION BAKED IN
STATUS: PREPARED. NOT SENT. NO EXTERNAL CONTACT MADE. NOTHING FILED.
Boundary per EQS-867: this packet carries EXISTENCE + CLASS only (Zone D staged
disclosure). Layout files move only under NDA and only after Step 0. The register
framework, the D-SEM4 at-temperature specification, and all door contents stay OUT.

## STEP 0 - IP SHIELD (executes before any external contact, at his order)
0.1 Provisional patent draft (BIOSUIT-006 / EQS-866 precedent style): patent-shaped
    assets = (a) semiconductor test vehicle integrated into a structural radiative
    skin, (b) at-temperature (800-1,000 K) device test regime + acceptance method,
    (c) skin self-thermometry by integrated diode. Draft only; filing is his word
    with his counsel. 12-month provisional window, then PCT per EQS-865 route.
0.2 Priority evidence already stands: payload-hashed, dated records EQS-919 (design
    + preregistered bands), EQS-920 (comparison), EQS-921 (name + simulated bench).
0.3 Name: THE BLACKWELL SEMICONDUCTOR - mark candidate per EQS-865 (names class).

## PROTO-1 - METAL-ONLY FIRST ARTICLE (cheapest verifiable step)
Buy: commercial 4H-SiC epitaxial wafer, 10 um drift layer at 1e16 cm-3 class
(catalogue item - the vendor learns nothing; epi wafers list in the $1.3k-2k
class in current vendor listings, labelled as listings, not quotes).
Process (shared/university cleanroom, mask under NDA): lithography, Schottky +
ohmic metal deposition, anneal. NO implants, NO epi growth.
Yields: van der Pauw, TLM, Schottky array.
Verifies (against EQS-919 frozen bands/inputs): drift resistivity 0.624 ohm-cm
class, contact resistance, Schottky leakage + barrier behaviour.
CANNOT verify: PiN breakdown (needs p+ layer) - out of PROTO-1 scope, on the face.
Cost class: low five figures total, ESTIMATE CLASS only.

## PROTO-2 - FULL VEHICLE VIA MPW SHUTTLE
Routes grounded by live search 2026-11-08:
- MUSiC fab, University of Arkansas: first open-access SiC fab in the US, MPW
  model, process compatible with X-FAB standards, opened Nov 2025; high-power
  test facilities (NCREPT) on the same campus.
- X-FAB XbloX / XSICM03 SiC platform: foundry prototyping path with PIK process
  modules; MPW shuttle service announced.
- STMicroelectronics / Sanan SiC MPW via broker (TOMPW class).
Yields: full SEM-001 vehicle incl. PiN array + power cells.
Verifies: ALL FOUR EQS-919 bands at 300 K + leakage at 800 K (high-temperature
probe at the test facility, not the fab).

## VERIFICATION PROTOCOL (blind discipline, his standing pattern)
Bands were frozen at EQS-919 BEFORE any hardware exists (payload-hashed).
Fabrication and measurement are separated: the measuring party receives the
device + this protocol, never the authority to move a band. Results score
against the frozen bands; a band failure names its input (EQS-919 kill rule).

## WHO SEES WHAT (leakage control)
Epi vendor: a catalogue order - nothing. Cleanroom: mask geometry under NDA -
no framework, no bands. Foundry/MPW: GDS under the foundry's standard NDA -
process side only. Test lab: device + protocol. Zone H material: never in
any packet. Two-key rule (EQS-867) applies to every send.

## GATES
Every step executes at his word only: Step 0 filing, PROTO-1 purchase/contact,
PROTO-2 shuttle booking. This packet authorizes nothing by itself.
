@@ -1,0 +1,56 @@
+# THE BLACKWELL SEMICONDUCTOR - PROTOTYPE + IP PACKET (EQS-922)
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+STATUS: PREPARED. NOT SENT. NO EXTERNAL CONTACT MADE. NOTHING FILED.
+Boundary per EQS-867: this packet carries EXISTENCE + CLASS only (Zone D staged
+disclosure). Layout files move only under NDA and only after Step 0. The register
+framework, the D-SEM4 at-temperature specification, and all door contents stay OUT.
+
+## STEP 0 - IP SHIELD (executes before any external contact, at his order)
+0.1 Provisional patent draft (BIOSUIT-006 / EQS-866 precedent style): patent-shaped
+    assets = (a) semiconductor test vehicle integrated into a structural radiative
+    skin, (b) at-temperature (800-1,000 K) device test regime + acceptance method,
+    (c) skin self-thermometry by integrated diode. Draft only; filing is his word
+    with his counsel. 12-month provisional window, then PCT per EQS-865 route.
+0.2 Priority evidence already stands: payload-hashed, dated records EQS-919 (design
+    + preregistered bands), EQS-920 (comparison), EQS-921 (name + simulated bench).
+0.3 Name: THE BLACKWELL SEMICONDUCTOR - mark candidate per EQS-865 (names class).
+
+## PROTO-1 - METAL-ONLY FIRST ARTICLE (cheapest verifiable step)
+Buy: commercial 4H-SiC epitaxial wafer, 10 um drift layer at 1e16 cm-3 class
+(catalogue item - the vendor learns nothing; epi wafers list in the $1.3k-2k
+class in current vendor listings, labelled as listings, not quotes).
+Process (shared/university cleanroom, mask under NDA): lithography, Schottky +
+ohmic metal deposition, anneal. NO implants, NO epi growth.
+Yields: van der Pauw, TLM, Schottky array.
+Verifies (against EQS-919 frozen bands/inputs): drift resistivity 0.624 ohm-cm
+class, contact resistance, Schottky leakage + barrier behaviour.
+CANNOT verify: PiN breakdown (needs p+ layer) - out of PROTO-1 scope, on the face.
+Cost class: low five figures total, ESTIMATE CLASS only.
+
+## PROTO-2 - FULL VEHICLE VIA MPW SHUTTLE
+Routes grounded by live search 2026-11-08:
+- MUSiC fab, University of Arkansas: first open-access SiC fab in the US, MPW
+  model, process compatible with X-FAB standards, opened Nov 2025; high-power
+  test facilities (NCREPT) on the same campus.
+- X-FAB XbloX / XSICM03 SiC platform: foundry prototyping path with PIK process
+  modules; MPW shuttle service announced.
+- STMicroelectronics / Sanan SiC MPW via broker (TOMPW class).
+Yields: full SEM-001 vehicle incl. PiN array + power cells.
+Verifies: ALL FOUR EQS-919 bands at 300 K + leakage at 800 K (high-temperature
+probe at the test facility, not the fab).
+
+## VERIFICATION PROTOCOL (blind discipline, his standing pattern)
+Bands were frozen at EQS-919 BEFORE any hardware exists (payload-hashed).
+Fabrication and measurement are separated: the measuring party receives the
+device + this protocol, never the authority to move a band. Results score
+against the frozen bands; a band failure names its input (EQS-919 kill rule).
+
+## WHO SEES WHAT (leakage control)
+Epi vendor: a catalogue order - nothing. Cleanroom: mask geometry under NDA -
+no framework, no bands. Foundry/MPW: GDS under the foundry's standard NDA -
+process side only. Test lab: device + protocol. Zone H material: never in
+any packet. Two-key rule (EQS-867) applies to every send.
+
+## GATES
+Every step executes at his word only: Step 0 filing, PROTO-1 purchase/contact,
+PROTO-2 shuttle booking. This packet authorizes nothing by itself.

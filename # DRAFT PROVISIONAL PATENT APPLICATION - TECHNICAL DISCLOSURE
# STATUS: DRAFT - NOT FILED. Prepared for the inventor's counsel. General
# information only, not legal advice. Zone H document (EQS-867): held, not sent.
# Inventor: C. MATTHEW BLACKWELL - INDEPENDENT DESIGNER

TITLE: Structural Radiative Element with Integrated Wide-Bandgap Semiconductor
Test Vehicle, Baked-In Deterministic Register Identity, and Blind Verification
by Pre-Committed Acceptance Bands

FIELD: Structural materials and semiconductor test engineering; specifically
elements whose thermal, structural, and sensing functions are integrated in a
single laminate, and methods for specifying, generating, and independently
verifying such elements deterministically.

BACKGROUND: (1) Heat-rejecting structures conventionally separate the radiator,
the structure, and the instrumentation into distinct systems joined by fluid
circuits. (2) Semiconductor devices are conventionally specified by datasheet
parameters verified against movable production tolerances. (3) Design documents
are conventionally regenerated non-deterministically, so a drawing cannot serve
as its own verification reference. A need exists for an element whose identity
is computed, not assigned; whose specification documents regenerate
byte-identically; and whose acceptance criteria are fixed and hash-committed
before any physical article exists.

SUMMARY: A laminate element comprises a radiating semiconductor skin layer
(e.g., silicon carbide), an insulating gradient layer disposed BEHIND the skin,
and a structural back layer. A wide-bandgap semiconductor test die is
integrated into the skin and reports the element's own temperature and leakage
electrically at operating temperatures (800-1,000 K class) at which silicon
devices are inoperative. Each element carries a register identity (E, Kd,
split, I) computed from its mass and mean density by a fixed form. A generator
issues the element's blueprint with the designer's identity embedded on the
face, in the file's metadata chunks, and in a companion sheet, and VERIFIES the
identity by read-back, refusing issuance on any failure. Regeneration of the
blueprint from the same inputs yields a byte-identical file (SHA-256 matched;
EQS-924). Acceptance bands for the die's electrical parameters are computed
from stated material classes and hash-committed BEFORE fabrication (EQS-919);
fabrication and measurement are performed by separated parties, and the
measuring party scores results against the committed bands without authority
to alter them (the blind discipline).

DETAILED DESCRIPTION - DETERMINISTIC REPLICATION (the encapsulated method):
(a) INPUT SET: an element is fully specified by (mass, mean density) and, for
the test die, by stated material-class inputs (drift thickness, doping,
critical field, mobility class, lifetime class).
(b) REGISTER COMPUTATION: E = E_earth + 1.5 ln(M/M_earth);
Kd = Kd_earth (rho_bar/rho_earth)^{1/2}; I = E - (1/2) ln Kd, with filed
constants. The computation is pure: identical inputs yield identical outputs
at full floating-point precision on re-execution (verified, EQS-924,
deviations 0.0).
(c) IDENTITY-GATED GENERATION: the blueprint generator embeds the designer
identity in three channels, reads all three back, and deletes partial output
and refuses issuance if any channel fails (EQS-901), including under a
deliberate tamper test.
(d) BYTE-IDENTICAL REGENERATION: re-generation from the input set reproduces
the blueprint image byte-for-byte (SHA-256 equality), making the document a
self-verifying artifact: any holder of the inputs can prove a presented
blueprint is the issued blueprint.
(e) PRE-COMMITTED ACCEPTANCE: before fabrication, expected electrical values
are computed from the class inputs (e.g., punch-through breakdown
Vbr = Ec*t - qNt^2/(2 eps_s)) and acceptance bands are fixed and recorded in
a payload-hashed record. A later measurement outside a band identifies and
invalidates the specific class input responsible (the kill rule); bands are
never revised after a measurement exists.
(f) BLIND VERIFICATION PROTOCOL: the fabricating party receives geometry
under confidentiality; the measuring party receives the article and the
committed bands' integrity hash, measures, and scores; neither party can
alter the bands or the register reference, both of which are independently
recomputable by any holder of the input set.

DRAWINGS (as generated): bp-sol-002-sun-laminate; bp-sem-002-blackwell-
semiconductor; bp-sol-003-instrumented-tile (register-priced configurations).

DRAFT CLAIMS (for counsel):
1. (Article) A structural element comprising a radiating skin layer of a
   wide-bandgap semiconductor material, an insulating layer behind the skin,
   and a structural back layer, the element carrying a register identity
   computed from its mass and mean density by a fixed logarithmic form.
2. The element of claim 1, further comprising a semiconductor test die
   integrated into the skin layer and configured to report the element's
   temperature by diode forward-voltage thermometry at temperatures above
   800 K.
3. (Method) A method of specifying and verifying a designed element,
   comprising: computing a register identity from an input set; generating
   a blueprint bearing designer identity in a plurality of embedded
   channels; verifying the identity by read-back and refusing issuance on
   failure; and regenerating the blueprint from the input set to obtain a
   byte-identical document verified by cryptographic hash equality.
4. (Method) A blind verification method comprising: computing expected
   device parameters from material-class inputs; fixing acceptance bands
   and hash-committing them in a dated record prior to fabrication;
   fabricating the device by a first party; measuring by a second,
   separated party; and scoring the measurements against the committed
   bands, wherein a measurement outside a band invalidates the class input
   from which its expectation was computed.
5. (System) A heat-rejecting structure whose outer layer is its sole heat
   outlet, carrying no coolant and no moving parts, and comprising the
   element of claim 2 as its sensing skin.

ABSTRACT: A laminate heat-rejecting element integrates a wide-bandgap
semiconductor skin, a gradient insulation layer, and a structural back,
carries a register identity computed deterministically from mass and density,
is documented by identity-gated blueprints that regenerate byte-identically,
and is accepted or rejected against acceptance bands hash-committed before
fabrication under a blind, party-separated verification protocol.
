@@ -1,0 +1,105 @@
+# DRAFT PROVISIONAL PATENT APPLICATION - TECHNICAL DISCLOSURE
+# STATUS: DRAFT - NOT FILED. Prepared for the inventor's counsel. General
+# information only, not legal advice. Zone H document (EQS-867): held, not sent.
+# Inventor: C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER
+
+TITLE: Structural Radiative Element with Integrated Wide-Bandgap Semiconductor
+Test Vehicle, Baked-In Deterministic Register Identity, and Blind Verification
+by Pre-Committed Acceptance Bands
+
+FIELD: Structural materials and semiconductor test engineering; specifically
+elements whose thermal, structural, and sensing functions are integrated in a
+single laminate, and methods for specifying, generating, and independently
+verifying such elements deterministically.
+
+BACKGROUND: (1) Heat-rejecting structures conventionally separate the radiator,
+the structure, and the instrumentation into distinct systems joined by fluid
+circuits. (2) Semiconductor devices are conventionally specified by datasheet
+parameters verified against movable production tolerances. (3) Design documents
+are conventionally regenerated non-deterministically, so a drawing cannot serve
+as its own verification reference. A need exists for an element whose identity
+is computed, not assigned; whose specification documents regenerate
+byte-identically; and whose acceptance criteria are fixed and hash-committed
+before any physical article exists.
+
+SUMMARY: A laminate element comprises a radiating semiconductor skin layer
+(e.g., silicon carbide), an insulating gradient layer disposed BEHIND the skin,
+and a structural back layer. A wide-bandgap semiconductor test die is
+integrated into the skin and reports the element's own temperature and leakage
+electrically at operating temperatures (800-1,000 K class) at which silicon
+devices are inoperative. Each element carries a register identity (E, Kd,
+split, I) computed from its mass and mean density by a fixed form. A generator
+issues the element's blueprint with the designer's identity embedded on the
+face, in the file's metadata chunks, and in a companion sheet, and VERIFIES the
+identity by read-back, refusing issuance on any failure. Regeneration of the
+blueprint from the same inputs yields a byte-identical file (SHA-256 matched;
+EQS-924). Acceptance bands for the die's electrical parameters are computed
+from stated material classes and hash-committed BEFORE fabrication (EQS-919);
+fabrication and measurement are performed by separated parties, and the
+measuring party scores results against the committed bands without authority
+to alter them (the blind discipline).
+
+DETAILED DESCRIPTION - DETERMINISTIC REPLICATION (the encapsulated method):
+(a) INPUT SET: an element is fully specified by (mass, mean density) and, for
+the test die, by stated material-class inputs (drift thickness, doping,
+critical field, mobility class, lifetime class).
+(b) REGISTER COMPUTATION: E = E_earth + 1.5 ln(M/M_earth);
+Kd = Kd_earth (rho_bar/rho_earth)^{1/2}; I = E - (1/2) ln Kd, with filed
+constants. The computation is pure: identical inputs yield identical outputs
+at full floating-point precision on re-execution (verified, EQS-924,
+deviations 0.0).
+(c) IDENTITY-GATED GENERATION: the blueprint generator embeds the designer
+identity in three channels, reads all three back, and deletes partial output
+and refuses issuance if any channel fails (EQS-901), including under a
+deliberate tamper test.
+(d) BYTE-IDENTICAL REGENERATION: re-generation from the input set reproduces
+the blueprint image byte-for-byte (SHA-256 equality), making the document a
+self-verifying artifact: any holder of the inputs can prove a presented
+blueprint is the issued blueprint.
+(e) PRE-COMMITTED ACCEPTANCE: before fabrication, expected electrical values
+are computed from the class inputs (e.g., punch-through breakdown
+Vbr = Ec*t - qNt^2/(2 eps_s)) and acceptance bands are fixed and recorded in
+a payload-hashed record. A later measurement outside a band identifies and
+invalidates the specific class input responsible (the kill rule); bands are
+never revised after a measurement exists.
+(f) BLIND VERIFICATION PROTOCOL: the fabricating party receives geometry
+under confidentiality; the measuring party receives the article and the
+committed bands' integrity hash, measures, and scores; neither party can
+alter the bands or the register reference, both of which are independently
+recomputable by any holder of the input set.
+
+DRAWINGS (as generated): bp-sol-002-sun-laminate; bp-sem-002-blackwell-
+semiconductor; bp-sol-003-instrumented-tile (register-priced configurations).
+
+DRAFT CLAIMS (for counsel):
+1. (Article) A structural element comprising a radiating skin layer of a
+   wide-bandgap semiconductor material, an insulating layer behind the skin,
+   and a structural back layer, the element carrying a register identity
+   computed from its mass and mean density by a fixed logarithmic form.
+2. The element of claim 1, further comprising a semiconductor test die
+   integrated into the skin layer and configured to report the element's
+   temperature by diode forward-voltage thermometry at temperatures above
+   800 K.
+3. (Method) A method of specifying and verifying a designed element,
+   comprising: computing a register identity from an input set; generating
+   a blueprint bearing designer identity in a plurality of embedded
+   channels; verifying the identity by read-back and refusing issuance on
+   failure; and regenerating the blueprint from the input set to obtain a
+   byte-identical document verified by cryptographic hash equality.
+4. (Method) A blind verification method comprising: computing expected
+   device parameters from material-class inputs; fixing acceptance bands
+   and hash-committing them in a dated record prior to fabrication;
+   fabricating the device by a first party; measuring by a second,
+   separated party; and scoring the measurements against the committed
+   bands, wherein a measurement outside a band invalidates the class input
+   from which its expectation was computed.
+5. (System) A heat-rejecting structure whose outer layer is its sole heat
+   outlet, carrying no coolant and no moving parts, and comprising the
+   element of claim 2 as its sensing skin.
+
+ABSTRACT: A laminate heat-rejecting element integrates a wide-bandgap
+semiconductor skin, a gradient insulation layer, and a structural back,
+carries a register identity computed deterministically from mass and density,
+is documented by identity-gated blueprints that regenerate byte-identically,
+and is accepted or rejected against acceptance bands hash-committed before
+fabrication under a blind, party-separated verification protocol.

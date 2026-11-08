@@ -1,0 +1,14 @@
+# VNS-001 VENUS SHELL PANEL - FABRICATION SPECIFICATION Rev B (EQS-914)
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+
+MODULE: 1.0 x 1.0 m, overall thickness 0.36 m class.
+SKINS: structural steel 3.0 mm, S355 class. CORE: aluminium honeycomb, 50 kg/m3 class,
+support pitch 75 mm, tying both skins (carries the 10 bar cavity - flat span CANNOT).
+CAVITY: CO2, sealed, 10.0 bar at 20 C fill; thermal case 12 bar; hydrotest 13 bar.
+FRAME/SEALS/SLIP MOUNTS: 10.0 kg allowance; D4 slip mounting MANDATORY (shell moves
+without loading the frame). MASS: 77.2 kg/m2. REGISTER: E 104.3462 / I 86.8387.
+THERMAL (computed, bridged): U_eff 0.1613 W/m2K vs wool assembly 0.2666.
+SAFETY: CO2 detection + ventilation mandatory in enclosed installations (D-VNS1 case
+as computed at EQS-914). TEST (D-VNS3): guarded hot box; acceptance U within plus/minus
+15 pct of 0.1613 and zero leak 72 h at 12 bar - fixed before test.
+STATUS: SPECIFICATION FABRICATION-READY. ARTICLE NOT BUILT. PERFORMANCE NOT MEASURED.

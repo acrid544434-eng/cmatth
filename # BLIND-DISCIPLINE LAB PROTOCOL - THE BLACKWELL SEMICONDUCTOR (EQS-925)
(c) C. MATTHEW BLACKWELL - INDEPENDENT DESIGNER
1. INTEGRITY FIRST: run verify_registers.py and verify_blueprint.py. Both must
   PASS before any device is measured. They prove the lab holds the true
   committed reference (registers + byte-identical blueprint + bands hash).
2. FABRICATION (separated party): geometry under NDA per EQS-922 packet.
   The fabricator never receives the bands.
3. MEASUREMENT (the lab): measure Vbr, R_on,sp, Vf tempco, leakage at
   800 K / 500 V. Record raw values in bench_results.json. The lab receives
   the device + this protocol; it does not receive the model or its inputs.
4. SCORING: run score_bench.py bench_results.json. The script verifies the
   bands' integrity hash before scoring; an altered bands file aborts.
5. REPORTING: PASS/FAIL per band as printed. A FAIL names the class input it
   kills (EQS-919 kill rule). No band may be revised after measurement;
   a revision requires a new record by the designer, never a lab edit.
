@@ -1,0 +1,15 @@
+# BLIND-DISCIPLINE LAB PROTOCOL - THE BLACKWELL SEMICONDUCTOR (EQS-925)
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER
+1. INTEGRITY FIRST: run verify_registers.py and verify_blueprint.py. Both must
+   PASS before any device is measured. They prove the lab holds the true
+   committed reference (registers + byte-identical blueprint + bands hash).
+2. FABRICATION (separated party): geometry under NDA per EQS-922 packet.
+   The fabricator never receives the bands.
+3. MEASUREMENT (the lab): measure Vbr, R_on,sp, Vf tempco, leakage at
+   800 K / 500 V. Record raw values in bench_results.json. The lab receives
+   the device + this protocol; it does not receive the model or its inputs.
+4. SCORING: run score_bench.py bench_results.json. The script verifies the
+   bands' integrity hash before scoring; an altered bands file aborts.
+5. REPORTING: PASS/FAIL per band as printed. A FAIL names the class input it
+   kills (EQS-919 kill rule). No band may be revised after measurement;
+   a revision requires a new record by the designer, never a lab edit.

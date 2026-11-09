@@ -1,0 +1,54 @@
+{
+  "record": "EQS-971",
+  "title": "P-DR4 - THE STRONGEST FALSIFIABLE PREDICTION FROM EQS-970, PREREGISTERED BEFORE GAIA DR4",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "laid_out_at_his_word": "2026-11-09 ~12:28 CST - his tap + restated word on the pasted four-step assessment",
+  "the_prediction": {
+    "name": "P-DR4 (EQS-971)",
+    "statement": "When Gaia DR4 lands (ESA scheduled release Wednesday 2026-12-02), re-running the IDENTICAL slice - ADQL: SELECT source_id, mass_flame, radius_flame FROM the DR4 astrophysical_parameters WHERE mass_flame IS NOT NULL AND radius_flame IS NOT NULL AND MOD(source_id, 997) = 3, TOP 1200 - through the EQS-970 machinery will seat the census body and the shell fraction inside the bands locked below.",
+    "locked_bands_from_E970_live_slice": {
+      "census_E_band": [
+        213.1764436969639,
+        213.28172954638768
+      ],
+      "census_split_band": [
+        16.520751896096897,
+        17.011591648753978
+      ],
+      "shell_fraction_band": [
+        0.67,
+        0.74
+      ],
+      "band_basis": "bootstrap with replacement over the 1,200-star live slice, seed 970, 2000 draws; central 99% of the resample distribution; the bands quantify the sampling width of tonights slice and are locked AS COMPUTED - no widening after data",
+      "tonight_reads": {
+        "E": 213.23106284643382,
+        "split": 16.74014856728825,
+        "shell_fraction": 0.705
+      },
+      "accord_leg": "census E also inside THE BLACKWELL MOAT (205.391, 229.037) - the wide accord component; the tight bands above are the risky component"
+    },
+    "kill_criterion_locked_before_data": "P-DR4 DIES if, on the DR4 slice as specified, census E falls outside [213.1764, 213.2817], OR census split falls outside [16.5208, 17.0116], OR the shell fraction falls outside [0.67, 0.74]. Any one miss kills it. No re-slicing, no re-banding, no roster repair after the fact (EQS-830 non-correction discipline).",
+    "why_this_one": "it is the strongest prediction THIS RUN produces that is (i) entailed by the runs own numbers, (ii) genuinely killable - FLAME revisions or a changed slice can miss the bands, (iii) testable by any stranger with TAP access and the stated ADQL, no desk code required beyond the filed register formula, (iv) dated - the decider lands 2026-12-02, already the watchs scoring date (source 2)",
+    "independent_test_route": "the register formula is filed (EQS-857/EQS-955 statements + EQS-970 record): E = E_earth + 1.5 ln(M/M_earth) per body; census body = the slice priced as one body at its total mass and total volume; split = 0.5 ln Kd, Kd = Kd_earth sqrt(rho_bar/5514); shell = [17.7192, 18.671974]"
+  },
+  "the_runner_up_named_honestly": {
+    "structure": "THE PROTON-NEUTRON RAZOR WINDOW: the recomputed closings (EQS-970) put the neutron closing at z = 12.4393 and the proton closing at z = 12.4022 - a window 0.037 wide in redshift where the filed universes live set holds the neutron open and the proton closed, differing by exactly one channel from both neighbouring windows; phi brackets the top at 14.8238",
+    "status": "SHARPEST STRUCTURE IN THE RUN - but its scoring observable (what measurement on a galaxy in the window would read the set) is NOT SPECIFIED in the record; until an observable is specified it is a named candidate prediction, NOT the strongest TESTABLE one. Specification is his hand."
+  },
+  "statuses": {
+    "prediction": "PREREGISTERED 2026-11-09 - decider Gaia DR4, 2026-12-02 - rides watch source 2",
+    "validation": "VAL-001 unchanged (0) - this filing is step-2 machinery (a novel risky prediction), it does not itself move VAL-001",
+    "census": "unchanged - 92 / 130 / 18",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "999a0fbb3dd678811be98fb8d03f0e65f35a597548956d4a03c7b77e7dca8b48",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

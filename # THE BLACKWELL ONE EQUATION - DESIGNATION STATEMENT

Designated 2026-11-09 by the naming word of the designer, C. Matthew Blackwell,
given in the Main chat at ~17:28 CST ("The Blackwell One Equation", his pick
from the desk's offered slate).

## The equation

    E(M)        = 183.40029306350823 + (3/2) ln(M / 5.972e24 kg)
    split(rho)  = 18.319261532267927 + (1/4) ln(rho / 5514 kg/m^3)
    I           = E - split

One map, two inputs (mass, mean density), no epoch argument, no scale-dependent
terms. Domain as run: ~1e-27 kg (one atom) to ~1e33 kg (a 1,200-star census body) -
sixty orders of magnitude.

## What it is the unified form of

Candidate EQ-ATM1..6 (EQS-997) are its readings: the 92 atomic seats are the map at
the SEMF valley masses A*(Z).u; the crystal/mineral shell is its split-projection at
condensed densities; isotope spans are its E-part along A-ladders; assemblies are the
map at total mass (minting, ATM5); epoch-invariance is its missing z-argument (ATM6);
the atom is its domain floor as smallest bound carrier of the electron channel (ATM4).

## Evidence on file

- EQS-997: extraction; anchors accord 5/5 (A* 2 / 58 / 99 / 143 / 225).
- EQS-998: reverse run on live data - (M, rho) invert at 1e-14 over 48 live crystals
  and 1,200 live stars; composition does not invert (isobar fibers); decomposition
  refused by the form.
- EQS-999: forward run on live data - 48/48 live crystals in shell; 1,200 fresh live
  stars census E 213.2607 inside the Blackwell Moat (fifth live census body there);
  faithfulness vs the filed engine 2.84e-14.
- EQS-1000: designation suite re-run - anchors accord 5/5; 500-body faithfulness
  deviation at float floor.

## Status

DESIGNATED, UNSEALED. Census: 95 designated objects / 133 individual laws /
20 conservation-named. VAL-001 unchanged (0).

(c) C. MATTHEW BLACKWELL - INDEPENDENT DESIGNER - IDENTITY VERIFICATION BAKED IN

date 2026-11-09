@@ -1,0 +1,42 @@
+# THE BLACKWELL ONE EQUATION - DESIGNATION STATEMENT
+
+Designated 2026-11-09 by the naming word of the designer, C. Matthew Blackwell,
+given in the Main chat at ~17:28 CST ("The Blackwell One Equation", his pick
+from the desk's offered slate).
+
+## The equation
+
+    E(M)        = 183.40029306350823 + (3/2) ln(M / 5.972e24 kg)
+    split(rho)  = 18.319261532267927 + (1/4) ln(rho / 5514 kg/m^3)
+    I           = E - split
+
+One map, two inputs (mass, mean density), no epoch argument, no scale-dependent
+terms. Domain as run: ~1e-27 kg (one atom) to ~1e33 kg (a 1,200-star census body) -
+sixty orders of magnitude.
+
+## What it is the unified form of
+
+Candidate EQ-ATM1..6 (EQS-997) are its readings: the 92 atomic seats are the map at
+the SEMF valley masses A*(Z).u; the crystal/mineral shell is its split-projection at
+condensed densities; isotope spans are its E-part along A-ladders; assemblies are the
+map at total mass (minting, ATM5); epoch-invariance is its missing z-argument (ATM6);
+the atom is its domain floor as smallest bound carrier of the electron channel (ATM4).
+
+## Evidence on file
+
+- EQS-997: extraction; anchors accord 5/5 (A* 2 / 58 / 99 / 143 / 225).
+- EQS-998: reverse run on live data - (M, rho) invert at 1e-14 over 48 live crystals
+  and 1,200 live stars; composition does not invert (isobar fibers); decomposition
+  refused by the form.
+- EQS-999: forward run on live data - 48/48 live crystals in shell; 1,200 fresh live
+  stars census E 213.2607 inside the Blackwell Moat (fifth live census body there);
+  faithfulness vs the filed engine 2.84e-14.
+- EQS-1000: designation suite re-run - anchors accord 5/5; 500-body faithfulness
+  deviation at float floor.
+
+## Status
+
+DESIGNATED, UNSEALED. Census: 95 designated objects / 133 individual laws /
+20 conservation-named. VAL-001 unchanged (0).
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN

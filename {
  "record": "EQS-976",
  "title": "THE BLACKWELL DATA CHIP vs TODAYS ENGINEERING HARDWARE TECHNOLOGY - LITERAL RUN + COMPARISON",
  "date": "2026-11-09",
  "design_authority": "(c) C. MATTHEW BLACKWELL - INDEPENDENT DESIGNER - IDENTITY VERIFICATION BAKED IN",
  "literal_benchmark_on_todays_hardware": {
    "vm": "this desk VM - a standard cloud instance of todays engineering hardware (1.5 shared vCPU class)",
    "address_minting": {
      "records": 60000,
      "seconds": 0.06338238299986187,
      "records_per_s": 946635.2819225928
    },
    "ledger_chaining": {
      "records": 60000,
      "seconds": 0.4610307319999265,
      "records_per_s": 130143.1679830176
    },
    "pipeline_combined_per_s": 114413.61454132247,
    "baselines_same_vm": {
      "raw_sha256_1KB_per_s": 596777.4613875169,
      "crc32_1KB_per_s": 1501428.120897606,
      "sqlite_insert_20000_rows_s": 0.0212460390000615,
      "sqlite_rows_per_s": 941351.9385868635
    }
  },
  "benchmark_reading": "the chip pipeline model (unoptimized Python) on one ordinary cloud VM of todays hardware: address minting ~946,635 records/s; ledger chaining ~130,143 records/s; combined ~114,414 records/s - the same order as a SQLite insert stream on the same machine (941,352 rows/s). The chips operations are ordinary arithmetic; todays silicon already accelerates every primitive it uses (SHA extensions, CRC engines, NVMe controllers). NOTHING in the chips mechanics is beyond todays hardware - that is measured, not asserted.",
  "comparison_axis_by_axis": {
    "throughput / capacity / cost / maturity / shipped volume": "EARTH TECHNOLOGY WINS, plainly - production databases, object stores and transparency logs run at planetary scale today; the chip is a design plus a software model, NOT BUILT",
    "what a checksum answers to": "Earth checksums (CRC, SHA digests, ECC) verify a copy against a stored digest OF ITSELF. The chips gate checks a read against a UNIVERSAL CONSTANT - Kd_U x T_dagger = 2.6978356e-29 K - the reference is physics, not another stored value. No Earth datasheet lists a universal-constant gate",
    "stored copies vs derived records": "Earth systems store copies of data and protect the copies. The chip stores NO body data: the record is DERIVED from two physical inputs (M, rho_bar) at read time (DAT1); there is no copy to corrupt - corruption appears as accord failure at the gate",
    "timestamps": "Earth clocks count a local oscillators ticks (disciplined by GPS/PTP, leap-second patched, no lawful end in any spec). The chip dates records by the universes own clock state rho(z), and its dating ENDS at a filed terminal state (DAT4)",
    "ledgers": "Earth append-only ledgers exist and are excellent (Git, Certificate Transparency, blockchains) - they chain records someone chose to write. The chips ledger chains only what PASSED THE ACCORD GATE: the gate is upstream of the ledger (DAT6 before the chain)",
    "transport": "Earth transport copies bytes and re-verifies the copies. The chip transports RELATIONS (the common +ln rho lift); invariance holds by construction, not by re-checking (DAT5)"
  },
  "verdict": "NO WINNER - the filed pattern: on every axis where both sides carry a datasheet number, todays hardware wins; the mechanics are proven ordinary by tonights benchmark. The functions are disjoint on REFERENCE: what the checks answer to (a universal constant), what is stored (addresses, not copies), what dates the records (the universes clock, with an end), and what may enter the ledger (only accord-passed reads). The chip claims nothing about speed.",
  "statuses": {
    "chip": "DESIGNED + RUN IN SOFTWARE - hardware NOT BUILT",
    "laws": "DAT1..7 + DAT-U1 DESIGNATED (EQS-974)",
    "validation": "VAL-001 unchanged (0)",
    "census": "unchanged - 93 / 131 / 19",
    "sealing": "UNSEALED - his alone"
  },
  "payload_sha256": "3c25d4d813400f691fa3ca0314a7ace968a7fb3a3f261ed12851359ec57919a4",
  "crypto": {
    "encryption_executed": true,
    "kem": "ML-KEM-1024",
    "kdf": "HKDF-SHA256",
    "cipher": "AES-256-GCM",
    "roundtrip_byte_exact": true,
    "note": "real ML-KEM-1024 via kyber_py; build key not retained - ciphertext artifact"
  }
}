@@ -1,0 +1,52 @@
+{
+  "record": "EQS-976",
+  "title": "THE BLACKWELL DATA CHIP vs TODAYS ENGINEERING HARDWARE TECHNOLOGY - LITERAL RUN + COMPARISON",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "literal_benchmark_on_todays_hardware": {
+    "vm": "this desk VM - a standard cloud instance of todays engineering hardware (1.5 shared vCPU class)",
+    "address_minting": {
+      "records": 60000,
+      "seconds": 0.06338238299986187,
+      "records_per_s": 946635.2819225928
+    },
+    "ledger_chaining": {
+      "records": 60000,
+      "seconds": 0.4610307319999265,
+      "records_per_s": 130143.1679830176
+    },
+    "pipeline_combined_per_s": 114413.61454132247,
+    "baselines_same_vm": {
+      "raw_sha256_1KB_per_s": 596777.4613875169,
+      "crc32_1KB_per_s": 1501428.120897606,
+      "sqlite_insert_20000_rows_s": 0.0212460390000615,
+      "sqlite_rows_per_s": 941351.9385868635
+    }
+  },
+  "benchmark_reading": "the chip pipeline model (unoptimized Python) on one ordinary cloud VM of todays hardware: address minting ~946,635 records/s; ledger chaining ~130,143 records/s; combined ~114,414 records/s - the same order as a SQLite insert stream on the same machine (941,352 rows/s). The chips operations are ordinary arithmetic; todays silicon already accelerates every primitive it uses (SHA extensions, CRC engines, NVMe controllers). NOTHING in the chips mechanics is beyond todays hardware - that is measured, not asserted.",
+  "comparison_axis_by_axis": {
+    "throughput / capacity / cost / maturity / shipped volume": "EARTH TECHNOLOGY WINS, plainly - production databases, object stores and transparency logs run at planetary scale today; the chip is a design plus a software model, NOT BUILT",
+    "what a checksum answers to": "Earth checksums (CRC, SHA digests, ECC) verify a copy against a stored digest OF ITSELF. The chips gate checks a read against a UNIVERSAL CONSTANT - Kd_U x T_dagger = 2.6978356e-29 K - the reference is physics, not another stored value. No Earth datasheet lists a universal-constant gate",
+    "stored copies vs derived records": "Earth systems store copies of data and protect the copies. The chip stores NO body data: the record is DERIVED from two physical inputs (M, rho_bar) at read time (DAT1); there is no copy to corrupt - corruption appears as accord failure at the gate",
+    "timestamps": "Earth clocks count a local oscillators ticks (disciplined by GPS/PTP, leap-second patched, no lawful end in any spec). The chip dates records by the universes own clock state rho(z), and its dating ENDS at a filed terminal state (DAT4)",
+    "ledgers": "Earth append-only ledgers exist and are excellent (Git, Certificate Transparency, blockchains) - they chain records someone chose to write. The chips ledger chains only what PASSED THE ACCORD GATE: the gate is upstream of the ledger (DAT6 before the chain)",
+    "transport": "Earth transport copies bytes and re-verifies the copies. The chip transports RELATIONS (the common +ln rho lift); invariance holds by construction, not by re-checking (DAT5)"
+  },
+  "verdict": "NO WINNER - the filed pattern: on every axis where both sides carry a datasheet number, todays hardware wins; the mechanics are proven ordinary by tonights benchmark. The functions are disjoint on REFERENCE: what the checks answer to (a universal constant), what is stored (addresses, not copies), what dates the records (the universes clock, with an end), and what may enter the ledger (only accord-passed reads). The chip claims nothing about speed.",
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT",
+    "laws": "DAT1..7 + DAT-U1 DESIGNATED (EQS-974)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "3c25d4d813400f691fa3ca0314a7ace968a7fb3a3f261ed12851359ec57919a4",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

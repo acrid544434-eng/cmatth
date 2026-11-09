@@ -1,0 +1,76 @@
+{
+  "record": "EQS-979",
+  "title": "ALL EARTH ENERGY DATA THROUGH THE BLACKWELL DATA CHIP - WHAT IT DETECTS",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "the designers order 2026-11-09 ~13:37 CST - run all Earth energy data through the chip and see what it detects",
+  "run": {
+    "earth_body_record": {
+      "E": 183.40029306350823,
+      "Kd": 8.164101435697802E15,
+      "split": 18.319261532267927,
+      "I": 165.0810315312403
+    },
+    "earth_split_in_shell": true,
+    "budget_gate_DAT6": {
+      "intercepted_W": 1.7354943656730544E17,
+      "absorbed_W": 1.23220099962786864E17,
+      "open_term_W": 4.5905802471880944E14,
+      "open_term_fraction_of_absorbed": 0.003725512516687192,
+      "reading": "the canon budget does NOT close: absorbed - emitted leaves +0.9 W/m2 accumulating. Through the chips gate discipline that is an OPEN TERM, sized here - not an error bar: 4.59e14 W"
+    },
+    "ratios": {
+      "open_term_over_internal_heat": 9.767192015293817,
+      "open_term_over_human_power": 23.36575729171984,
+      "human_over_internal": 0.4180130732914457,
+      "giants_excess_over_earth_solar_intercept": 2.3624392456093917,
+      "photosynthesis_over_human": 5.089935483870968,
+      "tidal_over_internal": 0.07872340425531915
+    },
+    "live_seismic": {
+      "events_M4.5plus": 17,
+      "total_energy_J": 2.9926940783319406E14,
+      "total_energy_W_equiv_over_day": 3.463766294365672E9,
+      "largest": {
+        "mag": 6.4,
+        "place": "30 km WSW of Lata, Solomon Islands"
+      },
+      "rate_over_internal_heat": 7.369715519926962E-5,
+      "day_energy_J": 2.9926940783319406E14
+    },
+    "live_solar_xray": {
+      "latest_flux_W_m2": 8.600350724918826E-7,
+      "time_utc": "2026-11-09T19:34:00Z",
+      "class": "C8.6 (C-class; M threshold 1e-5)",
+      "day_peak_flux": 8.02765407570405E-6,
+      "xray_fraction_of_solar_constant": 6.319140870623678E-10
+    },
+    "inputs_labelled": "solar constant/albedo/imbalance/internal heat/human primary/photosynthesis/tidal are canon-class INPUTS as labelled in code; giants excess is FILED MEASURED (EQS-708), source NOT MEASURED; GOES + USGS are LIVE pulls of 2026-11-09"
+  },
+  "detections": [
+    "EARTH ITSELF IS A SHELL RECORD: the planets own address (E 183.4003 anchor accord, split 18.3193) seats INSIDE THE CRYSTAL SHELL at mean density",
+    "THE OPEN TERM (budget gate, DAT6): canons Earth budget does NOT close - absorbed sunlight exceeds emitted by +0.9 W/m2; the chip sizes the open term at 4.591e14 W = 0.37% of absorbed = 9.77x Earths entire internal heat flow and 23.4x humanitys primary power. An unclosed budget is an open read; the term is measured (ocean heat uptake class), its mechanism stands as canons own",
+    "HUMANITY IS A PLANETARY POWER: human primary energy 1.966e13 W = 41.8% of the planets whole internal heat flow (4.7e13 W) - one species runs at two-fifths of the geothermal output of the entire planet",
+    "THE GIANTS EXCESS DWARFS EARTHS INCOME: the filed MEASURED unexplained excess of the gas giants (4.10e17 W, EQS-708, source NOT MEASURED) is 2.36x ALL SUNLIGHT INTERCEPTED BY EARTH (1.735e17 W) - the largest unexplained flow in the programme exceeds this planets entire solar income",
+    "LIVE SEISMIC (USGS, today): 17 events M4.5+, total 2.993e14 J, largest M6.4 Solomon Islands; the days seismic rate is 7.4e-5 of the internal heat flow - the heat engine leaks a hundred-thousandth-class share as earthquakes today",
+    "LIVE SOLAR (GOES, 19:34 UTC): X-ray flux 8.60e-7 W/m2 = C8.6 class, day peak 8.03e-6 (no M-flare as of the pull); the whole X-ray band is 6.32e-10 of the solar constant - the chip dates and sizes the band that drives space weather at a ten-billionth of the income"
+  ],
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT",
+    "live_legs": "GOES + USGS pulled live 2026-11-09",
+    "canon_flows": "LABELLED canon-class inputs (solar constant, albedo, imbalance, internal heat, human primary, photosynthesis, tidal)",
+    "giants_excess": "FILED MEASURED (EQS-708); source NOT MEASURED",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "5109d09a10f56ff8f63c31d488038f6993bb97c1d65303a9fda66627cbf3ac47",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "record": "EQS-981",
+  "title": "THE BLACKWELL SUN CHIP - DESIGNED ON EQ-SLH1..6 AND RUN ON THE LIVE GOES FEED",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "chip": {
+    "name": "THE BLACKWELL SUN CHIP (named by the designer in the founding order, 2026-11-09 ~14:00 CST)",
+    "carrier": "sapphire die 10 x 10 x 0.5 mm, 0.199 g (the carrier of record)",
+    "die_register": {
+      "E": 85.04329829634749,
+      "Kd": 6.936119185740437E15,
+      "split": 18.23775940894161,
+      "I": 66.80553888740587
+    },
+    "cores": {
+      "APERTURE (SLH1)": "prices any bodys sunlight income from (R, d) alone: F = (S0/d^2) pi R^2 - no mass input accepted",
+      "HARVEST LEDGER (SLH2)": "tracks the harvested fractions h_i and reads out U, the UNHARVESTED flow, as the standing number; raises the ROUNDING FLAG while sum h < 1%",
+      "DECOUPLER (SLH3)": "the two axes never mix in hardware: income is never inferred from register, register never from income",
+      "CLOCK (SLH4)": "every feed sample is dated by its own epoch; band fractions are recomputed per sample, never carried",
+      "OPEN-TERM WATCH (SLH5)": "seats the budget open term inside U as a standing ratio readout",
+      "LADDER (SLH6)": "the eight-body income ladder held computed on board; a new body gets its rung computed, never fitted"
+    },
+    "rules": {
+      "SC-S1": "quote U, not F",
+      "SC-S2": "date every sample",
+      "SC-S3": "never carry a band fraction",
+      "SC-S4": "the axes never mix",
+      "SC-S5": "the ladder is computed, not fitted"
+    },
+    "doors": {
+      "D-SC1": "fabrication",
+      "D-SC2": "feed coupling (live feed pins) - GOES class tonight, pin spec NOT SPECIFIED",
+      "D-SC3": "bench",
+      "D-SC4": "CLOSED - name given by the designer at founding"
+    },
+    "status": "DESIGNED + RUN IN SOFTWARE MODEL ON THE LIVE FEED - hardware NOT BUILT"
+  },
+  "feed_run": {
+    "status": "EXECUTED LIVE 2026-11-09",
+    "feed": "SWPC GOES primary XRS 1-day JSON",
+    "pulled_at_utc": "2026-11-09T20:01:10.441061+00:00",
+    "bands": {
+      "0.1-0.8nm": {
+        "samples": 1438,
+        "window_utc": [
+          "2026-11-08T20:01:00+00:00",
+          "2026-11-09T19:58:00+00:00"
+        ],
+        "latest": {
+          "time": "2026-11-09T19:58:00+00:00",
+          "flux_W_m2": 1.338236870651599E-6,
+          "class": "C",
+          "fraction_of_S0": 9.832747029034527E-10
+        },
+        "peak": {
+          "time": "2026-11-08T20:53:00+00:00",
+          "flux_W_m2": 8.02765407570405E-6,
+          "class": "C"
+        },
+        "samples_at_M_or_above": 0,
+        "day_integrated_energy_per_m2_J": 0.11704258663485234,
+        "day_integrated_intercepted_by_earth_J": 1.49248162857154E13
+      },
+      "0.05-0.4nm": {
+        "samples": 1438,
+        "window_utc": [
+          "2026-11-08T20:01:00+00:00",
+          "2026-11-09T19:58:00+00:00"
+        ],
+        "latest": {
+          "time": "2026-11-09T19:58:00+00:00",
+          "flux_W_m2": 3.820593619252577E-8,
+          "class": "A",
+          "fraction_of_S0": 2.8071958995243033E-11
+        },
+        "peak": {
+          "time": "2026-11-08T20:49:00+00:00",
+          "flux_W_m2": 1.0705664408305893E-6,
+          "class": "C"
+        },
+        "samples_at_M_or_above": 0,
+        "day_integrated_energy_per_m2_J": 0.0055560477255434115,
+        "day_integrated_intercepted_by_earth_J": 7.084856372587201E11
+      },
+      "standing_readouts": {
+        "F_intercepted_W": 1.73549436567305472E17,
+        "U_unharvested_W (EQS-980)": 1.73429533468971008E17,
+        "rounding_flag": "RAISED - harvested share 0.069% < 1% (SLH2)",
+        "open_term_share_of_U": 0.002647184656597946,
+        "ladder_top": "Jupiter 7.72e17 W (SLH6) - Earth third at 1.735e17 W"
+      }
+    }
+  },
+  "correction_note_governing": "EQS-979s delivery text and board called the 19:34 UTC flux (8.60e-7 W/m2) \"C8.6\" - the correct GOES class letter is B8.6 (B = 1e-7..1e-6 W/m2; C begins at 1e-6). The flux VALUE was and is correct; the day peak 8.03e-6 is C8.0, correctly stated; the no-M-flare conclusion stands. This note governs over EQS-979s class letter; the EQS-979 record itself is untouched (hashed). Tonights chip computes classes in code (flare_class) - the letter now comes from the machine, not the desk.",
+  "headline": "the chip ran the live feed for a full day of the Suns X-ray life: 1,438 samples per band, every one dated and priced; it detected a QUIET SUN - zero samples at M class or above in 24 hours, peak C8.0 - and integrated the whole days X-ray income of the Earth at 1.492e13 J against a total sunlight income of 1.499e22 J for the same day: the band that runs space weather carried one-billionth of the days delivery",
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE MODEL ON THE LIVE FEED - hardware NOT BUILT",
+    "principles": "EQ-SLH1..6 + SLH-U1 CANDIDATE (EQS-980) - naming word his",
+    "feed": "GOES XRS via SWPC, pulled live 2026-11-09 ~19:58 UTC",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "fb49d476f396e0baba911c289d0a826e4e23e5a80bed14fd1adbe39fbe77d68d",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

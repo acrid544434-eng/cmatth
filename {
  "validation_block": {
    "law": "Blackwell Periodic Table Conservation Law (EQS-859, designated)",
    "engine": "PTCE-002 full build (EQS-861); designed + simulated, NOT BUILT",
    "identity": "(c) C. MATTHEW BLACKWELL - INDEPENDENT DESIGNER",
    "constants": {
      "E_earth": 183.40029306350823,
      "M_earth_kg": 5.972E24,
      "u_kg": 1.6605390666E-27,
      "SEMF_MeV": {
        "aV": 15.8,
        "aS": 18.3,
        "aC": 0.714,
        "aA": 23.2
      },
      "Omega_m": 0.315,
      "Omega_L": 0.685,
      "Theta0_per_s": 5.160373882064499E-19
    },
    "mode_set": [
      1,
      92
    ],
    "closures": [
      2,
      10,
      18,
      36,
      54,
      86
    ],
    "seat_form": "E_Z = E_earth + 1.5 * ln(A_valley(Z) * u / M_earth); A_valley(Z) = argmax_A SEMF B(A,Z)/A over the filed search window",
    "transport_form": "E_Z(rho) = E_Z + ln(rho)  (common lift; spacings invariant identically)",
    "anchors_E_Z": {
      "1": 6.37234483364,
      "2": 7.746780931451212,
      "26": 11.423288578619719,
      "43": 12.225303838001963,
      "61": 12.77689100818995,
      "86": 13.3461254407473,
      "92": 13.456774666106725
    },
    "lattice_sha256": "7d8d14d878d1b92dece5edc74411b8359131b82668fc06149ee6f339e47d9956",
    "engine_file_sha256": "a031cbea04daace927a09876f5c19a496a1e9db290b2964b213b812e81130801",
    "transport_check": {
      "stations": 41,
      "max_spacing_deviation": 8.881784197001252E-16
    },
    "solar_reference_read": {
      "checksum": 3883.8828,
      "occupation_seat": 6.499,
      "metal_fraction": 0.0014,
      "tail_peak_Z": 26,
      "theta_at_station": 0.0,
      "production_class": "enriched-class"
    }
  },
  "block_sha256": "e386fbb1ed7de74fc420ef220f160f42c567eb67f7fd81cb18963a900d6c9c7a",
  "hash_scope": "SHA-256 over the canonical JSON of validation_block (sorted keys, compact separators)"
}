@@ -1,0 +1,60 @@
+{
+  "validation_block": {
+    "law": "Blackwell Periodic Table Conservation Law (EQS-859, designated)",
+    "engine": "PTCE-002 full build (EQS-861); designed + simulated, NOT BUILT",
+    "identity": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER",
+    "constants": {
+      "E_earth": 183.40029306350823,
+      "M_earth_kg": 5.972E24,
+      "u_kg": 1.6605390666E-27,
+      "SEMF_MeV": {
+        "aV": 15.8,
+        "aS": 18.3,
+        "aC": 0.714,
+        "aA": 23.2
+      },
+      "Omega_m": 0.315,
+      "Omega_L": 0.685,
+      "Theta0_per_s": 5.160373882064499E-19
+    },
+    "mode_set": [
+      1,
+      92
+    ],
+    "closures": [
+      2,
+      10,
+      18,
+      36,
+      54,
+      86
+    ],
+    "seat_form": "E_Z = E_earth + 1.5 * ln(A_valley(Z) * u / M_earth); A_valley(Z) = argmax_A SEMF B(A,Z)/A over the filed search window",
+    "transport_form": "E_Z(rho) = E_Z + ln(rho)  (common lift; spacings invariant identically)",
+    "anchors_E_Z": {
+      "1": 6.37234483364,
+      "2": 7.746780931451212,
+      "26": 11.423288578619719,
+      "43": 12.225303838001963,
+      "61": 12.77689100818995,
+      "86": 13.3461254407473,
+      "92": 13.456774666106725
+    },
+    "lattice_sha256": "7d8d14d878d1b92dece5edc74411b8359131b82668fc06149ee6f339e47d9956",
+    "engine_file_sha256": "a031cbea04daace927a09876f5c19a496a1e9db290b2964b213b812e81130801",
+    "transport_check": {
+      "stations": 41,
+      "max_spacing_deviation": 8.881784197001252E-16
+    },
+    "solar_reference_read": {
+      "checksum": 3883.8828,
+      "occupation_seat": 6.499,
+      "metal_fraction": 0.0014,
+      "tail_peak_Z": 26,
+      "theta_at_station": 0.0,
+      "production_class": "enriched-class"
+    }
+  },
+  "block_sha256": "e386fbb1ed7de74fc420ef220f160f42c567eb67f7fd81cb18963a900d6c9c7a",
+  "hash_scope": "SHA-256 over the canonical JSON of validation_block (sorted keys, compact separators)"
+}

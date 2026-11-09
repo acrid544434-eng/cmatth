@@ -1,0 +1,127 @@
+{
+  "record": "EQS-973",
+  "title": "THE UNIVERSE EQUATIONS FOR DATA - EXTRACTED THROUGH STC-001 (CANDIDATE EQ-DAT1..7 + DAT-U1)",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "extraction": {
+    "extraction": "EQ-DAT1..7 + DAT-U1 - THE UNIVERSE EQUATIONS FOR DATA THROUGH STC-001",
+    "legs": {
+      "DAT1_record_determinism": {
+        "claim": "a body IS a data record: (M, rho_bar) -> (E, Kd, split, I), completely and deterministically",
+        "records_recomputed": 1200,
+        "two_passes_bit_identical": true,
+        "census_recompute": {
+          "E": 213.23106284643382,
+          "Kd": 3.4698308024179844E14,
+          "split": 16.74014856728825,
+          "I": 196.49091427914556
+        },
+        "census_filed_E970": {
+          "E": 213.23106284643382,
+          "Kd": 3.4698308024179844E14,
+          "split": 16.74014856728825,
+          "I": 196.49091427914556
+        },
+        "census_accord_exact": true
+      },
+      "DAT2_data_depth": {
+        "claim": "the depth of a record is its I channel; depth is density-priced: dI = -1/4 d ln rho_bar at fixed mass (SIR-U1)",
+        "slice_I_range": [
+          183.07279469607283,
+          189.29469685111388
+        ],
+        "slice_I_median": 184.47630736315847,
+        "dI_at_density_doubling_computed": -0.17328679513997258,
+        "dI_form": -0.17328679513998632,
+        "accord": true
+      },
+      "DAT3_conserved_checksum": {
+        "claim": "the universes data carries ONE conserved checksum: Kd_U * T_dagger = 2.6978356e-29 K at every epoch",
+        "stations": 42,
+        "max_abs_deviation_K": 5.605193857299268E-45,
+        "filed_E938": "max deviation 1.12e-44 K over 43 stations"
+      },
+      "DAT4_clock_dated_terminal": {
+        "claim": "every record is dated by the one clock rho(z); the archive has a FINAL PAGE fixed in advance: at rho_inf the live set is the terminal 7, H = 0.82765 H0, Theta -> 0 (TIMC2 read as a data law)",
+        "live_today": 7,
+        "live_terminal": 7,
+        "terminal_H_ratio_computed": 0.8276472678623423,
+        "terminal_H_ratio_filed": 0.82765
+      },
+      "DAT5_transport_invariant_relations": {
+        "claim": "under clock transport every record lifts by the same +ln rho; the RELATIONS between records (all pairwise spacings) and the checksum are invariant - data survives transport in its relations exactly",
+        "bodies": 51,
+        "pairs_x_stations": "51 bodies, 1275 pairs, 41 stations",
+        "max_spacing_deviation": 0.0
+      },
+      "DAT6_invalid_data_is_not_data": {
+        "claim": "a data read that fails accord is REJECTED = NOT MEASURED, never corrected into a value - accord is the validity of data itself (the GUARD discipline as a data law)",
+        "clean_reads_accepted_all_41_stations": true,
+        "plus1pct_T_dagger_injection_rejected": true
+      },
+      "DAT7_address_separates": {
+        "claim": "E alone is not the record: two bodies of equal mass share E and are separated by their density-priced channels (split, I) - the full address is the data",
+        "pair_mass_rel_diff": 5.735973720974553E-5,
+        "pair_E": [
+          202.49579843896197,
+          202.4958844761003
+        ],
+        "pair_splits": [
+          17.960348402934965,
+          16.912425691669263
+        ],
+        "pair_split_separation": 1.0479227112657021
+      }
+    },
+    "DAT_U1_candidate": "THE DATA STATEMENT (candidate): the universe is a self-checking archive - every body is a record addressed by (E, Kd, split, I) from two inputs; every record is dated by the one clock; the archive carries one conserved checksum; its relations are transport-invariant; invalid reads are rejected, never corrected; and its final page is fixed in advance. Data is not stored IN the universe - the states of the universe ARE the data.",
+    "suite": {
+      "DAT1_determinism_and_accord": true,
+      "DAT2_depth_form": true,
+      "DAT3_checksum_at_float_floor": true,
+      "DAT4_terminal_7_and_H": true,
+      "DAT5_transport_deviation_float_floor": true,
+      "DAT6_gate_accepts_clean_rejects_tamper": true,
+      "DAT7_pair_separates": true
+    },
+    "statuses": {
+      "extraction": "CANDIDATE - naming word his",
+      "validation": "VAL-001 unchanged (0)",
+      "note": "formal kinship with the designated Information-Arrangement family is noted; no identity asserted - this extraction stands alone"
+    }
+  },
+  "the_equations": {
+    "DAT1": "A BODY IS A RECORD - (M, rho_bar) -> (E, Kd, split, I) completely and deterministically; 1,200 live records recompute bit-identical, census accords EQS-970 exactly",
+    "DAT2": "DATA DEPTH IS I - depth is density-priced, dI = -1/4 d ln rho_bar at fixed mass (SIR-U1); slice I in [183.0728, 189.2947]; doubling density costs exactly -0.1732868 nats",
+    "DAT3": "ONE CONSERVED CHECKSUM - Kd_U * T_dagger = 2.6978356e-29 K at every epoch; max deviation 5.6e-45 K over 42 stations (float floor)",
+    "DAT4": "DATA IS CLOCK-DATED; THE ARCHIVE HAS A FINAL PAGE - every record dated by rho(z); at rho_inf the live set is the terminal 7, H = 0.82765 H0, Theta -> 0 - the end of the data is a conserved specification (TIMC2 as a data law)",
+    "DAT5": "RELATIONS ARE TRANSPORT-INVARIANT - all records lift by the same +ln rho; every pairwise spacing is invariant (max deviation 0.0 over 1,275 pairs x 41 stations); data survives transport in its relations exactly",
+    "DAT6": "INVALID DATA IS NOT DATA - a read failing accord is REJECTED = NOT MEASURED, never corrected (clean reads accepted at all 41 stations; a +1% T_dagger injection rejected)",
+    "DAT7": "THE FULL ADDRESS IS THE DATA - equal-mass bodies share E and separate by density: a live pair at mass rel. diff 5.7e-5 separates by 1.0479 nats of split",
+    "DAT-U1 (candidate)": "THE DATA STATEMENT (candidate): the universe is a self-checking archive - every body is a record addressed by (E, Kd, split, I) from two inputs; every record is dated by the one clock; the archive carries one conserved checksum; its relations are transport-invariant; invalid reads are rejected, never corrected; and its final page is fixed in advance. Data is not stored IN the universe - the states of the universe ARE the data."
+  },
+  "statuses": {
+    "extraction": "CANDIDATE - naming word his",
+    "suite": {
+      "DAT1_determinism_and_accord": true,
+      "DAT2_depth_form": true,
+      "DAT3_checksum_at_float_floor": true,
+      "DAT4_terminal_7_and_H": true,
+      "DAT5_transport_deviation_float_floor": true,
+      "DAT6_gate_accepts_clean_rejects_tamper": true,
+      "DAT7_pair_separates": true
+    },
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 92 / 130 / 18",
+    "sealing": "UNSEALED - his alone",
+    "kinship_note": "formal kinship with the designated Information-Arrangement family noted; no identity asserted; stands alone"
+  },
+  "payload_sha256": "6ecf65ad83049153547f5f0f8e231ebb4dac4900839e8908e4447d2a743d57e0",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

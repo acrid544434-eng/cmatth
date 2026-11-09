@@ -1,0 +1,127 @@
+{
+  "record": "EQS-986",
+  "title": "TEST ARTICLES + PREREGISTERED BENCH PROTOCOL FOR THE CLOUD-EQUATION MATERIALS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~14:47 CST - design the (history-first) structure materials FOR TESTING. The EQS-985 family turned into three specified test articles with every acceptance window computed in-run and the bench protocol T1-T5 LOCKED before any article exists",
+  "design": {
+    "articles": {
+      "TA-1 (from CLD-MAT-1)": {
+        "geometry_m": [
+          0.2,
+          0.2,
+          0.05
+        ],
+        "volume_m3": 0.0020000000000000005,
+        "density_band": [
+          90.0,
+          110.0
+        ],
+        "mass_window_kg": [
+          0.18000000000000005,
+          0.22000000000000006
+        ],
+        "split_window": [
+          17.290452551954555,
+          17.340620225820093
+        ],
+        "E_at_nominal": 95.41245002755602
+      },
+      "TA-2 (from CLD-MAT-2)": {
+        "geometry_m": [
+          0.5,
+          0.2,
+          0.1
+        ],
+        "volume_m3": 0.010000000000000002,
+        "density_band": [
+          0.4,
+          1.2
+        ],
+        "band_note": "the density band IS the cloud band (CLD6) - the article must seat in it or it is not the material",
+        "mass_window_kg": [
+          0.004000000000000001,
+          0.012000000000000002
+        ],
+        "split_window": [
+          15.93642745140345,
+          16.211080523570477
+        ],
+        "E_at_nominal": 90.91885161722504
+      },
+      "TA-3 (from CLD-MAT-3)": {
+        "geometry_m": [
+          0.6,
+          0.05,
+          0.05
+        ],
+        "zones": [
+          {
+            "length_fraction": 0.25,
+            "density_nominal": 2200.0,
+            "density_band": [
+              2090.0,
+              2310.0
+            ]
+          },
+          {
+            "length_fraction": 0.5,
+            "density_nominal": 100.0,
+            "density_band": [
+              85.0,
+              115.0
+            ]
+          },
+          {
+            "length_fraction": 0.25,
+            "density_nominal": 1.0,
+            "density_band": [
+              0.4,
+              1.2
+            ]
+          }
+        ],
+        "total_mass_kg": 0.9003750000000001,
+        "mean_density": 600.25,
+        "whole_body_register": {
+          "E": 97.66919099254825,
+          "Kd": 2.6936495694819445E15,
+          "split": 17.76483669314733,
+          "I": 79.90435429940092
+        },
+        "reading": "as ONE body the gradient beam seats at split 17.7648 - just inside the shell floor 17.7192 - while its zones span shell to cloud band: the gradient, averaged, is a shell body"
+      }
+    },
+    "protocol_locked_not_executed": {
+      "T1 DENSITY ACCORD": "measured bulk density (mass/volume on calibrated kit) inside the filed band - outside = KILL, no re-spec",
+      "T2 DUAL-SEAT VERIFICATION": "skeleton/solid-phase density by pycnometry class: computed split must land IN THE SHELL [17.7192, 18.6720] - outside = KILL",
+      "T3 COMPRESSION FLOOR": "design-target floors (canon aerogel class, labelled targets not measurements): TA-1 >= 100 kPa, TA-2 >= 5 kPa, TA-3 >= 100 kPa at the shell zones - below floor = KILL for the structural claim; the article may still pass as a non-structural material and must be re-labelled",
+      "T4 STATE-HOLDING (CLD3)": "72 h at 95% RH, then re-weigh: density must remain inside the filed band - drift out = KILL (the member exists while its state holds - tested directly)",
+      "T5 GRADIENT VERIFICATION (TA-3 only)": "post-test sectioning or CT density profile: all three zones inside their bands AND the sequence monotone descending - any zone out or non-monotone = KILL"
+    },
+    "fabrication_routes_candidates": {
+      "TA-1": "sol-gel silica + supercritical drying (standard aerogel route)",
+      "TA-2": "graphene-oxide freeze-drying / CVD foam class routes",
+      "TA-3": "zone-wise casting/printing assembly of the TA-1/TA-2 processes",
+      "status": "routes are candidates - the fabrication choice remains door D-CM1, his word"
+    },
+    "status": "TEST DESIGN PREREGISTERED + LOCKED 2026-11-09 - NOT EXECUTED; no article exists yet"
+  },
+  "statuses": {
+    "articles": "SPECIFIED - none exists; fabrication route choice remains door D-CM1 (his word)",
+    "protocol": "T1-T5 PREREGISTERED + LOCKED 2026-11-09 - NOT EXECUTED",
+    "strengths": "NOT MEASURED - T3 floors are labelled design targets from the canon aerogel class",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "b36eac6dde537f708c895ecd517969c4e4e5e1f0c41ed9347a2130968cd777ba",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

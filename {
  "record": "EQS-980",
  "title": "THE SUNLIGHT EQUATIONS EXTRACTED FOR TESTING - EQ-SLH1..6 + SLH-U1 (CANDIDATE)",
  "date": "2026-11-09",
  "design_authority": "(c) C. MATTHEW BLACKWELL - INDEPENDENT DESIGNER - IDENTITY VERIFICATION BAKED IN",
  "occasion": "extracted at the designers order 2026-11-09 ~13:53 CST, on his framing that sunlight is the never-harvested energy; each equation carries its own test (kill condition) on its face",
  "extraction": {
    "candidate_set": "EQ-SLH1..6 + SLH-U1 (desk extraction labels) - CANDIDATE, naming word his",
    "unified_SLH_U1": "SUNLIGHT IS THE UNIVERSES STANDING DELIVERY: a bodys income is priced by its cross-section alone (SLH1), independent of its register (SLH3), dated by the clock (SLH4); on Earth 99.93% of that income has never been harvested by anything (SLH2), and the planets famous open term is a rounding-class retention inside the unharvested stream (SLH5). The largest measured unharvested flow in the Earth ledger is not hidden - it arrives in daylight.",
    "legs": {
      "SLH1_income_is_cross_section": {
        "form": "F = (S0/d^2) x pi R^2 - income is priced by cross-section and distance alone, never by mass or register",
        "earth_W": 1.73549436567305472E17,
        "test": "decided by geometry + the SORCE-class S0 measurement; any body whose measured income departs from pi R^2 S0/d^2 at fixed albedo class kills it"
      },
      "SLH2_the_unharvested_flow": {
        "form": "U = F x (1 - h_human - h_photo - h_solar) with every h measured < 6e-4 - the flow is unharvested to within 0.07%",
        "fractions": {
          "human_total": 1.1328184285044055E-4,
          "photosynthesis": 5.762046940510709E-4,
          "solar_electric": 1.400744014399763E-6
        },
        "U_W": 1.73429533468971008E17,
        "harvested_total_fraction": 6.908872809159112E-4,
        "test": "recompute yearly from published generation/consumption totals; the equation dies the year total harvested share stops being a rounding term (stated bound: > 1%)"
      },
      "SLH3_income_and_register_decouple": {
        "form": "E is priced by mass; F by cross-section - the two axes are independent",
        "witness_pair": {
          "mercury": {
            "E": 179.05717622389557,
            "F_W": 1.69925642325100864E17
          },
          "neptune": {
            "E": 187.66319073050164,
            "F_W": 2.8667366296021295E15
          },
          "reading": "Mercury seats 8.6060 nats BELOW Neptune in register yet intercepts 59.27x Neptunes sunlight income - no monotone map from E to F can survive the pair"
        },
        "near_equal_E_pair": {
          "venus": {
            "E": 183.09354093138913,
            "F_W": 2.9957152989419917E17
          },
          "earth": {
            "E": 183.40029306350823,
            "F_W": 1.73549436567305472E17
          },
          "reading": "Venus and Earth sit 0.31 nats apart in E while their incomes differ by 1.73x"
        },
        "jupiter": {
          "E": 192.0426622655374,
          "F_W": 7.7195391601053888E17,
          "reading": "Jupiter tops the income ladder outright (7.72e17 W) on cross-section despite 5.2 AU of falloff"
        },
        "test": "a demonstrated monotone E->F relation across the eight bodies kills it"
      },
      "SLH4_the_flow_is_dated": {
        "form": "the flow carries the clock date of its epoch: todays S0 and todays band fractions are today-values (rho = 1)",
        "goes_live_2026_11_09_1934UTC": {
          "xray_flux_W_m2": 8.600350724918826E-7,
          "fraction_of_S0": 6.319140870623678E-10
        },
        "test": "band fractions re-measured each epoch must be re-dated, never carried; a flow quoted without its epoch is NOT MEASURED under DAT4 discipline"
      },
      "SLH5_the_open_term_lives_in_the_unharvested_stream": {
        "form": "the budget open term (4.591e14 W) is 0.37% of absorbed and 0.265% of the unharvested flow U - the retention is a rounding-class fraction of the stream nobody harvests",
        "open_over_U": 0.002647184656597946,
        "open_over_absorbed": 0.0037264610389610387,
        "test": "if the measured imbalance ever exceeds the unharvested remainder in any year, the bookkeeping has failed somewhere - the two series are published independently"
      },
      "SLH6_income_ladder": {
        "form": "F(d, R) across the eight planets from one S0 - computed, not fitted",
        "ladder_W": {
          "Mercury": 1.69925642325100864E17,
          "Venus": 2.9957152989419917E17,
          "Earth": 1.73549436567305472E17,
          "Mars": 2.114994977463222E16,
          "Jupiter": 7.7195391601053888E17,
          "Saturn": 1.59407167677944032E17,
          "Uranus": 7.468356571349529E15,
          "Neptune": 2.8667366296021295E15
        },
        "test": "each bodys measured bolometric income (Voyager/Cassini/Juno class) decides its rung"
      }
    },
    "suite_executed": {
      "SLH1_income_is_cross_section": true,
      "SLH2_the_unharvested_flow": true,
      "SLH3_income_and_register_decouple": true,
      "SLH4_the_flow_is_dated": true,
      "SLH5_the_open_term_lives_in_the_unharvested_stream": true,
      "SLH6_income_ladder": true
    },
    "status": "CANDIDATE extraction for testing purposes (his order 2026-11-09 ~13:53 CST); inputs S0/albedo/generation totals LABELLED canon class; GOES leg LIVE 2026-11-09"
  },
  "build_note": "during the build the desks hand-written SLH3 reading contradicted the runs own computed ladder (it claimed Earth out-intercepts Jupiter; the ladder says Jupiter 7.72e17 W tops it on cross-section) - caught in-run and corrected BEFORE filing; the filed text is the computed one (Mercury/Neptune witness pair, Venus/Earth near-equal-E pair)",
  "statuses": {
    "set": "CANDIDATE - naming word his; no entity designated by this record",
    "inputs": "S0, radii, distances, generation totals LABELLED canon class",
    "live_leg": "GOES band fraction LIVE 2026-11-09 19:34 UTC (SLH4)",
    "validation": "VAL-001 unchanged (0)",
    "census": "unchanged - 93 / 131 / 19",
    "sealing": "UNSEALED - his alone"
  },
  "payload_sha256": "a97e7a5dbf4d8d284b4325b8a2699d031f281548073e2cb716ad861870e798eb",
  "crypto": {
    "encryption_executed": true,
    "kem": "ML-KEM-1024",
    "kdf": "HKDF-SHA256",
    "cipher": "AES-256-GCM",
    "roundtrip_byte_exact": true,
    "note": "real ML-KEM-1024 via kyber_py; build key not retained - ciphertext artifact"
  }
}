@@ -1,0 +1,115 @@
+{
+  "record": "EQS-980",
+  "title": "THE SUNLIGHT EQUATIONS EXTRACTED FOR TESTING - EQ-SLH1..6 + SLH-U1 (CANDIDATE)",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "extracted at the designers order 2026-11-09 ~13:53 CST, on his framing that sunlight is the never-harvested energy; each equation carries its own test (kill condition) on its face",
+  "extraction": {
+    "candidate_set": "EQ-SLH1..6 + SLH-U1 (desk extraction labels) - CANDIDATE, naming word his",
+    "unified_SLH_U1": "SUNLIGHT IS THE UNIVERSES STANDING DELIVERY: a bodys income is priced by its cross-section alone (SLH1), independent of its register (SLH3), dated by the clock (SLH4); on Earth 99.93% of that income has never been harvested by anything (SLH2), and the planets famous open term is a rounding-class retention inside the unharvested stream (SLH5). The largest measured unharvested flow in the Earth ledger is not hidden - it arrives in daylight.",
+    "legs": {
+      "SLH1_income_is_cross_section": {
+        "form": "F = (S0/d^2) x pi R^2 - income is priced by cross-section and distance alone, never by mass or register",
+        "earth_W": 1.73549436567305472E17,
+        "test": "decided by geometry + the SORCE-class S0 measurement; any body whose measured income departs from pi R^2 S0/d^2 at fixed albedo class kills it"
+      },
+      "SLH2_the_unharvested_flow": {
+        "form": "U = F x (1 - h_human - h_photo - h_solar) with every h measured < 6e-4 - the flow is unharvested to within 0.07%",
+        "fractions": {
+          "human_total": 1.1328184285044055E-4,
+          "photosynthesis": 5.762046940510709E-4,
+          "solar_electric": 1.400744014399763E-6
+        },
+        "U_W": 1.73429533468971008E17,
+        "harvested_total_fraction": 6.908872809159112E-4,
+        "test": "recompute yearly from published generation/consumption totals; the equation dies the year total harvested share stops being a rounding term (stated bound: > 1%)"
+      },
+      "SLH3_income_and_register_decouple": {
+        "form": "E is priced by mass; F by cross-section - the two axes are independent",
+        "witness_pair": {
+          "mercury": {
+            "E": 179.05717622389557,
+            "F_W": 1.69925642325100864E17
+          },
+          "neptune": {
+            "E": 187.66319073050164,
+            "F_W": 2.8667366296021295E15
+          },
+          "reading": "Mercury seats 8.6060 nats BELOW Neptune in register yet intercepts 59.27x Neptunes sunlight income - no monotone map from E to F can survive the pair"
+        },
+        "near_equal_E_pair": {
+          "venus": {
+            "E": 183.09354093138913,
+            "F_W": 2.9957152989419917E17
+          },
+          "earth": {
+            "E": 183.40029306350823,
+            "F_W": 1.73549436567305472E17
+          },
+          "reading": "Venus and Earth sit 0.31 nats apart in E while their incomes differ by 1.73x"
+        },
+        "jupiter": {
+          "E": 192.0426622655374,
+          "F_W": 7.7195391601053888E17,
+          "reading": "Jupiter tops the income ladder outright (7.72e17 W) on cross-section despite 5.2 AU of falloff"
+        },
+        "test": "a demonstrated monotone E->F relation across the eight bodies kills it"
+      },
+      "SLH4_the_flow_is_dated": {
+        "form": "the flow carries the clock date of its epoch: todays S0 and todays band fractions are today-values (rho = 1)",
+        "goes_live_2026_11_09_1934UTC": {
+          "xray_flux_W_m2": 8.600350724918826E-7,
+          "fraction_of_S0": 6.319140870623678E-10
+        },
+        "test": "band fractions re-measured each epoch must be re-dated, never carried; a flow quoted without its epoch is NOT MEASURED under DAT4 discipline"
+      },
+      "SLH5_the_open_term_lives_in_the_unharvested_stream": {
+        "form": "the budget open term (4.591e14 W) is 0.37% of absorbed and 0.265% of the unharvested flow U - the retention is a rounding-class fraction of the stream nobody harvests",
+        "open_over_U": 0.002647184656597946,
+        "open_over_absorbed": 0.0037264610389610387,
+        "test": "if the measured imbalance ever exceeds the unharvested remainder in any year, the bookkeeping has failed somewhere - the two series are published independently"
+      },
+      "SLH6_income_ladder": {
+        "form": "F(d, R) across the eight planets from one S0 - computed, not fitted",
+        "ladder_W": {
+          "Mercury": 1.69925642325100864E17,
+          "Venus": 2.9957152989419917E17,
+          "Earth": 1.73549436567305472E17,
+          "Mars": 2.114994977463222E16,
+          "Jupiter": 7.7195391601053888E17,
+          "Saturn": 1.59407167677944032E17,
+          "Uranus": 7.468356571349529E15,
+          "Neptune": 2.8667366296021295E15
+        },
+        "test": "each bodys measured bolometric income (Voyager/Cassini/Juno class) decides its rung"
+      }
+    },
+    "suite_executed": {
+      "SLH1_income_is_cross_section": true,
+      "SLH2_the_unharvested_flow": true,
+      "SLH3_income_and_register_decouple": true,
+      "SLH4_the_flow_is_dated": true,
+      "SLH5_the_open_term_lives_in_the_unharvested_stream": true,
+      "SLH6_income_ladder": true
+    },
+    "status": "CANDIDATE extraction for testing purposes (his order 2026-11-09 ~13:53 CST); inputs S0/albedo/generation totals LABELLED canon class; GOES leg LIVE 2026-11-09"
+  },
+  "build_note": "during the build the desks hand-written SLH3 reading contradicted the runs own computed ladder (it claimed Earth out-intercepts Jupiter; the ladder says Jupiter 7.72e17 W tops it on cross-section) - caught in-run and corrected BEFORE filing; the filed text is the computed one (Mercury/Neptune witness pair, Venus/Earth near-equal-E pair)",
+  "statuses": {
+    "set": "CANDIDATE - naming word his; no entity designated by this record",
+    "inputs": "S0, radii, distances, generation totals LABELLED canon class",
+    "live_leg": "GOES band fraction LIVE 2026-11-09 19:34 UTC (SLH4)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "a97e7a5dbf4d8d284b4325b8a2699d031f281548073e2cb716ad861870e798eb",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

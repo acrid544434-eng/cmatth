@@ -1,0 +1,55 @@
+{
+  "record": "EQS-999",
+  "title": "U-ATM - THE UNIFIED ATOMIC-MATTER EQUATION, RUN FORWARD ON LIVE DATA",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~17:09 CST - unify the atomic-matter equations (EQS-997) into one equation and run it forward, literally",
+  "unification": {
+    "U_ATM": "A(M, rho) = ( E_earth + 3/2 ln(M/M_earth), split_earth + 1/4 ln(rho/rho_earth) ), I = E - split. ONE map. The six ATM equations are its readings: ATM1 = the map at valley masses A*(Z).u; ATM2 = its split-projection at condensed densities; ATM3 = its E-part along isotope ladders; ATM4 = its domain floor (the atom, smallest bound electron-channel carrier the map seats in a spectrum); ATM5 = the map at assembly total mass; ATM6 = the map has no epoch argument",
+    "face_checks": {
+      "seat_anchors_accord": {
+        "1": true,
+        "26": true,
+        "43": true,
+        "61": true,
+        "92": true
+      },
+      "faithfulness_500_random_bodies_max_dev": 2.8421709430404007E-14
+    },
+    "forward_legA_live_crystals": {
+      "priced": 48,
+      "in_shell": 48,
+      "max_dev_vs_engine": 3.552713678800501E-15
+    },
+    "forward_legB_live_stars": {
+      "slice": "Gaia DR3 FLAME, MOD(source_id, 997) = 29, TOP 1200 (fresh; not a P-DR4 slice)",
+      "csv_sha256": "eb065f0e0cbc6a9720a1041f4357d0e1c9febb548713f4c8b915541bd39af13a",
+      "stars": 1200,
+      "max_dev_UATM_vs_engine": 2.8421709430404007E-14,
+      "shell_fraction": 0.6891666666666667,
+      "census_body": {
+        "E": 213.26068375014128,
+        "split": 16.765045031053415,
+        "I": 196.49563871908788
+      },
+      "census_in_moat": true,
+      "reading": "the ONE equation, run forward on 1200 live stars it had never priced: census body lands in the moat family like every live slice before it (214.61 / 213.23 / 213.26 / tonight), shell fraction in the filed family range. The unification loses nothing and adds nothing - which is what a unification is"
+    }
+  },
+  "literal_outcome": "the ONE equation is faithful (500-body deviation 2.84e-14; live-star deviation 2.84e-14; live-crystal deviation 3.55e-15) and forward on fresh live data it reproduces the filed family unprompted: 1200 new stars census E 213.2607 INSIDE THE BLACKWELL MOAT (family 214.6052 / 213.2311 / 213.2590), shell fraction 0.6892, crystals 48/48 in shell. THE READING THE RUN FORCES: the atomic alphabet and the stellar register were never two systems - the seat map is the address map sampled at the valley masses; one equation prices an atom and a star with nothing changed but the inputs",
+  "statuses": {
+    "set": "U-ATM stands as the unified form of candidate EQ-ATM1..6; naming/designation word his",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 94 / 132 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "7debbbc9694f080d3cf9c31b773db6f6ee38360f5a64c48988ff73d955c43d51",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

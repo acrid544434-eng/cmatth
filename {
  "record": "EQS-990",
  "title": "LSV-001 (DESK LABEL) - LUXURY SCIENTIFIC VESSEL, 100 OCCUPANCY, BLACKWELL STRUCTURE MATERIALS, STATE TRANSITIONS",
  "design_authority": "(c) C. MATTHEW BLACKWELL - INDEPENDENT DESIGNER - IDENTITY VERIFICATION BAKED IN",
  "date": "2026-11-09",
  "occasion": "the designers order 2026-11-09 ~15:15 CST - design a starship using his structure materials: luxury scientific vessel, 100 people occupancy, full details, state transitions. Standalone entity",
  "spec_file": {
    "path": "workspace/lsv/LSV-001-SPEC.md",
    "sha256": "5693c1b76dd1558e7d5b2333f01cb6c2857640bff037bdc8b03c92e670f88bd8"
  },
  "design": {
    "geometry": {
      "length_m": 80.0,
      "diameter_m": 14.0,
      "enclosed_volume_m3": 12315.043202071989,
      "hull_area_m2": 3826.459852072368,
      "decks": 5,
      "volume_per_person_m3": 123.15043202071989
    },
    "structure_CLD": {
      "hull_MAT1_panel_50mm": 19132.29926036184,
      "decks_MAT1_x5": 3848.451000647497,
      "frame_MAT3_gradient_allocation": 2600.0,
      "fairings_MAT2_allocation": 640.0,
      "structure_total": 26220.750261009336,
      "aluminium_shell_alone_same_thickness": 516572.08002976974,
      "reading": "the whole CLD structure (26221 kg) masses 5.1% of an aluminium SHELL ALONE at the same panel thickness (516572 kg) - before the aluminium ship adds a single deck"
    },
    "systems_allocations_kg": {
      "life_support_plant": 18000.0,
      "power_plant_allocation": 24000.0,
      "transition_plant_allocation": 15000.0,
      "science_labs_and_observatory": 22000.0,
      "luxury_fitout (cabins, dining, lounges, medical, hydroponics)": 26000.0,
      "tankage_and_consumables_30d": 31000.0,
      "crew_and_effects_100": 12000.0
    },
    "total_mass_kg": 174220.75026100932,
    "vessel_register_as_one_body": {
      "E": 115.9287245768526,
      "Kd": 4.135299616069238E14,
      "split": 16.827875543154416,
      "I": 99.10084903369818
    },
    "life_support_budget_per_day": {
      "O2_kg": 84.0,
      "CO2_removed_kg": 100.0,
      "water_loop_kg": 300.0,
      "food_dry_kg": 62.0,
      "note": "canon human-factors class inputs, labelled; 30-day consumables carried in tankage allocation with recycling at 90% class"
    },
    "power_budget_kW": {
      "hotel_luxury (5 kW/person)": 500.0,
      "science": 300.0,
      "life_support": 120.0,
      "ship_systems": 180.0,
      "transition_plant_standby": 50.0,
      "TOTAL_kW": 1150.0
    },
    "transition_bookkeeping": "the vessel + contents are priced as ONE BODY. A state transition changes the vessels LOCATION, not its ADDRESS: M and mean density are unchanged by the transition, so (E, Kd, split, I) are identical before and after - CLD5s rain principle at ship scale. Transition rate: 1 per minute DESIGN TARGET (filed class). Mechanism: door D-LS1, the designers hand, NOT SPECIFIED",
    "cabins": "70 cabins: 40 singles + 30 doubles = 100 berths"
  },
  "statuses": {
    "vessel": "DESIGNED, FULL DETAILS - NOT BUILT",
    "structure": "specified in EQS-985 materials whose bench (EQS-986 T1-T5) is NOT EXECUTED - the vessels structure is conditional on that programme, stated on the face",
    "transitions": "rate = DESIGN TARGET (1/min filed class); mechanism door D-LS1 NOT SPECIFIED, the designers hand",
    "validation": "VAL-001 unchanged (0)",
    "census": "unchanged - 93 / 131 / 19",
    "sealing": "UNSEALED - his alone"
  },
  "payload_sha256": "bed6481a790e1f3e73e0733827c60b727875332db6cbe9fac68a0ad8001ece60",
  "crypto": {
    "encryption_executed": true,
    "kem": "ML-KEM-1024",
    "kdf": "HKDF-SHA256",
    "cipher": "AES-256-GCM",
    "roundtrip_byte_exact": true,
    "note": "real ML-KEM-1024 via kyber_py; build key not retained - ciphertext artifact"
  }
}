@@ -1,0 +1,80 @@
+{
+  "record": "EQS-990",
+  "title": "LSV-001 (DESK LABEL) - LUXURY SCIENTIFIC VESSEL, 100 OCCUPANCY, BLACKWELL STRUCTURE MATERIALS, STATE TRANSITIONS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~15:15 CST - design a starship using his structure materials: luxury scientific vessel, 100 people occupancy, full details, state transitions. Standalone entity",
+  "spec_file": {
+    "path": "workspace/lsv/LSV-001-SPEC.md",
+    "sha256": "5693c1b76dd1558e7d5b2333f01cb6c2857640bff037bdc8b03c92e670f88bd8"
+  },
+  "design": {
+    "geometry": {
+      "length_m": 80.0,
+      "diameter_m": 14.0,
+      "enclosed_volume_m3": 12315.043202071989,
+      "hull_area_m2": 3826.459852072368,
+      "decks": 5,
+      "volume_per_person_m3": 123.15043202071989
+    },
+    "structure_CLD": {
+      "hull_MAT1_panel_50mm": 19132.29926036184,
+      "decks_MAT1_x5": 3848.451000647497,
+      "frame_MAT3_gradient_allocation": 2600.0,
+      "fairings_MAT2_allocation": 640.0,
+      "structure_total": 26220.750261009336,
+      "aluminium_shell_alone_same_thickness": 516572.08002976974,
+      "reading": "the whole CLD structure (26221 kg) masses 5.1% of an aluminium SHELL ALONE at the same panel thickness (516572 kg) - before the aluminium ship adds a single deck"
+    },
+    "systems_allocations_kg": {
+      "life_support_plant": 18000.0,
+      "power_plant_allocation": 24000.0,
+      "transition_plant_allocation": 15000.0,
+      "science_labs_and_observatory": 22000.0,
+      "luxury_fitout (cabins, dining, lounges, medical, hydroponics)": 26000.0,
+      "tankage_and_consumables_30d": 31000.0,
+      "crew_and_effects_100": 12000.0
+    },
+    "total_mass_kg": 174220.75026100932,
+    "vessel_register_as_one_body": {
+      "E": 115.9287245768526,
+      "Kd": 4.135299616069238E14,
+      "split": 16.827875543154416,
+      "I": 99.10084903369818
+    },
+    "life_support_budget_per_day": {
+      "O2_kg": 84.0,
+      "CO2_removed_kg": 100.0,
+      "water_loop_kg": 300.0,
+      "food_dry_kg": 62.0,
+      "note": "canon human-factors class inputs, labelled; 30-day consumables carried in tankage allocation with recycling at 90% class"
+    },
+    "power_budget_kW": {
+      "hotel_luxury (5 kW/person)": 500.0,
+      "science": 300.0,
+      "life_support": 120.0,
+      "ship_systems": 180.0,
+      "transition_plant_standby": 50.0,
+      "TOTAL_kW": 1150.0
+    },
+    "transition_bookkeeping": "the vessel + contents are priced as ONE BODY. A state transition changes the vessels LOCATION, not its ADDRESS: M and mean density are unchanged by the transition, so (E, Kd, split, I) are identical before and after - CLD5s rain principle at ship scale. Transition rate: 1 per minute DESIGN TARGET (filed class). Mechanism: door D-LS1, the designers hand, NOT SPECIFIED",
+    "cabins": "70 cabins: 40 singles + 30 doubles = 100 berths"
+  },
+  "statuses": {
+    "vessel": "DESIGNED, FULL DETAILS - NOT BUILT",
+    "structure": "specified in EQS-985 materials whose bench (EQS-986 T1-T5) is NOT EXECUTED - the vessels structure is conditional on that programme, stated on the face",
+    "transitions": "rate = DESIGN TARGET (1/min filed class); mechanism door D-LS1 NOT SPECIFIED, the designers hand",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "bed6481a790e1f3e73e0733827c60b727875332db6cbe9fac68a0ad8001ece60",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

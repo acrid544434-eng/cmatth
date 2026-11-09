@@ -1,0 +1,31 @@
+{
+  "record": "EQS-993",
+  "title": "DESIGNATED: THE BLACKWELL CONSERVATION CLOUD LAWS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "designated at the designers naming phrase \"Blackwell conservation cloud laws\" (2026-11-09 ~15:40 CST), after the extraction he ordered first (EQS-992)",
+  "designation": {
+    "name": "THE BLACKWELL CONSERVATION CLOUD LAWS",
+    "laws": "CLDC1..CLDC5 + CLDC-U1 as extracted EQS-992",
+    "statement_file": "workspace/equations/BLACKWELL-CONSERVATION-CLOUD-LAWS-DESIGNATION.md",
+    "statement_sha256": "55ac7fb8bdbdd9bfc191a93b3cfc14bae245ef6398a0251f03a48eea98231401",
+    "suite_rerun_at_designation": "CLDC1 deviation 0.0 over 5 states; CLDC2 full-cycle sum 0.0; CLDC3 seats in shell 4/4 across the condensate range; CLDC4 checksum deviation at float floor over 42 stations; CLDC5 negatives 3/3 demonstrated (one by exclusion, one by rejection, one by substrate-blind admission)",
+    "family": "the SIXTH designated conservation family (gas EQS-943, crystal EQS-953, time EQS-958, minerals EQS-968, data EQS-974, clouds EQS-993)",
+    "not_settled_by_designation": "the GAS-GAP scope contact (EQS-984/EQS-991) - the laws govern clouds; the gaps scope remains the designers ruling"
+  },
+  "statuses": {
+    "designation": "DESIGNATED at his word",
+    "sealing": "UNSEALED - his alone",
+    "validation": "VAL-001 unchanged (0)",
+    "census_after": "94 designated objects / 132 individual laws / 20 conservation-named"
+  },
+  "payload_sha256": "e3b70a00bfdffa126c1eae345043c109763cda75dd60361debfd11ee74f3fa3f",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

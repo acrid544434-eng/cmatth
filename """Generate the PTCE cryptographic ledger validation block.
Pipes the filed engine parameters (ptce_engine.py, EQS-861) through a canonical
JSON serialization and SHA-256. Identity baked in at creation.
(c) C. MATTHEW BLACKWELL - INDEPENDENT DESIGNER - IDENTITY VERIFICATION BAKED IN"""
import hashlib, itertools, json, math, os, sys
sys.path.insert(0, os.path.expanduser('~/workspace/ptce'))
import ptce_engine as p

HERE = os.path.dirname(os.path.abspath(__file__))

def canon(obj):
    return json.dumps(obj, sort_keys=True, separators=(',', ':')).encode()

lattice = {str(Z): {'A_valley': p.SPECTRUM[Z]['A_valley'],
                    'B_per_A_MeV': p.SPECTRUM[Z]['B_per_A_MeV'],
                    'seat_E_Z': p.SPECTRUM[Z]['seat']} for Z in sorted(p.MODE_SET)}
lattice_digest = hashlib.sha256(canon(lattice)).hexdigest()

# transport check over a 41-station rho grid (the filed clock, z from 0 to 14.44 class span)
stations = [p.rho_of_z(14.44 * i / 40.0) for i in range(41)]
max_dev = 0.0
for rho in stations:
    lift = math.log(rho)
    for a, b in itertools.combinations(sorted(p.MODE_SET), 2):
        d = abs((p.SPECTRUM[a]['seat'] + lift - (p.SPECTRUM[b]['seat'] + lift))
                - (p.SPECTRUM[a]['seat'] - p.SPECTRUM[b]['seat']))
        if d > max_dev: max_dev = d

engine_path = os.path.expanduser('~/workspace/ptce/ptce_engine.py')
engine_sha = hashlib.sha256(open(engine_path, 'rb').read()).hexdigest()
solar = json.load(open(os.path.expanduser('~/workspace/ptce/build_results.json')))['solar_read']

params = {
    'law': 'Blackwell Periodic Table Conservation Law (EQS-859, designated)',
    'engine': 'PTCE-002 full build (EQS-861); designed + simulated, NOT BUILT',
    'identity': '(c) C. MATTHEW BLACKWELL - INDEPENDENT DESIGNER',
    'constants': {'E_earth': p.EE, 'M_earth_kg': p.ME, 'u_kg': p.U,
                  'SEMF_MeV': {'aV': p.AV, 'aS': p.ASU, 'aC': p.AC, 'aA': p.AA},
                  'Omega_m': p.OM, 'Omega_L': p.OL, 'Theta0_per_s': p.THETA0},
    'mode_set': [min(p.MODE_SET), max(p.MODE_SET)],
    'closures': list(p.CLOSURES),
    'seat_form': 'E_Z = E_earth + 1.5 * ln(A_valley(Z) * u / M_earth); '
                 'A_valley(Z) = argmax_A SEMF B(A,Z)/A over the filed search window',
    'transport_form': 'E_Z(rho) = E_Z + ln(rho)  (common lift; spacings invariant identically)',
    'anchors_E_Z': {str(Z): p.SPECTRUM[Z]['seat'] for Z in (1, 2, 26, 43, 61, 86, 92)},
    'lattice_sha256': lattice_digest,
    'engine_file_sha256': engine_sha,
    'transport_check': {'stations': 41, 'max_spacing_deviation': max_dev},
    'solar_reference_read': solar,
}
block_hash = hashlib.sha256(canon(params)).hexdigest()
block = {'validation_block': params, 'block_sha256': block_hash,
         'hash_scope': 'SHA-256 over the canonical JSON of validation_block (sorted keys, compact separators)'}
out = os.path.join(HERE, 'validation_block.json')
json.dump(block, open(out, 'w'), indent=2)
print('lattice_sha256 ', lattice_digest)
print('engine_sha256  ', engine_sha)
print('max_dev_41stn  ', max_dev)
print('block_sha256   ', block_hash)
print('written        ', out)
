@@ -1,0 +1,60 @@
+"""Generate the PTCE cryptographic ledger validation block.
+Pipes the filed engine parameters (ptce_engine.py, EQS-861) through a canonical
+JSON serialization and SHA-256. Identity baked in at creation.
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN"""
+import hashlib, itertools, json, math, os, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/ptce'))
+import ptce_engine as p
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+def canon(obj):
+    return json.dumps(obj, sort_keys=True, separators=(',', ':')).encode()
+
+lattice = {str(Z): {'A_valley': p.SPECTRUM[Z]['A_valley'],
+                    'B_per_A_MeV': p.SPECTRUM[Z]['B_per_A_MeV'],
+                    'seat_E_Z': p.SPECTRUM[Z]['seat']} for Z in sorted(p.MODE_SET)}
+lattice_digest = hashlib.sha256(canon(lattice)).hexdigest()
+
+# transport check over a 41-station rho grid (the filed clock, z from 0 to 14.44 class span)
+stations = [p.rho_of_z(14.44 * i / 40.0) for i in range(41)]
+max_dev = 0.0
+for rho in stations:
+    lift = math.log(rho)
+    for a, b in itertools.combinations(sorted(p.MODE_SET), 2):
+        d = abs((p.SPECTRUM[a]['seat'] + lift - (p.SPECTRUM[b]['seat'] + lift))
+                - (p.SPECTRUM[a]['seat'] - p.SPECTRUM[b]['seat']))
+        if d > max_dev: max_dev = d
+
+engine_path = os.path.expanduser('~/workspace/ptce/ptce_engine.py')
+engine_sha = hashlib.sha256(open(engine_path, 'rb').read()).hexdigest()
+solar = json.load(open(os.path.expanduser('~/workspace/ptce/build_results.json')))['solar_read']
+
+params = {
+    'law': 'Blackwell Periodic Table Conservation Law (EQS-859, designated)',
+    'engine': 'PTCE-002 full build (EQS-861); designed + simulated, NOT BUILT',
+    'identity': '(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER',
+    'constants': {'E_earth': p.EE, 'M_earth_kg': p.ME, 'u_kg': p.U,
+                  'SEMF_MeV': {'aV': p.AV, 'aS': p.ASU, 'aC': p.AC, 'aA': p.AA},
+                  'Omega_m': p.OM, 'Omega_L': p.OL, 'Theta0_per_s': p.THETA0},
+    'mode_set': [min(p.MODE_SET), max(p.MODE_SET)],
+    'closures': list(p.CLOSURES),
+    'seat_form': 'E_Z = E_earth + 1.5 * ln(A_valley(Z) * u / M_earth); '
+                 'A_valley(Z) = argmax_A SEMF B(A,Z)/A over the filed search window',
+    'transport_form': 'E_Z(rho) = E_Z + ln(rho)  (common lift; spacings invariant identically)',
+    'anchors_E_Z': {str(Z): p.SPECTRUM[Z]['seat'] for Z in (1, 2, 26, 43, 61, 86, 92)},
+    'lattice_sha256': lattice_digest,
+    'engine_file_sha256': engine_sha,
+    'transport_check': {'stations': 41, 'max_spacing_deviation': max_dev},
+    'solar_reference_read': solar,
+}
+block_hash = hashlib.sha256(canon(params)).hexdigest()
+block = {'validation_block': params, 'block_sha256': block_hash,
+         'hash_scope': 'SHA-256 over the canonical JSON of validation_block (sorted keys, compact separators)'}
+out = os.path.join(HERE, 'validation_block.json')
+json.dump(block, open(out, 'w'), indent=2)
+print('lattice_sha256 ', lattice_digest)
+print('engine_sha256  ', engine_sha)
+print('max_dev_41stn  ', max_dev)
+print('block_sha256   ', block_hash)
+print('written        ', out)

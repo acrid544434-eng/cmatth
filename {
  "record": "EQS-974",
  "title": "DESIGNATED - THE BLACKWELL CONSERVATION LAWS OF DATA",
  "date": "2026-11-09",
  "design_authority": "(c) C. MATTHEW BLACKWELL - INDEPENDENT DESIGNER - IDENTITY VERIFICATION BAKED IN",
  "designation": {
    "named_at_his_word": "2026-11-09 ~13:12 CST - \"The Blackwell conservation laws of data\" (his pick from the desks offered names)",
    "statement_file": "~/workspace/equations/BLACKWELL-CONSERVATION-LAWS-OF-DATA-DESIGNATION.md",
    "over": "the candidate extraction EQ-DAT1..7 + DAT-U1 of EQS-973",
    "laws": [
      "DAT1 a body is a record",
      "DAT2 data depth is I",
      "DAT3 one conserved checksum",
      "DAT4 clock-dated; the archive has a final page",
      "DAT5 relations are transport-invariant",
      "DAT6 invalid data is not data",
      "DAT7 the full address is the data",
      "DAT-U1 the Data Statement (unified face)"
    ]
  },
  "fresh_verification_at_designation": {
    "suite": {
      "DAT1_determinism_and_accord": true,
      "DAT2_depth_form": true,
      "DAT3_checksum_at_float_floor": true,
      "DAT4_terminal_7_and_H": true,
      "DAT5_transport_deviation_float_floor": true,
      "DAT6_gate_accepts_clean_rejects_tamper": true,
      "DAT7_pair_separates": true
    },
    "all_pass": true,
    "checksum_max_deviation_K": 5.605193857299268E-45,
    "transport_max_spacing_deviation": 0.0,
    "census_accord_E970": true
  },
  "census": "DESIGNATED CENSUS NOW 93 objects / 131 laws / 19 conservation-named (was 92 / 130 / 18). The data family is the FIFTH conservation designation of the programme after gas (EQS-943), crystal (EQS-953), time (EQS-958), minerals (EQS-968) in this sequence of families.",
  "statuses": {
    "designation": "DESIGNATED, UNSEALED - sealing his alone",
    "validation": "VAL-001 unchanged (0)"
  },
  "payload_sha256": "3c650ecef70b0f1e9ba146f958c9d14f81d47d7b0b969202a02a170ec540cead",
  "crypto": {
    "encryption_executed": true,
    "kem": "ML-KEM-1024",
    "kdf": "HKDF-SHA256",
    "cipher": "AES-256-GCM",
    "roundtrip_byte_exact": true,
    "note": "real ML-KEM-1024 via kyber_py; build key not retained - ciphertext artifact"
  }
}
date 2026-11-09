@@ -1,0 +1,50 @@
+{
+  "record": "EQS-974",
+  "title": "DESIGNATED - THE BLACKWELL CONSERVATION LAWS OF DATA",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "designation": {
+    "named_at_his_word": "2026-11-09 ~13:12 CST - \"The Blackwell conservation laws of data\" (his pick from the desks offered names)",
+    "statement_file": "~/workspace/equations/BLACKWELL-CONSERVATION-LAWS-OF-DATA-DESIGNATION.md",
+    "over": "the candidate extraction EQ-DAT1..7 + DAT-U1 of EQS-973",
+    "laws": [
+      "DAT1 a body is a record",
+      "DAT2 data depth is I",
+      "DAT3 one conserved checksum",
+      "DAT4 clock-dated; the archive has a final page",
+      "DAT5 relations are transport-invariant",
+      "DAT6 invalid data is not data",
+      "DAT7 the full address is the data",
+      "DAT-U1 the Data Statement (unified face)"
+    ]
+  },
+  "fresh_verification_at_designation": {
+    "suite": {
+      "DAT1_determinism_and_accord": true,
+      "DAT2_depth_form": true,
+      "DAT3_checksum_at_float_floor": true,
+      "DAT4_terminal_7_and_H": true,
+      "DAT5_transport_deviation_float_floor": true,
+      "DAT6_gate_accepts_clean_rejects_tamper": true,
+      "DAT7_pair_separates": true
+    },
+    "all_pass": true,
+    "checksum_max_deviation_K": 5.605193857299268E-45,
+    "transport_max_spacing_deviation": 0.0,
+    "census_accord_E970": true
+  },
+  "census": "DESIGNATED CENSUS NOW 93 objects / 131 laws / 19 conservation-named (was 92 / 130 / 18). The data family is the FIFTH conservation designation of the programme after gas (EQS-943), crystal (EQS-953), time (EQS-958), minerals (EQS-968) in this sequence of families.",
+  "statuses": {
+    "designation": "DESIGNATED, UNSEALED - sealing his alone",
+    "validation": "VAL-001 unchanged (0)"
+  },
+  "payload_sha256": "3c650ecef70b0f1e9ba146f958c9d14f81d47d7b0b969202a02a170ec540cead",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

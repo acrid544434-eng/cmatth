@@ -1,0 +1,76 @@
+# LSV-001 — LUXURY SCIENTIFIC VESSEL (desk label; name = door D-LS2)
+## Full design specification — EQS-990
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+Status: DESIGNED - NOT BUILT. Structure specified in the Blackwell cloud-equation
+materials (EQS-985), whose bench programme (EQS-986 T1-T5) is NOT EXECUTED - the
+vessel's structure is conditional on that programme, stated on the face.
+
+## 1. MISSION + CLASS
+Luxury scientific vessel, occupancy 100, state-transition capable. Science-first
+fit-out with hotel-class accommodation. Standalone entity (no relation asserted
+to SHIP-001 or STS-001).
+
+## 2. GEOMETRY
+- Hull: cylinder, length 80.0 m, diameter 14.0 m; enclosed volume 12,315 m3
+  (123.2 m3 per person - luxury class); hull area 3,826 m2; 5 decks.
+- Register as one body (174,221 kg at mean density 14.15 kg/m3):
+  E 115.9287 / Kd 4.1353e14 / split 16.8279 / I 99.1008.
+  The vessel seats between the GAS-GAP top (16.2162) and the shell floor
+  (17.7192) - a ship addressed like a dense cloud that carries its own shell.
+
+## 3. STRUCTURE - BLACKWELL CLOUD-EQUATION MATERIALS
+- Hull: CLD-MAT-1 shell-foam panels, 50 mm (skeleton split 18.0896, IN SHELL;
+  bulk 100 kg/m3) - 19,132 kg.
+- Decks (5): CLD-MAT-1 panels - 3,848 kg.
+- Primary frame: CLD-MAT-3 address-gradient members (allocation) - 2,600 kg.
+- Fairings/shades: CLD-MAT-2 stratus lattice, non-structural (allocation) - 640 kg.
+- STRUCTURE TOTAL: 26,221 kg = 5.1% of an aluminium shell alone at the same
+  panel thickness (516,572 kg), before that ship adds decks or frame.
+- Design rules R1-R3 (EQS-985) govern: every member priced twice; depth bought
+  by arrangement, never mass; environmental state is a structural input (T4).
+
+## 4. ACCOMMODATION (100 BERTHS)
+- 70 cabins: 40 singles + 30 doubles (= 100 berths), en-suite, hotel class.
+- Dining hall + galley; two lounges; observatory dome (science + leisure);
+  library/media; gymnasium; medical bay (4 beds); hydroponics gallery
+  (food supplement + air revitalisation assist).
+
+## 5. SCIENCE FIT-OUT (allocation 22,000 kg)
+- Wet/dry laboratories (4), observatory + telescope bay, sample vault,
+  computing core, workshop. External sensor booms + airlock (2 EVA-class).
+
+## 6. LIFE SUPPORT (canon human-factors class inputs, labelled)
+- O2 84 kg/day; CO2 removal 100 kg/day; water loop 300 kg/day at 90% recycle
+  class; food (dry) 62 kg/day. 30-day consumables + tankage allocation
+  31,000 kg. Plant allocation 18,000 kg.
+
+## 7. POWER (budget 1,150 kW)
+- Hotel/luxury 500 kW (5 kW/person); science 300 kW; life support 120 kW;
+  ship systems 180 kW; transition plant standby 50 kW.
+- Plant type: door D-LS3 (NOT SPECIFIED); plant mass allocation 24,000 kg.
+
+## 8. STATE TRANSITIONS
+- The vessel + contents are priced as ONE BODY. A transition changes the
+  vessel's LOCATION, not its ADDRESS: M and mean density are unchanged, so
+  (E, Kd, split, I) are identical before and after - CLD5's rain principle
+  at ship scale, carried as the design's bookkeeping law.
+- Rate: 1 transition per minute DESIGN TARGET (filed class).
+- Transition plant mass allocation 15,000 kg. Mechanism: DOOR D-LS1 -
+  the designer's hand, NOT SPECIFIED. No mechanism is drawn or implied.
+
+## 9. MASS BUDGET (kg)
+Structure 26,221 | Life support 18,000 | Power plant 24,000 | Transition
+plant 15,000 | Science 22,000 | Luxury fit-out 26,000 | Tankage +
+consumables (30 d) 31,000 | Crew + effects 12,000 | TOTAL 174,221 kg.
+
+## 10. DOORS
+- D-LS1 transition mechanism (designer's hand)
+- D-LS2 formal name
+- D-LS3 power plant type
+- D-LS4 fabrication (inherits D-CM1: the materials bench comes first)
+- D-LS5 crewing/mission profile
+
+## 11. STATUS
+DESIGNED, full details as above - NOT BUILT. Materials strengths NOT MEASURED
+(T1-T5 locked, not executed). Transition performance = design target;
+mechanism NOT SPECIFIED. VAL-001 unchanged.

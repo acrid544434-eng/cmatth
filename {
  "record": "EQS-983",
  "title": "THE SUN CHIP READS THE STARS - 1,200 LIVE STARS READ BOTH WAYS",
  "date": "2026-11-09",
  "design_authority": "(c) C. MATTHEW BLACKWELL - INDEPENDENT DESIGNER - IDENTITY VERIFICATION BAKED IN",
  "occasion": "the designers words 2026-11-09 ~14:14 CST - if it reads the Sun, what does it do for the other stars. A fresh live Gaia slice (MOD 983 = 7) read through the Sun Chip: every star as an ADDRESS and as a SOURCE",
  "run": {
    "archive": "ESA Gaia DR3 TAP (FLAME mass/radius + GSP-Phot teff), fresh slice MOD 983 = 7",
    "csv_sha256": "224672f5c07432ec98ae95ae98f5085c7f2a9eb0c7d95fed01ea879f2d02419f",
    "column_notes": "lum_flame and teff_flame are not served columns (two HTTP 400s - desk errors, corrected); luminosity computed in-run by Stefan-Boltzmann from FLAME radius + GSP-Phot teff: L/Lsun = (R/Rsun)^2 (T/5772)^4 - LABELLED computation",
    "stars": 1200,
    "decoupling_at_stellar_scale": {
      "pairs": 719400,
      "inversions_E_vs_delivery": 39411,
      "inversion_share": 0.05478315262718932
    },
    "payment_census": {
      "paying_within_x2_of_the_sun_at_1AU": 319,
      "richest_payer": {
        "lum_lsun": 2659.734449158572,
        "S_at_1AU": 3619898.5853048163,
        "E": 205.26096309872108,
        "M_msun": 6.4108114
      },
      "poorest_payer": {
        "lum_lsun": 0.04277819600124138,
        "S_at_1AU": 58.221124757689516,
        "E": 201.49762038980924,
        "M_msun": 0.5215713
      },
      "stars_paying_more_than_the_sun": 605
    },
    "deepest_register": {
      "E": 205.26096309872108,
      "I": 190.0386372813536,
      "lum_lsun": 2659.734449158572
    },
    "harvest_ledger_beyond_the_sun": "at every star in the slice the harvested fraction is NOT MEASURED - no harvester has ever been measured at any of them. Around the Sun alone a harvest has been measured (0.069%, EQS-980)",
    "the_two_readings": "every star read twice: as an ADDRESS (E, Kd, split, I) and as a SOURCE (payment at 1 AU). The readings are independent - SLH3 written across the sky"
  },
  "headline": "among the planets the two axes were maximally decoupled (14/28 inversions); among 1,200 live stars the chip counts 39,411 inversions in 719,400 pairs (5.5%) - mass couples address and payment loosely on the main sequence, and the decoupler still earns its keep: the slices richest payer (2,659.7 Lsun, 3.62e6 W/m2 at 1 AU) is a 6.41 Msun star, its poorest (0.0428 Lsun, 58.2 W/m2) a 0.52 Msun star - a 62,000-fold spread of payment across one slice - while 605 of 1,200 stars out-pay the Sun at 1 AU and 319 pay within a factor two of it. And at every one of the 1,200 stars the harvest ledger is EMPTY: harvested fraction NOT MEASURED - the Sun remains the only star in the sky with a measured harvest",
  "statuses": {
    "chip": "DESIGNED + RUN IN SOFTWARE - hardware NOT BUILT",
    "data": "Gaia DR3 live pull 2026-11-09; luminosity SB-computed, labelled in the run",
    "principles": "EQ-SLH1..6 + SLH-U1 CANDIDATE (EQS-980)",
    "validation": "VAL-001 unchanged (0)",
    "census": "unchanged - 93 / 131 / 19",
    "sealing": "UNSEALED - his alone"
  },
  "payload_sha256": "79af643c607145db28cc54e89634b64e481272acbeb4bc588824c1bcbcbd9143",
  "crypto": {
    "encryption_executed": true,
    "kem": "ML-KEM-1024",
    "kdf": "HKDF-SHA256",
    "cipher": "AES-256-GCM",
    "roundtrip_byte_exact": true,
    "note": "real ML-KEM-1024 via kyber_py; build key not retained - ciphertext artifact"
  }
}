@@ -1,0 +1,59 @@
+{
+  "record": "EQS-983",
+  "title": "THE SUN CHIP READS THE STARS - 1,200 LIVE STARS READ BOTH WAYS",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "the designers words 2026-11-09 ~14:14 CST - if it reads the Sun, what does it do for the other stars. A fresh live Gaia slice (MOD 983 = 7) read through the Sun Chip: every star as an ADDRESS and as a SOURCE",
+  "run": {
+    "archive": "ESA Gaia DR3 TAP (FLAME mass/radius + GSP-Phot teff), fresh slice MOD 983 = 7",
+    "csv_sha256": "224672f5c07432ec98ae95ae98f5085c7f2a9eb0c7d95fed01ea879f2d02419f",
+    "column_notes": "lum_flame and teff_flame are not served columns (two HTTP 400s - desk errors, corrected); luminosity computed in-run by Stefan-Boltzmann from FLAME radius + GSP-Phot teff: L/Lsun = (R/Rsun)^2 (T/5772)^4 - LABELLED computation",
+    "stars": 1200,
+    "decoupling_at_stellar_scale": {
+      "pairs": 719400,
+      "inversions_E_vs_delivery": 39411,
+      "inversion_share": 0.05478315262718932
+    },
+    "payment_census": {
+      "paying_within_x2_of_the_sun_at_1AU": 319,
+      "richest_payer": {
+        "lum_lsun": 2659.734449158572,
+        "S_at_1AU": 3619898.5853048163,
+        "E": 205.26096309872108,
+        "M_msun": 6.4108114
+      },
+      "poorest_payer": {
+        "lum_lsun": 0.04277819600124138,
+        "S_at_1AU": 58.221124757689516,
+        "E": 201.49762038980924,
+        "M_msun": 0.5215713
+      },
+      "stars_paying_more_than_the_sun": 605
+    },
+    "deepest_register": {
+      "E": 205.26096309872108,
+      "I": 190.0386372813536,
+      "lum_lsun": 2659.734449158572
+    },
+    "harvest_ledger_beyond_the_sun": "at every star in the slice the harvested fraction is NOT MEASURED - no harvester has ever been measured at any of them. Around the Sun alone a harvest has been measured (0.069%, EQS-980)",
+    "the_two_readings": "every star read twice: as an ADDRESS (E, Kd, split, I) and as a SOURCE (payment at 1 AU). The readings are independent - SLH3 written across the sky"
+  },
+  "headline": "among the planets the two axes were maximally decoupled (14/28 inversions); among 1,200 live stars the chip counts 39,411 inversions in 719,400 pairs (5.5%) - mass couples address and payment loosely on the main sequence, and the decoupler still earns its keep: the slices richest payer (2,659.7 Lsun, 3.62e6 W/m2 at 1 AU) is a 6.41 Msun star, its poorest (0.0428 Lsun, 58.2 W/m2) a 0.52 Msun star - a 62,000-fold spread of payment across one slice - while 605 of 1,200 stars out-pay the Sun at 1 AU and 319 pay within a factor two of it. And at every one of the 1,200 stars the harvest ledger is EMPTY: harvested fraction NOT MEASURED - the Sun remains the only star in the sky with a measured harvest",
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT",
+    "data": "Gaia DR3 live pull 2026-11-09; luminosity SB-computed, labelled in the run",
+    "principles": "EQ-SLH1..6 + SLH-U1 CANDIDATE (EQS-980)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "79af643c607145db28cc54e89634b64e481272acbeb4bc588824c1bcbcbd9143",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "record": "EQS-994",
+  "title": "EXOTIC CLOUDS PRICED IN FULL UNDER U-CLD + THE BLACKWELL CONSERVATION CLOUD LAWS - SEVEN SYSTEMS, ONE EXILE",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers pick 2026-11-09 ~16:03 CST - run the exotic-cloud pricing in full: how CLDC5s substrate-blind rule prices methane and metallic cloud layers on other celestial bodies",
+  "run": {
+    "basis": "condensate + layer densities are labelled canon classes per system; deck volumes and condensate fractions are labelled scenario classes; all seats/trades/registers computed in-run under U-CLD + the designated CLDC laws (EQS-993)",
+    "systems": [
+      {
+        "system": "TITAN methane (liquid CH4)",
+        "rho_cond": 450.0,
+        "rho_bulk_layer": 3.0,
+        "deck_volume_m3": 1.0E12,
+        "layer_mass_kg": 3.0E12,
+        "condensate_mass_kg": 9.9E8,
+        "layer_register": {
+          "E": 140.92105700310216,
+          "Kd": 1.9043011886239838E14,
+          "split": 16.440153206539016,
+          "I": 124.48090379656315
+        },
+        "condensate_register": {
+          "E": 128.89643014784653,
+          "Kd": 2.3322831143521315E15,
+          "split": 17.69281203006308,
+          "I": 111.20361811778345
+        },
+        "condensate_seat": 17.69281203006308,
+        "ADMITTED_shell_visit": false,
+        "margin_to_floor_nats": -0.02638796993691983,
+        "trade_nats": 1.2526588235240639,
+        "ucld_check_dev": 3.552713678800501E-15,
+        "bulk_in_earth_cloud_band": false
+      },
+      {
+        "system": "TITAN ethane (liquid C2H6)",
+        "rho_cond": 570.0,
+        "rho_bulk_layer": 3.0,
+        "deck_volume_m3": 1.0E12,
+        "layer_mass_kg": 3.0E12,
+        "condensate_mass_kg": 9.9E8,
+        "layer_register": {
+          "E": 140.92105700310216,
+          "Kd": 1.9043011886239838E14,
+          "split": 16.440153206539016,
+          "I": 124.48090379656315
+        },
+        "condensate_register": {
+          "E": 128.89643014784653,
+          "Kd": 2.624898042265635E15,
+          "split": 17.751909224579137,
+          "I": 111.1445209232674
+        },
+        "condensate_seat": 17.75190922457914,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.03270922457913983,
+        "trade_nats": 1.3117560180401215,
+        "ucld_check_dev": 0.0,
+        "bulk_in_earth_cloud_band": false
+      },
+      {
+        "system": "VENUS sulfuric acid deck",
+        "rho_cond": 1840.0,
+        "rho_bulk_layer": 0.9,
+        "deck_volume_m3": 4.6E14,
+        "layer_mass_kg": 4.14E14,
+        "condensate_mass_kg": 9.108E9,
+        "layer_register": {
+          "E": 148.31193753083795,
+          "Kd": 1.0430287172932562E14,
+          "split": 16.139160005457533,
+          "I": 132.1727775253804
+        },
+        "condensate_register": {
+          "E": 132.22523537392902,
+          "Kd": 4.716109961705827E15,
+          "split": 18.044880347022747,
+          "I": 114.18035502690628
+        },
+        "condensate_seat": 18.044880347022747,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.32568034702274673,
+        "trade_nats": 1.9057203415652144,
+        "ucld_check_dev": 0.0,
+        "bulk_in_earth_cloud_band": true
+      },
+      {
+        "system": "JUPITER ammonia ice belts",
+        "rho_cond": 817.0,
+        "rho_bulk_layer": 0.11,
+        "deck_volume_m3": 1.0E15,
+        "layer_mass_kg": 1.1E14,
+        "condensate_mass_kg": 1.1E11,
+        "layer_register": {
+          "E": 146.32385911878862,
+          "Kd": 3.646459158642435E13,
+          "split": 15.613681406074559,
+          "I": 130.71017771271406
+        },
+        "condensate_register": {
+          "E": 135.9622262003154,
+          "Kd": 3.142577808575143E15,
+          "split": 17.84190990808699,
+          "I": 118.12031629222841
+        },
+        "condensate_seat": 17.841909908086993,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.12270990808699267,
+        "trade_nats": 2.228228502012431,
+        "ucld_check_dev": 1.7763568394002505E-15,
+        "bulk_in_earth_cloud_band": false
+      },
+      {
+        "system": "MARS CO2 ice polar clouds",
+        "rho_cond": 1562.0,
+        "rho_bulk_layer": 0.008,
+        "deck_volume_m3": 1.0E13,
+        "layer_mass_kg": 8.0E10,
+        "condensate_mass_kg": 800000.0000000001,
+        "layer_register": {
+          "E": 135.48454560363763,
+          "Kd": 9.833769052938236E12,
+          "split": 14.958421700046413,
+          "I": 120.52612390359121
+        },
+        "condensate_register": {
+          "E": 118.21515740618227,
+          "Kd": 4.3452575806066045E15,
+          "split": 18.003930716971897,
+          "I": 100.21122668921038
+        },
+        "condensate_seat": 18.003930716971897,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.28473071697189667,
+        "trade_nats": 3.0455090169254833,
+        "ucld_check_dev": 0.0,
+        "bulk_in_earth_cloud_band": false
+      },
+      {
+        "system": "HOT JUPITER silicate deck",
+        "rho_cond": 3200.0,
+        "rho_bulk_layer": 0.02,
+        "deck_volume_m3": 1.0E15,
+        "layer_mass_kg": 2.0E13,
+        "condensate_mass_kg": 2.0E10,
+        "layer_register": {
+          "E": 143.76673698043098,
+          "Kd": 1.5548554095680875E13,
+          "split": 15.187494383014952,
+          "I": 128.57924259741603
+        },
+        "condensate_register": {
+          "E": 133.4051040619578,
+          "Kd": 6.21942163827235E15,
+          "split": 18.183226656568944,
+          "I": 115.22187740538884
+        },
+        "condensate_seat": 18.183226656568944,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.4640266565689437,
+        "trade_nats": 2.995732273553991,
+        "ucld_check_dev": 0.0,
+        "bulk_in_earth_cloud_band": false
+      },
+      {
+        "system": "HOT JUPITER iron rain",
+        "rho_cond": 7874.0,
+        "rho_bulk_layer": 0.02,
+        "deck_volume_m3": 1.0E15,
+        "layer_mass_kg": 2.0E13,
+        "condensate_mass_kg": 2.0E9,
+        "layer_register": {
+          "E": 143.76673698043098,
+          "Kd": 1.5548554095680875E13,
+          "split": 15.187494383014952,
+          "I": 128.57924259741603
+        },
+        "condensate_register": {
+          "E": 129.9512264224667,
+          "Kd": 9.75602077280425E15,
+          "split": 18.40833050224791,
+          "I": 111.5428959202188
+        },
+        "condensate_seat": 18.40833050224791,
+        "ADMITTED_shell_visit": true,
+        "margin_to_floor_nats": 0.6891305022479095,
+        "trade_nats": 3.220836119232957,
+        "ucld_check_dev": 0.0,
+        "bulk_in_earth_cloud_band": false
+      }
+    ],
+    "methane_ice_razor": {
+      "condensate": "solid methane (ice giants, Titan high cloud) - density class range 420-520 kg/m3 by phase/temperature (labelled)",
+      "seat_range": [
+        17.675563812191346,
+        17.72895733726586
+      ],
+      "reading": "the shell floor (density 500) CUTS THROUGH solid methanes own density range: seats [17.6756, 17.7290] straddle 17.7192 - whether a methane-ice cloud is a shell-visit body is EMPIRICAL at the margin, decided by the condensates actual density where it forms"
+    },
+    "findings": {
+      "admission": "6 of 7 exotic systems ADMITTED as shell-visit bodies; the exile is TITAN METHANE alone",
+      "the methane exile": "liquid methane condensate seats 17.6928, 0.0264 nats BELOW the shell floor - under CLDC as designated, Titan methane clouds are priced in full (both seats, exact trade) but are NOT shell-visit bodies; ethane on the same moon is admitted by +0.0327. The laws split Titans two rains by 0.059 nats of margin",
+      "band scope": "the filed cloud BAND [15.9364, 16.2111] is an EARTH-AIR class: Venus bulk seat sits inside it; Jupiter/Mars/hot-Jupiter layer seats (15.61 / 14.96 / 15.19) fall below it - the band does not travel, the EQUATION does (U-CLD deviation 0.0 on all seven)",
+      "iron rain": "the deepest exotic seat: iron condensate 18.4083, admitted with the largest floor margin (+0.6891) - the heaviest rain in the set is the most lawful cloud in it"
+    }
+  },
+  "statuses": {
+    "pricing": "dual seats + exact trades computed for all seven systems; U-CLD deviation 0.0 / float floor on all seven - the equation travels even where the Earth-air band does not",
+    "admission": "a CLDC3/CLDC5 reading of the designated laws (EQS-993), not a new designation and not a verdict on any body - condensate densities are labelled classes; methane-ice admission is EMPIRICAL at the margin",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 94 / 132 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "3a326327f834d41bae4405ecd4bc022f28ae0f32c736d1806ed6c4f53ae18cd4",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

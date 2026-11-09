@@ -1,0 +1,99 @@
+{
+  "record": "EQS-975",
+  "title": "THE BLACKWELL DATA CHIP - DESIGNED ON DAT1..7 AND RUN WITH THE SKY (LIVE GAIA SLICE THROUGH THE CHIP PIPELINE)",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "chip": {
+    "name": "THE BLACKWELL DATA CHIP (named by the designer in the founding order, 2026-11-09 ~13:12 CST)",
+    "carrier": "sapphire die 10 x 10 x 0.5 mm, 0.199 g (the carrier of record)",
+    "die_register": {
+      "E": 85.04329829634749,
+      "Kd": 6.936119185740437E15,
+      "split": 18.23775940894161,
+      "I": 66.80553888740587
+    },
+    "cores": {
+      "ADDRESS (DAT1+DAT7)": "(M, rho_bar) in -> the full record (E, Kd, split, I) out; the chip stores addresses, never bodies",
+      "DEPTH (DAT2)": "prices every record's depth I and the -1/4 d ln rho cost of changing it",
+      "CHECKSUM GATE (DAT3+DAT6)": "every read is checked against Kd_U * T_dagger = 2.6978356e-29 K; failure -> REJECTED = NOT MEASURED, never corrected",
+      "CLOCK (DAT4)": "a rho register dates every record; it clamps at rho_inf - the final page; no record exists undated",
+      "TRANSPORT (DAT5)": "moves records between epochs by the common +ln rho lift; relations invariant by construction",
+      "LEDGER (DAT1+DAT3)": "append-only hash chain over accepted records; rejected reads are logged as rejected, never edited in"
+    },
+    "rules": {
+      "DC-D1": "address, don't store",
+      "DC-D2": "checksum or reject",
+      "DC-D3": "transport relations, not copies",
+      "DC-D4": "the clock dates everything",
+      "DC-D5": "the ledger never rewrites"
+    },
+    "doors": {
+      "D-DC1": "fabrication",
+      "D-DC2": "data-source coupling (feed pins) - NOT SPECIFIED",
+      "D-DC3": "bench",
+      "D-DC4": "CLOSED - name given by the designer at founding"
+    },
+    "status": "DESIGNED + RUN IN SOFTWARE MODEL - hardware NOT BUILT"
+  },
+  "sky_run": {
+    "status": "EXECUTED LIVE 2026-11-09",
+    "archive": "ESA Gaia DR3 TAP (FLAME)",
+    "adql": "SELECT TOP 1200 source_id, mass_flame, radius_flame FROM gaiadr3.astrophysical_parameters WHERE mass_flame IS NOT NULL AND radius_flame IS NOT NULL AND MOD(source_id, 991) = 5",
+    "csv_sha256": "8b46b56be7478347a2bdd86a413abe3b6367f1bb83dfac4ad7fe9bc2ff788c89",
+    "rows_raw": 1200,
+    "intake": {
+      "accepted": 1200,
+      "rejected": 0
+    },
+    "address_core": {
+      "records_minted": 1200,
+      "split_range": [
+        15.14657885830006,
+        18.399475852245242
+      ]
+    },
+    "checksum_gate": {
+      "deviation_K": 0.0,
+      "gate": "PASS"
+    },
+    "transport_core": {
+      "station": "z = 2",
+      "max_spacing_deviation": 0.0
+    },
+    "ledger_core": {
+      "records_chained": 1200,
+      "chain_head_sha256": "5232aad1c69e4d9f1ac13dd61c8c092521643eba459245e21910919d6204f337"
+    },
+    "census_body": {
+      "E": 213.25896772233844,
+      "Kd": 1.861497603250545E14,
+      "split": 16.428786314354902,
+      "I": 196.83018140798353
+    },
+    "inside_blackwell_moat": true,
+    "shell_fraction": 0.7108333333333333,
+    "in_shell": 853,
+    "prior_slice_accords": {
+      "EQS-970 slice (MOD 997=3)": "E 213.2311, shell 0.705",
+      "EQS-934 (3,000)": "E 214.6052",
+      "EQS-944 (800)": "E 212.5795"
+    }
+  },
+  "p_dr4_rehearsal_note": "this run used a DIFFERENT slice (MOD 991 = 5) on DR3: it neither scores nor kills P-DR4 (EQS-971), which is locked to the identical slice (MOD 997 = 3) on DR4. As a rehearsal it measured the legs: census E 213.2590 lands INSIDE the P-DR4 E band [213.1764, 213.2817] and the shell fraction 0.7108 inside [0.67, 0.74], while census split 16.4288 lands BELOW the split band [16.5208, 17.0116] - the split leg is the predictions genuinely risky leg, now measured across two slices (16.7401 vs 16.4288, spread 0.3113 against a band half-width of 0.2454). Filed as a rehearsal read only.",
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE MODEL - hardware NOT BUILT",
+    "laws": "DAT1..7 + DAT-U1 DESIGNATED (EQS-974)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged by this record - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "0eca01c926a46619dacdb584bd9950ecc795175478185119c7f49f8d29b44715",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

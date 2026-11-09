@@ -1,0 +1,41 @@
+{
+  "record": "EQS-1000",
+  "title": "DESIGNATED - THE BLACKWELL ONE EQUATION",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers naming word 2026-11-09 ~17:28 CST - \"The Blackwell One Equation\", his pick from the desks offered slate, naming the unified atomic-matter equation U-ATM (EQS-999)",
+  "designation_statement_file": "~/workspace/equations/BLACKWELL-ONE-EQUATION-DESIGNATION.md",
+  "designation_statement_sha256": "f5dc6f3a4db198b630532447547a5a458daa7d08ccc309a66f2ec223b3150307",
+  "the_equation": "E = 183.40029306350823 + 3/2 ln(M/5.972e24); split = 18.319261532267927 + 1/4 ln(rho/5514); I = E - split",
+  "verification_suite_rerun_at_designation": {
+    "seat_anchors_accord": {
+      "1": true,
+      "26": true,
+      "43": true,
+      "61": true,
+      "92": true
+    },
+    "all_accord": true,
+    "faithfulness_500_bodies_max_dev": 2.8421709430404007E-14
+  },
+  "evidence_chain": {
+    "extraction": "EQS-997 (payload 8abea7d7900af812b0d67d22797a8cfb23b74d78532d43e3a249bcfc799e4911)",
+    "reverse_run": "EQS-998 (payload d8708528b554796c8e7fed3095d8d23c0140bbb12ebcbb1445fabd978db33783)",
+    "forward_run": "EQS-999 (payload 7debbbc9694f080d3cf9c31b773db6f6ee38360f5a64c48988ff73d955c43d51)"
+  },
+  "statuses": {
+    "designation": "DESIGNATED at his naming word",
+    "census": "94 -> 95 designated objects / 132 -> 133 individual laws / 20 conservation-named",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "24fc977d2514cae5441817b2cfb386d2e30d55e04ffe831189338957f724867a",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

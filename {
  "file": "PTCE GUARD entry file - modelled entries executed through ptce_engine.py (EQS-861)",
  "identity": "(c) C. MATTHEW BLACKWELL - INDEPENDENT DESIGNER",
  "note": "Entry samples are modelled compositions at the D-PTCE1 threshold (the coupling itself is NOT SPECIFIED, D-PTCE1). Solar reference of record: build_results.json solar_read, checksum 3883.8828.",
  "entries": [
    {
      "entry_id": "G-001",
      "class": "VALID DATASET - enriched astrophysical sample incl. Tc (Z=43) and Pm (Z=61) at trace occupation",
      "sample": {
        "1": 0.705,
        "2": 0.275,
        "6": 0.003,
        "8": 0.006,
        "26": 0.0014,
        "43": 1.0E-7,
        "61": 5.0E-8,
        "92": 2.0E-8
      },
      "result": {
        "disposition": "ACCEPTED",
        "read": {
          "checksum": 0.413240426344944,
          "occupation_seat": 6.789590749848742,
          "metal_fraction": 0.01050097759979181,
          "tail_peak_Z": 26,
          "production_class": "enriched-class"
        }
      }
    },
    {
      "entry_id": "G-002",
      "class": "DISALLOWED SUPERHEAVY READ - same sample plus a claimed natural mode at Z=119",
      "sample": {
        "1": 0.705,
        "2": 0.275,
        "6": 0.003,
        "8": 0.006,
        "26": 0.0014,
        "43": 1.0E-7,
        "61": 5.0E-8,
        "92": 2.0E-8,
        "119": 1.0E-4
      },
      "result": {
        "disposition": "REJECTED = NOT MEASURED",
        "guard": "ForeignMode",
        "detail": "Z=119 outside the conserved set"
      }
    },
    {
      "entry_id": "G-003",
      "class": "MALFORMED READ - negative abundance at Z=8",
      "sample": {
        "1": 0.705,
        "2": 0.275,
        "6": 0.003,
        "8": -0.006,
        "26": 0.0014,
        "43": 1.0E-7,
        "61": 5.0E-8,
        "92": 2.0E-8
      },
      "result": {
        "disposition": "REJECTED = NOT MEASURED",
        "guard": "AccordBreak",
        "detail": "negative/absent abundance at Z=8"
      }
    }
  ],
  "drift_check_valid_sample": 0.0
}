@@ -1,0 +1,71 @@
+{
+  "file": "PTCE GUARD entry file - modelled entries executed through ptce_engine.py (EQS-861)",
+  "identity": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER",
+  "note": "Entry samples are modelled compositions at the D-PTCE1 threshold (the coupling itself is NOT SPECIFIED, D-PTCE1). Solar reference of record: build_results.json solar_read, checksum 3883.8828.",
+  "entries": [
+    {
+      "entry_id": "G-001",
+      "class": "VALID DATASET - enriched astrophysical sample incl. Tc (Z=43) and Pm (Z=61) at trace occupation",
+      "sample": {
+        "1": 0.705,
+        "2": 0.275,
+        "6": 0.003,
+        "8": 0.006,
+        "26": 0.0014,
+        "43": 1.0E-7,
+        "61": 5.0E-8,
+        "92": 2.0E-8
+      },
+      "result": {
+        "disposition": "ACCEPTED",
+        "read": {
+          "checksum": 0.413240426344944,
+          "occupation_seat": 6.789590749848742,
+          "metal_fraction": 0.01050097759979181,
+          "tail_peak_Z": 26,
+          "production_class": "enriched-class"
+        }
+      }
+    },
+    {
+      "entry_id": "G-002",
+      "class": "DISALLOWED SUPERHEAVY READ - same sample plus a claimed natural mode at Z=119",
+      "sample": {
+        "1": 0.705,
+        "2": 0.275,
+        "6": 0.003,
+        "8": 0.006,
+        "26": 0.0014,
+        "43": 1.0E-7,
+        "61": 5.0E-8,
+        "92": 2.0E-8,
+        "119": 1.0E-4
+      },
+      "result": {
+        "disposition": "REJECTED = NOT MEASURED",
+        "guard": "ForeignMode",
+        "detail": "Z=119 outside the conserved set"
+      }
+    },
+    {
+      "entry_id": "G-003",
+      "class": "MALFORMED READ - negative abundance at Z=8",
+      "sample": {
+        "1": 0.705,
+        "2": 0.275,
+        "6": 0.003,
+        "8": -0.006,
+        "26": 0.0014,
+        "43": 1.0E-7,
+        "61": 5.0E-8,
+        "92": 2.0E-8
+      },
+      "result": {
+        "disposition": "REJECTED = NOT MEASURED",
+        "guard": "AccordBreak",
+        "detail": "negative/absent abundance at Z=8"
+      }
+    }
+  ],
+  "drift_check_valid_sample": 0.0
+}

@@ -1,0 +1,70 @@
+{
+  "record": "EQS-987",
+  "title": "FORMAL TECHNICAL BRIEF - CLOUD-EQUATION MATERIALS TEST PROGRAMME (TOLERANCES / T2+T4 EQUIPMENT / T3 LOAD MODEL)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers three-part order 2026-11-09 ~14:53 CST",
+  "brief_pdf": {
+    "path": "workspace/your_files/blackwell-cloud-materials-technical-brief-eqs987.pdf",
+    "sha256": "87d791edb759c7cf2f1ac3dfe2771736b8045675d5f8c25b039ab331a9cddce2",
+    "contents": "S1 geometric + mass tolerances (from EQS-986 windows); S2 T2 equipment (helium pycnometer, 0.01 mg microbalance, non-contact metrology for TA-2, dry handling, filed engine on site); S3 T4 equipment (95% RH chamber, independent logger, salt verification, rapid-transfer weighing); S4 T3 load model; S5 the TA-2 floor tension; S6 status block"
+  },
+  "t3_model": {
+    "TA-1": {
+      "gibson_ashby_ideal": {
+        "rel_density": 0.045454545454545456,
+        "E_star_Pa": 1.4462809917355374E8,
+        "sigma_star_Pa": 3198010.7453341563
+      },
+      "canon_measured_class_silica_aerogel_at_100": "compressive strength ~0.1-0.5 MPa, modulus ~1-10 MPa (pearl-necklace microstructure runs ~10-30x below the ideal foam bound) - LABELLED CLASS",
+      "T3_floor_Pa": 100000,
+      "verdict": "floor 100 kPa sits at the BOTTOM EDGE of the measured class - demanding, class-supported"
+    },
+    "TA-2": {
+      "class_model": {
+        "class_anchor": "graphene aerogel compressive stress ~5 kPa at rho ~7.5 kg/m3, large-strain elastic (labelled canon class)",
+        "scaling": "sigma ~ rho^2 (class)"
+      },
+      "sigma_at_band_Pa": {
+        "0.4": 14.222222222222225,
+        "1.0": 88.88888888888889,
+        "1.2": 128.0
+      },
+      "T3_floor_Pa": 5000,
+      "verdict": "TENSION FLAGGED: the class model puts TA-2 at 0.036-0.128 kPa across its band - the filed 5 kPa floor stands ~40-140x ABOVE the canon class model. Under the locked protocol the expected T3 outcome for TA-2 is KILL unless the article architecture beats its class (which is what a bench is for - but no one should walk in expecting a pass). The floor was desk-set in EQS-986 and is LOCKED; resetting it is the designers word, and only honest BEFORE fabrication"
+    },
+    "TA-3": {
+      "zones": {
+        "zone1_solid_2200": "solid silica class - floor 100 kPa met by ~4 orders (bulk solid, not a foam)",
+        "zone2_100": {
+          "rel_density": 0.045454545454545456,
+          "E_star_Pa": 1.4462809917355374E8,
+          "sigma_star_Pa": 3198010.7453341563
+        },
+        "zone3_1.0": {
+          "1.0": 88.88888888888889
+        }
+      },
+      "whole_beam_axial": "zones in series: the 1.0 kg/m3 zone governs - axial crush limit ~0.089 kPa x 0.0025 m2 ~ 0.22 N class (model). T3 as filed applies its floor AT THE SHELL ZONES (zone coupons), which zone 1 and zone 2 meet per their classes; a whole-beam axial claim is NOT supported by the model",
+      "gap_named": "bending characterisation is NOT in T1-T5 - a T6 (four-point bend, orientation specified) is proposed to the designer, not added"
+    }
+  },
+  "flagged_tension": "TA-2s locked T3 floor (5 kPa, desk-set in EQS-986) stands ~40-350x above the canon graphene-aerogel class model (14-128 Pa across the band). The brief states it in S5 with two lawful paths, both his word, both before fabrication: let it stand and let the bench read, or supersede the TA-2 T3 line by a new record. The lock itself was NOT edited by this brief",
+  "statuses": {
+    "articles": "SPECIFIED, NOT FABRICATED - D-CM1 his word",
+    "protocol": "LOCKED (EQS-986), NOT EXECUTED",
+    "model": "MODELS over labelled canon classes - NOT MEASURED",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "8e669861e123cb0235414020f7fff3224746eb86920cc75c9e6dcb0a2134d0c8",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

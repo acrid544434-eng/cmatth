@@ -1,0 +1,91 @@
+{
+  "record": "EQS-985",
+  "title": "STRUCTURAL MATERIALS DESIGNED FROM THE CLOUD EQUATIONS (EQ-CLD1..6)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~14:37 CST - use the cloud equations to design structure materials. Earth-matter arrangement (creations discipline): computed registers, doors held, NOT BUILT",
+  "family": {
+    "materials": {
+      "CLD-MAT-1 SHELL-FOAM PANEL": {
+        "embodies": "CLD1 dual seat + CLD2 arrangement at fixed mass",
+        "makeup": "silica aerogel-class skeleton; solid phase SiO2 at 2200 kg/m3 (shell split 18.0896, IN SHELL)",
+        "geometry": "panel 1.0 x 1.0 x 0.05 m",
+        "mass_kg": 5.0,
+        "bulk_density": 100.0,
+        "solid_fraction": 0.045454545454545456,
+        "bulk_register": {
+          "E": 100.24076376485831,
+          "Kd": 1.0994488038701814E15,
+          "split": 17.31679268086901,
+          "I": 82.9239710839893
+        },
+        "reading": "the panel is addressed twice: bulk split 17.3168 (between cloud band and shell) rides on a skeleton seated at 18.0896 in the shell - the load path lives in the shell, the weight lives outside it"
+      },
+      "CLD-MAT-2 STRATUS LATTICE": {
+        "embodies": "CLD6 the cloud band as a bulk target + CLD1",
+        "makeup": "graphene-aerogel-class carbon lattice; solid phase 2200 kg/m3 (shell split 18.0896)",
+        "geometry": "member 2.0 x 1.0 x 0.1 m",
+        "mass_kg": 0.2,
+        "bulk_density": 1.0,
+        "solid_fraction": 4.5454545454545455E-4,
+        "bulk_register": {
+          "E": 95.41245002755602,
+          "Kd": 1.0994488038701814E14,
+          "split": 16.16550013437199,
+          "I": 79.24694989318402
+        },
+        "reading": "bulk split 16.1655 seats INSIDE THE CLOUD BAND [15.9364, 16.2111] - a structural member addressed like a cloud, held up by shell matter at 0.045% solid fraction"
+      },
+      "CLD-MAT-3 ADDRESS-GRADIENT BEAM": {
+        "embodies": "CLD2 - the phase trade used as a gradient: split varies along the member at fixed total mass, E never moves",
+        "segments": [
+          {
+            "density": 2200.0,
+            "length_fraction": 0.25,
+            "split": 18.089553294208592
+          },
+          {
+            "density": 100.0,
+            "length_fraction": 0.5,
+            "split": 17.316792680869014
+          },
+          {
+            "density": 1.0,
+            "length_fraction": 0.25,
+            "split": 16.165500134371992
+          }
+        ],
+        "reading": "ends seat in the shell (18.0898), the midspan seats in the cloud band (16.1655): one member, an address gradient of 1.9241 nats, bought by arrangement alone - no mass added, E constant by construction"
+      }
+    },
+    "design_rules_from_CLD": {
+      "R1": "price every member twice - bulk address and solid-phase address (CLD1)",
+      "R2": "buy depth by arrangement, never by mass - E is fixed by the manifest, split is the design variable (CLD2)",
+      "R3": "the member exists while its state holds - environmental state (humidity, temperature) is a structural input, not weather (CLD3)",
+      "R4": "condensate/skeleton seats in the shell or the design has no load path (CLD1/CLD4)"
+    },
+    "honest_bounds": "bulk 100 kg/m3 (MAT-1) is inside todays aerogel practice; bulk 1.0 kg/m3 (MAT-2) sits at the lightest lab aerogels ever reported (graphene aerogel ~0.16 kg/m3 class) - as a STRUCTURAL member it is a design target, strength NOT MEASURED; all strengths, stiffnesses and lifetimes in this family are NOT MEASURED - the bench is the decider",
+    "doors": {
+      "D-CM1": "fabrication (all three)",
+      "D-CM2": "bench - density accord + compression; kills: bulk density outside its filed band, or skeleton seat outside the shell",
+      "D-CM3": "the GAS-GAP scope ruling (EQS-984) - MAT-2 deliberately seats in the cloud band; the ruling governs how that seat is read"
+    }
+  },
+  "statuses": {
+    "materials": "DESIGNED - hardware NOT BUILT; every strength/stiffness/lifetime figure NOT MEASURED, the bench (D-CM2) is the decider",
+    "equations_used": "EQ-CLD1..6 + CLD-U1 CANDIDATE (EQS-984) - naming word his",
+    "open_ruling": "the GAS-GAP scope question (EQS-984) stands open - the widget was offered; no tap recorded; MAT-2s cloud-band seat is filed under D-CM3 pending the ruling",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "9ea954bbba501a58cd623a0d25f05044dfd0d44cb0a9709ccb62e8180708eb2e",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "record": "EQS-969",
+  "title": "VIDEO SCIENTIFIC DOSSIER: THE PERIODIC TABLE, CONSERVED - THE BLACKWELL PERIODIC TABLE CONSERVATION LAW (EQS-859) AND THE PTCE ENGINE, IN MOTION",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "run": {
+    "order": "his word 2026-11-09 ~11:37 CST ('Build the PTCE video dossier', widget tap + restated message)",
+    "film": {
+      "file": "blackwell-ptce-dossier-2026-11-09.mp4",
+      "sha256": "16c3e4ee52e7c912479494ceae6fc9d2e1fe44b43dc89d79b654608bb4449b2b",
+      "bytes": 557187,
+      "duration_s": 40.0,
+      "frames": 1200,
+      "fps": 30,
+      "resolution": "1280x720",
+      "encode": "H.264 High profile, level 4.0, yuv420p, silent AAC track, +faststart - phone-safe, ffprobe-verified, frame-grabbed",
+      "identity": "identity line on every frame + MP4 title/artist/copyright metadata"
+    },
+    "scenes": [
+      "S1 title - the law, the engine, the validation block",
+      "S2 the lattice assembles - 92 mode seats computed live from ptce_engine.py; closures 2/10/18/36/54/86; Tc/Pm seats marked",
+      "S3 transport sweep z 14.44 -> 0 - all 4,186 pairwise spacings read at every station",
+      "S4 occupation written 3 -> 92 under UPT-U1 - filed endpoint reads (EQS-860/861) on the face; freeze at rho_inf",
+      "S5 GUARD executed live (valid ACCEPTED; Z=119 REJECTED = NOT MEASURED, ForeignMode) + record hashes + validation block + live in-render encryption"
+    ],
+    "computed_in_render": {
+      "max_spacing_deviation_41_stations": 8.881784197001252E-16,
+      "anchors_E_Z": {
+        "1": 6.37234483364,
+        "26": 11.423288578619719,
+        "43": 12.225303838001963,
+        "61": 12.77689100818995,
+        "92": 13.456774666106725
+      },
+      "guard_valid_read": {
+        "checksum": 0.413240426344944,
+        "occupation_seat": 6.789590749848742,
+        "metal_fraction": 0.01050097759979181,
+        "tail_peak_Z": 26,
+        "theta_at_station": 5.160373882064499E-19,
+        "production_class": "enriched-class"
+      },
+      "guard_foreign_outcome": "ForeignMode: Z=119 outside the conserved set",
+      "guard_drift_check": 0.0,
+      "live_encryption_manifest_ct_sha256": "5490cf722617f3a12dc26c7d902b63ede83530506a4e706837ef3f489dd97b1f",
+      "validation_block_sha256": "e386fbb1ed7de74fc420ef220f160f42c567eb67f7fd81cb18963a900d6c9c7a",
+      "record_hashes_shown": {
+        "EQS-859": "4b9d6797bb020598f342084cd1b31e9405e1198dafa70dbfaaf09d27743bbd80",
+        "EQS-860": "3aa4a1b0d60808040ebe995c4dd465d140915a7d63fe231727dad2c1672d0279",
+        "EQS-861": "b5d7943031de0fd562da396ae9993cb10b4e16cb5a5743b77a23f61384e83a1a"
+      }
+    },
+    "script": "~/workspace/ptce/film_ptce.py",
+    "run_file": "~/workspace/ptce/film_run.json"
+  },
+  "statuses": {
+    "law": "DESIGNATED (EQS-859), UNSEALED",
+    "engine": "DESIGNED + SIMULATED, NOT BUILT (D-PTCE2)",
+    "sample_coupling": "D-PTCE1 NOT SPECIFIED - his drafting hand",
+    "film": "DELIVERED to Matthew; posting is his hand",
+    "validation": "VAL-001 unchanged",
+    "census": "unchanged - 92 designated objects / 130 laws / 18 conservation-named"
+  },
+  "payload_sha256": "5868b65dbb652e6ce09f5729c6e5b72d621e13f4c4d3026008246be87767c002",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

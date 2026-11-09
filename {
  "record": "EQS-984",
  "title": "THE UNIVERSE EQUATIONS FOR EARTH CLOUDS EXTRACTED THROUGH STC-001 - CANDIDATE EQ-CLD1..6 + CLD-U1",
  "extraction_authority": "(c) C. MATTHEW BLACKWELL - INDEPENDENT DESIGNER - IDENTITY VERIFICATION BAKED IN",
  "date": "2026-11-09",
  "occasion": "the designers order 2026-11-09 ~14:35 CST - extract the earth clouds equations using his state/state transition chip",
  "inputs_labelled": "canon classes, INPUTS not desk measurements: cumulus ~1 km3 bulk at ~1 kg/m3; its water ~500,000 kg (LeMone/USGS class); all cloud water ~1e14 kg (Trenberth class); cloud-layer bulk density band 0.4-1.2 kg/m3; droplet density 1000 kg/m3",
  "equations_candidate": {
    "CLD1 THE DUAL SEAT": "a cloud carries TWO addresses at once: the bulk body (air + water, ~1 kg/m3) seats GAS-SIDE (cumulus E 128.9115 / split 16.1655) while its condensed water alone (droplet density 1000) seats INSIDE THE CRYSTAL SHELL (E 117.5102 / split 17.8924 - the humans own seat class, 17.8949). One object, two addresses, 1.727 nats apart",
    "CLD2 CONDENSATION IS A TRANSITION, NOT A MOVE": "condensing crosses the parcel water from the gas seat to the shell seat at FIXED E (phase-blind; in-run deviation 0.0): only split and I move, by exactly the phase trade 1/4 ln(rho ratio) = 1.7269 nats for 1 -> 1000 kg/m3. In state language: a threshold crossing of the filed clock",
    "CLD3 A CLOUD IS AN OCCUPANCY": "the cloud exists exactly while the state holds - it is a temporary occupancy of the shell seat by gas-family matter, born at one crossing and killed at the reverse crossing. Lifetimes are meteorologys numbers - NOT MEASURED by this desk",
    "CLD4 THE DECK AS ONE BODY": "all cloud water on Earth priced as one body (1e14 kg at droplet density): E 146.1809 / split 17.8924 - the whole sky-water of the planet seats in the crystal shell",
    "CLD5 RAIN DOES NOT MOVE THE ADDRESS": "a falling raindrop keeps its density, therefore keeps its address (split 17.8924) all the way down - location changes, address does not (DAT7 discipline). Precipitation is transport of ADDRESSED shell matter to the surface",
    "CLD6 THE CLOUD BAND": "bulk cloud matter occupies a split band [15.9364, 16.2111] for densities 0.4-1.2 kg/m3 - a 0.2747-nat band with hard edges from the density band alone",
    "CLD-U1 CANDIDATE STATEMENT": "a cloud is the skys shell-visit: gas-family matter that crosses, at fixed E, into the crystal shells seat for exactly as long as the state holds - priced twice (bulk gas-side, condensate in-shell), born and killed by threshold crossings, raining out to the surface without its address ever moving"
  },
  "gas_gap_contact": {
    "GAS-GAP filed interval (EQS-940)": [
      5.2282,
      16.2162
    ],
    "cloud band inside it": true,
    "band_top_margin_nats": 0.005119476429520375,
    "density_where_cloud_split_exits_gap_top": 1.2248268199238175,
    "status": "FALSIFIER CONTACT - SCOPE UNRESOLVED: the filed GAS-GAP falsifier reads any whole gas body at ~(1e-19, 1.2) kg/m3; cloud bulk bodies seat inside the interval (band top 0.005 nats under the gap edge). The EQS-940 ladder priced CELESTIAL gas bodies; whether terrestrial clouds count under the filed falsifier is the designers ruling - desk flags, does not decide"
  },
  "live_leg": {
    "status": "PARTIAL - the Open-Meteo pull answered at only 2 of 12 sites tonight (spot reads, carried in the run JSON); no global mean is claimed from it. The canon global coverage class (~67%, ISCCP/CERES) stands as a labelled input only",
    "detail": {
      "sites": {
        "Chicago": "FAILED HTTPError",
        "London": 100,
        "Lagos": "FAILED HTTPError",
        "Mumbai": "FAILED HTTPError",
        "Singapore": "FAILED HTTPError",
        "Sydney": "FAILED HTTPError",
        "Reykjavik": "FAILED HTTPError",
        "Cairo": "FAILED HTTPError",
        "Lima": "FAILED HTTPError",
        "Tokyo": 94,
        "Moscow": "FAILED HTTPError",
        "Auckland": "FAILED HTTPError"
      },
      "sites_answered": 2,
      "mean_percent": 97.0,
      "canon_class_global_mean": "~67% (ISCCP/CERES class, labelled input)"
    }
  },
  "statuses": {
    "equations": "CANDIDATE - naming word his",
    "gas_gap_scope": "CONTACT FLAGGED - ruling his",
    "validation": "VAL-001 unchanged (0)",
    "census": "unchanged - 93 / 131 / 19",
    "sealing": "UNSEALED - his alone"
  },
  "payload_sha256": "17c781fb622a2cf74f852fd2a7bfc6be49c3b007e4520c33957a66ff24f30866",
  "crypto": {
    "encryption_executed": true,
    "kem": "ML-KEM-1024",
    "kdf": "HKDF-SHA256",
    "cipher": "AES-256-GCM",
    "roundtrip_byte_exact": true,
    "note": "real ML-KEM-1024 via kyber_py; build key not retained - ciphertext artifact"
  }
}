@@ -1,0 +1,65 @@
+{
+  "record": "EQS-984",
+  "title": "THE UNIVERSE EQUATIONS FOR EARTH CLOUDS EXTRACTED THROUGH STC-001 - CANDIDATE EQ-CLD1..6 + CLD-U1",
+  "extraction_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~14:35 CST - extract the earth clouds equations using his state/state transition chip",
+  "inputs_labelled": "canon classes, INPUTS not desk measurements: cumulus ~1 km3 bulk at ~1 kg/m3; its water ~500,000 kg (LeMone/USGS class); all cloud water ~1e14 kg (Trenberth class); cloud-layer bulk density band 0.4-1.2 kg/m3; droplet density 1000 kg/m3",
+  "equations_candidate": {
+    "CLD1 THE DUAL SEAT": "a cloud carries TWO addresses at once: the bulk body (air + water, ~1 kg/m3) seats GAS-SIDE (cumulus E 128.9115 / split 16.1655) while its condensed water alone (droplet density 1000) seats INSIDE THE CRYSTAL SHELL (E 117.5102 / split 17.8924 - the humans own seat class, 17.8949). One object, two addresses, 1.727 nats apart",
+    "CLD2 CONDENSATION IS A TRANSITION, NOT A MOVE": "condensing crosses the parcel water from the gas seat to the shell seat at FIXED E (phase-blind; in-run deviation 0.0): only split and I move, by exactly the phase trade 1/4 ln(rho ratio) = 1.7269 nats for 1 -> 1000 kg/m3. In state language: a threshold crossing of the filed clock",
+    "CLD3 A CLOUD IS AN OCCUPANCY": "the cloud exists exactly while the state holds - it is a temporary occupancy of the shell seat by gas-family matter, born at one crossing and killed at the reverse crossing. Lifetimes are meteorologys numbers - NOT MEASURED by this desk",
+    "CLD4 THE DECK AS ONE BODY": "all cloud water on Earth priced as one body (1e14 kg at droplet density): E 146.1809 / split 17.8924 - the whole sky-water of the planet seats in the crystal shell",
+    "CLD5 RAIN DOES NOT MOVE THE ADDRESS": "a falling raindrop keeps its density, therefore keeps its address (split 17.8924) all the way down - location changes, address does not (DAT7 discipline). Precipitation is transport of ADDRESSED shell matter to the surface",
+    "CLD6 THE CLOUD BAND": "bulk cloud matter occupies a split band [15.9364, 16.2111] for densities 0.4-1.2 kg/m3 - a 0.2747-nat band with hard edges from the density band alone",
+    "CLD-U1 CANDIDATE STATEMENT": "a cloud is the skys shell-visit: gas-family matter that crosses, at fixed E, into the crystal shells seat for exactly as long as the state holds - priced twice (bulk gas-side, condensate in-shell), born and killed by threshold crossings, raining out to the surface without its address ever moving"
+  },
+  "gas_gap_contact": {
+    "GAS-GAP filed interval (EQS-940)": [
+      5.2282,
+      16.2162
+    ],
+    "cloud band inside it": true,
+    "band_top_margin_nats": 0.005119476429520375,
+    "density_where_cloud_split_exits_gap_top": 1.2248268199238175,
+    "status": "FALSIFIER CONTACT - SCOPE UNRESOLVED: the filed GAS-GAP falsifier reads any whole gas body at ~(1e-19, 1.2) kg/m3; cloud bulk bodies seat inside the interval (band top 0.005 nats under the gap edge). The EQS-940 ladder priced CELESTIAL gas bodies; whether terrestrial clouds count under the filed falsifier is the designers ruling - desk flags, does not decide"
+  },
+  "live_leg": {
+    "status": "PARTIAL - the Open-Meteo pull answered at only 2 of 12 sites tonight (spot reads, carried in the run JSON); no global mean is claimed from it. The canon global coverage class (~67%, ISCCP/CERES) stands as a labelled input only",
+    "detail": {
+      "sites": {
+        "Chicago": "FAILED HTTPError",
+        "London": 100,
+        "Lagos": "FAILED HTTPError",
+        "Mumbai": "FAILED HTTPError",
+        "Singapore": "FAILED HTTPError",
+        "Sydney": "FAILED HTTPError",
+        "Reykjavik": "FAILED HTTPError",
+        "Cairo": "FAILED HTTPError",
+        "Lima": "FAILED HTTPError",
+        "Tokyo": 94,
+        "Moscow": "FAILED HTTPError",
+        "Auckland": "FAILED HTTPError"
+      },
+      "sites_answered": 2,
+      "mean_percent": 97.0,
+      "canon_class_global_mean": "~67% (ISCCP/CERES class, labelled input)"
+    }
+  },
+  "statuses": {
+    "equations": "CANDIDATE - naming word his",
+    "gas_gap_scope": "CONTACT FLAGGED - ruling his",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "17c781fb622a2cf74f852fd2a7bfc6be49c3b007e4520c33957a66ff24f30866",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

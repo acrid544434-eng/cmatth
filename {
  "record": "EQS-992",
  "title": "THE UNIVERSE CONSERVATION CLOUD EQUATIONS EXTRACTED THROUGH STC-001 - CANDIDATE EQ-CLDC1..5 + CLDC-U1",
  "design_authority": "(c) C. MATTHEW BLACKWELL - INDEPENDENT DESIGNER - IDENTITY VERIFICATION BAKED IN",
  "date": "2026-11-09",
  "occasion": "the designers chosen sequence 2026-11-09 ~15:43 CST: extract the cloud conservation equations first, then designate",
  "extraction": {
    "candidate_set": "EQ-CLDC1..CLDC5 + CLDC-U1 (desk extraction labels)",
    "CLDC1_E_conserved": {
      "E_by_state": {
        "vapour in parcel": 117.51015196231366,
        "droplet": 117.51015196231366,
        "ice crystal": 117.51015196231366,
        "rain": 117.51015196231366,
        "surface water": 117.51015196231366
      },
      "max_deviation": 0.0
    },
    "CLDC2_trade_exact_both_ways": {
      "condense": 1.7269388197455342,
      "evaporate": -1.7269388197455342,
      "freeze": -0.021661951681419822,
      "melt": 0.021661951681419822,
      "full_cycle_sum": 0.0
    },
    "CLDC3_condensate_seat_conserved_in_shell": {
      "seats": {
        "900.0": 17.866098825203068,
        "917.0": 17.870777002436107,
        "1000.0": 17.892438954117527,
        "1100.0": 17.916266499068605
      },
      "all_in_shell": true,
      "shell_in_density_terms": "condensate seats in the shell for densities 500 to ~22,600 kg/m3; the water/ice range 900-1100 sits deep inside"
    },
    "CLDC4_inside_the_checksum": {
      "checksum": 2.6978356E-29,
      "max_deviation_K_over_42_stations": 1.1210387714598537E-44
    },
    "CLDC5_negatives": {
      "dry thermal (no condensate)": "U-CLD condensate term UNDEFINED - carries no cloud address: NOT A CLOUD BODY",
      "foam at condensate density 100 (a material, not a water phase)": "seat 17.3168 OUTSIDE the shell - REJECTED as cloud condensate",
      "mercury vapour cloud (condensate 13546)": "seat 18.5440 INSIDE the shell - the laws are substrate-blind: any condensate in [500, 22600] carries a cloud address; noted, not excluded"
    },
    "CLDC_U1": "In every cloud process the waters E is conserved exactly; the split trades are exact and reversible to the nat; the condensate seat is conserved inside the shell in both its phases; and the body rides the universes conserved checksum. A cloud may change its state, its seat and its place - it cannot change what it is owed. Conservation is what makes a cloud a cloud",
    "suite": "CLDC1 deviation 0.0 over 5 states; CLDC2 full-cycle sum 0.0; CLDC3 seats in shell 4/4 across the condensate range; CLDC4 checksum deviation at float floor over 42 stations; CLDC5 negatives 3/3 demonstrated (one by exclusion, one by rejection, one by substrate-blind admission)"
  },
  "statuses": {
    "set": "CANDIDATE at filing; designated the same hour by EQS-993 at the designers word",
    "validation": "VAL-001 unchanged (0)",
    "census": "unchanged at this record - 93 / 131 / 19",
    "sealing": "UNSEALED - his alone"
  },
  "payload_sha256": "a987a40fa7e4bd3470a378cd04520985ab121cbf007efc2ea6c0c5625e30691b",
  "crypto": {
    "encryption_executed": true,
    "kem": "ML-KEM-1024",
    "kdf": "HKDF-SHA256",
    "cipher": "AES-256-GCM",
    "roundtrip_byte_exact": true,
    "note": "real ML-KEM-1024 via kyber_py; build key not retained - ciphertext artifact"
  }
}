@@ -1,0 +1,63 @@
+{
+  "record": "EQS-992",
+  "title": "THE UNIVERSE CONSERVATION CLOUD EQUATIONS EXTRACTED THROUGH STC-001 - CANDIDATE EQ-CLDC1..5 + CLDC-U1",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers chosen sequence 2026-11-09 ~15:43 CST: extract the cloud conservation equations first, then designate",
+  "extraction": {
+    "candidate_set": "EQ-CLDC1..CLDC5 + CLDC-U1 (desk extraction labels)",
+    "CLDC1_E_conserved": {
+      "E_by_state": {
+        "vapour in parcel": 117.51015196231366,
+        "droplet": 117.51015196231366,
+        "ice crystal": 117.51015196231366,
+        "rain": 117.51015196231366,
+        "surface water": 117.51015196231366
+      },
+      "max_deviation": 0.0
+    },
+    "CLDC2_trade_exact_both_ways": {
+      "condense": 1.7269388197455342,
+      "evaporate": -1.7269388197455342,
+      "freeze": -0.021661951681419822,
+      "melt": 0.021661951681419822,
+      "full_cycle_sum": 0.0
+    },
+    "CLDC3_condensate_seat_conserved_in_shell": {
+      "seats": {
+        "900.0": 17.866098825203068,
+        "917.0": 17.870777002436107,
+        "1000.0": 17.892438954117527,
+        "1100.0": 17.916266499068605
+      },
+      "all_in_shell": true,
+      "shell_in_density_terms": "condensate seats in the shell for densities 500 to ~22,600 kg/m3; the water/ice range 900-1100 sits deep inside"
+    },
+    "CLDC4_inside_the_checksum": {
+      "checksum": 2.6978356E-29,
+      "max_deviation_K_over_42_stations": 1.1210387714598537E-44
+    },
+    "CLDC5_negatives": {
+      "dry thermal (no condensate)": "U-CLD condensate term UNDEFINED - carries no cloud address: NOT A CLOUD BODY",
+      "foam at condensate density 100 (a material, not a water phase)": "seat 17.3168 OUTSIDE the shell - REJECTED as cloud condensate",
+      "mercury vapour cloud (condensate 13546)": "seat 18.5440 INSIDE the shell - the laws are substrate-blind: any condensate in [500, 22600] carries a cloud address; noted, not excluded"
+    },
+    "CLDC_U1": "In every cloud process the waters E is conserved exactly; the split trades are exact and reversible to the nat; the condensate seat is conserved inside the shell in both its phases; and the body rides the universes conserved checksum. A cloud may change its state, its seat and its place - it cannot change what it is owed. Conservation is what makes a cloud a cloud",
+    "suite": "CLDC1 deviation 0.0 over 5 states; CLDC2 full-cycle sum 0.0; CLDC3 seats in shell 4/4 across the condensate range; CLDC4 checksum deviation at float floor over 42 stations; CLDC5 negatives 3/3 demonstrated (one by exclusion, one by rejection, one by substrate-blind admission)"
+  },
+  "statuses": {
+    "set": "CANDIDATE at filing; designated the same hour by EQS-993 at the designers word",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged at this record - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "a987a40fa7e4bd3470a378cd04520985ab121cbf007efc2ea6c0c5625e30691b",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

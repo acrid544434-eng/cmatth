@@ -1,0 +1,57 @@
+{
+  "record": "EQS-972",
+  "title": "VIDEO SCIENTIFIC DOSSIER - STATE + MATTER: TWO CHIPS, ONE LIVE SKY (EQS-970 RUN + EQS-971 P-DR4)",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "film": {
+    "file": "blackwell-state-matter-dossier-2026-11-09.mp4",
+    "duration_s": 52.0,
+    "frames": 1560,
+    "fps": 30,
+    "resolution": "1280x720 HD",
+    "scenes": "S1 title; S2 the live pull; S3 THE ADDRESS SPACE IN 3D (rotating (E, split, I) scatter of the 1,200 live stars, moat walls, census star); S4 the state-chip clock (live sets + closings + razor window); S5 the matter chip (shell occupancy histogram of the live splits); S6 P-DR4 + live encryption + payload hashes",
+    "phone_safe_verified": "H.264 High, level 4.0, yuv420p, silent AAC, +faststart, identity in MP4 metadata; frame grabs verified (3D scene, shell scene, closing scene read clean)",
+    "mp4_sha256": "b66f333a3e8cc438bb6fa545fa1477f5499c948c3db24ec0d05dd26d87c8659a",
+    "all_values_computed_in_render": "from gaia_eqs970.csv (the live pull) + gas_core + the EQS-970/971 records; in-render census E 213.23106284643382 accords EQS-970 exactly; in-shell 846 accords",
+    "encryption_executed_in_render": "ML-KEM-1024 -> HKDF-SHA256 -> AES-256-GCM over the film manifest; round trip byte-exact in-render; ciphertext sha256 in film972_run.json (fresh keys per render)",
+    "manifest": {
+      "film": "EQS-972 STATE + MATTER",
+      "csv_sha256": "00bc94d43d12f504ed1e57a82e3251d5d1551934e81f4aa966144a12c1ccc0d0",
+      "stars": 1200,
+      "census": {
+        "E": 213.23106284643382,
+        "Kd": 3.4698308024179844E14,
+        "split": 16.74014856728825,
+        "I": 196.49091427914556
+      },
+      "in_shell": 846,
+      "closings": {
+        "phi(1020)": 14.823835461865064,
+        "n": 12.439255881880781,
+        "p": 12.402249272133917,
+        "K+": 2.6580015122722687
+      },
+      "eqs970_payload": "3ef53f72d4f768cc04be0c83f7d828ed9b6a8a01863bbaecdd34c788eab78b37",
+      "eqs971_payload": "999a0fbb3dd678811be98fb8d03f0e65f35a597548956d4a03c7b77e7dca8b48",
+      "identity": "C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER",
+      "film_ciphertext_sha256": "5e7ee5de51a1ffbbc12154df14ece29125c21bce1aff388e1c804b7e754a1540",
+      "roundtrip_byte_exact": true
+    }
+  },
+  "statuses": {
+    "chips": "DESIGNED + SIMULATED - hardware NOT BUILT",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 92 / 130 / 18",
+    "sealing": "UNSEALED - his alone",
+    "posting": "HIS HAND - delivered to Matthew only"
+  },
+  "payload_sha256": "3961b705be8ca86f36f07d532a32699d91db8d4095499d4ffa0cb07f59a34dff",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

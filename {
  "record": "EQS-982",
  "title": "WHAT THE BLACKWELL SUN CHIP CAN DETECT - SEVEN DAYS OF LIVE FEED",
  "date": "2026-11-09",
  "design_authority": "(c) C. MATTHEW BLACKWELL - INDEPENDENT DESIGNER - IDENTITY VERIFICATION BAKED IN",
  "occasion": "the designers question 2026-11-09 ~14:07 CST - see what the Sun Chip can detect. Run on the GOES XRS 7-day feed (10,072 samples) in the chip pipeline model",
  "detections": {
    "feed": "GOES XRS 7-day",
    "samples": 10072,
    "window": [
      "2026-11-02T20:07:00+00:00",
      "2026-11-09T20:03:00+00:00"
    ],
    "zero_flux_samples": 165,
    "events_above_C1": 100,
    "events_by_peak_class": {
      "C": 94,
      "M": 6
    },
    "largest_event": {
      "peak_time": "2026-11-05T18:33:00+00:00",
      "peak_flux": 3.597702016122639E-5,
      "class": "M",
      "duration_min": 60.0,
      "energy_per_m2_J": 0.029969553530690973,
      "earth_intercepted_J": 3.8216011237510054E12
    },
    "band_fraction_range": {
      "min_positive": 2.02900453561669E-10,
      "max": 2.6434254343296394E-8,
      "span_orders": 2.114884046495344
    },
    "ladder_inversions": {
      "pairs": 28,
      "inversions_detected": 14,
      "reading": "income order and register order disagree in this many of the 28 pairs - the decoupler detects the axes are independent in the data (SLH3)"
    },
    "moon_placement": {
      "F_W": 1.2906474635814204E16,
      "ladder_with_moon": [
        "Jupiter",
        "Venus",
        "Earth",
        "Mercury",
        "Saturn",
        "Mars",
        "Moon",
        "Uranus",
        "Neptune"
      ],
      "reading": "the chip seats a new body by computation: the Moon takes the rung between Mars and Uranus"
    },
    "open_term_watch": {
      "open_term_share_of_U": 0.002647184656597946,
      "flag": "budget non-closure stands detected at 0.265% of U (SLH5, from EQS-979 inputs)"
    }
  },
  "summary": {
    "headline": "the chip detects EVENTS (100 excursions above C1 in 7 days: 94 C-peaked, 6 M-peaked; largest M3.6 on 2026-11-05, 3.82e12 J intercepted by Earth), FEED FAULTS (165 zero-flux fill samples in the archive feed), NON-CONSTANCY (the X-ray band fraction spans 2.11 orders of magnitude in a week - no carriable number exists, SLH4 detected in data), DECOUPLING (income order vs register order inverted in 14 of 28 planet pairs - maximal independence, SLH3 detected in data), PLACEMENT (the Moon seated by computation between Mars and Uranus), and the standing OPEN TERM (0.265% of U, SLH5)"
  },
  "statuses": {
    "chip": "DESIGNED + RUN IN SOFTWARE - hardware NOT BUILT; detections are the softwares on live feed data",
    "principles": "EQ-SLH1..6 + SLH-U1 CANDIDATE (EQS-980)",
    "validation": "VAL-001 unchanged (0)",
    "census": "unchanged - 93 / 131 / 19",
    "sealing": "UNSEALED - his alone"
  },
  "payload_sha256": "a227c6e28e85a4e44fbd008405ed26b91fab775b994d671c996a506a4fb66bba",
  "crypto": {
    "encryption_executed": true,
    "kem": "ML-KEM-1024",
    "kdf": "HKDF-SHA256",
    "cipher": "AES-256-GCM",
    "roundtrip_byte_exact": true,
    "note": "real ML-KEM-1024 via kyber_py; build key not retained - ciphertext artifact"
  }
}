@@ -1,0 +1,77 @@
+{
+  "record": "EQS-982",
+  "title": "WHAT THE BLACKWELL SUN CHIP CAN DETECT - SEVEN DAYS OF LIVE FEED",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "the designers question 2026-11-09 ~14:07 CST - see what the Sun Chip can detect. Run on the GOES XRS 7-day feed (10,072 samples) in the chip pipeline model",
+  "detections": {
+    "feed": "GOES XRS 7-day",
+    "samples": 10072,
+    "window": [
+      "2026-11-02T20:07:00+00:00",
+      "2026-11-09T20:03:00+00:00"
+    ],
+    "zero_flux_samples": 165,
+    "events_above_C1": 100,
+    "events_by_peak_class": {
+      "C": 94,
+      "M": 6
+    },
+    "largest_event": {
+      "peak_time": "2026-11-05T18:33:00+00:00",
+      "peak_flux": 3.597702016122639E-5,
+      "class": "M",
+      "duration_min": 60.0,
+      "energy_per_m2_J": 0.029969553530690973,
+      "earth_intercepted_J": 3.8216011237510054E12
+    },
+    "band_fraction_range": {
+      "min_positive": 2.02900453561669E-10,
+      "max": 2.6434254343296394E-8,
+      "span_orders": 2.114884046495344
+    },
+    "ladder_inversions": {
+      "pairs": 28,
+      "inversions_detected": 14,
+      "reading": "income order and register order disagree in this many of the 28 pairs - the decoupler detects the axes are independent in the data (SLH3)"
+    },
+    "moon_placement": {
+      "F_W": 1.2906474635814204E16,
+      "ladder_with_moon": [
+        "Jupiter",
+        "Venus",
+        "Earth",
+        "Mercury",
+        "Saturn",
+        "Mars",
+        "Moon",
+        "Uranus",
+        "Neptune"
+      ],
+      "reading": "the chip seats a new body by computation: the Moon takes the rung between Mars and Uranus"
+    },
+    "open_term_watch": {
+      "open_term_share_of_U": 0.002647184656597946,
+      "flag": "budget non-closure stands detected at 0.265% of U (SLH5, from EQS-979 inputs)"
+    }
+  },
+  "summary": {
+    "headline": "the chip detects EVENTS (100 excursions above C1 in 7 days: 94 C-peaked, 6 M-peaked; largest M3.6 on 2026-11-05, 3.82e12 J intercepted by Earth), FEED FAULTS (165 zero-flux fill samples in the archive feed), NON-CONSTANCY (the X-ray band fraction spans 2.11 orders of magnitude in a week - no carriable number exists, SLH4 detected in data), DECOUPLING (income order vs register order inverted in 14 of 28 planet pairs - maximal independence, SLH3 detected in data), PLACEMENT (the Moon seated by computation between Mars and Uranus), and the standing OPEN TERM (0.265% of U, SLH5)"
+  },
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT; detections are the softwares on live feed data",
+    "principles": "EQ-SLH1..6 + SLH-U1 CANDIDATE (EQS-980)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "a227c6e28e85a4e44fbd008405ed26b91fab775b994d671c996a506a4fb66bba",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

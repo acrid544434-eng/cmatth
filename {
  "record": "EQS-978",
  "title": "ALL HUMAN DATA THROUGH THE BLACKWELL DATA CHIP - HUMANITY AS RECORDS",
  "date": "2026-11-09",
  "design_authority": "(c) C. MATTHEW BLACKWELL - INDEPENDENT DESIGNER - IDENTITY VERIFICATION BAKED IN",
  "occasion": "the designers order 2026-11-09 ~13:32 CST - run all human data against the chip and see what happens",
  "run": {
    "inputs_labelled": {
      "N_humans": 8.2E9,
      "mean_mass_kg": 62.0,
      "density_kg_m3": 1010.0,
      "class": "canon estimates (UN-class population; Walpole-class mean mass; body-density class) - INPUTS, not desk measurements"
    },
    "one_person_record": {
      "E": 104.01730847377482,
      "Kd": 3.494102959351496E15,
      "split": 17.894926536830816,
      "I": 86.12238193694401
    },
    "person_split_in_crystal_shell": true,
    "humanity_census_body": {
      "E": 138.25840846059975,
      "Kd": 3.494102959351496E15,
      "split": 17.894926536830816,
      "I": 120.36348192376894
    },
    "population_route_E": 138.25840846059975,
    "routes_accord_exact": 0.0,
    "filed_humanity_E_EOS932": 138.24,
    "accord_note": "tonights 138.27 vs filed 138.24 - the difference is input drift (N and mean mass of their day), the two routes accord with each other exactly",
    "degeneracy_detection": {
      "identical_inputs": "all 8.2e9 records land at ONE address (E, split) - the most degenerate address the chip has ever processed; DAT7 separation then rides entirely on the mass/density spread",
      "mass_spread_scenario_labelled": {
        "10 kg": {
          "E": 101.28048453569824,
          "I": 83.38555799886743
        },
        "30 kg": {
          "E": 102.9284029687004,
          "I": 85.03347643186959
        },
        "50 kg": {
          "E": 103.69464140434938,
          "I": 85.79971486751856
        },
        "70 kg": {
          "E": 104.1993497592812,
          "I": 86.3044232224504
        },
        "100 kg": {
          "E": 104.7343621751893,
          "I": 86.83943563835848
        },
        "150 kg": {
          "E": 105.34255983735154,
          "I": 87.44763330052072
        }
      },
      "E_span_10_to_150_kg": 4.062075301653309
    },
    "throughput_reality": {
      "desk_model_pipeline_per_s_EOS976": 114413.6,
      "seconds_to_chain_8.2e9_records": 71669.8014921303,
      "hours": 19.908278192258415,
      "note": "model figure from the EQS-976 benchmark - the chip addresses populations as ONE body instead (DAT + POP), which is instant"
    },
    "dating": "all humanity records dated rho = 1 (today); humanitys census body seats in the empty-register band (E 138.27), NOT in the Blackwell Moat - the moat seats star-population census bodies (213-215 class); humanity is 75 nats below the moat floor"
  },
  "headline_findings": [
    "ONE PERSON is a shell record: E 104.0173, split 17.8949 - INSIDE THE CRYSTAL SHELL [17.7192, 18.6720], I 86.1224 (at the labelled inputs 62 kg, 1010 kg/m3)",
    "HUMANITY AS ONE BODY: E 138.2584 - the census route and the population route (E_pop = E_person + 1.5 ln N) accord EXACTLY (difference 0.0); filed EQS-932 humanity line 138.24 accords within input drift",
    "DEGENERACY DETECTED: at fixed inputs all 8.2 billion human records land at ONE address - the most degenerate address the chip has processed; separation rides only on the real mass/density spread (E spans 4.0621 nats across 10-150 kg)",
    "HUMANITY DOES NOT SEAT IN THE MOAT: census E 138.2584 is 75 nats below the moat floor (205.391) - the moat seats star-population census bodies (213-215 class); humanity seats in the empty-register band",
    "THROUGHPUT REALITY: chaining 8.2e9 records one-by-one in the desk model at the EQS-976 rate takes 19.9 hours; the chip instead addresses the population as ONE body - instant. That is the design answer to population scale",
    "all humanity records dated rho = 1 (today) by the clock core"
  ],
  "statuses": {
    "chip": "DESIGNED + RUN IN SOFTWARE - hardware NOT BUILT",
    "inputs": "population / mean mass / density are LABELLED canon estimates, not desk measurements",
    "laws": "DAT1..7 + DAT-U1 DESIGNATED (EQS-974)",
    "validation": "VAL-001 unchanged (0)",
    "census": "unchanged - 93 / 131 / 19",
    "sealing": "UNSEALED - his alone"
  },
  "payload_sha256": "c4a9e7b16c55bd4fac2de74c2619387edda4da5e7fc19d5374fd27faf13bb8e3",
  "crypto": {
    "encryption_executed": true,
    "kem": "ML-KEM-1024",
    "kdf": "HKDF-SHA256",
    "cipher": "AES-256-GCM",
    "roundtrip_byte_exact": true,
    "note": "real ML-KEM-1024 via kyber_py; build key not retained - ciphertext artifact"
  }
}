@@ -1,0 +1,94 @@
+{
+  "record": "EQS-978",
+  "title": "ALL HUMAN DATA THROUGH THE BLACKWELL DATA CHIP - HUMANITY AS RECORDS",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "the designers order 2026-11-09 ~13:32 CST - run all human data against the chip and see what happens",
+  "run": {
+    "inputs_labelled": {
+      "N_humans": 8.2E9,
+      "mean_mass_kg": 62.0,
+      "density_kg_m3": 1010.0,
+      "class": "canon estimates (UN-class population; Walpole-class mean mass; body-density class) - INPUTS, not desk measurements"
+    },
+    "one_person_record": {
+      "E": 104.01730847377482,
+      "Kd": 3.494102959351496E15,
+      "split": 17.894926536830816,
+      "I": 86.12238193694401
+    },
+    "person_split_in_crystal_shell": true,
+    "humanity_census_body": {
+      "E": 138.25840846059975,
+      "Kd": 3.494102959351496E15,
+      "split": 17.894926536830816,
+      "I": 120.36348192376894
+    },
+    "population_route_E": 138.25840846059975,
+    "routes_accord_exact": 0.0,
+    "filed_humanity_E_EOS932": 138.24,
+    "accord_note": "tonights 138.27 vs filed 138.24 - the difference is input drift (N and mean mass of their day), the two routes accord with each other exactly",
+    "degeneracy_detection": {
+      "identical_inputs": "all 8.2e9 records land at ONE address (E, split) - the most degenerate address the chip has ever processed; DAT7 separation then rides entirely on the mass/density spread",
+      "mass_spread_scenario_labelled": {
+        "10 kg": {
+          "E": 101.28048453569824,
+          "I": 83.38555799886743
+        },
+        "30 kg": {
+          "E": 102.9284029687004,
+          "I": 85.03347643186959
+        },
+        "50 kg": {
+          "E": 103.69464140434938,
+          "I": 85.79971486751856
+        },
+        "70 kg": {
+          "E": 104.1993497592812,
+          "I": 86.3044232224504
+        },
+        "100 kg": {
+          "E": 104.7343621751893,
+          "I": 86.83943563835848
+        },
+        "150 kg": {
+          "E": 105.34255983735154,
+          "I": 87.44763330052072
+        }
+      },
+      "E_span_10_to_150_kg": 4.062075301653309
+    },
+    "throughput_reality": {
+      "desk_model_pipeline_per_s_EOS976": 114413.6,
+      "seconds_to_chain_8.2e9_records": 71669.8014921303,
+      "hours": 19.908278192258415,
+      "note": "model figure from the EQS-976 benchmark - the chip addresses populations as ONE body instead (DAT + POP), which is instant"
+    },
+    "dating": "all humanity records dated rho = 1 (today); humanitys census body seats in the empty-register band (E 138.27), NOT in the Blackwell Moat - the moat seats star-population census bodies (213-215 class); humanity is 75 nats below the moat floor"
+  },
+  "headline_findings": [
+    "ONE PERSON is a shell record: E 104.0173, split 17.8949 - INSIDE THE CRYSTAL SHELL [17.7192, 18.6720], I 86.1224 (at the labelled inputs 62 kg, 1010 kg/m3)",
+    "HUMANITY AS ONE BODY: E 138.2584 - the census route and the population route (E_pop = E_person + 1.5 ln N) accord EXACTLY (difference 0.0); filed EQS-932 humanity line 138.24 accords within input drift",
+    "DEGENERACY DETECTED: at fixed inputs all 8.2 billion human records land at ONE address - the most degenerate address the chip has processed; separation rides only on the real mass/density spread (E spans 4.0621 nats across 10-150 kg)",
+    "HUMANITY DOES NOT SEAT IN THE MOAT: census E 138.2584 is 75 nats below the moat floor (205.391) - the moat seats star-population census bodies (213-215 class); humanity seats in the empty-register band",
+    "THROUGHPUT REALITY: chaining 8.2e9 records one-by-one in the desk model at the EQS-976 rate takes 19.9 hours; the chip instead addresses the population as ONE body - instant. That is the design answer to population scale",
+    "all humanity records dated rho = 1 (today) by the clock core"
+  ],
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT",
+    "inputs": "population / mean mass / density are LABELLED canon estimates, not desk measurements",
+    "laws": "DAT1..7 + DAT-U1 DESIGNATED (EQS-974)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "c4a9e7b16c55bd4fac2de74c2619387edda4da5e7fc19d5374fd27faf13bb8e3",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

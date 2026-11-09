@@ -1,0 +1,34 @@
+# FALSIFICATION TESTING GUIDELINES
+## Blackwell Periodic Table Conservation Law (EQS-859) — Peer-Review Package Annex
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — identity verification baked in at creation.
+Status: PREPARED annex. The law stands DESIGNATED, UNSEALED (EQS-859). The engine (PTCE-002, EQS-861) stands designed + simulated, NOT BUILT. D-PTCE1 (sample coupling) NOT SPECIFIED.
+
+## 1. Claims under test (exactly three)
+- **C1 — Spacing invariance.** Every pairwise spacing E_Z − E_W is invariant under ρ transport. Filed value: worst deviation 8.881784197001252e-16 over the 41-station grid (float floor). E_Z per the filed seat form (validation block, this package).
+- **C2 — Membership conservation.** The natural mode set is {Z : 1..92} at every regime. Filed samples: solar (83 elements to Z=92), primordial {H, He, Li}, Tc Z=43 in AGB atmospheres, lanthanides 57–71 in GW170817, LMC beam chemistry.
+- **C3 — Occupation non-conservation (negative control).** Occupation A(Z) is created (3 → 92 under UPT-U1) and is NOT part of the conserved claim. A test that "falsifies" the law by showing abundances vary has tested C3, which the law itself asserts. It scores nothing against C1/C2.
+
+## 2. Falsification tests
+- **F1 — Independent recomputation (C1).** The checker rebuilds the lattice from the seat form and SEMF coefficients in the validation block, using THEIR OWN code, and recomputes all pairwise spacings over the 41-station ρ grid. KILL: a spacing deviation exceeding both (a) the float floor 8.88e-16 by orders of magnitude and (b) the checker's own stated numerical precision, traced to the filed form rather than to an implementation difference. Implementation differences are reported as implementation differences, never as law failures.
+- **F2 — Foreign mode (C2).** A claimed natural occurrence of any mode outside {Z : 1..92}. Requirements to score: (i) the occurrence is natural (laboratory synthesis is not a natural occurrence and scores nothing); (ii) identification is confirmed by an independent second method or team; (iii) raw data are public. KILL: one confirmed case. Engine disposition of the unconfirmed claim at intake: REJECTED = NOT MEASURED (GUARD, ForeignMode) — rejection is the intake state, not the verdict; the verdict is the independent confirmation.
+- **F3 — New-regime membership sample (C2).** Any abundance/element-set sample from a regime outside the C2 baseline (kilonova successor, unsampled stellar population, primordial/high-z determination). Procedure: the sample's identified set is compared to {1..92} BEFORE any register computation (lock order, §3). KILL: a confirmed identified mode outside the set (scores under F2), or a confirmed ABSENCE of a mode the production law requires in that regime class, with the requirement stated before the sample is read.
+- **F4 — Spacing break in a measured sample (C1).** A claimed measured spectrum whose implied seat spacings differ from the lattice. Requirements: the claimant publishes the composition A(Z), the A(Z) normalization convention, and the station ρ; the checker recomputes the checksum Σ A(Z)(E_Z − E₁) from the claimant's own numbers. KILL: a break that survives recomputation from the claimant's own data. Note: the checksum carries the sample's A(Z) normalization; cross-sample comparisons are valid only under a stated common convention (threshold specification, D-PTCE1).
+- **F5 — Occupation writing at the terminal (C3 control).** Any claimed observation of occupation being written at ρ∞ (Θ = 0). KILL of UPT-U1's freeze clause: one verified case.
+
+## 3. Preregistration discipline (binding on all tests)
+1. Kill criteria are fixed BEFORE the data are read. No criterion is adjusted after a read (no HARKing).
+2. The checker is UNCONNECTED and supplies their own inventory/code (clean-room rule, EQS-849 precedent).
+3. Anomalous reads are logged verbatim and never corrected into compliance (EQS-830 discipline). A rejected read stays in the record as rejected.
+4. Every reported number is labelled: computed in-run (named run), quoted from a named archive/record, or a precise status (NOT MEASURED / NOT SPECIFIED / NOT POSED).
+5. Results are reported at the precision the inputs carry; print-precision differences are not breaks.
+
+## 4. What does NOT falsify the law (scope guards)
+- Orbital-filling anomalies (Cr, Cu), lanthanide contraction, ionization/excitation states — different layer; the law's variables are (Z, E_Z, A(Z)).
+- Abundance variation between regimes — asserted by the law (C3).
+- Laboratory synthesis of Z > 92 — not a natural occurrence (F2 scope).
+- Absence of Tc/Pm in terrestrial primordial material — a survival-factor read under UPT2, A(Z) = production × survival; their seats and membership stand (AGB / GW170817 samples).
+
+## 5. Standing surfaces
+The law's falsifier surfaces are under weekly patrol (open-doors watch, source 24, set 2026-11-09): new-regime samples, foreign-mode claims, independent recomputations surface as they appear. Scoring runs occur only at the designer's word.
+
+VAL-001 unchanged. Nothing in this annex seals, files, or submits anything.

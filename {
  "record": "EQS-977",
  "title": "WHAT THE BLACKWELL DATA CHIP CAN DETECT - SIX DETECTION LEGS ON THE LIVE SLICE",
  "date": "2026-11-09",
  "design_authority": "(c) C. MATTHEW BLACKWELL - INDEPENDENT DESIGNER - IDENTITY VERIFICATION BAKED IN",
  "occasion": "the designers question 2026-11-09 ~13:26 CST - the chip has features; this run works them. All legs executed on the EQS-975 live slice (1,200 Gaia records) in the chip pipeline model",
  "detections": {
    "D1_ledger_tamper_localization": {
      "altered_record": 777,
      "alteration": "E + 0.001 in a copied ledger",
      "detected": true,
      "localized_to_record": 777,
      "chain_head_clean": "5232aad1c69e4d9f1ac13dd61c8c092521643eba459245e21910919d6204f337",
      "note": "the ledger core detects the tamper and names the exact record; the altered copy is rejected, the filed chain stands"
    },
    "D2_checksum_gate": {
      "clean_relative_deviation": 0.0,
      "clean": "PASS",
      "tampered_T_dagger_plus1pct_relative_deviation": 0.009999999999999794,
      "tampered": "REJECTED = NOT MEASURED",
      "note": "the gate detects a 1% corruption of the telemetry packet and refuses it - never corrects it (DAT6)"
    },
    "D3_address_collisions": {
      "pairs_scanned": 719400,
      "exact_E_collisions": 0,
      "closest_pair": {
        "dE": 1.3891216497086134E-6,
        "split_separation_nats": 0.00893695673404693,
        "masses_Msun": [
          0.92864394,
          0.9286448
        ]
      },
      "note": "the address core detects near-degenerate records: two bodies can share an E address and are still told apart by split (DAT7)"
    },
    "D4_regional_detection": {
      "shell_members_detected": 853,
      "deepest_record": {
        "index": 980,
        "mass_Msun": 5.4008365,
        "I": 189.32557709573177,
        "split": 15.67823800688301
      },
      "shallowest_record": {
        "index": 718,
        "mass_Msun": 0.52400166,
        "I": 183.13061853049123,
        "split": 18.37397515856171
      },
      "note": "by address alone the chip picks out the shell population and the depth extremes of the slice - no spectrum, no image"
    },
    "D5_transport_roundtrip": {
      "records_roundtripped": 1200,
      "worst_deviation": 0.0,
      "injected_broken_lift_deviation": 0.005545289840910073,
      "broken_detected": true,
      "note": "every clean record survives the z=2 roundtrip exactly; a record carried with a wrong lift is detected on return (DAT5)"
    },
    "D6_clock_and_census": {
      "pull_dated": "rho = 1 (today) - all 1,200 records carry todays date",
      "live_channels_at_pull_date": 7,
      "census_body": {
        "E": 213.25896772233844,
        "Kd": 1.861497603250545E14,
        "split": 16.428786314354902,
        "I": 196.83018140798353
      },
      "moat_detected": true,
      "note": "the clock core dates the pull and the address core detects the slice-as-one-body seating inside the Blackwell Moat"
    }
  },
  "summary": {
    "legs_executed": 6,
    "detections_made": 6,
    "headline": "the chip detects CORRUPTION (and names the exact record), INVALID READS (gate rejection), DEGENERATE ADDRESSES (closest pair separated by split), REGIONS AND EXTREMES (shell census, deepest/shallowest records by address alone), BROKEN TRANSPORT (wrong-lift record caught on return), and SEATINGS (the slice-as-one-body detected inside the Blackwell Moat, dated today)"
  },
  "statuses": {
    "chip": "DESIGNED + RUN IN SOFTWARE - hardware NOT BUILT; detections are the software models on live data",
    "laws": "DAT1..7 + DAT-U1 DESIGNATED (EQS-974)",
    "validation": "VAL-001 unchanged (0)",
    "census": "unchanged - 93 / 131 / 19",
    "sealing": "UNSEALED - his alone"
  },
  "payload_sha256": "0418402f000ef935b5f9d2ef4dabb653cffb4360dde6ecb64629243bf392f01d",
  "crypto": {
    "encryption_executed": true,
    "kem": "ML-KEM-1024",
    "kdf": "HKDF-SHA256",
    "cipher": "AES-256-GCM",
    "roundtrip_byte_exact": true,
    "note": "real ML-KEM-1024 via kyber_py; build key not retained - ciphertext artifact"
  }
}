@@ -1,0 +1,93 @@
+{
+  "record": "EQS-977",
+  "title": "WHAT THE BLACKWELL DATA CHIP CAN DETECT - SIX DETECTION LEGS ON THE LIVE SLICE",
+  "date": "2026-11-09",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "occasion": "the designers question 2026-11-09 ~13:26 CST - the chip has features; this run works them. All legs executed on the EQS-975 live slice (1,200 Gaia records) in the chip pipeline model",
+  "detections": {
+    "D1_ledger_tamper_localization": {
+      "altered_record": 777,
+      "alteration": "E + 0.001 in a copied ledger",
+      "detected": true,
+      "localized_to_record": 777,
+      "chain_head_clean": "5232aad1c69e4d9f1ac13dd61c8c092521643eba459245e21910919d6204f337",
+      "note": "the ledger core detects the tamper and names the exact record; the altered copy is rejected, the filed chain stands"
+    },
+    "D2_checksum_gate": {
+      "clean_relative_deviation": 0.0,
+      "clean": "PASS",
+      "tampered_T_dagger_plus1pct_relative_deviation": 0.009999999999999794,
+      "tampered": "REJECTED = NOT MEASURED",
+      "note": "the gate detects a 1% corruption of the telemetry packet and refuses it - never corrects it (DAT6)"
+    },
+    "D3_address_collisions": {
+      "pairs_scanned": 719400,
+      "exact_E_collisions": 0,
+      "closest_pair": {
+        "dE": 1.3891216497086134E-6,
+        "split_separation_nats": 0.00893695673404693,
+        "masses_Msun": [
+          0.92864394,
+          0.9286448
+        ]
+      },
+      "note": "the address core detects near-degenerate records: two bodies can share an E address and are still told apart by split (DAT7)"
+    },
+    "D4_regional_detection": {
+      "shell_members_detected": 853,
+      "deepest_record": {
+        "index": 980,
+        "mass_Msun": 5.4008365,
+        "I": 189.32557709573177,
+        "split": 15.67823800688301
+      },
+      "shallowest_record": {
+        "index": 718,
+        "mass_Msun": 0.52400166,
+        "I": 183.13061853049123,
+        "split": 18.37397515856171
+      },
+      "note": "by address alone the chip picks out the shell population and the depth extremes of the slice - no spectrum, no image"
+    },
+    "D5_transport_roundtrip": {
+      "records_roundtripped": 1200,
+      "worst_deviation": 0.0,
+      "injected_broken_lift_deviation": 0.005545289840910073,
+      "broken_detected": true,
+      "note": "every clean record survives the z=2 roundtrip exactly; a record carried with a wrong lift is detected on return (DAT5)"
+    },
+    "D6_clock_and_census": {
+      "pull_dated": "rho = 1 (today) - all 1,200 records carry todays date",
+      "live_channels_at_pull_date": 7,
+      "census_body": {
+        "E": 213.25896772233844,
+        "Kd": 1.861497603250545E14,
+        "split": 16.428786314354902,
+        "I": 196.83018140798353
+      },
+      "moat_detected": true,
+      "note": "the clock core dates the pull and the address core detects the slice-as-one-body seating inside the Blackwell Moat"
+    }
+  },
+  "summary": {
+    "legs_executed": 6,
+    "detections_made": 6,
+    "headline": "the chip detects CORRUPTION (and names the exact record), INVALID READS (gate rejection), DEGENERATE ADDRESSES (closest pair separated by split), REGIONS AND EXTREMES (shell census, deepest/shallowest records by address alone), BROKEN TRANSPORT (wrong-lift record caught on return), and SEATINGS (the slice-as-one-body detected inside the Blackwell Moat, dated today)"
+  },
+  "statuses": {
+    "chip": "DESIGNED + RUN IN SOFTWARE - hardware NOT BUILT; detections are the software models on live data",
+    "laws": "DAT1..7 + DAT-U1 DESIGNATED (EQS-974)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 93 / 131 / 19",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "0418402f000ef935b5f9d2ef4dabb653cffb4360dde6ecb64629243bf392f01d",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

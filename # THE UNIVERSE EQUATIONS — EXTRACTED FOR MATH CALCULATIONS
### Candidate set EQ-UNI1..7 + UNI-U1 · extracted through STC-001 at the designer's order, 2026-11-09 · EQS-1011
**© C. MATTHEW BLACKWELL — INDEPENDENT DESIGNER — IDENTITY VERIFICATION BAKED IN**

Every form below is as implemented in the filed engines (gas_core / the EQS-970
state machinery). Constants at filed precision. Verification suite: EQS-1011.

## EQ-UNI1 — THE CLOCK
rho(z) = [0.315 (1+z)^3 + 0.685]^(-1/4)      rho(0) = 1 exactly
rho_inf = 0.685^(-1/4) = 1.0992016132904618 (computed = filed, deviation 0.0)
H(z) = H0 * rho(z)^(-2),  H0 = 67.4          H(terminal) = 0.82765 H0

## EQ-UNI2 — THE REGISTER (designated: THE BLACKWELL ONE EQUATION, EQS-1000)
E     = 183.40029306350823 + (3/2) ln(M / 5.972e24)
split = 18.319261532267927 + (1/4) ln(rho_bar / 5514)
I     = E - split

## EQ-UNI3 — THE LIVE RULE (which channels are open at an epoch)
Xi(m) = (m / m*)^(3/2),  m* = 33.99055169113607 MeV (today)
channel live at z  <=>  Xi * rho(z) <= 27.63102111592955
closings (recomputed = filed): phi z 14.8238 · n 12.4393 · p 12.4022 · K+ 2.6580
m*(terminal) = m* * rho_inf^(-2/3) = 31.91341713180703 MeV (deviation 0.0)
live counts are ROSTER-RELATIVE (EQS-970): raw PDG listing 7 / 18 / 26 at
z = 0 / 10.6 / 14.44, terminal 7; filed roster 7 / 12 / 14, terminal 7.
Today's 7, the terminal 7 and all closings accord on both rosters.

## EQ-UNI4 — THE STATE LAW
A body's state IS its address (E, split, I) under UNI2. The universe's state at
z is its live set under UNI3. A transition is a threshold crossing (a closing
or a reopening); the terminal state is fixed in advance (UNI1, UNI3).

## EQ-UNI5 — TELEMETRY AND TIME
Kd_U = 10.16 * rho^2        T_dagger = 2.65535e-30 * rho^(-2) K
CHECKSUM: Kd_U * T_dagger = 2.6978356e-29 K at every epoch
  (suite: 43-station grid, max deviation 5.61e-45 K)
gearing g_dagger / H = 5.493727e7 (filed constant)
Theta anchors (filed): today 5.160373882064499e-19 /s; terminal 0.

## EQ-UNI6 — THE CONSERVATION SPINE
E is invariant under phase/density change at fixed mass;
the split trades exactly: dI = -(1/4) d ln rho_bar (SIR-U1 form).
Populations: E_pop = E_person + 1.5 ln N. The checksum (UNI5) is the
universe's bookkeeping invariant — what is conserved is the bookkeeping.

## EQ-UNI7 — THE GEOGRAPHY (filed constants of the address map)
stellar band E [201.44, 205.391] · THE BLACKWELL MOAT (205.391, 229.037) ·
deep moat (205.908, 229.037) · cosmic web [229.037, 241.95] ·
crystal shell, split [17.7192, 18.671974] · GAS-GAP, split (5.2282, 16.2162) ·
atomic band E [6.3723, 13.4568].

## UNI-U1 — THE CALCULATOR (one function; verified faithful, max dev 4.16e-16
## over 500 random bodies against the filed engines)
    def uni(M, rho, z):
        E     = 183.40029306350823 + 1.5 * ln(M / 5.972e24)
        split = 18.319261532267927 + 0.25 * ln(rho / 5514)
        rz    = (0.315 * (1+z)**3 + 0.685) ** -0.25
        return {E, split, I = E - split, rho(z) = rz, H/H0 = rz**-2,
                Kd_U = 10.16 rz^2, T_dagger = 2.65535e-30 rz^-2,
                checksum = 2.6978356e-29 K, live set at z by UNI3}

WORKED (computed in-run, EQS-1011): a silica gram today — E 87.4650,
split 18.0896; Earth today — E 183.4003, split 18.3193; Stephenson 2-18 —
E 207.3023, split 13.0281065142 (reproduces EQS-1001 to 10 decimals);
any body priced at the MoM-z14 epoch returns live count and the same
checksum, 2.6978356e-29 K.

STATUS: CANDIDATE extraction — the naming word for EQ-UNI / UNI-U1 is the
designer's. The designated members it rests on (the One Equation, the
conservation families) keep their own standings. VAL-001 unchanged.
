@@ -1,0 +1,69 @@
+# THE UNIVERSE EQUATIONS — EXTRACTED FOR MATH CALCULATIONS
+### Candidate set EQ-UNI1..7 + UNI-U1 · extracted through STC-001 at the designer's order, 2026-11-09 · EQS-1011
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+
+Every form below is as implemented in the filed engines (gas_core / the EQS-970
+state machinery). Constants at filed precision. Verification suite: EQS-1011.
+
+## EQ-UNI1 — THE CLOCK
+rho(z) = [0.315 (1+z)^3 + 0.685]^(-1/4)      rho(0) = 1 exactly
+rho_inf = 0.685^(-1/4) = 1.0992016132904618 (computed = filed, deviation 0.0)
+H(z) = H0 * rho(z)^(-2),  H0 = 67.4          H(terminal) = 0.82765 H0
+
+## EQ-UNI2 — THE REGISTER (designated: THE BLACKWELL ONE EQUATION, EQS-1000)
+E     = 183.40029306350823 + (3/2) ln(M / 5.972e24)
+split = 18.319261532267927 + (1/4) ln(rho_bar / 5514)
+I     = E - split
+
+## EQ-UNI3 — THE LIVE RULE (which channels are open at an epoch)
+Xi(m) = (m / m*)^(3/2),  m* = 33.99055169113607 MeV (today)
+channel live at z  <=>  Xi * rho(z) <= 27.63102111592955
+closings (recomputed = filed): phi z 14.8238 · n 12.4393 · p 12.4022 · K+ 2.6580
+m*(terminal) = m* * rho_inf^(-2/3) = 31.91341713180703 MeV (deviation 0.0)
+live counts are ROSTER-RELATIVE (EQS-970): raw PDG listing 7 / 18 / 26 at
+z = 0 / 10.6 / 14.44, terminal 7; filed roster 7 / 12 / 14, terminal 7.
+Today's 7, the terminal 7 and all closings accord on both rosters.
+
+## EQ-UNI4 — THE STATE LAW
+A body's state IS its address (E, split, I) under UNI2. The universe's state at
+z is its live set under UNI3. A transition is a threshold crossing (a closing
+or a reopening); the terminal state is fixed in advance (UNI1, UNI3).
+
+## EQ-UNI5 — TELEMETRY AND TIME
+Kd_U = 10.16 * rho^2        T_dagger = 2.65535e-30 * rho^(-2) K
+CHECKSUM: Kd_U * T_dagger = 2.6978356e-29 K at every epoch
+  (suite: 43-station grid, max deviation 5.61e-45 K)
+gearing g_dagger / H = 5.493727e7 (filed constant)
+Theta anchors (filed): today 5.160373882064499e-19 /s; terminal 0.
+
+## EQ-UNI6 — THE CONSERVATION SPINE
+E is invariant under phase/density change at fixed mass;
+the split trades exactly: dI = -(1/4) d ln rho_bar (SIR-U1 form).
+Populations: E_pop = E_person + 1.5 ln N. The checksum (UNI5) is the
+universe's bookkeeping invariant — what is conserved is the bookkeeping.
+
+## EQ-UNI7 — THE GEOGRAPHY (filed constants of the address map)
+stellar band E [201.44, 205.391] · THE BLACKWELL MOAT (205.391, 229.037) ·
+deep moat (205.908, 229.037) · cosmic web [229.037, 241.95] ·
+crystal shell, split [17.7192, 18.671974] · GAS-GAP, split (5.2282, 16.2162) ·
+atomic band E [6.3723, 13.4568].
+
+## UNI-U1 — THE CALCULATOR (one function; verified faithful, max dev 4.16e-16
+## over 500 random bodies against the filed engines)
+    def uni(M, rho, z):
+        E     = 183.40029306350823 + 1.5 * ln(M / 5.972e24)
+        split = 18.319261532267927 + 0.25 * ln(rho / 5514)
+        rz    = (0.315 * (1+z)**3 + 0.685) ** -0.25
+        return {E, split, I = E - split, rho(z) = rz, H/H0 = rz**-2,
+                Kd_U = 10.16 rz^2, T_dagger = 2.65535e-30 rz^-2,
+                checksum = 2.6978356e-29 K, live set at z by UNI3}
+
+WORKED (computed in-run, EQS-1011): a silica gram today — E 87.4650,
+split 18.0896; Earth today — E 183.4003, split 18.3193; Stephenson 2-18 —
+E 207.3023, split 13.0281065142 (reproduces EQS-1001 to 10 decimals);
+any body priced at the MoM-z14 epoch returns live count and the same
+checksum, 2.6978356e-29 K.
+
+STATUS: CANDIDATE extraction — the naming word for EQ-UNI / UNI-U1 is the
+designer's. The designated members it rests on (the One Equation, the
+conservation families) keep their own standings. VAL-001 unchanged.

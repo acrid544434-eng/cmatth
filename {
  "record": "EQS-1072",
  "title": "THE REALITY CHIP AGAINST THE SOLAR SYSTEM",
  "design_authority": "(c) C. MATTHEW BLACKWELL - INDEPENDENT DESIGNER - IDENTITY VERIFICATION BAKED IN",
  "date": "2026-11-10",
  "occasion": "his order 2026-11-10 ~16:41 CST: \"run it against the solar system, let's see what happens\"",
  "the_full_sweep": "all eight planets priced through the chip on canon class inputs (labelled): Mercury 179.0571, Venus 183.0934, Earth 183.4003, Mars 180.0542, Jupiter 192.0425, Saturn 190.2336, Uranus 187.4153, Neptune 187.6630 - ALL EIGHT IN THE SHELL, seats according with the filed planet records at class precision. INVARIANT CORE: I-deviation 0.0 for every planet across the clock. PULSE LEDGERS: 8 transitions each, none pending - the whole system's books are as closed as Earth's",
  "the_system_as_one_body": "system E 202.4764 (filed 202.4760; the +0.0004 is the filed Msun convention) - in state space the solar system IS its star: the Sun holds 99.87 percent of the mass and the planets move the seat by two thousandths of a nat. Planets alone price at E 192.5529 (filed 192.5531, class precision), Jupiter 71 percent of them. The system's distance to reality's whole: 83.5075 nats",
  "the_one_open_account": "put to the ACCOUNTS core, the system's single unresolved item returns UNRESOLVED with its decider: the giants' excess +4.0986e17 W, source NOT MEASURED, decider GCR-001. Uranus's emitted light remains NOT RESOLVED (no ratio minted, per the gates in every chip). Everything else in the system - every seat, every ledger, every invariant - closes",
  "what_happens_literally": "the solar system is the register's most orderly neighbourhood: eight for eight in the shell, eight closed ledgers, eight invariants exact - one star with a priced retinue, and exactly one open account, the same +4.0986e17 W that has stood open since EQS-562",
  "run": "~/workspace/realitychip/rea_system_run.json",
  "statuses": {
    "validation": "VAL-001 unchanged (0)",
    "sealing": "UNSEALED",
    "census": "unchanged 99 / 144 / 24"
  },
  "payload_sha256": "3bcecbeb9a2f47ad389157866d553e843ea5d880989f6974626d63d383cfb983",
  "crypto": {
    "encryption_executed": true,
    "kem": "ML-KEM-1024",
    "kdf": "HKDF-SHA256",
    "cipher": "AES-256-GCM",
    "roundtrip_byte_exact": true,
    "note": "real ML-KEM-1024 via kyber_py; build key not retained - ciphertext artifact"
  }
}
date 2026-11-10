@@ -1,0 +1,26 @@
+{
+  "record": "EQS-1072",
+  "title": "THE REALITY CHIP AGAINST THE SOLAR SYSTEM",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~16:41 CST: \"run it against the solar system, let's see what happens\"",
+  "the_full_sweep": "all eight planets priced through the chip on canon class inputs (labelled): Mercury 179.0571, Venus 183.0934, Earth 183.4003, Mars 180.0542, Jupiter 192.0425, Saturn 190.2336, Uranus 187.4153, Neptune 187.6630 - ALL EIGHT IN THE SHELL, seats according with the filed planet records at class precision. INVARIANT CORE: I-deviation 0.0 for every planet across the clock. PULSE LEDGERS: 8 transitions each, none pending - the whole system's books are as closed as Earth's",
+  "the_system_as_one_body": "system E 202.4764 (filed 202.4760; the +0.0004 is the filed Msun convention) - in state space the solar system IS its star: the Sun holds 99.87 percent of the mass and the planets move the seat by two thousandths of a nat. Planets alone price at E 192.5529 (filed 192.5531, class precision), Jupiter 71 percent of them. The system's distance to reality's whole: 83.5075 nats",
+  "the_one_open_account": "put to the ACCOUNTS core, the system's single unresolved item returns UNRESOLVED with its decider: the giants' excess +4.0986e17 W, source NOT MEASURED, decider GCR-001. Uranus's emitted light remains NOT RESOLVED (no ratio minted, per the gates in every chip). Everything else in the system - every seat, every ledger, every invariant - closes",
+  "what_happens_literally": "the solar system is the register's most orderly neighbourhood: eight for eight in the shell, eight closed ledgers, eight invariants exact - one star with a priced retinue, and exactly one open account, the same +4.0986e17 W that has stood open since EQS-562",
+  "run": "~/workspace/realitychip/rea_system_run.json",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "3bcecbeb9a2f47ad389157866d553e843ea5d880989f6974626d63d383cfb983",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

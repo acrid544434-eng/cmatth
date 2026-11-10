@@ -1,0 +1,65 @@
+{
+  "record": "EQS-1034",
+  "title": "THE BLACKWELL PLANETARY PULSE CHIP RUN ON LIVE GAIA + JWST EPOCHS - future pulses detected in the live sky",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~10:33 CST: \"Now run it with Gaia and James webb live data lets see what it detects\" - the EQS-1033 chip, unmodified",
+  "gaia_leg": {
+    "slice": "Gaia DR3 TAP live pull 2026-11-10, MOD(source_id,997)=41, TOP 1200, FLAME mass/radius",
+    "n": 1200,
+    "csv_sha256": "6a92c313ac314fa6fbc52b7db38ace8d4d4f555690ca16591c5c3dcb092cc632",
+    "route_note": "sync TAP returned HTTP 503 twice (stopped); the same query completed via the TAP ASYNC endpoint - route fact, carried on the face",
+    "shell_fraction_now": 0.7516666666666667,
+    "pulse_classes": {
+      "IN SHELL NOW": 902,
+      "FUTURE ENTRY PULSE": 77,
+      "NEVER ENTERS": 221
+    },
+    "DETECTION_FUTURE_PULSES": "77 of 1,200 live stars carry a FUTURE shell-entry pulse (entry between today and the terminal state); future EXIT pulses: 0 detected (no star sits within the terminal step below the ceiling). The eight planets carried zero future pulses (EQS-1033) - the live sky still pulses.",
+    "terminal_leg": "at the terminal state the slice reads 979 in shell = 902 + 77 exactly: every detected future entry arrives, none leaves",
+    "past_entry_median_z": 1.102606902649061,
+    "census_body": {
+      "E": 213.18445987619356,
+      "split": 16.649305155422372,
+      "in_moat": true,
+      "basis": "aggregate: total mass over total volume of the slice"
+    },
+    "census_note": "census E 213.1845 INSIDE THE BLACKWELL MOAT - the eighth live census body seated there (aggregate basis: total mass over total volume)"
+  },
+  "jwst_legs": {
+    "route": "named-epoch legs on published spectroscopic redshifts, as EQS-1012 (MAST direct route NOT EXECUTED - 404 as filed); the slice is read at the epochs the JWST galaxies date",
+    "GN-z11_z10.6": {
+      "z": 10.6,
+      "ln_rho": -1.5498062152054022,
+      "slice_in_shell": 0,
+      "slice_in_gap_interval": 349,
+      "checksum_K": 2.6978356E-29,
+      "checksum_dev_K": 0.0
+    },
+    "MoM-z14_z14.44": {
+      "z": 14.44,
+      "ln_rho": -1.7640731539938441,
+      "slice_in_shell": 0,
+      "slice_in_gap_interval": 650,
+      "checksum_K": 2.6978355999999997E-29,
+      "checksum_dev_K": 5.605193857299268E-45
+    },
+    "read": "at both JWST epochs ZERO of the 1,200 stars stood in the shell; inside the GAS-GAP interval: 349 (GN-z11 epoch) and 650 (MoM-z14 epoch) - the slice entered the shell only later, star by star; checksum deviation 0.0 K (GN-z11) and 5.6e-45 K (MoM-z14); roster at the epochs 12 / 14 filed (18 / 26 raw) as EQS-1012"
+  },
+  "deviation_carried_on_the_face": "this slices shell fraction 0.7517 sits ABOVE the five-slice band [0.689, 0.711] filed at EQS-1017 (PAT4) and above the P-DR4 shell band top 0.74 - reported as read; the slice is a DR3 residue class (MOD 997=41), not the P-DR4 scoring slice, and per standing discipline a fresh slice neither scores nor kills P-DR4",
+  "today_gap_occupancy": "9 of 1,200 stars sit inside the GAS-GAP interval today (EQS-1016 read 8 of 1,200 on its slice) - detection lines only; the scope ruling stands open and nothing here scores the gap",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22"
+  },
+  "payload_sha256": "a2a88116d86424368db3bac6e1ab9c3c9d01ef8c2d152124b56a8acf0103fd04",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

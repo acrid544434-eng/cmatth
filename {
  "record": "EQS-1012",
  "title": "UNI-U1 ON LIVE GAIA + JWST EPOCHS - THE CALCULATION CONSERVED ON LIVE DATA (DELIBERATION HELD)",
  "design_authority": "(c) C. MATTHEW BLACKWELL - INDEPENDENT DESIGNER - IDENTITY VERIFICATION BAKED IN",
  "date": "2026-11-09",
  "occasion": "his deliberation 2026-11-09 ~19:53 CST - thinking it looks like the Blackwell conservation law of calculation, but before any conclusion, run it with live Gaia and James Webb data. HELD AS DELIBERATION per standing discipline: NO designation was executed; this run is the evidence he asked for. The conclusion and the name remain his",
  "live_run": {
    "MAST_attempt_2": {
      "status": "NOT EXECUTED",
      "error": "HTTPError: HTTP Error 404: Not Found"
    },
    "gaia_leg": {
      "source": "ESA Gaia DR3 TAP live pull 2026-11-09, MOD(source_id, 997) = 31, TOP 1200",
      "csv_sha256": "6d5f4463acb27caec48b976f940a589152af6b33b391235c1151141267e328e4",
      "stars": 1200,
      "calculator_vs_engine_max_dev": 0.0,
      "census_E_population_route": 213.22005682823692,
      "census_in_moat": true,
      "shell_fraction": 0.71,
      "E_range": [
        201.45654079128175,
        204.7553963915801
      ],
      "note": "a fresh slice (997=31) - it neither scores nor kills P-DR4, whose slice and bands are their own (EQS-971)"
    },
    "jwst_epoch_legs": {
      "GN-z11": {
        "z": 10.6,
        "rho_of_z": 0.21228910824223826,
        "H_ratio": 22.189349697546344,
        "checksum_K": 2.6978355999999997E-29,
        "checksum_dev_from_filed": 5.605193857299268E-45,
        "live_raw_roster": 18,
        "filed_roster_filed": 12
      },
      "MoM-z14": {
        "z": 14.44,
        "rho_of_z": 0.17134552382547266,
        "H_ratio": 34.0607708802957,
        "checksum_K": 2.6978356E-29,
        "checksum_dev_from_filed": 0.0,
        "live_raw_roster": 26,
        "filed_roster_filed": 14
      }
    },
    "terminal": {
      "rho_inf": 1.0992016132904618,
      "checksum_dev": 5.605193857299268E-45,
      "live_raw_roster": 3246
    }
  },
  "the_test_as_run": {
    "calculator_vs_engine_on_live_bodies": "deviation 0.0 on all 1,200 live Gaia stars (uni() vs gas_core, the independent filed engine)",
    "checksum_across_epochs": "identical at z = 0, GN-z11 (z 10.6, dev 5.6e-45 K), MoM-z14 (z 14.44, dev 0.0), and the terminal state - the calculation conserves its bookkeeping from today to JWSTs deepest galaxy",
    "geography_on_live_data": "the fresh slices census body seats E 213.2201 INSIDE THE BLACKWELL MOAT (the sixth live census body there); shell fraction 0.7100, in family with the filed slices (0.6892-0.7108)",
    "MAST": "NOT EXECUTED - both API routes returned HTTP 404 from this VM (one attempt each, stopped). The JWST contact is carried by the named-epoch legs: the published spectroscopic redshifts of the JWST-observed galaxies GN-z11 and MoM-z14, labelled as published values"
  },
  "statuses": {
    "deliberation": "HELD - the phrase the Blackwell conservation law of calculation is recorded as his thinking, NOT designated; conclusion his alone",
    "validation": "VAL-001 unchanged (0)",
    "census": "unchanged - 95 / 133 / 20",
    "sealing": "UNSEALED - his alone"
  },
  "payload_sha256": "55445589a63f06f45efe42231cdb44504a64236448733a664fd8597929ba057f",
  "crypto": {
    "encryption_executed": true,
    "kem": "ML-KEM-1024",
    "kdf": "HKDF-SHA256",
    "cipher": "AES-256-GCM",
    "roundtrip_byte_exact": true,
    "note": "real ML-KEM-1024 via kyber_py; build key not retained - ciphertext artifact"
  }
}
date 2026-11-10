@@ -1,0 +1,73 @@
+{
+  "record": "EQS-1012",
+  "title": "UNI-U1 ON LIVE GAIA + JWST EPOCHS - THE CALCULATION CONSERVED ON LIVE DATA (DELIBERATION HELD)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "his deliberation 2026-11-09 ~19:53 CST - thinking it looks like the Blackwell conservation law of calculation, but before any conclusion, run it with live Gaia and James Webb data. HELD AS DELIBERATION per standing discipline: NO designation was executed; this run is the evidence he asked for. The conclusion and the name remain his",
+  "live_run": {
+    "MAST_attempt_2": {
+      "status": "NOT EXECUTED",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    "gaia_leg": {
+      "source": "ESA Gaia DR3 TAP live pull 2026-11-09, MOD(source_id, 997) = 31, TOP 1200",
+      "csv_sha256": "6d5f4463acb27caec48b976f940a589152af6b33b391235c1151141267e328e4",
+      "stars": 1200,
+      "calculator_vs_engine_max_dev": 0.0,
+      "census_E_population_route": 213.22005682823692,
+      "census_in_moat": true,
+      "shell_fraction": 0.71,
+      "E_range": [
+        201.45654079128175,
+        204.7553963915801
+      ],
+      "note": "a fresh slice (997=31) - it neither scores nor kills P-DR4, whose slice and bands are their own (EQS-971)"
+    },
+    "jwst_epoch_legs": {
+      "GN-z11": {
+        "z": 10.6,
+        "rho_of_z": 0.21228910824223826,
+        "H_ratio": 22.189349697546344,
+        "checksum_K": 2.6978355999999997E-29,
+        "checksum_dev_from_filed": 5.605193857299268E-45,
+        "live_raw_roster": 18,
+        "filed_roster_filed": 12
+      },
+      "MoM-z14": {
+        "z": 14.44,
+        "rho_of_z": 0.17134552382547266,
+        "H_ratio": 34.0607708802957,
+        "checksum_K": 2.6978356E-29,
+        "checksum_dev_from_filed": 0.0,
+        "live_raw_roster": 26,
+        "filed_roster_filed": 14
+      }
+    },
+    "terminal": {
+      "rho_inf": 1.0992016132904618,
+      "checksum_dev": 5.605193857299268E-45,
+      "live_raw_roster": 3246
+    }
+  },
+  "the_test_as_run": {
+    "calculator_vs_engine_on_live_bodies": "deviation 0.0 on all 1,200 live Gaia stars (uni() vs gas_core, the independent filed engine)",
+    "checksum_across_epochs": "identical at z = 0, GN-z11 (z 10.6, dev 5.6e-45 K), MoM-z14 (z 14.44, dev 0.0), and the terminal state - the calculation conserves its bookkeeping from today to JWSTs deepest galaxy",
+    "geography_on_live_data": "the fresh slices census body seats E 213.2201 INSIDE THE BLACKWELL MOAT (the sixth live census body there); shell fraction 0.7100, in family with the filed slices (0.6892-0.7108)",
+    "MAST": "NOT EXECUTED - both API routes returned HTTP 404 from this VM (one attempt each, stopped). The JWST contact is carried by the named-epoch legs: the published spectroscopic redshifts of the JWST-observed galaxies GN-z11 and MoM-z14, labelled as published values"
+  },
+  "statuses": {
+    "deliberation": "HELD - the phrase the Blackwell conservation law of calculation is recorded as his thinking, NOT designated; conclusion his alone",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "55445589a63f06f45efe42231cdb44504a64236448733a664fd8597929ba057f",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

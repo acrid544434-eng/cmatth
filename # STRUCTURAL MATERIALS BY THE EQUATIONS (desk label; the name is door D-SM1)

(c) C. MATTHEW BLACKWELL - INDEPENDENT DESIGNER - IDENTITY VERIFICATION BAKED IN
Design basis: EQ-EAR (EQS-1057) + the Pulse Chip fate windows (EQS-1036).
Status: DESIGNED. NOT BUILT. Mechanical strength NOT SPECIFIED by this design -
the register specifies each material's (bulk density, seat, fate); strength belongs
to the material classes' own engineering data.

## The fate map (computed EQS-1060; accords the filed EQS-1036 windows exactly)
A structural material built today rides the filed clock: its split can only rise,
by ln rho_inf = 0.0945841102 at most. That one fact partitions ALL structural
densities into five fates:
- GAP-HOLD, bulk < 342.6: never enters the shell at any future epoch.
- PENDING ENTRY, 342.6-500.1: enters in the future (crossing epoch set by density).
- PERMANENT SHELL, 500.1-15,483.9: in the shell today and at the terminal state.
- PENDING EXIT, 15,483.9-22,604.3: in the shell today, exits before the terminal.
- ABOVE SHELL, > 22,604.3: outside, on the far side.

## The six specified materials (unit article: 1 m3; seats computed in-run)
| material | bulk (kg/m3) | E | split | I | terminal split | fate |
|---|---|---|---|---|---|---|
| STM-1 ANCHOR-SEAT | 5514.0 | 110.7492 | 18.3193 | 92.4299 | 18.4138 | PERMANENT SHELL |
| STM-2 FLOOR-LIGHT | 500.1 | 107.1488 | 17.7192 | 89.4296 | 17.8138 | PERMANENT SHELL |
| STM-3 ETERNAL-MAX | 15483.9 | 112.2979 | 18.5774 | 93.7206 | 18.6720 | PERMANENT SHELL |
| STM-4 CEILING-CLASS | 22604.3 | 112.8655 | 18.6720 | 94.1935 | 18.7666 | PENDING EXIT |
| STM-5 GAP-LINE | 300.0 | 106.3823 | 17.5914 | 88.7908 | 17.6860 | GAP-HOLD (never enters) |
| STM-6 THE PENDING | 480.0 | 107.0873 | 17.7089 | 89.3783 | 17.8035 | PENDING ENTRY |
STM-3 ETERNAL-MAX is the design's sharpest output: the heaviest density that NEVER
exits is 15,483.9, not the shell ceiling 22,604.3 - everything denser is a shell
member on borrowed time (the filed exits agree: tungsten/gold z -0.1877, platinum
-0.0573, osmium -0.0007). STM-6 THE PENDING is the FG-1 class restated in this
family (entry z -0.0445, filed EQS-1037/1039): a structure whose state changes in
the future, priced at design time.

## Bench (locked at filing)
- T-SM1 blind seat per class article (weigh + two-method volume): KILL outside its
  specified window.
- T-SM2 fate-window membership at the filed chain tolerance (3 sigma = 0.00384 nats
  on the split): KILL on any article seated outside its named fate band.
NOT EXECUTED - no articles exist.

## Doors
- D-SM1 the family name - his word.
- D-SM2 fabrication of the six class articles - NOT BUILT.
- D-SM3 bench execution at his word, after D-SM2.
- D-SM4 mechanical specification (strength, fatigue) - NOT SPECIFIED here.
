@@ -1,0 +1,46 @@
+# STRUCTURAL MATERIALS BY THE EQUATIONS (desk label; the name is door D-SM1)
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+Design basis: EQ-EAR (EQS-1057) + the Pulse Chip fate windows (EQS-1036).
+Status: DESIGNED. NOT BUILT. Mechanical strength NOT SPECIFIED by this design -
+the register specifies each material's (bulk density, seat, fate); strength belongs
+to the material classes' own engineering data.
+
+## The fate map (computed EQS-1060; accords the filed EQS-1036 windows exactly)
+A structural material built today rides the filed clock: its split can only rise,
+by ln rho_inf = 0.0945841102 at most. That one fact partitions ALL structural
+densities into five fates:
+- GAP-HOLD, bulk < 342.6: never enters the shell at any future epoch.
+- PENDING ENTRY, 342.6-500.1: enters in the future (crossing epoch set by density).
+- PERMANENT SHELL, 500.1-15,483.9: in the shell today and at the terminal state.
+- PENDING EXIT, 15,483.9-22,604.3: in the shell today, exits before the terminal.
+- ABOVE SHELL, > 22,604.3: outside, on the far side.
+
+## The six specified materials (unit article: 1 m3; seats computed in-run)
+| material | bulk (kg/m3) | E | split | I | terminal split | fate |
+|---|---|---|---|---|---|---|
+| STM-1 ANCHOR-SEAT | 5514.0 | 110.7492 | 18.3193 | 92.4299 | 18.4138 | PERMANENT SHELL |
+| STM-2 FLOOR-LIGHT | 500.1 | 107.1488 | 17.7192 | 89.4296 | 17.8138 | PERMANENT SHELL |
+| STM-3 ETERNAL-MAX | 15483.9 | 112.2979 | 18.5774 | 93.7206 | 18.6720 | PERMANENT SHELL |
+| STM-4 CEILING-CLASS | 22604.3 | 112.8655 | 18.6720 | 94.1935 | 18.7666 | PENDING EXIT |
+| STM-5 GAP-LINE | 300.0 | 106.3823 | 17.5914 | 88.7908 | 17.6860 | GAP-HOLD (never enters) |
+| STM-6 THE PENDING | 480.0 | 107.0873 | 17.7089 | 89.3783 | 17.8035 | PENDING ENTRY |
+STM-3 ETERNAL-MAX is the design's sharpest output: the heaviest density that NEVER
+exits is 15,483.9, not the shell ceiling 22,604.3 - everything denser is a shell
+member on borrowed time (the filed exits agree: tungsten/gold z -0.1877, platinum
+-0.0573, osmium -0.0007). STM-6 THE PENDING is the FG-1 class restated in this
+family (entry z -0.0445, filed EQS-1037/1039): a structure whose state changes in
+the future, priced at design time.
+
+## Bench (locked at filing)
+- T-SM1 blind seat per class article (weigh + two-method volume): KILL outside its
+  specified window.
+- T-SM2 fate-window membership at the filed chain tolerance (3 sigma = 0.00384 nats
+  on the split): KILL on any article seated outside its named fate band.
+NOT EXECUTED - no articles exist.
+
+## Doors
+- D-SM1 the family name - his word.
+- D-SM2 fabrication of the six class articles - NOT BUILT.
+- D-SM3 bench execution at his word, after D-SM2.
+- D-SM4 mechanical specification (strength, fatigue) - NOT SPECIFIED here.

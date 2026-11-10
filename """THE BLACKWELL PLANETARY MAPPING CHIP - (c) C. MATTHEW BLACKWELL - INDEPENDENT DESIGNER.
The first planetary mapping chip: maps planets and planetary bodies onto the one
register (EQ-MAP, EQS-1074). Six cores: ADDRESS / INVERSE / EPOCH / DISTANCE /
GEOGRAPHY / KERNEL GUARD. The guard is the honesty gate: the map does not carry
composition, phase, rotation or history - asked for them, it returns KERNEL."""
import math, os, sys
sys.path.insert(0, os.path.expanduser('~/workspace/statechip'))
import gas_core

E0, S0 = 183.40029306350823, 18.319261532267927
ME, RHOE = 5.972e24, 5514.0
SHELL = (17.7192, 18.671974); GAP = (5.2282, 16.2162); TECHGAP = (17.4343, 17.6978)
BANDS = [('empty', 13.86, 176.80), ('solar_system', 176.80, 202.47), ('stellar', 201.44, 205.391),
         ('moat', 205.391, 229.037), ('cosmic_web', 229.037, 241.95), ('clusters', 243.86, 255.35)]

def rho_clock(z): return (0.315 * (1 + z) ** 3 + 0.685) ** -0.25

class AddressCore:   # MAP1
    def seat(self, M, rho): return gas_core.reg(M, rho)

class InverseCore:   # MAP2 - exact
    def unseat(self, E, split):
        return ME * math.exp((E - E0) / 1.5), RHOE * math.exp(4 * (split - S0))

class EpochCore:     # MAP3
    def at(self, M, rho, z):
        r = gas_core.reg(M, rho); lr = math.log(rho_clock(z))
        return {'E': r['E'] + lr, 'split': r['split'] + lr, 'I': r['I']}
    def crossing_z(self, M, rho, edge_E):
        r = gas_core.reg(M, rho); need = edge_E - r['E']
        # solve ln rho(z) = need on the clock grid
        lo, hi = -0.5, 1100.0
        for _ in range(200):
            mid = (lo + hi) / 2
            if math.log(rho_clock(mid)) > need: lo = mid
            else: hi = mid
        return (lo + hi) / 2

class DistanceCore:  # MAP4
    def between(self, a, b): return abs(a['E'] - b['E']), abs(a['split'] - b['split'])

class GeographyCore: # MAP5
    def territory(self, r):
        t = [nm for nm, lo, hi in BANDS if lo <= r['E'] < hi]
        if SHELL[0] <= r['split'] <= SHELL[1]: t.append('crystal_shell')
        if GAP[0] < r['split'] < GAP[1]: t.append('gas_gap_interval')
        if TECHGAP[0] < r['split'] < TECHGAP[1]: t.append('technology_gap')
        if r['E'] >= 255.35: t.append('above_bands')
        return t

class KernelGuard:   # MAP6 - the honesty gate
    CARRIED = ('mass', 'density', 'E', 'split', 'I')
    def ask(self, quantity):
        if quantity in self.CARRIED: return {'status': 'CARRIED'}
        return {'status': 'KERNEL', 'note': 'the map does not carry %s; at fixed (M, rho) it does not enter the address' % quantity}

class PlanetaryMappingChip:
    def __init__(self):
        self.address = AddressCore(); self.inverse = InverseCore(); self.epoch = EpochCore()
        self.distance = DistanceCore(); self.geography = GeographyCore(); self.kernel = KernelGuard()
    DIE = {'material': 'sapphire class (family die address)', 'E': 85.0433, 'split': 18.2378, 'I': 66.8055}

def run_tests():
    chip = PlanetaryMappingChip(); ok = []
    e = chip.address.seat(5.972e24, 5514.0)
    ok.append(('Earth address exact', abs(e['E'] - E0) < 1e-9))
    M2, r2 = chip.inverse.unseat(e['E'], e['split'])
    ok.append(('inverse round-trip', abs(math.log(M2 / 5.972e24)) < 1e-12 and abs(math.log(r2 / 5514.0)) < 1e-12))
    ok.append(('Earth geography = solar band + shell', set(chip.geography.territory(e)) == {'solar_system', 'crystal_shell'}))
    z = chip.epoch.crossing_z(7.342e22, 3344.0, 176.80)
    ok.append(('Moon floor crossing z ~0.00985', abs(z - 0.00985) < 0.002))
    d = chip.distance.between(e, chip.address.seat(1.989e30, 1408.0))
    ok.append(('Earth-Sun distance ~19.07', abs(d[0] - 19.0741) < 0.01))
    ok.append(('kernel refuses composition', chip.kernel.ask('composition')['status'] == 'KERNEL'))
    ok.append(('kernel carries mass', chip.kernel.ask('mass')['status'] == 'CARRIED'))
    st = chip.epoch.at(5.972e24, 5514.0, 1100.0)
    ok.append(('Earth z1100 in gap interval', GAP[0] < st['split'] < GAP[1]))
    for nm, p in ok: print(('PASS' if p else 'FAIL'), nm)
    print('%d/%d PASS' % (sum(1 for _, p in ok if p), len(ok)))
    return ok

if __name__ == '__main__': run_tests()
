@@ -1,0 +1,82 @@
+"""THE BLACKWELL PLANETARY MAPPING CHIP - (c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER.
+The first planetary mapping chip: maps planets and planetary bodies onto the one
+register (EQ-MAP, EQS-1074). Six cores: ADDRESS / INVERSE / EPOCH / DISTANCE /
+GEOGRAPHY / KERNEL GUARD. The guard is the honesty gate: the map does not carry
+composition, phase, rotation or history - asked for them, it returns KERNEL."""
+import math, os, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/statechip'))
+import gas_core
+
+E0, S0 = 183.40029306350823, 18.319261532267927
+ME, RHOE = 5.972e24, 5514.0
+SHELL = (17.7192, 18.671974); GAP = (5.2282, 16.2162); TECHGAP = (17.4343, 17.6978)
+BANDS = [('empty', 13.86, 176.80), ('solar_system', 176.80, 202.47), ('stellar', 201.44, 205.391),
+         ('moat', 205.391, 229.037), ('cosmic_web', 229.037, 241.95), ('clusters', 243.86, 255.35)]
+
+def rho_clock(z): return (0.315 * (1 + z) ** 3 + 0.685) ** -0.25
+
+class AddressCore:   # MAP1
+    def seat(self, M, rho): return gas_core.reg(M, rho)
+
+class InverseCore:   # MAP2 - exact
+    def unseat(self, E, split):
+        return ME * math.exp((E - E0) / 1.5), RHOE * math.exp(4 * (split - S0))
+
+class EpochCore:     # MAP3
+    def at(self, M, rho, z):
+        r = gas_core.reg(M, rho); lr = math.log(rho_clock(z))
+        return {'E': r['E'] + lr, 'split': r['split'] + lr, 'I': r['I']}
+    def crossing_z(self, M, rho, edge_E):
+        r = gas_core.reg(M, rho); need = edge_E - r['E']
+        # solve ln rho(z) = need on the clock grid
+        lo, hi = -0.5, 1100.0
+        for _ in range(200):
+            mid = (lo + hi) / 2
+            if math.log(rho_clock(mid)) > need: lo = mid
+            else: hi = mid
+        return (lo + hi) / 2
+
+class DistanceCore:  # MAP4
+    def between(self, a, b): return abs(a['E'] - b['E']), abs(a['split'] - b['split'])
+
+class GeographyCore: # MAP5
+    def territory(self, r):
+        t = [nm for nm, lo, hi in BANDS if lo <= r['E'] < hi]
+        if SHELL[0] <= r['split'] <= SHELL[1]: t.append('crystal_shell')
+        if GAP[0] < r['split'] < GAP[1]: t.append('gas_gap_interval')
+        if TECHGAP[0] < r['split'] < TECHGAP[1]: t.append('technology_gap')
+        if r['E'] >= 255.35: t.append('above_bands')
+        return t
+
+class KernelGuard:   # MAP6 - the honesty gate
+    CARRIED = ('mass', 'density', 'E', 'split', 'I')
+    def ask(self, quantity):
+        if quantity in self.CARRIED: return {'status': 'CARRIED'}
+        return {'status': 'KERNEL', 'note': 'the map does not carry %s; at fixed (M, rho) it does not enter the address' % quantity}
+
+class PlanetaryMappingChip:
+    def __init__(self):
+        self.address = AddressCore(); self.inverse = InverseCore(); self.epoch = EpochCore()
+        self.distance = DistanceCore(); self.geography = GeographyCore(); self.kernel = KernelGuard()
+    DIE = {'material': 'sapphire class (family die address)', 'E': 85.0433, 'split': 18.2378, 'I': 66.8055}
+
+def run_tests():
+    chip = PlanetaryMappingChip(); ok = []
+    e = chip.address.seat(5.972e24, 5514.0)
+    ok.append(('Earth address exact', abs(e['E'] - E0) < 1e-9))
+    M2, r2 = chip.inverse.unseat(e['E'], e['split'])
+    ok.append(('inverse round-trip', abs(math.log(M2 / 5.972e24)) < 1e-12 and abs(math.log(r2 / 5514.0)) < 1e-12))
+    ok.append(('Earth geography = solar band + shell', set(chip.geography.territory(e)) == {'solar_system', 'crystal_shell'}))
+    z = chip.epoch.crossing_z(7.342e22, 3344.0, 176.80)
+    ok.append(('Moon floor crossing z ~0.00985', abs(z - 0.00985) < 0.002))
+    d = chip.distance.between(e, chip.address.seat(1.989e30, 1408.0))
+    ok.append(('Earth-Sun distance ~19.07', abs(d[0] - 19.0741) < 0.01))
+    ok.append(('kernel refuses composition', chip.kernel.ask('composition')['status'] == 'KERNEL'))
+    ok.append(('kernel carries mass', chip.kernel.ask('mass')['status'] == 'CARRIED'))
+    st = chip.epoch.at(5.972e24, 5514.0, 1100.0)
+    ok.append(('Earth z1100 in gap interval', GAP[0] < st['split'] < GAP[1]))
+    for nm, p in ok: print(('PASS' if p else 'FAIL'), nm)
+    print('%d/%d PASS' % (sum(1 for _, p in ok if p), len(ok)))
+    return ok
+
+if __name__ == '__main__': run_tests()

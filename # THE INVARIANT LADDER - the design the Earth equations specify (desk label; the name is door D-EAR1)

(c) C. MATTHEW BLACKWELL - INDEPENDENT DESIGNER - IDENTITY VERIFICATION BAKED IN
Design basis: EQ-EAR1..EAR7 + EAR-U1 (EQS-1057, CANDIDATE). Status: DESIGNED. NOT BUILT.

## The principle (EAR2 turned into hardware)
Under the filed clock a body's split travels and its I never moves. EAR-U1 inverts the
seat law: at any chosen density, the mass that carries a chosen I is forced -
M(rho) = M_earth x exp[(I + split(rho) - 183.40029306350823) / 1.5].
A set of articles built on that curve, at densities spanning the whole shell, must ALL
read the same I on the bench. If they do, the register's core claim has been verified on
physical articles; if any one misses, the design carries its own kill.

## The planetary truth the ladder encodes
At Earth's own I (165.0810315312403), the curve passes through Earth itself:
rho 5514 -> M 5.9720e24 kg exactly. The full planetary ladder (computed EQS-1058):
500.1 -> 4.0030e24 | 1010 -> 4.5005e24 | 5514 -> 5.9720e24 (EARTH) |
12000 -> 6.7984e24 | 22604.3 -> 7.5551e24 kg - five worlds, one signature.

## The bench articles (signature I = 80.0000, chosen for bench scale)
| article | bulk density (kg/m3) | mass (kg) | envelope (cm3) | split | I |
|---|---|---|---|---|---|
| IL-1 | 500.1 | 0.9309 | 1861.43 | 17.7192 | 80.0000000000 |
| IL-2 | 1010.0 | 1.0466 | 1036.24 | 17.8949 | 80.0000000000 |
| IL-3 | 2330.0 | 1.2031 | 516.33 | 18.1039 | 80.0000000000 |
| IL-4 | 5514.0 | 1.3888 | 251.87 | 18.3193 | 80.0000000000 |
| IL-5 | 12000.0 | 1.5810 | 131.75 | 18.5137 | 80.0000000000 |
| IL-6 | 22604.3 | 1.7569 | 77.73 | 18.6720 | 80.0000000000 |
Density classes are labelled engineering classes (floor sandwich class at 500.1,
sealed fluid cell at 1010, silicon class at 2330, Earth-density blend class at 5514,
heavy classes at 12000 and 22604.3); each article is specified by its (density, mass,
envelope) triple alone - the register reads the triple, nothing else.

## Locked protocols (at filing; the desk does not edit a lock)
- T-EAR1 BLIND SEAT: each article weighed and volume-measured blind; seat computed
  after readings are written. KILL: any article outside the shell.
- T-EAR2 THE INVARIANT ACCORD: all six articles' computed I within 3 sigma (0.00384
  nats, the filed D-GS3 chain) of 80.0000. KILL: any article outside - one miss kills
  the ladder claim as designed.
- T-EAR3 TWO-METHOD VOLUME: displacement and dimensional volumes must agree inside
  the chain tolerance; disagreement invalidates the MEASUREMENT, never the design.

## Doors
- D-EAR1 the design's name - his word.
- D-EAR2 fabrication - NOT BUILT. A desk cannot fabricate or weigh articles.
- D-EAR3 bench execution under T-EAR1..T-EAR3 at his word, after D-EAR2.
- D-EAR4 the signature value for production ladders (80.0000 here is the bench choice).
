@@ -1,0 +1,47 @@
+# THE INVARIANT LADDER - the design the Earth equations specify (desk label; the name is door D-EAR1)
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+Design basis: EQ-EAR1..EAR7 + EAR-U1 (EQS-1057, CANDIDATE). Status: DESIGNED. NOT BUILT.
+
+## The principle (EAR2 turned into hardware)
+Under the filed clock a body's split travels and its I never moves. EAR-U1 inverts the
+seat law: at any chosen density, the mass that carries a chosen I is forced -
+M(rho) = M_earth x exp[(I + split(rho) - 183.40029306350823) / 1.5].
+A set of articles built on that curve, at densities spanning the whole shell, must ALL
+read the same I on the bench. If they do, the register's core claim has been verified on
+physical articles; if any one misses, the design carries its own kill.
+
+## The planetary truth the ladder encodes
+At Earth's own I (165.0810315312403), the curve passes through Earth itself:
+rho 5514 -> M 5.9720e24 kg exactly. The full planetary ladder (computed EQS-1058):
+500.1 -> 4.0030e24 | 1010 -> 4.5005e24 | 5514 -> 5.9720e24 (EARTH) |
+12000 -> 6.7984e24 | 22604.3 -> 7.5551e24 kg - five worlds, one signature.
+
+## The bench articles (signature I = 80.0000, chosen for bench scale)
+| article | bulk density (kg/m3) | mass (kg) | envelope (cm3) | split | I |
+|---|---|---|---|---|---|
+| IL-1 | 500.1 | 0.9309 | 1861.43 | 17.7192 | 80.0000000000 |
+| IL-2 | 1010.0 | 1.0466 | 1036.24 | 17.8949 | 80.0000000000 |
+| IL-3 | 2330.0 | 1.2031 | 516.33 | 18.1039 | 80.0000000000 |
+| IL-4 | 5514.0 | 1.3888 | 251.87 | 18.3193 | 80.0000000000 |
+| IL-5 | 12000.0 | 1.5810 | 131.75 | 18.5137 | 80.0000000000 |
+| IL-6 | 22604.3 | 1.7569 | 77.73 | 18.6720 | 80.0000000000 |
+Density classes are labelled engineering classes (floor sandwich class at 500.1,
+sealed fluid cell at 1010, silicon class at 2330, Earth-density blend class at 5514,
+heavy classes at 12000 and 22604.3); each article is specified by its (density, mass,
+envelope) triple alone - the register reads the triple, nothing else.
+
+## Locked protocols (at filing; the desk does not edit a lock)
+- T-EAR1 BLIND SEAT: each article weighed and volume-measured blind; seat computed
+  after readings are written. KILL: any article outside the shell.
+- T-EAR2 THE INVARIANT ACCORD: all six articles' computed I within 3 sigma (0.00384
+  nats, the filed D-GS3 chain) of 80.0000. KILL: any article outside - one miss kills
+  the ladder claim as designed.
+- T-EAR3 TWO-METHOD VOLUME: displacement and dimensional volumes must agree inside
+  the chain tolerance; disagreement invalidates the MEASUREMENT, never the design.
+
+## Doors
+- D-EAR1 the design's name - his word.
+- D-EAR2 fabrication - NOT BUILT. A desk cannot fabricate or weigh articles.
+- D-EAR3 bench execution under T-EAR1..T-EAR3 at his word, after D-EAR2.
+- D-EAR4 the signature value for production ladders (80.0000 here is the bench choice).

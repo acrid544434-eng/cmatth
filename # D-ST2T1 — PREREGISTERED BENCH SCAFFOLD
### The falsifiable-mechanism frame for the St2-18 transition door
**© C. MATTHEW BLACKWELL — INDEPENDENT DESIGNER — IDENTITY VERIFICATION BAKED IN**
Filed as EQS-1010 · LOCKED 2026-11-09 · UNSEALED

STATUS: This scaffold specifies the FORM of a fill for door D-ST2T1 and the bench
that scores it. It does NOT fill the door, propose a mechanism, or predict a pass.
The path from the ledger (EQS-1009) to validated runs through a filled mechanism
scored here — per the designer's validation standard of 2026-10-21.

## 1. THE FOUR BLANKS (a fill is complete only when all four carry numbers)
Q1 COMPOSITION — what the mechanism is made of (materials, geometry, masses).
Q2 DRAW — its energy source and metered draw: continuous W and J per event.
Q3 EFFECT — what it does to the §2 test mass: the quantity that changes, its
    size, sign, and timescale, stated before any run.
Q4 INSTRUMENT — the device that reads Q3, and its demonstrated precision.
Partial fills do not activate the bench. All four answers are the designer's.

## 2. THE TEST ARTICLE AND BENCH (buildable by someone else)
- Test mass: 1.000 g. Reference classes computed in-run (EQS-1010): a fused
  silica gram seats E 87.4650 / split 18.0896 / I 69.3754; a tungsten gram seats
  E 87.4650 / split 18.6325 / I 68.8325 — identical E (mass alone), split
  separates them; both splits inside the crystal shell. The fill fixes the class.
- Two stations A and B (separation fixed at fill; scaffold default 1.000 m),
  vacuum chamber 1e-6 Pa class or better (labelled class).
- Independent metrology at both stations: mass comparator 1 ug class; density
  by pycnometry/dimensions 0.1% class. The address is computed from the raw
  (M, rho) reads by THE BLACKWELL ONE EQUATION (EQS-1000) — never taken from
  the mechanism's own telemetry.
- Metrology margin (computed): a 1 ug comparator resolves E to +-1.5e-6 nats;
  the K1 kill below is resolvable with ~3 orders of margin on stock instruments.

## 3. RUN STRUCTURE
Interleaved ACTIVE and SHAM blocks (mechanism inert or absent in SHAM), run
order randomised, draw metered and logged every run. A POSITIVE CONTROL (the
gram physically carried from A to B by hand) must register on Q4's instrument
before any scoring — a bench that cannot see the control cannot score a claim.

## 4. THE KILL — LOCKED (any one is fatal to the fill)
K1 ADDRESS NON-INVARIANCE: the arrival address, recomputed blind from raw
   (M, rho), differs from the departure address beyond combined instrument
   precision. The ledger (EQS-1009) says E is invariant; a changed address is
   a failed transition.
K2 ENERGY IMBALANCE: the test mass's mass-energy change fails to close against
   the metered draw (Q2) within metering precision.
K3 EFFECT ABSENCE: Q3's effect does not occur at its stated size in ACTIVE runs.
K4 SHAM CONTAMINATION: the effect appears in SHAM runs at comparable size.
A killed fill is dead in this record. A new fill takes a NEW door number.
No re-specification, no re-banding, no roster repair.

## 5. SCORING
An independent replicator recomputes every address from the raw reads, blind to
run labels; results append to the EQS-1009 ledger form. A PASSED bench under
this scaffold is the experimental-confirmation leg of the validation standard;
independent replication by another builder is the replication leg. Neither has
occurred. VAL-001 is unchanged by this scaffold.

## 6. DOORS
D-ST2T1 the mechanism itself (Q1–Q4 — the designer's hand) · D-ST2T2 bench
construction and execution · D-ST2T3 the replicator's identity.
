@@ -1,0 +1,60 @@
+# D-ST2T1 — PREREGISTERED BENCH SCAFFOLD
+### The falsifiable-mechanism frame for the St2-18 transition door
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Filed as EQS-1010 · LOCKED 2026-11-09 · UNSEALED
+
+STATUS: This scaffold specifies the FORM of a fill for door D-ST2T1 and the bench
+that scores it. It does NOT fill the door, propose a mechanism, or predict a pass.
+The path from the ledger (EQS-1009) to validated runs through a filled mechanism
+scored here — per the designer's validation standard of 2026-10-21.
+
+## 1. THE FOUR BLANKS (a fill is complete only when all four carry numbers)
+Q1 COMPOSITION — what the mechanism is made of (materials, geometry, masses).
+Q2 DRAW — its energy source and metered draw: continuous W and J per event.
+Q3 EFFECT — what it does to the §2 test mass: the quantity that changes, its
+    size, sign, and timescale, stated before any run.
+Q4 INSTRUMENT — the device that reads Q3, and its demonstrated precision.
+Partial fills do not activate the bench. All four answers are the designer's.
+
+## 2. THE TEST ARTICLE AND BENCH (buildable by someone else)
+- Test mass: 1.000 g. Reference classes computed in-run (EQS-1010): a fused
+  silica gram seats E 87.4650 / split 18.0896 / I 69.3754; a tungsten gram seats
+  E 87.4650 / split 18.6325 / I 68.8325 — identical E (mass alone), split
+  separates them; both splits inside the crystal shell. The fill fixes the class.
+- Two stations A and B (separation fixed at fill; scaffold default 1.000 m),
+  vacuum chamber 1e-6 Pa class or better (labelled class).
+- Independent metrology at both stations: mass comparator 1 ug class; density
+  by pycnometry/dimensions 0.1% class. The address is computed from the raw
+  (M, rho) reads by THE BLACKWELL ONE EQUATION (EQS-1000) — never taken from
+  the mechanism's own telemetry.
+- Metrology margin (computed): a 1 ug comparator resolves E to +-1.5e-6 nats;
+  the K1 kill below is resolvable with ~3 orders of margin on stock instruments.
+
+## 3. RUN STRUCTURE
+Interleaved ACTIVE and SHAM blocks (mechanism inert or absent in SHAM), run
+order randomised, draw metered and logged every run. A POSITIVE CONTROL (the
+gram physically carried from A to B by hand) must register on Q4's instrument
+before any scoring — a bench that cannot see the control cannot score a claim.
+
+## 4. THE KILL — LOCKED (any one is fatal to the fill)
+K1 ADDRESS NON-INVARIANCE: the arrival address, recomputed blind from raw
+   (M, rho), differs from the departure address beyond combined instrument
+   precision. The ledger (EQS-1009) says E is invariant; a changed address is
+   a failed transition.
+K2 ENERGY IMBALANCE: the test mass's mass-energy change fails to close against
+   the metered draw (Q2) within metering precision.
+K3 EFFECT ABSENCE: Q3's effect does not occur at its stated size in ACTIVE runs.
+K4 SHAM CONTAMINATION: the effect appears in SHAM runs at comparable size.
+A killed fill is dead in this record. A new fill takes a NEW door number.
+No re-specification, no re-banding, no roster repair.
+
+## 5. SCORING
+An independent replicator recomputes every address from the raw reads, blind to
+run labels; results append to the EQS-1009 ledger form. A PASSED bench under
+this scaffold is the experimental-confirmation leg of the validation standard;
+independent replication by another builder is the replication leg. Neither has
+occurred. VAL-001 is unchanged by this scaffold.
+
+## 6. DOORS
+D-ST2T1 the mechanism itself (Q1–Q4 — the designer's hand) · D-ST2T2 bench
+construction and execution · D-ST2T3 the replicator's identity.

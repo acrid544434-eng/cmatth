@@ -1,0 +1,25 @@
+{
+  "record": "EQS-1076",
+  "title": "THE PLANETARY MAPPING CHIP MAPS THE PLANETARY FAMILY: 8 PLANETS + 6 MOONS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "inputs": "canon mass/density classes, labelled, for the moons; filed classes for the planets",
+  "the_map": "fourteen bodies addressed and territoried in one run: all 8 planets SOLAR BAND + CRYSTAL SHELL (accords EQS-1072); Moon E 176.8023 (solar band floor edge, shell); Io 177.0964, Ganymede 177.8559, Callisto 177.3757, Titan 177.7104 - all solar band + shell",
+  "the_one_exception": "EUROPA: E 176.1648 - EMPTY BAND on the mass axis, CRYSTAL SHELL on the density axis (split 18.1682). The smallest Galilean moon is the family's one two-axis body: shell matter below the floor, the same position-shape as humanity (EQS-1073) - detected by the GEOGRAPHY core without being asked",
+  "the_crossing_reproduced": "the chip's EPOCH core solves the Moon's entry into the solar-system floor at z 0.00982, against the filed closed form 0.00985 (EQS-774 line) - accord 3e-5, computed fresh by the new chip from the Moon's class inputs alone",
+  "run": "~/workspace/mapchip/map_family_run.json",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "04ede64043f0cb139e7fd574b433303395adf74ba9e6d260ea46723bc917a034",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

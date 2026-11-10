@@ -1,0 +1,25 @@
+{
+  "record": "EQS-1059",
+  "title": "NAME GIVEN AT HIS WORD: THE BLACKWELL INVARIANT LADDER - door D-EAR1 CLOSED",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his naming word 2026-11-10 ~14:55 CST: \"Blackwell invariant ladder\" - the design filed at EQS-1058 under a desk label (door D-EAR1 held open for its name) is named at his word",
+  "the_name": "THE BLACKWELL INVARIANT LADDER",
+  "effect": "the design of EQS-1058 (six bench articles on the inverted seat law, signature I = 80.0000, protocols T-EAR1..T-EAR3 locked; planetary ladder at Earth's own I passing through Earth exactly) is cited under this name from here. The EQS-1058 record stands unaltered (payload 20cbc1a5...); the design doc ~/workspace/earth/INVARIANT-LADDER-DESIGN.md stands as filed (sha 9221689d...) - its desk-label heading is superseded by this name for citation. Articles IL-1..IL-6 stand as filed",
+  "doors_now": "D-EAR1 CLOSED (named). Remaining: D-EAR2 fabrication NOT BUILT; D-EAR3 bench execution at his word after fabrication; D-EAR4 production signature value",
+  "statuses": {
+    "design": "DESIGNED, NOT BUILT; bench verdict NOT MEASURED",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23 (a design name, not a law designation)"
+  },
+  "payload_sha256": "fad9830ac3c76960dd8f4b5cf7362a421e695c57417a6263d1b10ebccb02196b",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

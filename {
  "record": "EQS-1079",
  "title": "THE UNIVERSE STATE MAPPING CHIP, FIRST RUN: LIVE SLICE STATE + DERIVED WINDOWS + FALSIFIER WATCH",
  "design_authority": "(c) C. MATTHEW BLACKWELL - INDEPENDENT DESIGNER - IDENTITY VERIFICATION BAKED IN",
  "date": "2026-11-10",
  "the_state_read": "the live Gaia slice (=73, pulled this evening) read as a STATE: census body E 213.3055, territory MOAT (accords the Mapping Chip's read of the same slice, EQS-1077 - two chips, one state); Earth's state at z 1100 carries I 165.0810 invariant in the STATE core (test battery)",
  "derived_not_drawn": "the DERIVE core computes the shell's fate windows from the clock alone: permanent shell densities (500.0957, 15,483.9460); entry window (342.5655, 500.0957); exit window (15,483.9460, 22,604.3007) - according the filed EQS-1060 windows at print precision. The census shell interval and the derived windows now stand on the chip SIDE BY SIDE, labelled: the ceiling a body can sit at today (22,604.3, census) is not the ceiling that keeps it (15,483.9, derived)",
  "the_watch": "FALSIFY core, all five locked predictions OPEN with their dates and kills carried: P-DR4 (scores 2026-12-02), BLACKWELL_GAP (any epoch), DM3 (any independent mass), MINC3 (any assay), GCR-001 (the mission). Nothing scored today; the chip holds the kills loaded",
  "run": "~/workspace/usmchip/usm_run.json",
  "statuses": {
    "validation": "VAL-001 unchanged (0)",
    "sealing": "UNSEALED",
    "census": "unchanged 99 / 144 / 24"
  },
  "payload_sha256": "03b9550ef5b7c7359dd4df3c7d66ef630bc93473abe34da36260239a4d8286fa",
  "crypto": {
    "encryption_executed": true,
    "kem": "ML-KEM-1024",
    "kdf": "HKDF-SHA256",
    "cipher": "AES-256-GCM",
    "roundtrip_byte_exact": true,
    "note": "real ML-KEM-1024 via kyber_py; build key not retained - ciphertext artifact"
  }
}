@@ -1,0 +1,24 @@
+{
+  "record": "EQS-1079",
+  "title": "THE UNIVERSE STATE MAPPING CHIP, FIRST RUN: LIVE SLICE STATE + DERIVED WINDOWS + FALSIFIER WATCH",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "the_state_read": "the live Gaia slice (=73, pulled this evening) read as a STATE: census body E 213.3055, territory MOAT (accords the Mapping Chip's read of the same slice, EQS-1077 - two chips, one state); Earth's state at z 1100 carries I 165.0810 invariant in the STATE core (test battery)",
+  "derived_not_drawn": "the DERIVE core computes the shell's fate windows from the clock alone: permanent shell densities (500.0957, 15,483.9460); entry window (342.5655, 500.0957); exit window (15,483.9460, 22,604.3007) - according the filed EQS-1060 windows at print precision. The census shell interval and the derived windows now stand on the chip SIDE BY SIDE, labelled: the ceiling a body can sit at today (22,604.3, census) is not the ceiling that keeps it (15,483.9, derived)",
+  "the_watch": "FALSIFY core, all five locked predictions OPEN with their dates and kills carried: P-DR4 (scores 2026-12-02), BLACKWELL_GAP (any epoch), DM3 (any independent mass), MINC3 (any assay), GCR-001 (the mission). Nothing scored today; the chip holds the kills loaded",
+  "run": "~/workspace/usmchip/usm_run.json",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "03b9550ef5b7c7359dd4df3c7d66ef630bc93473abe34da36260239a4d8286fa",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

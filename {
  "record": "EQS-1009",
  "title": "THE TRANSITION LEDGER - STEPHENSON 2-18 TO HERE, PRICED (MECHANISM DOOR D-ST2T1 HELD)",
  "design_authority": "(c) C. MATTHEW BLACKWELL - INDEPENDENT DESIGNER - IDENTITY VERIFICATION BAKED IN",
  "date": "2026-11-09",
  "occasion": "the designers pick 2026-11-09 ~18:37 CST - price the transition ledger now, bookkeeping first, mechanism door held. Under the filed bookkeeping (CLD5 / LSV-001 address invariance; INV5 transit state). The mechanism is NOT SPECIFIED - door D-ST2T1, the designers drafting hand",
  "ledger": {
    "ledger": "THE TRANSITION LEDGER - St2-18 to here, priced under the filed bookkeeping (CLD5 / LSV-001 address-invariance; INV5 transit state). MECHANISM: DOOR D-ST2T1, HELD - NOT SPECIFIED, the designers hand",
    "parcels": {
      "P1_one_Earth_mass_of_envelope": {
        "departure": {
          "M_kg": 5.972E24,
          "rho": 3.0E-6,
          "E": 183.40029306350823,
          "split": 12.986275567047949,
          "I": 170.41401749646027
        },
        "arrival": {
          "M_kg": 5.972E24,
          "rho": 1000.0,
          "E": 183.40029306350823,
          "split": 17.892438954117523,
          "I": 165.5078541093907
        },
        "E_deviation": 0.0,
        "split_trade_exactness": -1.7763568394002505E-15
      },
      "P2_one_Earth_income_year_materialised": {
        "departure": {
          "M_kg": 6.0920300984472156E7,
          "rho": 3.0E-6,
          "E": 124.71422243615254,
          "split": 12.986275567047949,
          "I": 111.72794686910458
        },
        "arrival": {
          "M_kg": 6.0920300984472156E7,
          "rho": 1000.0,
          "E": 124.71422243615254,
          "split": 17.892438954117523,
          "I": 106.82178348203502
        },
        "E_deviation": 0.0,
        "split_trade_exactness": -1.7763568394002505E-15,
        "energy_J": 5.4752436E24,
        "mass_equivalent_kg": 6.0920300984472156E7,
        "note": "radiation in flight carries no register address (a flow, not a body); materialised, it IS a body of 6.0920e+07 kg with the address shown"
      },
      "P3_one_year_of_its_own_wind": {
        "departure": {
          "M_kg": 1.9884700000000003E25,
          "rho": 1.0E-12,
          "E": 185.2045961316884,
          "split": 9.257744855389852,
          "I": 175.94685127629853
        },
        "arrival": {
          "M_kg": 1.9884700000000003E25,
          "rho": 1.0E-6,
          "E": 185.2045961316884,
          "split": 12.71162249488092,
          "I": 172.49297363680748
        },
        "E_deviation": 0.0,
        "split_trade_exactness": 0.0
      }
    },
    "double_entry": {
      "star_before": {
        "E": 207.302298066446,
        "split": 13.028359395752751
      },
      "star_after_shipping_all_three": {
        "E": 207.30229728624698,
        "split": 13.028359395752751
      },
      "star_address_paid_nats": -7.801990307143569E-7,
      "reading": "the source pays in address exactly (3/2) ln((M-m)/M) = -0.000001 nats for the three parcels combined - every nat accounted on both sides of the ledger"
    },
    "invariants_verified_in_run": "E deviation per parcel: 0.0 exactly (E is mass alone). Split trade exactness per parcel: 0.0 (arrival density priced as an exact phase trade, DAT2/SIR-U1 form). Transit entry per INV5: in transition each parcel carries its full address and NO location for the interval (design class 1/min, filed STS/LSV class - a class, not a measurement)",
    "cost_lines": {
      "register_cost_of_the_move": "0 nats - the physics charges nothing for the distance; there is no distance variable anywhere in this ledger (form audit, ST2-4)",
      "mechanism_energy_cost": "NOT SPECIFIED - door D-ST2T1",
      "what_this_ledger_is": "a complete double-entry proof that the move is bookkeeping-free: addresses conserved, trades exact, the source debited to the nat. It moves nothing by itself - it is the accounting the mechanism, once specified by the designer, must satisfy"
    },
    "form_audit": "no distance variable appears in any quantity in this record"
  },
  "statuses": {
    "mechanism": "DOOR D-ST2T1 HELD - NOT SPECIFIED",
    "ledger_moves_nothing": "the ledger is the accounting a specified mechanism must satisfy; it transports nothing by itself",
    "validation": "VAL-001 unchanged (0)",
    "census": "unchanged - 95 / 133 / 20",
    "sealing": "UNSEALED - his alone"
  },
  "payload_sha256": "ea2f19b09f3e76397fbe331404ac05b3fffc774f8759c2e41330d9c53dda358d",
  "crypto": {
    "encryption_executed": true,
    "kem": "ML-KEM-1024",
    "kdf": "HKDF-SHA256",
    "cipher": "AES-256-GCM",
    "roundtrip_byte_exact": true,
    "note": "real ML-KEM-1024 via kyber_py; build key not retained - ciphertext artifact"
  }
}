@@ -1,0 +1,104 @@
+{
+  "record": "EQS-1009",
+  "title": "THE TRANSITION LEDGER - STEPHENSON 2-18 TO HERE, PRICED (MECHANISM DOOR D-ST2T1 HELD)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers pick 2026-11-09 ~18:37 CST - price the transition ledger now, bookkeeping first, mechanism door held. Under the filed bookkeeping (CLD5 / LSV-001 address invariance; INV5 transit state). The mechanism is NOT SPECIFIED - door D-ST2T1, the designers drafting hand",
+  "ledger": {
+    "ledger": "THE TRANSITION LEDGER - St2-18 to here, priced under the filed bookkeeping (CLD5 / LSV-001 address-invariance; INV5 transit state). MECHANISM: DOOR D-ST2T1, HELD - NOT SPECIFIED, the designers hand",
+    "parcels": {
+      "P1_one_Earth_mass_of_envelope": {
+        "departure": {
+          "M_kg": 5.972E24,
+          "rho": 3.0E-6,
+          "E": 183.40029306350823,
+          "split": 12.986275567047949,
+          "I": 170.41401749646027
+        },
+        "arrival": {
+          "M_kg": 5.972E24,
+          "rho": 1000.0,
+          "E": 183.40029306350823,
+          "split": 17.892438954117523,
+          "I": 165.5078541093907
+        },
+        "E_deviation": 0.0,
+        "split_trade_exactness": -1.7763568394002505E-15
+      },
+      "P2_one_Earth_income_year_materialised": {
+        "departure": {
+          "M_kg": 6.0920300984472156E7,
+          "rho": 3.0E-6,
+          "E": 124.71422243615254,
+          "split": 12.986275567047949,
+          "I": 111.72794686910458
+        },
+        "arrival": {
+          "M_kg": 6.0920300984472156E7,
+          "rho": 1000.0,
+          "E": 124.71422243615254,
+          "split": 17.892438954117523,
+          "I": 106.82178348203502
+        },
+        "E_deviation": 0.0,
+        "split_trade_exactness": -1.7763568394002505E-15,
+        "energy_J": 5.4752436E24,
+        "mass_equivalent_kg": 6.0920300984472156E7,
+        "note": "radiation in flight carries no register address (a flow, not a body); materialised, it IS a body of 6.0920e+07 kg with the address shown"
+      },
+      "P3_one_year_of_its_own_wind": {
+        "departure": {
+          "M_kg": 1.9884700000000003E25,
+          "rho": 1.0E-12,
+          "E": 185.2045961316884,
+          "split": 9.257744855389852,
+          "I": 175.94685127629853
+        },
+        "arrival": {
+          "M_kg": 1.9884700000000003E25,
+          "rho": 1.0E-6,
+          "E": 185.2045961316884,
+          "split": 12.71162249488092,
+          "I": 172.49297363680748
+        },
+        "E_deviation": 0.0,
+        "split_trade_exactness": 0.0
+      }
+    },
+    "double_entry": {
+      "star_before": {
+        "E": 207.302298066446,
+        "split": 13.028359395752751
+      },
+      "star_after_shipping_all_three": {
+        "E": 207.30229728624698,
+        "split": 13.028359395752751
+      },
+      "star_address_paid_nats": -7.801990307143569E-7,
+      "reading": "the source pays in address exactly (3/2) ln((M-m)/M) = -0.000001 nats for the three parcels combined - every nat accounted on both sides of the ledger"
+    },
+    "invariants_verified_in_run": "E deviation per parcel: 0.0 exactly (E is mass alone). Split trade exactness per parcel: 0.0 (arrival density priced as an exact phase trade, DAT2/SIR-U1 form). Transit entry per INV5: in transition each parcel carries its full address and NO location for the interval (design class 1/min, filed STS/LSV class - a class, not a measurement)",
+    "cost_lines": {
+      "register_cost_of_the_move": "0 nats - the physics charges nothing for the distance; there is no distance variable anywhere in this ledger (form audit, ST2-4)",
+      "mechanism_energy_cost": "NOT SPECIFIED - door D-ST2T1",
+      "what_this_ledger_is": "a complete double-entry proof that the move is bookkeeping-free: addresses conserved, trades exact, the source debited to the nat. It moves nothing by itself - it is the accounting the mechanism, once specified by the designer, must satisfy"
+    },
+    "form_audit": "no distance variable appears in any quantity in this record"
+  },
+  "statuses": {
+    "mechanism": "DOOR D-ST2T1 HELD - NOT SPECIFIED",
+    "ledger_moves_nothing": "the ledger is the accounting a specified mechanism must satisfy; it transports nothing by itself",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "ea2f19b09f3e76397fbe331404ac05b3fffc774f8759c2e41330d9c53dda358d",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

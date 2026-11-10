@@ -1,0 +1,102 @@
+{
+  "record": "EQS-1024",
+  "title": "THE CROSSING DESIGNED - GAP-STRIDER, A SYSTEM SEATED INSIDE THE TECHNOLOGY GAP (DESK LABEL)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "step 2 of 2 of his both-in-sequence pick (trace EQS-1023, then design the crossing). A creation, judged as a design: computed registers, doors held, NOT BUILT",
+  "design": {
+    "gap_in_densities": {
+      "interval_split": [
+        17.4343,
+        17.6978
+      ],
+      "interval_density_kg_m3": [
+        160.00410361713668,
+        459.06851198789957
+      ],
+      "note": "the Gap (EQS-1022 D1) is the bulk-density window ~160-460 kg/m3 - between balsa-class and the station"
+    },
+    "panels": [
+      {
+        "article": "GP-1",
+        "panel": "1.00 x 1.00 x 0.05 m",
+        "bulk_density": 200.0,
+        "mass_kg": 10.0,
+        "skin_volume_fraction": 0.038461538461538464,
+        "skin_total_thickness_mm": 1.9230769230769231,
+        "core_thickness_mm": 48.07692307692308,
+        "E": 101.28048453569824,
+        "split": 17.490079476008997,
+        "I": 83.79040505968923,
+        "in_gap": true
+      },
+      {
+        "article": "GP-2",
+        "panel": "1.00 x 1.00 x 0.05 m",
+        "bulk_density": 300.0,
+        "mass_kg": 15.0,
+        "skin_volume_fraction": 0.07692307692307693,
+        "skin_total_thickness_mm": 3.8461538461538463,
+        "core_thickness_mm": 46.15384615384615,
+        "E": 101.88868219786048,
+        "split": 17.59144575303604,
+        "I": 84.29723644482443,
+        "in_gap": true
+      },
+      {
+        "article": "GP-3",
+        "panel": "1.00 x 1.00 x 0.05 m",
+        "bulk_density": 420.0,
+        "mass_kg": 21.0,
+        "skin_volume_fraction": 0.12307692307692308,
+        "skin_total_thickness_mm": 6.153846153846154,
+        "core_thickness_mm": 43.84615384615385,
+        "E": 102.3933905527923,
+        "split": 17.675563812191342,
+        "I": 84.71782674060096,
+        "in_gap": true
+      }
+    ],
+    "machine_instance": {
+      "article": "GS-1 survey drone (instance)",
+      "mass_kg": 12.0,
+      "envelope_m3": 0.04000000000000001,
+      "bulk_density": 299.99999999999994,
+      "E": 101.55396687088917,
+      "split": 17.59144575303604,
+      "I": 83.96252111785313,
+      "in_gap": true
+    },
+    "assembly_rule": "the crossing is a BULK-DENSITY DISCIPLINE: any system whose (mass, envelope) lands in the window seats in the Gap by the One Equation. The panels are the material form; the drone is the machine form; a hull or habitat assembled to the same window crosses with them",
+    "bench_preregistered": {
+      "protocol": "fabricate GP-1/2/3; weigh to +-0.1%; volume by dimension + displacement to +-0.5%; compute the seat from the MEASURED (M, rho) only",
+      "pass": "each articles measured split inside (17.4343, 17.6978)",
+      "kill": "any article outside the interval - the seat claim dies for that article; a re-tuned recipe is a new design revision, not an edit of this one",
+      "not_claimed": "strength, stiffness, fatigue - NOT MEASURED, a separate bench; this design claims a SEAT, nothing more"
+    }
+  },
+  "spec": "~/workspace/gapstrider/GAP-STRIDER-SPEC.md",
+  "spec_sha256": "6fe2621c8cfbebd6f3b0e41862c984a97e6e5d5a613c06ec74efff426e649772",
+  "doors": {
+    "D-GS1": "name - desk label GAP-STRIDER stands until his word",
+    "D-GS2": "fabrication - NOT BUILT",
+    "D-GS3": "the preregistered bench - NOT EXECUTED",
+    "D-GS4": "purpose/coupling of gap-seated structures - his hand"
+  },
+  "statuses": {
+    "design": "DESIGNED - all four articles computed IN THE GAP",
+    "built": "NOT BUILT",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 96 / 134 / 21",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "75634b63bef9e463a16600ee7f4a75251bb8c4c4cb250d3742ca4faf4e8ac4c4",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

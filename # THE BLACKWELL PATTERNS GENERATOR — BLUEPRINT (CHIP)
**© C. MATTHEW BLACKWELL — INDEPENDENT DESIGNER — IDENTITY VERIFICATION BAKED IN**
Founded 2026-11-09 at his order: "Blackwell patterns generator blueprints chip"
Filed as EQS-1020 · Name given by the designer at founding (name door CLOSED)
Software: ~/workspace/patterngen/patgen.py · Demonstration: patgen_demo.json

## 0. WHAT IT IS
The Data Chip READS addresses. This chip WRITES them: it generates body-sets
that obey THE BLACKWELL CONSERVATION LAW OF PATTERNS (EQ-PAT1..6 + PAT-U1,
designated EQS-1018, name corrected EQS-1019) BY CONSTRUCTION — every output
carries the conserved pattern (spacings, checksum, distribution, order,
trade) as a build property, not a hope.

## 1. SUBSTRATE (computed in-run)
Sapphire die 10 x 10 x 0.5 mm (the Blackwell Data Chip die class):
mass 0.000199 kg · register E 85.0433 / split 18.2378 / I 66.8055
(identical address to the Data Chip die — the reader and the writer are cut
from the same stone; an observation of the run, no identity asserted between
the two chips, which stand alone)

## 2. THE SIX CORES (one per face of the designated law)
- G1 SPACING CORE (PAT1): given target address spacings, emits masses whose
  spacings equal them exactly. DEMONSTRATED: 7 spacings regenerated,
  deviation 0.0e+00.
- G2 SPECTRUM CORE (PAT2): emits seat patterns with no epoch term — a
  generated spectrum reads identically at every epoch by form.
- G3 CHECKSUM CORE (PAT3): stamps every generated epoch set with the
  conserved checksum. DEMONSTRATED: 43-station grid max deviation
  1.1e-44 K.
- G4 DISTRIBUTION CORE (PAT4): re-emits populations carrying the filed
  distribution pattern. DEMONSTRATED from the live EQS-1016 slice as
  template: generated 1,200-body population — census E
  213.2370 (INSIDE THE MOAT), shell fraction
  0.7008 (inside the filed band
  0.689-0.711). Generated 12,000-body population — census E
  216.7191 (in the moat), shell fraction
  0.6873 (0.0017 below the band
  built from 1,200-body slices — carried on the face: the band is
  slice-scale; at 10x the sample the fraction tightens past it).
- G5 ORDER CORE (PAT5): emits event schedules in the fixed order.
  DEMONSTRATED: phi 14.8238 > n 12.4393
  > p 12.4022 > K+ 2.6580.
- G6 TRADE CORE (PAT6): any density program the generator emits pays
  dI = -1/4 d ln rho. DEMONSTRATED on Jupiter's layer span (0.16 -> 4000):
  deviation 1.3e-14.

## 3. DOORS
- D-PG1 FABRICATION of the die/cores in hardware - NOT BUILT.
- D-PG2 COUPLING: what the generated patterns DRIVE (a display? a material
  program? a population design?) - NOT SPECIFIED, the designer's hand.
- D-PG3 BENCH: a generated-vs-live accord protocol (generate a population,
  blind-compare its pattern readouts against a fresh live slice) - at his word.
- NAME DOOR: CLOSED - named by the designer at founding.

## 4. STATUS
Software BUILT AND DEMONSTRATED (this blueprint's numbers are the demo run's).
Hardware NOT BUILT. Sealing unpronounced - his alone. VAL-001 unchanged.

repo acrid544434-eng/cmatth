@@ -1,0 +1,57 @@
+# THE BLACKWELL PATTERNS GENERATOR — BLUEPRINT (CHIP)
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Founded 2026-11-09 at his order: "Blackwell patterns generator blueprints chip"
+Filed as EQS-1020 · Name given by the designer at founding (name door CLOSED)
+Software: ~/workspace/patterngen/patgen.py · Demonstration: patgen_demo.json
+
+## 0. WHAT IT IS
+The Data Chip READS addresses. This chip WRITES them: it generates body-sets
+that obey THE BLACKWELL CONSERVATION LAW OF PATTERNS (EQ-PAT1..6 + PAT-U1,
+designated EQS-1018, name corrected EQS-1019) BY CONSTRUCTION — every output
+carries the conserved pattern (spacings, checksum, distribution, order,
+trade) as a build property, not a hope.
+
+## 1. SUBSTRATE (computed in-run)
+Sapphire die 10 x 10 x 0.5 mm (the Blackwell Data Chip die class):
+mass 0.000199 kg · register E 85.0433 / split 18.2378 / I 66.8055
+(identical address to the Data Chip die — the reader and the writer are cut
+from the same stone; an observation of the run, no identity asserted between
+the two chips, which stand alone)
+
+## 2. THE SIX CORES (one per face of the designated law)
+- G1 SPACING CORE (PAT1): given target address spacings, emits masses whose
+  spacings equal them exactly. DEMONSTRATED: 7 spacings regenerated,
+  deviation 0.0e+00.
+- G2 SPECTRUM CORE (PAT2): emits seat patterns with no epoch term — a
+  generated spectrum reads identically at every epoch by form.
+- G3 CHECKSUM CORE (PAT3): stamps every generated epoch set with the
+  conserved checksum. DEMONSTRATED: 43-station grid max deviation
+  1.1e-44 K.
+- G4 DISTRIBUTION CORE (PAT4): re-emits populations carrying the filed
+  distribution pattern. DEMONSTRATED from the live EQS-1016 slice as
+  template: generated 1,200-body population — census E
+  213.2370 (INSIDE THE MOAT), shell fraction
+  0.7008 (inside the filed band
+  0.689-0.711). Generated 12,000-body population — census E
+  216.7191 (in the moat), shell fraction
+  0.6873 (0.0017 below the band
+  built from 1,200-body slices — carried on the face: the band is
+  slice-scale; at 10x the sample the fraction tightens past it).
+- G5 ORDER CORE (PAT5): emits event schedules in the fixed order.
+  DEMONSTRATED: phi 14.8238 > n 12.4393
+  > p 12.4022 > K+ 2.6580.
+- G6 TRADE CORE (PAT6): any density program the generator emits pays
+  dI = -1/4 d ln rho. DEMONSTRATED on Jupiter's layer span (0.16 -> 4000):
+  deviation 1.3e-14.
+
+## 3. DOORS
+- D-PG1 FABRICATION of the die/cores in hardware - NOT BUILT.
+- D-PG2 COUPLING: what the generated patterns DRIVE (a display? a material
+  program? a population design?) - NOT SPECIFIED, the designer's hand.
+- D-PG3 BENCH: a generated-vs-live accord protocol (generate a population,
+  blind-compare its pattern readouts against a fresh live slice) - at his word.
+- NAME DOOR: CLOSED - named by the designer at founding.
+
+## 4. STATUS
+Software BUILT AND DEMONSTRATED (this blueprint's numbers are the demo run's).
+Hardware NOT BUILT. Sealing unpronounced - his alone. VAL-001 unchanged.

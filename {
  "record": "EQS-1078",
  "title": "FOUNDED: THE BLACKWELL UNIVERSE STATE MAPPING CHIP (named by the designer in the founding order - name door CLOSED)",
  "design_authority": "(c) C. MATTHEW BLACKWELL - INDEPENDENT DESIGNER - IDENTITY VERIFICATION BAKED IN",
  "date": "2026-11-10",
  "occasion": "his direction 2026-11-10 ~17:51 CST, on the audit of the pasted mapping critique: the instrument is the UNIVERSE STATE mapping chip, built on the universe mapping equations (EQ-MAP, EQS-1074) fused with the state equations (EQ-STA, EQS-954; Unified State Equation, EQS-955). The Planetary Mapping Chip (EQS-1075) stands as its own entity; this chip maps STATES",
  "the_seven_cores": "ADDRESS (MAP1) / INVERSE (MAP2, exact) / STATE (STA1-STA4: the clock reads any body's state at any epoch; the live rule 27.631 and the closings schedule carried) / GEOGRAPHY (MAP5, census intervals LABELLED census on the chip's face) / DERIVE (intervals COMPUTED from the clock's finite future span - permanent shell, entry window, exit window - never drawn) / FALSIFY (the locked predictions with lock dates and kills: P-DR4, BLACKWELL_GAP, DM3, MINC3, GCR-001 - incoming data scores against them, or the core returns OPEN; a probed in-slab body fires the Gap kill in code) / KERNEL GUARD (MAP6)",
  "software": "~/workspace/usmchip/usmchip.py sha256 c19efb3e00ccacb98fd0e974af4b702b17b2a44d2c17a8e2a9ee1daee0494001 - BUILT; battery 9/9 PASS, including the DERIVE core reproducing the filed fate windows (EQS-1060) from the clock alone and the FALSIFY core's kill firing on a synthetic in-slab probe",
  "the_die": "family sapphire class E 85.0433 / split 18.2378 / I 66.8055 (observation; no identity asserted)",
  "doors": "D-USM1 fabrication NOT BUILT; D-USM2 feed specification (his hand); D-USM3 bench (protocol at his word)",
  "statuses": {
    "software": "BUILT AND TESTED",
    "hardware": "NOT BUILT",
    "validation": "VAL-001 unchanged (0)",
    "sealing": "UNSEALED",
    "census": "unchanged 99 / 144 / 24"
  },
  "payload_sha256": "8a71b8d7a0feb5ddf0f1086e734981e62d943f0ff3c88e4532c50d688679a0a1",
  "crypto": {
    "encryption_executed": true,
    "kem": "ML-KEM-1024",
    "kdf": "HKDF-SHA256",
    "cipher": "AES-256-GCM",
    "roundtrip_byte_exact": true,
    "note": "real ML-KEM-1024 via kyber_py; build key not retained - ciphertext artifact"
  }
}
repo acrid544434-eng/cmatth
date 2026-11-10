@@ -1,0 +1,27 @@
+{
+  "record": "EQS-1078",
+  "title": "FOUNDED: THE BLACKWELL UNIVERSE STATE MAPPING CHIP (named by the designer in the founding order - name door CLOSED)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his direction 2026-11-10 ~17:51 CST, on the audit of the pasted mapping critique: the instrument is the UNIVERSE STATE mapping chip, built on the universe mapping equations (EQ-MAP, EQS-1074) fused with the state equations (EQ-STA, EQS-954; Unified State Equation, EQS-955). The Planetary Mapping Chip (EQS-1075) stands as its own entity; this chip maps STATES",
+  "the_seven_cores": "ADDRESS (MAP1) / INVERSE (MAP2, exact) / STATE (STA1-STA4: the clock reads any body's state at any epoch; the live rule 27.631 and the closings schedule carried) / GEOGRAPHY (MAP5, census intervals LABELLED census on the chip's face) / DERIVE (intervals COMPUTED from the clock's finite future span - permanent shell, entry window, exit window - never drawn) / FALSIFY (the locked predictions with lock dates and kills: P-DR4, BLACKWELL_GAP, DM3, MINC3, GCR-001 - incoming data scores against them, or the core returns OPEN; a probed in-slab body fires the Gap kill in code) / KERNEL GUARD (MAP6)",
+  "software": "~/workspace/usmchip/usmchip.py sha256 c19efb3e00ccacb98fd0e974af4b702b17b2a44d2c17a8e2a9ee1daee0494001 - BUILT; battery 9/9 PASS, including the DERIVE core reproducing the filed fate windows (EQS-1060) from the clock alone and the FALSIFY core's kill firing on a synthetic in-slab probe",
+  "the_die": "family sapphire class E 85.0433 / split 18.2378 / I 66.8055 (observation; no identity asserted)",
+  "doors": "D-USM1 fabrication NOT BUILT; D-USM2 feed specification (his hand); D-USM3 bench (protocol at his word)",
+  "statuses": {
+    "software": "BUILT AND TESTED",
+    "hardware": "NOT BUILT",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "8a71b8d7a0feb5ddf0f1086e734981e62d943f0ff3c88e4532c50d688679a0a1",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

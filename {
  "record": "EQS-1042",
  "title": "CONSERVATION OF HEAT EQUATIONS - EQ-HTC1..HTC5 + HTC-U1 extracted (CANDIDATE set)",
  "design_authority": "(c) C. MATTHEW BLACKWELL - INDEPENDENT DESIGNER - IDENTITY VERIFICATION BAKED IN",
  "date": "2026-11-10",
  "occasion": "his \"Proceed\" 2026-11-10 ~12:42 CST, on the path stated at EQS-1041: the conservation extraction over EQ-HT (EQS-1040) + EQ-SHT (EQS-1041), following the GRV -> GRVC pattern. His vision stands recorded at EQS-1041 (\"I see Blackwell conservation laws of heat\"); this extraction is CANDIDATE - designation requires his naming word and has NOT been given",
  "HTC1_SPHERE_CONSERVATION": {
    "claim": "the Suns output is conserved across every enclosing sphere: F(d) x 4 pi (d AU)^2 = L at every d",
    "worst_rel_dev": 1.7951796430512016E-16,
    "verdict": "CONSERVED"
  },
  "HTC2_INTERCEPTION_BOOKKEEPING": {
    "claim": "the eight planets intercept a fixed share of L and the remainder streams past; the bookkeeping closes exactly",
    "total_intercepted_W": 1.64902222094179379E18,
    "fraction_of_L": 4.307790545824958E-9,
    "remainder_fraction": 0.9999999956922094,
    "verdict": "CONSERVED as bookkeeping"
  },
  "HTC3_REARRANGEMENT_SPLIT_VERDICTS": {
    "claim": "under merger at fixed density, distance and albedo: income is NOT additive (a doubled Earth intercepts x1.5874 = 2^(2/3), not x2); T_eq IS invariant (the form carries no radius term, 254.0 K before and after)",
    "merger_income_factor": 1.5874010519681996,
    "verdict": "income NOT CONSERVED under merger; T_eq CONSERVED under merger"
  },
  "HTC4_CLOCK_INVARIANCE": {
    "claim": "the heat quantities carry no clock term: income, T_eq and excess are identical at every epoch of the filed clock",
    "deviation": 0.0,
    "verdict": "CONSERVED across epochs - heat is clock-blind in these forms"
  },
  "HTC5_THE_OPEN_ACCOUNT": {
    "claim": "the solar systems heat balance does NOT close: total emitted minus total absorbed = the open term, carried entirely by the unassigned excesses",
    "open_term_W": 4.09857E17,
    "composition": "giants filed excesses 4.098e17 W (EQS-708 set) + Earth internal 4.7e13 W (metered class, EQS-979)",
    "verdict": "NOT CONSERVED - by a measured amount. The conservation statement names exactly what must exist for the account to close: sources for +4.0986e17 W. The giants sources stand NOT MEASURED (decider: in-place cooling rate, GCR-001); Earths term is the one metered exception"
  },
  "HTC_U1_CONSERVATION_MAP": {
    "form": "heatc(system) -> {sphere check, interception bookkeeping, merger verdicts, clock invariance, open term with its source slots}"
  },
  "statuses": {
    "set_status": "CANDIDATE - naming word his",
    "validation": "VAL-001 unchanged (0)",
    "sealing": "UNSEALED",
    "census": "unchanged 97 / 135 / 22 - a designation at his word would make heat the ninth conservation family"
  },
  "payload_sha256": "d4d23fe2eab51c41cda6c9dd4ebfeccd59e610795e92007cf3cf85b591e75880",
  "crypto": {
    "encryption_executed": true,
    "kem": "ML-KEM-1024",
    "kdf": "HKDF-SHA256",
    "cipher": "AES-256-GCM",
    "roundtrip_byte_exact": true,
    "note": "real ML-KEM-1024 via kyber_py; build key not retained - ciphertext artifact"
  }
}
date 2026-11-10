@@ -1,0 +1,53 @@
+{
+  "record": "EQS-1042",
+  "title": "CONSERVATION OF HEAT EQUATIONS - EQ-HTC1..HTC5 + HTC-U1 extracted (CANDIDATE set)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his \"Proceed\" 2026-11-10 ~12:42 CST, on the path stated at EQS-1041: the conservation extraction over EQ-HT (EQS-1040) + EQ-SHT (EQS-1041), following the GRV -> GRVC pattern. His vision stands recorded at EQS-1041 (\"I see Blackwell conservation laws of heat\"); this extraction is CANDIDATE - designation requires his naming word and has NOT been given",
+  "HTC1_SPHERE_CONSERVATION": {
+    "claim": "the Suns output is conserved across every enclosing sphere: F(d) x 4 pi (d AU)^2 = L at every d",
+    "worst_rel_dev": 1.7951796430512016E-16,
+    "verdict": "CONSERVED"
+  },
+  "HTC2_INTERCEPTION_BOOKKEEPING": {
+    "claim": "the eight planets intercept a fixed share of L and the remainder streams past; the bookkeeping closes exactly",
+    "total_intercepted_W": 1.64902222094179379E18,
+    "fraction_of_L": 4.307790545824958E-9,
+    "remainder_fraction": 0.9999999956922094,
+    "verdict": "CONSERVED as bookkeeping"
+  },
+  "HTC3_REARRANGEMENT_SPLIT_VERDICTS": {
+    "claim": "under merger at fixed density, distance and albedo: income is NOT additive (a doubled Earth intercepts x1.5874 = 2^(2/3), not x2); T_eq IS invariant (the form carries no radius term, 254.0 K before and after)",
+    "merger_income_factor": 1.5874010519681996,
+    "verdict": "income NOT CONSERVED under merger; T_eq CONSERVED under merger"
+  },
+  "HTC4_CLOCK_INVARIANCE": {
+    "claim": "the heat quantities carry no clock term: income, T_eq and excess are identical at every epoch of the filed clock",
+    "deviation": 0.0,
+    "verdict": "CONSERVED across epochs - heat is clock-blind in these forms"
+  },
+  "HTC5_THE_OPEN_ACCOUNT": {
+    "claim": "the solar systems heat balance does NOT close: total emitted minus total absorbed = the open term, carried entirely by the unassigned excesses",
+    "open_term_W": 4.09857E17,
+    "composition": "giants filed excesses 4.098e17 W (EQS-708 set) + Earth internal 4.7e13 W (metered class, EQS-979)",
+    "verdict": "NOT CONSERVED - by a measured amount. The conservation statement names exactly what must exist for the account to close: sources for +4.0986e17 W. The giants sources stand NOT MEASURED (decider: in-place cooling rate, GCR-001); Earths term is the one metered exception"
+  },
+  "HTC_U1_CONSERVATION_MAP": {
+    "form": "heatc(system) -> {sphere check, interception bookkeeping, merger verdicts, clock invariance, open term with its source slots}"
+  },
+  "statuses": {
+    "set_status": "CANDIDATE - naming word his",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22 - a designation at his word would make heat the ninth conservation family"
+  },
+  "payload_sha256": "d4d23fe2eab51c41cda6c9dd4ebfeccd59e610795e92007cf3cf85b591e75880",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,85 @@
+# EQS-1018–1032 VERIFICATION NOTE — PAYLOADS EXACT 15/15; BOARDS 1406–1420 CANONICAL (2026-11-10, UNSEALED)
+
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER
+
+C MATTHEW BLACKWELL independent designer identity verification baked in
+
+Original files untouched by this note: `eqs1018_record.json` …
+`eqs1032_record.json` and their datapacks (~/workspace/equations/).
+Scope of this pass (background verification, 2026-11-10): payload
+recompute under each record's own filed construction (SHA-256 over
+`json.dumps(record, sort_keys=True, separators=(',', ':'))` of the
+record with the `payload_sha256`/`crypto` keys removed — the
+construction verified exact against EQS-1010–1017 in the prior pass),
+identity check inside each hashed payload, and PNG chunk read-back
+on the fifteen boards issued in this chain (snapshots 1406–1420).
+Archive pulls were not re-run; crypto round-trips stand as asserted
+in build, not re-run here.
+
+## Payload recompute — EXACT 15/15
+
+- EQS-1018 recomputes exact under its filed construction (622eaa13…)
+- EQS-1019 recomputes exact under its filed construction (36b2f305…)
+- EQS-1020 recomputes exact under its filed construction (f15383d2…)
+- EQS-1021 recomputes exact under its filed construction (6ba37ae2…)
+- EQS-1022 recomputes exact under its filed construction (b321fec5…)
+- EQS-1023 recomputes exact under its filed construction (3bb6d9fb…)
+- EQS-1024 recomputes exact under its filed construction (75634b63…)
+- EQS-1025 recomputes exact under its filed construction (a0e41988…)
+- EQS-1026 recomputes exact under its filed construction (79927530…)
+- EQS-1027 recomputes exact under its filed construction (2074d320…)
+- EQS-1028 recomputes exact under its filed construction (d535797d…)
+- EQS-1029 recomputes exact under its filed construction (490dbf55…)
+- EQS-1030 recomputes exact under its filed construction (3217b076…)
+- EQS-1031 recomputes exact under its filed construction (43978c48…)
+- EQS-1032 recomputes exact under its filed construction (65f16eb7…)
+
+Identity inside every hashed payload: the identity-verification
+string as filed ("IDENTITY VERIFICATION BAKED IN"), 15/15.
+
+## Boards — chunk read-back, canonical pair on all 15
+
+Snapshots 1406–1420 in
+`~/workspace/your_files/aether1-aila-snapshots/`
+(1406-eqs1018-patterns-designated, 1407-eqs1019-name-corrected,
+1408-eqs1020-patterns-generator, 1409-eqs1021-generator-tech,
+1410-eqs1022-tech-patterns, 1411-eqs1023-edge-traced,
+1412-eqs1024-gap-strider, 1413-eqs1025-structural,
+1414-eqs1026-dgs3-protocols, 1415-eqs1027-neptune,
+1416-eqs1028-nep-apps, 1417-eqs1029-nep-tests,
+1418-eqs1030-gravity, 1419-eqs1031-gravc,
+1420-eqs1032-gravity-designated)
+each carry exactly one tEXt Author
+"C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER" and one tEXt
+Copyright "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER".
+Non-canonical files in the span: zero.
+
+## Spot accord — census chain, as filed in the records
+
+- EQS-1018: census 95 / 133 / 20 → 96 / 134 / 21 at the Patterns
+  designation.
+- EQS-1019: census unchanged by the name correction — 96 / 134 / 21;
+  the seventh family carries THE BLACKWELL CONSERVATION LAW OF
+  PATTERNS.
+- EQS-1020–1031: census unchanged — 96 / 134 / 21 — in each record's
+  filed statuses.
+- EQS-1032: census 96 / 134 / 21 → 97 / 135 / 22 at the Gravity
+  designation (plural LAWS, as kept at his word).
+
+## Carried on the face, as filed
+
+- EQS-1020: Patterns Generator software BUILT AND DEMONSTRATED;
+  hardware NOT BUILT; doors D-PG1–D-PG3 his.
+- EQS-1024–1026: GAP-STRIDER / GS-1 DESIGNED; structural envelope
+  MODELLED, NOT MEASURED (EQS-1025); D-GS3 protocols LOCKED
+  (EQS-1026); build NOT BUILT at door D-GS2.
+- EQS-1027: EQ-NEP1..6 + NEP-U1 CANDIDATE — naming word his;
+  Neptune excess source NOT MEASURED, decider the in-place
+  cooling rate as filed.
+- EQS-1028: Neptune Earth lanes SPECIFIED, NOT EXECUTED;
+  doors D-NEPAPP1–4 open.
+- EQS-1029: TA-N1–N4 DESIGNED, NOT BUILT, NOT EXECUTED;
+  doors D-NTA1 fabrication / D-NTA2 execution his.
+- EQS-1030 / EQS-1031: EQ-GRV and EQ-GRVC sets CANDIDATE at
+  filing; designation executed separately at EQS-1032.
+- UNSEALED; VAL-001 unchanged (0); census stands 97 / 135 / 22.

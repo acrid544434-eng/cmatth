@@ -1,0 +1,88 @@
+{
+  "record": "EQS-1033",
+  "title": "FOUNDED: THE BLACKWELL PLANETARY PULSE CHIP - detecting and blueprinting state transitions",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "the designers founding word 2026-11-10 ~10:26 CST - \"designing a Blackwell planetary pulse chip capability of detecting and blueprints state transitions\". Named by him at founding (name door CLOSED, cf. Data Chip EQS-975, Sun Chip EQS-981, Patterns Generator EQS-1020)",
+  "named": "THE BLACKWELL PLANETARY PULSE CHIP",
+  "capability": "detects a planets state transitions (epochs where its STEP trajectory crosses a filed edge, plus the roster closings it lives through) and emits the ordered transition ledger - the blueprint of its state history, recombination to terminal",
+  "forms": "all filed: One Equation seat (EQS-1000); clock rho(z) (EQS-955/1011); STEP forms (EQ-ST EQS-586; GRVC3 EQS-1031); edges - shell [17.7192, 18.671974] designated, GAS-GAP interval (5.2282, 16.2162) carried as DETECTION LINES ONLY (scope ruling OPEN; nothing scored), E-band edges 176.80/202.47/205.391/229.037; closings phi 14.8238 / n 12.4393 / p 12.4022 / K+ 2.6580",
+  "cores": "C1 CLOCK / C2 SEAT / C3 SWEEP / C4 EDGEWATCH / C5 ROSTER / C6 LEDGER",
+  "software": {
+    "file": "~/workspace/pulsechip/pulsechip.py",
+    "sha256": "c41c7af62bb5240ab0d2233b3face95a7351580ed68fcca5cba07051fc775936",
+    "status": "BUILT AND DEMONSTRATED (golden model)"
+  },
+  "blueprint_doc": {
+    "file": "~/workspace/pulsechip/PLANETARY-PULSE-CHIP-BLUEPRINT.md",
+    "sha256": "860281ad9a1a5678ac0cbf7e35c843ad724a0ee6274723867eba8cc0fa48efed"
+  },
+  "tests": {
+    "earth_seat_accord": true,
+    "crossing_solver_roundtrip_max_dev": 2.220446049250313E-16,
+    "giants_accord": true,
+    "all_terminal_in_shell": true,
+    "all_pulses_past": true,
+    "tests_pass": true
+  },
+  "demonstration_eight_planets": {
+    "pulse_counts_total": {
+      "Mercury": 8,
+      "Venus": 8,
+      "Earth": 8,
+      "Mars": 8,
+      "Jupiter": 8,
+      "Saturn": 8,
+      "Uranus": 8,
+      "Neptune": 8
+    },
+    "pulses_since_formation_class": {
+      "Mercury": 0,
+      "Venus": 0,
+      "Earth": 0,
+      "Mars": 0,
+      "Jupiter": 0,
+      "Saturn": 1,
+      "Uranus": 0,
+      "Neptune": 0
+    },
+    "shell_entry_z": {
+      "Mercury": 2.1839017825691416,
+      "Venus": 2.1450216491355762,
+      "Earth": 2.201959142435978,
+      "Mars": 1.83527014811746,
+      "Jupiter": 0.8414362499801413,
+      "Saturn": 0.29791914742477,
+      "Uranus": 0.8063248653254653,
+      "Neptune": 1.018394635858522
+    },
+    "findings": [
+      "every planet carries exactly 8 pulses on its full trajectory (gap floor, gap top, shell floor, one E-band crossing, four closings)",
+      "Saturn is the ONLY planet whose shell entry (z 0.2979) postdates the formation class epoch (z ~0.43): one pulse since formation; all others zero",
+      "no pulses remain: every transition is in the past; all eight terminal states stand inside the crystal shell (terminal splits 17.8932-18.4138)",
+      "Earth entered the shell at z 2.2020, AFTER the last roster closing (K+ at 2.6580)"
+    ]
+  },
+  "inputs_note": "planet (M, density) are canon classes, labelled; giants classes as filed EQS-1014/1015/1027; formation epoch z ~0.43 is a canon class label; deeper crossings are the registers pre-history, flagged on the face of each ledger",
+  "die": "sapphire 10x10x0.5 mm, the family die class E 85.0433 / split 18.2378 / I 66.8055 (observation; the chips stand alone)",
+  "doors": {
+    "D-PP1": "fabrication - NOT BUILT",
+    "D-PP2": "live feed coupling - NOT SPECIFIED, his hand",
+    "D-PP3": "bench against the golden model - at his word",
+    "name": "CLOSED - named by the designer at founding"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED - his alone",
+    "census": "unchanged 97 designated objects / 135 individual laws / 22 conservation-named"
+  },
+  "payload_sha256": "c5972c323ce3d1e01968a967e2251b184665c2f597e1303da7a984919d8232e6",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

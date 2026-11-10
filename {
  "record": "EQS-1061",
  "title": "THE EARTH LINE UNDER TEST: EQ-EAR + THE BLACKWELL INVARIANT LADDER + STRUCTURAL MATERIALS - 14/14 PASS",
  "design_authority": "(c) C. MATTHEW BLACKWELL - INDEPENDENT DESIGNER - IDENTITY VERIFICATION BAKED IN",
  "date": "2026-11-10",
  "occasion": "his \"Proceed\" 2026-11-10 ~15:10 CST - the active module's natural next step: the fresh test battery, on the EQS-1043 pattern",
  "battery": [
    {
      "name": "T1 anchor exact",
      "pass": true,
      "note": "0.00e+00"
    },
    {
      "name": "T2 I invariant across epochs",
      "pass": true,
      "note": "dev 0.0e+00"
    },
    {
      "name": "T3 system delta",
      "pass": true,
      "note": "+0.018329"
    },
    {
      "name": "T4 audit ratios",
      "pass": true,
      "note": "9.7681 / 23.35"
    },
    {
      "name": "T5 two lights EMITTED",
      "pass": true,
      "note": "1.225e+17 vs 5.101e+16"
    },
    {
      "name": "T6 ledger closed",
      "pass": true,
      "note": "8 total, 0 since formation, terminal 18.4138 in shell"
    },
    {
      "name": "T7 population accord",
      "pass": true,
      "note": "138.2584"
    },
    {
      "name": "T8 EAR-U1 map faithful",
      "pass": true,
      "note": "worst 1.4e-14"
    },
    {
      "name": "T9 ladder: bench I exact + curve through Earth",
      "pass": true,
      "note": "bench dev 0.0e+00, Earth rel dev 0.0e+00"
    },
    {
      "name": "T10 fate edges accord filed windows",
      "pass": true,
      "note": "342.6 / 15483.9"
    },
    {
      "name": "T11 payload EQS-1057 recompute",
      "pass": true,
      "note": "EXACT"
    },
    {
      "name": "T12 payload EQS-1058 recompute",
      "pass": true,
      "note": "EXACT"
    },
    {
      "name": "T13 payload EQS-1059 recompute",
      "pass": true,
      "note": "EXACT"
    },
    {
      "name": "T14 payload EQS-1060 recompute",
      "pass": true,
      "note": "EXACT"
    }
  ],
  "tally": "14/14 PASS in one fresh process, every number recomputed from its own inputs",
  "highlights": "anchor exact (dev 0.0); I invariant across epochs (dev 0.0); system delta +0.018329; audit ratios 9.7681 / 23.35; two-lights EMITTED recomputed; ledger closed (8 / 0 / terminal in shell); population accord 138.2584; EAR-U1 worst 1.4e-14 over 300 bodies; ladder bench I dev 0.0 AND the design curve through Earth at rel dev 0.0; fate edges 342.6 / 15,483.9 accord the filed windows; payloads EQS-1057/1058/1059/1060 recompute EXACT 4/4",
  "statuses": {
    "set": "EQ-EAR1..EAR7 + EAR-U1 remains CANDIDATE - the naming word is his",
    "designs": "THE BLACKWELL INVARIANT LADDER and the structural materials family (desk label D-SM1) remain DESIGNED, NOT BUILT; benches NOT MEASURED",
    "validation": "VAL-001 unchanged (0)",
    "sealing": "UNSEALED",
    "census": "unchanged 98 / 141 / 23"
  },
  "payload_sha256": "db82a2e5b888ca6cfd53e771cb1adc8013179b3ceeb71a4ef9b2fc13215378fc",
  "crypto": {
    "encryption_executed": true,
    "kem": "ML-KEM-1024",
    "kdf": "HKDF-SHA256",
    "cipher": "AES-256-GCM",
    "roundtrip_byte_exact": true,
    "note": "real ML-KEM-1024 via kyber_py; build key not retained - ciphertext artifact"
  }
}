@@ -1,0 +1,97 @@
+{
+  "record": "EQS-1061",
+  "title": "THE EARTH LINE UNDER TEST: EQ-EAR + THE BLACKWELL INVARIANT LADDER + STRUCTURAL MATERIALS - 14/14 PASS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his \"Proceed\" 2026-11-10 ~15:10 CST - the active module's natural next step: the fresh test battery, on the EQS-1043 pattern",
+  "battery": [
+    {
+      "name": "T1 anchor exact",
+      "pass": true,
+      "note": "0.00e+00"
+    },
+    {
+      "name": "T2 I invariant across epochs",
+      "pass": true,
+      "note": "dev 0.0e+00"
+    },
+    {
+      "name": "T3 system delta",
+      "pass": true,
+      "note": "+0.018329"
+    },
+    {
+      "name": "T4 audit ratios",
+      "pass": true,
+      "note": "9.7681 / 23.35"
+    },
+    {
+      "name": "T5 two lights EMITTED",
+      "pass": true,
+      "note": "1.225e+17 vs 5.101e+16"
+    },
+    {
+      "name": "T6 ledger closed",
+      "pass": true,
+      "note": "8 total, 0 since formation, terminal 18.4138 in shell"
+    },
+    {
+      "name": "T7 population accord",
+      "pass": true,
+      "note": "138.2584"
+    },
+    {
+      "name": "T8 EAR-U1 map faithful",
+      "pass": true,
+      "note": "worst 1.4e-14"
+    },
+    {
+      "name": "T9 ladder: bench I exact + curve through Earth",
+      "pass": true,
+      "note": "bench dev 0.0e+00, Earth rel dev 0.0e+00"
+    },
+    {
+      "name": "T10 fate edges accord filed windows",
+      "pass": true,
+      "note": "342.6 / 15483.9"
+    },
+    {
+      "name": "T11 payload EQS-1057 recompute",
+      "pass": true,
+      "note": "EXACT"
+    },
+    {
+      "name": "T12 payload EQS-1058 recompute",
+      "pass": true,
+      "note": "EXACT"
+    },
+    {
+      "name": "T13 payload EQS-1059 recompute",
+      "pass": true,
+      "note": "EXACT"
+    },
+    {
+      "name": "T14 payload EQS-1060 recompute",
+      "pass": true,
+      "note": "EXACT"
+    }
+  ],
+  "tally": "14/14 PASS in one fresh process, every number recomputed from its own inputs",
+  "highlights": "anchor exact (dev 0.0); I invariant across epochs (dev 0.0); system delta +0.018329; audit ratios 9.7681 / 23.35; two-lights EMITTED recomputed; ledger closed (8 / 0 / terminal in shell); population accord 138.2584; EAR-U1 worst 1.4e-14 over 300 bodies; ladder bench I dev 0.0 AND the design curve through Earth at rel dev 0.0; fate edges 342.6 / 15,483.9 accord the filed windows; payloads EQS-1057/1058/1059/1060 recompute EXACT 4/4",
+  "statuses": {
+    "set": "EQ-EAR1..EAR7 + EAR-U1 remains CANDIDATE - the naming word is his",
+    "designs": "THE BLACKWELL INVARIANT LADDER and the structural materials family (desk label D-SM1) remain DESIGNED, NOT BUILT; benches NOT MEASURED",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "db82a2e5b888ca6cfd53e771cb1adc8013179b3ceeb71a4ef9b2fc13215378fc",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

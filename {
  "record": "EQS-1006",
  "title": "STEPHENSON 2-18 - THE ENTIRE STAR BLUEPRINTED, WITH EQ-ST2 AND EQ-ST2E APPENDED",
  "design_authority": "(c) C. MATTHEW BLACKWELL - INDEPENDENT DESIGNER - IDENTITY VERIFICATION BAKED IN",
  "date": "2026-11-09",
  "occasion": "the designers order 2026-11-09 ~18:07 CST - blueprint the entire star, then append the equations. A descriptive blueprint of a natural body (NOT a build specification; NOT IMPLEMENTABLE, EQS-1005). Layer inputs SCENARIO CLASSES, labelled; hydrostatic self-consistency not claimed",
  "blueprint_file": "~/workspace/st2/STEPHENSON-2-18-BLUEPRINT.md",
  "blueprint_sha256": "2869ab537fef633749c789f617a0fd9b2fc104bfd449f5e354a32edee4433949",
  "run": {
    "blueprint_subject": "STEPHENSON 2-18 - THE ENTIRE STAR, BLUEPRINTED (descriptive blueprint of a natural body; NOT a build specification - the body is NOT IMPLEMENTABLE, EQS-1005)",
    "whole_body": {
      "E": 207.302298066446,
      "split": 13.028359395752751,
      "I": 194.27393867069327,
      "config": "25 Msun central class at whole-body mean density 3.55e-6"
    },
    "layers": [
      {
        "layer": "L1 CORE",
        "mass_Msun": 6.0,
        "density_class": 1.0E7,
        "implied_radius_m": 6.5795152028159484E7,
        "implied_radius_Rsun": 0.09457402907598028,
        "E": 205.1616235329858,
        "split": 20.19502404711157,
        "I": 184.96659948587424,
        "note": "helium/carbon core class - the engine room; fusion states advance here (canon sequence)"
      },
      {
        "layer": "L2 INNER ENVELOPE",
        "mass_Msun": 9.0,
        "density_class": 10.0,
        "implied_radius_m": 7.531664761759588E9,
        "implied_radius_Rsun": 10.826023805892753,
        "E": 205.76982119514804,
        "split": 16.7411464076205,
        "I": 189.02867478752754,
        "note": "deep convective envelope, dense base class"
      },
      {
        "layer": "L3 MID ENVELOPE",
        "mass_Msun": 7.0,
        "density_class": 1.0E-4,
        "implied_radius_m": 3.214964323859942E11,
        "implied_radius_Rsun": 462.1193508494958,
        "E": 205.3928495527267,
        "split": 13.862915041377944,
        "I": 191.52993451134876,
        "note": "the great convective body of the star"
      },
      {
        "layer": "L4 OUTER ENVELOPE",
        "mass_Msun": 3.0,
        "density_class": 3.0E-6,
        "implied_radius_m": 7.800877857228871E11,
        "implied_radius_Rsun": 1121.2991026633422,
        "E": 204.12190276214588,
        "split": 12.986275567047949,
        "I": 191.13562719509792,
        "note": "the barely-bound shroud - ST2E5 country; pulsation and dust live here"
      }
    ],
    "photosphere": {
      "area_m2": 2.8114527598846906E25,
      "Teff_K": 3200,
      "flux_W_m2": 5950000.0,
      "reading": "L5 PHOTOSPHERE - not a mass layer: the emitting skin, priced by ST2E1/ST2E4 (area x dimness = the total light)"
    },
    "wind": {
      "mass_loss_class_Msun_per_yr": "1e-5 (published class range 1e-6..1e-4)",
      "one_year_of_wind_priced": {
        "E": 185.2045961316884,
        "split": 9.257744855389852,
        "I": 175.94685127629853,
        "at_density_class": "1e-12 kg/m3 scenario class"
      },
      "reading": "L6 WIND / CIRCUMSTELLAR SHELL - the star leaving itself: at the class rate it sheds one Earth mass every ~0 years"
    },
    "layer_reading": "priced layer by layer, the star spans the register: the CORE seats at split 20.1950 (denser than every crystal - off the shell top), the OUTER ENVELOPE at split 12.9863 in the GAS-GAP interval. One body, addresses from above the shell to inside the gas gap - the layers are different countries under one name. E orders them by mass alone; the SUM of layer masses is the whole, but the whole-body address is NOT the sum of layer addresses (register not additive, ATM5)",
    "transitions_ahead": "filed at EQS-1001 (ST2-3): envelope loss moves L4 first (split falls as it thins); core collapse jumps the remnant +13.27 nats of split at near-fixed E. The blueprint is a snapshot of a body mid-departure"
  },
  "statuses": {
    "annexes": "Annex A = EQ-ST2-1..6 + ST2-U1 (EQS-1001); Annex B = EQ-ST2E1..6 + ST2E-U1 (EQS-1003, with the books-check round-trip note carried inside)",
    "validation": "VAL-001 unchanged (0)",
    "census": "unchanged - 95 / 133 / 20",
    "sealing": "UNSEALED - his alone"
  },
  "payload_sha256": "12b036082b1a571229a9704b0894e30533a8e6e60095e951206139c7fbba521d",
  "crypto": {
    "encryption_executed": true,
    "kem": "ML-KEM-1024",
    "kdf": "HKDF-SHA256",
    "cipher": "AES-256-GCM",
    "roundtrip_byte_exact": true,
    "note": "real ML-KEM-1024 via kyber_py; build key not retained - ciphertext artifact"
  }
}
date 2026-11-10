@@ -1,0 +1,97 @@
+{
+  "record": "EQS-1006",
+  "title": "STEPHENSON 2-18 - THE ENTIRE STAR BLUEPRINTED, WITH EQ-ST2 AND EQ-ST2E APPENDED",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~18:07 CST - blueprint the entire star, then append the equations. A descriptive blueprint of a natural body (NOT a build specification; NOT IMPLEMENTABLE, EQS-1005). Layer inputs SCENARIO CLASSES, labelled; hydrostatic self-consistency not claimed",
+  "blueprint_file": "~/workspace/st2/STEPHENSON-2-18-BLUEPRINT.md",
+  "blueprint_sha256": "2869ab537fef633749c789f617a0fd9b2fc104bfd449f5e354a32edee4433949",
+  "run": {
+    "blueprint_subject": "STEPHENSON 2-18 - THE ENTIRE STAR, BLUEPRINTED (descriptive blueprint of a natural body; NOT a build specification - the body is NOT IMPLEMENTABLE, EQS-1005)",
+    "whole_body": {
+      "E": 207.302298066446,
+      "split": 13.028359395752751,
+      "I": 194.27393867069327,
+      "config": "25 Msun central class at whole-body mean density 3.55e-6"
+    },
+    "layers": [
+      {
+        "layer": "L1 CORE",
+        "mass_Msun": 6.0,
+        "density_class": 1.0E7,
+        "implied_radius_m": 6.5795152028159484E7,
+        "implied_radius_Rsun": 0.09457402907598028,
+        "E": 205.1616235329858,
+        "split": 20.19502404711157,
+        "I": 184.96659948587424,
+        "note": "helium/carbon core class - the engine room; fusion states advance here (canon sequence)"
+      },
+      {
+        "layer": "L2 INNER ENVELOPE",
+        "mass_Msun": 9.0,
+        "density_class": 10.0,
+        "implied_radius_m": 7.531664761759588E9,
+        "implied_radius_Rsun": 10.826023805892753,
+        "E": 205.76982119514804,
+        "split": 16.7411464076205,
+        "I": 189.02867478752754,
+        "note": "deep convective envelope, dense base class"
+      },
+      {
+        "layer": "L3 MID ENVELOPE",
+        "mass_Msun": 7.0,
+        "density_class": 1.0E-4,
+        "implied_radius_m": 3.214964323859942E11,
+        "implied_radius_Rsun": 462.1193508494958,
+        "E": 205.3928495527267,
+        "split": 13.862915041377944,
+        "I": 191.52993451134876,
+        "note": "the great convective body of the star"
+      },
+      {
+        "layer": "L4 OUTER ENVELOPE",
+        "mass_Msun": 3.0,
+        "density_class": 3.0E-6,
+        "implied_radius_m": 7.800877857228871E11,
+        "implied_radius_Rsun": 1121.2991026633422,
+        "E": 204.12190276214588,
+        "split": 12.986275567047949,
+        "I": 191.13562719509792,
+        "note": "the barely-bound shroud - ST2E5 country; pulsation and dust live here"
+      }
+    ],
+    "photosphere": {
+      "area_m2": 2.8114527598846906E25,
+      "Teff_K": 3200,
+      "flux_W_m2": 5950000.0,
+      "reading": "L5 PHOTOSPHERE - not a mass layer: the emitting skin, priced by ST2E1/ST2E4 (area x dimness = the total light)"
+    },
+    "wind": {
+      "mass_loss_class_Msun_per_yr": "1e-5 (published class range 1e-6..1e-4)",
+      "one_year_of_wind_priced": {
+        "E": 185.2045961316884,
+        "split": 9.257744855389852,
+        "I": 175.94685127629853,
+        "at_density_class": "1e-12 kg/m3 scenario class"
+      },
+      "reading": "L6 WIND / CIRCUMSTELLAR SHELL - the star leaving itself: at the class rate it sheds one Earth mass every ~0 years"
+    },
+    "layer_reading": "priced layer by layer, the star spans the register: the CORE seats at split 20.1950 (denser than every crystal - off the shell top), the OUTER ENVELOPE at split 12.9863 in the GAS-GAP interval. One body, addresses from above the shell to inside the gas gap - the layers are different countries under one name. E orders them by mass alone; the SUM of layer masses is the whole, but the whole-body address is NOT the sum of layer addresses (register not additive, ATM5)",
+    "transitions_ahead": "filed at EQS-1001 (ST2-3): envelope loss moves L4 first (split falls as it thins); core collapse jumps the remnant +13.27 nats of split at near-fixed E. The blueprint is a snapshot of a body mid-departure"
+  },
+  "statuses": {
+    "annexes": "Annex A = EQ-ST2-1..6 + ST2-U1 (EQS-1001); Annex B = EQ-ST2E1..6 + ST2E-U1 (EQS-1003, with the books-check round-trip note carried inside)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "12b036082b1a571229a9704b0894e30533a8e6e60095e951206139c7fbba521d",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

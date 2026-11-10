@@ -1,0 +1,108 @@
+{
+  "record": "EQS-1039",
+  "title": "FG-1 BENCH LEAF BUILT TO SPECIFICATION + THE BLIND PENDING PROTOCOL, LOCKED - the first bench of the flood system",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~11:32 CST: \"Build one FG-1 leaf at bench scale... Pre-register the 342.6-500.1 window. Blind weigh and measure. Does it hold PENDING?\" - executed as: the bench article and its controls specified to the gram, the blind protocol locked, the pipeline tested - and the verdict itself stated NOT MEASURED, because no physical article exists yet and this desk does not mint measurements",
+  "protocol_doc": {
+    "file": "~/workspace/pulsechip/FG1-BENCH-PROTOCOL.md",
+    "sha256": "0f43c3d18b565c0a959681cd3c6aced192b8129f12cd909b4d78ad401ee6f4ed",
+    "status": "LOCKED at filing - changes only by a new record at his word"
+  },
+  "articles": [
+    {
+      "article": "FG-1/B1 TEST (bulk 480)",
+      "target_bulk": 480.0,
+      "skin_fraction": 0.14615384615384616,
+      "skin_total_mm": 7.307692307692308,
+      "skin_per_face_mm": 3.653846153846154,
+      "core_mm": 42.69230769230769,
+      "skin_kg": 2.959615384615385,
+      "core_kg": 0.6403846153846153,
+      "design_mass_kg": 3.6000000000000005,
+      "design_bulk": 480.0000000000001,
+      "design_E": 99.74800766440026,
+      "design_split": 17.708946660347472
+    },
+    {
+      "article": "FG-1/B0 CONTROL (bulk 300)",
+      "target_bulk": 300.0,
+      "skin_fraction": 0.07692307692307693,
+      "skin_total_mm": 3.8461538461538463,
+      "skin_per_face_mm": 1.9230769230769231,
+      "core_mm": 46.15384615384615,
+      "skin_kg": 1.557692307692308,
+      "core_kg": 0.6923076923076923,
+      "design_mass_kg": 2.25,
+      "design_bulk": 300.0,
+      "design_E": 99.04300222053166,
+      "design_split": 17.59144575303604
+    },
+    {
+      "article": "FG-1/B2 CONTROL (bulk 800)",
+      "target_bulk": 800.0,
+      "skin_fraction": 0.2692307692307692,
+      "skin_total_mm": 13.461538461538462,
+      "skin_per_face_mm": 6.730769230769231,
+      "core_mm": 36.53846153846154,
+      "skin_kg": 5.451923076923077,
+      "core_kg": 0.548076923076923,
+      "design_mass_kg": 6.0,
+      "design_bulk": 800.0,
+      "design_E": 100.51424610004925,
+      "design_split": 17.83665306628897
+    }
+  ],
+  "preregistration": {
+    "window_locked": "bulk (342.6, 500.1) kg/m3 = split (17.6247, 17.7192); design seat 17.7089",
+    "class_kill": "measured bulk >= 500.1 or <= 342.6",
+    "seat_kill": "measured split off 17.7089 by more than 3 sigma (0.0038 nats)",
+    "control_kills": "B0 must audit NONE, B2 must audit SPENT, each from its own measured (M, rho)"
+  },
+  "budget": {
+    "sigma_split_nats": 0.0012747548783981963,
+    "margins_sigma": {
+      "B1_to_floor_sigma": 8.043381379652184,
+      "B1_to_window_bottom_sigma": 66.0885177025814,
+      "B0_to_window_bottom_sigma": 26.086777566009978,
+      "B2_to_floor_sigma": 92.137765682887
+    },
+    "read": "the bench decides every class outright at design seats; tight side is B1 to the shell floor at 8.0 sigma"
+  },
+  "pipeline_test": {
+    "on": "DESIGN inputs only - a test of the blind-seat machinery, NOT a measurement",
+    "results": {
+      "FG-1/B1 TEST (bulk 480)": [
+        "PENDING",
+        17.708946660347472
+      ],
+      "FG-1/B0 CONTROL (bulk 300)": [
+        "NONE",
+        17.59144575303604
+      ],
+      "FG-1/B2 CONTROL (bulk 800)": [
+        "SPENT",
+        17.83665306628897
+      ]
+    }
+  },
+  "verdict_on_his_question": "DOES IT HOLD PENDING: NOT MEASURED. The design seat holds PENDING by computation (17.7089 inside the locked window, 8.0 sigma of bench margin on the tight side). The bench verdict exists only when a fabricated article is weighed under the locked protocol - fabrication is door D-NF4. The moment an article exists, this protocol decides it with no discretion left in it.",
+  "doors": {
+    "D-NF4": "fabrication of B0/B1/B2 - the physical step, his word or a shops hand",
+    "bench execution": "runs the day the articles exist"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22"
+  },
+  "payload_sha256": "25045253f111ace6d24079eb269a8e16d5b2a2ccc9f798d671d5cdfd49690954",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

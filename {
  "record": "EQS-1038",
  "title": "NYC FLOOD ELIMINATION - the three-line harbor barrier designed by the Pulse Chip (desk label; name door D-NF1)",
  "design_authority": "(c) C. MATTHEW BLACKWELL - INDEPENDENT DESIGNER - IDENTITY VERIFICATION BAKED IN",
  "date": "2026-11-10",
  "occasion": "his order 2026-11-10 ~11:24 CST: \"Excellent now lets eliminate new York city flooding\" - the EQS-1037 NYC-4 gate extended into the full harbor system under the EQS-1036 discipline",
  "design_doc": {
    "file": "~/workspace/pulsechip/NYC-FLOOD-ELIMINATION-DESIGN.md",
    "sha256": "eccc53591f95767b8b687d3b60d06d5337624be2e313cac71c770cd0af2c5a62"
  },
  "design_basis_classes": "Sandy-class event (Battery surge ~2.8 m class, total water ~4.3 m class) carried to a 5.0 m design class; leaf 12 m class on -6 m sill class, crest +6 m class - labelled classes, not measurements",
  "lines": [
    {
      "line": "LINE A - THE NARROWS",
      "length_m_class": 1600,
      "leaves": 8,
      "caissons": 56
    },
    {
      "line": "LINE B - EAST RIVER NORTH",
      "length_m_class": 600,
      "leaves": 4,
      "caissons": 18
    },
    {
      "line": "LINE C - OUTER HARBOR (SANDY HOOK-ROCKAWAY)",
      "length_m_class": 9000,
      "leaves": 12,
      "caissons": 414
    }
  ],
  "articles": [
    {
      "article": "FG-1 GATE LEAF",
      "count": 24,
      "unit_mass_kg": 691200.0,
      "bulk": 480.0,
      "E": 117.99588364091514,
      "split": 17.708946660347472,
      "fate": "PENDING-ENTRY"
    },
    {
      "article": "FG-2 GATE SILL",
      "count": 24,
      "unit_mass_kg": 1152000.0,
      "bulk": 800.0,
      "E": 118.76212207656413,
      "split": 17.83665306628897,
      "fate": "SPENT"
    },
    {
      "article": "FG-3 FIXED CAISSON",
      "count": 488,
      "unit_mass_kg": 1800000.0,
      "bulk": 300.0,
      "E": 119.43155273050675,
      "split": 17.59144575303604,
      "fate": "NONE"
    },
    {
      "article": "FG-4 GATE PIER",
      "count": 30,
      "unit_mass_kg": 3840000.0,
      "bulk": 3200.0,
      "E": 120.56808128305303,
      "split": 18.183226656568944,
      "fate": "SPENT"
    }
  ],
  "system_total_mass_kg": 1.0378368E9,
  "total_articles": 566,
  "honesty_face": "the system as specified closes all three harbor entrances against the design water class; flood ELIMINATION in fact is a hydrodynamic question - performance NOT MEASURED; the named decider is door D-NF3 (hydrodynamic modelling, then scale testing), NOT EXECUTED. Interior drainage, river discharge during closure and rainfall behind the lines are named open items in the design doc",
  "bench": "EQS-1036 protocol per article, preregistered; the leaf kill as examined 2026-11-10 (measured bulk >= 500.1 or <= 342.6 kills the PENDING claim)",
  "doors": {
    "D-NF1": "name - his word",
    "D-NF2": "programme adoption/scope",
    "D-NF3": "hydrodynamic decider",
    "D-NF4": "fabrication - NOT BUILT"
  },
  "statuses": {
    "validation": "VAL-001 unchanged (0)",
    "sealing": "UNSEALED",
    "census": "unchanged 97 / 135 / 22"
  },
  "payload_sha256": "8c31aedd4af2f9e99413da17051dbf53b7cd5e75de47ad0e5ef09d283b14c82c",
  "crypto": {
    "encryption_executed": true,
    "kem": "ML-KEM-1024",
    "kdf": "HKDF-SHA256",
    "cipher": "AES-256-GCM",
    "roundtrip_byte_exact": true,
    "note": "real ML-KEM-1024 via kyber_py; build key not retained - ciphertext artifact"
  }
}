@@ -1,0 +1,94 @@
+{
+  "record": "EQS-1038",
+  "title": "NYC FLOOD ELIMINATION - the three-line harbor barrier designed by the Pulse Chip (desk label; name door D-NF1)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~11:24 CST: \"Excellent now lets eliminate new York city flooding\" - the EQS-1037 NYC-4 gate extended into the full harbor system under the EQS-1036 discipline",
+  "design_doc": {
+    "file": "~/workspace/pulsechip/NYC-FLOOD-ELIMINATION-DESIGN.md",
+    "sha256": "eccc53591f95767b8b687d3b60d06d5337624be2e313cac71c770cd0af2c5a62"
+  },
+  "design_basis_classes": "Sandy-class event (Battery surge ~2.8 m class, total water ~4.3 m class) carried to a 5.0 m design class; leaf 12 m class on -6 m sill class, crest +6 m class - labelled classes, not measurements",
+  "lines": [
+    {
+      "line": "LINE A - THE NARROWS",
+      "length_m_class": 1600,
+      "leaves": 8,
+      "caissons": 56
+    },
+    {
+      "line": "LINE B - EAST RIVER NORTH",
+      "length_m_class": 600,
+      "leaves": 4,
+      "caissons": 18
+    },
+    {
+      "line": "LINE C - OUTER HARBOR (SANDY HOOK-ROCKAWAY)",
+      "length_m_class": 9000,
+      "leaves": 12,
+      "caissons": 414
+    }
+  ],
+  "articles": [
+    {
+      "article": "FG-1 GATE LEAF",
+      "count": 24,
+      "unit_mass_kg": 691200.0,
+      "bulk": 480.0,
+      "E": 117.99588364091514,
+      "split": 17.708946660347472,
+      "fate": "PENDING-ENTRY"
+    },
+    {
+      "article": "FG-2 GATE SILL",
+      "count": 24,
+      "unit_mass_kg": 1152000.0,
+      "bulk": 800.0,
+      "E": 118.76212207656413,
+      "split": 17.83665306628897,
+      "fate": "SPENT"
+    },
+    {
+      "article": "FG-3 FIXED CAISSON",
+      "count": 488,
+      "unit_mass_kg": 1800000.0,
+      "bulk": 300.0,
+      "E": 119.43155273050675,
+      "split": 17.59144575303604,
+      "fate": "NONE"
+    },
+    {
+      "article": "FG-4 GATE PIER",
+      "count": 30,
+      "unit_mass_kg": 3840000.0,
+      "bulk": 3200.0,
+      "E": 120.56808128305303,
+      "split": 18.183226656568944,
+      "fate": "SPENT"
+    }
+  ],
+  "system_total_mass_kg": 1.0378368E9,
+  "total_articles": 566,
+  "honesty_face": "the system as specified closes all three harbor entrances against the design water class; flood ELIMINATION in fact is a hydrodynamic question - performance NOT MEASURED; the named decider is door D-NF3 (hydrodynamic modelling, then scale testing), NOT EXECUTED. Interior drainage, river discharge during closure and rainfall behind the lines are named open items in the design doc",
+  "bench": "EQS-1036 protocol per article, preregistered; the leaf kill as examined 2026-11-10 (measured bulk >= 500.1 or <= 342.6 kills the PENDING claim)",
+  "doors": {
+    "D-NF1": "name - his word",
+    "D-NF2": "programme adoption/scope",
+    "D-NF3": "hydrodynamic decider",
+    "D-NF4": "fabrication - NOT BUILT"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22"
+  },
+  "payload_sha256": "8c31aedd4af2f9e99413da17051dbf53b7cd5e75de47ad0e5ef09d283b14c82c",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

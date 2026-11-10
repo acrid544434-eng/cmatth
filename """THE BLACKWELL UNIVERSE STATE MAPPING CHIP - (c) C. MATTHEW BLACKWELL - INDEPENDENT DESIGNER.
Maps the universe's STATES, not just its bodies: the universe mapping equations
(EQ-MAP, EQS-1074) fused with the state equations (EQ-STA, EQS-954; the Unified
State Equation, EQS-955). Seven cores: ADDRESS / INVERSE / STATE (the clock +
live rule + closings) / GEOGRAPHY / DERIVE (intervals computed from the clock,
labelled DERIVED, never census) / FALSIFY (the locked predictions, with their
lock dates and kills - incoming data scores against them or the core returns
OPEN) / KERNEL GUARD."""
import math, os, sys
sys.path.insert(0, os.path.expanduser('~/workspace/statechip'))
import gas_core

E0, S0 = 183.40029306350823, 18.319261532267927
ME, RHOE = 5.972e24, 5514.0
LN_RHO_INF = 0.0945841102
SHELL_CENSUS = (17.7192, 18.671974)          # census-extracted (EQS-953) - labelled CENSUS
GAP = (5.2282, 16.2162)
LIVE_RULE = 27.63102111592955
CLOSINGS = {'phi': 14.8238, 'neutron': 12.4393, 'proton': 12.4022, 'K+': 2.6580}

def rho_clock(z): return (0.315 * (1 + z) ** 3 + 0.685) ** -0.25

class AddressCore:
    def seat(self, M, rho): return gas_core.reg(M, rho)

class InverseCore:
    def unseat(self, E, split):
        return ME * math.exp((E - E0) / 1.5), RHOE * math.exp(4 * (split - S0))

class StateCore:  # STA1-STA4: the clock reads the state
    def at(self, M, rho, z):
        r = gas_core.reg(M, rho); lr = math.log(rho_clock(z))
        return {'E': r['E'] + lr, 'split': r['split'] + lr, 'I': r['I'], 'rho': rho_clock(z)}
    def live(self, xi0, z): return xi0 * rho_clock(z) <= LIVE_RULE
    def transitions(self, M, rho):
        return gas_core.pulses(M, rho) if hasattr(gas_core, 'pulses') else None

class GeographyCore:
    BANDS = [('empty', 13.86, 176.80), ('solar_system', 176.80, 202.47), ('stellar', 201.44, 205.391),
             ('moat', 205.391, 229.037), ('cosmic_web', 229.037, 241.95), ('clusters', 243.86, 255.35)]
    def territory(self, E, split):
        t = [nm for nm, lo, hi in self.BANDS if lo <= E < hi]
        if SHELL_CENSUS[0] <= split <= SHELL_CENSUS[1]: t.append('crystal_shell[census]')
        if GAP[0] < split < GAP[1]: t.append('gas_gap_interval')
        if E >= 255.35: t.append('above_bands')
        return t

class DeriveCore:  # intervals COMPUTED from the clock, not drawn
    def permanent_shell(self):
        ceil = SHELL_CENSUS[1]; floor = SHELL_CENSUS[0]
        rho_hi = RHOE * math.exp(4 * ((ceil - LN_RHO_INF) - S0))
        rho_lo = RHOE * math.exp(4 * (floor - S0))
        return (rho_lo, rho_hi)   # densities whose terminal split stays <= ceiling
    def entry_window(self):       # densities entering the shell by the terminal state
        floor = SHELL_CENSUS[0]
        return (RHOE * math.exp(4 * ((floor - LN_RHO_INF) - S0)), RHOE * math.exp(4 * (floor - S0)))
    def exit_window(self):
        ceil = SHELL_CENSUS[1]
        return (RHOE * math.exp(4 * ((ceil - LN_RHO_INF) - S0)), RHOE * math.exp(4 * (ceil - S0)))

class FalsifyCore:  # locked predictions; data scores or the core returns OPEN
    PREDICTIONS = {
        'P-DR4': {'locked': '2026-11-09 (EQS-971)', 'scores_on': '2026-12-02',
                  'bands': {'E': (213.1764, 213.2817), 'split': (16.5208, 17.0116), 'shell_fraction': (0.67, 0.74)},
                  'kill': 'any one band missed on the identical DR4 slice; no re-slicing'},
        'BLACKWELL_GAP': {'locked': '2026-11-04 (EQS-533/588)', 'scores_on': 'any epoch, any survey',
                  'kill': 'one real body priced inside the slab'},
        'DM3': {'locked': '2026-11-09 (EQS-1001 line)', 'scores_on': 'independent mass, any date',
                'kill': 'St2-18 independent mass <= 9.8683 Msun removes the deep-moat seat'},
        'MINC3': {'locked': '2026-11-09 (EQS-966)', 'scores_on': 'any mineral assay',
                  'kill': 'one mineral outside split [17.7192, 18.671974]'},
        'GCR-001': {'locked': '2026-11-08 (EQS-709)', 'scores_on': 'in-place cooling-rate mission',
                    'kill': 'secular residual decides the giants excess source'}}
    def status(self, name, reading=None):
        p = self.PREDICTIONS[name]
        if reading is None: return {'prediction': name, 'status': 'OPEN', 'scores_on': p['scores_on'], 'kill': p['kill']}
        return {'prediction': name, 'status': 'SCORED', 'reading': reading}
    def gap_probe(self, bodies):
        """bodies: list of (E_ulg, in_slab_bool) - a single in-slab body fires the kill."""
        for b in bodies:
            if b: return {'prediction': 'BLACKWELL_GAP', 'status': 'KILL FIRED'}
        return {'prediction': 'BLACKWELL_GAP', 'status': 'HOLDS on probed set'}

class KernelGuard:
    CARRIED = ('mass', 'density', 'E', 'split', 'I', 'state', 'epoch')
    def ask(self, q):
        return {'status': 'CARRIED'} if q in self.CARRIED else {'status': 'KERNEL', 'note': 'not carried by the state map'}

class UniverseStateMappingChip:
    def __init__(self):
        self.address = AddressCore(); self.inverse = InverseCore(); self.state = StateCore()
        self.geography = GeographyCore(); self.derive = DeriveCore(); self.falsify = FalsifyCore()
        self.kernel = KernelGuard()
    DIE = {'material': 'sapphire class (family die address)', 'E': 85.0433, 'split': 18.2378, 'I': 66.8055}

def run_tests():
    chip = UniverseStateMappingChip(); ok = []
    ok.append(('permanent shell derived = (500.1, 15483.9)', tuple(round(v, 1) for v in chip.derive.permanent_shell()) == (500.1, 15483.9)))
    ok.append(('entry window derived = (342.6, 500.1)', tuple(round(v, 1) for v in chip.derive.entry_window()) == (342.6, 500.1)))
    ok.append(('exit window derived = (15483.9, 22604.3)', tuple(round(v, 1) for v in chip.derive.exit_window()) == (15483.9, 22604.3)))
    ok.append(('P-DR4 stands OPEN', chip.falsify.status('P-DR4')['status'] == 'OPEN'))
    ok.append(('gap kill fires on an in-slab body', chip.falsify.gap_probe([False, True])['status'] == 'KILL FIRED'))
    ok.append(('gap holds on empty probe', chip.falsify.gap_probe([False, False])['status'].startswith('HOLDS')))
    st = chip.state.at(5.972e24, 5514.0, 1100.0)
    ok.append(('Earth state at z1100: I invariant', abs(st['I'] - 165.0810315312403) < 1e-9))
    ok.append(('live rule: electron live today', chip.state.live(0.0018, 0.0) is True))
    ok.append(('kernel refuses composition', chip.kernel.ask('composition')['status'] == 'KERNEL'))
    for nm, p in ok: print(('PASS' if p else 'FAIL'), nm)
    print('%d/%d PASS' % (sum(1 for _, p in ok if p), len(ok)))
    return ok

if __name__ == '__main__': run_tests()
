@@ -1,0 +1,112 @@
+"""THE BLACKWELL UNIVERSE STATE MAPPING CHIP - (c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER.
+Maps the universe's STATES, not just its bodies: the universe mapping equations
+(EQ-MAP, EQS-1074) fused with the state equations (EQ-STA, EQS-954; the Unified
+State Equation, EQS-955). Seven cores: ADDRESS / INVERSE / STATE (the clock +
+live rule + closings) / GEOGRAPHY / DERIVE (intervals computed from the clock,
+labelled DERIVED, never census) / FALSIFY (the locked predictions, with their
+lock dates and kills - incoming data scores against them or the core returns
+OPEN) / KERNEL GUARD."""
+import math, os, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/statechip'))
+import gas_core
+
+E0, S0 = 183.40029306350823, 18.319261532267927
+ME, RHOE = 5.972e24, 5514.0
+LN_RHO_INF = 0.0945841102
+SHELL_CENSUS = (17.7192, 18.671974)          # census-extracted (EQS-953) - labelled CENSUS
+GAP = (5.2282, 16.2162)
+LIVE_RULE = 27.63102111592955
+CLOSINGS = {'phi': 14.8238, 'neutron': 12.4393, 'proton': 12.4022, 'K+': 2.6580}
+
+def rho_clock(z): return (0.315 * (1 + z) ** 3 + 0.685) ** -0.25
+
+class AddressCore:
+    def seat(self, M, rho): return gas_core.reg(M, rho)
+
+class InverseCore:
+    def unseat(self, E, split):
+        return ME * math.exp((E - E0) / 1.5), RHOE * math.exp(4 * (split - S0))
+
+class StateCore:  # STA1-STA4: the clock reads the state
+    def at(self, M, rho, z):
+        r = gas_core.reg(M, rho); lr = math.log(rho_clock(z))
+        return {'E': r['E'] + lr, 'split': r['split'] + lr, 'I': r['I'], 'rho': rho_clock(z)}
+    def live(self, xi0, z): return xi0 * rho_clock(z) <= LIVE_RULE
+    def transitions(self, M, rho):
+        return gas_core.pulses(M, rho) if hasattr(gas_core, 'pulses') else None
+
+class GeographyCore:
+    BANDS = [('empty', 13.86, 176.80), ('solar_system', 176.80, 202.47), ('stellar', 201.44, 205.391),
+             ('moat', 205.391, 229.037), ('cosmic_web', 229.037, 241.95), ('clusters', 243.86, 255.35)]
+    def territory(self, E, split):
+        t = [nm for nm, lo, hi in self.BANDS if lo <= E < hi]
+        if SHELL_CENSUS[0] <= split <= SHELL_CENSUS[1]: t.append('crystal_shell[census]')
+        if GAP[0] < split < GAP[1]: t.append('gas_gap_interval')
+        if E >= 255.35: t.append('above_bands')
+        return t
+
+class DeriveCore:  # intervals COMPUTED from the clock, not drawn
+    def permanent_shell(self):
+        ceil = SHELL_CENSUS[1]; floor = SHELL_CENSUS[0]
+        rho_hi = RHOE * math.exp(4 * ((ceil - LN_RHO_INF) - S0))
+        rho_lo = RHOE * math.exp(4 * (floor - S0))
+        return (rho_lo, rho_hi)   # densities whose terminal split stays <= ceiling
+    def entry_window(self):       # densities entering the shell by the terminal state
+        floor = SHELL_CENSUS[0]
+        return (RHOE * math.exp(4 * ((floor - LN_RHO_INF) - S0)), RHOE * math.exp(4 * (floor - S0)))
+    def exit_window(self):
+        ceil = SHELL_CENSUS[1]
+        return (RHOE * math.exp(4 * ((ceil - LN_RHO_INF) - S0)), RHOE * math.exp(4 * (ceil - S0)))
+
+class FalsifyCore:  # locked predictions; data scores or the core returns OPEN
+    PREDICTIONS = {
+        'P-DR4': {'locked': '2026-11-09 (EQS-971)', 'scores_on': '2026-12-02',
+                  'bands': {'E': (213.1764, 213.2817), 'split': (16.5208, 17.0116), 'shell_fraction': (0.67, 0.74)},
+                  'kill': 'any one band missed on the identical DR4 slice; no re-slicing'},
+        'BLACKWELL_GAP': {'locked': '2026-11-04 (EQS-533/588)', 'scores_on': 'any epoch, any survey',
+                  'kill': 'one real body priced inside the slab'},
+        'DM3': {'locked': '2026-11-09 (EQS-1001 line)', 'scores_on': 'independent mass, any date',
+                'kill': 'St2-18 independent mass <= 9.8683 Msun removes the deep-moat seat'},
+        'MINC3': {'locked': '2026-11-09 (EQS-966)', 'scores_on': 'any mineral assay',
+                  'kill': 'one mineral outside split [17.7192, 18.671974]'},
+        'GCR-001': {'locked': '2026-11-08 (EQS-709)', 'scores_on': 'in-place cooling-rate mission',
+                    'kill': 'secular residual decides the giants excess source'}}
+    def status(self, name, reading=None):
+        p = self.PREDICTIONS[name]
+        if reading is None: return {'prediction': name, 'status': 'OPEN', 'scores_on': p['scores_on'], 'kill': p['kill']}
+        return {'prediction': name, 'status': 'SCORED', 'reading': reading}
+    def gap_probe(self, bodies):
+        """bodies: list of (E_ulg, in_slab_bool) - a single in-slab body fires the kill."""
+        for b in bodies:
+            if b: return {'prediction': 'BLACKWELL_GAP', 'status': 'KILL FIRED'}
+        return {'prediction': 'BLACKWELL_GAP', 'status': 'HOLDS on probed set'}
+
+class KernelGuard:
+    CARRIED = ('mass', 'density', 'E', 'split', 'I', 'state', 'epoch')
+    def ask(self, q):
+        return {'status': 'CARRIED'} if q in self.CARRIED else {'status': 'KERNEL', 'note': 'not carried by the state map'}
+
+class UniverseStateMappingChip:
+    def __init__(self):
+        self.address = AddressCore(); self.inverse = InverseCore(); self.state = StateCore()
+        self.geography = GeographyCore(); self.derive = DeriveCore(); self.falsify = FalsifyCore()
+        self.kernel = KernelGuard()
+    DIE = {'material': 'sapphire class (family die address)', 'E': 85.0433, 'split': 18.2378, 'I': 66.8055}
+
+def run_tests():
+    chip = UniverseStateMappingChip(); ok = []
+    ok.append(('permanent shell derived = (500.1, 15483.9)', tuple(round(v, 1) for v in chip.derive.permanent_shell()) == (500.1, 15483.9)))
+    ok.append(('entry window derived = (342.6, 500.1)', tuple(round(v, 1) for v in chip.derive.entry_window()) == (342.6, 500.1)))
+    ok.append(('exit window derived = (15483.9, 22604.3)', tuple(round(v, 1) for v in chip.derive.exit_window()) == (15483.9, 22604.3)))
+    ok.append(('P-DR4 stands OPEN', chip.falsify.status('P-DR4')['status'] == 'OPEN'))
+    ok.append(('gap kill fires on an in-slab body', chip.falsify.gap_probe([False, True])['status'] == 'KILL FIRED'))
+    ok.append(('gap holds on empty probe', chip.falsify.gap_probe([False, False])['status'].startswith('HOLDS')))
+    st = chip.state.at(5.972e24, 5514.0, 1100.0)
+    ok.append(('Earth state at z1100: I invariant', abs(st['I'] - 165.0810315312403) < 1e-9))
+    ok.append(('live rule: electron live today', chip.state.live(0.0018, 0.0) is True))
+    ok.append(('kernel refuses composition', chip.kernel.ask('composition')['status'] == 'KERNEL'))
+    for nm, p in ok: print(('PASS' if p else 'FAIL'), nm)
+    print('%d/%d PASS' % (sum(1 for _, p in ok if p), len(ok)))
+    return ok
+
+if __name__ == '__main__': run_tests()

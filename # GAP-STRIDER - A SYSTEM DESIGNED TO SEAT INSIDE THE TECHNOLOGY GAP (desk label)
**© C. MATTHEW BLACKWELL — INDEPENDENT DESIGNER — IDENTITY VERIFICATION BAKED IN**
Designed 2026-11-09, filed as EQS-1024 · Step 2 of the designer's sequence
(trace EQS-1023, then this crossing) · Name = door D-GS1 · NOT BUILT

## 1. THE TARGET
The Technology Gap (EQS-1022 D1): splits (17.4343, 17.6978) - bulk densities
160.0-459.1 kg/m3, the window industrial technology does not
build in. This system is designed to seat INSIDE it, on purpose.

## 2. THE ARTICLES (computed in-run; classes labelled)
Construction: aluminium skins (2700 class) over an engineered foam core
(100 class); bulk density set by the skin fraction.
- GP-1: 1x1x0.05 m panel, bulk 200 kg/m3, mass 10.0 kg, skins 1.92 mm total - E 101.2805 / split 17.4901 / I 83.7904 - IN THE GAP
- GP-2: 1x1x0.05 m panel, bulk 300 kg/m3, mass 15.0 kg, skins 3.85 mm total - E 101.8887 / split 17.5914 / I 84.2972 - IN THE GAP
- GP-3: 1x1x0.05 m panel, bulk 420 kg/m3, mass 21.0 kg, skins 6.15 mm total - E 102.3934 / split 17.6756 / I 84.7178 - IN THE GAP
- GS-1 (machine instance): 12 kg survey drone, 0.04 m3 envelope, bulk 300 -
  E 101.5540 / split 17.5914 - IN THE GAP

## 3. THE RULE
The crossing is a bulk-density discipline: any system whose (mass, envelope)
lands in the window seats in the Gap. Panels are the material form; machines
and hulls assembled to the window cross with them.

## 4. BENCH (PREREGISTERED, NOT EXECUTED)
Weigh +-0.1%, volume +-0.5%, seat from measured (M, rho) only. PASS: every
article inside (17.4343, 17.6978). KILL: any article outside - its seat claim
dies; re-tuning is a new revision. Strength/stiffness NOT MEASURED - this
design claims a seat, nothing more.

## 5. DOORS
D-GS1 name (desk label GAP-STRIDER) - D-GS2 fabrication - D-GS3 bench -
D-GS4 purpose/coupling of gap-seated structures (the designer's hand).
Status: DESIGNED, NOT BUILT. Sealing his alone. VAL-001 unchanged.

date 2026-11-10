@@ -1,0 +1,34 @@
+# GAP-STRIDER - A SYSTEM DESIGNED TO SEAT INSIDE THE TECHNOLOGY GAP (desk label)
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Designed 2026-11-09, filed as EQS-1024 · Step 2 of the designer's sequence
+(trace EQS-1023, then this crossing) · Name = door D-GS1 · NOT BUILT
+
+## 1. THE TARGET
+The Technology Gap (EQS-1022 D1): splits (17.4343, 17.6978) - bulk densities
+160.0-459.1 kg/m3, the window industrial technology does not
+build in. This system is designed to seat INSIDE it, on purpose.
+
+## 2. THE ARTICLES (computed in-run; classes labelled)
+Construction: aluminium skins (2700 class) over an engineered foam core
+(100 class); bulk density set by the skin fraction.
+- GP-1: 1x1x0.05 m panel, bulk 200 kg/m3, mass 10.0 kg, skins 1.92 mm total - E 101.2805 / split 17.4901 / I 83.7904 - IN THE GAP
+- GP-2: 1x1x0.05 m panel, bulk 300 kg/m3, mass 15.0 kg, skins 3.85 mm total - E 101.8887 / split 17.5914 / I 84.2972 - IN THE GAP
+- GP-3: 1x1x0.05 m panel, bulk 420 kg/m3, mass 21.0 kg, skins 6.15 mm total - E 102.3934 / split 17.6756 / I 84.7178 - IN THE GAP
+- GS-1 (machine instance): 12 kg survey drone, 0.04 m3 envelope, bulk 300 -
+  E 101.5540 / split 17.5914 - IN THE GAP
+
+## 3. THE RULE
+The crossing is a bulk-density discipline: any system whose (mass, envelope)
+lands in the window seats in the Gap. Panels are the material form; machines
+and hulls assembled to the window cross with them.
+
+## 4. BENCH (PREREGISTERED, NOT EXECUTED)
+Weigh +-0.1%, volume +-0.5%, seat from measured (M, rho) only. PASS: every
+article inside (17.4343, 17.6978). KILL: any article outside - its seat claim
+dies; re-tuning is a new revision. Strength/stiffness NOT MEASURED - this
+design claims a seat, nothing more.
+
+## 5. DOORS
+D-GS1 name (desk label GAP-STRIDER) - D-GS2 fabrication - D-GS3 bench -
+D-GS4 purpose/coupling of gap-seated structures (the designer's hand).
+Status: DESIGNED, NOT BUILT. Sealing his alone. VAL-001 unchanged.

@@ -1,0 +1,106 @@
+{
+  "record": "EQS-1036",
+  "title": "PULSE-INFRA - infrastructure designed by the Blackwell Planetary Pulse Chip (desk label; name door D-PI1)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~10:46 CST: \"So lets see if it design infrastructure\" - the EQS-1033 chip used as a design instrument: each articles fate chosen at the drawing board",
+  "design_doc": {
+    "file": "~/workspace/pulsechip/PULSE-INFRA-DESIGN.md",
+    "sha256": "aa2440e77f333adcbee619ad19f9a0d5b60b79e41567a3bb2b0b2b2ce08f26b2"
+  },
+  "discipline": "specify (M, bulk density) through the chip first; the fate classes are SPENT (in shell, no pending pulse), PENDING (a crossing on the remaining clock, its position set by density), NONE (no crossing at any epoch)",
+  "windows_kg_m3": {
+    "shell_hold": [
+      500.1,
+      15483.94596239886
+    ],
+    "pending_entry": [
+      342.56554847238635,
+      500.0956912005611
+    ],
+    "pending_exit": [
+      15483.94596239886,
+      22604.300675034698
+    ],
+    "gap_hold_at_or_below": 342.56554847238635
+  },
+  "articles": [
+    {
+      "article": "PI-A ANCHOR FOUNDATION",
+      "mass_kg": 19200.0,
+      "bulk": 4800.0,
+      "E": 112.62060523323098,
+      "split": 18.284592933595984,
+      "class": "SPENT (in shell)",
+      "future": []
+    },
+    {
+      "article": "PI-B1 PENDING PANEL (late crossing)",
+      "mass_kg": 960.0,
+      "bulk": 480.0,
+      "E": 108.1270068229,
+      "split": 17.708946660347472,
+      "class": "PENDING",
+      "future": [
+        [
+          "crystal shell floor",
+          -0.044470757803698024
+        ]
+      ]
+    },
+    {
+      "article": "PI-B2 PENDING PANEL (early crossing)",
+      "mass_kg": 700.0,
+      "bulk": 350.0,
+      "E": 107.65322739877229,
+      "split": 17.629983422992854,
+      "class": "PENDING",
+      "future": [
+        [
+          "crystal shell floor",
+          -0.6386219618124838
+        ]
+      ]
+    },
+    {
+      "article": "PI-C GAP-HOLD HABITAT SEGMENT",
+      "mass_kg": 3000.0,
+      "bulk": 300.0,
+      "E": 109.83615824768255,
+      "split": 17.59144575303604,
+      "class": "NONE (holds below shell)",
+      "future": []
+    },
+    {
+      "article": "PI-D TERMINAL VAULT",
+      "mass_kg": 7800.0,
+      "bulk": 7800.0,
+      "E": 111.2694254152237,
+      "split": 18.40596988754141,
+      "class": "SPENT (in shell)",
+      "future": []
+    }
+  ],
+  "headline": "one panel design at two bulks (480 vs 350) takes two different fates - entry at z -0.0445 vs -0.6386: the crossing position on the remaining clock is a design variable, set by 130 kg/m3 of bulk",
+  "bench": "PREREGISTERED in the design doc, NOT EXECUTED: weigh +-0.1%, volume +-0.5%, seat from measured (M, rho) only, windows hidden until the audit is written; KILL = any article measured outside its window. Strength/weathering/code compliance NOT claimed, NOT MEASURED - the design claims seats and fates only",
+  "doors": {
+    "D-PI1": "name - his word",
+    "D-PI2": "fabrication - NOT BUILT",
+    "D-PI3": "bench execution - at his word",
+    "D-PI4": "programme scope - his hand"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22"
+  },
+  "payload_sha256": "d3fc183efadd858629205b1259c8566a2fb21cc253b551b0d016ffbf8dc69a7d",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "record": "EQS-1008",
+  "title": "VIDEO DOSSIER - STEPHENSON 2-18: THE ENTIRE STAR, BLUEPRINTED (labels corrected against the filed records)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers order 2026-11-09 ~18:21 CST - generate it right (his uploaded render carried two label faults: the 1e-5 Msun/yr wind rate inside L5s box, where it belongs to L6; and a loose scale line). This film is generated from the filed run files with the corrections in: L5 = the emitting skin only; L6 WIND carries the rate and its priced year; the scale is drawn true (2,150 Rsun = 10.0 AU; orbits at one scale)",
+  "film": {
+    "file": "~/workspace/your_files/blackwell-st2-blueprint-dossier-2026-11-09.mp4",
+    "sha256": "54036eeb23c70f2ed2a4e9e5599b8258d71be32cc5e45b9be677da6790ada137",
+    "duration_s": 50.0,
+    "frames": 1500,
+    "fps": 30,
+    "resolution": "1280x720",
+    "phone_safe_verified": "H.264 High, level 4.0, yuv420p, silent AAC, +faststart; identity on every frame and in MP4 metadata; frame grabs verified (layers scene 15 s, scale scene 37 s)",
+    "in_render_crypto": {
+      "manifest": {
+        "film": "STEPHENSON 2-18 - THE ENTIRE STAR, BLUEPRINTED",
+        "record": "EQS-1008",
+        "frames": 1500,
+        "fps": 30,
+        "E_star": 207.302298066446,
+        "payload_refs": [
+          "EQS-1001 a78464b0",
+          "EQS-1006 12b03608",
+          "EQS-1007 cfdfa962"
+        ],
+        "identity": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN"
+      },
+      "ciphertext_sha256": "88c8c045ab0c9a40c9add7b3b1ee2e317946a206b1fae97aa24590d4792206d6",
+      "roundtrip_byte_exact": true
+    }
+  },
+  "scenes": "title / six layers priced / the energy plant (burn-through bar) / the scale drawn true / one address + DM3",
+  "statuses": {
+    "posting": "the designers hand - NOT posted by this desk",
+    "music_note": "silent track; his standing preference for film posts is instrumentals",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "2384689e0945224a9909aef035eb46f6b4c7cd84b9f2fe44fd526a3db9520bde",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

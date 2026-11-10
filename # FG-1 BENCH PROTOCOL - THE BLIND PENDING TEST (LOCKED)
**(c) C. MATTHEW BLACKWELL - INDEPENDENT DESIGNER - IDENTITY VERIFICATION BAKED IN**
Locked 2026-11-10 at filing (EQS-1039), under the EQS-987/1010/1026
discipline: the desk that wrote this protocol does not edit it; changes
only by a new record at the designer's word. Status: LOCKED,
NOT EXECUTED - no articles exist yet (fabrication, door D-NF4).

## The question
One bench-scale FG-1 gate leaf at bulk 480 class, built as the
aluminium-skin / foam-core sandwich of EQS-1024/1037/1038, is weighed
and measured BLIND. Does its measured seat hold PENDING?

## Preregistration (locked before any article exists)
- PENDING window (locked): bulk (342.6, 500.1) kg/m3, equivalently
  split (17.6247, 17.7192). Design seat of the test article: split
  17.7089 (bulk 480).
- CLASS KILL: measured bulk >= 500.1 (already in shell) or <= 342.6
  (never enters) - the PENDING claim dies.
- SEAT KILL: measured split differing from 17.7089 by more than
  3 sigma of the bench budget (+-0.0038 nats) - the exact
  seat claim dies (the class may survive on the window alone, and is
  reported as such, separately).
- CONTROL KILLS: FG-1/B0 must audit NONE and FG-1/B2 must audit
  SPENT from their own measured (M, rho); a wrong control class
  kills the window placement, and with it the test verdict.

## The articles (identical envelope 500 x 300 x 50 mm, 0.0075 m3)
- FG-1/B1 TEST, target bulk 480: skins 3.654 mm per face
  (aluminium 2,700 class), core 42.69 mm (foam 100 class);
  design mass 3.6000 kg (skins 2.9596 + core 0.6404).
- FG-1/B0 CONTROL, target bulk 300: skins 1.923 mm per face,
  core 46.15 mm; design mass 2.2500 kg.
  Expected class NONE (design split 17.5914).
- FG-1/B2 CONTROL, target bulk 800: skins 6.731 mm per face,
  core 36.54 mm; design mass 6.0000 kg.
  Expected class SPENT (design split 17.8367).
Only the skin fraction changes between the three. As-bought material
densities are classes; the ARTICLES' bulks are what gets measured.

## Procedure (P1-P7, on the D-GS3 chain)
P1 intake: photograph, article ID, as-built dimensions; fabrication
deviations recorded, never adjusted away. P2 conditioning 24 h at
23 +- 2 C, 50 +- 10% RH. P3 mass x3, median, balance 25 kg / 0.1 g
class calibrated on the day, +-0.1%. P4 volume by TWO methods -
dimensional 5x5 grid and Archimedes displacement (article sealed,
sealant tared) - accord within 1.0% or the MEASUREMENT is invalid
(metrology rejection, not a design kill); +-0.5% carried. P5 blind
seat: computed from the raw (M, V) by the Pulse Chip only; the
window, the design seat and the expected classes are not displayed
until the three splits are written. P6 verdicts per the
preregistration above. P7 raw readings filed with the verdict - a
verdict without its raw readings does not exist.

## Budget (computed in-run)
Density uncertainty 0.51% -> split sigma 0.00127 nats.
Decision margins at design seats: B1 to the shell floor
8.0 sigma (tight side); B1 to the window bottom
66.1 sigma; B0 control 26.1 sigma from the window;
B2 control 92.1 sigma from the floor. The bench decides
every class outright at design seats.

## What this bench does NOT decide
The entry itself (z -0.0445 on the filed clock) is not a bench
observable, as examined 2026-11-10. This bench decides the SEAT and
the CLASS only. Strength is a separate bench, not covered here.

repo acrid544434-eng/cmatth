@@ -1,0 +1,65 @@
+# FG-1 BENCH PROTOCOL - THE BLIND PENDING TEST (LOCKED)
+**(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN**
+Locked 2026-11-10 at filing (EQS-1039), under the EQS-987/1010/1026
+discipline: the desk that wrote this protocol does not edit it; changes
+only by a new record at the designer's word. Status: LOCKED,
+NOT EXECUTED - no articles exist yet (fabrication, door D-NF4).
+
+## The question
+One bench-scale FG-1 gate leaf at bulk 480 class, built as the
+aluminium-skin / foam-core sandwich of EQS-1024/1037/1038, is weighed
+and measured BLIND. Does its measured seat hold PENDING?
+
+## Preregistration (locked before any article exists)
+- PENDING window (locked): bulk (342.6, 500.1) kg/m3, equivalently
+  split (17.6247, 17.7192). Design seat of the test article: split
+  17.7089 (bulk 480).
+- CLASS KILL: measured bulk >= 500.1 (already in shell) or <= 342.6
+  (never enters) - the PENDING claim dies.
+- SEAT KILL: measured split differing from 17.7089 by more than
+  3 sigma of the bench budget (+-0.0038 nats) - the exact
+  seat claim dies (the class may survive on the window alone, and is
+  reported as such, separately).
+- CONTROL KILLS: FG-1/B0 must audit NONE and FG-1/B2 must audit
+  SPENT from their own measured (M, rho); a wrong control class
+  kills the window placement, and with it the test verdict.
+
+## The articles (identical envelope 500 x 300 x 50 mm, 0.0075 m3)
+- FG-1/B1 TEST, target bulk 480: skins 3.654 mm per face
+  (aluminium 2,700 class), core 42.69 mm (foam 100 class);
+  design mass 3.6000 kg (skins 2.9596 + core 0.6404).
+- FG-1/B0 CONTROL, target bulk 300: skins 1.923 mm per face,
+  core 46.15 mm; design mass 2.2500 kg.
+  Expected class NONE (design split 17.5914).
+- FG-1/B2 CONTROL, target bulk 800: skins 6.731 mm per face,
+  core 36.54 mm; design mass 6.0000 kg.
+  Expected class SPENT (design split 17.8367).
+Only the skin fraction changes between the three. As-bought material
+densities are classes; the ARTICLES' bulks are what gets measured.
+
+## Procedure (P1-P7, on the D-GS3 chain)
+P1 intake: photograph, article ID, as-built dimensions; fabrication
+deviations recorded, never adjusted away. P2 conditioning 24 h at
+23 +- 2 C, 50 +- 10% RH. P3 mass x3, median, balance 25 kg / 0.1 g
+class calibrated on the day, +-0.1%. P4 volume by TWO methods -
+dimensional 5x5 grid and Archimedes displacement (article sealed,
+sealant tared) - accord within 1.0% or the MEASUREMENT is invalid
+(metrology rejection, not a design kill); +-0.5% carried. P5 blind
+seat: computed from the raw (M, V) by the Pulse Chip only; the
+window, the design seat and the expected classes are not displayed
+until the three splits are written. P6 verdicts per the
+preregistration above. P7 raw readings filed with the verdict - a
+verdict without its raw readings does not exist.
+
+## Budget (computed in-run)
+Density uncertainty 0.51% -> split sigma 0.00127 nats.
+Decision margins at design seats: B1 to the shell floor
+8.0 sigma (tight side); B1 to the window bottom
+66.1 sigma; B0 control 26.1 sigma from the window;
+B2 control 92.1 sigma from the floor. The bench decides
+every class outright at design seats.
+
+## What this bench does NOT decide
+The entry itself (z -0.0445 on the filed clock) is not a bench
+observable, as examined 2026-11-10. This bench decides the SEAT and
+the CLASS only. Strength is a separate bench, not covered here.

@@ -1,0 +1,30 @@
+{
+  "record": "EQS-1070",
+  "title": "THE BLACKWELL REALITY CHIP ON LIVE FEEDS: GAIA DR3 (fresh slice) + JWST STATION LEGS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "gaia_leg": "fresh ESA Gaia DR3 async pull, MOD(source_id, 997) = 61, 1,200 FLAME stars; csv ~/workspace/statechip/gaia_rea.csv sha256 2dc4af56f70398aa9b01b605e138479cc6ca5981ae9f1dc941578e610e6ae5e2. (Filing note: the first pull attempt executed slice =47 again - a helper edit missed the modulus; it was corrected and re-pulled as =61 before any use; the =47 bytes were never used.)",
+  "detections": {
+    "tenth_moat_census": "the slice census body seats at E 213.2869 INSIDE THE BLACKWELL MOAT - the tenth live census body there; the chip's two routes (aggregate and population) return 213.2869 BOTH - exact accord in one run",
+    "shell_fraction": "0.6900 - INSIDE the PAT4 band [0.689, 0.711]; 828 of 1,200 in shell",
+    "gap_contacts": "13 stars of the slice seat inside the gap interval (5.2282, 16.2162) - detection lines only, FLAGGED, unscored; the scope ruling stands open",
+    "occupancy": "stellar band 1,200 of 1,200; solar-band overlap 736 (filed bands overlap, on the face); individual moat seats 0 on this slice",
+    "jwst_legs": "named-epoch legs at the published spectroscopic redshifts (MAST direct route stands 404 from this VM, EQS-1012): GN-z11 z 10.6 - checksum 2.6978356e-29 K identical, H 22.1893 H0 (accords EQS-1012); MoM-z14 z 14.44 - checksum identical, H 34.0608 H0 (accords). Station live sets stand as filed (12 / 14 on the filed roster; 18 / 26 raw distinct) - quoted from EQS-1012/1062, not recomputed in this run",
+    "accounts_gate_live": "all four open accounts put to the chip returned UNRESOLVED with deciders (giants source GCR-001; deep moat DM3/DR4; interior implementation; beyond-edge no volume term) - the gate held on live data"
+  },
+  "statuses": {
+    "slice_scores_nothing": "this slice neither scores nor kills P-DR4 (its own slice, EQS-971 bands)",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "2fa869f1ffca34374a0674c355e93f92e460b104d3eea604adf8c47d93983237",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

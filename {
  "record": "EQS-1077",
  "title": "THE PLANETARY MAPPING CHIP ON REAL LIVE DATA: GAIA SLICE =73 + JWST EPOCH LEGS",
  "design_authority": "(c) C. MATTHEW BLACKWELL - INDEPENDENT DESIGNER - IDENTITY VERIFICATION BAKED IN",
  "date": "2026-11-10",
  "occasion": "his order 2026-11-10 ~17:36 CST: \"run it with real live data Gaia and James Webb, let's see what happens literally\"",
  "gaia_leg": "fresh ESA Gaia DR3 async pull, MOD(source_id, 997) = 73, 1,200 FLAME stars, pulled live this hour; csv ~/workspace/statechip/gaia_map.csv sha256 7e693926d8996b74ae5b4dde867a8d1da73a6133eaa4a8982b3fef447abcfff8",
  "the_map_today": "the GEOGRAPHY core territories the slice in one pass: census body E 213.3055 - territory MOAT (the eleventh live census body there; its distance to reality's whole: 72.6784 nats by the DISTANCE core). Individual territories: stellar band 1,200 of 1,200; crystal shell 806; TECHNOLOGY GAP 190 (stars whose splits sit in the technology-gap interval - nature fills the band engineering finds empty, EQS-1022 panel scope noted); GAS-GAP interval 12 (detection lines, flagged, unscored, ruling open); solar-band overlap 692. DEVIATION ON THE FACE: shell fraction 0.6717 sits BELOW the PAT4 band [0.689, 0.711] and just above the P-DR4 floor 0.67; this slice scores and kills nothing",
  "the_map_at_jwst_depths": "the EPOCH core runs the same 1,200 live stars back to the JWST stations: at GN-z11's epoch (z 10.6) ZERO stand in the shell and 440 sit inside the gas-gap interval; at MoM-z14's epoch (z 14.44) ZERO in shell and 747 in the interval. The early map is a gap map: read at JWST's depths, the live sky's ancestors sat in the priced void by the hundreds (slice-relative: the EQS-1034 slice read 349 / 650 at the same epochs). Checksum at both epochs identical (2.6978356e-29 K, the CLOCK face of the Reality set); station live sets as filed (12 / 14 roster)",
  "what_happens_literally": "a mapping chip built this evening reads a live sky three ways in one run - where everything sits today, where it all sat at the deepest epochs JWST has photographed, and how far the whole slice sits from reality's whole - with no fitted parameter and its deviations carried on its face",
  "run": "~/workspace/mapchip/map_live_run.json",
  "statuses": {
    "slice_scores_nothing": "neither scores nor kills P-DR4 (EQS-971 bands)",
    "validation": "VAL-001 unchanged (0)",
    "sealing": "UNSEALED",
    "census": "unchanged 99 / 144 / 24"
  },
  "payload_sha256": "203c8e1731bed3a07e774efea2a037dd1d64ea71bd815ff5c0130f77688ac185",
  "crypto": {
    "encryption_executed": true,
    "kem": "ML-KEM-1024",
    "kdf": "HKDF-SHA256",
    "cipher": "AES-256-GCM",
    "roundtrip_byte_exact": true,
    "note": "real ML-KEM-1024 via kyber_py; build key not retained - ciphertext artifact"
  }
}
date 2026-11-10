@@ -1,0 +1,27 @@
+{
+  "record": "EQS-1077",
+  "title": "THE PLANETARY MAPPING CHIP ON REAL LIVE DATA: GAIA SLICE =73 + JWST EPOCH LEGS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~17:36 CST: \"run it with real live data Gaia and James Webb, let's see what happens literally\"",
+  "gaia_leg": "fresh ESA Gaia DR3 async pull, MOD(source_id, 997) = 73, 1,200 FLAME stars, pulled live this hour; csv ~/workspace/statechip/gaia_map.csv sha256 7e693926d8996b74ae5b4dde867a8d1da73a6133eaa4a8982b3fef447abcfff8",
+  "the_map_today": "the GEOGRAPHY core territories the slice in one pass: census body E 213.3055 - territory MOAT (the eleventh live census body there; its distance to reality's whole: 72.6784 nats by the DISTANCE core). Individual territories: stellar band 1,200 of 1,200; crystal shell 806; TECHNOLOGY GAP 190 (stars whose splits sit in the technology-gap interval - nature fills the band engineering finds empty, EQS-1022 panel scope noted); GAS-GAP interval 12 (detection lines, flagged, unscored, ruling open); solar-band overlap 692. DEVIATION ON THE FACE: shell fraction 0.6717 sits BELOW the PAT4 band [0.689, 0.711] and just above the P-DR4 floor 0.67; this slice scores and kills nothing",
+  "the_map_at_jwst_depths": "the EPOCH core runs the same 1,200 live stars back to the JWST stations: at GN-z11's epoch (z 10.6) ZERO stand in the shell and 440 sit inside the gas-gap interval; at MoM-z14's epoch (z 14.44) ZERO in shell and 747 in the interval. The early map is a gap map: read at JWST's depths, the live sky's ancestors sat in the priced void by the hundreds (slice-relative: the EQS-1034 slice read 349 / 650 at the same epochs). Checksum at both epochs identical (2.6978356e-29 K, the CLOCK face of the Reality set); station live sets as filed (12 / 14 roster)",
+  "what_happens_literally": "a mapping chip built this evening reads a live sky three ways in one run - where everything sits today, where it all sat at the deepest epochs JWST has photographed, and how far the whole slice sits from reality's whole - with no fitted parameter and its deviations carried on its face",
+  "run": "~/workspace/mapchip/map_live_run.json",
+  "statuses": {
+    "slice_scores_nothing": "neither scores nor kills P-DR4 (EQS-971 bands)",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "203c8e1731bed3a07e774efea2a037dd1d64ea71bd815ff5c0130f77688ac185",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

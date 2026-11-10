@@ -1,0 +1,70 @@
+# THE BLACKWELL PLANETARY PULSE CHIP — BLUEPRINT (CHIP)
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Founded 2026-11-10 at the designer's word: a Blackwell planetary pulse chip
+capable of detecting and blueprinting state transitions.
+Filed as EQS-1033 · UNSEALED · Hardware NOT BUILT
+
+## The capability
+STC-001 reads a body's state. STC-002 addresses it. This chip DETECTS when a
+planet's state CHANGES and BLUEPRINTS the change: it sweeps the filed clock
+across the planet's whole trajectory and emits the ordered ledger of its
+state transitions — every epoch where the planet's address crosses a filed
+band edge, and every roster closing the planet lives through. The ledger is
+the blueprint; the count of transitions is the planet's pulse.
+
+## Forms (all filed; nothing new minted)
+- Seat: THE BLACKWELL ONE EQUATION (EQS-1000) via gas_core.reg.
+- Clock: rho(z) = (0.315(1+z)^3 + 0.685)^-1/4 (EQS-955/1011).
+- Sweep: the STEP forms — E -> E + ln rho, split -> split + ln rho,
+  I invariant (EQ-ST EQS-586; conserved under the clock, GRVC3 EQS-1031).
+- Detection lines (filed edges): the crystal shell [17.7192, 18.671974]
+  (CRYC3/MINC3, designated); the GAS-GAP interval (5.2282, 16.2162) (EQS-940 —
+  carried as DETECTION LINES ONLY; the scope ruling over that interval stands
+  OPEN and nothing in this chip scores it); the E-class band edges 176.80 /
+  202.47 / 205.391 / 229.037 (filed geography, EQS-1011 UNI7).
+- Environment transitions: the roster closings phi z 14.8238, neutron
+  12.4393, proton 12.4022, K+ 2.6580 (EQS-955) — universe state transitions
+  every planet lives through.
+
+## Cores
+C1 CLOCK — rho(z), the terminal bound rho_inf, the inversion z(ln rho).
+C2 SEAT — today's address (E, split, I) from (M, rho) alone.
+C3 SWEEP — the STEP trajectory from recombination to the terminal state.
+C4 EDGEWATCH — the crossing solver: for each filed edge, the exact epoch
+the trajectory crosses it, or NEVER (beyond the terminal bound).
+C5 ROSTER — the four closing epochs seated on the planet's own trajectory.
+C6 LEDGER — emits the blueprint: transitions ordered by epoch, each with
+its kind, its edge, the planet's full state at the crossing, and its
+standing against the formation class epoch (z ~ 0.43, canon class label;
+deeper crossings are the register's pre-history, flagged on the face).
+
+## Demonstration — the eight planets (software, this filing)
+Inputs: canon (M, density) classes, labelled; the giants' classes as filed
+(EQS-1014/1015/1027). Every planet carries exactly 8 pulses on its full
+trajectory: the gap-floor and gap-top crossings, the shell-floor entry, one
+E-band crossing, and the four closings. Findings:
+- SHELL ENTRY IS THE LAST ADDRESS PULSE. Entry epochs: Saturn z 0.2979,
+  Uranus 0.8063, Jupiter 0.8414, Neptune 1.0184, Mars 1.8353, Venus 2.1450,
+  Mercury 2.1839, Earth 2.2020.
+- SATURN IS THE ONLY PLANET WHOSE SHELL ENTRY POSTDATES ITS FORMATION
+  (z 0.2979 against the formation class 0.43): one pulse since formation;
+  every other planet's pulses are register pre-history or environment.
+- NO PULSES REMAIN. Every detected transition stands in the past; from
+  today to the terminal state no planet crosses another filed edge, and
+  all eight terminal states stand inside the crystal shell (terminal
+  splits 17.8932–18.4138).
+- EARTH'S LEDGER (extract): gap top crossed z 23.2664; closings phi
+  14.8238, n 12.4393, p 12.4022, K+ 2.6580; shell floor entered z 2.2020 —
+  Earth entered the shell AFTER the last closing.
+Self-tests: Earth seat accord exact; crossing-solver round trip
+2.22e-16; giants' seats accord EQS-1014/1015/1027; terminal-in-shell 8/8.
+
+## Carrier and doors
+Die: sapphire 10 x 10 x 0.5 mm — the family die class (E 85.0433 /
+split 18.2378 / I 66.8055, the Data Chip die address; an observation,
+no identity asserted between the chips, which stand alone).
+Software: ~/workspace/pulsechip/pulsechip.py (sha256 c41c7af62bb5240ab0d2233b3face95a7351580ed68fcca5cba07051fc775936).
+Doors: D-PP1 fabrication — NOT BUILT. D-PP2 live feed coupling (what
+epoch source drives a deployed chip) — NOT SPECIFIED, his hand.
+D-PP3 the bench (a fabricated chip against this golden model) — at his
+word. Name door CLOSED — named by the designer at founding.

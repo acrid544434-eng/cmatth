@@ -1,0 +1,52 @@
+{
+  "record": "EQS-1010",
+  "title": "D-ST2T1 PREREGISTERED BENCH SCAFFOLD - THE FALSIFIABLE-MECHANISM FRAME (DOOR HELD OPEN)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers ruling 2026-11-09 ~19:22 CST - the path to validated is one falsifiable mechanism, not more ledger entries - and his order to file the scaffold. The scaffold specifies the fills form and the scoring bench with kills LOCKED before any fill exists. It proposes NO mechanism and predicts NO pass",
+  "scaffold_file": "~/workspace/st2/D-ST2T1-BENCH-SCAFFOLD.md",
+  "scaffold_sha256": "09fed74cf40c7d5a01ebc67d2b45e51a0de542e08a3b0c4d26d92e076b796bbf",
+  "computed_references": {
+    "fused silica gram": {
+      "M_kg": 0.001,
+      "rho": 2200.0,
+      "E": 87.46497397773396,
+      "split": 18.089553294208592,
+      "I": 69.37542068352536
+    },
+    "tungsten gram": {
+      "M_kg": 0.001,
+      "rho": 19300.0,
+      "E": 87.46497397773396,
+      "split": 18.632465228095235,
+      "I": 68.83250874963872
+    },
+    "metrology": {
+      "mass_comparator_class": "1 microgram on 1 g = 1e-6 relative (stock metrology class, labelled)",
+      "E_precision_from_mass": 1.5E-6,
+      "reading": "E responds to mass at (3/2) dM/M: a 1 ug comparator resolves the address to +-1.5e-6 nats; density reads at 0.1 percent class resolve split to +-2.5e-4 nats. The ledgers kill (address invariance) is therefore resolvable by STOCK metrology with ~3 orders of margin - the bench does not wait on new instruments"
+    },
+    "note": "both grams share E exactly (mass alone): the register cannot tell silica from tungsten by address - only split separates them (ATM3/MIN1 discipline). The bench reads BOTH, so a fill that changes material state instead of location is caught by the split line"
+  },
+  "the_kill_locked": [
+    "K1 address non-invariance (blind recompute vs the EQS-1009 ledger)",
+    "K2 energy imbalance vs the metered draw",
+    "K3 effect absence at the stated size",
+    "K4 sham contamination"
+  ],
+  "statuses": {
+    "door": "D-ST2T1 OPEN - Q1..Q4 are the designers hand",
+    "validation": "VAL-001 unchanged (0); no bench has occurred",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "d2b991f34b5a39adf32bc060bccdee6ff1603930479dd6805a9eb1803ed3857a",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

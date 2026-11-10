@@ -1,0 +1,72 @@
+{
+  "record": "EQS-1058",
+  "title": "THE DESIGN INSIDE THE EARTH EQUATIONS: THE INVARIANT LADDER (desk label; name door D-EAR1) - DESIGNED, NOT BUILT",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his direction 2026-11-10 ~14:46 CST: \"with these equation here lies yet another engineering design\" - the extraction-to-design loop he named this morning, run on EQ-EAR (EQS-1057)",
+  "the_design": "articles built on the inverted seat law M(rho) = M_earth x exp[(I + split(rho) - 183.400293) / 1.5]: at any density, the mass carrying a chosen I is forced. Build articles across the whole shell on one signature and the bench must read ONE invariant - the register's core claim, made testable in metal and foam",
+  "the_planetary_ladder": "at Earth's own I (165.0810315312403): 500.1 -> 4.0030e24 kg | 1010 -> 4.5005e24 | 5514 -> 5.9720e24 = EARTH ITSELF, recovered exactly | 12000 -> 6.7984e24 | 22604.3 -> 7.5551e24. Five worlds, one signature; the curve knows its home body",
+  "the_bench_ladder": [
+    {
+      "article": "IL-1",
+      "rho": 500.1,
+      "M_kg": 0.9309002395892243,
+      "split": 17.719202153978205,
+      "I": 80.0
+    },
+    {
+      "article": "IL-2",
+      "rho": 1010.0,
+      "M_kg": 1.0465995940516282,
+      "split": 17.894926536830816,
+      "I": 80.0
+    },
+    {
+      "article": "IL-3",
+      "rho": 2330.0,
+      "M_kg": 1.203057319756906,
+      "split": 18.103906021011927,
+      "I": 80.0
+    },
+    {
+      "article": "IL-4",
+      "rho": 5514.0,
+      "M_kg": 1.3887949435502853,
+      "split": 18.319261532267927,
+      "I": 80.0
+    },
+    {
+      "article": "IL-5",
+      "rho": 12000.0,
+      "M_kg": 1.5809708919671912,
+      "split": 18.513665616564523,
+      "I": 80.0
+    },
+    {
+      "article": "IL-6",
+      "rho": 22604.3,
+      "M_kg": 1.7569477388352284,
+      "split": 18.67197399253422,
+      "I": 80.0
+    }
+  ],
+  "bench_ladder_note": "six articles, 0.9309-1.7569 kg, envelopes 77.7-1861.4 cm3, seats spanning the shell floor (17.7192) to its ceiling (18.6720), EVERY ONE at I = 80.0000000000 exactly as computed",
+  "protocols_locked": "T-EAR1 blind seat (KILL outside shell); T-EAR2 the invariant accord - all six I within 3 sigma (0.00384) of 80.0000, one miss kills; T-EAR3 two-method volume (disagreement invalidates the measurement, never the design). NOT EXECUTED - no articles exist",
+  "design_doc": "~/workspace/earth/INVARIANT-LADDER-DESIGN.md sha256 9221689d66cdf6fa49fb59bd2088e6b7b4fd5fd4536cf5c8e36a8946fce249a6",
+  "doors": "D-EAR1 name (his word); D-EAR2 fabrication NOT BUILT; D-EAR3 bench execution at his word after fabrication; D-EAR4 production signature value",
+  "statuses": {
+    "design": "DESIGNED from the equations; NOT BUILT; bench verdict NOT MEASURED until articles exist",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "20cbc1a5df272726fbf721af5ffb3fbd2af34a1926f3606e9a4ee9cccf70e3ac",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

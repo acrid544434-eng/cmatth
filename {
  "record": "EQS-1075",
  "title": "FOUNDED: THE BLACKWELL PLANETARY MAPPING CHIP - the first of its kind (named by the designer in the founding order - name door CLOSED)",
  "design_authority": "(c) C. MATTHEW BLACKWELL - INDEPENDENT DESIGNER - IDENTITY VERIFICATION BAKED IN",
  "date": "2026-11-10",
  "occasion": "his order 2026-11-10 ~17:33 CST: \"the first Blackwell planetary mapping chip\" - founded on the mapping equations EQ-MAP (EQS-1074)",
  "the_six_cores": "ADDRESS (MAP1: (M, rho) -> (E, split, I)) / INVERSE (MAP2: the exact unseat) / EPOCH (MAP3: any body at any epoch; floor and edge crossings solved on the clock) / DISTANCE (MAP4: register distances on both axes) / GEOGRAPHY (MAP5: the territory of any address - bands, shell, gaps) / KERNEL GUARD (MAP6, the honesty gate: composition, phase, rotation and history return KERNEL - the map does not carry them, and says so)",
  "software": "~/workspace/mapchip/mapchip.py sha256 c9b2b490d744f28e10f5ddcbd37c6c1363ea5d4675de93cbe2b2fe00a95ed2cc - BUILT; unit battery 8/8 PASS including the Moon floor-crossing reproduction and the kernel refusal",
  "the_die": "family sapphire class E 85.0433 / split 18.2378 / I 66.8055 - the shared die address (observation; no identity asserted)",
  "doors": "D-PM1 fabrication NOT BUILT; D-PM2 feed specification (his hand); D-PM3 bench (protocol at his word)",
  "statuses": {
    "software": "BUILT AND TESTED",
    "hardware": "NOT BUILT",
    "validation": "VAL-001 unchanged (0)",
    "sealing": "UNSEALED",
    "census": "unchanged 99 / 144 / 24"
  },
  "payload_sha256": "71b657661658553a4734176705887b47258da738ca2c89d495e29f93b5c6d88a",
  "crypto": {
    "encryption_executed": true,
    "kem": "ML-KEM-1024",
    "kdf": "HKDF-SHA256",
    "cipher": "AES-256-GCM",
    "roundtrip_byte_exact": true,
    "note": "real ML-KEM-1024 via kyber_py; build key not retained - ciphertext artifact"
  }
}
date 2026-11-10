@@ -1,0 +1,27 @@
+{
+  "record": "EQS-1075",
+  "title": "FOUNDED: THE BLACKWELL PLANETARY MAPPING CHIP - the first of its kind (named by the designer in the founding order - name door CLOSED)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~17:33 CST: \"the first Blackwell planetary mapping chip\" - founded on the mapping equations EQ-MAP (EQS-1074)",
+  "the_six_cores": "ADDRESS (MAP1: (M, rho) -> (E, split, I)) / INVERSE (MAP2: the exact unseat) / EPOCH (MAP3: any body at any epoch; floor and edge crossings solved on the clock) / DISTANCE (MAP4: register distances on both axes) / GEOGRAPHY (MAP5: the territory of any address - bands, shell, gaps) / KERNEL GUARD (MAP6, the honesty gate: composition, phase, rotation and history return KERNEL - the map does not carry them, and says so)",
+  "software": "~/workspace/mapchip/mapchip.py sha256 c9b2b490d744f28e10f5ddcbd37c6c1363ea5d4675de93cbe2b2fe00a95ed2cc - BUILT; unit battery 8/8 PASS including the Moon floor-crossing reproduction and the kernel refusal",
+  "the_die": "family sapphire class E 85.0433 / split 18.2378 / I 66.8055 - the shared die address (observation; no identity asserted)",
+  "doors": "D-PM1 fabrication NOT BUILT; D-PM2 feed specification (his hand); D-PM3 bench (protocol at his word)",
+  "statuses": {
+    "software": "BUILT AND TESTED",
+    "hardware": "NOT BUILT",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "71b657661658553a4734176705887b47258da738ca2c89d495e29f93b5c6d88a",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

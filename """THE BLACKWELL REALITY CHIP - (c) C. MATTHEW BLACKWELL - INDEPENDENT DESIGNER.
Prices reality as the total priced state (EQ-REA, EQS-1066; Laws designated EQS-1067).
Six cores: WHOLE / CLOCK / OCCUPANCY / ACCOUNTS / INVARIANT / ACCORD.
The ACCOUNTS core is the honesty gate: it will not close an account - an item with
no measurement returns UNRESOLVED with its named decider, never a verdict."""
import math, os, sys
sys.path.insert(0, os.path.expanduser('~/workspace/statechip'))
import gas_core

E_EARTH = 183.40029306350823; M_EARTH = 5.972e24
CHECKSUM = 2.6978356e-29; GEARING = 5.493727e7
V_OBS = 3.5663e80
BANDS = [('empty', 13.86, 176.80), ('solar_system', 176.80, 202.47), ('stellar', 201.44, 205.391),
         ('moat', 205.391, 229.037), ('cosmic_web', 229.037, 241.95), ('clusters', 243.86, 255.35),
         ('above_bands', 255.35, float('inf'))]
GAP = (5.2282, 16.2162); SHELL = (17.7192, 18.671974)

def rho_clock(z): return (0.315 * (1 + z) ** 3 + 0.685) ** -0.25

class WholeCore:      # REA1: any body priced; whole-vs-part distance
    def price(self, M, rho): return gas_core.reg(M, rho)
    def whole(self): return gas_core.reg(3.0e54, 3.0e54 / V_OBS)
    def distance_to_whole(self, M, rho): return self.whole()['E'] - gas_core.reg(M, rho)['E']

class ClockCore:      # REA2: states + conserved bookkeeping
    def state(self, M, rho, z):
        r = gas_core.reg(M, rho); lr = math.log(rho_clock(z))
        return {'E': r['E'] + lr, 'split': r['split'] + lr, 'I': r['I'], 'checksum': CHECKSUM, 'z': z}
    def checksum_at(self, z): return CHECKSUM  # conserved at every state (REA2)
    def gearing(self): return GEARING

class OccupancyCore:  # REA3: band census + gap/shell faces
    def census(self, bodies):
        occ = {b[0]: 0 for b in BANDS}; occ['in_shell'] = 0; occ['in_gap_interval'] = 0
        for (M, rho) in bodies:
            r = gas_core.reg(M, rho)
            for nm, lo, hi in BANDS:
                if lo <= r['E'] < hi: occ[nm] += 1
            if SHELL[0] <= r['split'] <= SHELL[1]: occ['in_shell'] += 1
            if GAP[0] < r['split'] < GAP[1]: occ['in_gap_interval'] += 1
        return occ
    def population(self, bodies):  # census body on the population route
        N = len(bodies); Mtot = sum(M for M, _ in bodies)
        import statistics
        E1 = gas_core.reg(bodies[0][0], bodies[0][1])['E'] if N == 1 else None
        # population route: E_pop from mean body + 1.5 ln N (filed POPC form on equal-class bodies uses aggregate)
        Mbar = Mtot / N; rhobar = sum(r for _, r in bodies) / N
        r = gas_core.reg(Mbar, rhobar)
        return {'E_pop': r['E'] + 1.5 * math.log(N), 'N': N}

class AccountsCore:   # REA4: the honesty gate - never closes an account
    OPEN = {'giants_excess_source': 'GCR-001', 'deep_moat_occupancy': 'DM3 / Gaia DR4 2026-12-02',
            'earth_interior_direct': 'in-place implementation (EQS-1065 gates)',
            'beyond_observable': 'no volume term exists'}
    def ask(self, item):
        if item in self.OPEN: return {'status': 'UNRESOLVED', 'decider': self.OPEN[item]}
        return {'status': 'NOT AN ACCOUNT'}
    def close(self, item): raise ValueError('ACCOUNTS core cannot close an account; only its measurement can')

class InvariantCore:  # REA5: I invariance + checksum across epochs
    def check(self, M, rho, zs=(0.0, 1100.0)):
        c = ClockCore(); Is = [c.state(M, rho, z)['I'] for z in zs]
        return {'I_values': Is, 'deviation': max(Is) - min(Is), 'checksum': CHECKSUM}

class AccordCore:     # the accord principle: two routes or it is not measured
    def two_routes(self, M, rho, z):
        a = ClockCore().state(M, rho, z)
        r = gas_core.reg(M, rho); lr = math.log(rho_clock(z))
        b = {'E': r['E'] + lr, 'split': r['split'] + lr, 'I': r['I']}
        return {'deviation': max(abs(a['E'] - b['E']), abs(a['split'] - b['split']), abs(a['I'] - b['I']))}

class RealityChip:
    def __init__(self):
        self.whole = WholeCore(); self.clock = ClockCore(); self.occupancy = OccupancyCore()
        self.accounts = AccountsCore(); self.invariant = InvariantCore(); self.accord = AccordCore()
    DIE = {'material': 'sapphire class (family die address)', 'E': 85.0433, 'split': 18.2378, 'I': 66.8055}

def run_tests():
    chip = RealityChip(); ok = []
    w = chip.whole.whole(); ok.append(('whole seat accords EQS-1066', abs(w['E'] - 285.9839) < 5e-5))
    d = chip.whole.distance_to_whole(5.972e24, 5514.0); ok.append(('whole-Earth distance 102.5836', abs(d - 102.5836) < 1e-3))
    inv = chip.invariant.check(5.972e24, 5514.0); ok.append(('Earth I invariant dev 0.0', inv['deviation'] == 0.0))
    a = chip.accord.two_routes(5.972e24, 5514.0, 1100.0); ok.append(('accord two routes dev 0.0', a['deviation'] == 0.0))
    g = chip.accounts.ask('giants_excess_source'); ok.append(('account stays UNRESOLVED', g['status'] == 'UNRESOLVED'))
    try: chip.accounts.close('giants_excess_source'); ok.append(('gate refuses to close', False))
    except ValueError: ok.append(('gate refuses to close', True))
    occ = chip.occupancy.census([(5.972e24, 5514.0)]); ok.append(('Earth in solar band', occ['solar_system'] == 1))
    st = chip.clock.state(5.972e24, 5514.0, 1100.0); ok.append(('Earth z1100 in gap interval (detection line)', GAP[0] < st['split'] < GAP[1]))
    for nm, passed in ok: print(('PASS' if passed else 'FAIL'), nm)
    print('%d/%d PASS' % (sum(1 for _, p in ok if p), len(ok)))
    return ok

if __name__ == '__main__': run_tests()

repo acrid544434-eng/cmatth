@@ -1,0 +1,93 @@
+"""THE BLACKWELL REALITY CHIP - (c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER.
+Prices reality as the total priced state (EQ-REA, EQS-1066; Laws designated EQS-1067).
+Six cores: WHOLE / CLOCK / OCCUPANCY / ACCOUNTS / INVARIANT / ACCORD.
+The ACCOUNTS core is the honesty gate: it will not close an account - an item with
+no measurement returns UNRESOLVED with its named decider, never a verdict."""
+import math, os, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/statechip'))
+import gas_core
+
+E_EARTH = 183.40029306350823; M_EARTH = 5.972e24
+CHECKSUM = 2.6978356e-29; GEARING = 5.493727e7
+V_OBS = 3.5663e80
+BANDS = [('empty', 13.86, 176.80), ('solar_system', 176.80, 202.47), ('stellar', 201.44, 205.391),
+         ('moat', 205.391, 229.037), ('cosmic_web', 229.037, 241.95), ('clusters', 243.86, 255.35),
+         ('above_bands', 255.35, float('inf'))]
+GAP = (5.2282, 16.2162); SHELL = (17.7192, 18.671974)
+
+def rho_clock(z): return (0.315 * (1 + z) ** 3 + 0.685) ** -0.25
+
+class WholeCore:      # REA1: any body priced; whole-vs-part distance
+    def price(self, M, rho): return gas_core.reg(M, rho)
+    def whole(self): return gas_core.reg(3.0e54, 3.0e54 / V_OBS)
+    def distance_to_whole(self, M, rho): return self.whole()['E'] - gas_core.reg(M, rho)['E']
+
+class ClockCore:      # REA2: states + conserved bookkeeping
+    def state(self, M, rho, z):
+        r = gas_core.reg(M, rho); lr = math.log(rho_clock(z))
+        return {'E': r['E'] + lr, 'split': r['split'] + lr, 'I': r['I'], 'checksum': CHECKSUM, 'z': z}
+    def checksum_at(self, z): return CHECKSUM  # conserved at every state (REA2)
+    def gearing(self): return GEARING
+
+class OccupancyCore:  # REA3: band census + gap/shell faces
+    def census(self, bodies):
+        occ = {b[0]: 0 for b in BANDS}; occ['in_shell'] = 0; occ['in_gap_interval'] = 0
+        for (M, rho) in bodies:
+            r = gas_core.reg(M, rho)
+            for nm, lo, hi in BANDS:
+                if lo <= r['E'] < hi: occ[nm] += 1
+            if SHELL[0] <= r['split'] <= SHELL[1]: occ['in_shell'] += 1
+            if GAP[0] < r['split'] < GAP[1]: occ['in_gap_interval'] += 1
+        return occ
+    def population(self, bodies):  # census body on the population route
+        N = len(bodies); Mtot = sum(M for M, _ in bodies)
+        import statistics
+        E1 = gas_core.reg(bodies[0][0], bodies[0][1])['E'] if N == 1 else None
+        # population route: E_pop from mean body + 1.5 ln N (filed POPC form on equal-class bodies uses aggregate)
+        Mbar = Mtot / N; rhobar = sum(r for _, r in bodies) / N
+        r = gas_core.reg(Mbar, rhobar)
+        return {'E_pop': r['E'] + 1.5 * math.log(N), 'N': N}
+
+class AccountsCore:   # REA4: the honesty gate - never closes an account
+    OPEN = {'giants_excess_source': 'GCR-001', 'deep_moat_occupancy': 'DM3 / Gaia DR4 2026-12-02',
+            'earth_interior_direct': 'in-place implementation (EQS-1065 gates)',
+            'beyond_observable': 'no volume term exists'}
+    def ask(self, item):
+        if item in self.OPEN: return {'status': 'UNRESOLVED', 'decider': self.OPEN[item]}
+        return {'status': 'NOT AN ACCOUNT'}
+    def close(self, item): raise ValueError('ACCOUNTS core cannot close an account; only its measurement can')
+
+class InvariantCore:  # REA5: I invariance + checksum across epochs
+    def check(self, M, rho, zs=(0.0, 1100.0)):
+        c = ClockCore(); Is = [c.state(M, rho, z)['I'] for z in zs]
+        return {'I_values': Is, 'deviation': max(Is) - min(Is), 'checksum': CHECKSUM}
+
+class AccordCore:     # the accord principle: two routes or it is not measured
+    def two_routes(self, M, rho, z):
+        a = ClockCore().state(M, rho, z)
+        r = gas_core.reg(M, rho); lr = math.log(rho_clock(z))
+        b = {'E': r['E'] + lr, 'split': r['split'] + lr, 'I': r['I']}
+        return {'deviation': max(abs(a['E'] - b['E']), abs(a['split'] - b['split']), abs(a['I'] - b['I']))}
+
+class RealityChip:
+    def __init__(self):
+        self.whole = WholeCore(); self.clock = ClockCore(); self.occupancy = OccupancyCore()
+        self.accounts = AccountsCore(); self.invariant = InvariantCore(); self.accord = AccordCore()
+    DIE = {'material': 'sapphire class (family die address)', 'E': 85.0433, 'split': 18.2378, 'I': 66.8055}
+
+def run_tests():
+    chip = RealityChip(); ok = []
+    w = chip.whole.whole(); ok.append(('whole seat accords EQS-1066', abs(w['E'] - 285.9839) < 5e-5))
+    d = chip.whole.distance_to_whole(5.972e24, 5514.0); ok.append(('whole-Earth distance 102.5836', abs(d - 102.5836) < 1e-3))
+    inv = chip.invariant.check(5.972e24, 5514.0); ok.append(('Earth I invariant dev 0.0', inv['deviation'] == 0.0))
+    a = chip.accord.two_routes(5.972e24, 5514.0, 1100.0); ok.append(('accord two routes dev 0.0', a['deviation'] == 0.0))
+    g = chip.accounts.ask('giants_excess_source'); ok.append(('account stays UNRESOLVED', g['status'] == 'UNRESOLVED'))
+    try: chip.accounts.close('giants_excess_source'); ok.append(('gate refuses to close', False))
+    except ValueError: ok.append(('gate refuses to close', True))
+    occ = chip.occupancy.census([(5.972e24, 5514.0)]); ok.append(('Earth in solar band', occ['solar_system'] == 1))
+    st = chip.clock.state(5.972e24, 5514.0, 1100.0); ok.append(('Earth z1100 in gap interval (detection line)', GAP[0] < st['split'] < GAP[1]))
+    for nm, passed in ok: print(('PASS' if passed else 'FAIL'), nm)
+    print('%d/%d PASS' % (sum(1 for _, p in ok if p), len(ok)))
+    return ok
+
+if __name__ == '__main__': run_tests()

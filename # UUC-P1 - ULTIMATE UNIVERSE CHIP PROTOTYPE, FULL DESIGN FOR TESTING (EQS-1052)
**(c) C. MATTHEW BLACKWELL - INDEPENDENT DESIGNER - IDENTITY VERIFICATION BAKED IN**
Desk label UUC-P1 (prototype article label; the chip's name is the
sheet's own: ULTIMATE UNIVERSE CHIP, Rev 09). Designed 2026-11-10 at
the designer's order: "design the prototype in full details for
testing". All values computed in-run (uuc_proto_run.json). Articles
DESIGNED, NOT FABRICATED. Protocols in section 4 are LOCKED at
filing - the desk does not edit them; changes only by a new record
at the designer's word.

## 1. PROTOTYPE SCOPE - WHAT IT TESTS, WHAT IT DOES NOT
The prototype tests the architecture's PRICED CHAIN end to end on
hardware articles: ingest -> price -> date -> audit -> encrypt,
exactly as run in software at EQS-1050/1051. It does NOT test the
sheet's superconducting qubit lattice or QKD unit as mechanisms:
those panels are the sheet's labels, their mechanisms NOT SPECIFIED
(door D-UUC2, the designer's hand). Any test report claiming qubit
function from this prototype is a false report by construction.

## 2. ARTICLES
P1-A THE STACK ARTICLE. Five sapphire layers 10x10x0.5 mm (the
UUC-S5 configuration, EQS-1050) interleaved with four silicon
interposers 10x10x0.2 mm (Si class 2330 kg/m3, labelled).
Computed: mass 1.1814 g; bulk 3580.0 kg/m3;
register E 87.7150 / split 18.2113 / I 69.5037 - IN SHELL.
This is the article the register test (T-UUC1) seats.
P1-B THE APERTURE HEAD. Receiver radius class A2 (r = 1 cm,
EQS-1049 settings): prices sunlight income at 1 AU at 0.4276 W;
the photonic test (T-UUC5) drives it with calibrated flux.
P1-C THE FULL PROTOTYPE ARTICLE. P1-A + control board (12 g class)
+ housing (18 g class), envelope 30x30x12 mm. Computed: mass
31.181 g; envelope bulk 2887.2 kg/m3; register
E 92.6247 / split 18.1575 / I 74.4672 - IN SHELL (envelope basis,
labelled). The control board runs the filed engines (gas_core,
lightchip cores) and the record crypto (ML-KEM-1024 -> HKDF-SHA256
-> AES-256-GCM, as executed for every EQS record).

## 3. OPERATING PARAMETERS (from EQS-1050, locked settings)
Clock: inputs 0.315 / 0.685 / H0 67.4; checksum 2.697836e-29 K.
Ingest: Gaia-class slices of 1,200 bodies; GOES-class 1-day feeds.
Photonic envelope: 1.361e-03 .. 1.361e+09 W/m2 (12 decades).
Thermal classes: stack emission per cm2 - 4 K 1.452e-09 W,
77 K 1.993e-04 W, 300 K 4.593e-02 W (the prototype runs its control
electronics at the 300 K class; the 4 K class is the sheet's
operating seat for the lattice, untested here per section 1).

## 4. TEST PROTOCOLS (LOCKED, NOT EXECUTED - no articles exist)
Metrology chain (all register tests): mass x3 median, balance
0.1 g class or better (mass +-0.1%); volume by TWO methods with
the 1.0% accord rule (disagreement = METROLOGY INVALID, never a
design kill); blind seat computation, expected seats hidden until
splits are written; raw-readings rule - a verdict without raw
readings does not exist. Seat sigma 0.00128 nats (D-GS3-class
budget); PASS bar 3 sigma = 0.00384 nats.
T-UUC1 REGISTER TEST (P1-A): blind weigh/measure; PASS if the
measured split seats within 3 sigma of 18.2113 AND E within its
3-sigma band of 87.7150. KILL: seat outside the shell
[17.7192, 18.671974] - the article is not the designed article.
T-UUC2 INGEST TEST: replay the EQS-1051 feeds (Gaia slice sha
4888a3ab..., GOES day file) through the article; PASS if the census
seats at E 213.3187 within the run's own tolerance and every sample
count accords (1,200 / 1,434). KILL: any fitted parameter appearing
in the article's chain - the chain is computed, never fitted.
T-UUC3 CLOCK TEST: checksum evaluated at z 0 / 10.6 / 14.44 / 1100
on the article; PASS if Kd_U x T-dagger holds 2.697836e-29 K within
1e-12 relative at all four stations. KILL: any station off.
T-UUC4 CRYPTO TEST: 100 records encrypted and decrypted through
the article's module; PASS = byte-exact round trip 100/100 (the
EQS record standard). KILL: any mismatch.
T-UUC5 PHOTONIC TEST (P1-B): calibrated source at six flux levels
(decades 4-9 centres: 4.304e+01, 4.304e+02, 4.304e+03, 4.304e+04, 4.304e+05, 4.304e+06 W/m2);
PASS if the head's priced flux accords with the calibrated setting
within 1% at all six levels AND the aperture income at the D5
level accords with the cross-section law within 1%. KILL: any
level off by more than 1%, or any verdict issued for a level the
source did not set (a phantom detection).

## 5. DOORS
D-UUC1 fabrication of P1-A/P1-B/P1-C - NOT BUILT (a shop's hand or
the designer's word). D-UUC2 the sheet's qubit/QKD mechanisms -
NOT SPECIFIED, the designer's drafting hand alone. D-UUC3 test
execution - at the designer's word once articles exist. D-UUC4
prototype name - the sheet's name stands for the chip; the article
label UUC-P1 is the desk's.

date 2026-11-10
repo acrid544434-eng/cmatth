@@ -1,0 +1,84 @@
+# UUC-P1 - ULTIMATE UNIVERSE CHIP PROTOTYPE, FULL DESIGN FOR TESTING (EQS-1052)
+**(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN**
+Desk label UUC-P1 (prototype article label; the chip's name is the
+sheet's own: ULTIMATE UNIVERSE CHIP, Rev 09). Designed 2026-11-10 at
+the designer's order: "design the prototype in full details for
+testing". All values computed in-run (uuc_proto_run.json). Articles
+DESIGNED, NOT FABRICATED. Protocols in section 4 are LOCKED at
+filing - the desk does not edit them; changes only by a new record
+at the designer's word.
+
+## 1. PROTOTYPE SCOPE - WHAT IT TESTS, WHAT IT DOES NOT
+The prototype tests the architecture's PRICED CHAIN end to end on
+hardware articles: ingest -> price -> date -> audit -> encrypt,
+exactly as run in software at EQS-1050/1051. It does NOT test the
+sheet's superconducting qubit lattice or QKD unit as mechanisms:
+those panels are the sheet's labels, their mechanisms NOT SPECIFIED
+(door D-UUC2, the designer's hand). Any test report claiming qubit
+function from this prototype is a false report by construction.
+
+## 2. ARTICLES
+P1-A THE STACK ARTICLE. Five sapphire layers 10x10x0.5 mm (the
+UUC-S5 configuration, EQS-1050) interleaved with four silicon
+interposers 10x10x0.2 mm (Si class 2330 kg/m3, labelled).
+Computed: mass 1.1814 g; bulk 3580.0 kg/m3;
+register E 87.7150 / split 18.2113 / I 69.5037 - IN SHELL.
+This is the article the register test (T-UUC1) seats.
+P1-B THE APERTURE HEAD. Receiver radius class A2 (r = 1 cm,
+EQS-1049 settings): prices sunlight income at 1 AU at 0.4276 W;
+the photonic test (T-UUC5) drives it with calibrated flux.
+P1-C THE FULL PROTOTYPE ARTICLE. P1-A + control board (12 g class)
++ housing (18 g class), envelope 30x30x12 mm. Computed: mass
+31.181 g; envelope bulk 2887.2 kg/m3; register
+E 92.6247 / split 18.1575 / I 74.4672 - IN SHELL (envelope basis,
+labelled). The control board runs the filed engines (gas_core,
+lightchip cores) and the record crypto (ML-KEM-1024 -> HKDF-SHA256
+-> AES-256-GCM, as executed for every EQS record).
+
+## 3. OPERATING PARAMETERS (from EQS-1050, locked settings)
+Clock: inputs 0.315 / 0.685 / H0 67.4; checksum 2.697836e-29 K.
+Ingest: Gaia-class slices of 1,200 bodies; GOES-class 1-day feeds.
+Photonic envelope: 1.361e-03 .. 1.361e+09 W/m2 (12 decades).
+Thermal classes: stack emission per cm2 - 4 K 1.452e-09 W,
+77 K 1.993e-04 W, 300 K 4.593e-02 W (the prototype runs its control
+electronics at the 300 K class; the 4 K class is the sheet's
+operating seat for the lattice, untested here per section 1).
+
+## 4. TEST PROTOCOLS (LOCKED, NOT EXECUTED - no articles exist)
+Metrology chain (all register tests): mass x3 median, balance
+0.1 g class or better (mass +-0.1%); volume by TWO methods with
+the 1.0% accord rule (disagreement = METROLOGY INVALID, never a
+design kill); blind seat computation, expected seats hidden until
+splits are written; raw-readings rule - a verdict without raw
+readings does not exist. Seat sigma 0.00128 nats (D-GS3-class
+budget); PASS bar 3 sigma = 0.00384 nats.
+T-UUC1 REGISTER TEST (P1-A): blind weigh/measure; PASS if the
+measured split seats within 3 sigma of 18.2113 AND E within its
+3-sigma band of 87.7150. KILL: seat outside the shell
+[17.7192, 18.671974] - the article is not the designed article.
+T-UUC2 INGEST TEST: replay the EQS-1051 feeds (Gaia slice sha
+4888a3ab..., GOES day file) through the article; PASS if the census
+seats at E 213.3187 within the run's own tolerance and every sample
+count accords (1,200 / 1,434). KILL: any fitted parameter appearing
+in the article's chain - the chain is computed, never fitted.
+T-UUC3 CLOCK TEST: checksum evaluated at z 0 / 10.6 / 14.44 / 1100
+on the article; PASS if Kd_U x T-dagger holds 2.697836e-29 K within
+1e-12 relative at all four stations. KILL: any station off.
+T-UUC4 CRYPTO TEST: 100 records encrypted and decrypted through
+the article's module; PASS = byte-exact round trip 100/100 (the
+EQS record standard). KILL: any mismatch.
+T-UUC5 PHOTONIC TEST (P1-B): calibrated source at six flux levels
+(decades 4-9 centres: 4.304e+01, 4.304e+02, 4.304e+03, 4.304e+04, 4.304e+05, 4.304e+06 W/m2);
+PASS if the head's priced flux accords with the calibrated setting
+within 1% at all six levels AND the aperture income at the D5
+level accords with the cross-section law within 1%. KILL: any
+level off by more than 1%, or any verdict issued for a level the
+source did not set (a phantom detection).
+
+## 5. DOORS
+D-UUC1 fabrication of P1-A/P1-B/P1-C - NOT BUILT (a shop's hand or
+the designer's word). D-UUC2 the sheet's qubit/QKD mechanisms -
+NOT SPECIFIED, the designer's drafting hand alone. D-UUC3 test
+execution - at the designer's word once articles exist. D-UUC4
+prototype name - the sheet's name stands for the chip; the article
+label UUC-P1 is the desk's.

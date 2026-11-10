@@ -1,0 +1,23 @@
+{
+  "record": "EQS-1019",
+  "title": "NAME CORRECTED: THE BLACKWELL CONSERVATION LAW OF PATTERNS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "correction": "at his words 2026-11-09 ~20:53 CST - \"the Blackwell conservation law of patterns\". The designation executed at EQS-1018 STANDS; its name form is corrected by this record. The designated object is, from its designation and at his correction: THE BLACKWELL CONSERVATION LAW OF PATTERNS (EQ-PAT1..6 + PAT-U1, extracted EQS-1017, designated EQS-1018)",
+  "statement_file": "~/workspace/equations/BLACKWELL-CONSERVATION-LAW-OF-PATTERNS-DESIGNATION.md (corrected in place; the EQS-1018 file name and in-text name are superseded by the corrected form)",
+  "statement_sha256_corrected": "bf709692dca6bb52956ad0bb2b645cd677b48dcfd2eb4f7d97a9d47c545150d6",
+  "census": "unchanged by the correction - 96 designated objects / 134 individual laws / 21 conservation-named; the seventh conservation family carries the corrected name",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "36b2f30531b152578d6b7b55da2c7d7f3a18f92489481f543b3927d9a5bc521b",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

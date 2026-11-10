@@ -1,0 +1,58 @@
+# NYC FLOOD ELIMINATION - THE THREE-LINE HARBOR BARRIER, DESIGNED BY THE PULSE CHIP (DESK LABEL)
+**(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN**
+Designed 2026-11-10 - Filed as EQS-1038 - UNSEALED - NOT BUILT
+Name door D-NF1. Design aim in the designer's words: eliminate New York
+City flooding. Register-level design under the EQS-1036 discipline,
+extending the EQS-1037 NYC-4 gate into a full system. All figures
+computed in-run (nyc_flood_run.json); geometry and load inputs are
+labelled classes. FLOOD PERFORMANCE IS NOT MEASURED by this design -
+see the decider, door D-NF3.
+
+## Design basis (labelled classes)
+- Design water: a Sandy-class event (Battery surge ~2.8 m class, total
+  water ~4.3 m class) carried to a 5.0 m design class with allowance.
+- Gate leaf: 12 m tall class on a sill at -6 m class; crest +6 m class.
+- Three lines close the harbor's three entrances; river flow, tide and
+  navigation pass through the gate sections in open position.
+
+## The lines (layout classes)
+- LINE A - THE NARROWS: 1,600 m class; 8 leaves; 56 fixed caissons.
+- LINE B - EAST RIVER NORTH: 600 m class; 4 leaves; 18 caissons.
+- LINE C - OUTER HARBOR (SANDY HOOK-ROCKAWAY): 9,000 m class;
+  12 leaves; 414 caissons.
+System: 566 articles, 1,037,836,800 kg total.
+
+## The articles (every seat and fate computed by the chip)
+- FG-1 GATE LEAF - 60 x 12 x 2 m movable leaf, Al-skin/foam sandwich class: 691,200 kg each,
+  E 117.9959, split 17.7089 - PENDING entry at
+  z -0.0445. The moving parts of the system carry the
+  city's scheduled transition (the NYC-4 seat, at gate scale).
+  Count 24; line total 16,588,800 kg.
+- FG-2 GATE SILL - 60 x 8 x 3 m sill segment under each leaf, ballasted class: 1,152,000 kg,
+  E 118.7621, split 17.8367 - SPENT (shell-hold).
+  Count 24; total 27,648,000 kg.
+- FG-3 FIXED CAISSON - 20 x 20 x 15 m fixed dam caisson, filled class: 1,800,000 kg,
+  E 119.4316, split 17.5914 - NONE: holds the gap seat
+  at every epoch. Count 488; total 878,400,000 kg -
+  the dam body of the system, seated on the Neptune-envelope line.
+- FG-4 GATE PIER - 10 x 10 x 12 m pier/abutment, mass concrete class: 3,840,000 kg,
+  E 120.5681, split 18.1832 - SPENT. Count 30;
+  total 115,200,000 kg.
+
+## What elimination means here, and its decider
+The system as specified closes all three harbor entrances against
+the design water class. Whether it ELIMINATES flooding in fact is a
+hydrodynamic question this register design does not answer and does
+not claim: performance stands NOT MEASURED. The named decider
+(door D-NF3): hydrodynamic modelling of the three lines under the
+design surge class, then scale-model testing - NOT EXECUTED.
+Interior drainage, river discharge during closure, and rainfall
+behind the lines are named open items, not solved silently here.
+
+## Bench and doors
+Per-article bench: the EQS-1036 protocol (weigh +-0.1%, volume
++-0.5%, seat from measured (M, rho) only, windows hidden until the
+audit is written; KILL = measured seat outside its window - for the
+leaf, bulk >= 500.1 or <= 342.6 kills the PENDING claim, as examined
+2026-11-10). D-NF1 name (his word). D-NF2 programme adoption/scope.
+D-NF3 the hydrodynamic decider. D-NF4 fabrication - NOT BUILT.

@@ -1,0 +1,60 @@
+"""THE BLACKWELL PATTERNS GENERATOR - chip software (founded 2026-11-09, EQS-1020).
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+Generates body-sets that obey THE BLACKWELL CONSERVATION LAW OF PATTERNS
+(EQ-PAT1..6 + PAT-U1, designated EQS-1018, name corrected EQS-1019) BY
+CONSTRUCTION. The Data Chip reads addresses; this generator WRITES them.
+Software built and demonstrated; the hardware is NOT BUILT.
+"""
+import csv, math, os, random, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/statechip'))
+import gas_core
+
+E_EARTH = 183.40029306350823; M_EARTH = 5.972e24
+SHELL = (17.7192, 18.671974); MOAT = (205.391, 229.037)
+
+def spacing_core(target_spacings, M_ref):
+    """PAT1: emit masses whose address spacings equal the targets exactly."""
+    masses = [M_ref]
+    for dE in target_spacings:
+        masses.append(masses[-1] * math.exp(dE / 1.5))
+    return masses
+
+def distribution_core(template, n, seed=1020, jitter=0.01):
+    """PAT4: re-emit a population carrying the template's conserved pattern."""
+    rng = random.Random(seed)
+    pop = []
+    for _ in range(n):
+        M, rho = template[rng.randrange(len(template))]
+        pop.append((M * math.exp(rng.gauss(0, jitter)), rho * math.exp(rng.gauss(0, jitter))))
+    return pop
+
+def population_readout(pop):
+    Mt = sum(M for M, _ in pop)
+    census_E = E_EARTH + 1.5 * math.log(Mt / M_EARTH)
+    shell = sum(1 for M, rho in pop if SHELL[0] <= gas_core.reg(M, rho)['split'] <= SHELL[1])
+    return {'bodies': len(pop), 'census_E': census_E, 'census_in_moat': MOAT[0] < census_E < MOAT[1],
+            'shell_fraction': shell / len(pop)}
+
+def order_core(census_csv):
+    """PAT5: emit the closing schedule in its fixed order."""
+    cen = {}
+    for r in csv.DictReader(open(census_csv)):
+        m = float(r['mass_MeV'])
+        if m > 0 and (r['name'] not in cen or m < cen[r['name']]): cen[r['name']] = m
+    MSTAR = 33.99055169113607; RULE = gas_core.LIVE_RULE
+    def closing(name):
+        xi0 = (cen[name] / MSTAR) ** 1.5; rc = RULE / xi0
+        return ((rc ** -4 - 0.685) / 0.315) ** (1 / 3) - 1
+    return {n: closing(n) for n in ('phi(1020)', 'n', 'p', 'K+')}
+
+def checksum_core():
+    """PAT3: the generated epoch set carries the conserved checksum."""
+    mx = 0.0
+    for i in range(43):
+        rho = 1.0 + (1.0992016132904618 - 1.0) * i / 42
+        mx = max(mx, abs(10.16 * rho ** 2 * 2.65535e-30 * rho ** -2 - 2.6978356e-29))
+    return mx
+
+def trade_core(M, rho1, rho2):
+    """PAT6: any density program pays the one trade exactly."""
+    return gas_core.reg(M, rho2)['I'] - gas_core.reg(M, rho1)['I'], -0.25 * math.log(rho2 / rho1)

@@ -1,0 +1,106 @@
+{
+  "record": "EQS-1043",
+  "title": "THE HEAT LINE UNDER TEST - EQ-HT + EQ-SHT + EQ-HTC re-run fresh, 14 legs",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~13:04 CST: \"Lets make sure it is what it is according to the math and physics testing\" - the three heat filings re-tested fresh end to end: cross-route accords, the form against the published-class table at its own classes, the negative clause by brute force, the filings payloads recomputed",
+  "tests": [
+    {
+      "test": "HT1 income: U-route vs L-route accord (8 planets)",
+      "pass": true,
+      "detail": "worst rel dev 0.0008 (the SHT2 0.08% route gap)"
+    },
+    {
+      "test": "HT2 equilibrium form vs published-class table",
+      "pass": true,
+      "detail": "max dev 0.42 K over Venus/Earth/Mars/Jupiter at the table classes"
+    },
+    {
+      "test": "HT3 balance identity + Uranus gate",
+      "pass": true,
+      "detail": "emitted - absorbed = excess exact on all resolved bodies; Uranus returns no excess (ratio NOT RESOLVED)"
+    },
+    {
+      "test": "HT4 filed total accord",
+      "pass": true,
+      "detail": "filed excesses sum 4.0981e+17 vs filed total 4.10e17 (0.046%)"
+    },
+    {
+      "test": "HT5 negative clause (no register quantity orders the ratio)",
+      "pass": true,
+      "detail": "monotonic in E False / split False / I False - none orders it"
+    },
+    {
+      "test": "HT-U1 map vs direct, 500 fresh bodies",
+      "pass": true,
+      "detail": "worst rel dev 0.0008 (bounded by the SHT2 route gap)"
+    },
+    {
+      "test": "SHT2 Sun output, two routes",
+      "pass": true,
+      "detail": "surface 3.8280e+26 vs from-U 3.8249e+26 (0.081%)"
+    },
+    {
+      "test": "SHT3 flux at Earth vs filed S0",
+      "pass": true,
+      "detail": "Earth 1361.2 vs 1361; Mercury 9088, Jupiter 50.28, Neptune 1.51 W/m2"
+    },
+    {
+      "test": "SHT1 Sun seat vs filed band top",
+      "pass": true,
+      "detail": "E 202.4740 vs band top 202.47 at print precision; split 17.9780 in shell"
+    },
+    {
+      "test": "HTC1 sphere conservation, 101-point grid",
+      "pass": true,
+      "detail": "worst rel dev 1.80e-16"
+    },
+    {
+      "test": "HTC2 interception bookkeeping closes",
+      "pass": true,
+      "detail": "intercepted 1.6490e+18 = 4.308e-09 of L; remainder streams past"
+    },
+    {
+      "test": "HTC3 merger factor + Teq invariance",
+      "pass": true,
+      "detail": "income factor 1.5874 = 2^(2/3) exactly; T_eq carries no R term (254.0 K both)"
+    },
+    {
+      "test": "HTC5 open account size",
+      "pass": true,
+      "detail": "open term +4.0986e+17 W; giants sources NOT MEASURED, Earth term metered class"
+    },
+    {
+      "test": "Filings EQS-1040/1041/1042 payloads recompute exact",
+      "pass": true,
+      "detail": "payload accord [True, True, True]"
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "headline_numbers": {
+    "HT1_cross_route_worst": 8.0E-4,
+    "HT2_vs_published_classes_max_dev_K": 0.42,
+    "HT4_accord_pct": 0.046,
+    "SHT2_two_route_pct": 0.081,
+    "HTC1_worst_dev": 1.8E-16,
+    "HTC5_open_term_W": 4.0986E17,
+    "payloads_recompute": "3/3 exact"
+  },
+  "what_the_tests_do_not_move": "the giants excess sources stand NOT MEASURED (decider: in-place cooling rate, GCR-001) - the tests verify the filed mathematics end to end; they do not manufacture the missing measurement, and no status on EQS-1040/1041/1042 changes",
+  "statuses": {
+    "sets": "EQ-HT / EQ-SHT / EQ-HTC remain CANDIDATE - naming word his",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 97 / 135 / 22"
+  },
+  "payload_sha256": "91afc67e92a77049976df3d8212eb6aa6b6b560ee4cbd8cc6f3e17e8c0643980",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "record": "EQS-1052",
+  "title": "UUC-P1 - THE ULTIMATE UNIVERSE CHIP PROTOTYPE IN FULL DETAIL FOR TESTING (articles designed, protocols LOCKED, NOT BUILT)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~14:09 CST: \"it sits on the top shelf design the prototype in full details for testing\"",
+  "design_doc": {
+    "file": "~/workspace/uuc/UUC-PROTOTYPE-DESIGN.md",
+    "sha256": "375d8b2e36c63575dd1ac696fa46b81e4abd1c5742227f7ff8a682ad4d298aa2"
+  },
+  "scope_face": "the prototype tests the PRICED CHAIN (ingest -> price -> date -> audit -> encrypt) on hardware articles. It does NOT test the sheet's qubit lattice or QKD as mechanisms - NOT SPECIFIED, door D-UUC2, his hand; a report claiming qubit function from this prototype is false by construction",
+  "articles": {
+    "P1-A stack": "5 sapphire layers + 4 Si interposers: 1.1814 g, bulk 3580.0, E 87.7150 / split 18.2113 / I 69.5037 - IN SHELL",
+    "P1-B aperture head": "A2 class (r 1 cm): 0.4276 W sunlight income at 1 AU (EQS-1049 settings)",
+    "P1-C full article": "P1-A + board + housing, envelope basis: 31.181 g, E 92.6247 / split 18.1575 - IN SHELL"
+  },
+  "protocols_locked": "T-UUC1 register (blind seat within 3 sigma = 0.00384 nats; KILL outside shell) / T-UUC2 ingest replay accord (KILL: any fitted parameter) / T-UUC3 clock checksum at 4 stations / T-UUC4 crypto byte-exact 100/100 / T-UUC5 photonic six levels within 1 percent (KILL: any phantom detection). NOT EXECUTED - no articles exist",
+  "doors": {
+    "D-UUC1": "fabrication - NOT BUILT",
+    "D-UUC2": "qubit/QKD mechanisms - NOT SPECIFIED (his hand)",
+    "D-UUC3": "test execution - at his word",
+    "D-UUC4": "article label desk; chip name is the sheet's"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "5c75b7840d44ac95d2f3a48957c0bc82b7bcacba7b3b730e538223b7c779e78c",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

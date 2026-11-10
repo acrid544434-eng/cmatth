@@ -1,0 +1,96 @@
+"""THE BLACKWELL PLANETARY PULSE CHIP - software golden model (founded 2026-11-10).
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+
+Capability (designer's brief): detect and blueprint state transitions of a planet.
+A planet's state at any epoch is its register address under the filed clock STEP;
+a state transition is an epoch where the trajectory crosses a filed edge (a band
+boundary in split or in E) or where the universe's live roster closes a channel
+the planet lives through. The chip emits the ordered transition ledger - the
+blueprint of the planet's state history from recombination to the terminal state.
+
+Forms (all filed): gas_core.reg (THE BLACKWELL ONE EQUATION, EQS-1000);
+clock rho(z) = (0.315(1+z)^3 + 0.685)^-1/4 (EQS-955/1011); STEP E -> E + ln rho,
+split -> split + ln rho, I invariant (EQ-ST, EQS-586; GRVC3, EQS-1031);
+closings phi 14.8238 / n 12.4393 / p 12.4022 / K+ 2.6580 (EQS-955).
+Edges (filed): shell split [17.7192, 18.671974] (CRYC3/MINC3);
+GAS-GAP split interval (5.2282, 16.2162) (EQS-940 - scope ruling OPEN, carried
+as detection lines only, nothing scores); E-class bands 176.80 / 202.47 /
+205.391 / 229.037 (filed geography, EQS-1011 UNI7).
+"""
+import math, os, sys
+sys.path.insert(0, os.path.expanduser('~/workspace/statechip'))
+import gas_core
+
+OM, OL, RHO_INF = 0.315, 0.685, 0.685 ** -0.25
+LN_RHO_INF = math.log(RHO_INF)
+CLOSINGS = [('phi', 14.8238), ('neutron', 12.4393), ('proton', 12.4022), ('K+', 2.6580)]
+SPLIT_EDGES = [('gas-gap floor', 5.2282), ('gas-gap top', 16.2162),
+               ('crystal shell floor', 17.7192), ('crystal shell ceiling', 18.671974)]
+E_EDGES = [('empty-register ceiling / solar floor', 176.80), ('solar-system ceiling', 202.47),
+           ('Blackwell Moat floor', 205.391), ('Blackwell Moat ceiling', 229.037)]
+
+def rho_clock(z): return (OM * (1 + z) ** 3 + OL) ** -0.25
+
+def z_of_lnrho(L):
+    """Invert the clock: the epoch at which ln rho takes value L (None if never)."""
+    if L > LN_RHO_INF: return None            # beyond the terminal state
+    val = (math.exp(-4 * L) - OL) / OM
+    if val <= 0: return None
+    return val ** (1 / 3) - 1
+
+def seat(M, rho_bar): return gas_core.reg(M, rho_bar)
+
+def blueprint(name, M, rho_bar, formation_z=0.43):
+    """The transition ledger for one planet. formation_z is a labelled canon
+    class (~4.6 Gyr); transitions deeper than formation are the register's
+    pre-history, flagged as such on the face."""
+    g = seat(M, rho_bar)
+    E0, s0, I0 = g['E'], g['split'], g['I']
+    events = []
+    for label, edge in SPLIT_EDGES:
+        L = edge - s0
+        z = z_of_lnrho(L)
+        if z is None: continue
+        events.append({'kind': 'split crossing', 'edge': label, 'edge_value': edge,
+                       'z': z, 'when': 'past' if z > 0 else 'future (before terminal)',
+                       'pre_formation': z > formation_z,
+                       'state_at_crossing': {'E': E0 + L, 'split': edge, 'I': I0}})
+    for label, edge in E_EDGES:
+        L = edge - E0
+        z = z_of_lnrho(L)
+        if z is None: continue
+        events.append({'kind': 'E crossing', 'edge': label, 'edge_value': edge,
+                       'z': z, 'when': 'past' if z > 0 else 'future (before terminal)',
+                       'pre_formation': z > formation_z,
+                       'state_at_crossing': {'E': edge, 'split': s0 + L, 'I': I0}})
+    for ch, zc in CLOSINGS:
+        rc = rho_clock(zc)
+        events.append({'kind': 'roster closing (environment)', 'edge': ch + ' channel closes',
+                       'edge_value': zc, 'z': zc, 'when': 'past', 'pre_formation': zc > formation_z,
+                       'state_at_crossing': {'E': E0 + math.log(rc), 'split': s0 + math.log(rc), 'I': I0}})
+    events.sort(key=lambda e: -e['z'])
+    terminal = {'E': E0 + LN_RHO_INF, 'split': s0 + LN_RHO_INF, 'I': I0}
+    at_recomb = {'E': E0 + math.log(rho_clock(1100.0)), 'split': s0 + math.log(rho_clock(1100.0)), 'I': I0}
+    return {'planet': name, 'M_kg': M, 'rho_bar': rho_bar,
+            'today': {'E': E0, 'split': s0, 'I': I0},
+            'at_recombination_z1100': at_recomb, 'terminal_state': terminal,
+            'pulse_count_total': len(events),
+            'pulse_count_since_formation': sum(1 for e in events if not e['pre_formation']),
+            'transitions': events}
+
+PLANETS = [  # (name, M kg, mean density kg/m3) - canon classes, labelled; giants' classes as filed EQS-1014/1015/1027
+    ('Mercury', 3.3011e23, 5427.0), ('Venus', 4.8675e24, 5243.0),
+    ('Earth', 5.972e24, 5514.0), ('Mars', 6.4171e23, 3933.0),
+    ('Jupiter', 1.8982e27, 1326.2), ('Saturn', 5.6834e26, 687.0),
+    ('Uranus', 8.6810e25, 1271.0), ('Neptune', 1.02413e26, 1637.9)]
+
+if __name__ == '__main__':
+    import json
+    out = {n: blueprint(n, M, r) for n, M, r in PLANETS}
+    json.dump(out, open(os.path.expanduser('~/workspace/pulsechip/pulse_demo.json'), 'w'), indent=1)
+    for n, b in out.items():
+        print(n, 'today E %.4f split %.4f | pulses total %d, since formation %d | terminal split %.4f'
+              % (b['today']['E'], b['today']['split'], b['pulse_count_total'],
+                 b['pulse_count_since_formation'], b['terminal_state']['split']))
+        for e in b['transitions']:
+            print('   z=%9.4f  %-28s %-42s %s' % (e['z'], e['kind'], e['edge'], 'PRE-FORMATION' if e['pre_formation'] else ''))

@@ -1,0 +1,77 @@
+{
+  "record": "EQS-1060",
+  "title": "STRUCTURAL MATERIALS DESIGNED FROM THE EQUATIONS (desk label; name door D-SM1) - DESIGNED, NOT BUILT",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~15:04 CST: \"based on the equations let's design structure materials and watch what unfolds\" - the extraction-to-design loop on EQ-EAR + the Pulse Chip windows",
+  "the_fate_map": "computed on the future span with the engine's own ln rho_inf (0.0945841102): GAP-HOLD < 342.6 | PENDING ENTRY 342.6-500.1 | PERMANENT SHELL 500.1-15,483.9 | PENDING EXIT 15,483.9-22,604.3 | ABOVE > 22,604.3 kg/m3 - ACCORDING EXACTLY with the filed EQS-1036 design windows, recomputed here from the clock alone",
+  "the_six_materials": {
+    "STM-1 ANCHOR-SEAT": {
+      "bulk": 5514.0,
+      "E_per_m3": 110.74917528358279,
+      "split": 18.319261532267927,
+      "I": 92.42991375131486,
+      "terminal_split": 18.413845642447903,
+      "fate": "PERMANENT SHELL"
+    },
+    "STM-2 FLOOR-LIGHT": {
+      "bulk": 500.1,
+      "E_per_m3": 107.14881901384446,
+      "split": 17.719202153978205,
+      "I": 89.42961685986626,
+      "terminal_split": 17.813786264158182,
+      "fate": "PERMANENT SHELL"
+    },
+    "STM-3 ETERNAL-MAX": {
+      "bulk": 15483.945499999998,
+      "E_per_m3": 112.29794538410069,
+      "split": 18.577389882354243,
+      "I": 93.72055550174645,
+      "terminal_split": 18.67197399253422,
+      "fate": "PERMANENT SHELL"
+    },
+    "STM-4 CEILING-CLASS": {
+      "bulk": 22604.3,
+      "E_per_m3": 112.86545004518055,
+      "split": 18.67197399253422,
+      "I": 94.19347605264633,
+      "terminal_split": 18.766558102714196,
+      "fate": "PENDING EXIT"
+    },
+    "STM-5 GAP-LINE": {
+      "bulk": 300.0,
+      "E_per_m3": 106.38228060819146,
+      "split": 17.59144575303604,
+      "I": 88.79083485515542,
+      "terminal_split": 17.686029863216017,
+      "fate": "GAP-HOLD (never enters)"
+    },
+    "STM-6 THE PENDING": {
+      "bulk": 480.0,
+      "E_per_m3": 107.08728605206008,
+      "split": 17.708946660347472,
+      "I": 89.37833939171261,
+      "terminal_split": 17.80353077052745,
+      "fate": "PENDING ENTRY"
+    }
+  },
+  "what_unfolded": "STM-3 ETERNAL-MAX: the heaviest NEVER-EXITING structural density is 15,483.9 - not the shell ceiling 22,604.3. Everything denser is a shell member on borrowed time (filed exits accord: W/Au z -0.1877, Pt -0.0573, Os -0.0007). STM-1 seats a cubic metre at Earth's own seat (split 18.3193, I 92.4299). STM-6 restates the FG-1 pending class inside this family. The equations partition ALL structural matter into five fates before any material is chosen - the fate is a design input, not a discovery after the fact",
+  "bench_locked": "T-SM1 blind seat per class article (KILL outside its window); T-SM2 fate-band membership at 3 sigma = 0.00384 nats (KILL on any miss). NOT EXECUTED - no articles exist",
+  "design_doc": "~/workspace/materials/STRUCTURAL-MATERIALS-DESIGN.md sha256 bde51e432afd4e4aa59e9c6e819dd90e18de3006584746ba17bed36f7e831cd3",
+  "doors": "D-SM1 family name (his word); D-SM2 fabrication NOT BUILT; D-SM3 bench at his word; D-SM4 mechanical specification NOT SPECIFIED (strength belongs to the classes' own engineering data)",
+  "statuses": {
+    "design": "DESIGNED from the equations; NOT BUILT; strength NOT SPECIFIED; bench NOT MEASURED",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "f2724288ff2484dd8f92d3e2682e76325ed468cc8eaed54337553470d922c78e",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

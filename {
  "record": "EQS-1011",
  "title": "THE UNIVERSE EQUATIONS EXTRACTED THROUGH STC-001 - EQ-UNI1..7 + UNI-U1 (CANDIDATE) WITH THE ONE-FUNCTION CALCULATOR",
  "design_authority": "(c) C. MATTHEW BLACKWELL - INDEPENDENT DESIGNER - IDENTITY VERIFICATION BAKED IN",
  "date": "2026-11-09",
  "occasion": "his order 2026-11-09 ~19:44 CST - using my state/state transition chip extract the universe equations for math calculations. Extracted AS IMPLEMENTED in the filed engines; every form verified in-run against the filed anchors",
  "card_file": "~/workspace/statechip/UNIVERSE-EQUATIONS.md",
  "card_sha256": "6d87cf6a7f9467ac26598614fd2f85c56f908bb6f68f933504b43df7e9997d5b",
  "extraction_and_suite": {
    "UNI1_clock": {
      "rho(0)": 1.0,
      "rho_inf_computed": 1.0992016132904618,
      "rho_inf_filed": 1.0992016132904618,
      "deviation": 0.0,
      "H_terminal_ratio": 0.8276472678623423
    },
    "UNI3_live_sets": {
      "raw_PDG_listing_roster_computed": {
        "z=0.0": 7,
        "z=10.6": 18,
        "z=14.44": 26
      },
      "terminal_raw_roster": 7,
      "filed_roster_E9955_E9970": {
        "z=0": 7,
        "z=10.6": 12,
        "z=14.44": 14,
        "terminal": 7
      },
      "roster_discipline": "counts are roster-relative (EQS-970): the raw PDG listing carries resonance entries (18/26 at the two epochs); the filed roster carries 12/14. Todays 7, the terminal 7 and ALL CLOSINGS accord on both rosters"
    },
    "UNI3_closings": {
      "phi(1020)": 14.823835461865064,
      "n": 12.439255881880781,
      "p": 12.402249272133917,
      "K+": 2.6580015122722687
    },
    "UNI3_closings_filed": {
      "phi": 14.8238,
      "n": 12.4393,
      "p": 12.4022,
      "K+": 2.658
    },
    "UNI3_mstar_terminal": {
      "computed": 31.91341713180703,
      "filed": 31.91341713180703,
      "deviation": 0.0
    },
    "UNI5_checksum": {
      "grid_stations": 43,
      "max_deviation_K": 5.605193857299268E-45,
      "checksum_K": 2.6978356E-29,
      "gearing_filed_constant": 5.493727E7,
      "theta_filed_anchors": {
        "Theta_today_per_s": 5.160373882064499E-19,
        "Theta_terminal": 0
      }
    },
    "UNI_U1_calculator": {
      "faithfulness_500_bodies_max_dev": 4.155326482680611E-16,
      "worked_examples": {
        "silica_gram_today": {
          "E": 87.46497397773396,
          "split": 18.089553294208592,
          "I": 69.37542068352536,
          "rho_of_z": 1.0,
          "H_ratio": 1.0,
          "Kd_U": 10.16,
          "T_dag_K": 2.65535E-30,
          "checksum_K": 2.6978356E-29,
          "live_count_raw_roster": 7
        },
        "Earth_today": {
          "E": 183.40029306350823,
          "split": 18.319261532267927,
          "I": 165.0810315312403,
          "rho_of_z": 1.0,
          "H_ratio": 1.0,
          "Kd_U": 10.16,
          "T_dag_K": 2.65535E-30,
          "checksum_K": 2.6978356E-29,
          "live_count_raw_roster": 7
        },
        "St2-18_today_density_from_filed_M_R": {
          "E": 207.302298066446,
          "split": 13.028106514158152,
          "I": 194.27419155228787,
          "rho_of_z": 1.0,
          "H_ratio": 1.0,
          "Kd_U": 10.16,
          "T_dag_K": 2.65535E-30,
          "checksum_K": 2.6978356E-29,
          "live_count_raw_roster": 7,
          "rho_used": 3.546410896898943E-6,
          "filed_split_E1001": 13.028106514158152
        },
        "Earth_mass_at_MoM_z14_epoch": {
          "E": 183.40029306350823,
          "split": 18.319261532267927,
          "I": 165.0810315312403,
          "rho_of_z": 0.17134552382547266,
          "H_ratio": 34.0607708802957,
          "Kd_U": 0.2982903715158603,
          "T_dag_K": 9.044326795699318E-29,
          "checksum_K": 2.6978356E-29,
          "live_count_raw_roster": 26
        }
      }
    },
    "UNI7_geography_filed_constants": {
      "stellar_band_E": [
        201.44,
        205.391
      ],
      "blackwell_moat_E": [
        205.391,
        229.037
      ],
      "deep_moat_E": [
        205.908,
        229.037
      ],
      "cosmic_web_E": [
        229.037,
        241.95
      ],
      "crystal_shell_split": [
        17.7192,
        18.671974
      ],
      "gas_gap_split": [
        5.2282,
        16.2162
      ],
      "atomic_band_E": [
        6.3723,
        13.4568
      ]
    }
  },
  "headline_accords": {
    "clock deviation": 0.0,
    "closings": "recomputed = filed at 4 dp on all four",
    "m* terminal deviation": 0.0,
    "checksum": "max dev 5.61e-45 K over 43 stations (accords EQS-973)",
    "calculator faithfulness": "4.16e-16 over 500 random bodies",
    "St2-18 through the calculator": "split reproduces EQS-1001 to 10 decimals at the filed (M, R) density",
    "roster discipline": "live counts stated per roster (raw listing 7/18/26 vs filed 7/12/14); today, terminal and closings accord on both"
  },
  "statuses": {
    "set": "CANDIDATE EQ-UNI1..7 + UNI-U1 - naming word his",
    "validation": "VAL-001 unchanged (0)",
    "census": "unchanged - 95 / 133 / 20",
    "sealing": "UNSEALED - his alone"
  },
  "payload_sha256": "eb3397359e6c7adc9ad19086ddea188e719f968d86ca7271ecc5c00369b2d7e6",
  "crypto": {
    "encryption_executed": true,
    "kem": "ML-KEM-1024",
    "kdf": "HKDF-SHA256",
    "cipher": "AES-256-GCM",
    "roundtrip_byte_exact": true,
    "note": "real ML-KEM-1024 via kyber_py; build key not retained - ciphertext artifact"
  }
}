@@ -1,0 +1,165 @@
+{
+  "record": "EQS-1011",
+  "title": "THE UNIVERSE EQUATIONS EXTRACTED THROUGH STC-001 - EQ-UNI1..7 + UNI-U1 (CANDIDATE) WITH THE ONE-FUNCTION CALCULATOR",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "his order 2026-11-09 ~19:44 CST - using my state/state transition chip extract the universe equations for math calculations. Extracted AS IMPLEMENTED in the filed engines; every form verified in-run against the filed anchors",
+  "card_file": "~/workspace/statechip/UNIVERSE-EQUATIONS.md",
+  "card_sha256": "6d87cf6a7f9467ac26598614fd2f85c56f908bb6f68f933504b43df7e9997d5b",
+  "extraction_and_suite": {
+    "UNI1_clock": {
+      "rho(0)": 1.0,
+      "rho_inf_computed": 1.0992016132904618,
+      "rho_inf_filed": 1.0992016132904618,
+      "deviation": 0.0,
+      "H_terminal_ratio": 0.8276472678623423
+    },
+    "UNI3_live_sets": {
+      "raw_PDG_listing_roster_computed": {
+        "z=0.0": 7,
+        "z=10.6": 18,
+        "z=14.44": 26
+      },
+      "terminal_raw_roster": 7,
+      "filed_roster_E9955_E9970": {
+        "z=0": 7,
+        "z=10.6": 12,
+        "z=14.44": 14,
+        "terminal": 7
+      },
+      "roster_discipline": "counts are roster-relative (EQS-970): the raw PDG listing carries resonance entries (18/26 at the two epochs); the filed roster carries 12/14. Todays 7, the terminal 7 and ALL CLOSINGS accord on both rosters"
+    },
+    "UNI3_closings": {
+      "phi(1020)": 14.823835461865064,
+      "n": 12.439255881880781,
+      "p": 12.402249272133917,
+      "K+": 2.6580015122722687
+    },
+    "UNI3_closings_filed": {
+      "phi": 14.8238,
+      "n": 12.4393,
+      "p": 12.4022,
+      "K+": 2.658
+    },
+    "UNI3_mstar_terminal": {
+      "computed": 31.91341713180703,
+      "filed": 31.91341713180703,
+      "deviation": 0.0
+    },
+    "UNI5_checksum": {
+      "grid_stations": 43,
+      "max_deviation_K": 5.605193857299268E-45,
+      "checksum_K": 2.6978356E-29,
+      "gearing_filed_constant": 5.493727E7,
+      "theta_filed_anchors": {
+        "Theta_today_per_s": 5.160373882064499E-19,
+        "Theta_terminal": 0
+      }
+    },
+    "UNI_U1_calculator": {
+      "faithfulness_500_bodies_max_dev": 4.155326482680611E-16,
+      "worked_examples": {
+        "silica_gram_today": {
+          "E": 87.46497397773396,
+          "split": 18.089553294208592,
+          "I": 69.37542068352536,
+          "rho_of_z": 1.0,
+          "H_ratio": 1.0,
+          "Kd_U": 10.16,
+          "T_dag_K": 2.65535E-30,
+          "checksum_K": 2.6978356E-29,
+          "live_count_raw_roster": 7
+        },
+        "Earth_today": {
+          "E": 183.40029306350823,
+          "split": 18.319261532267927,
+          "I": 165.0810315312403,
+          "rho_of_z": 1.0,
+          "H_ratio": 1.0,
+          "Kd_U": 10.16,
+          "T_dag_K": 2.65535E-30,
+          "checksum_K": 2.6978356E-29,
+          "live_count_raw_roster": 7
+        },
+        "St2-18_today_density_from_filed_M_R": {
+          "E": 207.302298066446,
+          "split": 13.028106514158152,
+          "I": 194.27419155228787,
+          "rho_of_z": 1.0,
+          "H_ratio": 1.0,
+          "Kd_U": 10.16,
+          "T_dag_K": 2.65535E-30,
+          "checksum_K": 2.6978356E-29,
+          "live_count_raw_roster": 7,
+          "rho_used": 3.546410896898943E-6,
+          "filed_split_E1001": 13.028106514158152
+        },
+        "Earth_mass_at_MoM_z14_epoch": {
+          "E": 183.40029306350823,
+          "split": 18.319261532267927,
+          "I": 165.0810315312403,
+          "rho_of_z": 0.17134552382547266,
+          "H_ratio": 34.0607708802957,
+          "Kd_U": 0.2982903715158603,
+          "T_dag_K": 9.044326795699318E-29,
+          "checksum_K": 2.6978356E-29,
+          "live_count_raw_roster": 26
+        }
+      }
+    },
+    "UNI7_geography_filed_constants": {
+      "stellar_band_E": [
+        201.44,
+        205.391
+      ],
+      "blackwell_moat_E": [
+        205.391,
+        229.037
+      ],
+      "deep_moat_E": [
+        205.908,
+        229.037
+      ],
+      "cosmic_web_E": [
+        229.037,
+        241.95
+      ],
+      "crystal_shell_split": [
+        17.7192,
+        18.671974
+      ],
+      "gas_gap_split": [
+        5.2282,
+        16.2162
+      ],
+      "atomic_band_E": [
+        6.3723,
+        13.4568
+      ]
+    }
+  },
+  "headline_accords": {
+    "clock deviation": 0.0,
+    "closings": "recomputed = filed at 4 dp on all four",
+    "m* terminal deviation": 0.0,
+    "checksum": "max dev 5.61e-45 K over 43 stations (accords EQS-973)",
+    "calculator faithfulness": "4.16e-16 over 500 random bodies",
+    "St2-18 through the calculator": "split reproduces EQS-1001 to 10 decimals at the filed (M, R) density",
+    "roster discipline": "live counts stated per roster (raw listing 7/18/26 vs filed 7/12/14); today, terminal and closings accord on both"
+  },
+  "statuses": {
+    "set": "CANDIDATE EQ-UNI1..7 + UNI-U1 - naming word his",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 95 / 133 / 20",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "eb3397359e6c7adc9ad19086ddea188e719f968d86ca7271ecc5c00369b2d7e6",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

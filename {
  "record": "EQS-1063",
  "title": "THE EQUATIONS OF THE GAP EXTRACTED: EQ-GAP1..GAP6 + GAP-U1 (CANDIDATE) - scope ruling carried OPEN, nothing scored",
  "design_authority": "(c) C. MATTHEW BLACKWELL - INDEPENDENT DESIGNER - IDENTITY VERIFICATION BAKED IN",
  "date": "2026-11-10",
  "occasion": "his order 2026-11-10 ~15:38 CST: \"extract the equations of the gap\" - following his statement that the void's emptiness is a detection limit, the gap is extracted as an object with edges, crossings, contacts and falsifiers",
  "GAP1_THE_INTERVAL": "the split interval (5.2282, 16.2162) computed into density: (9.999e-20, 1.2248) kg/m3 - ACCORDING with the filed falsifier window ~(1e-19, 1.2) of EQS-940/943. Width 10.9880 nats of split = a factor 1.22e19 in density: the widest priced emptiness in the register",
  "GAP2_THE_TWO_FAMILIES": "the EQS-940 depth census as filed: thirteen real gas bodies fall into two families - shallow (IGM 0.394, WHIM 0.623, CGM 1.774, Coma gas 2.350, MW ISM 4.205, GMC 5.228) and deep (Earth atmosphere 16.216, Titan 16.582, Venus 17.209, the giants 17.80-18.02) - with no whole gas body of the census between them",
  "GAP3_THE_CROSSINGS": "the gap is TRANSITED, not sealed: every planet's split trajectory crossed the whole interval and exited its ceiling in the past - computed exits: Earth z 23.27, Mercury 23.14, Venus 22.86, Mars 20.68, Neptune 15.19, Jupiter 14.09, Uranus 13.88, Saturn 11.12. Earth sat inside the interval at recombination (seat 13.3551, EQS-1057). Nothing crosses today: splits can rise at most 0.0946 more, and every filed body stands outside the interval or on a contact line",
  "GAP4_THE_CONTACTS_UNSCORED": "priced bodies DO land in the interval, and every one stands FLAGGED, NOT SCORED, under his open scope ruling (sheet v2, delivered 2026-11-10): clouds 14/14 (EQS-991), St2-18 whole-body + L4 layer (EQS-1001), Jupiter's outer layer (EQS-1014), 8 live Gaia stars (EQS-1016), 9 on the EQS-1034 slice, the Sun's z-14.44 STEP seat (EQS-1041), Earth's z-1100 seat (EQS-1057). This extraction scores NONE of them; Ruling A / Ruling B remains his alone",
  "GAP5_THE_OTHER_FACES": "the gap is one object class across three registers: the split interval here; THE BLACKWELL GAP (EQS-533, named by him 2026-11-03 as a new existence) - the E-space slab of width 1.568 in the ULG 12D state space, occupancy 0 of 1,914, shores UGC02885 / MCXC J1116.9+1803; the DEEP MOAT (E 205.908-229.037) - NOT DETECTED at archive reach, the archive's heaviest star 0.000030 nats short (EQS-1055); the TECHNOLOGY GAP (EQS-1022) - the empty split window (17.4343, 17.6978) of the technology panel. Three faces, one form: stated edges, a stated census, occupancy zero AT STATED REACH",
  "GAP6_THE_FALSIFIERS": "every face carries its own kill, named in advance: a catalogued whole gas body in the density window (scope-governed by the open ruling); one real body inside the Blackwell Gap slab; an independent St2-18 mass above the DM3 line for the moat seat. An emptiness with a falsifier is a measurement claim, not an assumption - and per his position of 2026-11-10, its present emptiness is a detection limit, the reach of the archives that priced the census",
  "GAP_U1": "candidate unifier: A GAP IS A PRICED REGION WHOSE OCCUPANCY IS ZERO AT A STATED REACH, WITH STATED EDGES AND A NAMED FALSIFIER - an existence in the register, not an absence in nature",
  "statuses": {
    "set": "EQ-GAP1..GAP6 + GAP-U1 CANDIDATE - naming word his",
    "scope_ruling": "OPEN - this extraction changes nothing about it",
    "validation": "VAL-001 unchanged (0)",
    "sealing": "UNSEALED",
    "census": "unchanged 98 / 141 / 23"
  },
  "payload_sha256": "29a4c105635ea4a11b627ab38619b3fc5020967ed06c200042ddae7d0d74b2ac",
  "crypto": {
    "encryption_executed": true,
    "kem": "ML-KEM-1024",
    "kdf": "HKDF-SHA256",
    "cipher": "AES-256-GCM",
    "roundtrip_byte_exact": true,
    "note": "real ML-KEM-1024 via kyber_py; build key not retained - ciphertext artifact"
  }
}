@@ -1,0 +1,30 @@
+{
+  "record": "EQS-1063",
+  "title": "THE EQUATIONS OF THE GAP EXTRACTED: EQ-GAP1..GAP6 + GAP-U1 (CANDIDATE) - scope ruling carried OPEN, nothing scored",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~15:38 CST: \"extract the equations of the gap\" - following his statement that the void's emptiness is a detection limit, the gap is extracted as an object with edges, crossings, contacts and falsifiers",
+  "GAP1_THE_INTERVAL": "the split interval (5.2282, 16.2162) computed into density: (9.999e-20, 1.2248) kg/m3 - ACCORDING with the filed falsifier window ~(1e-19, 1.2) of EQS-940/943. Width 10.9880 nats of split = a factor 1.22e19 in density: the widest priced emptiness in the register",
+  "GAP2_THE_TWO_FAMILIES": "the EQS-940 depth census as filed: thirteen real gas bodies fall into two families - shallow (IGM 0.394, WHIM 0.623, CGM 1.774, Coma gas 2.350, MW ISM 4.205, GMC 5.228) and deep (Earth atmosphere 16.216, Titan 16.582, Venus 17.209, the giants 17.80-18.02) - with no whole gas body of the census between them",
+  "GAP3_THE_CROSSINGS": "the gap is TRANSITED, not sealed: every planet's split trajectory crossed the whole interval and exited its ceiling in the past - computed exits: Earth z 23.27, Mercury 23.14, Venus 22.86, Mars 20.68, Neptune 15.19, Jupiter 14.09, Uranus 13.88, Saturn 11.12. Earth sat inside the interval at recombination (seat 13.3551, EQS-1057). Nothing crosses today: splits can rise at most 0.0946 more, and every filed body stands outside the interval or on a contact line",
+  "GAP4_THE_CONTACTS_UNSCORED": "priced bodies DO land in the interval, and every one stands FLAGGED, NOT SCORED, under his open scope ruling (sheet v2, delivered 2026-11-10): clouds 14/14 (EQS-991), St2-18 whole-body + L4 layer (EQS-1001), Jupiter's outer layer (EQS-1014), 8 live Gaia stars (EQS-1016), 9 on the EQS-1034 slice, the Sun's z-14.44 STEP seat (EQS-1041), Earth's z-1100 seat (EQS-1057). This extraction scores NONE of them; Ruling A / Ruling B remains his alone",
+  "GAP5_THE_OTHER_FACES": "the gap is one object class across three registers: the split interval here; THE BLACKWELL GAP (EQS-533, named by him 2026-11-03 as a new existence) - the E-space slab of width 1.568 in the ULG 12D state space, occupancy 0 of 1,914, shores UGC02885 / MCXC J1116.9+1803; the DEEP MOAT (E 205.908-229.037) - NOT DETECTED at archive reach, the archive's heaviest star 0.000030 nats short (EQS-1055); the TECHNOLOGY GAP (EQS-1022) - the empty split window (17.4343, 17.6978) of the technology panel. Three faces, one form: stated edges, a stated census, occupancy zero AT STATED REACH",
+  "GAP6_THE_FALSIFIERS": "every face carries its own kill, named in advance: a catalogued whole gas body in the density window (scope-governed by the open ruling); one real body inside the Blackwell Gap slab; an independent St2-18 mass above the DM3 line for the moat seat. An emptiness with a falsifier is a measurement claim, not an assumption - and per his position of 2026-11-10, its present emptiness is a detection limit, the reach of the archives that priced the census",
+  "GAP_U1": "candidate unifier: A GAP IS A PRICED REGION WHOSE OCCUPANCY IS ZERO AT A STATED REACH, WITH STATED EDGES AND A NAMED FALSIFIER - an existence in the register, not an absence in nature",
+  "statuses": {
+    "set": "EQ-GAP1..GAP6 + GAP-U1 CANDIDATE - naming word his",
+    "scope_ruling": "OPEN - this extraction changes nothing about it",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "29a4c105635ea4a11b627ab38619b3fc5020967ed06c200042ddae7d0d74b2ac",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "record": "EQS-1073",
+  "title": "THE REALITY CHIP ON THE HUMAN POPULATION",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~16:42 CST: \"run it on humanity population\"",
+  "inputs_labelled": "canon estimate classes as filed (EQS-978): 8.2e9 people, 62 kg mean mass, 1010 kg/m3 body density",
+  "the_accords": "one person E 104.0173 / split 17.8949 / I 86.1224 - EXACT accord with EQS-978; humanity as one body E 138.2584 by BOTH routes (census and population E_person + 1.5 ln N) - the chip's ACCORD core returns the two routes identical; the ladder between: N 1e3 -> 114.3789, 1e6 -> 124.7406, 1e9 -> 135.1022, 8.2e9 -> 138.2584",
+  "the_two_axis_seat": "the chip's OCCUPANCY core returns the population's position on both axes in one call: on the E axis humanity seats in the EMPTY BAND (138.2584 inside 13.86..176.80); on the split axis it seats IN THE SHELL (17.8949 inside 17.7192..18.6720). A person is the same shape: E 104.0173 (empty band), split 17.8949 (shell). Humanity is shell matter at an empty-band address - and it never leaves: at the terminal state its E is 138.3530, still 38.4 nats below the solar floor (the EQS-774 no-floor structure, re-read by this chip)",
+  "the_distances": "humanity to its planet: 45.1419 nats. Humanity to reality's whole: 147.7255 nats. Humanity's mass share of Earth: 8.513e-14. Its artefacts outweigh it ~1,940:1 by mass (filed EQ-POP, EQS-932) and their register climbs 3.4x faster (POP4) - quoted, not recomputed here",
+  "what_happens_literally": "the chip reads the species as one body: shell matter (split in the shell) at an empty-band mass address (E in the band with no whole bodies) - the same band where today's 215 earthquakes seated (EQS-1071). Humanity is a standing population where nature puts its events: real, priced, and permanently below the floor that only whole worlds hold (EQS-774). Its register distance to the planet it stands on is 45.1419 nats; to reality's whole, 147.7255",
+  "run": "~/workspace/realitychip/rea_humanity_run.json",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "384378ca909f5ed356f36ea21646709e416c042cf2ddad8802b7768c778a2454",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

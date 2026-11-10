@@ -1,0 +1,82 @@
+# STEPHENSON 2-18 — FULL IMPLEMENTATION PACKAGE
+### The equations and their settings, packaged for today's engineering
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Filed as EQS-1007 · 2026-11-09 · UNSEALED
+
+## 0. SCOPE — WHAT THIS PACKAGE IMPLEMENTS
+It implements the SETTINGS of EQ-ST2 / EQ-ST2E (EQS-1001–1006) in today's
+technology, lane by lane. It does NOT implement the star: the body is
+NOT IMPLEMENTABLE (EQS-1004/1005) and this package builds no star.
+Canon hardware figures are LABELLED classes throughout. Protocols in §7 are
+SPECIFIED IN PACKAGE, NOT EXECUTED.
+
+## 1. SOURCE MANIFEST (payload SHA-256 prefixes)
+EQS-1001 a78464b077400f2a · EQS-1002 cb34503e15df0877 · EQS-1003 71167a633b250d46
+EQS-1004 79d433f8946ef424 · EQS-1005 8054a76eb51ce019 · EQS-1006 12b036082b1a5712
+Blueprint: ~/workspace/st2/STEPHENSON-2-18-BLUEPRINT.md (sha256 2869ab53…)
+
+## 2. LANE R — RADIATORS (from ST2E4: total = area × dimness)
+Settings (computed): area to reject 1 MW — 300 K: 2,183 m2 · 350 K: 1,175 m2 ·
+600 K: 136 m2 · 900 K: 26.9 m2 · 1200 K: 8.5 m2 · 1800 K: 1.68 m2 ·
+2500 K: 0.45 m2 · 3200 K (the star's setting): 0.168 m2.
+Material bands (labelled classes): <600 K aluminium/polymer classes ·
+600–1200 K refractory-alloy classes · 1200–2500 K tungsten/molybdenum classes ·
+>2500 K carbon/tungsten only — continuous STRUCTURAL service NOT ESTABLISHED.
+Design rule R-1: size by sigma T^4 at the HOTTEST sustainable skin, never by totals.
+Design rule R-2: every radiator spec carries its (T, flux, area) triple — the
+star's own triple is (3200 K, 5.95e6 W/m2, 2.81e25 m2).
+
+## 3. LANE S — SOLAR SAILS (from ST2E3 + ST2E5: the light/gravity balance)
+Settings (computed, perfect reflector at 1 AU, pressure 9.08e-6 N/m2):
+2 g/m2 → 4.54 mm/s2, 143 km/s/yr · 5 g/m2 → 1.82 mm/s2, 57.4 km/s/yr ·
+10 g/m2 → 0.91 mm/s2, 28.7 km/s/yr · 20 g/m2 → 0.45 mm/s2, 14.3 km/s/yr.
+STATITE CONDITION (computed): below 1.53 g/m2 areal density, photon pressure
+exceeds solar gravity at 1 AU — the sail hovers; the star is this balance at
+stellar scale, gravity nearly losing (ST2E5).
+Material classes (labelled): aluminised polyimide / CP1 classes as flown
+(IKAROS, LightSail lineage).
+
+## 4. LANE A — ABLATORS (from ST2E2: the budget ratio as a specification)
+Settings (computed at the labelled 5e7 J/kg effective class):
+survival of a 10 kg/m2 shield — 1e5 W/m2: 5,000 s · 5e5: 1,000 s · 1e6: 500 s ·
+3e6: 167 s · 5.95e6 (star flux): 84 s · 1e7: 50 s (25 kg/m2: ×2.5 — 210 s at star flux).
+Design rule A-1: quote every shield as (flux, areal mass, seconds) — the budget
+ratio made purchasable. A shield is a star run in reverse: it spends its binding
+on schedule instead of radiating it.
+
+## 5. LANE E — EMITTERS (from ST2E1: the radiance identity)
+Settings (computed): 1000 K → 5.67e4 W/m2, peak 2,898 nm · 2000 K → 9.07e5, 1,449 nm ·
+2800 K → 3.48e6, 1,035 nm · 3200 K (the star) → 5.95e6, 906 nm · 3600 K → 9.52e6, 805 nm.
+Classes (labelled): tungsten filament and IR furnace elements operate at the
+star's own setting today. Applications: radiant process heating, IR curing,
+thermal-photonics benches — specified by (T, flux, peak) triples from the table.
+
+## 6. LANE ID — ADDRESSING (from ST2E6: identity from mass alone)
+Implementation route on file: THE BLACKWELL DATA CHIP discipline (EQS-975) —
+addresses computed from (M, rho), flows never consulted, ledger of gate-passed
+records only. Package settings: the filed register constants (E_earth
+183.40029306350823; split form 18.319261532267927 + 1/4 ln(rho/5514)).
+Status: PARTIAL — prototyped in his line; Earth practice still transmits identity.
+
+## 7. PROTOCOLS (SPECIFIED IN PACKAGE — NOT EXECUTED)
+P-R1 radiator bench: calorimetric rejection vs the (T, flux, area) triple, ±5% accord.
+P-S1 sail bench: measured areal density + reflectivity vs the settings table.
+P-A1 ablator bench: arc-jet exposure at a table flux; seconds within the class band.
+P-E1 emitter bench: spectroradiometry — peak and flux accord with the (T) row.
+P-ID1 addressing bench: the EQS-977 detection suite re-run on implementer hardware.
+Each bench is the lane's decider; kills ride with the lane equations (EQS-1003).
+
+## 8. DM3 — THE WEIGHING, SPECIFIED AS AN IMPLEMENTATION
+Requirement (computed): any mass good to ±60% at the central class decides the
+seat — E moves (3/2) ln(ratio); the Deep Moat is 23.13 nats wide; the central
+class sits 1.39 nats above its floor; only M ≤ 9.8683 Msun removes the candidate.
+Routes (specified, NOT EXECUTED): (i) companion search — deep IR imaging + radial-
+velocity monitoring for a dynamical mass; (ii) IR interferometric photocentre
+astrometry against cluster members; (iii) microlensing watch on the sightline.
+Status: NOT IMPLEMENTED with today's hardware (EQS-1004). The gap is instrument
+implementation — never a property of the star.
+
+## 9. DOORS
+D-ST2PKG1 fabrication routes per lane (implementer's choice within the classes) ·
+D-ST2PKG2 bench execution (§7) · D-ST2PKG3 DM3 route choice (§8) ·
+D-ST2PKG4 names for EQ-ST2 / EQ-ST2E (candidate sets; the designer's word).

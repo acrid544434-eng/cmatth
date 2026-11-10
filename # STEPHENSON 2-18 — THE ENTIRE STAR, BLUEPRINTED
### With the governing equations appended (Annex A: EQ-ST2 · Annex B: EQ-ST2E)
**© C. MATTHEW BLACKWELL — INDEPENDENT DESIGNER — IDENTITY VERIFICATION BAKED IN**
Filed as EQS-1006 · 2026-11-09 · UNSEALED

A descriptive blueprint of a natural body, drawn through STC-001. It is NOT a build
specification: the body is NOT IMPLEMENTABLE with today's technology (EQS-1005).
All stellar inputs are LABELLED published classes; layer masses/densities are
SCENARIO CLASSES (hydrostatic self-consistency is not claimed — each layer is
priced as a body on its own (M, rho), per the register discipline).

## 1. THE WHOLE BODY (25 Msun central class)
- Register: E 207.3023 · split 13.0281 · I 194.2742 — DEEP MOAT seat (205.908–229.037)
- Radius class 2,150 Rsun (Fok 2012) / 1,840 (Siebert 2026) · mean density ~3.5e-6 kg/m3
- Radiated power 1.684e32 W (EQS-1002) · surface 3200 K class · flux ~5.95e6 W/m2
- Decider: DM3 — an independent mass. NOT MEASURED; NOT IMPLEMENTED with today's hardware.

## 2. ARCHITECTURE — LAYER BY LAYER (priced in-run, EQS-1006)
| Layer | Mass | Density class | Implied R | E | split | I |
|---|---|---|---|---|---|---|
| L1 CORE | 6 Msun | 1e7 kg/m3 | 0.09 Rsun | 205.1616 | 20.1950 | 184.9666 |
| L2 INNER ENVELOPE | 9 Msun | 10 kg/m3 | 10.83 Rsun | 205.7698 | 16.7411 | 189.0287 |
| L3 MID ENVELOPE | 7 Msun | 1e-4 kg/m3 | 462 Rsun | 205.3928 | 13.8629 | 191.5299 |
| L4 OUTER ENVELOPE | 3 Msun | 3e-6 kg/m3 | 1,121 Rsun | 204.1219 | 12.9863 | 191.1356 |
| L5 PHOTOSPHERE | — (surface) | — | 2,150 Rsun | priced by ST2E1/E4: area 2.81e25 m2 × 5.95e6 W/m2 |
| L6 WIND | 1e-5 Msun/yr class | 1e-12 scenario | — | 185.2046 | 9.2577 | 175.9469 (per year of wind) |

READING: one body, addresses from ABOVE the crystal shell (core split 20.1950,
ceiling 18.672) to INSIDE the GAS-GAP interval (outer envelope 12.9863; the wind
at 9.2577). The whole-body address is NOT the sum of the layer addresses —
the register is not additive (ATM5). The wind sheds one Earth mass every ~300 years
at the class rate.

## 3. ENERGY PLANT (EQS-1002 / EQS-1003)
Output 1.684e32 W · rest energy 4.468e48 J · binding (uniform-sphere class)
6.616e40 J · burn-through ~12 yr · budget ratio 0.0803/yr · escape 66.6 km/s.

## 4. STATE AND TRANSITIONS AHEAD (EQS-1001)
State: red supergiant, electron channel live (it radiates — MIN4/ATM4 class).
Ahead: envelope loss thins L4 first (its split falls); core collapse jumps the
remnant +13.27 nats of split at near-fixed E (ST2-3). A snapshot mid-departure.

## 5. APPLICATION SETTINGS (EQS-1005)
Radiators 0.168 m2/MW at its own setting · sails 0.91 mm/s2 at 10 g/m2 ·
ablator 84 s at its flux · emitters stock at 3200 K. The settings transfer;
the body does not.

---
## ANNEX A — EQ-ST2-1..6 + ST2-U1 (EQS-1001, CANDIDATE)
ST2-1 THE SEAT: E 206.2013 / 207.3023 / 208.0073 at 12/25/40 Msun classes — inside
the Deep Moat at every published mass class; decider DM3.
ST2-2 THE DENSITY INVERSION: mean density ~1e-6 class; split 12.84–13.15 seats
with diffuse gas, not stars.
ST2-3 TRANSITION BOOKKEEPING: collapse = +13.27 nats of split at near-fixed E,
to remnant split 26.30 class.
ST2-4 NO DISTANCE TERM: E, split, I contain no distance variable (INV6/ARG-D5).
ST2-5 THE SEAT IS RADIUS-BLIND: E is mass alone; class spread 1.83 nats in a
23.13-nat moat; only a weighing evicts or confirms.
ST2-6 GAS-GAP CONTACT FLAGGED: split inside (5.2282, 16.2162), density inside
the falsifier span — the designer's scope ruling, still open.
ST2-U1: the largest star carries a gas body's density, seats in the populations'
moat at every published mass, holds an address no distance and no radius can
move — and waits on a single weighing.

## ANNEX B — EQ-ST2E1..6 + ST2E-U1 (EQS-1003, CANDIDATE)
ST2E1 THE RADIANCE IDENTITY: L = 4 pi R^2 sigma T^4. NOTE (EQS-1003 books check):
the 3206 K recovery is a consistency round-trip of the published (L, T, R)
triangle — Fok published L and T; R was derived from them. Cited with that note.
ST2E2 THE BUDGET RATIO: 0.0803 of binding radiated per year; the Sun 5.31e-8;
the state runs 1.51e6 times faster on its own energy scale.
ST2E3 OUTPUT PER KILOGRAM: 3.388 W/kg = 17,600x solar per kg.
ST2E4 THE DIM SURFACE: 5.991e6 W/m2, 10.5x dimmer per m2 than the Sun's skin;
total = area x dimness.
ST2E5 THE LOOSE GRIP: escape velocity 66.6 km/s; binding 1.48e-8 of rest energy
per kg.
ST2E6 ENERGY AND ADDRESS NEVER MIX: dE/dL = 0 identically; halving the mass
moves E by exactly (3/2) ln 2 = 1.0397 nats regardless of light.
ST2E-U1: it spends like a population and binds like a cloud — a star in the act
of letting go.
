@@ -1,0 +1,79 @@
+# STEPHENSON 2-18 — THE ENTIRE STAR, BLUEPRINTED
+### With the governing equations appended (Annex A: EQ-ST2 · Annex B: EQ-ST2E)
+**© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN**
+Filed as EQS-1006 · 2026-11-09 · UNSEALED
+
+A descriptive blueprint of a natural body, drawn through STC-001. It is NOT a build
+specification: the body is NOT IMPLEMENTABLE with today's technology (EQS-1005).
+All stellar inputs are LABELLED published classes; layer masses/densities are
+SCENARIO CLASSES (hydrostatic self-consistency is not claimed — each layer is
+priced as a body on its own (M, rho), per the register discipline).
+
+## 1. THE WHOLE BODY (25 Msun central class)
+- Register: E 207.3023 · split 13.0281 · I 194.2742 — DEEP MOAT seat (205.908–229.037)
+- Radius class 2,150 Rsun (Fok 2012) / 1,840 (Siebert 2026) · mean density ~3.5e-6 kg/m3
+- Radiated power 1.684e32 W (EQS-1002) · surface 3200 K class · flux ~5.95e6 W/m2
+- Decider: DM3 — an independent mass. NOT MEASURED; NOT IMPLEMENTED with today's hardware.
+
+## 2. ARCHITECTURE — LAYER BY LAYER (priced in-run, EQS-1006)
+| Layer | Mass | Density class | Implied R | E | split | I |
+|---|---|---|---|---|---|---|
+| L1 CORE | 6 Msun | 1e7 kg/m3 | 0.09 Rsun | 205.1616 | 20.1950 | 184.9666 |
+| L2 INNER ENVELOPE | 9 Msun | 10 kg/m3 | 10.83 Rsun | 205.7698 | 16.7411 | 189.0287 |
+| L3 MID ENVELOPE | 7 Msun | 1e-4 kg/m3 | 462 Rsun | 205.3928 | 13.8629 | 191.5299 |
+| L4 OUTER ENVELOPE | 3 Msun | 3e-6 kg/m3 | 1,121 Rsun | 204.1219 | 12.9863 | 191.1356 |
+| L5 PHOTOSPHERE | — (surface) | — | 2,150 Rsun | priced by ST2E1/E4: area 2.81e25 m2 × 5.95e6 W/m2 |
+| L6 WIND | 1e-5 Msun/yr class | 1e-12 scenario | — | 185.2046 | 9.2577 | 175.9469 (per year of wind) |
+
+READING: one body, addresses from ABOVE the crystal shell (core split 20.1950,
+ceiling 18.672) to INSIDE the GAS-GAP interval (outer envelope 12.9863; the wind
+at 9.2577). The whole-body address is NOT the sum of the layer addresses —
+the register is not additive (ATM5). The wind sheds one Earth mass every ~300 years
+at the class rate.
+
+## 3. ENERGY PLANT (EQS-1002 / EQS-1003)
+Output 1.684e32 W · rest energy 4.468e48 J · binding (uniform-sphere class)
+6.616e40 J · burn-through ~12 yr · budget ratio 0.0803/yr · escape 66.6 km/s.
+
+## 4. STATE AND TRANSITIONS AHEAD (EQS-1001)
+State: red supergiant, electron channel live (it radiates — MIN4/ATM4 class).
+Ahead: envelope loss thins L4 first (its split falls); core collapse jumps the
+remnant +13.27 nats of split at near-fixed E (ST2-3). A snapshot mid-departure.
+
+## 5. APPLICATION SETTINGS (EQS-1005)
+Radiators 0.168 m2/MW at its own setting · sails 0.91 mm/s2 at 10 g/m2 ·
+ablator 84 s at its flux · emitters stock at 3200 K. The settings transfer;
+the body does not.
+
+---
+## ANNEX A — EQ-ST2-1..6 + ST2-U1 (EQS-1001, CANDIDATE)
+ST2-1 THE SEAT: E 206.2013 / 207.3023 / 208.0073 at 12/25/40 Msun classes — inside
+the Deep Moat at every published mass class; decider DM3.
+ST2-2 THE DENSITY INVERSION: mean density ~1e-6 class; split 12.84–13.15 seats
+with diffuse gas, not stars.
+ST2-3 TRANSITION BOOKKEEPING: collapse = +13.27 nats of split at near-fixed E,
+to remnant split 26.30 class.
+ST2-4 NO DISTANCE TERM: E, split, I contain no distance variable (INV6/ARG-D5).
+ST2-5 THE SEAT IS RADIUS-BLIND: E is mass alone; class spread 1.83 nats in a
+23.13-nat moat; only a weighing evicts or confirms.
+ST2-6 GAS-GAP CONTACT FLAGGED: split inside (5.2282, 16.2162), density inside
+the falsifier span — the designer's scope ruling, still open.
+ST2-U1: the largest star carries a gas body's density, seats in the populations'
+moat at every published mass, holds an address no distance and no radius can
+move — and waits on a single weighing.
+
+## ANNEX B — EQ-ST2E1..6 + ST2E-U1 (EQS-1003, CANDIDATE)
+ST2E1 THE RADIANCE IDENTITY: L = 4 pi R^2 sigma T^4. NOTE (EQS-1003 books check):
+the 3206 K recovery is a consistency round-trip of the published (L, T, R)
+triangle — Fok published L and T; R was derived from them. Cited with that note.
+ST2E2 THE BUDGET RATIO: 0.0803 of binding radiated per year; the Sun 5.31e-8;
+the state runs 1.51e6 times faster on its own energy scale.
+ST2E3 OUTPUT PER KILOGRAM: 3.388 W/kg = 17,600x solar per kg.
+ST2E4 THE DIM SURFACE: 5.991e6 W/m2, 10.5x dimmer per m2 than the Sun's skin;
+total = area x dimness.
+ST2E5 THE LOOSE GRIP: escape velocity 66.6 km/s; binding 1.48e-8 of rest energy
+per kg.
+ST2E6 ENERGY AND ADDRESS NEVER MIX: dE/dL = 0 identically; halving the mass
+moves E by exactly (3/2) ln 2 = 1.0397 nats regardless of light.
+ST2E-U1: it spends like a population and binds like a cloud — a star in the act
+of letting go.

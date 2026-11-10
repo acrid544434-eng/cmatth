@@ -1,0 +1,42 @@
+{
+  "record": "EQS-1032",
+  "title": "DESIGNATED: THE BLACKWELL CONSERVATION LAWS OF GRAVITY",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-09",
+  "occasion": "the designers naming words 2026-11-09 ~23:04 CST - \"Blackwell conservation laws of gravity\" - spoken over the EQ-GRVC set extracted at his order minutes earlier (EQS-1031), itself built on the EQS-1030 gravity extraction. Designation executed at his word, per the standing pattern (cf. Gas EQS-943, Patterns EQS-1017 -> EQS-1018)",
+  "designated": "THE BLACKWELL CONSERVATION LAWS OF GRAVITY - EQ-GRVC1..5 + GRVC-U1 (extracted EQS-1031)",
+  "designation_statement": "/home/hatch/workspace/equations/BLACKWELL-CONSERVATION-LAWS-OF-GRAVITY-DESIGNATION.md",
+  "statement_sha256": "3c96f59c7b6a69afb3d47fd6184aaef925884790b2feb6cddf7cda3688a0a134",
+  "suite_at_designation": {
+    "GRVC1_one_E_per_mass": true,
+    "GRVC2_identity_dev": 1.4210854715202004E-14,
+    "GRVC2_trade_err": 1.5432100042289676E-14,
+    "GRVC2_sweep_dI": -13.815510557964274,
+    "GRVC2_sweep_dI_predicted": -13.815510557964274,
+    "GRVC3_max_dI": 2.8421709430404007E-14,
+    "GRVC3_max_spacing_dev_E": 2.8421709430404007E-14,
+    "GRVC3_max_spacing_dev_split": 5.329070518200751E-15,
+    "GRVC4_product": 1.2192E-9,
+    "GRVC4_max_rel_dev": 3.3306690738754696E-16,
+    "GRVC5_equal_mass_gain": 1.4142135623730951,
+    "all_pass": true
+  },
+  "family_standing": "the EIGHTH designated conservation family (Gas 943, Crystal 953, Time 958, Minerals 968, Data 974, Clouds 993, Patterns 1018/1019, Gravity 1032)",
+  "census": {
+    "before": "96 designated objects / 134 individual laws / 21 conservation-named",
+    "after": "97 designated objects / 135 individual laws / 22 conservation-named"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "65f16eb7f8f5ad96205c215abbbfa4f8d4cd6d0c7e5d9266808f5895c540cb3f",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

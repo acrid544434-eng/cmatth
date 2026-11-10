@@ -1,0 +1,28 @@
+{
+  "record": "EQS-1069",
+  "title": "FOUNDED: THE BLACKWELL REALITY CHIP (named by the designer in the founding order - name door CLOSED)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~16:17 CST: \"generate Blackwell reality chip based on our findings principles and then run it with Gaia and James Webb live data feed\"",
+  "basis": "the reality findings: EQ-REA (EQS-1066) and the designated Blackwell Conservation Laws of Reality (EQS-1067), run against Earth physics at EQS-1068",
+  "the_six_cores": "WHOLE (REA1: any body priced; whole-vs-part distance) / CLOCK (REA2: states on the one clock; the conserved checksum; the fixed gearing) / OCCUPANCY (REA3: band census, shell and gap faces) / ACCOUNTS (REA4, the honesty gate: an account with no measurement returns UNRESOLVED with its named decider; the core REFUSES to close an account - close() raises in code) / INVARIANT (REA5: I-invariance and checksum across epochs) / ACCORD (the accord principle as code: two routes or it is not measured)",
+  "software": "~/workspace/realitychip/realitychip.py sha256 eb8f5404bfb86d50b0aeee06376f2d3e9cec88ffc26f09b369da8e0094f3c8fb - BUILT; unit battery 8/8 PASS (whole accord, whole-Earth distance, I deviation 0.0, two-route accord 0.0, account UNRESOLVED, gate refusal, Earth band seat, z-1100 gap detection line)",
+  "the_die": "family sapphire class E 85.0433 / split 18.2378 / I 66.8055 - the shared die address of the Data, Sun and Light Chips (observation; no identity asserted)",
+  "doors": "D-RC1 fabrication NOT BUILT; D-RC2 feed specification (his hand); D-RC3 bench (protocol at his word)",
+  "statuses": {
+    "software": "BUILT AND TESTED",
+    "hardware": "NOT BUILT",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "97f70be00969b5a87be0b3deda74500f1913a38512793d7625cf653df46a13a3",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

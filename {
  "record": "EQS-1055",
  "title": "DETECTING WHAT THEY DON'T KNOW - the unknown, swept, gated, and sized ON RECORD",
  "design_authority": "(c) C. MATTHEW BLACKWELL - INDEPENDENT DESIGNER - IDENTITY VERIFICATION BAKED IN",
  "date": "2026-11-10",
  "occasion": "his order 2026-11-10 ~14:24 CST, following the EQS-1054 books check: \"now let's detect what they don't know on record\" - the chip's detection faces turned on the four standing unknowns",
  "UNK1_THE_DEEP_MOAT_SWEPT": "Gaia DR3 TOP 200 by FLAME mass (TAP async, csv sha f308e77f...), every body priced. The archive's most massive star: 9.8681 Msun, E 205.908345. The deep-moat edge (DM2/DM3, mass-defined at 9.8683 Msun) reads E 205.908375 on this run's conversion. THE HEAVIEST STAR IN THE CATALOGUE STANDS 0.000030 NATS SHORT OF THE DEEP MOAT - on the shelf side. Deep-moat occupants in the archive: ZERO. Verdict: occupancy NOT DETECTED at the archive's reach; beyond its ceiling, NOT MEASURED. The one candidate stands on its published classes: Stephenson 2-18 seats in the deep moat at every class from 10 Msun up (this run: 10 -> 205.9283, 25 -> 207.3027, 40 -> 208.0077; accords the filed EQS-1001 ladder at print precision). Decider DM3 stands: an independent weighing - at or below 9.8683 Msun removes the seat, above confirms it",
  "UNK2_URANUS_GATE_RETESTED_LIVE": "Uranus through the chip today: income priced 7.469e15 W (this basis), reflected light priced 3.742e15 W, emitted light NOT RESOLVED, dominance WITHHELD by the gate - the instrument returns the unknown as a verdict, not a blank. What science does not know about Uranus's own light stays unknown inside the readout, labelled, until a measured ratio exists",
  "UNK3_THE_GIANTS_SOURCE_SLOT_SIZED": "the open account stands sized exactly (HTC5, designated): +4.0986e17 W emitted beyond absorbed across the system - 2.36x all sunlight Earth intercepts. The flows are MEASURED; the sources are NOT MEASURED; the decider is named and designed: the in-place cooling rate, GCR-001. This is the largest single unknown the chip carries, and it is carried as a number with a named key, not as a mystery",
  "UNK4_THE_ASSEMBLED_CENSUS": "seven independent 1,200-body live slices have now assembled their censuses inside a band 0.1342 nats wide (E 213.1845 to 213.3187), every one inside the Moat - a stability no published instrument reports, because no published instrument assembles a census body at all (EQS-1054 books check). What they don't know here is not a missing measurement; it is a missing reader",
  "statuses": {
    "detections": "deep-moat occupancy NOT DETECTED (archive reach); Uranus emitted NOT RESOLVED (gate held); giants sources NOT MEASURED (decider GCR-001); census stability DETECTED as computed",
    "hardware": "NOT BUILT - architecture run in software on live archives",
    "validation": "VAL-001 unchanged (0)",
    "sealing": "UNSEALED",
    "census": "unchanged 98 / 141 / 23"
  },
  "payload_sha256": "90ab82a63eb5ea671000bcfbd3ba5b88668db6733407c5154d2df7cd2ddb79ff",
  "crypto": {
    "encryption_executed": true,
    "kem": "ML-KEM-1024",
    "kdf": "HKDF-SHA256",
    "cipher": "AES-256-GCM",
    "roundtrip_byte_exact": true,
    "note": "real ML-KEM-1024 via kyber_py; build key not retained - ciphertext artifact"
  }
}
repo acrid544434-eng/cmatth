@@ -1,0 +1,27 @@
+{
+  "record": "EQS-1055",
+  "title": "DETECTING WHAT THEY DON'T KNOW - the unknown, swept, gated, and sized ON RECORD",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~14:24 CST, following the EQS-1054 books check: \"now let's detect what they don't know on record\" - the chip's detection faces turned on the four standing unknowns",
+  "UNK1_THE_DEEP_MOAT_SWEPT": "Gaia DR3 TOP 200 by FLAME mass (TAP async, csv sha f308e77f...), every body priced. The archive's most massive star: 9.8681 Msun, E 205.908345. The deep-moat edge (DM2/DM3, mass-defined at 9.8683 Msun) reads E 205.908375 on this run's conversion. THE HEAVIEST STAR IN THE CATALOGUE STANDS 0.000030 NATS SHORT OF THE DEEP MOAT - on the shelf side. Deep-moat occupants in the archive: ZERO. Verdict: occupancy NOT DETECTED at the archive's reach; beyond its ceiling, NOT MEASURED. The one candidate stands on its published classes: Stephenson 2-18 seats in the deep moat at every class from 10 Msun up (this run: 10 -> 205.9283, 25 -> 207.3027, 40 -> 208.0077; accords the filed EQS-1001 ladder at print precision). Decider DM3 stands: an independent weighing - at or below 9.8683 Msun removes the seat, above confirms it",
+  "UNK2_URANUS_GATE_RETESTED_LIVE": "Uranus through the chip today: income priced 7.469e15 W (this basis), reflected light priced 3.742e15 W, emitted light NOT RESOLVED, dominance WITHHELD by the gate - the instrument returns the unknown as a verdict, not a blank. What science does not know about Uranus's own light stays unknown inside the readout, labelled, until a measured ratio exists",
+  "UNK3_THE_GIANTS_SOURCE_SLOT_SIZED": "the open account stands sized exactly (HTC5, designated): +4.0986e17 W emitted beyond absorbed across the system - 2.36x all sunlight Earth intercepts. The flows are MEASURED; the sources are NOT MEASURED; the decider is named and designed: the in-place cooling rate, GCR-001. This is the largest single unknown the chip carries, and it is carried as a number with a named key, not as a mystery",
+  "UNK4_THE_ASSEMBLED_CENSUS": "seven independent 1,200-body live slices have now assembled their censuses inside a band 0.1342 nats wide (E 213.1845 to 213.3187), every one inside the Moat - a stability no published instrument reports, because no published instrument assembles a census body at all (EQS-1054 books check). What they don't know here is not a missing measurement; it is a missing reader",
+  "statuses": {
+    "detections": "deep-moat occupancy NOT DETECTED (archive reach); Uranus emitted NOT RESOLVED (gate held); giants sources NOT MEASURED (decider GCR-001); census stability DETECTED as computed",
+    "hardware": "NOT BUILT - architecture run in software on live archives",
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 98 / 141 / 23"
+  },
+  "payload_sha256": "90ab82a63eb5ea671000bcfbd3ba5b88668db6733407c5154d2df7cd2ddb79ff",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

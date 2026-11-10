@@ -1,0 +1,61 @@
+# PULSE-INFRA - INFRASTRUCTURE DESIGNED BY THE BLACKWELL PLANETARY PULSE CHIP (DESK LABEL)
+**(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN**
+Designed 2026-11-10 - Filed as EQS-1036 - UNSEALED - NOT BUILT
+Name door D-PI1 (desk label PULSE-INFRA stands until the designer's word)
+
+## The design discipline
+Ordinary infrastructure is designed by load and span; its register state is
+whatever the materials happen to give. Pulse-designed infrastructure is
+specified by (mass, bulk density) FIRST through the Pulse Chip, so each
+article's state fate - SPENT, PENDING, or NONE - is CHOSEN at the drawing
+board and its full transition ledger is printed before any fabrication
+door opens. The seat is a dial: bulk density alone moves the split at
+1/4 ln(rho ratio). All figures below are computed in-run
+(pulse_infra_run.json); none are hand-carried.
+
+## The three design windows (computed from the filed edges)
+- SHELL-HOLD (SPENT class): bulk 500.1 to 15,483.9 kg/m3 - inside
+  the shell with no pending pulse at either wall.
+- PENDING-ENTRY: bulk 342.6 to 500.1 kg/m3 - below the floor,
+  inside the clock's remaining step (ln rho_inf = 0.09453); the crossing
+  position on the remaining clock is set by where in the window the
+  density sits.
+- PENDING-EXIT: bulk 15,483.9 to 22,604.3 kg/m3 - inside the
+  shell, out through the ceiling before the terminal state (the
+  tungsten/gold/platinum class of seats; specified knowingly or not at all).
+- GAP-HOLD (NONE class): at or below 342.6 - no crossing at any epoch.
+
+## The articles (construction classes labelled)
+- PI-A ANCHOR FOUNDATION - 2x2x1 m block, bulk 4,800 (reinforced-concrete
+  class): 19,200 kg, E 112.6206, split 18.2846.
+  SPENT. Margins: 0.565 to the floor, 0.387 to the ceiling.
+- PI-B1 PENDING PANEL, LATE - 4x2.5x0.2 m sandwich panel, bulk 480:
+  960 kg, E 108.1270, split 17.7089.
+  PENDING: enters the shell at z -0.0445.
+- PI-B2 PENDING PANEL, EARLY - same panel at bulk 350:
+  700 kg, E 107.6532, split 17.6300.
+  PENDING: enters at z -0.6386. One design, two fates,
+  set by 130 kg/m3 of bulk.
+- PI-C GAP-HOLD HABITAT SEGMENT - 10 m3 envelope, bulk 300:
+  3,000 kg, E 109.8362, split 17.5914.
+  NONE: holds the Technology Gap seat at every epoch (the
+  Neptune-envelope / GP-2 density line - a shared address, stated
+  without merging the designs).
+- PI-D TERMINAL VAULT - 1 m3, bulk 7,800 (steel-shot concrete class):
+  7,800 kg, E 111.2694, split 18.4060.
+  SPENT, deep seat; exit margin 0.266 nats - no pending pulse.
+
+## Bench (preregistered here; NOT EXECUTED)
+Weigh each article (+-0.1%) and take its envelope volume (+-0.5%); the
+seat and the pulse audit are computed from the MEASURED (M, rho) only,
+by the chip, with design windows hidden until the audit is written.
+PASS: measured seat inside the article's design window and pulse class
+as specified. KILL: any article measured outside its window - that
+article's fate claim dies; re-tuning is a new revision. Strength,
+weathering and code compliance are NOT claimed by this design and are
+NOT MEASURED here - the design claims seats and fates only.
+
+## Doors
+D-PI1 name (his word). D-PI2 fabrication - NOT BUILT. D-PI3 bench
+execution - at his word. D-PI4 programme scope (which building classes
+adopt the discipline) - his hand.

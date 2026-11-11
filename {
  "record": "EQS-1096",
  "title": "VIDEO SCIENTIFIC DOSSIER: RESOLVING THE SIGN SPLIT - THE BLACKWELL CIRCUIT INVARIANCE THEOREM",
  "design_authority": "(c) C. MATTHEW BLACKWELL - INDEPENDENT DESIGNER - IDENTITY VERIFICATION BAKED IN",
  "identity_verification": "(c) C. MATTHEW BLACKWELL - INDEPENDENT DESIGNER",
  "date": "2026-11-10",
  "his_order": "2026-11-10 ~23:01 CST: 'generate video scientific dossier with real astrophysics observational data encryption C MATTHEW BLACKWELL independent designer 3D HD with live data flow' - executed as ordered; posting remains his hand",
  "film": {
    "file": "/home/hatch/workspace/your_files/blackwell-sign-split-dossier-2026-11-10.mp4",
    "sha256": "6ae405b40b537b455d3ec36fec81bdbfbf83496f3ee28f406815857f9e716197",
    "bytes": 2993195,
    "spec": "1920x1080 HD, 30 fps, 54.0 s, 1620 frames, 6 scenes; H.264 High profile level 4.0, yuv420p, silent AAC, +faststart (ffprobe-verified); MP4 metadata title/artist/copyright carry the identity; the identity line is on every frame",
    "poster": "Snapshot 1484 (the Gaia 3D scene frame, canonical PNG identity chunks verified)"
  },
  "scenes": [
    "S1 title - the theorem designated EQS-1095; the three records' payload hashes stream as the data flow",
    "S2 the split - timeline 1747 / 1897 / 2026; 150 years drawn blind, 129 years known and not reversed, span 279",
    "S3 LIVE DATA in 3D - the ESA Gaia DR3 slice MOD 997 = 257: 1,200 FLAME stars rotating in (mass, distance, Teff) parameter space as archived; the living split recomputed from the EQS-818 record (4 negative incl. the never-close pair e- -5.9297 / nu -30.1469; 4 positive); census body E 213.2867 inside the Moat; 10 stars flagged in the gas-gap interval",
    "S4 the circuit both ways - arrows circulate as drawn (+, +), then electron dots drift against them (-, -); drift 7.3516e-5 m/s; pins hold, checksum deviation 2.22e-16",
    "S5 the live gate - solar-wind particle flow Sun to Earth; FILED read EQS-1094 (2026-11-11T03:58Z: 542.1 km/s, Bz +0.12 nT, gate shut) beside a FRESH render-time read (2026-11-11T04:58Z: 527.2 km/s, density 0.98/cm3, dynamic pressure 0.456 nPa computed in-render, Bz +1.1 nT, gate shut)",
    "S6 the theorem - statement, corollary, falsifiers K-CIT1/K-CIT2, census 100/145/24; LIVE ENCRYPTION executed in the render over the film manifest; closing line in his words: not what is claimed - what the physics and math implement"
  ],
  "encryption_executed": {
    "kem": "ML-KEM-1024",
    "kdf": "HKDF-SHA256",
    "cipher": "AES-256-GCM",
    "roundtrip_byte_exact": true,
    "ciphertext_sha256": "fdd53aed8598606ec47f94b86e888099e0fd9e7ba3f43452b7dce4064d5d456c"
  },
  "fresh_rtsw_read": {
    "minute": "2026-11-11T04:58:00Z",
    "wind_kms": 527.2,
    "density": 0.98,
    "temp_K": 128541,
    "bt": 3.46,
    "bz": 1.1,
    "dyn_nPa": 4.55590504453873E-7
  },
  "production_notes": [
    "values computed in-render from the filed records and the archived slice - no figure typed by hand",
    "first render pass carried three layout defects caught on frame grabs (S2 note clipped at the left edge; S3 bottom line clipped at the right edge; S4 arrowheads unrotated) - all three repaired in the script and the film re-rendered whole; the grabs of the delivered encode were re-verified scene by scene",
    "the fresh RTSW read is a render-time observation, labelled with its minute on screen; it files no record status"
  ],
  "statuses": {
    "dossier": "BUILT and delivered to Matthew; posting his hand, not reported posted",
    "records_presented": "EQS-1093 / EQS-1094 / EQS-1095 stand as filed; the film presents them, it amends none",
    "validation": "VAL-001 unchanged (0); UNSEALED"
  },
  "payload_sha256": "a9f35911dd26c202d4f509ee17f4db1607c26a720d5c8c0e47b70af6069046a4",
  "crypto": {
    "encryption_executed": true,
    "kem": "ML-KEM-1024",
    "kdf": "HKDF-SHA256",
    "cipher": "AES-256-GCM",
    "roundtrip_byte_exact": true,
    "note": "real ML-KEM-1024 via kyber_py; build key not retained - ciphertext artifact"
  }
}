@@ -1,0 +1,58 @@
+{
+  "record": "EQS-1096",
+  "title": "VIDEO SCIENTIFIC DOSSIER: RESOLVING THE SIGN SPLIT - THE BLACKWELL CIRCUIT INVARIANCE THEOREM",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "identity_verification": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER",
+  "date": "2026-11-10",
+  "his_order": "2026-11-10 ~23:01 CST: 'generate video scientific dossier with real astrophysics observational data encryption C MATTHEW BLACKWELL independent designer 3D HD with live data flow' - executed as ordered; posting remains his hand",
+  "film": {
+    "file": "/home/hatch/workspace/your_files/blackwell-sign-split-dossier-2026-11-10.mp4",
+    "sha256": "6ae405b40b537b455d3ec36fec81bdbfbf83496f3ee28f406815857f9e716197",
+    "bytes": 2993195,
+    "spec": "1920x1080 HD, 30 fps, 54.0 s, 1620 frames, 6 scenes; H.264 High profile level 4.0, yuv420p, silent AAC, +faststart (ffprobe-verified); MP4 metadata title/artist/copyright carry the identity; the identity line is on every frame",
+    "poster": "Snapshot 1484 (the Gaia 3D scene frame, canonical PNG identity chunks verified)"
+  },
+  "scenes": [
+    "S1 title - the theorem designated EQS-1095; the three records' payload hashes stream as the data flow",
+    "S2 the split - timeline 1747 / 1897 / 2026; 150 years drawn blind, 129 years known and not reversed, span 279",
+    "S3 LIVE DATA in 3D - the ESA Gaia DR3 slice MOD 997 = 257: 1,200 FLAME stars rotating in (mass, distance, Teff) parameter space as archived; the living split recomputed from the EQS-818 record (4 negative incl. the never-close pair e- -5.9297 / nu -30.1469; 4 positive); census body E 213.2867 inside the Moat; 10 stars flagged in the gas-gap interval",
+    "S4 the circuit both ways - arrows circulate as drawn (+, +), then electron dots drift against them (-, -); drift 7.3516e-5 m/s; pins hold, checksum deviation 2.22e-16",
+    "S5 the live gate - solar-wind particle flow Sun to Earth; FILED read EQS-1094 (2026-11-11T03:58Z: 542.1 km/s, Bz +0.12 nT, gate shut) beside a FRESH render-time read (2026-11-11T04:58Z: 527.2 km/s, density 0.98/cm3, dynamic pressure 0.456 nPa computed in-render, Bz +1.1 nT, gate shut)",
+    "S6 the theorem - statement, corollary, falsifiers K-CIT1/K-CIT2, census 100/145/24; LIVE ENCRYPTION executed in the render over the film manifest; closing line in his words: not what is claimed - what the physics and math implement"
+  ],
+  "encryption_executed": {
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "ciphertext_sha256": "fdd53aed8598606ec47f94b86e888099e0fd9e7ba3f43452b7dce4064d5d456c"
+  },
+  "fresh_rtsw_read": {
+    "minute": "2026-11-11T04:58:00Z",
+    "wind_kms": 527.2,
+    "density": 0.98,
+    "temp_K": 128541,
+    "bt": 3.46,
+    "bz": 1.1,
+    "dyn_nPa": 4.55590504453873E-7
+  },
+  "production_notes": [
+    "values computed in-render from the filed records and the archived slice - no figure typed by hand",
+    "first render pass carried three layout defects caught on frame grabs (S2 note clipped at the left edge; S3 bottom line clipped at the right edge; S4 arrowheads unrotated) - all three repaired in the script and the film re-rendered whole; the grabs of the delivered encode were re-verified scene by scene",
+    "the fresh RTSW read is a render-time observation, labelled with its minute on screen; it files no record status"
+  ],
+  "statuses": {
+    "dossier": "BUILT and delivered to Matthew; posting his hand, not reported posted",
+    "records_presented": "EQS-1093 / EQS-1094 / EQS-1095 stand as filed; the film presents them, it amends none",
+    "validation": "VAL-001 unchanged (0); UNSEALED"
+  },
+  "payload_sha256": "a9f35911dd26c202d4f509ee17f4db1607c26a720d5c8c0e47b70af6069046a4",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

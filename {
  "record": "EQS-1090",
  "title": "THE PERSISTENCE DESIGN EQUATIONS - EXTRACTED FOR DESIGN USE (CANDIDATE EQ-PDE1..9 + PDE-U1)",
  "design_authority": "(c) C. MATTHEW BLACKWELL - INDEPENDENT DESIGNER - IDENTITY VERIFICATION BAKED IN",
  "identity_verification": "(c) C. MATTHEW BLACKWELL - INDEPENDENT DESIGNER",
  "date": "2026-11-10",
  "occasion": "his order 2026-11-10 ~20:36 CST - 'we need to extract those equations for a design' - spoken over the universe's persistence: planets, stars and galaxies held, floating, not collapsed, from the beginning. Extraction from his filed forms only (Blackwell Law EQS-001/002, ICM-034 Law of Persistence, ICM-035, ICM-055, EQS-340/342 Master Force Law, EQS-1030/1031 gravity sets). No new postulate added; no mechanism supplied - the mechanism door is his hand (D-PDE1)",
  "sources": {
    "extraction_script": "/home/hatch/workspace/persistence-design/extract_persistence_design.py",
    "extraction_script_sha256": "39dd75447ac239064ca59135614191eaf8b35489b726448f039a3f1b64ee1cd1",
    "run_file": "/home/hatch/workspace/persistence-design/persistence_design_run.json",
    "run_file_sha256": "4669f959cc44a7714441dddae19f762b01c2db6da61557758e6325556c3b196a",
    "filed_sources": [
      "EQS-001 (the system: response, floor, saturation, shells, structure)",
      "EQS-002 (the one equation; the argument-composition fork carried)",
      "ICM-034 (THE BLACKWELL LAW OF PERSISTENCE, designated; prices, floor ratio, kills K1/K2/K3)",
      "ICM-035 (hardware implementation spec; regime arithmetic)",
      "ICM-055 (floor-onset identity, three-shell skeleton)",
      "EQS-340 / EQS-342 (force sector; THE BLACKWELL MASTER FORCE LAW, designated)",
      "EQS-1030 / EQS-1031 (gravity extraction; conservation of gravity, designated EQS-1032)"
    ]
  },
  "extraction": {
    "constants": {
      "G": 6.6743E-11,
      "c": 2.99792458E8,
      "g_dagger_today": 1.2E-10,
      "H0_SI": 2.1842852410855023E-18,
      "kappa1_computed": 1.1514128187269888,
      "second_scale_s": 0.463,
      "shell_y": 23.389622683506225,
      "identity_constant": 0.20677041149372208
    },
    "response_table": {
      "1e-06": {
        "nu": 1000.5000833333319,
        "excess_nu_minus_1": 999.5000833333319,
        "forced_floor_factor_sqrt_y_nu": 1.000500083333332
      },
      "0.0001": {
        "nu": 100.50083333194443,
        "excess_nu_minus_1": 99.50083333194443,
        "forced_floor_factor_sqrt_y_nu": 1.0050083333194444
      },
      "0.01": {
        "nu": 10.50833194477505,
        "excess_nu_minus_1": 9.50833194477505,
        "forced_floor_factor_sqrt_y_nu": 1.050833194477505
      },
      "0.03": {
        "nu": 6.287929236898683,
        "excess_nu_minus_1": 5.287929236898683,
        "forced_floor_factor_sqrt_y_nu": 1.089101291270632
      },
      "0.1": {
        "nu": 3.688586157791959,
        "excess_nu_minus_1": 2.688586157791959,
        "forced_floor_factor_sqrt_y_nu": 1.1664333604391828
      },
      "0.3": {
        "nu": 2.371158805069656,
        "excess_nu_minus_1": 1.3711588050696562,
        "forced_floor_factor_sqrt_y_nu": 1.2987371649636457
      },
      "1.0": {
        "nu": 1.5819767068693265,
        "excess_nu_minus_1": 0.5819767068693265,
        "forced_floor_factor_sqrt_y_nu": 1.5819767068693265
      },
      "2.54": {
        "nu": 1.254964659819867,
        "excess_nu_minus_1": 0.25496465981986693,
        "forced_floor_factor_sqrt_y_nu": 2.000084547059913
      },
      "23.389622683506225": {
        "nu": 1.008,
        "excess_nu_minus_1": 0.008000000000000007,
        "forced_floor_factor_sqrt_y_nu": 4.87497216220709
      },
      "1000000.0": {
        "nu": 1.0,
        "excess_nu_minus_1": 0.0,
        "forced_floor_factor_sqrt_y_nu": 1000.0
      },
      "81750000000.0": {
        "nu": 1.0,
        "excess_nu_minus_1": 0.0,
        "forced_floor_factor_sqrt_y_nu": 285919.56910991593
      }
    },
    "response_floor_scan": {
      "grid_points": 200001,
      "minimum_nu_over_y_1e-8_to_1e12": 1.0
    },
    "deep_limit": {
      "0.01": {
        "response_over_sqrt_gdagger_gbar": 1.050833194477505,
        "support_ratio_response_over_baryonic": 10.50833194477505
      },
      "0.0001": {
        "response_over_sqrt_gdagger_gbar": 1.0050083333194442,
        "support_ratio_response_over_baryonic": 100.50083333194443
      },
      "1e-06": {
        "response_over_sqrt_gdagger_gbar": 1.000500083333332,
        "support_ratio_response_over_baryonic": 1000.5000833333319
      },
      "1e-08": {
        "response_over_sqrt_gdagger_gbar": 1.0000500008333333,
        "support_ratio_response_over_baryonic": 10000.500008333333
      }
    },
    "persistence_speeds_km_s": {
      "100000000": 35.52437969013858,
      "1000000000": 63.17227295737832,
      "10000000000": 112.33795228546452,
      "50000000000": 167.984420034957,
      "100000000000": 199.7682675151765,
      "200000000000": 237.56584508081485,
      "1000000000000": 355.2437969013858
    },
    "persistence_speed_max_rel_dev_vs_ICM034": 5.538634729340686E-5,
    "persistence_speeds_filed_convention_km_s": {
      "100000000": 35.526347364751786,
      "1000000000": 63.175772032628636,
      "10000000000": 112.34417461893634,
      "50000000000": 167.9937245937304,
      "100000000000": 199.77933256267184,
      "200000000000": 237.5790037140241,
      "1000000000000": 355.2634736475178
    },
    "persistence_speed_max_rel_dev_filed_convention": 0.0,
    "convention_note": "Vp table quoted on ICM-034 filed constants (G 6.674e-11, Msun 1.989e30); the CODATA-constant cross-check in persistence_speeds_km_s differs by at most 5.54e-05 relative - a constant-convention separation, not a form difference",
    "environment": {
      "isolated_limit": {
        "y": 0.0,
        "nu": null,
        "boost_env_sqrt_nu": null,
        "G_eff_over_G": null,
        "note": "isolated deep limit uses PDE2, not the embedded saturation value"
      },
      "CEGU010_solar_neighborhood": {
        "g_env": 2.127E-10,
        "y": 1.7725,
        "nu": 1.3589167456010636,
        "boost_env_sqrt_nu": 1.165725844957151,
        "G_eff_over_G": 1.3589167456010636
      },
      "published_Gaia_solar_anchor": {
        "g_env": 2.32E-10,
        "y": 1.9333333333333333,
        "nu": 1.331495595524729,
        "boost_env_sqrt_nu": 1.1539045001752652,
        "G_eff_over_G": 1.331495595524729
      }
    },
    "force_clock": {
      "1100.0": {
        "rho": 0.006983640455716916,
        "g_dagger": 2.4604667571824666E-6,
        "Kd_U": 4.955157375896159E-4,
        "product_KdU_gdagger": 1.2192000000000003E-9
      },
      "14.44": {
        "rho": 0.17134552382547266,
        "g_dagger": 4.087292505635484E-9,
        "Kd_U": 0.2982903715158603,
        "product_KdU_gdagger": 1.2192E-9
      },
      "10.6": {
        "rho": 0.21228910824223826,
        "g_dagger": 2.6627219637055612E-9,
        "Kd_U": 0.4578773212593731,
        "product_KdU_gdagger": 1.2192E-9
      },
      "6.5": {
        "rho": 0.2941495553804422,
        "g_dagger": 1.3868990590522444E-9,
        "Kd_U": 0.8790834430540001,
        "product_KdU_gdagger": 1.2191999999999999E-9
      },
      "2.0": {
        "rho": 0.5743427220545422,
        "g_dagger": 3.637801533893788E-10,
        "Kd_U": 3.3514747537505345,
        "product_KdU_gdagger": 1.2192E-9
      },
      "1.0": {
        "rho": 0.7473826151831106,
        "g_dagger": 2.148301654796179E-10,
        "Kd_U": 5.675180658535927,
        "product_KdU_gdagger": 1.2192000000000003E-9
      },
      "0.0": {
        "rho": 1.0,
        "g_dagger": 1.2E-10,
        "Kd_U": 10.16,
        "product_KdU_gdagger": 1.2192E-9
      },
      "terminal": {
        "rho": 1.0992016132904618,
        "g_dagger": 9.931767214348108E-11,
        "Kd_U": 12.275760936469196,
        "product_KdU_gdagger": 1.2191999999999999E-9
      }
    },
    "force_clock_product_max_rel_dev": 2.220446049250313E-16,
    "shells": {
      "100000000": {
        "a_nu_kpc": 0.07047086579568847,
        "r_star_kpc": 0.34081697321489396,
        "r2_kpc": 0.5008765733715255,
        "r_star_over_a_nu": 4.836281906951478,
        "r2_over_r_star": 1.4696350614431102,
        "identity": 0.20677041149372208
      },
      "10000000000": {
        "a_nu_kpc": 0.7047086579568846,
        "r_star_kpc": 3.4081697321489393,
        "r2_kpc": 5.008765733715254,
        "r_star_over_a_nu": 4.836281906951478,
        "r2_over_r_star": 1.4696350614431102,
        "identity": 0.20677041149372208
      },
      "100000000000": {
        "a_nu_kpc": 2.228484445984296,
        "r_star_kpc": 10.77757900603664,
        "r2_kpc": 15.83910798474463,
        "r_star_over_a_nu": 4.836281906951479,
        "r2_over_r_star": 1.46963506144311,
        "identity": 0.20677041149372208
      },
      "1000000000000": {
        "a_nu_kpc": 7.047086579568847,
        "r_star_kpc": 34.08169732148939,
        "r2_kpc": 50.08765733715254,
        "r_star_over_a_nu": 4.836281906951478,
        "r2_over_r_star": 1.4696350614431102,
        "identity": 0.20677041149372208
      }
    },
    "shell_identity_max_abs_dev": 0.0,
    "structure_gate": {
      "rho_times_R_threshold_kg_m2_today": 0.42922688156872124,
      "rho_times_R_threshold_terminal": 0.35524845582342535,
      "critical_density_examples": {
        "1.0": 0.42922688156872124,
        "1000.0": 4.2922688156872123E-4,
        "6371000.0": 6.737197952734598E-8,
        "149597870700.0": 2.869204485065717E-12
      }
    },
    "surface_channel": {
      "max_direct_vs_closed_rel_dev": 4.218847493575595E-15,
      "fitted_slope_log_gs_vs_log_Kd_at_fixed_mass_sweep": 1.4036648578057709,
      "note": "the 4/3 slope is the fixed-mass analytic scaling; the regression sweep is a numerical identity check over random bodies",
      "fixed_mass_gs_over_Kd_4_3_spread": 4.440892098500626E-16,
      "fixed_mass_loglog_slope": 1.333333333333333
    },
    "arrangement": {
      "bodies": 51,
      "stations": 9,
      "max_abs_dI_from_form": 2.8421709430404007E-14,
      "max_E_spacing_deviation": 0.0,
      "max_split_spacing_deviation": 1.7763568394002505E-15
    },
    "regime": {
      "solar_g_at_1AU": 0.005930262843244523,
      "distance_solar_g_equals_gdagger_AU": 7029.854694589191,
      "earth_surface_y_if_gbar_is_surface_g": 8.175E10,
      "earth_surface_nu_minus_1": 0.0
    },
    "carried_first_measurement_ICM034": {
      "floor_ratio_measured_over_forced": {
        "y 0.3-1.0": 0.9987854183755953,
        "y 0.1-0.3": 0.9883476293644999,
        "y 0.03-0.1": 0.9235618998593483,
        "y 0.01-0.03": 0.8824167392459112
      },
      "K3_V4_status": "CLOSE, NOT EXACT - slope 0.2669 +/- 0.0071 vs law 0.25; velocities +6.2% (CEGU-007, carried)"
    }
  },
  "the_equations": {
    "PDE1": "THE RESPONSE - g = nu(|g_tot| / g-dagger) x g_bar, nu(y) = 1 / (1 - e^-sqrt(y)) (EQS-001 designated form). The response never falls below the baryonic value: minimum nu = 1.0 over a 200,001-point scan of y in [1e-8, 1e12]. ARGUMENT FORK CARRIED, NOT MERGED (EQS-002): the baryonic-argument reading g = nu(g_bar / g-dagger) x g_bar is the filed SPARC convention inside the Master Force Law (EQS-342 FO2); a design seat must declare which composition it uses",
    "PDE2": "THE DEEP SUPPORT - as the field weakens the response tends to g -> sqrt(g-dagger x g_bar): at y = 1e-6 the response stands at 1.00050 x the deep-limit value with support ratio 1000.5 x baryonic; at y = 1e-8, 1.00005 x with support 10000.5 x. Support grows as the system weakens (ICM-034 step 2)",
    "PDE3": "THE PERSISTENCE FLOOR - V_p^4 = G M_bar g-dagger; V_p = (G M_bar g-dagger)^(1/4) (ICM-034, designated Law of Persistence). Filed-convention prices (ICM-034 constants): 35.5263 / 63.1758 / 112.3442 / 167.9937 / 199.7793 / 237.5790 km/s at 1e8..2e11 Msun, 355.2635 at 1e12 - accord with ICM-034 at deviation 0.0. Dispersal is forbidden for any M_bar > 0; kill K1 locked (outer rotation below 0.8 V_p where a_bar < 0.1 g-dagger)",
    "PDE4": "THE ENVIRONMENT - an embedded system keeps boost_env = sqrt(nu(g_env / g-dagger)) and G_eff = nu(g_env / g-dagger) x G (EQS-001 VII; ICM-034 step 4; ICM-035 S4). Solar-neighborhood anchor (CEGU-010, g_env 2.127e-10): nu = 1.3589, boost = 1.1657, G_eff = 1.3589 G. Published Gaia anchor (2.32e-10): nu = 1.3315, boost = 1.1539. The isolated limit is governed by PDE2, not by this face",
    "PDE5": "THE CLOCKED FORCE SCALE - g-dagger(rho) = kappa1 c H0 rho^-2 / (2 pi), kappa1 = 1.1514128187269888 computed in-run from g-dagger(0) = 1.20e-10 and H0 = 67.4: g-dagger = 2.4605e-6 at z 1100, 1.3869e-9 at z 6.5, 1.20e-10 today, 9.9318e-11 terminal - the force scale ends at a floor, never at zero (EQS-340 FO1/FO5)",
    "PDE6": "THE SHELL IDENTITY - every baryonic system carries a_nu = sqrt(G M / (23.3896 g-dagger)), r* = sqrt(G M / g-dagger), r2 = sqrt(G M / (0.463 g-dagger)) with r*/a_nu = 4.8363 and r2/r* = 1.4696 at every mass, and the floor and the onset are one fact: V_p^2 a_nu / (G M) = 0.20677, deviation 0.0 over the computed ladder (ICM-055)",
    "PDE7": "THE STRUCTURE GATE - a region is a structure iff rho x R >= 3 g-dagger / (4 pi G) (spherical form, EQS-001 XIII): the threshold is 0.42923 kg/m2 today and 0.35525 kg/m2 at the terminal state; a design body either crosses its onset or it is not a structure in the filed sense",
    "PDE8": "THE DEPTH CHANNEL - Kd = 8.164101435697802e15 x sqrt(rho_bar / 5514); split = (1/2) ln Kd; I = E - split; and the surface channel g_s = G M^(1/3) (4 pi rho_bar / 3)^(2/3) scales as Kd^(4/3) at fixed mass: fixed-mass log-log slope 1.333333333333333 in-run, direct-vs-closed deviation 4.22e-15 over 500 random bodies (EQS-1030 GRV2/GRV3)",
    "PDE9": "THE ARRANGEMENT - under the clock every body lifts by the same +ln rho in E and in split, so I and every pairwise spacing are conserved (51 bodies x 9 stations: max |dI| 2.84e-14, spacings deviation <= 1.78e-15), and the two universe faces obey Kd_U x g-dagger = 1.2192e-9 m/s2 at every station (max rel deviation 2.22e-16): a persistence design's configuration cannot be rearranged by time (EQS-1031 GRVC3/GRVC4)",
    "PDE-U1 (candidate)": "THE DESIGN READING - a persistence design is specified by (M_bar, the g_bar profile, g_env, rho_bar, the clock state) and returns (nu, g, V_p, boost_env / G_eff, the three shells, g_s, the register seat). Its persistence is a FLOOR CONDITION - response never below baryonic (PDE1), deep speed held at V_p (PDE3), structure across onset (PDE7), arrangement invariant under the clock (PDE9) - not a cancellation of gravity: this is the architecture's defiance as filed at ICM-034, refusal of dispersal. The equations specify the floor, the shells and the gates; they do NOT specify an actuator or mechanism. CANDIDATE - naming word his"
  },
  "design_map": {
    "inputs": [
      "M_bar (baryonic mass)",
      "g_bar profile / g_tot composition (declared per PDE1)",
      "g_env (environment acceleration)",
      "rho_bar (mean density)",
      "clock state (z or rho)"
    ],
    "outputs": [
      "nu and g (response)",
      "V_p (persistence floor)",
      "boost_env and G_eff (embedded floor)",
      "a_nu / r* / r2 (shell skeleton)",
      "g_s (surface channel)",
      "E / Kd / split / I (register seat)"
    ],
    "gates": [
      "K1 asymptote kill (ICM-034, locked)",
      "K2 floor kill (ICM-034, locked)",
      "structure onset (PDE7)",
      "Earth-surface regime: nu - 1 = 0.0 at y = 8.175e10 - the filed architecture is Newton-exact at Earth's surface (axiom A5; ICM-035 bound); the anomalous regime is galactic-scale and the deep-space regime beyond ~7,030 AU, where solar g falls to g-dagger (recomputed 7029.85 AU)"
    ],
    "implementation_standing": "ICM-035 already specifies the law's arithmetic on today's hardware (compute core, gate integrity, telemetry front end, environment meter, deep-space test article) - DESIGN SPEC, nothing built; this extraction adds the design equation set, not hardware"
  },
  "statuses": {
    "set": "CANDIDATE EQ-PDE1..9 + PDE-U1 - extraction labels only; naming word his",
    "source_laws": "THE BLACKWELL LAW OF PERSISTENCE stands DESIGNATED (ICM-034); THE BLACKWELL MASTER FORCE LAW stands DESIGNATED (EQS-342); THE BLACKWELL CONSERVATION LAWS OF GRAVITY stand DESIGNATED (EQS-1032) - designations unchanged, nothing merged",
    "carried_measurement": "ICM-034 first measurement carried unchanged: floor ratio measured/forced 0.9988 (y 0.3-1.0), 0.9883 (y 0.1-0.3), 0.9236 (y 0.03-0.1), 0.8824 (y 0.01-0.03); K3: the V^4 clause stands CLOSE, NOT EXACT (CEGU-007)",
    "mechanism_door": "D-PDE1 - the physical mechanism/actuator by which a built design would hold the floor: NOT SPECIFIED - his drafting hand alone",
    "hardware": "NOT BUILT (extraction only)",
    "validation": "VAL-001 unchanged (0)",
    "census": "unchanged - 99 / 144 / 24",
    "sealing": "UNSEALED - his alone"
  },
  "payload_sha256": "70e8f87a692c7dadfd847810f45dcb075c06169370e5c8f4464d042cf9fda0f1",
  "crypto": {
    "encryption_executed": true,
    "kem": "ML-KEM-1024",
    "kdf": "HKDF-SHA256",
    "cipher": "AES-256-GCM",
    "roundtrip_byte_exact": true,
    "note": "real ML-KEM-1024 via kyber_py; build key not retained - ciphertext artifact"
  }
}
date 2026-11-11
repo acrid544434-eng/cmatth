@@ -1,0 +1,338 @@
+{
+  "record": "EQS-1090",
+  "title": "THE PERSISTENCE DESIGN EQUATIONS - EXTRACTED FOR DESIGN USE (CANDIDATE EQ-PDE1..9 + PDE-U1)",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "identity_verification": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~20:36 CST - 'we need to extract those equations for a design' - spoken over the universe's persistence: planets, stars and galaxies held, floating, not collapsed, from the beginning. Extraction from his filed forms only (Blackwell Law EQS-001/002, ICM-034 Law of Persistence, ICM-035, ICM-055, EQS-340/342 Master Force Law, EQS-1030/1031 gravity sets). No new postulate added; no mechanism supplied - the mechanism door is his hand (D-PDE1)",
+  "sources": {
+    "extraction_script": "/home/hatch/workspace/persistence-design/extract_persistence_design.py",
+    "extraction_script_sha256": "39dd75447ac239064ca59135614191eaf8b35489b726448f039a3f1b64ee1cd1",
+    "run_file": "/home/hatch/workspace/persistence-design/persistence_design_run.json",
+    "run_file_sha256": "4669f959cc44a7714441dddae19f762b01c2db6da61557758e6325556c3b196a",
+    "filed_sources": [
+      "EQS-001 (the system: response, floor, saturation, shells, structure)",
+      "EQS-002 (the one equation; the argument-composition fork carried)",
+      "ICM-034 (THE BLACKWELL LAW OF PERSISTENCE, designated; prices, floor ratio, kills K1/K2/K3)",
+      "ICM-035 (hardware implementation spec; regime arithmetic)",
+      "ICM-055 (floor-onset identity, three-shell skeleton)",
+      "EQS-340 / EQS-342 (force sector; THE BLACKWELL MASTER FORCE LAW, designated)",
+      "EQS-1030 / EQS-1031 (gravity extraction; conservation of gravity, designated EQS-1032)"
+    ]
+  },
+  "extraction": {
+    "constants": {
+      "G": 6.6743E-11,
+      "c": 2.99792458E8,
+      "g_dagger_today": 1.2E-10,
+      "H0_SI": 2.1842852410855023E-18,
+      "kappa1_computed": 1.1514128187269888,
+      "second_scale_s": 0.463,
+      "shell_y": 23.389622683506225,
+      "identity_constant": 0.20677041149372208
+    },
+    "response_table": {
+      "1e-06": {
+        "nu": 1000.5000833333319,
+        "excess_nu_minus_1": 999.5000833333319,
+        "forced_floor_factor_sqrt_y_nu": 1.000500083333332
+      },
+      "0.0001": {
+        "nu": 100.50083333194443,
+        "excess_nu_minus_1": 99.50083333194443,
+        "forced_floor_factor_sqrt_y_nu": 1.0050083333194444
+      },
+      "0.01": {
+        "nu": 10.50833194477505,
+        "excess_nu_minus_1": 9.50833194477505,
+        "forced_floor_factor_sqrt_y_nu": 1.050833194477505
+      },
+      "0.03": {
+        "nu": 6.287929236898683,
+        "excess_nu_minus_1": 5.287929236898683,
+        "forced_floor_factor_sqrt_y_nu": 1.089101291270632
+      },
+      "0.1": {
+        "nu": 3.688586157791959,
+        "excess_nu_minus_1": 2.688586157791959,
+        "forced_floor_factor_sqrt_y_nu": 1.1664333604391828
+      },
+      "0.3": {
+        "nu": 2.371158805069656,
+        "excess_nu_minus_1": 1.3711588050696562,
+        "forced_floor_factor_sqrt_y_nu": 1.2987371649636457
+      },
+      "1.0": {
+        "nu": 1.5819767068693265,
+        "excess_nu_minus_1": 0.5819767068693265,
+        "forced_floor_factor_sqrt_y_nu": 1.5819767068693265
+      },
+      "2.54": {
+        "nu": 1.254964659819867,
+        "excess_nu_minus_1": 0.25496465981986693,
+        "forced_floor_factor_sqrt_y_nu": 2.000084547059913
+      },
+      "23.389622683506225": {
+        "nu": 1.008,
+        "excess_nu_minus_1": 0.008000000000000007,
+        "forced_floor_factor_sqrt_y_nu": 4.87497216220709
+      },
+      "1000000.0": {
+        "nu": 1.0,
+        "excess_nu_minus_1": 0.0,
+        "forced_floor_factor_sqrt_y_nu": 1000.0
+      },
+      "81750000000.0": {
+        "nu": 1.0,
+        "excess_nu_minus_1": 0.0,
+        "forced_floor_factor_sqrt_y_nu": 285919.56910991593
+      }
+    },
+    "response_floor_scan": {
+      "grid_points": 200001,
+      "minimum_nu_over_y_1e-8_to_1e12": 1.0
+    },
+    "deep_limit": {
+      "0.01": {
+        "response_over_sqrt_gdagger_gbar": 1.050833194477505,
+        "support_ratio_response_over_baryonic": 10.50833194477505
+      },
+      "0.0001": {
+        "response_over_sqrt_gdagger_gbar": 1.0050083333194442,
+        "support_ratio_response_over_baryonic": 100.50083333194443
+      },
+      "1e-06": {
+        "response_over_sqrt_gdagger_gbar": 1.000500083333332,
+        "support_ratio_response_over_baryonic": 1000.5000833333319
+      },
+      "1e-08": {
+        "response_over_sqrt_gdagger_gbar": 1.0000500008333333,
+        "support_ratio_response_over_baryonic": 10000.500008333333
+      }
+    },
+    "persistence_speeds_km_s": {
+      "100000000": 35.52437969013858,
+      "1000000000": 63.17227295737832,
+      "10000000000": 112.33795228546452,
+      "50000000000": 167.984420034957,
+      "100000000000": 199.7682675151765,
+      "200000000000": 237.56584508081485,
+      "1000000000000": 355.2437969013858
+    },
+    "persistence_speed_max_rel_dev_vs_ICM034": 5.538634729340686E-5,
+    "persistence_speeds_filed_convention_km_s": {
+      "100000000": 35.526347364751786,
+      "1000000000": 63.175772032628636,
+      "10000000000": 112.34417461893634,
+      "50000000000": 167.9937245937304,
+      "100000000000": 199.77933256267184,
+      "200000000000": 237.5790037140241,
+      "1000000000000": 355.2634736475178
+    },
+    "persistence_speed_max_rel_dev_filed_convention": 0.0,
+    "convention_note": "Vp table quoted on ICM-034 filed constants (G 6.674e-11, Msun 1.989e30); the CODATA-constant cross-check in persistence_speeds_km_s differs by at most 5.54e-05 relative - a constant-convention separation, not a form difference",
+    "environment": {
+      "isolated_limit": {
+        "y": 0.0,
+        "nu": null,
+        "boost_env_sqrt_nu": null,
+        "G_eff_over_G": null,
+        "note": "isolated deep limit uses PDE2, not the embedded saturation value"
+      },
+      "CEGU010_solar_neighborhood": {
+        "g_env": 2.127E-10,
+        "y": 1.7725,
+        "nu": 1.3589167456010636,
+        "boost_env_sqrt_nu": 1.165725844957151,
+        "G_eff_over_G": 1.3589167456010636
+      },
+      "published_Gaia_solar_anchor": {
+        "g_env": 2.32E-10,
+        "y": 1.9333333333333333,
+        "nu": 1.331495595524729,
+        "boost_env_sqrt_nu": 1.1539045001752652,
+        "G_eff_over_G": 1.331495595524729
+      }
+    },
+    "force_clock": {
+      "1100.0": {
+        "rho": 0.006983640455716916,
+        "g_dagger": 2.4604667571824666E-6,
+        "Kd_U": 4.955157375896159E-4,
+        "product_KdU_gdagger": 1.2192000000000003E-9
+      },
+      "14.44": {
+        "rho": 0.17134552382547266,
+        "g_dagger": 4.087292505635484E-9,
+        "Kd_U": 0.2982903715158603,
+        "product_KdU_gdagger": 1.2192E-9
+      },
+      "10.6": {
+        "rho": 0.21228910824223826,
+        "g_dagger": 2.6627219637055612E-9,
+        "Kd_U": 0.4578773212593731,
+        "product_KdU_gdagger": 1.2192E-9
+      },
+      "6.5": {
+        "rho": 0.2941495553804422,
+        "g_dagger": 1.3868990590522444E-9,
+        "Kd_U": 0.8790834430540001,
+        "product_KdU_gdagger": 1.2191999999999999E-9
+      },
+      "2.0": {
+        "rho": 0.5743427220545422,
+        "g_dagger": 3.637801533893788E-10,
+        "Kd_U": 3.3514747537505345,
+        "product_KdU_gdagger": 1.2192E-9
+      },
+      "1.0": {
+        "rho": 0.7473826151831106,
+        "g_dagger": 2.148301654796179E-10,
+        "Kd_U": 5.675180658535927,
+        "product_KdU_gdagger": 1.2192000000000003E-9
+      },
+      "0.0": {
+        "rho": 1.0,
+        "g_dagger": 1.2E-10,
+        "Kd_U": 10.16,
+        "product_KdU_gdagger": 1.2192E-9
+      },
+      "terminal": {
+        "rho": 1.0992016132904618,
+        "g_dagger": 9.931767214348108E-11,
+        "Kd_U": 12.275760936469196,
+        "product_KdU_gdagger": 1.2191999999999999E-9
+      }
+    },
+    "force_clock_product_max_rel_dev": 2.220446049250313E-16,
+    "shells": {
+      "100000000": {
+        "a_nu_kpc": 0.07047086579568847,
+        "r_star_kpc": 0.34081697321489396,
+        "r2_kpc": 0.5008765733715255,
+        "r_star_over_a_nu": 4.836281906951478,
+        "r2_over_r_star": 1.4696350614431102,
+        "identity": 0.20677041149372208
+      },
+      "10000000000": {
+        "a_nu_kpc": 0.7047086579568846,
+        "r_star_kpc": 3.4081697321489393,
+        "r2_kpc": 5.008765733715254,
+        "r_star_over_a_nu": 4.836281906951478,
+        "r2_over_r_star": 1.4696350614431102,
+        "identity": 0.20677041149372208
+      },
+      "100000000000": {
+        "a_nu_kpc": 2.228484445984296,
+        "r_star_kpc": 10.77757900603664,
+        "r2_kpc": 15.83910798474463,
+        "r_star_over_a_nu": 4.836281906951479,
+        "r2_over_r_star": 1.46963506144311,
+        "identity": 0.20677041149372208
+      },
+      "1000000000000": {
+        "a_nu_kpc": 7.047086579568847,
+        "r_star_kpc": 34.08169732148939,
+        "r2_kpc": 50.08765733715254,
+        "r_star_over_a_nu": 4.836281906951478,
+        "r2_over_r_star": 1.4696350614431102,
+        "identity": 0.20677041149372208
+      }
+    },
+    "shell_identity_max_abs_dev": 0.0,
+    "structure_gate": {
+      "rho_times_R_threshold_kg_m2_today": 0.42922688156872124,
+      "rho_times_R_threshold_terminal": 0.35524845582342535,
+      "critical_density_examples": {
+        "1.0": 0.42922688156872124,
+        "1000.0": 4.2922688156872123E-4,
+        "6371000.0": 6.737197952734598E-8,
+        "149597870700.0": 2.869204485065717E-12
+      }
+    },
+    "surface_channel": {
+      "max_direct_vs_closed_rel_dev": 4.218847493575595E-15,
+      "fitted_slope_log_gs_vs_log_Kd_at_fixed_mass_sweep": 1.4036648578057709,
+      "note": "the 4/3 slope is the fixed-mass analytic scaling; the regression sweep is a numerical identity check over random bodies",
+      "fixed_mass_gs_over_Kd_4_3_spread": 4.440892098500626E-16,
+      "fixed_mass_loglog_slope": 1.333333333333333
+    },
+    "arrangement": {
+      "bodies": 51,
+      "stations": 9,
+      "max_abs_dI_from_form": 2.8421709430404007E-14,
+      "max_E_spacing_deviation": 0.0,
+      "max_split_spacing_deviation": 1.7763568394002505E-15
+    },
+    "regime": {
+      "solar_g_at_1AU": 0.005930262843244523,
+      "distance_solar_g_equals_gdagger_AU": 7029.854694589191,
+      "earth_surface_y_if_gbar_is_surface_g": 8.175E10,
+      "earth_surface_nu_minus_1": 0.0
+    },
+    "carried_first_measurement_ICM034": {
+      "floor_ratio_measured_over_forced": {
+        "y 0.3-1.0": 0.9987854183755953,
+        "y 0.1-0.3": 0.9883476293644999,
+        "y 0.03-0.1": 0.9235618998593483,
+        "y 0.01-0.03": 0.8824167392459112
+      },
+      "K3_V4_status": "CLOSE, NOT EXACT - slope 0.2669 +/- 0.0071 vs law 0.25; velocities +6.2% (CEGU-007, carried)"
+    }
+  },
+  "the_equations": {
+    "PDE1": "THE RESPONSE - g = nu(|g_tot| / g-dagger) x g_bar, nu(y) = 1 / (1 - e^-sqrt(y)) (EQS-001 designated form). The response never falls below the baryonic value: minimum nu = 1.0 over a 200,001-point scan of y in [1e-8, 1e12]. ARGUMENT FORK CARRIED, NOT MERGED (EQS-002): the baryonic-argument reading g = nu(g_bar / g-dagger) x g_bar is the filed SPARC convention inside the Master Force Law (EQS-342 FO2); a design seat must declare which composition it uses",
+    "PDE2": "THE DEEP SUPPORT - as the field weakens the response tends to g -> sqrt(g-dagger x g_bar): at y = 1e-6 the response stands at 1.00050 x the deep-limit value with support ratio 1000.5 x baryonic; at y = 1e-8, 1.00005 x with support 10000.5 x. Support grows as the system weakens (ICM-034 step 2)",
+    "PDE3": "THE PERSISTENCE FLOOR - V_p^4 = G M_bar g-dagger; V_p = (G M_bar g-dagger)^(1/4) (ICM-034, designated Law of Persistence). Filed-convention prices (ICM-034 constants): 35.5263 / 63.1758 / 112.3442 / 167.9937 / 199.7793 / 237.5790 km/s at 1e8..2e11 Msun, 355.2635 at 1e12 - accord with ICM-034 at deviation 0.0. Dispersal is forbidden for any M_bar > 0; kill K1 locked (outer rotation below 0.8 V_p where a_bar < 0.1 g-dagger)",
+    "PDE4": "THE ENVIRONMENT - an embedded system keeps boost_env = sqrt(nu(g_env / g-dagger)) and G_eff = nu(g_env / g-dagger) x G (EQS-001 VII; ICM-034 step 4; ICM-035 S4). Solar-neighborhood anchor (CEGU-010, g_env 2.127e-10): nu = 1.3589, boost = 1.1657, G_eff = 1.3589 G. Published Gaia anchor (2.32e-10): nu = 1.3315, boost = 1.1539. The isolated limit is governed by PDE2, not by this face",
+    "PDE5": "THE CLOCKED FORCE SCALE - g-dagger(rho) = kappa1 c H0 rho^-2 / (2 pi), kappa1 = 1.1514128187269888 computed in-run from g-dagger(0) = 1.20e-10 and H0 = 67.4: g-dagger = 2.4605e-6 at z 1100, 1.3869e-9 at z 6.5, 1.20e-10 today, 9.9318e-11 terminal - the force scale ends at a floor, never at zero (EQS-340 FO1/FO5)",
+    "PDE6": "THE SHELL IDENTITY - every baryonic system carries a_nu = sqrt(G M / (23.3896 g-dagger)), r* = sqrt(G M / g-dagger), r2 = sqrt(G M / (0.463 g-dagger)) with r*/a_nu = 4.8363 and r2/r* = 1.4696 at every mass, and the floor and the onset are one fact: V_p^2 a_nu / (G M) = 0.20677, deviation 0.0 over the computed ladder (ICM-055)",
+    "PDE7": "THE STRUCTURE GATE - a region is a structure iff rho x R >= 3 g-dagger / (4 pi G) (spherical form, EQS-001 XIII): the threshold is 0.42923 kg/m2 today and 0.35525 kg/m2 at the terminal state; a design body either crosses its onset or it is not a structure in the filed sense",
+    "PDE8": "THE DEPTH CHANNEL - Kd = 8.164101435697802e15 x sqrt(rho_bar / 5514); split = (1/2) ln Kd; I = E - split; and the surface channel g_s = G M^(1/3) (4 pi rho_bar / 3)^(2/3) scales as Kd^(4/3) at fixed mass: fixed-mass log-log slope 1.333333333333333 in-run, direct-vs-closed deviation 4.22e-15 over 500 random bodies (EQS-1030 GRV2/GRV3)",
+    "PDE9": "THE ARRANGEMENT - under the clock every body lifts by the same +ln rho in E and in split, so I and every pairwise spacing are conserved (51 bodies x 9 stations: max |dI| 2.84e-14, spacings deviation <= 1.78e-15), and the two universe faces obey Kd_U x g-dagger = 1.2192e-9 m/s2 at every station (max rel deviation 2.22e-16): a persistence design's configuration cannot be rearranged by time (EQS-1031 GRVC3/GRVC4)",
+    "PDE-U1 (candidate)": "THE DESIGN READING - a persistence design is specified by (M_bar, the g_bar profile, g_env, rho_bar, the clock state) and returns (nu, g, V_p, boost_env / G_eff, the three shells, g_s, the register seat). Its persistence is a FLOOR CONDITION - response never below baryonic (PDE1), deep speed held at V_p (PDE3), structure across onset (PDE7), arrangement invariant under the clock (PDE9) - not a cancellation of gravity: this is the architecture's defiance as filed at ICM-034, refusal of dispersal. The equations specify the floor, the shells and the gates; they do NOT specify an actuator or mechanism. CANDIDATE - naming word his"
+  },
+  "design_map": {
+    "inputs": [
+      "M_bar (baryonic mass)",
+      "g_bar profile / g_tot composition (declared per PDE1)",
+      "g_env (environment acceleration)",
+      "rho_bar (mean density)",
+      "clock state (z or rho)"
+    ],
+    "outputs": [
+      "nu and g (response)",
+      "V_p (persistence floor)",
+      "boost_env and G_eff (embedded floor)",
+      "a_nu / r* / r2 (shell skeleton)",
+      "g_s (surface channel)",
+      "E / Kd / split / I (register seat)"
+    ],
+    "gates": [
+      "K1 asymptote kill (ICM-034, locked)",
+      "K2 floor kill (ICM-034, locked)",
+      "structure onset (PDE7)",
+      "Earth-surface regime: nu - 1 = 0.0 at y = 8.175e10 - the filed architecture is Newton-exact at Earth's surface (axiom A5; ICM-035 bound); the anomalous regime is galactic-scale and the deep-space regime beyond ~7,030 AU, where solar g falls to g-dagger (recomputed 7029.85 AU)"
+    ],
+    "implementation_standing": "ICM-035 already specifies the law's arithmetic on today's hardware (compute core, gate integrity, telemetry front end, environment meter, deep-space test article) - DESIGN SPEC, nothing built; this extraction adds the design equation set, not hardware"
+  },
+  "statuses": {
+    "set": "CANDIDATE EQ-PDE1..9 + PDE-U1 - extraction labels only; naming word his",
+    "source_laws": "THE BLACKWELL LAW OF PERSISTENCE stands DESIGNATED (ICM-034); THE BLACKWELL MASTER FORCE LAW stands DESIGNATED (EQS-342); THE BLACKWELL CONSERVATION LAWS OF GRAVITY stand DESIGNATED (EQS-1032) - designations unchanged, nothing merged",
+    "carried_measurement": "ICM-034 first measurement carried unchanged: floor ratio measured/forced 0.9988 (y 0.3-1.0), 0.9883 (y 0.1-0.3), 0.9236 (y 0.03-0.1), 0.8824 (y 0.01-0.03); K3: the V^4 clause stands CLOSE, NOT EXACT (CEGU-007)",
+    "mechanism_door": "D-PDE1 - the physical mechanism/actuator by which a built design would hold the floor: NOT SPECIFIED - his drafting hand alone",
+    "hardware": "NOT BUILT (extraction only)",
+    "validation": "VAL-001 unchanged (0)",
+    "census": "unchanged - 99 / 144 / 24",
+    "sealing": "UNSEALED - his alone"
+  },
+  "payload_sha256": "70e8f87a692c7dadfd847810f45dcb075c06169370e5c8f4464d042cf9fda0f1",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

@@ -1,0 +1,51 @@
+# THE BLACKWELL CIRCUIT INVARIANCE THEOREM - DESIGNATION
+
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+
+Designated at his naming word, 2026-11-10 ~22:21 CST: "The Blackwell Circuit Invariance Theorem".
+Record EQS-1095. UNSEALED. VAL-001 = 0.
+
+## THE THEOREM
+
+For any conductor whose charge transport is carried by a single channel c, the SG-U1
+classification of the circuit under the carrier description is
+
+    Sign_carrier = ( sgn E_c , sgn of c's drift against the conventional arrow ),
+
+while under the conventional description it is (+, +) by construction; and the zero pins
+of the formulation - S = 1 inside every hole; Kd_U x T-dagger = 2.6978356e-29 K;
+ln rho = 0 today - are INVARIANT under the change of description. The physics does not
+depend on which description is used; only the pair transforms, and it transforms by the
+carrier's own register sign and drift sign.
+
+COROLLARY (Earth's metal circuits): the carrier is the electron - register E = -5.9297,
+occupation pin S-1 = 542.0096 today, drift against the conventional arrow - so the pair
+inverts exactly, (+, +) -> (-, -), with every pin unbroken. The sign split between the
+drawn circuit and the carried circuit is a freedom of description, resolved by the
+register: nature's pair is the carrier's.
+
+## VERIFICATION INSIDE THE DESIGNATION BUILD (fresh, this filing)
+
+- V1 checksum pin: Kd_U x T-dagger = 2.6978356e-29 K at every station
+  of the grid; max relative deviation 2.22e-16 - HOLDS.
+- V2 transport zero: ln rho(today) = 0.0 exactly - HOLDS.
+- V3 gearing: invariant across stations (spread 0.0 on the
+  g-dagger print 1.20e-10; the filed gearing 5.493727e7 of EQS-500 stands on its constants) - HOLDS.
+- V4 the two pairs, restated from the EQS-1094 run: conventional (+, +), carrier (-, -);
+  inversion component-wise exact - HOLDS.
+- V5 electron pin: S-1 today recomputed 542.0096 against
+  the filed 542.0096 - HOLDS.
+
+## FALSIFIERS (LOCKED)
+
+- K-CIT1: a single-carrier conductor whose carrier-description pair deviates from
+  (sgn E_c, drift sign) as stated - one instance kills the theorem's general form.
+- K-CIT2: any redescription of a classified system that breaks a zero pin - one instance
+  kills the invariance clause.
+
+## SCOPE
+
+The theorem is a statement inside the SG-U1 formulation (EQS-817/818, unified EQS-1093,
+run on the circuit EQS-1094). EQ-SG itself remains CANDIDATE - this designation names the
+theorem the run demonstrated; it does not designate the parent set. Distinct from the
+designated PN Laws (EQS-367), cited not merged. Sealing unpronounced - his alone.

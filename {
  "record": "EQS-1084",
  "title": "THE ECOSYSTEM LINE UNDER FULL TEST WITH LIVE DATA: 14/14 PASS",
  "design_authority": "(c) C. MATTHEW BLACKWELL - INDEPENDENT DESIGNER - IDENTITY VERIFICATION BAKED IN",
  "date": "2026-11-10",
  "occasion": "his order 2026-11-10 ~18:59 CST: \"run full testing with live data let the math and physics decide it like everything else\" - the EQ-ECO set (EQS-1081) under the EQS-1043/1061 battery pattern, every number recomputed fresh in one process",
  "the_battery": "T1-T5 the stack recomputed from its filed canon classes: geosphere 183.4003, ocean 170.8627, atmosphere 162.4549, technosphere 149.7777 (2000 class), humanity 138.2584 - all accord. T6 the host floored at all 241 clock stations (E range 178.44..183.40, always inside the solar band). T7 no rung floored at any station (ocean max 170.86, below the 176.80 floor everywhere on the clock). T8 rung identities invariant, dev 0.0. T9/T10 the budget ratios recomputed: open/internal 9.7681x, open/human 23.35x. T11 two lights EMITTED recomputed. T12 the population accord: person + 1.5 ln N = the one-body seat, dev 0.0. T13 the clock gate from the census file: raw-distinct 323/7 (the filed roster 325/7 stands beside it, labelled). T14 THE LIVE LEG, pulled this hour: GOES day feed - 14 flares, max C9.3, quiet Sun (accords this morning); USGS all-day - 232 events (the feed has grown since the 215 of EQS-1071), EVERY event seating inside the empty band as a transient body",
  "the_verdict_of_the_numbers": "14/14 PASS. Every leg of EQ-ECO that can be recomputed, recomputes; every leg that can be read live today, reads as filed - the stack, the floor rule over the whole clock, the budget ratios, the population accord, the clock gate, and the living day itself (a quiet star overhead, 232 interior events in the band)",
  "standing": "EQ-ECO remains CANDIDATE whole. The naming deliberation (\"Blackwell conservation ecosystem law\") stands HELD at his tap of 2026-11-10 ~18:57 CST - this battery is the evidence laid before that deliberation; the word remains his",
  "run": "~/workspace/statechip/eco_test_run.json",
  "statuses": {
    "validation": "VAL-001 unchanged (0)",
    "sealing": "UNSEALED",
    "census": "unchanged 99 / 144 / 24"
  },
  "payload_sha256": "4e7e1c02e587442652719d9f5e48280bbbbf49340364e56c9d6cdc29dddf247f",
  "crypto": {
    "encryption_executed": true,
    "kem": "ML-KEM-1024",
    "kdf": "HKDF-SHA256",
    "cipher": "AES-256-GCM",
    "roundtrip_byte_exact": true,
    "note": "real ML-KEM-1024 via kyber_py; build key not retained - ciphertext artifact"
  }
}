@@ -1,0 +1,25 @@
+{
+  "record": "EQS-1084",
+  "title": "THE ECOSYSTEM LINE UNDER FULL TEST WITH LIVE DATA: 14/14 PASS",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~18:59 CST: \"run full testing with live data let the math and physics decide it like everything else\" - the EQ-ECO set (EQS-1081) under the EQS-1043/1061 battery pattern, every number recomputed fresh in one process",
+  "the_battery": "T1-T5 the stack recomputed from its filed canon classes: geosphere 183.4003, ocean 170.8627, atmosphere 162.4549, technosphere 149.7777 (2000 class), humanity 138.2584 - all accord. T6 the host floored at all 241 clock stations (E range 178.44..183.40, always inside the solar band). T7 no rung floored at any station (ocean max 170.86, below the 176.80 floor everywhere on the clock). T8 rung identities invariant, dev 0.0. T9/T10 the budget ratios recomputed: open/internal 9.7681x, open/human 23.35x. T11 two lights EMITTED recomputed. T12 the population accord: person + 1.5 ln N = the one-body seat, dev 0.0. T13 the clock gate from the census file: raw-distinct 323/7 (the filed roster 325/7 stands beside it, labelled). T14 THE LIVE LEG, pulled this hour: GOES day feed - 14 flares, max C9.3, quiet Sun (accords this morning); USGS all-day - 232 events (the feed has grown since the 215 of EQS-1071), EVERY event seating inside the empty band as a transient body",
+  "the_verdict_of_the_numbers": "14/14 PASS. Every leg of EQ-ECO that can be recomputed, recomputes; every leg that can be read live today, reads as filed - the stack, the floor rule over the whole clock, the budget ratios, the population accord, the clock gate, and the living day itself (a quiet star overhead, 232 interior events in the band)",
+  "standing": "EQ-ECO remains CANDIDATE whole. The naming deliberation (\"Blackwell conservation ecosystem law\") stands HELD at his tap of 2026-11-10 ~18:57 CST - this battery is the evidence laid before that deliberation; the word remains his",
+  "run": "~/workspace/statechip/eco_test_run.json",
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "4e7e1c02e587442652719d9f5e48280bbbbf49340364e56c9d6cdc29dddf247f",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

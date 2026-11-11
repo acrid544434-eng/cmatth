@@ -1,0 +1,29 @@
+{
+  "record": "EQS-1085",
+  "title": "FOUNDED: THE BLACKWELL ECOSYSTEM CHIP",
+  "design_authority": "(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN",
+  "date": "2026-11-10",
+  "occasion": "his order 2026-11-10 ~19:26 CST: \"design Blackwell ecosystem chip based on the exact same principles\" - named by him in the order; the name door stands CLOSED",
+  "the_chip": "six cores, one per face of EQ-ECO (EQS-1081): STACK (ECO1 - the five rungs seated from their classes, spacings, span, TWO-AXIS positions), FLOOR (ECO2 - floor status of any rung at any epoch, the 241-station sweep), BUDGET (ECO3 - the one ledger with the ACCOUNTS gate: close() raises; the open term stands UNRESOLVED), CYCLE (ECO4 - the provenance chain; the interior root priced, direct UNRESOLVED), POPULATION (ECO5 - the population route and the artefact-vs-makers read, with the growth projection), CLOCK (ECO6 - live membership at any epoch, raw-distinct basis with the filed roster labelled beside)",
+  "software": "~/workspace/ecochip/ecochip.py, sha256 23a66a59547a5201..., BUILT; run_tests() 8/8 PASS (stack accord, span, two-axis, floor sweep, budget + EMITTED, the gate refusal, population accord, artefact above makers)",
+  "die": "the family sapphire address (E 85.0433 / split 18.2378 / I 66.8055), shared with the Data/Sun/Light/Reality chips - observation, no identity asserted",
+  "doors": {
+    "D-ECO1": "fabrication - NOT BUILT",
+    "D-ECO2": "live-feed integration beyond the pulls run at EQS-1086 - NOT SPECIFIED",
+    "D-ECO3": "bench protocol - at his word"
+  },
+  "statuses": {
+    "validation": "VAL-001 unchanged (0)",
+    "sealing": "UNSEALED",
+    "census": "unchanged 99 / 144 / 24"
+  },
+  "payload_sha256": "b0abf6b0dc65ef925d8ccc0b0c2c3ba79ecbcd9ccbc2b0b965813ac1e08ce85e",
+  "crypto": {
+    "encryption_executed": true,
+    "kem": "ML-KEM-1024",
+    "kdf": "HKDF-SHA256",
+    "cipher": "AES-256-GCM",
+    "roundtrip_byte_exact": true,
+    "note": "real ML-KEM-1024 via kyber_py; build key not retained - ciphertext artifact"
+  }
+}

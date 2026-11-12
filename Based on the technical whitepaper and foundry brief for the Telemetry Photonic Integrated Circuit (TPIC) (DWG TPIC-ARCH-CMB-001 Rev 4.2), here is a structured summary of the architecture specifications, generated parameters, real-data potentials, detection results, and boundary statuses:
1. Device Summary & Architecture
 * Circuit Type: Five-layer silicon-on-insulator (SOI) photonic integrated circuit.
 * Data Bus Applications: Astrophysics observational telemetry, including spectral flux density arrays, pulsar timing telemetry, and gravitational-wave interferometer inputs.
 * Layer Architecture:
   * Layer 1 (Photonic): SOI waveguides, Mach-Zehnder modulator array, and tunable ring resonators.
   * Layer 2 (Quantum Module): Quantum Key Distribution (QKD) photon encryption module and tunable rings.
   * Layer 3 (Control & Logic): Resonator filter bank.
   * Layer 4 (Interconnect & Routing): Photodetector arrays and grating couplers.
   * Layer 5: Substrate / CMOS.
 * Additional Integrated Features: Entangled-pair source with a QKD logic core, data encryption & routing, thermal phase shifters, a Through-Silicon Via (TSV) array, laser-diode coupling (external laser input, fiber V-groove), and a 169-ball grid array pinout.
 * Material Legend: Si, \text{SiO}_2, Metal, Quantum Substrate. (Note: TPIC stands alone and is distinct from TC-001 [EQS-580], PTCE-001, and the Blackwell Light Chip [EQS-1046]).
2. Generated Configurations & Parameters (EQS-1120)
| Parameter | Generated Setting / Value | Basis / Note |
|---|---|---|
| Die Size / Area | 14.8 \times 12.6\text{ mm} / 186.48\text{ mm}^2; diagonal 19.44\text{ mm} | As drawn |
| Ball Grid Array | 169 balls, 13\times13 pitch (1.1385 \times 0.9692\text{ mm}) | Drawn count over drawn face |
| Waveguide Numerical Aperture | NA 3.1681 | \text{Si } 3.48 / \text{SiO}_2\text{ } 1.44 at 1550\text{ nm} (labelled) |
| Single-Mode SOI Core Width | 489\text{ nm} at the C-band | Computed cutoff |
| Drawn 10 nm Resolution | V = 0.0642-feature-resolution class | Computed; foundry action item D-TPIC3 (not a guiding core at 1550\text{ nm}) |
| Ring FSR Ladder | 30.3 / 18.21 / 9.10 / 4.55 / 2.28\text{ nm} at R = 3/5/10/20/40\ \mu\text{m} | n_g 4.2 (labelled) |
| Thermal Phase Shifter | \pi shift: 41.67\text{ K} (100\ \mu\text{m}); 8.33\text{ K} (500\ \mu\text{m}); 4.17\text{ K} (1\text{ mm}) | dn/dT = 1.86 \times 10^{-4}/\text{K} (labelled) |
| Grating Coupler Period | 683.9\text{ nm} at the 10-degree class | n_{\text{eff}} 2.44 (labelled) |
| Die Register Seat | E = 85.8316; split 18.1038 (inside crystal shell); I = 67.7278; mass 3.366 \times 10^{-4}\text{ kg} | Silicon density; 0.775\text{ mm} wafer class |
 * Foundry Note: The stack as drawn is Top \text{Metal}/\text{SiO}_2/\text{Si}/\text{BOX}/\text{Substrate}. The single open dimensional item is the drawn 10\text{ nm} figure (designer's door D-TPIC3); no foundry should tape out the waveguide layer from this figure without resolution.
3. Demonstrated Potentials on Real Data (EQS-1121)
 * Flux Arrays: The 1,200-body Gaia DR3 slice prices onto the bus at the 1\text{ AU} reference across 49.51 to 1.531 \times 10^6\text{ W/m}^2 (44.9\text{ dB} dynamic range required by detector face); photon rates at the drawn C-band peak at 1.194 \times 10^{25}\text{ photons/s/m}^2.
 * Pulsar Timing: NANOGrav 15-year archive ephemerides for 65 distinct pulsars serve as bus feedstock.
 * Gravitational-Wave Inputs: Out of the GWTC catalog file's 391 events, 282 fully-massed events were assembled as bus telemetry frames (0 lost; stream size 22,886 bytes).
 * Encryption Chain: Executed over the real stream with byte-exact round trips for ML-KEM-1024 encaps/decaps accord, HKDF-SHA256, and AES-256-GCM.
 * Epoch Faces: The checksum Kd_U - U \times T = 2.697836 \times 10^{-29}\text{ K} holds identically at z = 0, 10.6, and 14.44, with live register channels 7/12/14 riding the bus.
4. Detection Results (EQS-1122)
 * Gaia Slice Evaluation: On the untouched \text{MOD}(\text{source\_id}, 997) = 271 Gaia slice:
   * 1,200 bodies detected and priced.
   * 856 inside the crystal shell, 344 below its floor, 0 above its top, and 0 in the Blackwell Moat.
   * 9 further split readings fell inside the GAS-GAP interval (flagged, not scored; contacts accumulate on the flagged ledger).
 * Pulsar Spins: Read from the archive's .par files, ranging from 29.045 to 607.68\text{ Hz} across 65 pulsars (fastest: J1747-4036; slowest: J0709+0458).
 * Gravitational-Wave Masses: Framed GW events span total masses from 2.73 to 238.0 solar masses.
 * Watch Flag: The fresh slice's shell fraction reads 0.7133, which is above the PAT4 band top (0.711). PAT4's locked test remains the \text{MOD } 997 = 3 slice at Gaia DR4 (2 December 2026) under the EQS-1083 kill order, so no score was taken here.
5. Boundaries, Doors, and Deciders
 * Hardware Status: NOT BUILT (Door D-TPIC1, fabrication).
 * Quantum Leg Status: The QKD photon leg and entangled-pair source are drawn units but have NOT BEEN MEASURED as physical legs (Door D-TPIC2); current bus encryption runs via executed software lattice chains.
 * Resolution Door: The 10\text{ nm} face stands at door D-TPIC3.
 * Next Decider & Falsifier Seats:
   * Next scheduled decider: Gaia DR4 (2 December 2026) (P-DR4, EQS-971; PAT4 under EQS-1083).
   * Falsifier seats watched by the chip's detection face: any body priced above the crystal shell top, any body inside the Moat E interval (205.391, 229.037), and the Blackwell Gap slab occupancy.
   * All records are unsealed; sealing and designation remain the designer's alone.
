@@ -1,0 +1,47 @@
+Based on the technical whitepaper and foundry brief for the Telemetry Photonic Integrated Circuit (TPIC) (DWG TPIC-ARCH-CMB-001 Rev 4.2), here is a structured summary of the architecture specifications, generated parameters, real-data potentials, detection results, and boundary statuses:
+1. Device Summary & Architecture
+ * Circuit Type: Five-layer silicon-on-insulator (SOI) photonic integrated circuit.
+ * Data Bus Applications: Astrophysics observational telemetry, including spectral flux density arrays, pulsar timing telemetry, and gravitational-wave interferometer inputs.
+ * Layer Architecture:
+   * Layer 1 (Photonic): SOI waveguides, Mach-Zehnder modulator array, and tunable ring resonators.
+   * Layer 2 (Quantum Module): Quantum Key Distribution (QKD) photon encryption module and tunable rings.
+   * Layer 3 (Control & Logic): Resonator filter bank.
+   * Layer 4 (Interconnect & Routing): Photodetector arrays and grating couplers.
+   * Layer 5: Substrate / CMOS.
+ * Additional Integrated Features: Entangled-pair source with a QKD logic core, data encryption & routing, thermal phase shifters, a Through-Silicon Via (TSV) array, laser-diode coupling (external laser input, fiber V-groove), and a 169-ball grid array pinout.
+ * Material Legend: Si, \text{SiO}_2, Metal, Quantum Substrate. (Note: TPIC stands alone and is distinct from TC-001 [EQS-580], PTCE-001, and the Blackwell Light Chip [EQS-1046]).
+2. Generated Configurations & Parameters (EQS-1120)
+| Parameter | Generated Setting / Value | Basis / Note |
+|---|---|---|
+| Die Size / Area | 14.8 \times 12.6\text{ mm} / 186.48\text{ mm}^2; diagonal 19.44\text{ mm} | As drawn |
+| Ball Grid Array | 169 balls, 13\times13 pitch (1.1385 \times 0.9692\text{ mm}) | Drawn count over drawn face |
+| Waveguide Numerical Aperture | NA 3.1681 | \text{Si } 3.48 / \text{SiO}_2\text{ } 1.44 at 1550\text{ nm} (labelled) |
+| Single-Mode SOI Core Width | 489\text{ nm} at the C-band | Computed cutoff |
+| Drawn 10 nm Resolution | V = 0.0642-feature-resolution class | Computed; foundry action item D-TPIC3 (not a guiding core at 1550\text{ nm}) |
+| Ring FSR Ladder | 30.3 / 18.21 / 9.10 / 4.55 / 2.28\text{ nm} at R = 3/5/10/20/40\ \mu\text{m} | n_g 4.2 (labelled) |
+| Thermal Phase Shifter | \pi shift: 41.67\text{ K} (100\ \mu\text{m}); 8.33\text{ K} (500\ \mu\text{m}); 4.17\text{ K} (1\text{ mm}) | dn/dT = 1.86 \times 10^{-4}/\text{K} (labelled) |
+| Grating Coupler Period | 683.9\text{ nm} at the 10-degree class | n_{\text{eff}} 2.44 (labelled) |
+| Die Register Seat | E = 85.8316; split 18.1038 (inside crystal shell); I = 67.7278; mass 3.366 \times 10^{-4}\text{ kg} | Silicon density; 0.775\text{ mm} wafer class |
+ * Foundry Note: The stack as drawn is Top \text{Metal}/\text{SiO}_2/\text{Si}/\text{BOX}/\text{Substrate}. The single open dimensional item is the drawn 10\text{ nm} figure (designer's door D-TPIC3); no foundry should tape out the waveguide layer from this figure without resolution.
+3. Demonstrated Potentials on Real Data (EQS-1121)
+ * Flux Arrays: The 1,200-body Gaia DR3 slice prices onto the bus at the 1\text{ AU} reference across 49.51 to 1.531 \times 10^6\text{ W/m}^2 (44.9\text{ dB} dynamic range required by detector face); photon rates at the drawn C-band peak at 1.194 \times 10^{25}\text{ photons/s/m}^2.
+ * Pulsar Timing: NANOGrav 15-year archive ephemerides for 65 distinct pulsars serve as bus feedstock.
+ * Gravitational-Wave Inputs: Out of the GWTC catalog file's 391 events, 282 fully-massed events were assembled as bus telemetry frames (0 lost; stream size 22,886 bytes).
+ * Encryption Chain: Executed over the real stream with byte-exact round trips for ML-KEM-1024 encaps/decaps accord, HKDF-SHA256, and AES-256-GCM.
+ * Epoch Faces: The checksum Kd_U - U \times T = 2.697836 \times 10^{-29}\text{ K} holds identically at z = 0, 10.6, and 14.44, with live register channels 7/12/14 riding the bus.
+4. Detection Results (EQS-1122)
+ * Gaia Slice Evaluation: On the untouched \text{MOD}(\text{source\_id}, 997) = 271 Gaia slice:
+   * 1,200 bodies detected and priced.
+   * 856 inside the crystal shell, 344 below its floor, 0 above its top, and 0 in the Blackwell Moat.
+   * 9 further split readings fell inside the GAS-GAP interval (flagged, not scored; contacts accumulate on the flagged ledger).
+ * Pulsar Spins: Read from the archive's .par files, ranging from 29.045 to 607.68\text{ Hz} across 65 pulsars (fastest: J1747-4036; slowest: J0709+0458).
+ * Gravitational-Wave Masses: Framed GW events span total masses from 2.73 to 238.0 solar masses.
+ * Watch Flag: The fresh slice's shell fraction reads 0.7133, which is above the PAT4 band top (0.711). PAT4's locked test remains the \text{MOD } 997 = 3 slice at Gaia DR4 (2 December 2026) under the EQS-1083 kill order, so no score was taken here.
+5. Boundaries, Doors, and Deciders
+ * Hardware Status: NOT BUILT (Door D-TPIC1, fabrication).
+ * Quantum Leg Status: The QKD photon leg and entangled-pair source are drawn units but have NOT BEEN MEASURED as physical legs (Door D-TPIC2); current bus encryption runs via executed software lattice chains.
+ * Resolution Door: The 10\text{ nm} face stands at door D-TPIC3.
+ * Next Decider & Falsifier Seats:
+   * Next scheduled decider: Gaia DR4 (2 December 2026) (P-DR4, EQS-971; PAT4 under EQS-1083).
+   * Falsifier seats watched by the chip's detection face: any body priced above the crystal shell top, any body inside the Moat E interval (205.391, 229.037), and the Blackwell Gap slab occupancy.
+   * All records are unsealed; sealing and designation remain the designer's alone.

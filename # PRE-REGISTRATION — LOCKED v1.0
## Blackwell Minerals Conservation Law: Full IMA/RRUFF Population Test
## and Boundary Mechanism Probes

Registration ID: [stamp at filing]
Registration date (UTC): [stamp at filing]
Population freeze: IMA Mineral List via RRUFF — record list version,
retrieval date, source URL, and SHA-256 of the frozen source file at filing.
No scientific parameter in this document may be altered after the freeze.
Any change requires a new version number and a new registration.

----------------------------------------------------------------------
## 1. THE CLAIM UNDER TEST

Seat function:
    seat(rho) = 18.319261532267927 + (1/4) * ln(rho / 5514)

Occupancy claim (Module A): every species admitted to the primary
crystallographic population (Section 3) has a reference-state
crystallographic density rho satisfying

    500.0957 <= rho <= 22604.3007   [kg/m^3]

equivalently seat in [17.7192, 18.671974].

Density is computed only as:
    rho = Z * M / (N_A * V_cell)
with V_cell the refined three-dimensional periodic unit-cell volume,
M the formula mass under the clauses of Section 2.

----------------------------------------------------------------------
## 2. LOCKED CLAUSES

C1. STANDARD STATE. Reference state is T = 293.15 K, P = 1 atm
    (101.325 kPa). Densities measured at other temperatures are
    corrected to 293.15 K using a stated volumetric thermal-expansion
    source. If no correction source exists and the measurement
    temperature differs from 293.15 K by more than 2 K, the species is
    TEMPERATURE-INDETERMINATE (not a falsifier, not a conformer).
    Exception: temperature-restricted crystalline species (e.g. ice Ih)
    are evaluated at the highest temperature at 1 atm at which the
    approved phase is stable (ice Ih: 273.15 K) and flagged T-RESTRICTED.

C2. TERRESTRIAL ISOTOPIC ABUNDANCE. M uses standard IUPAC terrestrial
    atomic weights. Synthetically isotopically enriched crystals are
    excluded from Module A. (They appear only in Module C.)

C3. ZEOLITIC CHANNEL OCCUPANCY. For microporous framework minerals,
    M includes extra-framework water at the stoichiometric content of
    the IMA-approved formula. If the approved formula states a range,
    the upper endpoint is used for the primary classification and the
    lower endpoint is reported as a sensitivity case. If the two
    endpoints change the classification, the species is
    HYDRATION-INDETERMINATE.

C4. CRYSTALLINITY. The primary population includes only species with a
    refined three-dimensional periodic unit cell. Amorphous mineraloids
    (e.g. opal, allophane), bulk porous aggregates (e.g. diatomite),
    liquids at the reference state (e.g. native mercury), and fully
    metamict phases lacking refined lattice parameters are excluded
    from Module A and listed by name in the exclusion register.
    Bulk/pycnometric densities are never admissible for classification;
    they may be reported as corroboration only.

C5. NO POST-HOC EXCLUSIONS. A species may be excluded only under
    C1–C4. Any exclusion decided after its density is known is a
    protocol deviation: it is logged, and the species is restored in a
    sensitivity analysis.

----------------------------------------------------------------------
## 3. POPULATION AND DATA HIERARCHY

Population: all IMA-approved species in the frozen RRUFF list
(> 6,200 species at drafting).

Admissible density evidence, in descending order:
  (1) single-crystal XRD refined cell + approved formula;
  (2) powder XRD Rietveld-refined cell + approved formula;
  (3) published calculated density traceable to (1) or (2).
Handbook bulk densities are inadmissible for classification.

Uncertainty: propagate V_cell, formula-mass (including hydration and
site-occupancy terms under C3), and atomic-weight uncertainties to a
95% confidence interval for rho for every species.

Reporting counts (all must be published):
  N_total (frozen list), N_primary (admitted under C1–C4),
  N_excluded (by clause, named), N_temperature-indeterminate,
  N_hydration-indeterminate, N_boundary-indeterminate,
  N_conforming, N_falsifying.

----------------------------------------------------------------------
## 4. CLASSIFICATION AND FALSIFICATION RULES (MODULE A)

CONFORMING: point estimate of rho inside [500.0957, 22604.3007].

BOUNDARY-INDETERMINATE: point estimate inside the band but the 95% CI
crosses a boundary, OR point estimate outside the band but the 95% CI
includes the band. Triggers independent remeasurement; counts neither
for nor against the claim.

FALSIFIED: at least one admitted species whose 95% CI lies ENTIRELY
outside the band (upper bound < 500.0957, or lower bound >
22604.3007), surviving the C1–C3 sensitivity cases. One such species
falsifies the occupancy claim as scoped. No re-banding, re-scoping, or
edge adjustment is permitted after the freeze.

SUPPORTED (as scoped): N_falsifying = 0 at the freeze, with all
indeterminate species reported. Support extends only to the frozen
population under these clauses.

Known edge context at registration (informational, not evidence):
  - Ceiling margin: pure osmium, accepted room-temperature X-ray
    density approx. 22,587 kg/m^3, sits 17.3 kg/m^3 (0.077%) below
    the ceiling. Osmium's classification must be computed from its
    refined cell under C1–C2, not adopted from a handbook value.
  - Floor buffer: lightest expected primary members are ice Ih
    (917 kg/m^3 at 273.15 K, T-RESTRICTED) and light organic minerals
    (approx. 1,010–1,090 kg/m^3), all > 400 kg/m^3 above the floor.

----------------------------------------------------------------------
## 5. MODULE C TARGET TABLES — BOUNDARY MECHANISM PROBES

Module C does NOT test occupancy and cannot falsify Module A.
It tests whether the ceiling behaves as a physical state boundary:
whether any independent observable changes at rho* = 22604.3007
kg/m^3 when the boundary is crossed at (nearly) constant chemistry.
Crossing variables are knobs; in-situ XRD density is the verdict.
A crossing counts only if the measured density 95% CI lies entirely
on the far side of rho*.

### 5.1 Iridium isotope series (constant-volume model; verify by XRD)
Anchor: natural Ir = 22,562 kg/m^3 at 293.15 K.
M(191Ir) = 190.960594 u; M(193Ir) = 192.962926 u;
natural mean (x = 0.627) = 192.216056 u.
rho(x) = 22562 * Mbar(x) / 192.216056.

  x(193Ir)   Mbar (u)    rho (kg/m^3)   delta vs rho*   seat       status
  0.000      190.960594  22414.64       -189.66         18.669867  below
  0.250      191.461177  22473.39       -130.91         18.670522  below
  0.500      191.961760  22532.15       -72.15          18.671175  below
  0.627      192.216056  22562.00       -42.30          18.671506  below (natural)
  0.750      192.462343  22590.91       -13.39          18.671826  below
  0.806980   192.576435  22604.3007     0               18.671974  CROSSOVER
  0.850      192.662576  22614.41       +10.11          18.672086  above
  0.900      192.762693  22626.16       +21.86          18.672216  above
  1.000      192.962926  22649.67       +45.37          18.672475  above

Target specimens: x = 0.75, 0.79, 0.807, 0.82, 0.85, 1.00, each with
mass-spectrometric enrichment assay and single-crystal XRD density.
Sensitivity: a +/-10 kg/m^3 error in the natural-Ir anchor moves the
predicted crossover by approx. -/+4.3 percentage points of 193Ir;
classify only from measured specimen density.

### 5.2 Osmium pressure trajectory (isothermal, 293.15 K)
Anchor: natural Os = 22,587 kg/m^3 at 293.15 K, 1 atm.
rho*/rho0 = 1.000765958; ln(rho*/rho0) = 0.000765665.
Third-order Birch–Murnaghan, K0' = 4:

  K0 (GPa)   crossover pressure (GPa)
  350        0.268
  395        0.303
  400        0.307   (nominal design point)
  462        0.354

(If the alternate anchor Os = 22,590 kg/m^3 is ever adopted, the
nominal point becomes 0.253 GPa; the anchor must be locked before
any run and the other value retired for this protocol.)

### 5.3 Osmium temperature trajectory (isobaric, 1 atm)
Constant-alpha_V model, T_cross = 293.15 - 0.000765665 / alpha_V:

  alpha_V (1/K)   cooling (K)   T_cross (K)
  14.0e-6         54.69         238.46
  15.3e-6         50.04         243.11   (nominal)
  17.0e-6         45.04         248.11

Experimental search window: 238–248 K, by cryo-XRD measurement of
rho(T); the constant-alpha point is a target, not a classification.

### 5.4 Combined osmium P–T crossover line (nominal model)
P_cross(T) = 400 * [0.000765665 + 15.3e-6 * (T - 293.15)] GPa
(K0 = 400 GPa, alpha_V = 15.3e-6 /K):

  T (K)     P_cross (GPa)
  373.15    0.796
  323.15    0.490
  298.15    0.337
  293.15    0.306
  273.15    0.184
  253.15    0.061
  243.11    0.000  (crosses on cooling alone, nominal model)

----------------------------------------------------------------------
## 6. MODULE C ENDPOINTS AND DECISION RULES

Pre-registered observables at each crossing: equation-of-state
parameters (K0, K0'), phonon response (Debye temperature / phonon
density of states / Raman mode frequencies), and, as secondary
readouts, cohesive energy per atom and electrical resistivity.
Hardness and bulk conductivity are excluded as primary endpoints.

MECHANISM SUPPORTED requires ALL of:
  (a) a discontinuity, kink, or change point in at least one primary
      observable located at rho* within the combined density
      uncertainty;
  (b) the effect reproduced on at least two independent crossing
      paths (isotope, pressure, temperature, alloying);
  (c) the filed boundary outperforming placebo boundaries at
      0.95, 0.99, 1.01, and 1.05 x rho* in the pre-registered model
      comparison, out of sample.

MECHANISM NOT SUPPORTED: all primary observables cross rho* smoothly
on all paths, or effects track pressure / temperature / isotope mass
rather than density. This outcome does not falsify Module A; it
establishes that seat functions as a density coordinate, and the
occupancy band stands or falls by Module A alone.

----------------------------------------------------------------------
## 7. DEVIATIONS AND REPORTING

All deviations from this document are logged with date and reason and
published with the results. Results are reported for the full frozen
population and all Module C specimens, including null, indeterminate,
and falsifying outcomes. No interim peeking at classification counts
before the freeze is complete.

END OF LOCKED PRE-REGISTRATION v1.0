@@ -1,0 +1,228 @@
+# PRE-REGISTRATION — LOCKED v1.0
+## Blackwell Minerals Conservation Law: Full IMA/RRUFF Population Test
+## and Boundary Mechanism Probes
+
+Registration ID: [stamp at filing]
+Registration date (UTC): [stamp at filing]
+Population freeze: IMA Mineral List via RRUFF — record list version,
+retrieval date, source URL, and SHA-256 of the frozen source file at filing.
+No scientific parameter in this document may be altered after the freeze.
+Any change requires a new version number and a new registration.
+
+----------------------------------------------------------------------
+## 1. THE CLAIM UNDER TEST
+
+Seat function:
+    seat(rho) = 18.319261532267927 + (1/4) * ln(rho / 5514)
+
+Occupancy claim (Module A): every species admitted to the primary
+crystallographic population (Section 3) has a reference-state
+crystallographic density rho satisfying
+
+    500.0957 <= rho <= 22604.3007   [kg/m^3]
+
+equivalently seat in [17.7192, 18.671974].
+
+Density is computed only as:
+    rho = Z * M / (N_A * V_cell)
+with V_cell the refined three-dimensional periodic unit-cell volume,
+M the formula mass under the clauses of Section 2.
+
+----------------------------------------------------------------------
+## 2. LOCKED CLAUSES
+
+C1. STANDARD STATE. Reference state is T = 293.15 K, P = 1 atm
+    (101.325 kPa). Densities measured at other temperatures are
+    corrected to 293.15 K using a stated volumetric thermal-expansion
+    source. If no correction source exists and the measurement
+    temperature differs from 293.15 K by more than 2 K, the species is
+    TEMPERATURE-INDETERMINATE (not a falsifier, not a conformer).
+    Exception: temperature-restricted crystalline species (e.g. ice Ih)
+    are evaluated at the highest temperature at 1 atm at which the
+    approved phase is stable (ice Ih: 273.15 K) and flagged T-RESTRICTED.
+
+C2. TERRESTRIAL ISOTOPIC ABUNDANCE. M uses standard IUPAC terrestrial
+    atomic weights. Synthetically isotopically enriched crystals are
+    excluded from Module A. (They appear only in Module C.)
+
+C3. ZEOLITIC CHANNEL OCCUPANCY. For microporous framework minerals,
+    M includes extra-framework water at the stoichiometric content of
+    the IMA-approved formula. If the approved formula states a range,
+    the upper endpoint is used for the primary classification and the
+    lower endpoint is reported as a sensitivity case. If the two
+    endpoints change the classification, the species is
+    HYDRATION-INDETERMINATE.
+
+C4. CRYSTALLINITY. The primary population includes only species with a
+    refined three-dimensional periodic unit cell. Amorphous mineraloids
+    (e.g. opal, allophane), bulk porous aggregates (e.g. diatomite),
+    liquids at the reference state (e.g. native mercury), and fully
+    metamict phases lacking refined lattice parameters are excluded
+    from Module A and listed by name in the exclusion register.
+    Bulk/pycnometric densities are never admissible for classification;
+    they may be reported as corroboration only.
+
+C5. NO POST-HOC EXCLUSIONS. A species may be excluded only under
+    C1–C4. Any exclusion decided after its density is known is a
+    protocol deviation: it is logged, and the species is restored in a
+    sensitivity analysis.
+
+----------------------------------------------------------------------
+## 3. POPULATION AND DATA HIERARCHY
+
+Population: all IMA-approved species in the frozen RRUFF list
+(> 6,200 species at drafting).
+
+Admissible density evidence, in descending order:
+  (1) single-crystal XRD refined cell + approved formula;
+  (2) powder XRD Rietveld-refined cell + approved formula;
+  (3) published calculated density traceable to (1) or (2).
+Handbook bulk densities are inadmissible for classification.
+
+Uncertainty: propagate V_cell, formula-mass (including hydration and
+site-occupancy terms under C3), and atomic-weight uncertainties to a
+95% confidence interval for rho for every species.
+
+Reporting counts (all must be published):
+  N_total (frozen list), N_primary (admitted under C1–C4),
+  N_excluded (by clause, named), N_temperature-indeterminate,
+  N_hydration-indeterminate, N_boundary-indeterminate,
+  N_conforming, N_falsifying.
+
+----------------------------------------------------------------------
+## 4. CLASSIFICATION AND FALSIFICATION RULES (MODULE A)
+
+CONFORMING: point estimate of rho inside [500.0957, 22604.3007].
+
+BOUNDARY-INDETERMINATE: point estimate inside the band but the 95% CI
+crosses a boundary, OR point estimate outside the band but the 95% CI
+includes the band. Triggers independent remeasurement; counts neither
+for nor against the claim.
+
+FALSIFIED: at least one admitted species whose 95% CI lies ENTIRELY
+outside the band (upper bound < 500.0957, or lower bound >
+22604.3007), surviving the C1–C3 sensitivity cases. One such species
+falsifies the occupancy claim as scoped. No re-banding, re-scoping, or
+edge adjustment is permitted after the freeze.
+
+SUPPORTED (as scoped): N_falsifying = 0 at the freeze, with all
+indeterminate species reported. Support extends only to the frozen
+population under these clauses.
+
+Known edge context at registration (informational, not evidence):
+  - Ceiling margin: pure osmium, accepted room-temperature X-ray
+    density approx. 22,587 kg/m^3, sits 17.3 kg/m^3 (0.077%) below
+    the ceiling. Osmium's classification must be computed from its
+    refined cell under C1–C2, not adopted from a handbook value.
+  - Floor buffer: lightest expected primary members are ice Ih
+    (917 kg/m^3 at 273.15 K, T-RESTRICTED) and light organic minerals
+    (approx. 1,010–1,090 kg/m^3), all > 400 kg/m^3 above the floor.
+
+----------------------------------------------------------------------
+## 5. MODULE C TARGET TABLES — BOUNDARY MECHANISM PROBES
+
+Module C does NOT test occupancy and cannot falsify Module A.
+It tests whether the ceiling behaves as a physical state boundary:
+whether any independent observable changes at rho* = 22604.3007
+kg/m^3 when the boundary is crossed at (nearly) constant chemistry.
+Crossing variables are knobs; in-situ XRD density is the verdict.
+A crossing counts only if the measured density 95% CI lies entirely
+on the far side of rho*.
+
+### 5.1 Iridium isotope series (constant-volume model; verify by XRD)
+Anchor: natural Ir = 22,562 kg/m^3 at 293.15 K.
+M(191Ir) = 190.960594 u; M(193Ir) = 192.962926 u;
+natural mean (x = 0.627) = 192.216056 u.
+rho(x) = 22562 * Mbar(x) / 192.216056.
+
+  x(193Ir)   Mbar (u)    rho (kg/m^3)   delta vs rho*   seat       status
+  0.000      190.960594  22414.64       -189.66         18.669867  below
+  0.250      191.461177  22473.39       -130.91         18.670522  below
+  0.500      191.961760  22532.15       -72.15          18.671175  below
+  0.627      192.216056  22562.00       -42.30          18.671506  below (natural)
+  0.750      192.462343  22590.91       -13.39          18.671826  below
+  0.806980   192.576435  22604.3007     0               18.671974  CROSSOVER
+  0.850      192.662576  22614.41       +10.11          18.672086  above
+  0.900      192.762693  22626.16       +21.86          18.672216  above
+  1.000      192.962926  22649.67       +45.37          18.672475  above
+
+Target specimens: x = 0.75, 0.79, 0.807, 0.82, 0.85, 1.00, each with
+mass-spectrometric enrichment assay and single-crystal XRD density.
+Sensitivity: a +/-10 kg/m^3 error in the natural-Ir anchor moves the
+predicted crossover by approx. -/+4.3 percentage points of 193Ir;
+classify only from measured specimen density.
+
+### 5.2 Osmium pressure trajectory (isothermal, 293.15 K)
+Anchor: natural Os = 22,587 kg/m^3 at 293.15 K, 1 atm.
+rho*/rho0 = 1.000765958; ln(rho*/rho0) = 0.000765665.
+Third-order Birch–Murnaghan, K0' = 4:
+
+  K0 (GPa)   crossover pressure (GPa)
+  350        0.268
+  395        0.303
+  400        0.307   (nominal design point)
+  462        0.354
+
+(If the alternate anchor Os = 22,590 kg/m^3 is ever adopted, the
+nominal point becomes 0.253 GPa; the anchor must be locked before
+any run and the other value retired for this protocol.)
+
+### 5.3 Osmium temperature trajectory (isobaric, 1 atm)
+Constant-alpha_V model, T_cross = 293.15 - 0.000765665 / alpha_V:
+
+  alpha_V (1/K)   cooling (K)   T_cross (K)
+  14.0e-6         54.69         238.46
+  15.3e-6         50.04         243.11   (nominal)
+  17.0e-6         45.04         248.11
+
+Experimental search window: 238–248 K, by cryo-XRD measurement of
+rho(T); the constant-alpha point is a target, not a classification.
+
+### 5.4 Combined osmium P–T crossover line (nominal model)
+P_cross(T) = 400 * [0.000765665 + 15.3e-6 * (T - 293.15)] GPa
+(K0 = 400 GPa, alpha_V = 15.3e-6 /K):
+
+  T (K)     P_cross (GPa)
+  373.15    0.796
+  323.15    0.490
+  298.15    0.337
+  293.15    0.306
+  273.15    0.184
+  253.15    0.061
+  243.11    0.000  (crosses on cooling alone, nominal model)
+
+----------------------------------------------------------------------
+## 6. MODULE C ENDPOINTS AND DECISION RULES
+
+Pre-registered observables at each crossing: equation-of-state
+parameters (K0, K0'), phonon response (Debye temperature / phonon
+density of states / Raman mode frequencies), and, as secondary
+readouts, cohesive energy per atom and electrical resistivity.
+Hardness and bulk conductivity are excluded as primary endpoints.
+
+MECHANISM SUPPORTED requires ALL of:
+  (a) a discontinuity, kink, or change point in at least one primary
+      observable located at rho* within the combined density
+      uncertainty;
+  (b) the effect reproduced on at least two independent crossing
+      paths (isotope, pressure, temperature, alloying);
+  (c) the filed boundary outperforming placebo boundaries at
+      0.95, 0.99, 1.01, and 1.05 x rho* in the pre-registered model
+      comparison, out of sample.
+
+MECHANISM NOT SUPPORTED: all primary observables cross rho* smoothly
+on all paths, or effects track pressure / temperature / isotope mass
+rather than density. This outcome does not falsify Module A; it
+establishes that seat functions as a density coordinate, and the
+occupancy band stands or falls by Module A alone.
+
+----------------------------------------------------------------------
+## 7. DEVIATIONS AND REPORTING
+
+All deviations from this document are logged with date and reason and
+published with the results. Results are reported for the full frozen
+population and all Module C specimens, including null, indeterminate,
+and falsifying outcomes. No interim peeking at classification counts
+before the freeze is complete.
+
+END OF LOCKED PRE-REGISTRATION v1.0

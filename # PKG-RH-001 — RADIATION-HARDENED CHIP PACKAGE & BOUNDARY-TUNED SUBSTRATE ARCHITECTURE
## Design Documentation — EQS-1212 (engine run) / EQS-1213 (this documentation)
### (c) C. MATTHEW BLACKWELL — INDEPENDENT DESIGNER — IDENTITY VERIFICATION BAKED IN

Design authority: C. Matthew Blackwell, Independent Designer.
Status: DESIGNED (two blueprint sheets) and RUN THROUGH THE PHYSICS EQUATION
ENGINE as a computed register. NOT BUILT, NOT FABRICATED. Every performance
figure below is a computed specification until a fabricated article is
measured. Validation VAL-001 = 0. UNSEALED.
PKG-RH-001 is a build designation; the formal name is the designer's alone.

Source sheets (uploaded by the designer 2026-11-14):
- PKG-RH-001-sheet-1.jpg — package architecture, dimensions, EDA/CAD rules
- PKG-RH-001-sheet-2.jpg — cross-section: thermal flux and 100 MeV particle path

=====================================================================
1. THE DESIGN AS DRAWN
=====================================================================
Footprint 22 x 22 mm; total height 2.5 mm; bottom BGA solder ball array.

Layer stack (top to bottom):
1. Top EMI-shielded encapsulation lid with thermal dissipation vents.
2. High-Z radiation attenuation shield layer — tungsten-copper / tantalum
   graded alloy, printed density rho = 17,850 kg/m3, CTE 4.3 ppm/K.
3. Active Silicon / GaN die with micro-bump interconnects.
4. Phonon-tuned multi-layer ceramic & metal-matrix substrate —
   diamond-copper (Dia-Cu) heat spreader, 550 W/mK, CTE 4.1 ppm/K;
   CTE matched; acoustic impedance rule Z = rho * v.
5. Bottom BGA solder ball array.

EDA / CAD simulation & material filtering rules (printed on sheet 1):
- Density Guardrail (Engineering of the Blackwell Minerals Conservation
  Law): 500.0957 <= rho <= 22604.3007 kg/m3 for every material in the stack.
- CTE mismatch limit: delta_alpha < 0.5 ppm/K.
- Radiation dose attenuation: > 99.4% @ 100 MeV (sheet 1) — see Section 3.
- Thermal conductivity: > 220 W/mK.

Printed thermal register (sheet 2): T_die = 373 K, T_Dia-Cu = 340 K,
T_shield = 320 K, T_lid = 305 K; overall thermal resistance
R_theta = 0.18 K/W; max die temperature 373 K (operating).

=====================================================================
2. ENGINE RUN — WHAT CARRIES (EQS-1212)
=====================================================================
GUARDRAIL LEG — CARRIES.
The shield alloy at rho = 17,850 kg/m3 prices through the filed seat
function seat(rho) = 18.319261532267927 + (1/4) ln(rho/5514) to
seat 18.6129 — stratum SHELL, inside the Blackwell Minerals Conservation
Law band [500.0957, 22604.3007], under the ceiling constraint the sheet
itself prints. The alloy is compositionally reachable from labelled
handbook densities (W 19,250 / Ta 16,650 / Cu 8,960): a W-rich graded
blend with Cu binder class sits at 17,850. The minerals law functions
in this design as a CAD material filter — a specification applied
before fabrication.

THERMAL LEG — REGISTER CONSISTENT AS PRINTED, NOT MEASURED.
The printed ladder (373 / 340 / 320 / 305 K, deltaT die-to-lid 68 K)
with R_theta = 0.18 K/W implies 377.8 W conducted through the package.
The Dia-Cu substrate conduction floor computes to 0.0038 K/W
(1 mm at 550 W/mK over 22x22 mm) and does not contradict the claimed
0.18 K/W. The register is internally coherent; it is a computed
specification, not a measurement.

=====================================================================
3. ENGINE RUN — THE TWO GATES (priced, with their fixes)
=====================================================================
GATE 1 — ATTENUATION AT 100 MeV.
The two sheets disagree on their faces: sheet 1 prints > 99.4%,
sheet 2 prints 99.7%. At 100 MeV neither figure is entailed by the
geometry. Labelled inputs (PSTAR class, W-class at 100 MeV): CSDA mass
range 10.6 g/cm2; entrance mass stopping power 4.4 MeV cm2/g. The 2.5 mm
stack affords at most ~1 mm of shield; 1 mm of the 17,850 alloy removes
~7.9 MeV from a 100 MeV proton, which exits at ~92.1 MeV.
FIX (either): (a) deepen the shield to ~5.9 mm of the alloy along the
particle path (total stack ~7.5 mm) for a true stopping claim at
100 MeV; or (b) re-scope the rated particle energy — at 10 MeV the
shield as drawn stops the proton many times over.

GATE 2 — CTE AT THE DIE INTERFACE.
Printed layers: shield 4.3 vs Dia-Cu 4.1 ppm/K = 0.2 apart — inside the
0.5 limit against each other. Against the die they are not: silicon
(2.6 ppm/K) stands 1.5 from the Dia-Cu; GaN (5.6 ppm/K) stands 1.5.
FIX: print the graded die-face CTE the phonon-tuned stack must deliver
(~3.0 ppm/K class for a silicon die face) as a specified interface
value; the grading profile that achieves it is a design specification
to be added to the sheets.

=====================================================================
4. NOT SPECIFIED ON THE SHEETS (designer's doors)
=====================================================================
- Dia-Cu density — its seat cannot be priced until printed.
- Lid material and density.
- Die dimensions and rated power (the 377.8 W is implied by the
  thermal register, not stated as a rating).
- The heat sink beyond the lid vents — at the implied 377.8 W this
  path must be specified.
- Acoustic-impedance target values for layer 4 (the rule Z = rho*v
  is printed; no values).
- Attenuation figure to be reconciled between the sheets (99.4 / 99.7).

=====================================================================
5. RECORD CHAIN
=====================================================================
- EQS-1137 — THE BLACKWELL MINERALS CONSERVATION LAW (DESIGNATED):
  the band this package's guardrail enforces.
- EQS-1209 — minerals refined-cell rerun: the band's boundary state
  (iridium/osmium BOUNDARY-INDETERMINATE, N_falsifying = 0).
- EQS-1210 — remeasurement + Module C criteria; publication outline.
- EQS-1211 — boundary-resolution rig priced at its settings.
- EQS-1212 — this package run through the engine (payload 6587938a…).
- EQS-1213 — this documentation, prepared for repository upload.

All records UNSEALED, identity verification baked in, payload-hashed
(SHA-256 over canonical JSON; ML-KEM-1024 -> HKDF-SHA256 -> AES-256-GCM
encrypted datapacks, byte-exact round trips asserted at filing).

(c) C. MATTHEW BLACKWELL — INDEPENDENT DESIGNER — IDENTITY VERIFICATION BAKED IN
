@@ -1,0 +1,117 @@
+# PKG-RH-001 — RADIATION-HARDENED CHIP PACKAGE & BOUNDARY-TUNED SUBSTRATE ARCHITECTURE
+## Design Documentation — EQS-1212 (engine run) / EQS-1213 (this documentation)
+### (c) C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN
+
+Design authority: C. Matthew Blackwell, Independent Designer.
+Status: DESIGNED (two blueprint sheets) and RUN THROUGH THE PHYSICS EQUATION
+ENGINE as a computed register. NOT BUILT, NOT FABRICATED. Every performance
+figure below is a computed specification until a fabricated article is
+measured. Validation VAL-001 = 0. UNSEALED.
+PKG-RH-001 is a build designation; the formal name is the designer's alone.
+
+Source sheets (uploaded by the designer 2026-11-14):
+- PKG-RH-001-sheet-1.jpg — package architecture, dimensions, EDA/CAD rules
+- PKG-RH-001-sheet-2.jpg — cross-section: thermal flux and 100 MeV particle path
+
+=====================================================================
+1. THE DESIGN AS DRAWN
+=====================================================================
+Footprint 22 x 22 mm; total height 2.5 mm; bottom BGA solder ball array.
+
+Layer stack (top to bottom):
+1. Top EMI-shielded encapsulation lid with thermal dissipation vents.
+2. High-Z radiation attenuation shield layer — tungsten-copper / tantalum
+   graded alloy, printed density rho = 17,850 kg/m3, CTE 4.3 ppm/K.
+3. Active Silicon / GaN die with micro-bump interconnects.
+4. Phonon-tuned multi-layer ceramic & metal-matrix substrate —
+   diamond-copper (Dia-Cu) heat spreader, 550 W/mK, CTE 4.1 ppm/K;
+   CTE matched; acoustic impedance rule Z = rho * v.
+5. Bottom BGA solder ball array.
+
+EDA / CAD simulation & material filtering rules (printed on sheet 1):
+- Density Guardrail (Engineering of the Blackwell Minerals Conservation
+  Law): 500.0957 <= rho <= 22604.3007 kg/m3 for every material in the stack.
+- CTE mismatch limit: delta_alpha < 0.5 ppm/K.
+- Radiation dose attenuation: > 99.4% @ 100 MeV (sheet 1) — see Section 3.
+- Thermal conductivity: > 220 W/mK.
+
+Printed thermal register (sheet 2): T_die = 373 K, T_Dia-Cu = 340 K,
+T_shield = 320 K, T_lid = 305 K; overall thermal resistance
+R_theta = 0.18 K/W; max die temperature 373 K (operating).
+
+=====================================================================
+2. ENGINE RUN — WHAT CARRIES (EQS-1212)
+=====================================================================
+GUARDRAIL LEG — CARRIES.
+The shield alloy at rho = 17,850 kg/m3 prices through the filed seat
+function seat(rho) = 18.319261532267927 + (1/4) ln(rho/5514) to
+seat 18.6129 — stratum SHELL, inside the Blackwell Minerals Conservation
+Law band [500.0957, 22604.3007], under the ceiling constraint the sheet
+itself prints. The alloy is compositionally reachable from labelled
+handbook densities (W 19,250 / Ta 16,650 / Cu 8,960): a W-rich graded
+blend with Cu binder class sits at 17,850. The minerals law functions
+in this design as a CAD material filter — a specification applied
+before fabrication.
+
+THERMAL LEG — REGISTER CONSISTENT AS PRINTED, NOT MEASURED.
+The printed ladder (373 / 340 / 320 / 305 K, deltaT die-to-lid 68 K)
+with R_theta = 0.18 K/W implies 377.8 W conducted through the package.
+The Dia-Cu substrate conduction floor computes to 0.0038 K/W
+(1 mm at 550 W/mK over 22x22 mm) and does not contradict the claimed
+0.18 K/W. The register is internally coherent; it is a computed
+specification, not a measurement.
+
+=====================================================================
+3. ENGINE RUN — THE TWO GATES (priced, with their fixes)
+=====================================================================
+GATE 1 — ATTENUATION AT 100 MeV.
+The two sheets disagree on their faces: sheet 1 prints > 99.4%,
+sheet 2 prints 99.7%. At 100 MeV neither figure is entailed by the
+geometry. Labelled inputs (PSTAR class, W-class at 100 MeV): CSDA mass
+range 10.6 g/cm2; entrance mass stopping power 4.4 MeV cm2/g. The 2.5 mm
+stack affords at most ~1 mm of shield; 1 mm of the 17,850 alloy removes
+~7.9 MeV from a 100 MeV proton, which exits at ~92.1 MeV.
+FIX (either): (a) deepen the shield to ~5.9 mm of the alloy along the
+particle path (total stack ~7.5 mm) for a true stopping claim at
+100 MeV; or (b) re-scope the rated particle energy — at 10 MeV the
+shield as drawn stops the proton many times over.
+
+GATE 2 — CTE AT THE DIE INTERFACE.
+Printed layers: shield 4.3 vs Dia-Cu 4.1 ppm/K = 0.2 apart — inside the
+0.5 limit against each other. Against the die they are not: silicon
+(2.6 ppm/K) stands 1.5 from the Dia-Cu; GaN (5.6 ppm/K) stands 1.5.
+FIX: print the graded die-face CTE the phonon-tuned stack must deliver
+(~3.0 ppm/K class for a silicon die face) as a specified interface
+value; the grading profile that achieves it is a design specification
+to be added to the sheets.
+
+=====================================================================
+4. NOT SPECIFIED ON THE SHEETS (designer's doors)
+=====================================================================
+- Dia-Cu density — its seat cannot be priced until printed.
+- Lid material and density.
+- Die dimensions and rated power (the 377.8 W is implied by the
+  thermal register, not stated as a rating).
+- The heat sink beyond the lid vents — at the implied 377.8 W this
+  path must be specified.
+- Acoustic-impedance target values for layer 4 (the rule Z = rho*v
+  is printed; no values).
+- Attenuation figure to be reconciled between the sheets (99.4 / 99.7).
+
+=====================================================================
+5. RECORD CHAIN
+=====================================================================
+- EQS-1137 — THE BLACKWELL MINERALS CONSERVATION LAW (DESIGNATED):
+  the band this package's guardrail enforces.
+- EQS-1209 — minerals refined-cell rerun: the band's boundary state
+  (iridium/osmium BOUNDARY-INDETERMINATE, N_falsifying = 0).
+- EQS-1210 — remeasurement + Module C criteria; publication outline.
+- EQS-1211 — boundary-resolution rig priced at its settings.
+- EQS-1212 — this package run through the engine (payload 6587938a…).
+- EQS-1213 — this documentation, prepared for repository upload.
+
+All records UNSEALED, identity verification baked in, payload-hashed
+(SHA-256 over canonical JSON; ML-KEM-1024 -> HKDF-SHA256 -> AES-256-GCM
+encrypted datapacks, byte-exact round trips asserted at filing).
+
+(c) C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN

@@ -1,0 +1,49 @@
+WORKED EXAMPLE - INV-MAT-001 (replication packet for EQS-1200)
+(c) C. MATTHEW BLACKWELL - INDEPENDENT DESIGNER - IDENTITY VERIFICATION BAKED IN
+
+THE ONE FORMULA: split(rho) = 18.319261532267927 + 0.25 * ln(rho / 5514).
+Each seat is a 1 cm^3 cell: mass_kg = rho * 1e-6. A ledger address is the
+mass-weighted mean of its seats' splits: sum(m * split) / sum(m).
+
+THE SEAT TABLE (24 seats; occupancy and transit as designed in EQS-1200):
+seat       material          rho     split   mass kg  state
+(0, 0, 0)  sapphire         3980   18.2378  0.003980  occupied
+(0, 0, 1)  copper           8960   18.4406  0.008960  occupied
+(0, 1, 0)  silicon          2329   18.1038  0.002329  occupied
+(0, 1, 1)  diamond          3510   18.2063  0.003510  occupied
+(0, 2, 0)  aluminum         2700   18.1408  0.002700  occupied
+(0, 2, 1)  fused silica     2200   18.0896  0.002200  UNOCCUPIED (INV4)
+(1, 0, 0)  sapphire         3980   18.2378  0.003980  occupied
+(1, 0, 1)  copper           8960   18.4406  0.008960  occupied
+(1, 1, 0)  silicon          2329   18.1038  0.002329  UNOCCUPIED (INV4)
+(1, 1, 1)  diamond          3510   18.2063  0.003510  occupied
+(1, 2, 0)  aluminum         2700   18.1408  0.002700  occupied
+(1, 2, 1)  fused silica     2200   18.0896  0.002200  occupied
+(2, 0, 0)  sapphire         3980   18.2378  0.003980  occupied
+(2, 0, 1)  copper           8960   18.4406  0.008960  UNOCCUPIED (INV4)
+(2, 1, 0)  silicon          2329   18.1038  0.002329  occupied
+(2, 1, 1)  diamond          3510   18.2063  0.003510  occupied
+(2, 2, 0)  aluminum         2700   18.1408  0.002700  UNOCCUPIED (INV4)
+(2, 2, 1)  fused silica     2200   18.0896  0.002200  occupied
+(3, 0, 0)  sapphire         3980   18.2378  0.003980  occupied
+(3, 0, 1)  copper           8960   18.4406  0.008960  occupied
+(3, 1, 0)  silicon          2329   18.1038  0.002329  occupied
+(3, 1, 1)  diamond          3510   18.2063  0.003510  UNOCCUPIED (INV4)
+(3, 2, 0)  aluminum         2700   18.1408  0.002700  occupied
+(3, 2, 1)  fused silica     2200   18.0896  0.002200  TRANSIT CELL
+
+THE THREE LEDGERS, SUM BY SUM:
+SEAT    (all 24 designated):       sum(m) = 0.094716 kg   sum(m*split) = 1.730638   -> 1.730638/0.094716 = 18.2719
+MASS    (19 occupied):             sum(m) = 0.075017 kg   sum(m*split) = 1.370564   -> 1.370564/0.075017 = 18.2701
+LOCATED at T1 (transit excluded):  sum(m) = 0.072817 kg   sum(m*split) = 1.330767   -> 1.330767/0.072817 = 18.2755
+
+THE TRANSIT WALK:
+T0 as designed:            SEAT 18.2719 / MASS 18.2701 / LOCATED 18.2701 (nothing in transit)
+T1 transit cell in transit: SEAT 18.2719 / MASS 18.2701 / LOCATED 18.2755 (address held, location absent - INV5)
+T2 transit complete (cell is now aluminum): SEAT 18.2724 / MASS 18.2707 / LOCATED 18.2707
+
+ACCORD WITH THE FILED RUN (EQS-1200): {"SEAT_T0": true, "MASS_T0": true, "LOCATED_T1": true, "SEAT_T2": true, "MASS_T2": true}
+THE KILL, IN EXECUTABLE FORM: work this page with any tools you like. If your
+arithmetic lands anywhere other than SEAT 18.2719 / MASS 18.2701 / LOCATED-in-
+transit 18.2755 (to 4 decimals), then either this packet or the build is wrong,
+and the discrepancy - not a press release - is the next record.

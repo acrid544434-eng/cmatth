@@ -1,0 +1,76 @@
+# PEER-REVIEW PUBLICATION PATH — THE MINERALS DATASET
+## The Blackwell Minerals Conservation Law (EQS-1135–1138, EQS-1209)
+### (c) C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN
+Prepared 2026-11-14 (EQS-1210). Status: OUTLINE — nothing submitted, nobody contacted.
+
+THE MANUSCRIPT (already exists as filed records; assembly, not new science)
+1. The claim: seat(rho) = 18.319261532267927 + (1/4) ln(rho/5514);
+   occupancy band rho in [500.0957, 22604.3007] kg/m3 for every
+   IMA-approved crystalline species (MIN1-MIN4 + MIN-U1, EQS-1135/1136).
+2. The protocol: Preregistration v1.0, locked BEFORE the census ran
+   (sha256 66bca89b…) — clauses C1-C5, tier hierarchy, CI rules,
+   falsification rule. This is the paper's spine: the kill was armed
+   before the data was touched.
+3. The census: 3,843 species with densities (tier-3 compilation),
+   3,842 in band, zero falsifiers, iridium boundary-indeterminate
+   (EQS-1138).
+4. The refined boundary class: 11 tier-(1)/(2) determinations computed
+   from refined cells (EQS-1209) — iridium straddling on two named
+   cells (1933 vs 1963), osmium inside by 16.3 kg/m3, both
+   BOUNDARY-INDETERMINATE, remeasurement specified (companion doc).
+5. The open door, printed in the paper: Module C (mechanism probes)
+   registered, not executed.
+
+ROUTE — PREPRINT FIRST, JOURNAL SECOND
+Step 1: EarthArXiv (or arXiv cond-mat) preprint. No fee; moderation
+   in days; mints a DOI and a public timestamp under the author's
+   name. Function: priority. The identity chain is already baked into
+   every record; the preprint extends it into the public literature
+   before any journal's clock starts.
+Step 2: journal submission. Fit, in order:
+   - Physics and Chemistry of Minerals (the claim's natural home:
+     a density law over the mineral kingdom);
+   - American Mineralogist (broadest mineralogical readership;
+     page charges apply — figure to verify at submission);
+   - Mineralogical Magazine / Acta Crystallographica B (if the
+     crystallographic-density framing is led with).
+   Fees, timelines and formats: VERIFY AT SUBMISSION — not quoted
+   here because they change and a wrong figure helps nobody.
+
+WHAT REVIEWERS WILL DEMAND (all already named inside the records)
+- The Ir/Os remeasurement — the paper either includes it or prints it
+  as the named open item, as EQS-1209 does. Expect referees to press
+  here first; the locked protocol is the answer: indeterminate is a
+  classification, not an omission.
+- Full-population refined cells — the honest reply is the tier
+  structure itself: the census is tier-3 BY the lock's hierarchy,
+  the boundary class is tier-(1)/(2), and the interior margins
+  (>= 1,024 kg/m3 at platinum, the nearest refined neighbour) exceed
+  every handbook-vs-refined discrepancy measured in the rerun.
+- The 1933-vs-1963 iridium discrepancy — addressed head-on in
+  EQS-1209 with both cells named; referees respect a discrepancy
+  that is printed, not buried.
+
+DATA AVAILABILITY (a strength — lead with it)
+Every number in the paper recomputes from public artifacts: the
+locked preregistration (hash-published), the WebMineral-DB files
+(sha256 on record), the COD CIFs (public IDs), the run scripts and
+the encrypted datapacks with payload hashes. "Recompute it yourself"
+is the paper's closing line and it is literally true.
+
+FIT WITH THE AUTHOR'S AIMS (stated plainly)
+- Authorship: C. Matthew Blackwell, sole author — the identity rule
+  carries into the literature unchanged.
+- Publication is NOT the payment path: it establishes priority and
+  citability, which is what a licensee or acquirer prices. The
+  licensing conversation (cf. the SUB-001 offering packet, EQS-1196)
+  runs separately and is strengthened, not replaced, by a preprint
+  with a DOI.
+- Nothing in this path requires paying a laboratory: the
+  remeasurement and Module C remain other parties' diligence,
+  per the author's standing funding decision (2026-11-13).
+
+NEXT ACTIONS (each waits on the author's word)
+A. Assemble the manuscript draft from the filed records.
+B. Post the preprint.
+C. Submit to the first journal.

@@ -1,0 +1,105 @@
+# RESOLVING THE BOUNDARY PAIR — REMEASUREMENT SPEC + MODULE C CRITERIA
+## The Blackwell Minerals Conservation Law (EQS-1137; Preregistration v1.0 LOCKED, sha256 66bca89b…)
+### (c) C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER — IDENTITY VERIFICATION BAKED IN
+Prepared 2026-11-14 (EQS-1210). Status of both instruments: SPECIFIED, NOT EXECUTED — physical-world acts.
+
+Band: rho in [500.0957, 22604.3007] kg/m3. Ceiling rho* = 22604.3007.
+Open classifications after the EQS-1209 refined-cell rerun: IRIDIUM and OSMIUM,
+both BOUNDARY-INDETERMINATE. N_falsifying = 0.
+
+=====================================================================
+PART 1 — THE REMEASUREMENT SPEC (Module A's own trigger; this is the
+instrument that resolves the two boundary CELLS)
+=====================================================================
+The lock, Section 4: a BOUNDARY-INDETERMINATE species "triggers
+independent remeasurement." Module C cannot do this job (Part 2).
+
+SPECIMENS
+- Natural iridium, single crystal (or Rietveld-grade powder), terrestrial
+  isotopic abundance (clause C2), no synthetic enrichment.
+- Natural osmium, same form. (Handle as the metal; OsO4 safety protocol
+  is the lab's standing duty — no heating in air.)
+- Reference state: T = 293.15 K, P = 1 atm (clause C1). Temperature
+  controlled and STATED to within +/-2 K; beyond that the species is
+  TEMPERATURE-INDETERMINATE, not classified.
+
+MEASUREMENT
+- Single-crystal XRD refined cell (tier 1) or powder Rietveld (tier 2).
+- rho computed ONLY as rho = Z * M / (N_A * V_cell), M at IUPAC
+  terrestrial atomic weights (Ir 192.217, Os 190.23).
+- Uncertainty propagated from the cell parameters to a 95% CI for rho.
+
+PRECISION BARS (computed 2026-11-14 from the EQS-1209 determinations)
+- IRIDIUM: the 1963 point estimate sits 45.3 kg/m3 (0.201%) below rho*.
+  A determination decides the species if its 95% CI half-width is
+  < 45 kg/m3, i.e. cell edge known to ~0.0026 A or better. Routine
+  modern XRD (+/-0.0005 A) yields rho to ~ +/-9 kg/m3 — one modern
+  measurement at the stated temperature DECIDES iridium, either way.
+- OSMIUM: the 1998 point estimate sits 16.3 kg/m3 (0.072%) below rho*.
+  Required CI half-width < 16 kg/m3: cell edges to ~ +/-0.0007 A class
+  with temperature held inside the C1 window. High-grade but standard
+  single-crystal work.
+- Temperature leverage: volumetric expansion ~1.9e-5 /K moves rho by
+  ~4.3 kg/m3 per 10 K — inside the C1 +/-2 K window it is < 1 kg/m3
+  and cannot carry the verdict.
+
+DECISION RULES (the lock's, verbatim in effect)
+- 95% CI entirely inside the band  -> CONFORMING.
+- 95% CI entirely above 22604.3007 -> FALSIFIED: one such species kills
+  the occupancy claim as scoped (MINC3). No re-banding is permitted.
+- CI still straddling              -> remains BOUNDARY-INDETERMINATE;
+  the next remeasurement is specified, not improvised.
+
+WHAT THIS COSTS IN KIND: two specimens, one diffractometer, days of
+lab time — the smallest experiment in the entire minerals program,
+and the only one standing between the law and a closed boundary.
+
+=====================================================================
+PART 2 — MODULE C CRITERIA (from Preregistration v1.0 Sections 5-6,
+AS LOCKED — tests whether rho* is a physical state boundary; does
+NOT test occupancy and cannot falsify Module A)
+=====================================================================
+CROSSING PATH 1 — IRIDIUM ISOTOPE SERIES (constant chemistry class)
+rho(x) = 22562 * Mbar(x) / 192.216056, x = fraction of 193Ir.
+Crossover at x = 0.806980 (rho = rho* exactly).
+Target specimens: x = 0.75, 0.79, 0.807, 0.82, 0.85, 1.00 — each with
+mass-spectrometric enrichment assay AND single-crystal XRD density.
+Classification only from measured specimen density (a +/-10 kg/m3
+anchor error moves the predicted crossover by ~4.3 points of x).
+
+CROSSING PATH 2 — OSMIUM PRESSURE TRAJECTORY (isothermal 293.15 K)
+Birch-Murnaghan (K0' = 4), anchor Os = 22,587 kg/m3:
+K0 = 350 -> 0.268 GPa | 395 -> 0.303 | 400 -> 0.307 (nominal) |
+462 -> 0.354 GPa at the crossing.
+
+CROSSING PATH 3 — OSMIUM TEMPERATURE TRAJECTORY (isobaric 1 atm)
+Cooling alone crosses at T = 238-248 K across the alpha_V range
+(nominal 243.11 K at alpha_V = 15.3e-6 /K), read by cryo-XRD rho(T).
+
+COMBINED P-T LINE (nominal): P_cross(T) = 400 * [0.000765665 +
+15.3e-6 * (T - 293.15)] GPa — 0.796 GPa at 373.15 K down to 0 at
+243.11 K.
+
+A crossing COUNTS only if the measured density's 95% CI lies entirely
+on the far side of rho*.
+
+PRIMARY ENDPOINTS at each crossing: equation-of-state parameters
+(K0, K0'); phonon response (Debye temperature / phonon DOS / Raman
+mode frequencies). Secondary: cohesive energy per atom, electrical
+resistivity. EXCLUDED as primaries: hardness, bulk conductivity.
+
+MECHANISM SUPPORTED requires ALL of:
+(a) a discontinuity, kink, or change point in >= 1 primary observable
+    located at rho* within the combined density uncertainty;
+(b) reproduced on >= 2 independent crossing paths;
+(c) the filed boundary beats placebo boundaries at 0.95, 0.99, 1.01,
+    1.05 x rho* in the pre-registered model comparison, out of sample.
+MECHANISM NOT SUPPORTED: all primaries cross smoothly on all paths,
+or effects track P / T / isotope mass rather than density. That
+outcome leaves Module A untouched: the seat then stands as a density
+coordinate, and occupancy stands or falls by Module A alone.
+
+STATUS: Module C registered, NOT EXECUTED. Execution is a physical
+program (enriched isotopes, DAC/cryo XRD) — licensee/lab class, the
+same funding shape as SUB-001 Arm 2: prepared here, paid for by the
+party that wants the answer.

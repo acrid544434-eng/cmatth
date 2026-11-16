@@ -1,0 +1,25 @@
+Here is a comprehensive summary of the publication draft "The Blackwell Conservation Laws of Gravity" by C. Matthew Blackwell (Designated 10 November 2026, record EQS-1032):
+## Framework Overview
+The paper introduces a state-register framework consisting of six gravitational forms (GRV1–GRV6), five conservation clauses (GRVC1–GRVC5), and a single unified map (GRV-U1). It tests these assemblies end-to-end against live catalogue data—including gravitational-wave events, Gaia DR3 stars, and exoplanets—and compares them directly against General Relativity (GR).
+## Key Empirical Findings
+ * Merger Gain Bound (GRV5):
+   * Tested across 282 fully massed events from the GWOSC union catalogue.
+   * The interior-price gain strictly inhabits the interval (1, \sqrt{2}] for all 282 events (minimum 1.0493, median 1.3957, maximum 1.4139 against the ceiling of \sqrt{2} \approx 1.41421) with zero violations.
+ * Surface Gravity & Population Censuses (GRV3):
+   * The closed form matches direct GM/R^2 evaluation with a maximum relative deviation of 2.13 \times 10^{-15} across 50,000 Gaia DR3 stars and 2.16 \times 10^{-15} across 6,396 NASA Exoplanet Archive planets.
+   * Identifies an Earth-class gravity census (within \pm 10\% of 9.8204\text{ m/s}^2) comprising 640 stars and 1,513 exoplanets.
+ * Clock Face & Unified Map (GRV6 & GRV-U1):
+   * The GRV6 product (Kd\_U \times gt = 1.2192 \times 10^{-9}) holds across a 242-station epoch grid at a maximum relative deviation of 3.39 \times 10^{-16}.
+   * The terminal acceleration floor is established at gt = 9.9318 \times 10^{-11}\text{ m/s}^2 at terminal density \rho_\infty = 1.0992016132904618.
+   * The unified operator GRV-U1 reproduces independently coded component forms across all 56,396 live bodies with negligible maximum deviation (e.g., E deviation at 0.0, split at 3.55 \times 10^{-15}).
+## Head-to-Head Confrontation with General Relativity
+ * Area Theorem & Ledger Direction:
+   * Hawking's area theorem holds on 279 of 279 events carrying measured final masses under the Schwarzschild approximation (median ratio 1.7644).
+   * On 276 of those 279 events, the two ledgers move in opposite directions: GR's mass ledger loses a median of 4.31\% to radiation, while the register's interior price of the remnant increases. Because they price different quantities, this opposition is structural rather than contradictory, and neither bound breaks.
+ * Surface Gravity & Acceleration Floor:
+   * GR's Killing surface gravity aligns with the register closed form to a relative deviation of \sim 10^{-6} on stellar and planetary populations.
+   * The acceleration floor represents a clean point of departure: GR contains no minimum acceleration floor at any epoch, whereas the register framework incorporates one.
+## Falsifiability & Administrative Status
+ * Kill Criteria: Each form carries explicit falsification conditions (e.g., GRV5 fails if a fully massed merger yields a gain \le 1 or > \sqrt{2}; GRV6 fails if the epoch product departs from the designated constant).
+ * Designations & Records: The framework links to core records including EQS-1030 (EQ-GRV extraction), EQS-1031 (EQ-GRVC), EQS-1032 (Designation), EQS-1248–1251 (live runs and fresh pulls), EQS-1252 (dossier film), and EQS-342 (Master Force Law).
+ * Status: Unsealed (\text{VAL-001} = 0), with publication draft unsubmitted to external venues as of November 2026.

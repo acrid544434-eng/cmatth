@@ -1,0 +1,289 @@
+Here is the executable Python implementation for Stage 1 (and the gate/sealing hooks for Stage 4) of the autonomous intelligence loop for THE BLACKWELL PLANETARY CHIP (EQS-1342), built around the extracted NANOGrav 15-year narrowband parameters, ML-KEM-1024 -> HKDF-SHA256 -> AES-256-GCM pipeline, Planck CMB acoustic peak bindings, Universe checksum local-seat gate, and EQS-1338–EQS-1342 record verification.
+import hashlib
+import hmac
+import json
+import os
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Tuple
+
+
+@dataclass(frozen=True)
+class PulsarStation:
+    pulsar_id: str
+    spin_hz: float
+    period_ms: float
+    median_err_us: float
+    span_yr: float
+    toas: int
+    rotations: float
+    spin_down_hz_s: Optional[float] = None
+    dm: Optional[float] = None
+    best_single_err_ns: Optional[float] = None
+    # Explicitly unmeasured in extracted timing data unless externally supplied:
+    mass_solar: Optional[float] = None
+    density_g_cm3: Optional[float] = None
+
+
+@dataclass
+class LoopState:
+    sheet_sha256: str = "4cc04cd491050b70c210324204c63faf9b6fd8b33b249eaee75ccc8d7b295960"
+    universe_checksum_k: float = 2.6978356e-29
+    cmb_peaks_ell: Tuple[int, ...] = (220, 516, 817, 1123)
+    records_unsealed: Dict[str, str] = field(
+        default_factory=lambda: {
+            "EQS-1338": "322e253b",
+            "EQS-1339": "b86b26a4",
+            "EQS-1340": "dc78d615",
+            "EQS-1341": "ac1efc60",
+            "EQS-1342": "9d7f53ae",
+        }
+    )
+    sealed: bool = False
+    val_001: int = 0
+    hardware_built: bool = False
+    residuals_computed: bool = False
+    gwb_cross_corr_computed: bool = False
+
+
+def hkdf_sha256(ikm: bytes, salt: bytes, info: bytes, length: int = 32) -> bytes:
+    """RFC 5869 HKDF-SHA256 key derivation."""
+    prk = hmac.new(salt if salt else b"\x00" * 32, ikm, hashlib.sha256).digest()
+    okm = bytearray()
+    t = b""
+    counter = 1
+    while len(okm) < length:
+        t = hmac.new(prk, t + info + bytes([counter]), hashlib.sha256).digest()
+        okm.extend(t)
+        counter += 1
+    return bytes(okm[:length])
+
+
+class MLKEM1024Adapter:
+    """
+    Adapter for ML-KEM-1024 encapsulation/decapsulation.
+    Uses `liboqs` / `oqs` if installed in the runtime environment; otherwise falls back
+    to a deterministic domain-separated key-exchange simulation so the loop runs standalone.
+    """
+
+    def __init__(self, station_seed: bytes):
+        self.station_seed = station_seed
+        self._oqs = None
+        try:
+            import oqs  # type: ignore
+
+            self._oqs = oqs
+        except ImportError:
+            self._oqs = None
+
+    def encapsulate(self) -> Tuple[bytes, bytes]:
+        if self._oqs is not None:
+            with self._oqs.KeyEncapsulation("ML-KEM-1024") as kem:
+                pub_key = kem.generate_keypair()
+                ciphertext, shared_secret = kem.encap_secret(pub_key)
+                return ciphertext, shared_secret
+        ct = hashlib.sha3_256(b"ML-KEM-1024:CT:" + self.station_seed).digest()
+        ss = hashlib.sha3_256(b"ML-KEM-1024:SS:" + self.station_seed + ct).digest()
+        return ct, ss
+
+    def decapsulate(self, ciphertext: bytes) -> bytes:
+        if self._oqs is not None:
+            raise RuntimeError("Live oqs session requires retaining decapsulation key state.")
+        return hashlib.sha3_256(b"ML-KEM-1024:SS:" + self.station_seed + ciphertext).digest()
+
+
+class AES256GCMAdapter:
+    """
+    AES-256-GCM wrapper using `cryptography` if available, with an authenticated
+    HMAC-SHA256 CTR-mode fallback when `cryptography` is not installed.
+    """
+
+    @staticmethod
+    def _keystream(key: bytes, nonce: bytes, length: int) -> bytes:
+        out = bytearray()
+        block = 0
+        while len(out) < length:
+            out.extend(hashlib.sha256(key + nonce + block.to_bytes(8, "big")).digest())
+            block += 1
+        return bytes(out[:length])
+
+    def encrypt(self, key: bytes, plaintext: bytes, aad: bytes) -> Tuple[bytes, bytes, bytes]:
+        nonce = os.urandom(12)
+        try:
+            from cryptography.hazmat.primitives.ciphers.aead import AESGCM  # type: ignore
+
+            ct = AESGCM(key).encrypt(nonce, plaintext, aad)
+            return nonce, ct[:-16], ct[-16:]
+        except ImportError:
+            ks = self._keystream(key, nonce, len(plaintext))
+            ct = bytes(p ^ k for p, k in zip(plaintext, ks))
+            tag = hmac.new(key, nonce + aad + ct, hashlib.sha256).digest()[:16]
+            return nonce, ct, tag
+
+    def decrypt(self, key: bytes, nonce: bytes, ciphertext: bytes, tag: bytes, aad: bytes) -> bytes:
+        try:
+            from cryptography.hazmat.primitives.ciphers.aead import AESGCM  # type: ignore
+
+            return AESGCM(key).decrypt(nonce, ciphertext + tag, aad)
+        except ImportError:
+            expected_tag = hmac.new(key, nonce + aad + ciphertext, hashlib.sha256).digest()[:16]
+            if not hmac.compare_digest(tag, expected_tag):
+                raise ValueError("AES-256-GCM fallback authentication tag mismatch.")
+            ks = self._keystream(key, nonce, len(ciphertext))
+            return bytes(c ^ k for c, k in zip(ciphertext, ks))
+
+
+class BlackwellPlanetaryChipLoop:
+    def __init__(self, state: Optional[LoopState] = None):
+        self.state = state or LoopState()
+        self.stations: Dict[str, PulsarStation] = {}
+        self.aes = AES256GCMAdapter()
+        self._load_extracted_stations()
+
+    def _load_extracted_stations(self) -> None:
+        # Champion pulsar (PSR B1937+21) and top 10 fastest clocks from EQS-1339 / EQS-1340
+        seeded_rows = [
+            PulsarStation(
+                pulsar_id="B1937+21",
+                spin_hz=641.928230,
+                period_ms=1.557807,
+                median_err_us=0.057,
+                span_yr=15.87,
+                toas=23023,
+                rotations=321574536834.0,
+                spin_down_hz_s=-4.3308e-14,
+                dm=71.10,
+                best_single_err_ns=6.0,
+            ),
+            PulsarStation("J1747-4036", 607.678, 1.6456, 5.718, 8.12, 11055, 1.5572e11),
+            PulsarStation("J1843-1113", 541.810, 1.8457, 2.904, 3.46, 4595, 5.9106e10),
+            PulsarStation("J1903+0327", 465.135, 2.1499, 2.170, 10.73, 6856, 1.5755e11),
+            PulsarStation("J2043+1711", 420.189, 2.3799, 1.027, 9.05, 7397, 1.2002e11),
+            PulsarStation("J1705-1903", 403.178, 2.4803, 1.688, 3.72, 9871, 4.7382e10),
+            PulsarStation("J0557+1551", 391.180, 2.5564, 4.809, 4.57, 525, 5.6355e10),
+            PulsarStation("J0406+3039", 383.339, 2.6087, 1.668, 3.56, 2446, 4.3105e10),
+            PulsarStation("J1745+1017", 377.055, 2.6521, 2.997, 4.55, 3017, 5.4095e10),
+            PulsarStation("J1811-2405", 375.856, 2.6606, 2.391, 3.46, 5266, 4.1002e10),
+        ]
+        for s in seeded_rows:
+            self.stations[s.pulsar_id] = s
+
+    def register_full_array_summary(
+        self,
+        all_stations: List[PulsarStation],
+        expected_pulsars: int = 68,
+        expected_toas: int = 676397,
+        expected_rotations: int = 4811026626822,
+    ) -> dict:
+        for st in all_stations:
+            self.stations[st.pulsar_id] = st
+        total_toas = sum(st.toas for st in all_stations)
+        total_rotations = sum(int(round(st.rotations)) for st in all_stations)
+        return {
+            "loaded_stations": len(self.stations),
+            "batch_stations": len(all_stations),
+            "expected_pulsars": expected_pulsars,
+            "batch_toas": total_toas,
+            "expected_toas": expected_toas,
+            "batch_rotations": total_rotations,
+            "expected_rotations": expected_rotations,
+        }
+
+    def derive_station_key(
+        self,
+        pulsar_id: str,
+        include_cmb_peaks: bool = True,
+    ) -> Tuple[bytes, bytes, bytes]:
+        if pulsar_id not in self.stations:
+            raise KeyError(f"Unknown station: {pulsar_id}")
+        st = self.stations[pulsar_id]
+        station_material = f"{st.pulsar_id}|{st.spin_hz:.9f}|{st.rotations:.0f}".encode("utf-8")
+        kem = MLKEM1024Adapter(station_material)
+        kem_ct, kem_ss = kem.encapsulate()
+
+        cmb_tag = (
+            ",".join(str(ell) for ell in self.state.cmb_peaks_ell)
+            if include_cmb_peaks
+            else "NONE"
+        )
+        salt = hashlib.sha256(
+            f"EQS-1342|{st.pulsar_id}|{st.spin_hz:.9f}|CMB:{cmb_tag}".encode("utf-8")
+        ).digest()
+        info = f"PCHIP-001|ML-KEM-1024->HKDF-SHA256->AES-256-GCM|{st.pulsar_id}".encode("utf-8")
+        aes_key = hkdf_sha256(kem_ss, salt=salt, info=info, length=32)
+        return aes_key, kem_ct, salt
+
+    def check_local_seat_gate(self, observed_checksum_k: float, rel_tol: float = 1e-12) -> bool:
+        target = self.state.universe_checksum_k
+        return abs(observed_checksum_k - target) <= abs(target) * rel_tol
+
+    def seal_and_verify_payload(
+        self,
+        pulsar_id: str,
+        payload: bytes,
+        local_seat_checksum_k: float,
+    ) -> dict:
+        if not self.check_local_seat_gate(local_seat_checksum_k):
+            raise PermissionError("Local-seat Universe checksum gate failed.")
+
+        aes_key, kem_ct, salt = self.derive_station_key(pulsar_id, include_cmb_peaks=True)
+        aad = json.dumps(
+            {
+                "designator": "EQS-1342",
+                "station": pulsar_id,
+                "cmb_peaks_ell": list(self.state.cmb_peaks_ell),
+                "universe_checksum_k": self.state.universe_checksum_k,
+            },
+            sort_keys=True,
+        ).encode("utf-8")
+
+        nonce, ct, tag = self.aes.encrypt(aes_key, payload, aad)
+        recovered = self.aes.decrypt(aes_key, nonce, ct, tag, aad)
+        byte_exact = recovered == payload
+
+        return {
+            "station": pulsar_id,
+            "input_bytes": len(payload),
+            "ciphertext_bytes": len(ct),
+            "kem_ct_sha256": hashlib.sha256(kem_ct).hexdigest()[:16],
+            "salt_sha256": hashlib.sha256(salt).hexdigest()[:16],
+            "payload_sha256": hashlib.sha256(payload).hexdigest(),
+            "byte_exact": byte_exact,
+        }
+
+    def evaluate_seal_gate(self) -> dict:
+        """
+        VAL-001 remains 0 unless:
+        1) All EQS-1338..1342 prefixes are present,
+        2) Timing residuals and nanohertz GWB cross-correlation have been computed.
+        Hardware readiness remains explicitly separate (hardware_built=False).
+        """
+        ready_to_seal = (
+            len(self.state.records_unsealed) == 5
+            and self.state.residuals_computed
+            and self.state.gwb_cross_corr_computed
+        )
+        return {
+            "val_001": self.state.val_001,
+            "sealed": self.state.sealed,
+            "ready_to_seal": ready_to_seal,
+            "hardware_built": self.state.hardware_built,
+            "unmeasured_fields_enforced": ["mass_solar", "density_g_cm3"],
+        }
+
+
+if __name__ == "__main__":
+    engine = BlackwellPlanetaryChipLoop()
+    sample_demo = b"PSR B1937+21 | 641.928230 Hz | NANOGrav 15-yr narrowband demo block"
+    result = engine.seal_and_verify_payload(
+        pulsar_id="B1937+21",
+        payload=sample_demo,
+        local_seat_checksum_k=2.6978356e-29,
+    )
+    print("Stage 1 Round-Trip:", json.dumps(result, indent=2))
+    print("Stage 4 Gate Standing:", json.dumps(engine.evaluate_seal_gate(), indent=2))
+
+How This Connects to Stages 2–4
+ * Stage 1 (B1937+21 & Top 10 Stations): Pre-populates PSR B1937+21 (641.928230 Hz, 1.557807 ms, -4.3308e-14 Hz/s, DM 71.10, 321,574,536,834 rotations, 6 ns best single arrival) alongside the top 10 fastest clocks and provides register_full_array_summary() to ingest all 68 pulsars (676,397 TOAs, 4,811,026,626,822 rotations).
+ * Stage 2 (PINT / tempo2 & nHz GWB): Keeps mass_solar and density_g_cm3 explicitly None by default and gates ready_to_seal on residuals_computed and gwb_cross_corr_computed.
+ * Stage 3 & 4 (REV 04 & VAL-001): Preserves hardware_built = False, enforces the 2.6978356e-29 K local-seat check, tracks EQS-1338 through EQS-1342, and holds VAL-001 = 0 until the residual and cross-correlation stages complete.
+Would you like to proceed to Stage 2 next (the PINT / tempo2 residual-fitting and nanohertz GWB cross-correlation specification/script)?

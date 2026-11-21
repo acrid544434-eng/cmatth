@@ -1,0 +1,34 @@
+# SHC-001 — MEASUREMENT PROTOCOL (DRAFT)
+
+© C. MATTHEW BLACKWELL — INDEPENDENT DESIGNER
+Status: DRAFT · UNSEALED · VAL-001 = 0 · NOT COMMISSIONED — fabrication and lab commissioning are the designer's act. No vendor named.
+
+Purpose: convert SHC-001's configured faces (EQS-1405) and simulated faces (EQS-1406) into measured faces, under the kills filed at EQS-1405 and the cycle kill-gate locked at EQS-1407 (η_gate = 0.50).
+
+## Stage 1 — Capsule field verification (decides EQS-1405 kill 1)
+
+- Section the fabricated coupon; image at least 5 fields of 1 cm² each (optical microscopy; SEM if available).
+- Count capsules per cm² in each field. Filed target: 150/cm². A measured mean outside fabrication tolerance of the printed 150/cm² kills the capsule-field face as fabricated.
+- Measure at least 300 capsule diameters; report Dx10 / Dx50 / Dx90. The diameter is the configuration's governing parameter (EQS-1406: at 150/cm², 50 µm feeds 52.80% of 1-cm crack segments; 100 µm 77.72%; 180 µm 93.14%; 200 µm 94.96%). No diameter is specified by the sheet; the measured distribution is the specification the build actually carries.
+
+## Stage 2 — Composite seat (decides EQS-1405 kill 2)
+
+- Effective density of the fabricated coupon by immersion (Archimedes method, ASTM D792 class), at least 5 specimens, report mean ± sd.
+- Seat through the filed form: split = 18.319261532267927 + ¼ ln(ρ̄/5514).
+- Band call: LIFE BAND if effective density falls in 700.1–1,199.9 kg/m³; SHELL at ≥ ~1,205 kg/m³. A seat outside the band the build was configured for kills the class assignment.
+
+## Stage 3 — Healing efficiency and the locked cycle gate (EQS-1407)
+
+- Fracture protocol of the literature class the anchors come from: tapered double-cantilever beam (capsule system, White 2001 class) or four-point bend on a coated beam (vascular system, Toohey 2007 class).
+- Per damage zone: load to fracture → heal under stated conditions (temperature, duration recorded) → re-fracture. Efficiency η = K_healed / K_virgin for that cycle.
+- Repeat in the SAME damage zone. **Locked gate (EQS-1407): any cycle with measured η < 0.50 in a zone flags that zone KILL-GATE ACTIVE — INSPECT / RETIRE; autonomous recovery is not assumed past the gate.** On the anchored simulation shape the gate crosses between cycles 3 (0.525) and 4 (0.4375); the measured series governs.
+- Capsule system: one event per zone by construction; a measured single-event η < 0.50 fires the same gate.
+
+## Stage 4 — Acoustic emission during healing (telemetry face)
+
+- AE sensors on the coupon through fracture and healing; record event rate and cumulative energy per cycle against the Cycle-1 reference.
+- PROPOSED secondary gate (not locked — the designer's separate word required): sustained AE activity past the nominal quiet onset, or cumulative AE energy > 3× the Cycle-1 reference, locks out automated re-loading pending inspection.
+
+## What this protocol does not do
+
+It measures a fabricated coupon. Until a coupon exists, every SHC-001 performance face remains NOT MEASURED and every EQS-1406 curve remains a labelled simulation. This draft commissions nothing and names no laboratory.
